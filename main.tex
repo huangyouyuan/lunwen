@@ -1,0 +1,50 @@
+% !TEX program = xelatex
+\documentclass[a4paper,12pt]{ctexart}
+
+% 页面设置 — 遵循旧 Word 格式
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=1.8cm,right=1.8cm]{geometry}
+
+% 必要宏包
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[numbers,sort&compress]{natbib}
+
+% 图表路径
+\graphicspath{{figures/}}
+
+% 超链接设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% 标题
+\title{时空深度学习模型在玉米—大豆分类中的空间泛化能力分析}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_data}
+\input{sections/03_methods}
+\input{sections/04_results}
+\input{sections/05_discussion}
+\input{sections/06_conclusion}
+
+\bibliographystyle{unsrtnat}
+\bibliography{bibliography/references}
+
+\end{document}

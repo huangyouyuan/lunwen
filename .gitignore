@@ -1,0 +1,47 @@
+# LaTeX 临时文件
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# 编辑器
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 大型文件（默认不纳入版本控制）
+*.tif
+*.tiff
+*.checkpoint
+*.pth
+*.pt
+*.h5
+*.hdf5
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 编译产物
+main.pdf
+main.xdv
+
+# 输出目录（按需取消注释）
+# output/
