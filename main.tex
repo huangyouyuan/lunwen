@@ -1,10 +1,47 @@
 % !TEX program = xelatex
-\documentclass[a4paper,12pt]{ctexart}
+% 测绘通报 期刊格式
+\documentclass[a4paper, zihao=5]{ctexart}
 
-% 页面设置 — 遵循旧 Word 格式
-\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=1.8cm,right=1.8cm]{geometry}
+% ---- 页面设置 ----
+\usepackage[a4paper, top=2.00cm, bottom=2.00cm, left=1.80cm, right=1.80cm]{geometry}
 
-% 必要宏包
+% ---- 去掉页眉页脚和页码 ----
+\pagestyle{empty}
+
+% ---- 双栏 ----
+\usepackage{multicol}
+\setlength{\columnsep}{0.75cm}
+
+% ---- 字体 ----
+\setCJKmainfont{SimSun}
+\setmainfont{Times New Roman}
+
+% ---- 标题样式（测绘通报模板） ----
+\ctexset{
+    section = {
+        format = {\heiti \zihao{-4}},
+        aftername = {\hspace{0.5em}},
+        beforeskip = {1ex plus 0.2ex minus 0.2ex},
+        afterskip = {0.5ex plus 0.1ex}
+    },
+    subsection = {
+        format = {\songti \bfseries \zihao{5}},
+        aftername = {\hspace{0.5em}},
+        beforeskip = {0.8ex plus 0.2ex minus 0.1ex},
+        afterskip = {0.3ex plus 0.1ex}
+    },
+    subsubsection = {
+        format = {\kaishu \zihao{5}},
+        aftername = {\hspace{0.5em}},
+        beforeskip = {0.5ex plus 0.1ex},
+        afterskip = {0.2ex plus 0.1ex}
+    }
+}
+
+% ---- 正文默认：宋体五号，首行缩进 2 字符 ----
+\setlength{\parindent}{2em}
+
+% ---- 宏包 ----
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -15,36 +52,136 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{float}
+\usepackage{caption}
 \usepackage[numbers,sort&compress]{natbib}
 
-% 图表路径
+% ---- 图表路径 ----
 \graphicspath{{figures/}}
 
-% 超链接设置
+% ---- 超链接 ----
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
-    urlcolor=blue
+    urlcolor=black
 }
 
-% 标题
-\title{时空深度学习模型在玉米—大豆分类中的空间泛化能力分析}
-\author{}
-\date{}
+% ---- 图表标题格式 ----
+\captionsetup[table]{
+    font={small},
+    labelfont={bf},
+    labelsep=space,
+    justification=centering,
+    position=top
+}
+\captionsetup[figure]{
+    font={small},
+    labelsep=space,
+    justification=centering,
+    position=bottom
+}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{图}
 
+% ---- 参考文献标题：不让 \bibliography 自动生成标题 ----
+\renewcommand{\refname}{}
+
+% ================================================================
 \begin{document}
 
-\maketitle
+% ---- 标题页（单栏） ----
+\begingroup
+\newgeometry{top=2.54cm, bottom=2.54cm, left=3.17cm, right=3.17cm}
+
+{
+\centering
+
+% 中文标题：宋体加粗 二号
+{\songti \bfseries \zihao{2} 时空深度学习模型在玉米—大豆分类中的空间泛化能力分析\par}
+
+\vspace{1em}
+
+% 作者：仿宋 小三号
+{\fangsong \zihao{-3} 黄游缘\textsuperscript{1}，林\hspace{0.5em}娜\textsuperscript{1}，范\hspace{0.5em}莉\textsuperscript{2}\par}
+
+\vspace{0.5em}
+
+% 单位：楷体
+{\kaishu \zihao{-5}%
+（1.~重庆交通大学 智慧城市学院，重庆~400074；
+2.~中国气象局气候资源经济转化重点开放实验室 重庆市气象服务中心，重庆~401147）\par}
+
+\vspace{1em}
+}
+
+% 摘要：黑体 小五号
+{\heiti \zihao{-5}
+\noindent 摘要：[目的]\textbf{待补}。[方法]\textbf{待补}。[结果]\textbf{待补}。[结论]\textbf{待补}。\par}
+
+\vspace{0.3em}
+
+% 关键词
+{\zihao{-5}
+\noindent {\heiti 关键词：}{\songti 多时相遥感影像；时空深度学习；空间泛化；农作物识别}\par}
+
+\vspace{0.3em}
+
+% 中图分类号
+{\zihao{-5} \songti
+\noindent 【中图分类号】P237\hspace{2em}【文献标志码】A\hspace{2em}【文章编号】1009-2307（20\hspace{0.5em}）0\hspace{0.3em}-\par}
+
+\vspace{1.5em}
+
+% 英文标题：Times New Roman 小三号，居中
+{\centering \rmfamily \zihao{-3} Spatiotemporal Deep Learning for Remote Sensing Identification of Corn and Soybean with Spatial Generalization\par}
+
+\vspace{0.5em}
+
+% 英文作者：小四号，居中
+{\centering \rmfamily \zihao{-4} HUANG Youyuan\textsuperscript{1}, LIN Na\textsuperscript{1}, FAN Li\textsuperscript{2}\par}
+
+\vspace{0.3em}
+
+% 英文单位：小五号
+{\rmfamily \zihao{-5}
+(1.~School of Smart City, Chongqing Jiaotong University, Chongqing 400074, China;\par
+\noindent 2.~China Meteorological Administration Key Open Laboratory of Transforming Climate Resources to Economy, Chongqing Meteorological Service Center, Chongqing 401147, China)\par}
+
+\vspace{0.5em}
+
+% Abstract
+{\rmfamily \zihao{-5}
+\noindent Abstract: [Purposes] \textbf{TBD}. [Methods] \textbf{TBD}. [Findings] \textbf{TBD}.\par}
+
+\vspace{0.3em}
+
+% Keywords
+{\rmfamily \zihao{-5}
+\noindent Key words: multi-temporal remote sensing imagery; spatiotemporal deep learning; spatial generalization; crop identification\par}
+
+\restoregeometry
+\endgroup
+
+\vspace{1em}
+
+% ---- 正文（双栏） ----
+\begin{multicols}{2}
 
 \input{sections/01_introduction}
 \input{sections/02_data}
 \input{sections/03_methods}
 \input{sections/04_results}
-\input{sections/05_discussion}
 \input{sections/06_conclusion}
 
+% ---- 参考文献 ----
+\vspace{1em}
+{\noindent \heiti \zihao{-4} 参考文献：\par}
+\vspace{0.3em}
+{\zihao{-5}
 \bibliographystyle{unsrtnat}
 \bibliography{bibliography/references}
+}
+
+\end{multicols}
 
 \end{document}
