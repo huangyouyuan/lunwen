@@ -75,13 +75,6 @@
 - **cross-site performance**：源站点模型在目标站点的分类结果
 - **generalization degradation**：ΔmIoU = within-site mIoU − cross-site mIoU
 
-## 边界距离分析
-
-- **边界定义**：形态学膨胀与腐蚀操作，基于真实标签地物边界
-- **缓冲区宽度**：2 像素
-- **区域划分**：边界混合像元 vs 内部纯净像元
-- **分析内容**：两类区域分别计算 mIoU，以及边界错误占总错误的比例
-
 ## 待确认
 
 - 早停具体策略（patience 值）

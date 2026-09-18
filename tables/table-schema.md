@@ -53,19 +53,3 @@
 **Status**：旧稿已有（Table 11, 15×10），需数据验证
 
 ---
-
-## 表 4 边界/内部分类精度与误差分布
-
-**Purpose**：揭示分类误差在边界区域的集中分布。
-
-**Source**：results/summary/ — 待建立
-
-**Columns**：迁移路径 | 3D U-Net(边界mIoU/内部mIoU/边界错误占比) | U-TAE(...) | ConvGRU(...)
-
-**行结构**：12 条迁移路径 + 平均
-
-**Primary metric**：边界 mIoU vs 内部 mIoU
-
-**Derived fields**：边界错误占比 = 边界错分像素 / 总错分像素
-
-**Status**：旧稿已有（Table 12, 15×10），需数据验证
