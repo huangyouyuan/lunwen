@@ -1,0 +1,57 @@
+
+### model_summary ###
+model,cross_crop_miou_mean_mean,cross_crop_miou_mean_std,cross_crop_miou_mean_min,cross_crop_miou_mean_max,generalization_loss_crop_miou_pp_mean,generalization_loss_crop_miou_pp_std,generalization_loss_crop_miou_pp_min,generalization_loss_crop_miou_pp_max
+convgru,0.7895,0.0361,0.7309,0.8483,4.6797,2.7864,0.9563,9.9415
+unet3d,0.8176,0.0283,0.7728,0.8612,6.533,1.3395,4.6384,9.9128
+utae,0.82,0.0262,0.7807,0.8568,6.7911,1.3583,4.3362,8.8911
+
+### source_summary ###
+model,source_display,cross_crop_miou_mean,generalization_loss_crop_miou_pp
+convgru,IDA,0.7979,4.0336
+convgru,IL,0.8011,3.7212
+convgru,IW,0.7858,4.3374
+convgru,IW2,0.7733,6.6266
+unet3d,IDA,0.8312,6.0607
+unet3d,IL,0.8011,7.7492
+unet3d,IW,0.8119,6.2792
+unet3d,IW2,0.8261,6.0429
+utae,IDA,0.8261,7.2013
+utae,IL,0.8168,6.9697
+utae,IW,0.8234,5.2381
+utae,IW2,0.8135,7.7552
+
+### target_summary ###
+model,target_display,cross_crop_miou_mean,generalization_loss_crop_miou_pp
+convgru,IDA,0.7654,6.5256
+convgru,IL,0.7781,5.2252
+convgru,IW,0.8348,2.3059
+convgru,IW2,0.7798,4.6621
+unet3d,IDA,0.7869,6.9171
+unet3d,IL,0.8298,6.6082
+unet3d,IW,0.8505,5.7093
+unet3d,IW2,0.803,6.8974
+utae,IDA,0.786,7.1097
+utae,IL,0.8269,6.4988
+utae,IW,0.8482,7.5993
+utae,IW2,0.8188,5.9565
+
+### asymmetry ###
+model,path,forward,backward,asymmetry
+convgru,IDA<->IL,0.8128,0.786,0.0267
+convgru,IDA<->IW2,0.7588,0.7408,0.018
+convgru,IDA<->IW,0.822,0.7693,0.0528
+convgru,IL<->IW2,0.7831,0.7309,0.0522
+convgru,IL<->IW,0.8341,0.7906,0.0435
+convgru,IW<->IW2,0.7974,0.8483,0.0509
+unet3d,IDA<->IL,0.8322,0.7896,0.0426
+unet3d,IDA<->IW2,0.8119,0.788,0.0238
+unet3d,IDA<->IW,0.8496,0.7831,0.0664
+unet3d,IL<->IW2,0.7728,0.8291,0.0562
+unet3d,IL<->IW,0.8407,0.8282,0.0125
+unet3d,IW<->IW2,0.8243,0.8612,0.0369
+utae,IDA<->IL,0.8321,0.7877,0.0444
+utae,IDA<->IW2,0.8061,0.7807,0.0254
+utae,IDA<->IW,0.8401,0.7896,0.0505
+utae,IL<->IW2,0.8152,0.803,0.0122
+utae,IL<->IW,0.8476,0.8456,0.0019
+utae,IW<->IW2,0.835,0.8568,0.0218
