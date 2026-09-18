@@ -1,0 +1,7 @@
+Model,Crop,Cross F1 (mean±std),"Degradation (pp, mean±std)"
+ConvGRU,Corn,0.8873±0.0203,2.79±1.55
+ConvGRU,Soybean,0.8764±0.0263,-3.25±5.35
+3D U-Net,Corn,0.9018±0.0179,3.93±0.96
+3D U-Net,Soybean,0.8969±0.0177,-0.36±3.23
+U-TAE,Corn,0.9039±0.0171,3.97±0.92
+U-TAE,Soybean,0.8977±0.0160,0.04±2.19

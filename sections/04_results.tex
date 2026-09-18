@@ -4,35 +4,66 @@
 
 \subsection{站内分类性能与稳定性}
 
-% 待补：三模型站内 OOF 基准，mean ± std
+% 数据来源：tables/table1_within_site_baseline.csv
+% 重点：
+% - 玉米和大豆的站内 OOF pooled F1（三模型×四站点）
+% - OA 作为整体辅助指标
+% - 五折 mean ± std 说明训练稳定性
+% - 回答：三个模型站内测试水平，玉米/大豆难度差异
+% - 关键观察：U-TAE ≈ 3D U-Net > ConvGRU，玉米 F1 普遍高于大豆
 
-\subsection{跨站点空间泛化性能与退化}
+\subsection{跨站分类性能与泛化退化}
 
-% 待补：
-% - 三模型跨站性能
-% - 泛化退化
-% - 不同迁移路径差异
-% - 方向不对称性（如有）
+\subsubsection{跨站玉米、大豆分类性能}
 
-\subsubsection{不同模型的跨站点泛化性能}
+% 数据来源：
+% - results/summary/cross_site_crop_f1_summary.csv（36条路径 mean±std）
+% - tables/table2_cross_site_summary.csv（按模型汇总）
+% 重点：
+% - 分别报告玉米跨站 F1 和大豆跨站 F1
+% - 每条路径 5 个源站 checkpoint 的 mean ± std
+% - 三模型在玉米和大豆上的表现差异
+% - 关键发现：ConvGRU 大豆出现负泛化退化（跨站 > 站内 3.25 pp）
 
-% 待补：Crop-mIoU 跨站比较
-% Friedman/Wilcoxon/Holm 模型显著性检验
+\subsubsection{模型泛化退化及稳定性}
 
-\subsubsection{不同迁移路径的泛化退化}
+% 数据来源：results/summary/crop_f1_degradation_36paths.csv
+% 公式：
+% ΔF1_corn = 100 × (F1_corn^OOF - mean(F1_corn^cross))
+% ΔF1_soybean = 100 × (F1_soybean^OOF - mean(F1_soybean^cross))
+% 重点：
+% - 哪个模型玉米下降较少？哪个模型大豆下降较少？
+% - Checkpoint 间标准差（稳定性）
+% - "下降较小"是否因站内基准较低？
+% - 关键：大豆泛化方差（5.35 pp）远大于玉米（1.55 pp）
 
-% 待补：各迁移路径退化程度
-% 留一站点稳定性
+\subsubsection{模型显著性检验}
+
+% 数据来源：tables/table3_significance_tests.csv
+% 方法：Friedman + Wilcoxon配对 + Holm校正
+% 分别对玉米和大豆进行
+% 结论：两类作物上 ConvGRU 均显著弱于 3D U-Net 和 U-TAE
+%       3D U-Net 与 U-TAE 无显著差异
 
 \subsection{跨站泛化差异的空间解释}
 
-% 待补：回答"为什么会不同"
-
 \subsubsection{源—目标区域组合差异}
 
-% 待补：不同源站-目标站组合的表现差异
+% 使用 6 幅退化热力图（暂缓制作）：
+% - 2 行：玉米、大豆
+% - 3 列：ConvGRU、3D U-Net、U-TAE
+% - 单元格：对应作物的 F1 泛化下降（pp）
+% - 对角线留空
+% - 比较 A→B 与 B→A 的方向差异
+% 重点：哪些迁移路径困难？困难路径是否因作物类别而不同？
+% 关键发现：D→B 路径在两类作物上均困难
 
-\subsubsection{空间特征与泛化退化的关系}
+\subsubsection{空间特征与作物泛化退化}
 
-% 待补：地物占比、ED、AREA_MN、AI 等景观指标与泛化退化的关系
-% Patch 局部空间特征与 ΔER_p
+% 数据来源：待补充（需要站点景观特征与泛化退化关联分析）
+% 分别研究：
+% - 玉米占比、AREA_MN、AI、ED 与玉米 F1 下降
+% - 大豆占比、AREA_MN、AI、ED 与大豆 F1 下降
+% - 其他地类占比作为背景变量
+% 分析方法：按空间特征分组汇总混淆矩阵，再计算类别 F1
+% 回答：为什么大豆泛化方差远大于玉米？为什么 D→B 困难？

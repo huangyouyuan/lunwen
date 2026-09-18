@@ -63,7 +63,7 @@ bars = ax.bar(x_pos, means, yerr=stds, capsize=5,
               color=['#3B6DFF', '#6EE7B7', '#E9A568'],
               edgecolor='black', linewidth=0.8)
 
-ax.set_ylabel('Cross-site Crop-mIoU', fontsize=11)
+ax.set_ylabel('跨站点 Crop-mIoU', fontsize=11)
 ax.set_xticks(x_pos)
 ax.set_xticklabels([model_display[m] for m in models], fontsize=10)
 ax.set_ylim(0.75, 0.85)
@@ -95,7 +95,7 @@ for patch, color in zip(bp['boxes'], colors):
     patch.set_facecolor(color)
     patch.set_alpha(0.7)
 
-ax.set_ylabel('Transfer Asymmetry (Crop-mIoU difference)', fontsize=11)
+ax.set_ylabel('迁移不对称性 (Crop-mIoU 差值)', fontsize=11)
 ax.grid(axis='y', alpha=0.3, linestyle='--')
 
 plt.tight_layout()
@@ -115,8 +115,8 @@ for model, color in zip(models, colors):
 # 对角线
 ax.plot([0.70, 0.87], [0.70, 0.87], 'k--', linewidth=1, alpha=0.5)
 
-ax.set_xlabel('Forward Direction Crop-mIoU', fontsize=11)
-ax.set_ylabel('Backward Direction Crop-mIoU', fontsize=11)
+ax.set_xlabel('正向迁移 Crop-mIoU', fontsize=11)
+ax.set_ylabel('反向迁移 Crop-mIoU', fontsize=11)
 ax.set_xlim(0.70, 0.87)
 ax.set_ylim(0.70, 0.87)
 ax.set_aspect('equal')

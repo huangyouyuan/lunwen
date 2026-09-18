@@ -18,18 +18,18 @@ plt.rcParams['figure.dpi'] = 300
 # 读取原始 36 路径数据
 df = pd.read_csv('results/summary/generalization_degradation_36paths.csv')
 
-# 站点映射
+# 站点映射：数据集ID → 论文代号ABCD
 site_map = {
-    'ida_2023': 'IDA',
-    'il_2023': 'IL',
-    'iw2_2023': 'IW2',
-    'iw_2023': 'IW'
+    'iw_2023': 'A',
+    'iw2_2023': 'B',
+    'ida_2023': 'C',
+    'il_2023': 'D'
 }
 df['source_display'] = df['source'].map(site_map)
 df['target_display'] = df['target'].map(site_map)
 
 # 站点顺序
-site_order = ['IDA', 'IL', 'IW2', 'IW']
+site_order = ['A', 'B', 'C', 'D']
 
 # 创建 3 个子图
 fig, axes = plt.subplots(1, 3, figsize=(18, 5))
@@ -65,12 +65,13 @@ for ax, (model_key, model_name) in zip(axes, models):
         cbar_kws={'label': 'Crop-mIoU'},
         ax=ax,
         square=True,
-        linewidths=0.5
+        linewidths=0.5,
+        cbar=(ax == axes[-1])  # 只在最后一个子图显示色标
     )
 
     ax.set_title(f'{model_name}', fontsize=14, fontweight='bold')
-    ax.set_xlabel('Target Site', fontsize=12)
-    ax.set_ylabel('Source Site', fontsize=12)
+    ax.set_xlabel('目标站', fontsize=12)
+    ax.set_ylabel('源站', fontsize=12)
     ax.tick_params(labelsize=11)
 
 plt.tight_layout()
@@ -78,8 +79,11 @@ plt.savefig('figures/results/fig_transfer_heatmaps.png', dpi=300, bbox_inches='t
 print("Generated: figures/results/fig_transfer_heatmaps.png")
 plt.close()
 
-# 生成泛化退化热力图
+# 生成泛化退化热力图（对角线留空）
 fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# 统一色标范围：0-10 pp
+vmin, vmax = 0, 10
 
 for ax, (model_key, model_name) in zip(axes, models):
     model_df = df[df['model'] == model_key].copy()
@@ -92,22 +96,27 @@ for ax, (model_key, model_name) in zip(axes, models):
 
     matrix = matrix.reindex(index=site_order, columns=site_order)
 
+    # 对角线设为 NaN（留空）
+    for i in range(len(site_order)):
+        matrix.iloc[i, i] = np.nan
+
     sns.heatmap(
         matrix,
         annot=True,
         fmt='.2f',
         cmap='YlOrRd',
-        vmin=0,
-        vmax=15,
-        cbar_kws={'label': 'Degradation (pp)'},
+        vmin=vmin,
+        vmax=vmax,
+        cbar_kws={'label': '泛化退化 (pp)'},
         ax=ax,
         square=True,
-        linewidths=0.5
+        linewidths=0.5,
+        cbar=(ax == axes[-1])  # 只在最后一个子图显示色标
     )
 
     ax.set_title(f'{model_name}', fontsize=14, fontweight='bold')
-    ax.set_xlabel('Target Site', fontsize=12)
-    ax.set_ylabel('Source Site', fontsize=12)
+    ax.set_xlabel('目标站', fontsize=12)
+    ax.set_ylabel('源站', fontsize=12)
     ax.tick_params(labelsize=11)
 
 plt.tight_layout()
