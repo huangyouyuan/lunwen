@@ -1,0 +1,8 @@
+﻿record_type,status,model,n_paths,mean_cross_crop_miou,std_cross_crop_miou,median_cross_crop_miou,alpha,n_models,statistic,pvalue_raw,kendalls_w,significant,pairing_unit,independence_note,model_a,model_b,mean_difference,median_difference,win_count,loss_count,tie_count,alternative,pvalue_holm,significant_holm
+model_summary,ok,utae,12,0.8199637939259575,0.026211578644033957,0.8236652806204949,0.05,,,,,,,,,,,,,,,,,
+model_summary,ok,unet3d,12,0.8175509056089173,0.02834394686624961,0.8262270868960357,0.05,,,,,,,,,,,,,,,,,
+model_summary,ok,convgru,12,0.7895137949252863,0.0360767691081815,0.7883035319468237,0.05,,,,,,,,,,,,,,,,,
+friedman,ok,,12,,,,0.05,3.0,15.166666666666657,0.0005088621855732938,0.6319444444444441,True,directed_source_target_path,12条有向路径共享站点，不应解释为完全独立区域样本,,,,,,,,,,
+pairwise_wilcoxon,ok,,12,,,,0.05,,36.0,0.85009765625,,,directed_source_target_path,,utae,unet3d,0.0024128883170402016,-0.0009849591392049883,5.0,7.0,0.0,two-sided,0.85009765625,False
+pairwise_wilcoxon,ok,,12,,,,0.05,,0.0,0.00048828125,,,directed_source_target_path,,utae,convgru,0.030449999000671423,0.026212520508707093,12.0,0.0,0.0,two-sided,0.00146484375,True
+pairwise_wilcoxon,ok,,12,,,,0.05,,3.0,0.00244140625,,,directed_source_target_path,,unet3d,convgru,0.02803711068363122,0.023130964697672896,11.0,1.0,0.0,two-sided,0.0048828125,True

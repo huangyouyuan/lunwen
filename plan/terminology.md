@@ -2,12 +2,23 @@
 
 统一全文用语，避免同一概念出现多种表述。
 
+## 站点 ID 映射
+
+| 论文代号 | 数据集 ID | 州 |
+|----------|-----------|-----|
+| A | iw_2023 | — |
+| B | iw2_2023 | — |
+| C | ida_2023 | — |
+| D | il_2023 | — |
+
+论文正文使用 A/B/C/D，代码和数据目录使用 iw2/iw/ida/il。
+
 ## 模型名称
 
 | 规范写法 | 禁止写法 | 说明 |
 |----------|----------|------|
 | U-TAE | UTAE, U_TAE | 保持连字符 |
-| 3D U-Net | 3D-UNet, 3DUNet | 旧稿中偶见"3D Unet"，统一为"3D U-Net" |
+| 3D U-Net | 3D-UNet, 3DUNet, 3D Unet | 统一大小写 |
 | ConvGRU | Conv-GRU, CGRU | 不拆分 |
 | L-TAE | LTAE | Lightweight Temporal Attention Encoder |
 
@@ -30,9 +41,9 @@
 | 迁移路径 | transfer path | 从源站点到目标站点的方向，记为 X→Y |
 | 源站点 / 基准站点 | source site | 模型训练所在站点 |
 | 目标站点 | target site | 模型直接应用的站点 |
-| 边界像元 | boundary pixels | 地物斑块边界的像元 |
-| 内部纯净像元 | interior pure pixels | 远离边界的像元 |
-| 5 折交叉验证 | 5-fold cross-validation | — |
+| OOF | Out-of-Fold | 5 折交叉验证的汇总预测 |
+| 距离带 | distance band | 按像素到边界距离划分的区域 |
+| 5 折交叉验证 | 5-fold cross-validation | 3 训练 + 1 验证 + 1 测试 |
 
 ## 数据术语
 
@@ -43,25 +54,27 @@
 | CDL | Cropland Data Layer | 全文首次出现需全称 |
 | 时间步 | time step | 时间序列中的单个观测 |
 | 生育阶段 | growth stage / phenological stage | — |
+| 图块 | patch | 128×128 像素的样本单元 |
 
 ## 分类类别
 
-| 中文 | 英文 |
-|------|------|
-| 玉米 | Corn |
-| 大豆 | Soybean |
-| 其它 | Others |
+| 中文 | 英文 | 模型标签值 | CDL 源标签值 |
+|------|------|-----------|-------------|
+| 玉米 | Corn | 0 | 1 |
+| 其它 | Others | 1 | 2 |
+| 大豆 | Soybean | 2 | 3 |
 
 ## 指标
 
 | 缩写 | 全称 | 中文 |
 |------|------|------|
-| mIoU | mean Intersection over Union | 平均交并比 |
+| mIoU | mean Intersection over Union | 平均交并比（三类） |
 | UA | User's Accuracy | 用户精度 |
 | PA | Producer's Accuracy | 制图精度 |
 | F1 | F1-score | F1 分数 |
 | OA | Overall Accuracy | 总体精度 |
 | Kappa | Kappa coefficient | Kappa 系数 |
+| ER | Error Rate | 误差率（1 − OA） |
 
 ## 景观指标
 
