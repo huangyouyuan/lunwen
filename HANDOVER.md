@@ -20,15 +20,14 @@
 
 **数据**：
 - HLS（Harmonized Landsat Sentinel-2）30 m 多时相遥感
-- 4 个站点（B/C/D/M）× 玉米、大豆、其他地类
-- 生长季约 15 d 时间窗口
+- 4 个站点（A/B/C/D；A=iw，B=iw2，C=ida，D=il）× 玉米、大豆、其他地类
+- 2023 年生长季 DOY 116–266，5 天间隔 31 个时间步
 
 **实验设计**：
 1. **站内基准**：各站点 5-fold cross-validation（OOF pooled 混淆矩阵）
 2. **跨站泛化**：12 条迁移路径（源站 → 目标站，排除自身），每条 5 个 checkpoint
 3. **泛化退化**：ΔF1 = F1_站内 - F1_跨站
 4. **显著性检验**：Friedman + Wilcoxon 配对 + Holm 校正（12 条路径为配对单位）
-5. **边界距离分析**：分类精度随距真实地块边界距离的变化
 
 **主要指标**：
 - **主指标**：玉米 F1、大豆 F1（分别报告）
@@ -39,22 +38,20 @@
 
 ## 二、代码体系历史变化
 
-### 阶段 1：初始实验（2023-2024）
+### 阶段 1：原始实验输出（数据年份 2023，实验运行 2026-09）
 
 **原始结果目录**：
-- `legacy/experiment-results/`
-- 站内：`convgruidaresults/summary/metrics_summary.csv`
-- 跨站：`cross_site_all_20260916/*/metrics_summary.csv`
+- 站内：`D:/20{site}/2023…results/summary/metrics_summary.csv`（Windows 本地，未入库）
+- 跨站：`legacy/experiment-results/cross_site_all_20260916/*/metrics_summary.csv`（git 排除）
 
 **混淆矩阵格式**：
-- 列名：`cm_gt_X_pred_Y`（X, Y ∈ {corn, soybean, other}）
-- 站内：5-fold OOF 汇总混淆矩阵（单值）
-- 跨站：每个 fold 单独混淆矩阵（5 行）
+- 列名：`cm_gt_X_pred_Y`（X, Y ∈ {corn, other, soybean}）
+- 站内：5 行 `fold` + 1 行 `oof_pooled`
+- 跨站：5 行 `fold`（每个 checkpoint 一行）
 
 **问题**：
-- 混淆矩阵未统一类别顺序
+- 站内、跨站导出脚本曾采用不同类别顺序
 - 缺少标准化的 F1 计算流程
-- 手工制作表格易出错
 
 ---
 
@@ -103,15 +100,10 @@ D:/20{site}/2023{site}{model}results/summary/metrics_summary.csv   # iw/iw2 站�
 **输入**：
 ```
 legacy/experiment-results/cross_site_all_20260916/
-├── convgru_B/
-├── convgru_C/
-...
-└── utae_M/
-    ├── B/metrics_summary.csv
-    ├── C/metrics_summary.csv
-    ├── D/metrics_summary.csv
-    └── M/metrics_summary.csv
+└── {model}__{source}_2023__{digest}/
+    └── {target}_2023/metrics_summary.csv     # 5 行 fold + cv_mean + cv_std
 ```
+36 个 (model, source, target) 组合，各 5 行 fold。
 
 **输出**：
 - `results/raw/cross_site_confusion_matrices.csv`（36 条路径 × 5 fold = 180 行原始 CM）
@@ -120,7 +112,7 @@ legacy/experiment-results/cross_site_all_20260916/
 
 **关键修正**（2026-09-18）：
 - 类别映射从 `corn=0, soybean=1, other=2` 改为 `corn=0, other=1, soybean=2`
-- 修正前导致表2大豆列实际对应 other（错误标记为"大豆增长 −3.25 pp"）
+- 修正前"大豆"列实为其它类，产生虚假的负退化；修正后 72 个退化值全为正
 
 #### 2.4 泛化退化计算
 
@@ -164,33 +156,18 @@ U-TAE (...)            ...
 
 #### 表2：跨站分类性能汇总
 
-**布局**：
-```
-模型        玉米跨站F1 (mean±std)  大豆跨站F1 (mean±std)
-ConvGRU     xx.xx ± x.xx           xx.xx ± x.xx
-3D U-Net    xx.xx ± x.xx           xx.xx ± x.xx
-U-TAE       xx.xx ± x.xx           xx.xx ± x.xx
-```
-
-**数据来源**：36 条路径各自的 5-fold 平均
+**布局**：模型 × 作物 6 行；列为跨站 F1 mean±std（该模型 12 条路径的路径均值统计）、ΔF1 mean±std（pp）。
 
 #### 表3：显著性检验
 
-**方法修正**（2026-09-18）：
+**检验对象**：跨站玉米 F1、跨站大豆 F1（不是 ΔF1），分别检验。
 
-**修正前**：
-- 错误地将"36 条路径 × 5 个 checkpoint = 180 个样本"送入 Friedman
-- 违反配对检验前提（同一路径的 5 次结果不独立）
+**配对单位**：12 条有向迁移路径，每条取 5 个 checkpoint 的均值 → `data_matrix.shape == (12, 3)`。
 
-**修正后**：
-1. 先对每条路径的 5 次结果求均值 → 12 个路径均值
-2. 用 12 个配对样本进行 Friedman 检验
-3. Wilcoxon 配对检验 + Holm 校正
-
-**检验对象**：
-- 玉米退化：12 条路径的玉米 ΔF1
-- 大豆退化：12 条路径的大豆 ΔF1
-- 分别检验
+**修正记录**（2026-09-18）：
+- 修正前把 12 路径 × 5 checkpoint 当成 60 个配对样本；同一路径的 5 次结果来自同一训练过程的不同折，不构成独立配对
+- Holm 由"逐个比阈值"改为标准 step-down：p 升序，校正 p = (m−k)·p 取累积最大，首次不显著后其余不再拒绝；表中报告 p_holm
+- 12 条路径共享 4 个站点，作为配对单位可用，但不解释为完全独立的区域样本
 
 ---
 
@@ -257,9 +234,9 @@ for i, name in enumerate(class_names):
 
 - ✅ 站内 OA 计算错误（全矩阵和 → 对角线和）
 - ✅ 跨站类别顺序不一致（已统一为 corn/other/soybean）
-- ✅ 显著性检验样本数错误（180 → 12）
-- ✅ 方法章节主指标过时（Crop-mIoU → 分别报告玉米/大豆F1）
-- ✅ Results 章节过时注释（"大豆负退化"）
+- ✅ 显著性检验配对单位错误（60 → 12）；Holm 改为标准 step-down
+- ✅ 方法章节主指标过时（Crop-mIoU → 分别报告玉米/大豆 F1）
+- ✅ 结果章节、results-map、claims 中基于错误类别的结论已清除；`crop_f1_analysis_summary.md` 已删除
 
 ### 待补充
 
@@ -305,24 +282,24 @@ python scripts/generate_core_tables.py
 ### 为什么分别报告玉米和大豆F1？
 
 **原因**：
-1. 玉米和大豆泛化退化幅度差异大（大豆方差 5.35 pp > 玉米 1.55 pp）
-2. 单一全局指标（mIoU/Crop-mIoU）掩盖类别间差异
-3. 作物制图实际应用关心各作物精度，不只是平均值
+1. 论文的分类对象是玉米和大豆，制图应用关心各作物精度而非平均值
+2. 单一合成指标（mIoU / Crop-mIoU）掩盖类别间差异，且会把"其它"类混入
+3. 类别顺序事故表明：只有分类别报告才能在数据层面暴露错误
 
 ### 为什么不使用 mIoU？
 
 **原因**：
-1. mIoU 包含"其他地类"，但本研究关注玉米/大豆
-2. "其他地类"在各站点定义不一致（水体、建筑、林地混合）
-3. F1 更符合二分类评价习惯（农业遥感领域）
+1. mIoU 包含"其它"类，而本研究不关注其它类的识别
+2. "其它"在各站点的地类构成不一致
+3. F1 更符合作物识别的评价习惯
 
-### 为什么显著性检验用 12 个样本而非 180 个？
+### 为什么显著性检验用 12 个配对样本而非 60 个？
 
 **原因**：
-1. 12 条迁移路径是独立的空间泛化场景
-2. 每条路径的 5 个 checkpoint 来自同一训练过程，不独立
-3. 配对检验要求"配对单位"独立（路径独立，checkpoint 不独立）
-4. 先求均值消除 checkpoint 随机性，再比较路径间差异
+1. 检验对象是模型在一条迁移路径上的跨站 F1；路径是设计单元
+2. 同一路径的 5 个 checkpoint 来自同一站点的 5 个训练折，是重复测量而非新的路径
+3. 先对 5 次求均值消除 checkpoint 随机性，再以 12 条路径配对比较模型
+4. 12 条路径共享 4 个站点，并非完全独立的区域样本；结论限定在本文四站范围内
 
 ### 为什么类别顺序统一为 corn/other/soybean？
 
@@ -332,32 +309,29 @@ python scripts/generate_core_tables.py
 
 **科学原因**：
 - 类别顺序本身不影响模型性能
-- 但不一致的顺序会导致后处理指标错误（如本次"大豆负退化"事件）
+- 但不一致的顺序会导致后处理指标错误（本次事故：大豆列实为其它类）
 
 ---
 
 ## 七、后续工作建议
 
-### 短期（Results 完成前）
+### 短期（第 3 章正文）
 
-1. 补充站内五折稳定性数据
-2. 重新执行所有脚本验证数据一致性
-3. 填充 Results 各小节正文
-4. 编译 LaTeX 检查表格格式
+1. 写 3.1、3.2 正文（表1、1b、2、3 已就绪）
+2. 定位 3.3.2 的站点级景观指标与 Patch 级四张表
+3. 重编译 main.tex，更新 verification-report
 
-### 中期（Discussion 阶段）
+### 中期
 
-1. 建立 evidence-map（引言/Discussion 文献支持）
-2. 分析空间景观特征与泛化退化的关联
-3. 绘制跨站泛化退化热力图（6 幅：2 作物 × 3 模型）
-4. 补充边界距离分析结果
+1. 重写 2.1 三模型描述
+2. 引言 evidence-map 与 blueprint
+3. 3.3.2 空间特征与退化关联分析（按特征分组汇总 CM）
 
 ### 长期（投稿阶段）
 
-1. LaTeX → Word 格式转换
-2. 按测绘通报模板调整最终格式
-3. 补充中英文摘要
-4. 全文一致性检查（术语、引用、图表编号）
+1. 内容冻结后 LaTeX → Word
+2. 中英文摘要
+3. 全文一致性检查（术语、引用、图表编号）
 
 ---
 
@@ -365,23 +339,25 @@ python scripts/generate_core_tables.py
 
 ### 数据问题
 
-- **站内原始数据**：`/mnt/d/20ida/2023convgruidaresults/summary/metrics_summary.csv`
+- **站内原始数据**：`D:/20{ida,il,iw,iw2}/2023…results/summary/metrics_summary.csv`
 - **跨站原始数据**：`legacy/experiment-results/cross_site_all_20260916/`
+- **系统文档**：状态看 `plan/progress.md`，结论看 `plan/claims.md`，验证看 `verification/verification-report.md`——本文件只是入口，不重复维护数字
 - **类别映射错误**：检查 `cm_gt_X_pred_Y` 列是否对应正确的 `cm[i, j]`
 
 ### 脚本问题
 
-- **OA 计算**：必须使用 `cm.diagonal().sum()`，不是 `cm.sum()`
-- **显著性检验**：必须先分组求均值，不能直接用 180 行数据
-- **类别顺序**：全局检查 `class_names = ['corn', 'other', 'soybean']`
+- **OA 计算**：必须使用 `np.trace(cm) / cm.sum()`，不是 `cm.sum()`
+- **显著性检验**：先对每条路径 5 次求均值，`data_matrix.shape` 必须是 `(12, 3)`
+- **Holm**：step-down，首次不显著后停止拒绝
+- **类别顺序**：全局检查 `CLASS_ORDER = ['corn', 'other', 'soybean']`
 
 ### 表格问题
 
-- **表1**：OA 范围检查（89-95%）
-- **表2**：大豆列合理性检查（不应异常）
-- **表3**：样本数检查（12 个路径，不是 180）
+- **表1**：OA 范围 89–95%
+- **表2**：ΔF1 全为正
+- **表3**：n = 12，报告 p_holm
 
 ---
 
-**最后更新**：2026-09-18  
-**更新内容**：类别顺序统一、OA 计算修正、显著性检验方法修正、主指标从 Crop-mIoU 改为玉米/大豆 F1
+**最后更新**：2026-09-18
+**更新内容**：类别顺序统一、OA 修正、Holm step-down、检验对象明确为跨站 F1、清除旧结论文档

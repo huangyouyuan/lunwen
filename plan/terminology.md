@@ -42,7 +42,8 @@
 | 源站点 / 基准站点 | source site | 模型训练所在站点 |
 | 目标站点 | target site | 模型直接应用的站点 |
 | OOF | Out-of-Fold | 5 折交叉验证的汇总预测 |
-| 距离带 | distance band | 按像素到边界距离划分的区域 |
+| OOF 汇总 | oof_pooled | 5 个测试折 CM 逐元素求和后计算的指标；站内基准与退化的口径 |
+| 五折均值 | cv_mean / cv_std | 各测试折指标的算术均值与标准差；只用于说明训练稳定性 |
 | 5 折交叉验证 | 5-fold cross-validation | 3 训练 + 1 验证 + 1 测试 |
 
 ## 数据术语
@@ -66,15 +67,15 @@
 
 ## 指标
 
-| 缩写 | 全称 | 中文 |
-|------|------|------|
-| mIoU | mean Intersection over Union | 平均交并比（三类） |
-| UA | User's Accuracy | 用户精度 |
-| PA | Producer's Accuracy | 制图精度 |
-| F1 | F1-score | F1 分数 |
-| OA | Overall Accuracy | 总体精度 |
-| Kappa | Kappa coefficient | Kappa 系数 |
-| ER | Error Rate | 误差率（1 − OA） |
+| 缩写 | 全称 | 中文 | 地位 |
+|------|------|------|------|
+| F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 |
+| OA | Overall Accuracy | 总体精度 | 辅助 |
+| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 |
+| Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 |
+| mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 |
+| UA / PA | User's / Producer's Accuracy | 用户精度 / 制图精度 | 补充 |
+| Kappa | Kappa coefficient | Kappa 系数 | 补充 |
 
 ## 景观指标
 

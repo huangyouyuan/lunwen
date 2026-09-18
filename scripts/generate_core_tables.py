@@ -108,46 +108,46 @@ def generate_table2_cross_site_performance():
 
     return pd.DataFrame(summary_data)
 
-def friedman_posthoc_holm(data_matrix):
+def friedman_posthoc_holm(data_matrix, alpha=0.05):
     """
-    Friedman检验 + Wilcoxon配对检验 + Holm校正
+    Friedman检验 + Wilcoxon配对检验 + Holm逐步校正
 
     Parameters
     ----------
     data_matrix : array, shape (n_samples, n_models)
-        每行是一个样本（路径），每列是一个模型
+        每行是一个配对样本（迁移路径的五折均值），每列是一个模型
 
     Returns
     -------
-    dict : {'friedman_stat', 'friedman_p', 'posthoc_results'}
+    dict : {'friedman_stat', 'friedman_p', 'posthoc'}
+        posthoc 含 pair、wilcoxon_p、p_holm（校正后 p）、significant
     """
-    # Friedman检验
     stat, p = stats.friedmanchisquare(*data_matrix.T)
 
-    # 配对比较
     n_models = data_matrix.shape[1]
-    model_pairs = [(i, j) for i in range(n_models) for j in range(i+1, n_models)]
+    model_pairs = [(i, j) for i in range(n_models) for j in range(i + 1, n_models)]
 
     posthoc = []
     for i, j in model_pairs:
-        wilcoxon_stat, wilcoxon_p = stats.wilcoxon(data_matrix[:, i], data_matrix[:, j])
-        posthoc.append({
-            'pair': (i, j),
-            'wilcoxon_p': wilcoxon_p
-        })
+        _, wilcoxon_p = stats.wilcoxon(data_matrix[:, i], data_matrix[:, j])
+        posthoc.append({'pair': (i, j), 'wilcoxon_p': wilcoxon_p})
 
-    # Holm校正
-    posthoc_df = pd.DataFrame(posthoc)
-    posthoc_df = posthoc_df.sort_values('wilcoxon_p')
+    posthoc_df = pd.DataFrame(posthoc).sort_values('wilcoxon_p').reset_index(drop=True)
     m = len(posthoc_df)
-    posthoc_df['holm_threshold'] = 0.05 / (m - np.arange(m))
-    posthoc_df['significant'] = posthoc_df['wilcoxon_p'] < posthoc_df['holm_threshold']
 
-    return {
-        'friedman_stat': stat,
-        'friedman_p': p,
-        'posthoc': posthoc_df
-    }
+    # Holm step-down：按 p 升序，第 k 个（0 起）校正 p = (m − k) × p，并对前序取累积最大；
+    # 首次不显著后其余全部不拒绝
+    adjusted = (posthoc_df['wilcoxon_p'] * (m - np.arange(m))).clip(upper=1.0)
+    posthoc_df['p_holm'] = np.maximum.accumulate(adjusted.values)
+
+    significant = []
+    reject = True
+    for p_adj in posthoc_df['p_holm']:
+        reject = reject and (p_adj < alpha)
+        significant.append(reject)
+    posthoc_df['significant'] = significant
+
+    return {'friedman_stat': stat, 'friedman_p': p, 'posthoc': posthoc_df}
 
 def generate_table3_significance_tests():
     """表3：模型显著性检验（分别对玉米和大豆）"""
@@ -197,7 +197,7 @@ def generate_table3_significance_tests():
         for _, row in posthoc.iterrows():
             pair_key = tuple(row['pair'])
             label = pair_labels[pair_key]
-            sig_results[label] = 'Sig.' if row['significant'] else 'n.s.'
+            sig_results[label] = f"{'Sig.' if row['significant'] else 'n.s.'} (p_holm={row['p_holm']:.4f})"
 
         results.append({
             'Crop': crop,

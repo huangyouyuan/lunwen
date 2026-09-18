@@ -4,65 +4,53 @@
 
 \subsection{站内分类性能与稳定性}
 
-% 数据来源：tables/table1_within_site_baseline.csv
-% 重点：
-% - 玉米和大豆的站内 OOF pooled F1（三模型×四站点）
-% - OA 作为整体辅助指标
-% - 五折 mean ± std 说明训练稳定性
-% - 回答：三个模型站内测试水平，玉米/大豆难度差异
-% - 关键观察：U-TAE ≈ 3D U-Net > ConvGRU，玉米 F1 普遍高于大豆
+% 数据：tables/table1_within_site_baseline.csv（OOF pooled）
+%       tables/table1b_within_site_fold_stability.csv（五折 mean±std）
+% 口径：F1、OA 由五折测试 CM 逐元素求和后计算；折间 mean±std 只用于说明训练稳定性，两者不混用
+% 要点（已验证 2026-09-18）：
+% - 玉米 F1：ConvGRU 0.915 / 3D U-Net 0.941 / U-TAE 0.944；大豆 0.906 / 0.934 / 0.937；OA 0.896 / 0.928 / 0.931
+% - 玉米略高于大豆（0.6–0.9 pp）；U-TAE ≈ 3D U-Net > ConvGRU
+% - 站点：C 最难（三模型 OA 均最低 0.891–0.912），A 最易（0.901–0.948）
+% - 折间 std：玉米 ≤ 0.73 pp，大豆 ≤ 0.96 pp，OA ≤ 0.86 pp（最大值均在 3D U-Net B 站）
 
 \subsection{跨站分类性能与泛化退化}
 
 \subsubsection{跨站玉米、大豆分类性能}
 
-% 数据来源：
-% - results/summary/cross_site_crop_f1_summary.csv（36条路径 mean±std）
-% - tables/table2_cross_site_summary.csv（按模型汇总）
-% 重点：
-% - 分别报告玉米跨站 F1 和大豆跨站 F1
-% - 每条路径 5 个源站 checkpoint 的 mean ± std
-% - 三模型在玉米和大豆上的表现差异
+% 数据：results/summary/cross_site_crop_f1_summary.csv（36 路径，5 checkpoint mean±std）
+%       tables/table2_cross_site_summary.csv（按模型汇总）
+%       tables/table3_significance_tests.csv（Friedman + Wilcoxon–Holm，配对单位 = 12 条路径的五折均值）
+% 要点：
+% - 跨站玉米 F1：0.887 / 0.902 / 0.904；大豆 0.876 / 0.897 / 0.898
+% - 显著性：玉米 Friedman χ²=12.67, p=1.8e-3；大豆 χ²=18.17, p=1.1e-4
+%   两作物均为 ConvGRU 显著低于 3D U-Net 和 U-TAE；3D U-Net 与 U-TAE 差异不显著
+% - 模型排序在玉米、大豆上一致，不存在"仅在某一作物上更好"的情况
 
 \subsubsection{模型泛化退化及稳定性}
 
-% 数据来源：results/summary/crop_f1_degradation_36paths.csv
-% 公式：
-% ΔF1_corn = 100 × (F1_corn^OOF - mean(F1_corn^cross))
-% ΔF1_soybean = 100 × (F1_soybean^OOF - mean(F1_soybean^cross))
-% 重点：
-% - 哪个模型玉米下降较少？哪个模型大豆下降较少？
-% - Checkpoint 间标准差（稳定性）
-% - "下降较小"是否因站内基准较低？
-% - 关键：大豆泛化方差（5.35 pp）远大于玉米（1.55 pp）
-
-\subsubsection{模型显著性检验}
-
-% 数据来源：tables/table3_significance_tests.csv
-% 方法：Friedman + Wilcoxon配对 + Holm校正
-% 分别对玉米和大豆进行
-% 结论：两类作物上 ConvGRU 均显著弱于 3D U-Net 和 U-TAE
-%       3D U-Net 与 U-TAE 无显著差异
+% 数据：results/summary/crop_f1_degradation_36paths.csv
+% ΔF1 = 100 × (F1_OOF − mean F1_cross)；72 个值全为正，0.44–7.39 pp
+% 要点：
+% - 玉米退化：2.79±1.55 / 3.93±0.96 / 3.97±0.92 pp；大豆：3.00±2.09 / 3.74±0.84 / 3.96±0.83 pp
+% - ConvGRU 退化最小，但站内基准最低、跨站绝对 F1 仍最低——"退化小"不等于"泛化好"
+% - checkpoint 间 std 多数路径 < 1 pp；涉及 B 站的路径最大（ConvGRU B→D 大豆 2.7 pp）
+% - 玉米与大豆的退化幅度、离散度相近，站内的作物难度差异并未在跨站中放大
 
 \subsection{跨站泛化差异的空间解释}
 
 \subsubsection{源—目标区域组合差异}
 
-% 使用 6 幅退化热力图（暂缓制作）：
-% - 2 行：玉米、大豆
-% - 3 列：ConvGRU、3D U-Net、U-TAE
-% - 单元格：对应作物的 F1 泛化下降（pp）
-% - 对角线留空
-% - 比较 A→B 与 B→A 的方向差异
-% 重点：哪些迁移路径困难？困难路径是否因作物类别而不同？
-% 关键发现：D→B 路径在两类作物上均困难
+% 图：figures/results/fig_degradation_heatmap.png / .pdf
+%     2 行（玉米/大豆）× 3 列（ConvGRU/3D U-Net/U-TAE），行=源站，列=目标站，对角线留空，共用色标 0–8 pp
+%     图题、图注写在 caption（小五号宋体），图内不含；图题文本见 figures/data-manifest.md
+% 要点：
+% - 涉及 B 站的路径退化最大：玉米 top5 含 D→B(5.85)、B→C(5.30)、B→D(5.26)、B→C(4.89)；
+%   大豆 top5 含 B→D(7.39)、D→B(6.14)、B→C(6.00)、B→D(5.74)
+% - 方向不对称：ConvGRU 大豆 B→D 7.39 pp vs D→B 3.36 pp
+% - 三模型的困难路径基本一致，路径难度主要由区域组合而非模型决定
 
 \subsubsection{空间特征与作物泛化退化}
 
-% 数据来源：待补充（需要站点景观特征与泛化退化关联分析）
-% 分别研究：
-% - 玉米占比、AREA_MN、AI、ED 与玉米 F1 下降
-% - 大豆占比、AREA_MN、AI、ED 与大豆 F1 下降
-% - 其他地类占比作为背景变量
-% 分析方法：按空间特征分组汇总混淆矩阵，再计算类别 F1
-% 回答：为什么大豆泛化方差远大于玉米？为什么 D→B 困难？
+% 数据：待补——站点级（玉米/大豆/其它占比、ED、AREA_MN、AI）与 Patch 级四张表
+% 方法：按空间特征分组后汇总 CM 再算类别 F1；不直接平均 Patch F1
+% 目标：解释 B 站为何难、B→D 与 D→B 为何不对称

@@ -1,137 +1,73 @@
 # Results Map
 
-论文小节 → 科学问题 → 数据 → 表 → 图 的映射。
+论文小节 → 科学问题 → 数据 → 表 → 图。表格文件名中的 table1/2/3 是工作编号，论文编号写作时按出现顺序分配。
 
 ## 3.1 站内分类性能与稳定性
 
-**问题**：三种模型在各站点的站内测试水平如何？玉米和大豆是否存在难度差异？
+**问题**：三模型在拥有当地训练数据时能达到什么水平？玉米和大豆是否存在难度差异？训练是否稳定？
 
 **数据**：
-- 原始：`results/summary/within_site_crop_f1.csv`（12个站内实验）
-- 指标：corn_f1, soybean_f1, oa
+- `results/summary/within_site_crop_f1.csv`（OOF pooled 玉米 F1 / 大豆 F1 / OA，12 组）
+- `results/summary/within_site_crop_f1_fold_stats.csv`（五折 mean±std）
 
-**表**：表1 - 站内分类性能基准
-- 三模型×四站点的玉米F1和大豆F1
-- 站点均值
-- 文件：`tables/table1_within_site_baseline.csv`
+**表**：`tables/table1_within_site_baseline.csv`、`tables/table1b_within_site_fold_stability.csv`（排版时可合并）
 
-**图**：可选柱状图（玉米/大豆F1对比）
+**图**：无
 
-**关键发现**：
-- U-TAE ≈ 3D U-Net > ConvGRU（两类作物均如此）
-- 玉米F1普遍高于大豆（除ConvGRU在站点B）
-- ConvGRU在大豆上显著弱（平均0.8439 vs 0.8933/0.8982）
+**要点**：见 claims.md C1–C3
 
----
+## 3.2.1 跨站玉米、大豆分类性能
 
-## 3.2 跨站分类性能与泛化退化
-
-### 3.2.1 跨站玉米、大豆分类性能
-
-**问题**：离开训练区域后，玉米和大豆的分类性能分别如何？三模型差异如何？
+**问题**：离开训练区域后，玉米和大豆分别能达到什么水平？三模型差异是否显著？
 
 **数据**：
-- 原始：`results/summary/cross_site_crop_f1_per_fold.csv`（180条记录：36路径×5 folds）
-- 汇总：`results/summary/cross_site_crop_f1_summary.csv`（36路径：3模型×12源-目标组合）
+- `results/summary/cross_site_crop_f1_summary.csv`（36 路径，5 checkpoint mean±std）
+- `results/summary/cross_site_crop_f1_per_fold.csv`（180 行，追溯用）
 
-**表**：表2 - 跨站分类性能汇总
-- 按模型汇总：corn F1 (mean±std), soybean F1 (mean±std)
-- 泛化退化（pp, mean±std）
-- 文件：`tables/table2_cross_site_summary.csv`
+**表**：`tables/table2_cross_site_summary.csv`、`tables/table3_significance_tests.csv`
 
-**关键发现**：
-- **负泛化退化异常**：ConvGRU大豆跨站F1反而比站内高3.25 pp
-- 大豆泛化方差（5.35 pp）远大于玉米（1.55 pp）
-- U-TAE在大豆上泛化退化最小（0.04 pp）
+**图**：无
 
-### 3.2.2 模型泛化退化及稳定性
+**要点**：见 claims.md C4、C5
 
-**问题**：哪个模型玉米下降较少？哪个模型大豆下降较少？
+## 3.2.2 模型泛化退化及稳定性
 
-**数据**：
-- 处理：`results/summary/crop_f1_degradation_36paths.csv`
-- 公式：ΔF1 = 100 × (站内OOF F1 - 跨站平均F1)
+**问题**：哪个模型玉米/大豆下降少？checkpoint 间是否稳定？"下降少"是否只是基准低？
 
-**表**：表2（已包含泛化退化列）
+**数据**：`results/summary/crop_f1_degradation_36paths.csv`
 
-**图**：可选箱线图（玉米/大豆退化分布，按模型分组）
+**表**：`tables/table2_cross_site_summary.csv`（退化列）
 
-**关键发现**：
-- 玉米退化较稳定：2.79–3.97 pp
-- 大豆退化不稳定：-3.25–0.04 pp，且标准差极大
-- 最困难路径（玉米）：3D U-Net D→B (5.85 pp)
-- 最困难路径（大豆）：3D U-Net D→B (5.61 pp)
+**图**：无
 
-### 3.2.3 模型显著性检验
+**要点**：见 claims.md C6
 
-**问题**：模型间差异是否显著？
+## 3.3.1 源—目标区域组合差异
 
-**数据**：
-- 输入：`results/summary/cross_site_crop_f1_per_fold.csv`
-- 方法：Friedman + Wilcoxon配对 + Holm校正
-- 分别对玉米和大豆进行
+**问题**：哪些迁移路径困难？困难路径是否因作物而异？A→B 与 B→A 是否对称？
 
-**表**：表3 - 模型显著性检验
-- Friedman χ²、p值
-- 配对比较结果（Sig. / n.s.）
-- 文件：`tables/table3_significance_tests.csv`
+**数据**：`results/summary/crop_f1_degradation_36paths.csv`
 
-**统计结论**：
-- 玉米和大豆上，ConvGRU均显著弱于3D U-Net和U-TAE
-- 3D U-Net与U-TAE无显著差异
-- 两类作物模型排序一致
+**表**：36 路径明细可作补充材料
 
----
+**图**：`figures/results/fig_degradation_heatmap.png`（6 子图，见 figures/data-manifest.md）
 
-## 3.3 跨站泛化差异的空间解释
+**要点**：见 claims.md C7
 
-### 3.3.1 源—目标区域组合差异
+## 3.3.2 空间特征与作物泛化退化
 
-**问题**：哪些迁移路径困难？困难路径是否因作物类别而不同？
+**问题**：为什么某些目标区域、迁移路径更困难？
 
-**数据**：
-- 输入：`results/summary/crop_f1_degradation_36paths.csv`
-- 12个源-目标组合（4站点，排除对角线）
+**数据**：待补
+- 站点级：玉米/大豆/其它占比、ED、AREA_MN、AI
+- Patch 级：`patch_spatial_features.csv`、`cross_patch_summary.csv`、`within_patch_oof.csv`、`cross_patch_fold.csv`（位置待确认）
 
-**表**：可选详细路径表（36行，按退化排序）
+**方法**：按空间特征分组后汇总 CM 再算类别 F1；`cross_patch_summary.csv` 只用于散点和描述性关系
 
-**图**：6幅退化热力图（暂缓制作）
-- 布局：2行（玉米/大豆）× 3列（ConvGRU/3D U-Net/U-TAE）
-- 单元格：泛化退化（pp），对角线留空
-- 颜色：浅色=小退化，深色=大退化
+**表/图**：待定
 
-**关键发现**：
-- D→B路径在两类作物上均最困难
-- 方向不对称性（A→B vs B→A）因作物而异
+**要点**：见 claims.md C8（未验证）
 
-### 3.3.2 空间特征与作物泛化退化
+## 补充材料（不控制正文结构）
 
-**问题**：站点景观特征（作物占比、AREA_MN、AI、ED）如何解释泛化差异？
-
-**数据**：
-- 待补充：站点景观特征表
-- 关联：玉米占比、大豆占比、地块大小、聚集度、边缘密度
-- 与玉米F1下降、大豆F1下降的相关性
-
-**表**：待制作（景观特征汇总表、相关性分析表）
-
-**图**：待制作（散点图：景观指标 vs 泛化退化）
-
-**分析方法**：
-- 按空间特征分组汇总混淆矩阵
-- 计算分组后的类别F1（不直接平均patch-level F1）
-
-**待回答**：
-- 为什么大豆泛化方差远大于玉米？
-- 为什么D→B路径困难？
-- 站点B的大豆景观特征是否特殊？
-
----
-
-## 废弃指标（仅保留在补充材料）
-
-- Crop-mIoU（三分类整体mIoU）
-- Other类别指标
-- 三分类宏平均指标
-
-这些指标不再控制正文结构，但保留用于完整性检查。
+Crop-mIoU 体系：`results/summary/generalization_degradation_36paths.csv`、`within_site_oof_baseline.csv`、`model_significance_analysis.csv`、`results/processed/generalization_analysis.csv`。

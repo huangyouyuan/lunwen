@@ -1,3 +1,3 @@
 Crop,Friedman χ²,Friedman p,ConvGRU vs 3D U-Net,ConvGRU vs U-TAE,3D U-Net vs U-TAE
-Corn,12.6667,1.7761e-03,Sig.,Sig.,n.s.
-Soybean,18.1667,1.1354e-04,Sig.,Sig.,n.s.
+Corn,12.6667,1.7761e-03,Sig. (p_holm=0.0137),Sig. (p_holm=0.0029),n.s. (p_holm=0.5693)
+Soybean,18.1667,1.1354e-04,Sig. (p_holm=0.0015),Sig. (p_holm=0.0015),n.s. (p_holm=0.9097)
