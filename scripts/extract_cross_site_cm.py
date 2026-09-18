@@ -28,24 +28,24 @@ def parse_experiment_path(exp_path):
 def cm_to_standard_order(row):
     """
     将 cm_gt_X_pred_Y 格式转换为标准 cm_ij 顺序
-    类别映射：corn=0, soybean=1, other=2
+    类别映射：corn=0, other=1, soybean=2（与站内一致）
     """
     cm = np.zeros(9, dtype=np.int64)
 
     # gt=corn (i=0)
     cm[0] = row['cm_gt_corn_pred_corn']      # cm_00
-    cm[1] = row['cm_gt_corn_pred_soybean']   # cm_01
-    cm[2] = row['cm_gt_corn_pred_other']     # cm_02
+    cm[1] = row['cm_gt_corn_pred_other']     # cm_01
+    cm[2] = row['cm_gt_corn_pred_soybean']   # cm_02
 
-    # gt=soybean (i=1)
-    cm[3] = row['cm_gt_soybean_pred_corn']   # cm_10
-    cm[4] = row['cm_gt_soybean_pred_soybean'] # cm_11
-    cm[5] = row['cm_gt_soybean_pred_other']  # cm_12
+    # gt=other (i=1)
+    cm[3] = row['cm_gt_other_pred_corn']     # cm_10
+    cm[4] = row['cm_gt_other_pred_other']    # cm_11
+    cm[5] = row['cm_gt_other_pred_soybean']  # cm_12
 
-    # gt=other (i=2)
-    cm[6] = row['cm_gt_other_pred_corn']     # cm_20
-    cm[7] = row['cm_gt_other_pred_soybean']  # cm_21
-    cm[8] = row['cm_gt_other_pred_other']    # cm_22
+    # gt=soybean (i=2)
+    cm[6] = row['cm_gt_soybean_pred_corn']   # cm_20
+    cm[7] = row['cm_gt_soybean_pred_other']  # cm_21
+    cm[8] = row['cm_gt_soybean_pred_soybean'] # cm_22
 
     return cm
 
@@ -54,7 +54,7 @@ def calculate_f1_from_cm(cm):
     cm = np.array(cm).reshape(3, 3)
 
     f1_scores = {}
-    class_names = ['corn', 'soybean', 'other']
+    class_names = ['corn', 'other', 'soybean']  # 修正顺序
 
     for i, name in enumerate(class_names):
         tp = cm[i, i]

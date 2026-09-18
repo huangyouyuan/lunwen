@@ -32,21 +32,28 @@
 
 在跨站点泛化实验中，依次选取四个站点之一作为源站点，利用其站内实验训练所得的5个fold模型，分别对其余三个目标站点的全部400个图块进行逐图块推理。每条迁移路径产生5次独立的完整预测，对每次预测将400个图块的混淆矩阵汇总后计算各项指标，再对5次结果取均值与标准差。迁移过程中不对模型进行微调或集成，以评估模型结构本身的空间泛化能力。4个站点轮换作为源站点，共构成12条有向迁移路径，对应3种模型共36组结果、180次推理。
 
-为量化跨站点应用的精度损失，本文以同一模型在目标站点的站内OOF汇总精度为参照基准，定义泛化退化指标。以Crop-mIoU为例：
+为量化跨站点应用的精度损失，本文以同一模型在目标站点的站内OOF汇总精度为参照基准，定义泛化退化指标（以玉米F1为例）：
 \begin{equation}
-\Delta\text{Crop-mIoU} = \text{Crop-mIoU}_{\text{within}} - \text{Crop-mIoU}_{\text{cross}}
+\Delta\text{F1}_{\text{corn}} = \text{F1}_{\text{corn,within}} - \text{F1}_{\text{corn,cross}}
 \end{equation}
-其中$\text{Crop-mIoU}_{\text{within}}$为该模型在目标站点的站内OOF汇总Crop-mIoU，$\text{Crop-mIoU}_{\text{cross}}$为源站点模型在目标站点的跨站点Crop-mIoU五折均值，正值表示精度下降。同理可计算误差率退化$\Delta\text{ER} = \text{ER}_{\text{cross}} - \text{ER}_{\text{within}}$，正值同样表示退化。
+其中$\text{F1}_{\text{corn,within}}$为该模型在目标站点的站内OOF汇总玉米F1分数，$\text{F1}_{\text{corn,cross}}$为源站点模型在目标站点的跨站点玉米F1五折均值，正值表示精度下降。大豆泛化退化$\Delta\text{F1}_{\text{soybean}}$同理计算。
 
 \subsection{精度评价指标}
 
-模型性能评估基于预测结果与像素级真实标签构建的混淆矩阵。由于本研究的核心关注点是玉米和大豆的识别与泛化能力，本文定义作物平均交并比（Crop-mIoU）作为主要评价指标：
+模型性能评估基于预测结果与像素级真实标签构建的混淆矩阵。对于三分类问题（玉米、大豆、其他），混淆矩阵元素$C_{ij}$表示真实类别为$i$但被预测为类别$j$的像元数。基于混淆矩阵，各类别F1分数计算如下：
 \begin{equation}
-\text{Crop-mIoU} = \frac{\text{IoU}_{\text{corn}} + \text{IoU}_{\text{soybean}}}{2}
+\text{Precision}_i = \frac{C_{ii}}{\sum_{j} C_{ji}}, \quad
+\text{Recall}_i = \frac{C_{ii}}{\sum_{j} C_{ij}}, \quad
+\text{F1}_i = \frac{2 \cdot \text{Precision}_i \cdot \text{Recall}_i}{\text{Precision}_i + \text{Recall}_i}
 \end{equation}
-同时计算三类mIoU、总体精度（OA）、宏平均用户精度（Macro UA）、宏平均制图精度（Macro PA）、宏平均F1分数（Macro F1）和Kappa系数作为补充。
+其中$i$为类别索引。总体精度（OA）定义为：
+\begin{equation}
+\text{OA} = \frac{\sum_{i} C_{ii}}{\sum_{i,j} C_{ij}}
+\end{equation}
 
-为检验不同模型的跨区域泛化性能是否存在统计学上的显著差异，本文将12条迁移路径作为配对单位，对三种模型的Crop-mIoU进行Friedman非参数检验，并在总体差异显著时采用Wilcoxon符号秩检验进行两两比较，使用Holm方法校正多重检验。
+由于本研究的核心关注点是玉米和大豆的识别与泛化能力，本文分别报告玉米F1（$\text{F1}_{\text{corn}}$）和大豆F1（$\text{F1}_{\text{soybean}}$）作为主要评价指标。同时计算OA作为总体性能参考。
+
+为检验不同模型的跨区域泛化性能是否存在统计学上的显著差异，本文将12条迁移路径作为配对单位，分别对三种模型的玉米F1和大豆F1进行Friedman非参数检验，并在总体差异显著时采用Wilcoxon符号秩检验进行两两比较，使用Holm方法校正多重检验。
 
 \subsection{硬件和软件配置}
 

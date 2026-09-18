@@ -1,90 +1,119 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-从混淆矩阵计算玉米和大豆 F1
+从站内五折原始混淆矩阵计算玉米 F1、大豆 F1 和 OA
 
-混淆矩阵编码：
-- 类别 0: 玉米 (Corn)
-- 类别 1: 大豆 (Soybean)
-- 类别 2: 其他 (Other)
+类别顺序（训练时标签减 1）：corn=0, other=1, soybean=2
 
-cm_ij: 真实类别 i，预测类别 j
+输入：D:/20{site}/2023{model}{site}results/summary/metrics_summary.csv
+      每个文件含 5 个 fold 行（各测试折 CM）和 1 个 oof_pooled 行（汇总 CM）
+输出：results/raw/within_site_confusion_matrices.csv   （12 组 × 5 折 + pooled）
+      results/summary/within_site_crop_f1.csv          （OOF pooled 指标）
+      results/summary/within_site_crop_f1_fold_stats.csv（五折 mean ± std）
 """
 
-import pandas as pd
+from pathlib import Path
+
 import numpy as np
+import pandas as pd
 
-def calculate_f1_from_cm(cm):
-    """
-    从 9 元素混淆矩阵计算各类别 F1
+CLASS_ORDER = ['corn', 'other', 'soybean']
+WITHIN_ROOT = Path('D:/')
+MODELS = ['convgru', 'unet3d', 'utae']
+SITES = ['ida', 'il', 'iw2', 'iw']
 
-    Parameters
-    ----------
-    cm : array-like, shape (9,)
-        展平的混淆矩阵 [cm_00, cm_01, cm_02, cm_10, cm_11, cm_12, cm_20, cm_21, cm_22]
 
-    Returns
-    -------
-    dict : {'corn_f1', 'soybean_f1', 'other_f1'}
-    """
-    cm = np.array(cm).reshape(3, 3)
+def cm_from_row(row):
+    """把 cm_gt_X_pred_Y 列整理成按 CLASS_ORDER 排列的 3×3 矩阵"""
+    cm = np.zeros((3, 3), dtype=np.int64)
+    for i, gt in enumerate(CLASS_ORDER):
+        for j, pred in enumerate(CLASS_ORDER):
+            cm[i, j] = row[f'cm_gt_{gt}_pred_{pred}']
+    return cm
 
-    f1_scores = {}
-    class_names = ['corn', 'other', 'soybean']  # 修复：训练时标签-1，corn=0, other=1, soybean=2
 
-    for i, name in enumerate(class_names):
-        # TP: 对角线元素
+def metrics_from_cm(cm):
+    """F1（各类）与 OA = 对角线之和 / 全部像元"""
+    out = {}
+    for i, name in enumerate(CLASS_ORDER):
         tp = cm[i, i]
-
-        # FN: 该行非对角线元素之和（真实为该类，预测为其他）
         fn = cm[i, :].sum() - tp
-
-        # FP: 该列非对角线元素之和（真实为其他，预测为该类）
         fp = cm[:, i].sum() - tp
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        out[f'{name}_f1'] = (2 * precision * recall / (precision + recall)
+                             if (precision + recall) > 0 else 0.0)
+    out['oa'] = np.trace(cm) / cm.sum()
+    return out
 
-        # Precision 和 Recall
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
 
-        # F1
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+def within_site_file(model, site):
+    """12 个站内结果目录的命名不完全一致，按实际存在的两种写法查找"""
+    candidates = [
+        WITHIN_ROOT / f'20{site}' / f'2023{model}{site}results' / 'summary' / 'metrics_summary.csv',
+        WITHIN_ROOT / f'20{site}' / f'2023{site}{model}results' / 'summary' / 'metrics_summary.csv',
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    raise FileNotFoundError(f'未找到 {model}/{site} 的站内结果：{[str(c) for c in candidates]}')
 
-        f1_scores[f'{name}_f1'] = f1
 
-    return f1_scores
+def load_within_site():
+    raw_rows, pooled_rows, fold_rows = [], [], []
 
-def process_within_site_baseline():
-    """处理站内 OOF 基准数据"""
-    df = pd.read_csv('results/summary/within_site_oof_baseline.csv')
+    for model in MODELS:
+        for site in SITES:
+            df = pd.read_csv(within_site_file(model, site), encoding='utf-8-sig')
+            target = f'{site}_2023'
 
-    results = []
-    for _, row in df.iterrows():
-        cm_cols = [f'cm_{i}{j}' for i in range(3) for j in range(3)]
-        cm = row[cm_cols].values
+            fold_df = df[df['result_type'] == 'fold']
+            pooled_df = df[df['result_type'] == 'oof_pooled']
+            if len(fold_df) != 5 or len(pooled_df) != 1:
+                raise ValueError(f'{model}/{site}: fold 行 {len(fold_df)}，pooled 行 {len(pooled_df)}')
 
-        f1_scores = calculate_f1_from_cm(cm)
+            for _, row in fold_df.iterrows():
+                cm = cm_from_row(row)
+                raw_rows.append({'model': model, 'target': target, 'result_type': 'fold',
+                                 'fold': int(row['fold']),
+                                 **{f'cm_{i}{j}': cm[i, j] for i in range(3) for j in range(3)}})
+                fold_rows.append({'model': model, 'target': target, 'fold': int(row['fold']),
+                                  **metrics_from_cm(cm)})
 
-        results.append({
-            'model': row['model'],
-            'target': row['target'],
-            'corn_f1': f1_scores['corn_f1'],
-            'soybean_f1': f1_scores['soybean_f1'],
-            'other_f1': f1_scores['other_f1'],
-            'oa': cm.sum() / row['valid_pixels'] if row['valid_pixels'] > 0 else 0
-        })
+            pooled = pooled_df.iloc[0]
+            cm = cm_from_row(pooled)
+            fold_sum = sum(cm_from_row(r) for _, r in fold_df.iterrows())
+            if not np.array_equal(cm, fold_sum):
+                raise ValueError(f'{model}/{site}: pooled CM 与五折 CM 之和不一致')
+            raw_rows.append({'model': model, 'target': target, 'result_type': 'oof_pooled',
+                             'fold': np.nan,
+                             **{f'cm_{i}{j}': cm[i, j] for i in range(3) for j in range(3)}})
+            pooled_rows.append({'model': model, 'target': target,
+                                'valid_pixels': int(cm.sum()), **metrics_from_cm(cm)})
 
-    return pd.DataFrame(results)
+    return pd.DataFrame(raw_rows), pd.DataFrame(pooled_rows), pd.DataFrame(fold_rows)
+
 
 if __name__ == '__main__':
-    # 计算站内基准
-    within_f1 = process_within_site_baseline()
-    within_f1.to_csv('results/summary/within_site_crop_f1.csv', index=False, float_format='%.6f')
-    print("已生成: results/summary/within_site_crop_f1.csv")
+    raw_df, pooled_df, fold_df = load_within_site()
 
-    # 显示摘要
-    print("\n站内 OOF 玉米/大豆 F1 基准（按模型汇总）：")
-    summary = within_f1.groupby('model')[['corn_f1', 'soybean_f1']].agg(['mean', 'std'])
-    print(summary)
+    Path('results/raw').mkdir(parents=True, exist_ok=True)
+    raw_df.to_csv('results/raw/within_site_confusion_matrices.csv', index=False)
+    print('已生成: results/raw/within_site_confusion_matrices.csv')
 
-    print("\n注意：跨站 36 条路径的混淆矩阵数据缺失。")
-    print("需要提供跨站实验的原始混淆矩阵（每条路径 5-fold 的 cm_00 到 cm_22）。")
+    pooled_df = pooled_df[['model', 'target', 'corn_f1', 'soybean_f1', 'other_f1', 'oa', 'valid_pixels']]
+    pooled_df.to_csv('results/summary/within_site_crop_f1.csv', index=False, float_format='%.6f')
+    print('已生成: results/summary/within_site_crop_f1.csv')
+
+    stats = (fold_df.groupby(['model', 'target'])[['corn_f1', 'soybean_f1', 'oa']]
+             .agg(['mean', 'std']))
+    stats.columns = [f'{m}_{s}' for m, s in stats.columns]
+    stats = stats.reset_index()
+    stats.to_csv('results/summary/within_site_crop_f1_fold_stats.csv', index=False, float_format='%.6f')
+    print('已生成: results/summary/within_site_crop_f1_fold_stats.csv')
+
+    print('\n站内 OOF pooled（按模型汇总）:')
+    print(pooled_df.groupby('model')[['corn_f1', 'soybean_f1', 'oa']].mean().round(4))
+    print('\n五折标准差范围:')
+    for col in ['corn_f1_std', 'soybean_f1_std', 'oa_std']:
+        print(f'  {col}: {stats[col].min():.4f} ~ {stats[col].max():.4f}')
