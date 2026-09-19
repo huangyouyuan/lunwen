@@ -63,15 +63,13 @@
 
 **输出**：`tables/table1_within_site_baseline.csv`、`table1b_within_site_fold_stability.csv`、`table2_cross_site_summary.csv`、`table3_significance_tests.csv`。
 
-### S5 退化热力图
+### S5 图
 
-**脚本**：`scripts/plot_degradation_heatmap.py`
+**热力图**：`scripts/plot_degradation_heatmap.py`，输入 S3 输出。每个 (model, crop) 把 12 条路径 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图共用全局色标。输出 `figures/results/fig_degradation_heatmap.png` / `.pdf`。
 
-**输入**：S3 输出。
+**站内柱状图**：`scripts/plot_within_site_f1.py`，输入 S1 的 `within_site_crop_f1.csv`。玉米、大豆各一子图，横轴站点、每站三模型柱，F1 换算为百分数、柱顶标两位小数。输出 `figures/results/fig_within_site_f1.png` / `.pdf`。
 
-**处理**：每个 (model, crop) 把 12 条路径 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图共用全局色标（取六个矩阵的 min/max 向外取整）。
-
-**输出**：`figures/results/fig_degradation_heatmap.png` / `.pdf`。图题、图注在正文 caption。
+图题、图注均在正文 caption。
 
 ### 补充体系（不进正文）
 
@@ -83,9 +81,9 @@
 
 **内容**：站内 OOF pooled 玉米 F1 为 0.915 / 0.941 / 0.944（ConvGRU / 3D U-Net / U-TAE），大豆 F1 为 0.906 / 0.934 / 0.937，OA 为 0.896 / 0.928 / 0.931。3D U-Net 与 U-TAE 差距 < 0.3 pp，二者高于 ConvGRU 约 2.6–3.5 pp。同一模型玉米 F1 高于大豆 0.6–0.9 pp。
 
-**数据来源**：`results/summary/within_site_crop_f1.csv`（S1 步骤 1–3；模型均值为四站 pooled 值的算术平均，见 S4 表1 Mean 列）
+**数据来源**：`results/summary/within_site_crop_f1.csv`（S1 步骤 1–3；模型均值为四站汇总值的算术平均，见 S4 表1 Mean 列）；图 `figures/results/fig_within_site_f1.png`（S5）
 
-**状态**：已验证（2026-09-18）
+**状态**：已验证（2026-09-18）；正文 3.1 已写（2026-09-19），范围 90.98–96.23 / 89.55–95.89、C 站最大差 1.61/1.50、D 站 3.58/3.98 均核对
 
 ## Claim 2：站内训练稳定，折间波动不超过 1 pp
 

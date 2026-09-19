@@ -15,5 +15,8 @@
 | 表3 Holm 校正 | step-down（累积最大 + 首次不显著后停止）；用户独立复核判断一致 | Verified | 2026-09-18 | 修正前逐个比阈值；p_holm：玉米 0.0137/0.0029/0.5693，大豆 0.0015/0.0015/0.9097 |
 | 旧结论残留 | grep `3.25|5.35|负退化|Crop-mIoU 作为主` | Verified | 2026-09-18 | 正文、plan 无残留；仅 verification/capability-audit/HANDOVER 保留事故记录 |
 | 热力图与数据一致 | 脚本打印六组 mean/std/min/max 与 `crop_f1_degradation_36paths.csv` 对照 | Verified | 2026-09-18 | 图生成于类别修正后 |
-| citation key | 与 references.bib 核对 | Not verified | — | bib 尚未导入 |
-| 正文数字可追溯 | 与 results/summary 核对 | Not verified | — | 第 3 章正文尚未撰写 |
+| 3.1 正文数字 | 与 `within_site_crop_f1.csv`、`within_site_crop_f1_fold_stats.csv` 逐一核对：F1 范围、折间 std 范围、C/D 站最大差值、U-TAE 与 3D U-Net 差值 < 1 pp、各站最优模型 | Verified | 2026-09-19 | 用户草稿，AI 核对 |
+| 站内柱状图与数据一致 | 脚本打印 12 组值与 csv 对照；柱顶标注与 csv 两位小数一致 | Verified | 2026-09-19 | — |
+| main.tex 编译（含 3.1 图文） | latexmk -xelatex，exit 0 | Verified | 2026-09-19 | — |
+| citation key | 与 references.bib 核对 | Not verified | — | bib 已导入 71 条，正文尚无 \cite |
+| 正文数字可追溯 | 与 results/summary 核对 | Partially verified | 2026-09-19 | 3.1 已核；3.2、3.3 未写 |

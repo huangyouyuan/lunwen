@@ -83,12 +83,14 @@
 
 ## 景观指标
 
-| 缩写 | 英文 | 中文 |
-|------|------|------|
-| ED | Edge Density | 边界密度 |
-| PD | Patch Density | 斑块密度 |
-| AREA_MN | Mean Patch Area | 平均斑块面积 |
-| AI | Aggregation Index | 聚集度指数 |
+| 缩写 | 英文 | 中文 | 说明 |
+|------|------|------|------|
+| ED | Edge Density | 边界密度 | — |
+| PD | Patch Density | 斑块密度 | — |
+| AREA_MN | Mean Patch Area | 平均斑块面积 | **不写"平均田块面积""平均地块面积"**——FRAGSTATS 斑块是标签上的同类连通区，不等于实际农业地块 |
+| AI | Aggregation Index | 聚集度指数 | — |
+
+"斑块"（patch，景观生态）与"图块"（patch，128×128 样本单元）是两个概念，正文分别用这两个词，不混用。
 
 ## 标点与数字规范
 
