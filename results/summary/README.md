@@ -25,4 +25,4 @@
 
 ## 结论与验证
 
-发现记录在 `plan/claims.md`，验证记录在 `verification/verification-report.md`。本目录不放分析结论文档。
+发现记录在 `plan/claims.md`（含 S1–S5 数据处理链说明），验证记录在 `verification/verification-report.md`。本目录不放分析结论文档。
