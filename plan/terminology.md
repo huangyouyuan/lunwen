@@ -72,7 +72,7 @@
 |------|------|------|------|----------|
 | F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 | $F1_{\text{玉米}}$、$F1_{\text{大豆}}$ |
 | OA | Overall Accuracy | 总体精度 | 辅助 | OA |
-| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 | $\Delta F1_{\text{玉米}}$；站内/跨站写 $F1_{\text{玉米,站内}}$、$F1_{\text{玉米,跨站}}$ |
+| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 | $\Delta F1_{\text{玉米}}$；站内/跨站写 $F1_{\text{站内玉米}}$、$F1_{\text{跨站玉米}}$（定语在前，不用逗号） |
 | P / R | Precision / Recall | 精确率 / 召回率 | 定义 F1 用 | $P_i$、$R_i$ |
 | Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 | — |
 | mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 | — |
