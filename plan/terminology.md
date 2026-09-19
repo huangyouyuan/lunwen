@@ -36,15 +36,16 @@
 | 中文术语 | 英文 | 说明 |
 |----------|------|------|
 | 站内分类 | within-site classification | 在同一站点训练和测试 |
-| 跨站点空间泛化 | cross-site spatial generalization | 在源站点训练，直接迁移至目标站点 |
-| 泛化退化 / 精度退化 | generalization degradation | 跨站点精度相对站内精度的降幅 |
-| 迁移路径 | transfer path | 从源站点到目标站点的方向，记为 X→Y |
-| 源站点 / 基准站点 | source site | 模型训练所在站点 |
-| 目标站点 | target site | 模型直接应用的站点 |
-| OOF | Out-of-Fold | 5 折交叉验证的汇总预测 |
-| OOF 汇总 | oof_pooled | 5 个测试折 CM 逐元素求和后计算的指标；站内基准与退化的口径 |
-| 五折均值 | cv_mean / cv_std | 各测试折指标的算术均值与标准差；只用于说明训练稳定性 |
+| 跨站点空间泛化 | cross-site spatial generalization | 在源站点训练，直接迁移至目标站点；正文可简称"跨站" |
+| 泛化退化 / 精度退化 | generalization degradation | 跨站精度相对站内精度的降幅 |
+| 迁移路径 | transfer path | 从源站点到目标站点的方向，记为 A→B |
+| 源站点 / 源站 | source site | 模型训练所在站点 |
+| 目标站点 / 目标站 | target site | 模型直接应用的站点 |
+| 汇总精度 | oof_pooled | 5 个测试折混淆矩阵逐元素相加后计算的指标；站内基准与退化的口径；正文不用 OOF 缩写 |
+| 五折均值 / 折间标准差 | cv_mean / cv_std | 各测试折指标的算术均值与标准差；只用于说明训练稳定性 |
 | 5 折交叉验证 | 5-fold cross-validation | 3 训练 + 1 验证 + 1 测试 |
+| 折 | fold | 正文不用 fold |
+| 模型（某折的） | checkpoint | 正文写"每折一个模型"或"5 个模型"，不用 checkpoint |
 
 ## 数据术语
 
@@ -67,15 +68,18 @@
 
 ## 指标
 
-| 缩写 | 全称 | 中文 | 地位 |
-|------|------|------|------|
-| F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 |
-| OA | Overall Accuracy | 总体精度 | 辅助 |
-| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 |
-| Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 |
-| mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 |
-| UA / PA | User's / Producer's Accuracy | 用户精度 / 制图精度 | 补充 |
-| Kappa | Kappa coefficient | Kappa 系数 | 补充 |
+| 缩写 | 全称 | 中文 | 地位 | 公式角标 |
+|------|------|------|------|----------|
+| F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 | $F1_{\text{玉米}}$、$F1_{\text{大豆}}$ |
+| OA | Overall Accuracy | 总体精度 | 辅助 | OA |
+| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 | $\Delta F1_{\text{玉米}}$；站内/跨站写 $F1_{\text{玉米,站内}}$、$F1_{\text{玉米,跨站}}$ |
+| P / R | Precision / Recall | 精确率 / 召回率 | 定义 F1 用 | $P_i$、$R_i$ |
+| Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 | — |
+| mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 | — |
+| UA / PA | User's / Producer's Accuracy | 用户精度 / 制图精度 | 补充 | — |
+| Kappa | Kappa coefficient | Kappa 系数 | 补充 | — |
+
+公式角标一律中文，不用 corn / within / cross。
 
 ## 景观指标
 
