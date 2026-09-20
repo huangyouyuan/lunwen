@@ -9,7 +9,7 @@
 
 如图\ref{fig:within_site_f1}所示，三种模型在四个站点均取得了较高的玉米和大豆分类精度，玉米F1为90.98\%～96.23\%，大豆F1为89.55\%～95.89\%。三种模型不仅具有较高的站内作物分类精度，还表现出一些共同的分类特征：在同一站点，三种模型的玉米F1均高于大豆F1；在不同站点之间，三种模型的玉米和大豆F1均在A站点达到各自的最高值。五折交叉验证中，各模型在各站点的玉米和大豆F1折间标准差分别为0.12～0.73和0.06～0.96个百分点，表明各模型在本研究的数据划分下均具有较稳定的站内作物分类表现。
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{results/fig_within_site_f1.png}
 \caption{三种模型在四个站点的站内玉米和大豆分类精度}
@@ -18,14 +18,14 @@
 
 从不同模型的作物分类精度差异来看，U-TAE和3D U-Net在各站点的玉米和大豆分类中均优于ConvGRU，而U-TAE与3D U-Net之间的F1差值均小于1个百分点，两种模型的作物分类精度较为接近。U-TAE在A、B和C站点略优于3D U-Net，3D U-Net则在D站点取得最高精度，说明两种模型的相对优势随站点变化。模型间的作物分类精度差距也并不固定：在C站点，三种模型的玉米和大豆F1最大差值分别为1.61和1.50个百分点；在D站点，相应差值分别扩大至3.58和3.98个百分点。因此，站内作物分类结果既体现了U-TAE和3D U-Net相对ConvGRU的一致优势，也表明这种优势的幅度因站点而异。
 
-% 图 3 窗口：D 站图块网格 (5,7) 起 3×3 图块，像元行 640–1024、列 896–1280
+% 图 3：上行全站 2560×2560 标红框，下行红框窗口放大；窗口 = D 站图块网格 (5,7) 起 3×3，像元行 640–1024、列 896–1280
 % 窗口内错误率 ConvGRU 16.3% / 3D U-Net 8.1% / U-TAE 10.0%；全站 10.6% / 6.3% / 6.7%
 % 三模型 reference.tif sha256 一致（38ad33ef…）；oof_prediction.tif 为五折拼接，每图块预测来自未训练过它的模型
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{results/fig_within_site_map_D.png}
-\caption{D站点三种模型站内交叉验证分类结果的局部对比}
+\caption{D站点三种模型站内交叉验证分类结果（上：全站，红框为局部窗口；下：局部窗口放大）}
 \label{fig:within_site_map_D}
 \end{figure}
 

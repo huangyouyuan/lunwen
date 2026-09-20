@@ -1,6 +1,6 @@
 % !TEX program = xelatex
 % 测绘通报 期刊格式
-\documentclass[a4paper, zihao=5]{ctexart}
+\documentclass[a4paper, zihao=5, twocolumn]{ctexart}
 
 % ---- 页面设置 ----
 \usepackage[a4paper, top=2.00cm, bottom=2.00cm, left=1.80cm, right=1.80cm]{geometry}
@@ -8,8 +8,7 @@
 % ---- 去掉页眉页脚和页码 ----
 \pagestyle{empty}
 
-% ---- 双栏 ----
-\usepackage{multicol}
+% ---- 双栏间距（twocolumn 由 documentclass 开启，浮动体可正常排布）----
 \setlength{\columnsep}{0.75cm}
 
 % ---- 字体 ----
@@ -91,9 +90,11 @@
 % ================================================================
 \begin{document}
 
-% ---- 标题页（单栏） ----
+% ---- 标题页（单栏，通栏排版）----
+\twocolumn[
+\begin{@twocolumnfalse}
 \begingroup
-\newgeometry{top=2.54cm, bottom=2.54cm, left=3.17cm, right=3.17cm}
+\setlength{\parindent}{0pt}
 
 {
 \centering
@@ -161,13 +162,12 @@
 {\rmfamily \zihao{-5}
 \noindent Key words: multi-temporal remote sensing imagery; spatiotemporal deep learning; spatial generalization; crop identification\par}
 
-\restoregeometry
-\endgroup
-
 \vspace{1em}
+\endgroup
+\end{@twocolumnfalse}
+]
 
-% ---- 正文（双栏） ----
-\begin{multicols}{2}
+% ---- 正文（双栏，由 documentclass twocolumn 排版）----
 
 \input{sections/01_introduction}
 \input{sections/02_data}
@@ -183,7 +183,5 @@
 \bibliographystyle{unsrtnat}
 \bibliography{bibliography/references}
 }
-
-\end{multicols}
 
 \end{document}

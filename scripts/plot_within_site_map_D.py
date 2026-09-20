@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-3.1 用图：D 站三种模型站内交叉验证分类结果对比（局部窗口）
+3.1 用图：D 站三种模型站内交叉验证分类结果对比
 
-(a) 参考标签  (b) ConvGRU  (c) 3D U-Net  (d) U-TAE
-四子图同一空间范围、同一配色、共用图例；子图题在下方。
-图名、图注写在正文 caption。
+布局（单栏宽，两行四列）：
+  第 1 行：全站 2560×2560，(a) 参考标签 (b) ConvGRU (c) 3D U-Net (d) U-TAE；每幅标同一红框窗口
+  第 2 行：红框窗口放大，(e)(f)(g)(h) 对应上一行
+四子图同范围、同配色、共用底部图例；子图题在各子图下。
+图名写在正文 caption。
 
 输入：D:/20il/2023{model}ilresults/summary/maps/{reference,oof_prediction}.tif
-      oof_prediction 为五折交叉验证拼接结果，每个图块的预测来自未训练过它的模型
-      值：1=玉米 2=其它 3=大豆（源标签，未减 1）
+      oof_prediction 为五折交叉验证拼接，每个图块的预测来自未训练过它的模型
+      值：1=玉米 2=其它 3=大豆
 输出：figures/results/fig_within_site_map_D.png / .pdf
 """
 
@@ -18,7 +20,7 @@ import numpy as np
 import tifffile
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, BoundaryNorm
-from matplotlib.patches import Patch
+from matplotlib.patches import Patch, Rectangle
 
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']
 plt.rcParams['axes.unicode_minus'] = False
@@ -27,11 +29,9 @@ SITE_DIR = 'D:/20il'
 SITE_TAG = 'il'
 MODELS = [('convgru', 'ConvGRU'), ('unet3d', '3D U-Net'), ('utae', 'U-TAE')]
 
-# 局部窗口：128 图块网格上的 (row, col) 起点与边长（图块数）
 WIN_TILE_ROW, WIN_TILE_COL, WIN_TILES = 5, 7, 3
 TILE = 128
 
-# 类别配色：1 玉米、2 其它、3 大豆
 CLASS_COLORS = {1: '#F2C14E', 2: '#BDBDBD', 3: '#4C9F70'}
 CLASS_NAMES = {1: '玉米', 2: '其它', 3: '大豆'}
 
@@ -47,42 +47,51 @@ def main():
     ref = refs['utae']
     preds = {m: load(m, 'oof_prediction') for m, _ in MODELS}
     for m, p in preds.items():
-        assert p.shape == ref.shape, m
-        assert set(np.unique(p)) <= {1, 2, 3}, m
+        assert p.shape == ref.shape and set(np.unique(p)) <= {1, 2, 3}, m
 
     r0, c0 = WIN_TILE_ROW * TILE, WIN_TILE_COL * TILE
     size = WIN_TILES * TILE
     sl = (slice(r0, r0 + size), slice(c0, c0 + size))
-    panels = [('（a）参考标签', ref[sl])] + \
-             [(f'（{chr(98 + i)}）{label}分类结果', preds[m][sl]) for i, (m, label) in enumerate(MODELS)]
 
+    full = [('参考标签', ref)] + [(f'{lab}分类结果', preds[m]) for m, lab in MODELS]
     cmap = ListedColormap([CLASS_COLORS[k] for k in (1, 2, 3)])
     norm = BoundaryNorm([0.5, 1.5, 2.5, 3.5], cmap.N)
 
-    fig, axes = plt.subplots(2, 2, figsize=(3.4, 3.9))
-    for ax, (title, arr) in zip(axes.ravel(), panels):
+    fig, axes = plt.subplots(2, 4, figsize=(3.4, 2.15))
+    letters = 'abcdefgh'
+    for j, (name, arr) in enumerate(full):
+        ax = axes[0, j]
         ax.imshow(arr, cmap=cmap, norm=norm, interpolation='nearest')
+        ax.add_patch(Rectangle((c0, r0), size, size, fill=False, edgecolor='red', linewidth=0.7))
+        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=5.5, labelpad=1.5)
+
+        ax = axes[1, j]
+        ax.imshow(arr[sl], cmap=cmap, norm=norm, interpolation='nearest')
+        for s in ax.spines.values():
+            s.set_edgecolor('red'); s.set_linewidth(0.7)
+        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=5.5, labelpad=1.5)
+
+    for ax in axes.ravel():
         ax.set_xticks([]); ax.set_yticks([])
         for s in ax.spines.values():
-            s.set_linewidth(0.5)
-        ax.set_xlabel(title, fontsize=8, labelpad=3)
+            s.set_linewidth(max(s.get_linewidth(), 0.4))
 
     handles = [Patch(facecolor=CLASS_COLORS[k], edgecolor='black', linewidth=0.4, label=CLASS_NAMES[k])
                for k in (1, 2, 3)]
     fig.legend(handles=handles, loc='lower center', ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, -0.005), fontsize=8, handlelength=1.2, columnspacing=1.5)
+               bbox_to_anchor=(0.5, -0.02), fontsize=6, handlelength=1.2, columnspacing=1.5)
 
-    plt.tight_layout(rect=[0, 0.05, 1, 1], h_pad=0.6, w_pad=0.6)
-    plt.savefig('figures/results/fig_within_site_map_D.png', dpi=300, bbox_inches='tight')
+    plt.subplots_adjust(left=0.01, right=0.99, top=0.99, bottom=0.14, wspace=0.06, hspace=0.32)
+    plt.savefig('figures/results/fig_within_site_map_D.png', dpi=400, bbox_inches='tight')
     plt.savefig('figures/results/fig_within_site_map_D.pdf', bbox_inches='tight')
     plt.close()
 
-    win_err = {label: float((preds[m][sl] != ref[sl]).mean()) for m, label in MODELS}
-    full_err = {label: float((preds[m] != ref).mean()) for m, label in MODELS}
+    win_err = {lab: float((preds[m][sl] != ref[sl]).mean()) for m, lab in MODELS}
+    full_err = {lab: float((preds[m] != ref).mean()) for m, lab in MODELS}
     print('Generated: figures/results/fig_within_site_map_D.png / .pdf')
-    print(f'window: tiles ({WIN_TILE_ROW},{WIN_TILE_COL}) size {WIN_TILES}x{WIN_TILES}  px rows {r0}-{r0+size}, cols {c0}-{c0+size}')
-    print('window error rate:', {k: round(v, 4) for k, v in win_err.items()})
-    print('full-site error rate:', {k: round(v, 4) for k, v in full_err.items()})
+    print(f'window: tiles ({WIN_TILE_ROW},{WIN_TILE_COL}) {WIN_TILES}x{WIN_TILES}, px rows {r0}-{r0+size} cols {c0}-{c0+size}')
+    print('window err:', {k: round(v, 4) for k, v in win_err.items()})
+    print('full err:  ', {k: round(v, 4) for k, v in full_err.items()})
     print('reference sha256:', shas['utae'][:16])
 
 
