@@ -35,18 +35,22 @@ SITES = ['A', 'B', 'C', 'D']
 
 FS_TEXT = 8
 FS_SUBTITLE = 8.5
-FS_TICK = 7.5
+FS_TICK = 6.5
 FS_ANNOT = 6.5
 
 
 def setup():
     plt.rcParams.update({
-        'font.sans-serif': ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS'],
+        # 回退列表必须写在 font.family（写在 font.sans-serif 不回退）：数字、字母用 Arial，中文落到黑体
+        'font.family': ['Arial', 'SimHei'],
         'axes.unicode_minus': False,
         'font.size': FS_TEXT,
         'axes.labelsize': FS_TEXT,
+        'axes.labelpad': 2,
         'xtick.labelsize': FS_TICK,
         'ytick.labelsize': FS_TICK,
+        'xtick.major.size': 2, 'ytick.major.size': 2,
+        'xtick.major.pad': 1.5, 'ytick.major.pad': 1.5,
         'legend.fontsize': FS_TEXT,
         'axes.linewidth': 0.6,
         'xtick.major.width': 0.5,

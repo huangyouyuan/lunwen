@@ -13,10 +13,10 @@
 **表**：`tables/table1_within_site_baseline.csv`、`tables/table1b_within_site_fold_stability.csv`（数据备查，正文用图不用表）
 
 **图**：
-- `figures/results/fig_within_site_f1.png`——上下两子图分组柱状图，(a) 四站点玉米分类精度 (b) 四站点大豆分类精度，单栏宽
-- D 站分类结果对比图（待做）——(a) 参考标签 (b) ConvGRU (c) 3D U-Net (d) U-TAE，站内交叉验证拼接结果，同一局部窗口
+- `figures/results/fig_within_site_f1.png`——上下两子图横向条形图，(a) 四站点玉米分类精度 (b) 四站点大豆分类精度，单栏 8×12 cm
+- `figures/results/fig_within_site_map_D.png`——D 站分类结果对比，通栏 16×8 cm：上行全站（红框）、下行局部放大，(a)/(e) 参考标签 (b)/(f) ConvGRU (c)/(g) 3D U-Net (d)/(h) U-TAE
 
-**正文状态**：第 1、2 段已写（2026-09-19，用户草稿，数字全部核对）
+**正文状态**：第 1、2 段已写（2026-09-19，用户草稿，数字全部核对）；图 2、图 3 已插入
 
 **要点**：见 claims.md C1–C3
 
