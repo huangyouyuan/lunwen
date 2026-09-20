@@ -82,8 +82,8 @@ def create_degradation_heatmap():
     vmin = np.floor(np.min(all_values))
     vmax = np.ceil(np.max(all_values))
 
-    # 通栏 16 cm × 12 cm（4 模 × 3 模），2 行 3 列，最右列带色标
-    fig, axes = plt.subplots(2, 3, figsize=(fs.FULL_W, 3 * fs.MODULE))
+    # 通栏 16 cm × 12 cm（4 模 × 3 模），2 行 3 列等大热力图，色标单独放最右
+    fig, axes = plt.subplots(2, 3, figsize=(fs.FULL_W, 3 * fs.MODULE), layout='constrained')
 
     models = fs.MODEL_ORDER
     crops = ['corn', 'soybean']
@@ -97,9 +97,7 @@ def create_degradation_heatmap():
             sns.heatmap(
                 pivot, ax=ax, cmap='YlOrRd', vmin=vmin, vmax=vmax,
                 annot=True, fmt='.2f', annot_kws={'size': fs.FS_ANNOT},
-                cbar=(j == 2),
-                cbar_kws={'label': '泛化退化（个百分点）', 'shrink': 0.85} if j == 2 else None,
-                linewidths=0.5, linecolor='gray', square=True
+                cbar=False, linewidths=0.5, linecolor='gray', square=True
             )
             subplot_idx = i * 3 + j
             ax.set_xlabel(f'{subplot_labels[subplot_idx]}{MODEL_MAP[model]}{crop_names[crop]}泛化退化',
@@ -107,12 +105,11 @@ def create_degradation_heatmap():
             ax.set_ylabel('源站' if j == 0 else '')
             ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
             ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
-            if j == 2:
-                ax.collections[0].colorbar.ax.tick_params(labelsize=fs.FS_TICK)
-                ax.collections[0].colorbar.set_label('泛化退化（个百分点）', fontsize=fs.FS_TEXT)
 
-    fig.text(0.5, 0.005, '列为目标站', ha='center', fontsize=fs.FS_TEXT)
-    plt.tight_layout(rect=[0, 0.02, 1, 1], h_pad=1.0, w_pad=0.6)
+    cbar = fig.colorbar(axes[0, 0].collections[0], ax=axes, shrink=0.6, pad=0.01, aspect=30)
+    cbar.set_label('泛化退化（个百分点）', fontsize=fs.FS_TEXT)
+    cbar.ax.tick_params(labelsize=fs.FS_TICK)
+    fig.supxlabel('列为目标站', fontsize=fs.FS_TEXT)
 
     output_path = 'figures/results/fig_degradation_heatmap.png'
     plt.savefig(output_path)
