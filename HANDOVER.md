@@ -1,7 +1,7 @@
 # 论文写作系统交接文档
 
-**最后更新**：2026-09-20
-**一句话状态**：格式、数据、表格就绪；3.1 正文与图 2、图 3 已提交；3.2 核心命题已定、数字已核、正文未写；工作区有两张图的未提交重绘。
+**最后更新**：2026-09-21
+**一句话状态**：格式、数据、表格就绪；绘图标准已定（图框 3.8 cm 单元、逐子图 PDF、LaTeX 文本图题）并已用于图 2、图 3、热力图；3.1 正文已写；3.2 核心命题已定、数字已核、正文未写。工作区干净。
 
 本文件是入口，不重复维护数字。状态看 `plan/progress.md`，论点看 `plan/claims.md`，节→数据→图表看 `plan/results-map.md`，验证看 `verification/verification-report.md`。
 
@@ -26,9 +26,10 @@
 ### 一张图的流程
 
 1. 先定图要支撑的论点，再定图型；图型能否把数字放清楚**先算再画**（图 2 教训：8 cm 单栏 12 根竖柱最宽 0.59 cm，两位小数最窄 0.49 cm，必挤；改横向条形后每数一行）
-2. 脚本 `scripts/plot_*.py`，`import figstyle`，从仓库根目录运行，输出 `figures/results/*.png` + `.pdf`
-3. 插入 .tex（单栏 `figure` / 通栏 `figure*`，`[tbp]`），编译，导出页面给用户看
-4. 用户认可后提交；更新 `figures/data-manifest.md`、`plan/claims.md` S5、`plan/results-map.md`
+2. 脚本 `scripts/plot_*.py`，`import figstyle`，用 `fs.grid(nrows, ncols, w, h)` 建图（图框恰好 w×3.8 × h×3.8 cm），**每个子图单独 `fs.save(fig, stem)`** 出 PDF + PNG；图片里只有图框、刻度、数值、轴标签，不画子图题、图例、图名
+3. LaTeX 用 `subfigure` 拼：`\includegraphics{}` 不带 width 按原尺寸放；子图题 `\caption{}`；图例 `\modellegend` / `\classlegend` 横排居中放最后一个子图题之后、图名之前；子图之间和图例之前用 `\par\nointerlineskip\vspace{3pt}`
+4. 编译，导出页面 PNG 给用户看渲染页（用 pymupdf 量子图题→图例→图名的实际间距，应各约 3 pt）
+5. 用户认可后提交；更新 `figures/data-manifest.md`、`plan/claims.md` S5、`plan/results-map.md`
 
 ### 边界（不做的事）
 
@@ -73,41 +74,35 @@
 
 | 图/表 | 文件 | 规格 | 状态 |
 |---|---|---|---|
-| 图 2 站内 F1 | `fig_within_site_f1` | 单栏 8×12 cm，横向条形，(a) 玉米 (b) 大豆 | 已提交 469882d；横向版**用户尚未明确反馈** |
-| 图 3 D 站分类结果 | `fig_within_site_map_D` | 通栏 16×8 cm，上全站下局部，窗口 (13,8) 2×2 | 已提交；工作区有新 figstyle 重绘版未提交 |
-| 热力图 | `fig_degradation_heatmap` | 通栏 16×12 cm，2×3 | 已提交旧版；脚本改六图等大+独立色标，未提交、未经用户看 |
-| 研究区图 | `figures/study_area/` | — | 已插入 02_data.tex |
+| 图 2 站内 F1 | `fig_within_site_f1_{a,b}` | 两子图上下排，图框各 7.6×5.7 cm，横向条形，纵轴"站点"，横轴 F1/% | 已提交，用户 2026-09-21 认可为绘图标准样板 |
+| 图 3 D 站分类结果 | `fig_within_site_map_D_{a..h}` | 通栏 2×4，图框各 3.8×3.8 cm，上全站下局部，窗口 (13,8) 2×2 | 已提交 |
+| 图 4 热力图 | `fig_degradation_heatmap_{a..f,cbar}` | 脚本参数定子图边长：`1`→3.8 cm 排 2×3；`1.5`→5.7 cm 排 3×2 | 已提交 3×2 版并插入 3.3.1；**排法待用户定**（用户嫌 3.8 版小，但未拍板） |
+| 研究区图 | `figures/study_area/` | — | 已插入 02_data.tex；**未按新标准（图框 3.8 单元、文本图题）复核** |
 | 模型结构图 | `figures/models/` | — | 待提取 |
 | 表 | `tables/table1,1b,2,3.csv` | — | csv 就绪；正文尚无表；3.2 是否配表待定 |
 
 ### 未提交工作区
 
-```
-M scripts/plot_degradation_heatmap.py      六图等大：cbar=False + fig.colorbar(ax=axes)；layout='constrained'；fig.supxlabel
-M figures/results/fig_degradation_heatmap.{png,pdf}
-M figures/results/fig_within_site_map_D.{png,pdf}   新 figstyle（刻度 6.5 pt、Arial 数字）重绘产物
-```
-
-用户指示"先别画其它"。处理顺序：图 2 定稿 → 重跑两脚本 → 编译看页 → 用户认可 → 提交，并更新 `figures/results/README_heatmap.md`、`figures/data-manifest.md` 里热力图"最右列带色标"的描述。
+无（2026-09-21）。
 
 ### 待用户决定
 
-1. 图 2 横向条形版是否接受
+1. 热力图排法：2×3 各 3.8 cm（半页）还是 3×2 各 5.7 cm（近整页，tex 当前）
 2. 3.2 由 AI 按核心命题出草稿，还是用户自写 AI 核数（用户给了核心命题，尚未说明）
 3. 3.2 是否配表（`table2` 内容：模型 × 作物，跨站 F1 与 ΔF1 的 12 路径 mean±std）
 4. 3.2.2 "退化随迁移路径变化"讲到什么深度；与 3.3.1 热力图（逐路径）怎么分工
 5. 36 路径明细是否进正文或补充材料
-6. 题目、摘要；是否 push
+6. 题目、摘要；是否 push（本地领先 origin 十余个提交）
 
 ---
 
 ## 三、下一步（按顺序）
 
-1. 收图 2 反馈；重绘图 3、热力图；提交
+1. 热力图排法定稿
 2. 写 3.2.1、3.2.2。核心（用户原话）：**站内较高的作物分类精度在跨站后能否保持，以及泛化退化如何随模型、作物和迁移路径变化**。数字在 `04_results.tex` 注释，均已核对
 3. 写 3.3.1（热力图 + claims C7）
 4. 定位 3.3.2 数据；建立处理链后再写
-5. 重写 2.1；提取模型结构图
+5. 研究区图按新绘图标准复核；重写 2.1；提取模型结构图
 6. 引言、结论、摘要、题目
 7. 内容冻结后 LaTeX → Word
 
@@ -131,13 +126,15 @@ M figures/results/fig_within_site_map_D.{png,pdf}   新 figstyle（刻度 6.5 pt
 
 **公式**：角标中文、定语在前（$F1_{\text{站内玉米}}$）；一个 equation 一个公式一个编号。
 
-**图**（`scripts/figstyle.py`、`plan/format-spec.md`）：
-- 4 cm 模数：单栏 8 cm、通栏 16 cm；高 8 / 12 / 16 cm
-- 模型色 ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`；地物色玉米黄 `#F2C14E`、大豆绿 `#4C9F70`、其它灰 `#BDBDBD`
-- 图内文字 8 pt、子图题 8.5、刻度 6.5、数值 6.5；数字字母 Times New Roman，中文黑体
-- 子图题"（a）……"在子图下、写全对象；图例在整幅底部；单栏多子图上下排
-- 数值横排两位小数；放不下换图型，不缩字号、不竖排
-- 图题只在 caption；图内不放图名、不放英文
+**图**（用户 2026-09-20/21 定，样板为图 2；`scripts/figstyle.py`、`plan/format-spec.md`）：
+- **尺寸只算图框内**：基本单元 3.8×3.8 cm，其它取整数或 0.5 倍（5.7 / 7.6 / 11.4 / 15.2）；同一张图的子图一样大。7.6 cm 宽放单栏，4×3.8 放通栏
+- **图内文字与正文同**：中文宋体、字母数字 Times New Roman、小五 9 pt；`font.family=['Times New Roman','SimSun']`
+- **每个子图单独一个 PDF**，LaTeX `\includegraphics{}` 不带 width 按原尺寸放
+- **图名、子图题、图例都是 LaTeX 文本**：`subcaption`（"（a）……"写全对象）、`\modellegend` / `\classlegend` 横排居中放最后子图题之后、图名之前；图片里只有图框、刻度、数值、轴标签
+- **间距一律 3 pt**：`\captionsetup{skip=3pt}`；子图之间、图例之前 `\par\nointerlineskip\vspace{3pt}`（不用 `\\[3pt]`，会多出一整行）
+- **坐标轴都要有标签**（"站点""F1/%""源站""目标站"），读者不该猜 A–D 是什么
+- 模型色 ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`；地物色玉米黄 `#F2C14E`、大豆绿 `#4C9F70`、其它灰 `#BDBDBD`（main.tex 同名色定义）
+- 数值横排两位小数；放不下换图型（横向条形），不缩字号、不竖排；浮动体 `[tbp]`
 
 **表**：三线表；表题在上，黑体小五；列名中文。
 
@@ -146,9 +143,10 @@ M figures/results/fig_within_site_map_D.{png,pdf}   新 figstyle（刻度 6.5 pt
 ## 五、环境与操作要点
 
 - Windows 10，PowerShell 5.1：无 heredoc、无 `&&`。多行提交信息用 Bash 工具 `git commit -F - <<'EOF'`
+- **Bash 工具的 heredoc 会吃掉反斜杠**：里面写 Python/sed 处理 LaTeX 文本（`\\begin`、`\\[3pt]`）会失配。含反斜杠的批量替换先用 Write 写成 `.py` 文件再运行，或直接用 Edit 工具
 - 脚本相对路径以仓库根为准，在 `D:\AI\lunwen` 下 `python scripts/xxx.py`；绘图脚本自带 `sys.path` 加 `scripts/` 以 import figstyle
-- 编译：`latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error main.tex`；页面预览用 `pymupdf` 导出 PNG 再 Read
-- matplotlib 3.9.2：字体回退只认 `font.family` 列表，`font.sans-serif` 列表不回退。本机有 Arial、SimHei、Bahnschrift，无 Arial Narrow
+- 编译：`latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error main.tex`；页面预览用 `pymupdf` 导出 PNG 再 Read；量间距用 `page.get_text('words')` 的 bbox
+- matplotlib 3.9.2：字体回退只认 `font.family` 列表，`font.sans-serif` 列表不回退。本机有 Times New Roman、SimSun、SimHei、Arial、Bahnschrift，无 Arial Narrow；SimSun/Times 可以 Type 42 嵌入 PDF
 - 原始数据：站内 `D:/20{site}/2023…results/summary/metrics_summary.csv`（未入库，iw/iw2 目录名顺序不同）；跨站 `legacy/experiment-results/cross_site_all_20260916/`（git 排除）；D 站分类图需 `D:/20il/2023{model}ilresults/summary/maps/*.tif`
 - 一键重建数据与表：`scripts/run_all_updates.ps1`（calculate_crop_f1 → extract_cross_site_cm → calculate_crop_f1_degradation → generate_core_tables）
 - 本机 Claude 记忆：`C:\Users\huangyouyuan\.claude\projects\d--AI-lunwen\memory\`，4 条 feedback（旧稿角色、写作定位、图表可读性、行文严谨）。仓库内等价规则在 `plan/style-guide.md`、`plan/format-spec.md`，以仓库为准
