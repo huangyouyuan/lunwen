@@ -34,6 +34,7 @@ TILE = 128
 
 CLASS_COLORS = {1: '#F2C14E', 2: '#BDBDBD', 3: '#4C9F70'}
 CLASS_NAMES = {1: '玉米', 2: '其它', 3: '大豆'}
+LEGEND_ORDER = (1, 3, 2)   # 玉米、大豆在前，其它在后
 
 
 def load(model, name):
@@ -57,33 +58,34 @@ def main():
     cmap = ListedColormap([CLASS_COLORS[k] for k in (1, 2, 3)])
     norm = BoundaryNorm([0.5, 1.5, 2.5, 3.5], cmap.N)
 
-    fig, axes = plt.subplots(2, 4, figsize=(3.4, 2.15))
+    # 通栏宽：A4 正文宽 21 − 1.8×2 = 17.4 cm ≈ 6.85 in；四列图各 ≈ 1.6 in
+    fig, axes = plt.subplots(2, 4, figsize=(6.85, 3.85))
     letters = 'abcdefgh'
     for j, (name, arr) in enumerate(full):
         ax = axes[0, j]
         ax.imshow(arr, cmap=cmap, norm=norm, interpolation='nearest')
-        ax.add_patch(Rectangle((c0, r0), size, size, fill=False, edgecolor='red', linewidth=0.7))
-        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=5.5, labelpad=1.5)
+        ax.add_patch(Rectangle((c0, r0), size, size, fill=False, edgecolor='red', linewidth=1.0))
+        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=8, labelpad=2)
 
         ax = axes[1, j]
         ax.imshow(arr[sl], cmap=cmap, norm=norm, interpolation='nearest')
         for s in ax.spines.values():
-            s.set_edgecolor('red'); s.set_linewidth(0.7)
-        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=5.5, labelpad=1.5)
+            s.set_edgecolor('red'); s.set_linewidth(1.0)
+        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=8, labelpad=2)
 
     for ax in axes.ravel():
         ax.set_xticks([]); ax.set_yticks([])
         for s in ax.spines.values():
-            s.set_linewidth(max(s.get_linewidth(), 0.4))
+            s.set_linewidth(max(s.get_linewidth(), 0.5))
 
     handles = [Patch(facecolor=CLASS_COLORS[k], edgecolor='black', linewidth=0.4, label=CLASS_NAMES[k])
-               for k in (1, 2, 3)]
+               for k in LEGEND_ORDER]
     fig.legend(handles=handles, loc='lower center', ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, -0.02), fontsize=6, handlelength=1.2, columnspacing=1.5)
+               bbox_to_anchor=(0.5, 0.0), fontsize=8, handlelength=1.4, columnspacing=1.8)
 
-    plt.subplots_adjust(left=0.01, right=0.99, top=0.99, bottom=0.14, wspace=0.06, hspace=0.32)
-    plt.savefig('figures/results/fig_within_site_map_D.png', dpi=400, bbox_inches='tight')
-    plt.savefig('figures/results/fig_within_site_map_D.pdf', bbox_inches='tight')
+    plt.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.10, wspace=0.05, hspace=0.22)
+    plt.savefig('figures/results/fig_within_site_map_D.png', dpi=300, bbox_inches='tight', pad_inches=0.02)
+    plt.savefig('figures/results/fig_within_site_map_D.pdf', bbox_inches='tight', pad_inches=0.02)
     plt.close()
 
     win_err = {lab: float((preds[m][sl] != ref[sl]).mean()) for m, lab in MODELS}
