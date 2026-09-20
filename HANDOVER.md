@@ -134,7 +134,7 @@ M figures/results/fig_within_site_map_D.{png,pdf}   新 figstyle（刻度 6.5 pt
 **图**（`scripts/figstyle.py`、`plan/format-spec.md`）：
 - 4 cm 模数：单栏 8 cm、通栏 16 cm；高 8 / 12 / 16 cm
 - 模型色 ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`；地物色玉米黄 `#F2C14E`、大豆绿 `#4C9F70`、其它灰 `#BDBDBD`
-- 图内文字 8 pt、子图题 8.5、刻度 6.5、数值 6.5；数字字母 Arial，中文黑体
+- 图内文字 8 pt、子图题 8.5、刻度 6.5、数值 6.5；数字字母 Times New Roman，中文黑体
 - 子图题"（a）……"在子图下、写全对象；图例在整幅底部；单栏多子图上下排
 - 数值横排两位小数；放不下换图型，不缩字号、不竖排
 - 图题只在 caption；图内不放图名、不放英文

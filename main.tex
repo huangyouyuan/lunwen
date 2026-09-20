@@ -65,7 +65,8 @@
     urlcolor=black
 }
 
-% ---- 图表标题格式：小五号宋体 ----
+% ---- 图表标题格式：小五号宋体；图名与图的距离 = 正文行距 ----
+\usepackage{subcaption}
 \DeclareCaptionFont{songxiaowu}{\songti\zihao{-5}}
 \captionsetup[table]{
     font=songxiaowu,
@@ -80,13 +81,41 @@
     labelsep=space,
     justification=centering,
     position=bottom,
-    skip=2pt
+    skip=\baselineskip
+}
+% 子图题：（a）……，紧贴子图；图名、子图题都是文本，不画进图片
+\DeclareCaptionLabelFormat{cnparen}{（#2）}
+\captionsetup[sub]{
+    font=songxiaowu,
+    labelformat=cnparen,
+    labelsep=none,
+    justification=centering,
+    skip=3pt
 }
 \setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
 \setlength{\intextsep}{6pt plus 2pt minus 2pt}
 \setlength{\dbltextfloatsep}{6pt plus 2pt minus 2pt}
+% 整栏只有浮动体时靠顶，不垂直居中
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@dblfptop}{0pt}
+\makeatother
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}
+
+% ---- 图例：文本排，颜色与 scripts/figstyle.py 一致 ----
+\definecolor{cConvGRU}{HTML}{7B3FA0}
+\definecolor{cUNet}{HTML}{1B9E9E}
+\definecolor{cUTAE}{HTML}{E8731A}
+\definecolor{cCorn}{HTML}{F2C14E}
+\definecolor{cSoy}{HTML}{4C9F70}
+\definecolor{cOther}{HTML}{BDBDBD}
+\newcommand{\legbox}[1]{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.3pt}%
+  \fcolorbox{black}{#1}{\rule{0pt}{5pt}\rule{10pt}{0pt}}}}
+\newcommand{\modellegend}{{\songti\zihao{-5}%
+  \legbox{cConvGRU}\,ConvGRU\quad\legbox{cUNet}\,3D U-Net\quad\legbox{cUTAE}\,U-TAE}}
+\newcommand{\classlegend}{{\songti\zihao{-5}%
+  \legbox{cCorn}\,玉米\quad\legbox{cSoy}\,大豆\quad\legbox{cOther}\,其它}}
 
 % ---- 参考文献标题：不让 \bibliography 自动生成标题 ----
 \renewcommand{\refname}{}
