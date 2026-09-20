@@ -11,29 +11,20 @@
 每个子图：4×4热力图，对角线留空，共用色标
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from matplotlib import font_manager
+import figstyle as fs
 
-# 配置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']
-plt.rcParams['axes.unicode_minus'] = False
+fs.setup()
 
-# 站点映射
-SITE_MAP = {
-    'iw_2023': 'A',
-    'iw2_2023': 'B',
-    'ida_2023': 'C',
-    'il_2023': 'D'
-}
-
-MODEL_MAP = {
-    'convgru': 'ConvGRU',
-    'unet3d': '3D U-Net',
-    'utae': 'U-TAE'
-}
+SITE_MAP = fs.SITE_MAP
+MODEL_MAP = fs.MODEL_LABELS
 
 def prepare_heatmap_data(df, model, crop):
     """
@@ -91,64 +82,44 @@ def create_degradation_heatmap():
     vmin = np.floor(np.min(all_values))
     vmax = np.ceil(np.max(all_values))
 
-    # 创建画布：2行3列
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    # 通栏 16 cm × 12 cm（4 模 × 3 模），2 行 3 列，最右列带色标
+    fig, axes = plt.subplots(2, 3, figsize=(fs.FULL_W, 3 * fs.MODULE))
 
-    # 定义子图
-    models = ['convgru', 'unet3d', 'utae']
+    models = fs.MODEL_ORDER
     crops = ['corn', 'soybean']
     crop_names = {'corn': '玉米', 'soybean': '大豆'}
-    subplot_labels = ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)']
+    subplot_labels = ['（a）', '（b）', '（c）', '（d）', '（e）', '（f）']
 
-    # 绘制6个子图
     for i, crop in enumerate(crops):
         for j, model in enumerate(models):
             ax = axes[i, j]
-
-            # 准备数据
             pivot = prepare_heatmap_data(df, model, crop)
-
-            # 绘制热力图（保留数值注解）
             sns.heatmap(
-                pivot,
-                ax=ax,
-                cmap='YlOrRd',
-                vmin=vmin,
-                vmax=vmax,
-                annot=True,  # 保留数值注解
-                fmt='.2f',
-                cbar=(j == 2),  # 只在最右侧显示色标
-                cbar_kws={'label': '泛化退化 (pp)'} if j == 2 else None,
-                linewidths=0.5,
-                linecolor='gray',
-                square=True
+                pivot, ax=ax, cmap='YlOrRd', vmin=vmin, vmax=vmax,
+                annot=True, fmt='.2f', annot_kws={'size': fs.FS_ANNOT},
+                cbar=(j == 2),
+                cbar_kws={'label': '泛化退化（个百分点）', 'shrink': 0.85} if j == 2 else None,
+                linewidths=0.5, linecolor='gray', square=True
             )
-
-            # 设置标题和标签（去掉英文）
             subplot_idx = i * 3 + j
-            title = f'{subplot_labels[subplot_idx]} {MODEL_MAP[model]}{crop_names[crop]}泛化退化'
-            ax.set_title(title, fontsize=12, pad=10)
-
-            ax.set_xlabel('目标站', fontsize=10)
-            ax.set_ylabel('源站', fontsize=10)
-
-            # 旋转标签
+            ax.set_xlabel(f'{subplot_labels[subplot_idx]}{MODEL_MAP[model]}{crop_names[crop]}泛化退化',
+                          fontsize=fs.FS_SUBTITLE, labelpad=2)
+            ax.set_ylabel('源站' if j == 0 else '')
             ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
             ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+            if j == 2:
+                ax.collections[0].colorbar.ax.tick_params(labelsize=fs.FS_TICK)
+                ax.collections[0].colorbar.set_label('泛化退化（个百分点）', fontsize=fs.FS_TEXT)
 
-    # 调整布局（图名和图注将在正文中给出）
-    plt.tight_layout()
+    fig.text(0.5, 0.005, '列为目标站', ha='center', fontsize=fs.FS_TEXT)
+    plt.tight_layout(rect=[0, 0.02, 1, 1], h_pad=1.0, w_pad=0.6)
 
-    # 保存
     output_path = 'figures/results/fig_degradation_heatmap.png'
-    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.savefig(output_path)
     print(f"已保存：{output_path}")
-
-    # 同时保存PDF版本
     output_pdf = 'figures/results/fig_degradation_heatmap.pdf'
-    plt.savefig(output_pdf, bbox_inches='tight')
+    plt.savefig(output_pdf)
     print(f"已保存：{output_pdf}")
-
     plt.close()
 
     # 输出数据摘要

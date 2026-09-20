@@ -15,19 +15,23 @@
 输出：figures/results/fig_within_site_map_D.png / .pdf
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
 import hashlib
 import numpy as np
 import tifffile
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.patches import Patch, Rectangle
+import figstyle as fs
 
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']
-plt.rcParams['axes.unicode_minus'] = False
+fs.setup()
 
 SITE_DIR = 'D:/20il'
 SITE_TAG = 'il'
-MODELS = [('convgru', 'ConvGRU'), ('unet3d', '3D U-Net'), ('utae', 'U-TAE')]
+MODELS = [(k, fs.MODEL_LABELS[k]) for k in fs.MODEL_ORDER]
 
 # 窗口选择：在 20×20 图块网格上搜索 2×2 / 3×3 窗口，指标只看真实为玉米、大豆的像元：
 #   score = [作物像元错误率(ConvGRU) − 另两模型均值] + [类别边界带(约 2 像元)错误率(ConvGRU) − 另两模型均值]
@@ -36,9 +40,9 @@ MODELS = [('convgru', 'ConvGRU'), ('unet3d', '3D U-Net'), ('utae', 'U-TAE')]
 WIN_TILE_ROW, WIN_TILE_COL, WIN_TILES = 13, 8, 2
 TILE = 128
 
-CLASS_COLORS = {1: '#F2C14E', 2: '#BDBDBD', 3: '#4C9F70'}
-CLASS_NAMES = {1: '玉米', 2: '其它', 3: '大豆'}
-LEGEND_ORDER = (1, 3, 2)   # 玉米、大豆在前，其它在后
+CLASS_COLORS = fs.CLASS_COLORS
+CLASS_NAMES = fs.CLASS_NAMES
+LEGEND_ORDER = fs.CLASS_LEGEND_ORDER
 
 
 def load(model, name):
@@ -62,20 +66,20 @@ def main():
     cmap = ListedColormap([CLASS_COLORS[k] for k in (1, 2, 3)])
     norm = BoundaryNorm([0.5, 1.5, 2.5, 3.5], cmap.N)
 
-    # 通栏宽：A4 正文宽 21 − 1.8×2 = 17.4 cm ≈ 6.85 in；四列图各 ≈ 1.6 in
-    fig, axes = plt.subplots(2, 4, figsize=(6.85, 3.85))
+    # 通栏 16 cm × 8 cm（4 模 × 2 模）
+    fig, axes = plt.subplots(2, 4, figsize=(fs.FULL_W, 2 * fs.MODULE))
     letters = 'abcdefgh'
     for j, (name, arr) in enumerate(full):
         ax = axes[0, j]
         ax.imshow(arr, cmap=cmap, norm=norm, interpolation='nearest')
         ax.add_patch(Rectangle((c0, r0), size, size, fill=False, edgecolor='red', linewidth=1.0))
-        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=8, labelpad=2)
+        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=fs.FS_SUBTITLE, labelpad=1.5)
 
         ax = axes[1, j]
         ax.imshow(arr[sl], cmap=cmap, norm=norm, interpolation='nearest')
         for s in ax.spines.values():
             s.set_edgecolor('red'); s.set_linewidth(1.0)
-        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=8, labelpad=2)
+        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=fs.FS_SUBTITLE, labelpad=1.5)
 
     for ax in axes.ravel():
         ax.set_xticks([]); ax.set_yticks([])
@@ -85,11 +89,11 @@ def main():
     handles = [Patch(facecolor=CLASS_COLORS[k], edgecolor='black', linewidth=0.4, label=CLASS_NAMES[k])
                for k in LEGEND_ORDER]
     fig.legend(handles=handles, loc='lower center', ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, 0.0), fontsize=8, handlelength=1.4, columnspacing=1.8)
+               bbox_to_anchor=(0.5, 0.0), handlelength=1.4, columnspacing=1.8)
 
-    plt.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.10, wspace=0.05, hspace=0.22)
-    plt.savefig('figures/results/fig_within_site_map_D.png', dpi=300, bbox_inches='tight', pad_inches=0.02)
-    plt.savefig('figures/results/fig_within_site_map_D.pdf', bbox_inches='tight', pad_inches=0.02)
+    plt.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.115, wspace=0.05, hspace=0.20)
+    plt.savefig('figures/results/fig_within_site_map_D.png')
+    plt.savefig('figures/results/fig_within_site_map_D.pdf')
     plt.close()
 
     win_err = {lab: float((preds[m][sl] != ref[sl]).mean()) for m, lab in MODELS}

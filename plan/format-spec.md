@@ -67,6 +67,15 @@
 - 中文：`摘要：[目的]……[方法]……[结果]……[结论]……`
 - 英文：`Abstract: [Purposes]……[Methods]……[Findings]……`
 
+## 图尺寸与配色标准（2026-09-20 用户要求，`scripts/figstyle.py`）
+
+- 模数 4 cm。单栏宽 8 cm（2 模），通栏宽 16 cm（4 模）；高 8 / 12 / 16 cm
+- 所有绘图脚本 `import figstyle`，figsize 只用 `fs.COL_W`、`fs.FULL_W`、`n * fs.MODULE`
+- 三模型固定色：ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`
+- 三类地物固定色：玉米 `#F2C14E`、大豆 `#4C9F70`、其它 `#BDBDBD`；图例顺序玉米、大豆、其它
+- 图内文字 8 pt，子图题 8.5 pt，刻度 7.5 pt，柱顶数字 6.5 pt
+- 数值保留两位小数；纵轴范围紧贴数据，不留大片空白
+
 ## 图题与表题
 
 | 元素 | 格式 | 字体 | 来源 |
