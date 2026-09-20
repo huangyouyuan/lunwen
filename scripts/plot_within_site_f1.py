@@ -32,7 +32,7 @@ def main():
 
     y = np.arange(len(fs.SITES))
     h = 0.30                          # 三条占 0.90，组间留 0.10
-    xmin, xmax = 88, 98
+    xmin, xmax = 88, 98.5             # 上限 98.5：刻度到 98 且 98 的数字不探出图框，整幅才不超栏宽
 
     for col, tag, title in CROPS:
         fig, axes = fs.grid(1, 1, w=2, h=1.5)
@@ -48,11 +48,13 @@ def main():
         ax.set_yticklabels(fs.SITES)
         ax.set_ylim(len(fs.SITES) - 0.5, -0.5)          # A 在最上
         ax.set_xlim(xmin, xmax)
-        ax.set_xticks(np.arange(xmin, xmax + 1, 2))
+        ax.set_xticks(np.arange(xmin, 98 + 1, 2))
         ax.grid(axis='x', alpha=0.3, linestyle='--', linewidth=0.4)
         ax.set_axisbelow(True)
-        ax.tick_params(axis='y', length=0)
+        ax.tick_params(axis='y', length=0, pad=1.5)
         ax.set_xlabel('F1/%')
+        ax.set_ylabel('站点', labelpad=2)
+        # 图例由 LaTeX 文本排在两子图之后、图名之前（\modellegend），图里不画
         out = fs.save(fig, f'fig_within_site_f1_{tag}')
         print(f'({tag}) {title}: {out}')
         for key in fs.MODEL_ORDER:

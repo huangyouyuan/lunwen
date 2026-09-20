@@ -13,8 +13,8 @@
 **表**：`tables/table1_within_site_baseline.csv`、`tables/table1b_within_site_fold_stability.csv`（数据备查，正文用图不用表）
 
 **图**：
-- `figures/results/fig_within_site_f1.png`——上下两子图横向条形图，(a) 四站点玉米分类精度 (b) 四站点大豆分类精度，单栏 8×12 cm
-- `figures/results/fig_within_site_map_D.png`——D 站分类结果对比，通栏 16×8 cm：上行全站（红框）、下行局部放大，(a)/(e) 参考标签 (b)/(f) ConvGRU (c)/(g) 3D U-Net (d)/(h) U-TAE
+- `figures/results/fig_within_site_f1_{a,b}.pdf`——两子图上下排横向条形图，图框各 7.6×5.7 cm，(a) 四站点玉米分类精度 (b) 四站点大豆分类精度；子图题、图例、图名为 LaTeX 文本
+- `figures/results/fig_within_site_map_D_{a..h}.pdf`——D 站分类结果对比，通栏 2 行 4 列、图框各 3.8×3.8 cm：上行全站（红框）、下行局部放大，(a)/(e) 参考标签 (b)/(f) ConvGRU (c)/(g) 3D U-Net (d)/(h) U-TAE
 
 **正文状态**：第 1、2 段已写（2026-09-19，用户草稿，数字全部核对）；图 2、图 3 已插入
 
@@ -54,7 +54,7 @@
 
 **表**：36 路径明细可作补充材料；正文不放（3.1 已给站内基准，读者可由 ΔF1 倒算跨站绝对值）
 
-**图**：`figures/results/fig_degradation_heatmap.png`（6 子图，见 figures/data-manifest.md）
+**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`（6 子图，排法待定：2×3 各 3.8 cm 或 3×2 各 5.7 cm，见 figures/data-manifest.md）
 
 **要点**：见 claims.md C7
 

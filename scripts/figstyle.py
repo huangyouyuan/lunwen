@@ -58,7 +58,7 @@ def setup():
         'pdf.fonttype': 42,         # TrueType 嵌入，文字可选可搜
         'savefig.dpi': 300,
         'savefig.bbox': 'tight',
-        'savefig.pad_inches': 0.02,
+        'savefig.pad_inches': 0.01,
     })
 
 

@@ -3,16 +3,15 @@
 """
 3.1 用图：D 站三种模型站内交叉验证分类结果对比
 
-布局（单栏宽，两行四列）：
+布局（通栏，两行四列，子图各 3.8×3.8 cm，LaTeX subcaption 拼）：
   第 1 行：全站 2560×2560，(a) 参考标签 (b) ConvGRU (c) 3D U-Net (d) U-TAE；每幅标同一红框窗口
   第 2 行：红框窗口放大，(e)(f)(g)(h) 对应上一行
-四子图同范围、同配色、共用底部图例；子图题在各子图下。
-图名写在正文 caption。
+八子图同配色；子图题、底部图例、图名都是 LaTeX 文本。
 
 输入：D:/20il/2023{model}ilresults/summary/maps/{reference,oof_prediction}.tif
       oof_prediction 为五折交叉验证拼接，每个图块的预测来自未训练过它的模型
       值：1=玉米 2=其它 3=大豆
-输出：figures/results/fig_within_site_map_D.png / .pdf
+输出：figures/results/fig_within_site_map_D_{a..h}.pdf / .png（每子图一个，LaTeX 拼 2×4）
 """
 
 import sys
@@ -22,9 +21,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import hashlib
 import numpy as np
 import tifffile
-import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, BoundaryNorm
-from matplotlib.patches import Patch, Rectangle
+from matplotlib.patches import Rectangle
 import figstyle as fs
 
 fs.setup()
@@ -66,39 +64,30 @@ def main():
     cmap = ListedColormap([CLASS_COLORS[k] for k in (1, 2, 3)])
     norm = BoundaryNorm([0.5, 1.5, 2.5, 3.5], cmap.N)
 
-    # 通栏 16 cm × 8 cm（4 模 × 2 模）
-    fig, axes = plt.subplots(2, 4, figsize=(fs.FULL_W, 2 * fs.MODULE))
+    # 8 个子图各出一个 PDF（图框 3.8×3.8 cm），LaTeX 用 subcaption 排 2 行 4 列；子图题、图例是文本
+    #   a–d 全站（黑框，红框标窗口）  e–h 局部窗口（红框）
     letters = 'abcdefgh'
     for j, (name, arr) in enumerate(full):
-        ax = axes[0, j]
+        fig, axes = fs.grid(1, 1, w=1, h=1, margin=(0.1, 0.1, 0.1, 0.1))
+        ax = axes[0, 0]
         ax.imshow(arr, cmap=cmap, norm=norm, interpolation='nearest')
         ax.add_patch(Rectangle((c0, r0), size, size, fill=False, edgecolor='red', linewidth=1.0))
-        ax.set_xlabel(f'（{letters[j]}）{name}', fontsize=fs.FS_SUBTITLE, labelpad=1.5)
-
-        ax = axes[1, j]
-        ax.imshow(arr[sl], cmap=cmap, norm=norm, interpolation='nearest')
-        for s in ax.spines.values():
-            s.set_edgecolor('red'); s.set_linewidth(1.0)
-        ax.set_xlabel(f'（{letters[4 + j]}）{name}', fontsize=fs.FS_SUBTITLE, labelpad=1.5)
-
-    for ax in axes.ravel():
         ax.set_xticks([]); ax.set_yticks([])
         for s in ax.spines.values():
-            s.set_linewidth(max(s.get_linewidth(), 0.5))
+            s.set_linewidth(0.6)
+        fs.save(fig, f'fig_within_site_map_D_{letters[j]}')
 
-    handles = [Patch(facecolor=CLASS_COLORS[k], edgecolor='black', linewidth=0.4, label=CLASS_NAMES[k])
-               for k in LEGEND_ORDER]
-    fig.legend(handles=handles, loc='lower center', ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, 0.0), handlelength=1.4, columnspacing=1.8)
-
-    plt.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.115, wspace=0.05, hspace=0.20)
-    plt.savefig('figures/results/fig_within_site_map_D.png')
-    plt.savefig('figures/results/fig_within_site_map_D.pdf')
-    plt.close()
+        fig, axes = fs.grid(1, 1, w=1, h=1, margin=(0.1, 0.1, 0.1, 0.1))
+        ax = axes[0, 0]
+        ax.imshow(arr[sl], cmap=cmap, norm=norm, interpolation='nearest')
+        ax.set_xticks([]); ax.set_yticks([])
+        for s in ax.spines.values():
+            s.set_edgecolor('red'); s.set_linewidth(1.0)
+        fs.save(fig, f'fig_within_site_map_D_{letters[4 + j]}')
 
     win_err = {lab: float((preds[m][sl] != ref[sl]).mean()) for m, lab in MODELS}
     full_err = {lab: float((preds[m] != ref).mean()) for m, lab in MODELS}
-    print('Generated: figures/results/fig_within_site_map_D.png / .pdf')
+    print('Generated: figures/results/fig_within_site_map_D_{a..h}.pdf / .png')
     print(f'window: tiles ({WIN_TILE_ROW},{WIN_TILE_COL}) {WIN_TILES}x{WIN_TILES}, px rows {r0}-{r0+size} cols {c0}-{c0+size}')
     print('window err:', {k: round(v, 4) for k, v in win_err.items()})
     print('full err:  ', {k: round(v, 4) for k, v in full_err.items()})

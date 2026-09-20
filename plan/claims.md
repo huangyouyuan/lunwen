@@ -65,13 +65,13 @@
 
 ### S5 图
 
-**热力图**：`scripts/plot_degradation_heatmap.py`，输入 S3 输出。每个 (model, crop) 把 12 条路径 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图共用全局色标。输出 `figures/results/fig_degradation_heatmap.png` / `.pdf`。
+**热力图**：`scripts/plot_degradation_heatmap.py`，输入 S3 输出。每个 (model, crop) 把 12 条路径 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图共用全局色标。每子图一个 PDF + 色标 PDF，输出 `figures/results/fig_degradation_heatmap_{a..f,cbar}.pdf`。
 
-**站内条形图**：`scripts/plot_within_site_f1.py`，输入 S1 的 `within_site_crop_f1.csv`。玉米、大豆各一子图上下排，横向条形：纵轴站点 A–D、每站三模型条，横轴 F1 换算为百分数、条末端标两位小数。输出 `figures/results/fig_within_site_f1.png` / `.pdf`。
+**站内条形图**：`scripts/plot_within_site_f1.py`，输入 S1 的 `within_site_crop_f1.csv`。玉米、大豆各一子图上下排，横向条形：纵轴站点 A–D、每站三模型条，横轴 F1 换算为百分数、条末端标两位小数。每子图一个 PDF，输出 `figures/results/fig_within_site_f1_{a,b}.pdf`。
 
-**D 站分类结果图**：`scripts/plot_within_site_map_D.py`，输入 `D:/20il/2023{model}ilresults/summary/maps/` 的 `reference.tif` 与 `oof_prediction.tif`（五折拼接，每图块预测来自未训练过它的模型；断言三模型 reference sha256 一致）。上行全站标红框，下行红框放大；窗口取图块网格 (13,8) 起 2×2，按"真实玉米/大豆像元错误率差 + 类别边界带错误率差（ConvGRU 相对另两模型均值）"最大选出。输出 `figures/results/fig_within_site_map_D.png` / `.pdf`。
+**D 站分类结果图**：`scripts/plot_within_site_map_D.py`，输入 `D:/20il/2023{model}ilresults/summary/maps/` 的 `reference.tif` 与 `oof_prediction.tif`（五折拼接，每图块预测来自未训练过它的模型；断言三模型 reference sha256 一致）。上行全站标红框，下行红框放大；窗口取图块网格 (13,8) 起 2×2，按"真实玉米/大豆像元错误率差 + 类别边界带错误率差（ConvGRU 相对另两模型均值）"最大选出。每子图一个 PDF，输出 `figures/results/fig_within_site_map_D_{a..h}.pdf`。
 
-图题、图注均在正文 caption。
+图题、子图题、图例均为 LaTeX 文本（subcaption、\modellegend / \classlegend），图片里只有图框、刻度、数值、轴标签。
 
 ### 补充体系（不进正文）
 
@@ -83,7 +83,7 @@
 
 **内容**：站内 OOF pooled 玉米 F1 为 0.915 / 0.941 / 0.944（ConvGRU / 3D U-Net / U-TAE），大豆 F1 为 0.906 / 0.934 / 0.937，OA 为 0.896 / 0.928 / 0.931。3D U-Net 与 U-TAE 差距 < 0.3 pp，二者高于 ConvGRU 约 2.6–3.5 pp。同一模型玉米 F1 高于大豆 0.6–0.9 pp。
 
-**数据来源**：`results/summary/within_site_crop_f1.csv`（S1 步骤 1–3；模型均值为四站汇总值的算术平均，见 S4 表1 Mean 列）；图 `figures/results/fig_within_site_f1.png`（S5）
+**数据来源**：`results/summary/within_site_crop_f1.csv`（S1 步骤 1–3；模型均值为四站汇总值的算术平均，见 S4 表1 Mean 列）；图 `figures/results/fig_within_site_f1_{a,b}.pdf`（S5）
 
 **状态**：已验证（2026-09-18）；正文 3.1 已写（2026-09-19），范围 90.98–96.23 / 89.55–95.89、C 站最大差 1.61/1.50、D 站 3.58/3.98 均核对
 
@@ -131,7 +131,7 @@
 
 **内容**：玉米退化前 5 条路径为 D→B（3D U-Net，5.85）、B→C（ConvGRU，5.30）、B→D（ConvGRU，5.26）、B→C（U-TAE，4.89）、A→C（3D U-Net，4.84）；大豆前 5 条为 B→D（ConvGRU，7.39）、D→B（3D U-Net，6.14）、B→C（ConvGRU，6.00）、B→D（U-TAE，5.74）、C→A（U-TAE，4.79）。ConvGRU 大豆 B→D 为 7.39 pp，D→B 仅 3.36 pp。三模型的困难路径高度重合。
 
-**数据来源**：`results/summary/crop_f1_degradation_36paths.csv`（S3）；图 `figures/results/fig_degradation_heatmap.png`（S5）
+**数据来源**：`results/summary/crop_f1_degradation_36paths.csv`（S3）；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf`（S5）
 
 **状态**：已验证（2026-09-18）
 

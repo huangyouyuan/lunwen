@@ -15,12 +15,12 @@
 \centering
 \includegraphics{results/fig_within_site_f1_a.pdf}
 \caption{四站点玉米分类精度}
-\end{subfigure}\\[6pt]
+\end{subfigure}\\[3pt]
 \begin{subfigure}{\linewidth}
 \centering
 \includegraphics{results/fig_within_site_f1_b.pdf}
 \caption{四站点大豆分类精度}
-\end{subfigure}\\[6pt]
+\end{subfigure}\\[3pt]
 \modellegend
 \caption{三种模型在四个站点的站内玉米和大豆分类精度}
 \label{fig:within_site_f1}
@@ -35,7 +35,39 @@
 
 \begin{figure*}[tbp]
 \centering
-\includegraphics[width=\textwidth]{results/fig_within_site_map_D.png}
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_a.pdf}
+\caption{参考标签}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_b.pdf}
+\caption{ConvGRU分类结果}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_c.pdf}
+\caption{3D U-Net分类结果}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_d.pdf}
+\caption{U-TAE分类结果}
+\end{subfigure}\\[3pt]
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_e.pdf}
+\caption{参考标签}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_f.pdf}
+\caption{ConvGRU分类结果}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_g.pdf}
+\caption{3D U-Net分类结果}
+\end{subfigure}\hfill
+\begin{subfigure}{0.24\textwidth}\centering
+\includegraphics{results/fig_within_site_map_D_h.pdf}
+\caption{U-TAE分类结果}
+\end{subfigure}\\[3pt]
+\classlegend
 \caption{D站点三种模型站内交叉验证分类结果（上：全站，红框为局部窗口；下：局部窗口放大）}
 \label{fig:within_site_map_D}
 \end{figure*}
@@ -80,14 +112,50 @@
 
 \subsubsection{模型在不同源—目标区域组合下的退化差异}
 
-% 图：figures/results/fig_degradation_heatmap.png / .pdf
-%     2 行（玉米/大豆）× 3 列（ConvGRU/3D U-Net/U-TAE），行=源站，列=目标站，对角线留空，共用色标 0–8 pp
-%     图题、图注写在 caption（小五号宋体），图内不含；图题文本见 figures/data-manifest.md
+% 图：figures/results/fig_degradation_heatmap_{a..f}.pdf + _cbar.pdf（scripts/plot_degradation_heatmap.py，参数为子图边长倍数）
+%     行=源站，列=目标站，对角线留空，共用色标 0–8 pp；子图题、图名是文本
 % 要点：
 % - 涉及 B 站的路径退化最大：玉米 top5 含 D→B(5.85)、B→C(5.30)、B→D(5.26)、B→C(4.89)；
 %   大豆 top5 含 B→D(7.39)、D→B(6.14)、B→C(6.00)、B→D(5.74)
 % - 方向不对称：ConvGRU 大豆 B→D 7.39 pp vs D→B 3.36 pp
 % - 三模型的困难路径基本一致，路径难度主要由区域组合而非模型决定
+
+\begin{figure*}[tbp]
+\centering
+\begin{minipage}[c]{0.8\textwidth}
+\centering
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_a.pdf}
+\caption{ConvGRU玉米泛化退化}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_d.pdf}
+\caption{ConvGRU大豆泛化退化}
+\end{subfigure}\\[6pt]
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_b.pdf}
+\caption{3D U-Net玉米泛化退化}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_e.pdf}
+\caption{3D U-Net大豆泛化退化}
+\end{subfigure}\\[6pt]
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_c.pdf}
+\caption{U-TAE玉米泛化退化}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\linewidth}\centering
+\includegraphics{results/fig_degradation_heatmap_f.pdf}
+\caption{U-TAE大豆泛化退化}
+\end{subfigure}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.12\textwidth}
+\centering
+\includegraphics{results/fig_degradation_heatmap_cbar.pdf}
+\end{minipage}
+\caption{不同源—目标区域组合下三种模型的玉米和大豆F1泛化退化（行为源站，列为目标站，对角线不适用）}
+\label{fig:degradation_heatmap}
+\end{figure*}
 
 \subsubsection{模型退化与空间特征的关系}
 

@@ -65,7 +65,7 @@
     urlcolor=black
 }
 
-% ---- 图表标题格式：小五号宋体；图名与图的距离 = 正文行距 ----
+% ---- 图表标题格式：小五号宋体；图名、子图题与图的距离取正文行间空白（3 pt），不比段落行距大 ----
 \usepackage{subcaption}
 \DeclareCaptionFont{songxiaowu}{\songti\zihao{-5}}
 \captionsetup[table]{
@@ -73,7 +73,8 @@
     labelfont=songxiaowu,
     labelsep=space,
     justification=centering,
-    position=top
+    position=top,
+    skip=3pt
 }
 \captionsetup[figure]{
     font=songxiaowu,
@@ -81,7 +82,7 @@
     labelsep=space,
     justification=centering,
     position=bottom,
-    skip=\baselineskip
+    skip=3pt
 }
 % 子图题：（a）……，紧贴子图；图名、子图题都是文本，不画进图片
 \DeclareCaptionLabelFormat{cnparen}{（#2）}
@@ -103,7 +104,7 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}
 
-% ---- 图例：文本排，颜色与 scripts/figstyle.py 一致 ----
+% ---- 图例：文本排，横排居中，放在最后一个子图题之后、图名之前；颜色与 scripts/figstyle.py 一致 ----
 \definecolor{cConvGRU}{HTML}{7B3FA0}
 \definecolor{cUNet}{HTML}{1B9E9E}
 \definecolor{cUTAE}{HTML}{E8731A}
