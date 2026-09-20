@@ -29,7 +29,11 @@ SITE_DIR = 'D:/20il'
 SITE_TAG = 'il'
 MODELS = [('convgru', 'ConvGRU'), ('unet3d', '3D U-Net'), ('utae', 'U-TAE')]
 
-WIN_TILE_ROW, WIN_TILE_COL, WIN_TILES = 5, 7, 3
+# 窗口选择：在 20×20 图块网格上搜索 2×2 / 3×3 窗口，指标只看真实为玉米、大豆的像元：
+#   score = [作物像元错误率(ConvGRU) − 另两模型均值] + [类别边界带(约 2 像元)错误率(ConvGRU) − 另两模型均值]
+# (13,8) 2×2 得分最高：作物像元错误 12.1% / 5.8% / 4.8%，边界带错误 32.0% / 15.3% / 13.4%，
+# 玉米↔大豆互混 6.8% / 2.6% / 2.2%（ConvGRU / 3D U-Net / U-TAE）。
+WIN_TILE_ROW, WIN_TILE_COL, WIN_TILES = 13, 8, 2
 TILE = 128
 
 CLASS_COLORS = {1: '#F2C14E', 2: '#BDBDBD', 3: '#4C9F70'}

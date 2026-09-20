@@ -69,7 +69,7 @@
 
 **站内柱状图**：`scripts/plot_within_site_f1.py`，输入 S1 的 `within_site_crop_f1.csv`。玉米、大豆各一子图上下排，横轴站点、每站三模型柱，F1 换算为百分数、柱顶标两位小数。输出 `figures/results/fig_within_site_f1.png` / `.pdf`。
 
-**D 站分类结果图**：`scripts/plot_within_site_map_D.py`，输入 `D:/20il/2023{model}ilresults/summary/maps/` 的 `reference.tif` 与 `oof_prediction.tif`（五折拼接，每图块预测来自未训练过它的模型；断言三模型 reference sha256 一致）。取图块网格 (5,7) 起 3×3 窗口，四子图同配色。输出 `figures/results/fig_within_site_map_D.png` / `.pdf`。
+**D 站分类结果图**：`scripts/plot_within_site_map_D.py`，输入 `D:/20il/2023{model}ilresults/summary/maps/` 的 `reference.tif` 与 `oof_prediction.tif`（五折拼接，每图块预测来自未训练过它的模型；断言三模型 reference sha256 一致）。上行全站标红框，下行红框放大；窗口取图块网格 (13,8) 起 2×2，按"真实玉米/大豆像元错误率差 + 类别边界带错误率差（ConvGRU 相对另两模型均值）"最大选出。输出 `figures/results/fig_within_site_map_D.png` / `.pdf`。
 
 图题、图注均在正文 caption。
 
