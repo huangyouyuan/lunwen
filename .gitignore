@@ -34,6 +34,9 @@ Thumbs.db
 *.h5
 *.hdf5
 
+# 参考论文全文仅作本地阅读与写作风格分析
+bibliography/*.pdf
+
 # Python
 __pycache__/
 *.pyc
@@ -43,8 +46,10 @@ __pycache__/
 main.pdf
 main.xdv
 
-# 输出目录（按需取消注释）
-# output/
+# 可重新生成的页面预览；不整目录忽略，保留未来交付文件的追溯入口
+/output/*_page_preview.png
+/output/results_layout-*.png
+/output/results_spacing-*.png
 
 # 实验结果（大型数据文件）
 legacy/experiment-results/

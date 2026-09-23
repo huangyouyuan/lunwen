@@ -2,6 +2,8 @@
 
 科研论文工程化写作仓库。
 
+当前先完成美国四站点空间泛化论文；跨洲迁移论文的固定框架保存在 `plan/papers/transcontinental-transfer/`。两篇论文的证据边界与推进顺序见 `plan/papers/README.md`。
+
 ## 目录结构
 
 ```
@@ -47,6 +49,14 @@
 ## 文献管理
 
 Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
+
+## Git 追溯范围
+
+正文、两篇论文的计划、交接与验证记录、文献库、数据处理脚本、结果汇总、表格和正式图件均纳入版本控制。参考论文 PDF 只保留在本地，文献元数据与阅读记录继续跟踪；已移出索引的 PDF 仍可从既有提交中追溯。
+
+`main.pdf`、LaTeX 辅助文件和 `output/` 下的页面预览不入库。页面预览由已跟踪的 LaTeX 与正式图件重新生成；只忽略指定预览文件名，不整体忽略 `output/`。编译命令为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，页面预览可用 `pdftoppm -f 页码 -singlefile -png -r 160 main.pdf output/名称_page_preview` 导出。
+
+提交后以 `git status --porcelain=v1 --untracked-files=all` 输出为空核对工作区干净。未经作者指示不 push。
 
 ## 核心原则
 

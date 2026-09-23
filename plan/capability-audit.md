@@ -23,7 +23,7 @@
 | 能力 | 触发条件 |
 |------|----------|
 | Evidence mapping | 引言重写时 |
-| Chapter blueprint | 引言、3.3.2 论证段落 |
+| Chapter blueprint | 引言、3.3 论证段落 |
 | Structure review | 第 3 章正文完成后 |
 | Quality review | 同上 |
 | Peer review simulation | 全文完成后 |
