@@ -20,25 +20,27 @@
     section = {
         format = {\heiti \zihao{-4}},
         aftername = {\hspace{0.5em}},
-        beforeskip = {1ex plus 0.2ex minus 0.2ex},
-        afterskip = {0.5ex plus 0.1ex}
+        beforeskip = {0pt},
+        afterskip = {0pt}
     },
     subsection = {
         format = {\songti \bfseries \zihao{5}},
         aftername = {\hspace{0.5em}},
-        beforeskip = {0.8ex plus 0.2ex minus 0.1ex},
-        afterskip = {0.3ex plus 0.1ex}
+        beforeskip = {0pt},
+        afterskip = {0pt}
     },
     subsubsection = {
         format = {\kaishu \zihao{5}},
         aftername = {\hspace{0.5em}},
-        beforeskip = {0.5ex plus 0.1ex},
-        afterskip = {0.2ex plus 0.1ex}
+        beforeskip = {0pt},
+        afterskip = {0pt}
     }
 }
 
 % ---- 正文默认：宋体五号，首行缩进 2 字符 ----
 \setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\raggedbottom
 
 % ---- 宏包 ----
 \usepackage{graphicx}
@@ -52,6 +54,7 @@
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{placeins}
 \usepackage[numbers,sort&compress]{natbib}
 
 % ---- 图表路径 ----
@@ -93,13 +96,18 @@
     justification=centering,
     skip=3pt
 }
-\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
-\setlength{\intextsep}{6pt plus 2pt minus 2pt}
-\setlength{\dbltextfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{3pt}
+\setlength{\intextsep}{3pt}
+\setlength{\floatsep}{3pt}
+\setlength{\dbltextfloatsep}{3pt}
+\setlength{\dblfloatsep}{3pt}
 % 整栏只有浮动体时靠顶，不垂直居中
 \makeatletter
 \setlength{\@fptop}{0pt}
 \setlength{\@dblfptop}{0pt}
+% 浮动页只在页底留余量，避免图表之间被拉成大段空白。
+\setlength{\@fpsep}{3pt}
+\setlength{\@dblfpsep}{3pt}
 \makeatother
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}

@@ -56,6 +56,8 @@ Ubuntu 22.04；Intel Xeon Gold 6430（32 核）；120 GB RAM；RTX 4090 24 GB。
 
 ΔF1_c = 100 × (F1_c^{OOF pooled}(目标站) − mean F1_c^{cross}(源→目标))，c ∈ {corn, soybean}，单位百分点。以同一模型在目标站的 OOF pooled 值为基准。
 
+图 4 使用相对退化比例：R_c = 100 × (F1_c^{OOF pooled}(目标站) − mean F1_c^{cross}(源→目标)) / F1_c^{OOF pooled}(目标站)，单位 %。分母须为正；先逐路径计算比例，再对 12 条路径取算术平均。两种口径分别保存在 `crop_f1_degradation_36paths.csv` 与 `crop_f1_relative_degradation_36paths.csv`，不混用数值和单位（2026-09-23 作者确定）。
+
 ## 统计检验
 
 以 12 条有向路径为配对单位，每条路径取 5 次预测均值。玉米 F1、大豆 F1 分别做 Friedman；显著则 Wilcoxon 符号秩两两比较 + Holm 校正。12 条路径共享站点，不解释为完全独立区域样本。

@@ -49,6 +49,8 @@
 
 **输出**：`results/summary/crop_f1_degradation_36paths.csv`——36 行，含站内基准、跨站 mean ± std、ΔF1（pp）。
 
+**相对比例（2026-09-23 新增，图 4 采用）**：同一脚本从上述站内与跨站 F1 计算 R_c = 100 × (站内 F1 − 跨站 F1 五次均值) / 站内 F1，输出 `results/summary/crop_f1_relative_degradation_36paths.csv`。分母为同一模型在目标站的站内汇总 F1，必须为正；模型平均比例为 12 条路径比例的算术平均。原 ΔF1 文件与已有表格口径不变。
+
 ### S4 表格与显著性检验
 
 **脚本**：`scripts/generate_core_tables.py`
@@ -58,14 +60,15 @@
 **处理**：
 - 表1：S1 pooled 值按模型 × {玉米 F1, 大豆 F1, OA} 排成 A/B/C/D + Mean。
 - 表1b：S1 折间 mean ± std，同布局。
-- 表2：S3 按模型 × 作物汇总，跨站 F1 取该模型 12 条路径的路径均值再求 mean ± std，ΔF1 同理。
+- 正文表2：从 S2 的路径级汇总表提取 12 条迁移路径，按 ConvGRU、3D U-Net、U-TAE 分别列出玉米和大豆 F1；每格为 5 次预测的 F1 均值，末行对 12 条路径取平均，不重复列退化值。
+- 分析备查表：S3 按模型 × 作物汇总，跨站 F1 取该模型 12 条路径的路径均值再求 mean ± std，ΔF1 同理。
 - 表3：从 S2 的 180 行按 (source, target, model) 先求 5 次均值，得 12 × 3 矩阵；对每种作物做 Friedman；三对 Wilcoxon 符号秩；Holm step-down（p 升序，第 k 个校正 p = (m−k)·p 取累积最大，首次不显著后其余不再拒绝）。检验对象是跨站 F1，不是 ΔF1。
 
-**输出**：`tables/table1_within_site_baseline.csv`、`table1b_within_site_fold_stability.csv`、`table2_cross_site_summary.csv`、`table3_significance_tests.csv`。
+**输出**：`tables/table1_within_site_baseline.csv`、`table1b_within_site_fold_stability.csv`、`table2_cross_site_f1_12paths.csv`、`table2_cross_site_f1_12paths_rows.tex`、`table2_cross_site_summary.csv`、`table3_significance_tests.csv`。正文通过 `\input` 读取脚本生成的表体，不重复维护数字。
 
 ### S5 图
 
-**热力图**：`scripts/plot_degradation_heatmap.py`，输入 S3 输出。每个 (model, crop) 把 12 条路径 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图共用全局色标。每子图一个 PDF + 色标 PDF，输出 `figures/results/fig_degradation_heatmap_{a..f,cbar}.pdf`。
+**热力图**：`scripts/plot_degradation_heatmap.py 1`，输入 S3 的 `crop_f1_relative_degradation_36paths.csv`。每个 (model, crop) 把 12 条路径的相对退化比例 pivot 成 4×4（行源站、列目标站，A–D），对角线置 NaN；6 子图按两行三列排列，上玉米、下大豆，图框各 3.8 cm，共用下方横向色标 0–9%，LaTeX 标签“泛化退化比例/%”。每子图一个 PDF + 色标 PDF，输出 `figures/results/fig_degradation_heatmap_{a..f,cbar}.pdf`。
 
 **站内条形图**：`scripts/plot_within_site_f1.py`，输入 S1 的 `within_site_crop_f1.csv`。玉米、大豆各一子图上下排，横向条形：纵轴站点 A–D、每站三模型条，横轴 F1 换算为百分数、条末端标两位小数。每子图一个 PDF，输出 `figures/results/fig_within_site_f1_{a,b}.pdf`。
 
@@ -101,11 +104,13 @@
 
 **数据来源**：`results/summary/within_site_crop_f1.csv`（S1 步骤 1–3）
 
-**状态**：已验证（2026-09-18）；与景观特征的对应关系待 3.3.2
+**状态**：已验证（2026-09-18）；与景观特征的对应关系待 3.3
 
 ## Claim 4：跨站应用后全部路径均出现退化，模型排序不变
 
 **内容**：36 条路径 × 2 作物共 72 个 ΔF1 全部为正，范围 0.44–7.39 pp。跨站玉米 F1 均值 0.887 / 0.902 / 0.904，大豆 0.876 / 0.897 / 0.898，排序与站内一致。
+
+**图 4 相对比例**：72 个值全部为正，范围 0.48%～8.17%，由 `crop_f1_relative_degradation_36paths.csv` 核对（Verified，2026-09-23）。
 
 **数据来源**：`results/summary/crop_f1_degradation_36paths.csv`（S3）；跨站均值为 S4 表2 口径（12 条路径均值的平均）
 
@@ -123,6 +128,8 @@
 
 **内容**：平均退化玉米 2.79 / 3.93 / 3.97 pp，大豆 3.00 / 3.74 / 3.96 pp，ConvGRU 最小；但其站内基准最低（Claim 1），跨站绝对 F1 仍最低（Claim 4）。退化幅度必须与基准一起解读。
 
+**图 4 相对比例**：12 条路径比例的算术平均，玉米 3.05% / 4.18% / 4.21%，大豆 3.32% / 4.01% / 4.22%（ConvGRU / 3D U-Net / U-TAE），ConvGRU 仍最小。来源 `crop_f1_relative_degradation_36paths.csv`（Verified，2026-09-23）。
+
 **数据来源**：`tables/table2_cross_site_summary.csv`（S4，由 S3 汇总）
 
 **状态**：已验证（2026-09-18）
@@ -131,9 +138,13 @@
 
 **内容**：玉米退化前 5 条路径为 D→B（3D U-Net，5.85）、B→C（ConvGRU，5.30）、B→D（ConvGRU，5.26）、B→C（U-TAE，4.89）、A→C（3D U-Net，4.84）；大豆前 5 条为 B→D（ConvGRU，7.39）、D→B（3D U-Net，6.14）、B→C（ConvGRU，6.00）、B→D（U-TAE，5.74）、C→A（U-TAE，4.79）。ConvGRU 大豆 B→D 为 7.39 pp，D→B 仅 3.36 pp。三模型的困难路径高度重合。
 
-**数据来源**：`results/summary/crop_f1_degradation_36paths.csv`（S3）；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf`（S5）
+**图 4 相对比例**：上述数值和排序为百分点口径。改用相对比例后，大豆前 5 条为 B→D（ConvGRU，8.17%）、D→B（3D U-Net，6.65%）、B→C（ConvGRU，6.63%）、B→D（U-TAE，6.09%）、C→B（ConvGRU，5.01%）；第 5 条已变化。ConvGRU 大豆 B→D 为 8.17%，D→B 为 3.75%。路径排序须按图示比例重新核对，不沿用差值排序（Verified，2026-09-23）。
+
+**数据来源**：百分点数值来自 `results/summary/crop_f1_degradation_36paths.csv`；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf` 的比例来自 `results/summary/crop_f1_relative_degradation_36paths.csv`（S3→S5）。
 
 **状态**：已验证（2026-09-18）
+
+**正文位置**：C4—C7 均归入 3.2；连续论述跨站绝对 F1、平均退化和区域组合差异，六子图热力图作为路径层证据。
 
 ## Claim 8：区域与路径差异可由地物组成和景观配置解释
 
@@ -142,3 +153,5 @@
 **数据来源**：待补；处理链尚未建立
 
 **状态**：未验证
+
+**正文位置**：3.3；以地物占比、景观指标和分组分类结果解释空间条件，不再设置第三级标题。

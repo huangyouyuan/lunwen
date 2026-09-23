@@ -9,7 +9,9 @@
 
 如图\ref{fig:within_site_f1}所示，三种模型在四个站点的站内玉米F1为90.98\%～96.23\%，大豆F1为89.55\%～95.89\%。三种模型表现出两点共性：一是在同一站点，玉米F1均高于大豆F1，差值为0.09～1.88个百分点；二是在不同站点之间，玉米和大豆F1均在A站点达到各自最高值。五折交叉验证中，12组实验（3种模型×4个站点）的玉米F1折间标准差为0.12～0.73个百分点，大豆F1为0.06～0.96个百分点，表明各模型的站内作物分类表现稳定。
 
-\begin{figure}[tbp]
+\par\addvspace{3pt}
+\noindent\begin{minipage}{\linewidth}
+\captionsetup{type=figure}
 \centering
 \begin{subfigure}{\linewidth}
 \centering
@@ -24,7 +26,7 @@
 \modellegend
 \caption{三种模型在四个站点的站内玉米和大豆分类精度}
 \label{fig:within_site_f1}
-\end{figure}
+\end{minipage}\par\addvspace{3pt}
 
 三种模型之间存在较为稳定的精度差异。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而U-TAE与3D U-Net之间的差值不超过1个百分点，二者互有高低：U-TAE在A、B、C三个站点略优，3D U-Net在D站点略优。ConvGRU的劣势幅度因站点而异：在C站点，三种模型的玉米和大豆F1最大差值分别为1.61和1.50个百分点；在D站点，该差值分别扩大至3.58和3.98个百分点。图\ref{fig:within_site_map_D}以D站点为例，直观对比了三种模型的站内交叉验证分类结果。以选中局部区域为例，ConvGRU的玉米和大豆像元错误率为12.1\%，明显高于3D U-Net（5.8\%）和U-TAE（4.8\%）。
 
@@ -72,16 +74,15 @@
 \label{fig:within_site_map_D}
 \end{figure*}
 
-\subsection{模型跨站分类性能与泛化退化}
+\FloatBarrier
 
 % 3.2 核心（用户 2026-09-20 原话）：站内较高的作物分类精度在跨站后能否保持，以及泛化退化如何随模型、作物和迁移路径变化。
 % 行文要求：主语写全、数字带口径（12 条路径均值 / 5 次预测标准差 / 汇总混淆矩阵）、每个数字为论点服务，不白描。
 % 下列数字 2026-09-20 已从 csv 核过（scripts 见 claims.md S2–S4），可直接用。
 
-\subsubsection{模型跨站玉米、大豆分类性能}
-
 % 数据：results/summary/cross_site_crop_f1_summary.csv（36 路径，5 次预测 mean±std）
-%       tables/table2_cross_site_summary.csv（按模型汇总）
+%       tables/table2_cross_site_f1_12paths.csv（正文完整精度表）
+%       tables/table2_cross_site_summary.csv（模型汇总，分析备查）
 %       tables/table3_significance_tests.csv（Friedman + Wilcoxon–Holm，配对单位 = 12 条路径的五次均值）
 % 要点：
 % - 跨站 F1 12 条路径均值（%）：玉米 88.73 / 90.18 / 90.39；大豆 87.64 / 89.69 / 89.77（ConvGRU / 3D U-Net / U-TAE）
@@ -94,9 +95,32 @@
 %   Holm 后 p：玉米 ConvGRU–3D U-Net 0.0137、ConvGRU–U-TAE 0.0029、3D U-Net–U-TAE 0.5693；大豆 0.0015、0.0015、0.9097
 % - 模型排序在玉米、大豆上一致，不存在"仅在某一作物上更好"的情况
 
-\subsubsection{模型泛化退化}
+\begin{table*}[tbp]
+\begin{minipage}{\textwidth}
+\subsection{模型跨站分类性能与泛化退化}
+\end{minipage}\par\nointerlineskip\vspace{3pt}
+\centering
+\caption{三种模型在12条迁移路径上的跨站玉米和大豆F1}
+\label{tab:cross_site_f1_paths}
+{\songti\zihao{-5}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{7pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c*{6}{c}}
+\toprule
+\multirow{2}{*}{迁移路径} & \multicolumn{2}{c}{ConvGRU} & \multicolumn{2}{c}{3D U-Net} & \multicolumn{2}{c}{U-TAE} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & 玉米F1/\% & 大豆F1/\% & 玉米F1/\% & 大豆F1/\% & 玉米F1/\% & 大豆F1/\% \\
+\midrule
+\input{tables/table2_cross_site_f1_12paths_rows.tex}
+\end{tabular*}
+\par\nointerlineskip\vspace{3pt}
+\begin{minipage}{\textwidth}
+\noindent 注：箭头左侧为源站，右侧为目标站。每格为源站5个折模型分别预测目标站全部400个图块所得F1的算术平均，未进行微调和模型集成；“平均”为12条迁移路径F1均值的算术平均。
+\end{minipage}
+}
+\end{table*}
 
-% 数据：results/summary/crop_f1_degradation_36paths.csv
+% 百分点差值（分析备查）：results/summary/crop_f1_degradation_36paths.csv
 % ΔF1 = 100 × (F1_站内汇总 − mean F1_跨站)；72 个值全为正，0.44–7.39 pp
 % 要点：
 % - 12 条路径均值±std：玉米 2.79±1.55 / 3.93±0.96 / 3.97±0.92 pp；大豆 3.00±2.09 / 3.74±0.84 / 3.96±0.83 pp
@@ -106,58 +130,48 @@
 % - 5 次预测 std（pp）：中位数玉米 0.58、大豆 0.50；>1 pp 的组数玉米 5/36、大豆 6/36；最大 ConvGRU B→D 大豆 2.70，前 7 大均涉及 B 站
 % - 玉米与大豆退化均值之差 ≤0.21 pp（ConvGRU 0.21、3D U-Net 0.19、U-TAE 0.01）；玉米退化 > 大豆退化的路径 7/7/5 条，无一致方向
 %   → 站内的作物难度差异并未在跨站中放大
-% - 待定：本节是否配表（table2 已就绪：模型 × 作物，跨站 F1 与 ΔF1 的 mean±std）；"随迁移路径变化"讲到什么深度、与 3.3.1 热力图如何分工
-
-\subsection{模型跨站泛化差异的空间解释}
-
-\subsubsection{模型在不同源—目标区域组合下的退化差异}
-
-% 图：figures/results/fig_degradation_heatmap_{a..f}.pdf + _cbar.pdf（scripts/plot_degradation_heatmap.py，参数为子图边长倍数）
-%     行=源站，列=目标站，对角线留空，共用色标 0–8 pp；子图题、图名是文本
-% 要点：
-% - 涉及 B 站的路径退化最大：玉米 top5 含 D→B(5.85)、B→C(5.30)、B→D(5.26)、B→C(4.89)；
-%   大豆 top5 含 B→D(7.39)、D→B(6.14)、B→C(6.00)、B→D(5.74)
-% - 方向不对称：ConvGRU 大豆 B→D 7.39 pp vs D→B 3.36 pp
-% - 三模型的困难路径基本一致，路径难度主要由区域组合而非模型决定
+% 图4数据：results/summary/crop_f1_relative_degradation_36paths.csv
+% R = 100 × (目标站站内汇总F1 − 跨站F1五次均值) / 目标站站内汇总F1，单位 %。
+% 72 个比例范围 0.48%–8.17%；12 条路径平均比例（ConvGRU / 3D U-Net / U-TAE）：
+% 玉米 3.05% / 4.18% / 4.21%；大豆 3.32% / 4.01% / 4.22%。
+% ConvGRU 大豆 B→D 为 8.17%，D→B 为 3.75%；比例的路径排序不能直接沿用百分点差值排序。
+% 图：figures/results/fig_degradation_heatmap_{a..f}.pdf + _cbar.pdf（scripts/plot_degradation_heatmap.py 1）
+% 2行3列，图框各3.8 cm；上玉米、下大豆；行=源站，列=目标站，对角线留空，共用色标0–9%。
 
 \begin{figure*}[tbp]
 \centering
-\begin{minipage}[c]{0.8\textwidth}
-\centering
-\begin{subfigure}{0.48\linewidth}\centering
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
 \includegraphics{results/fig_degradation_heatmap_a.pdf}
-\caption{ConvGRU玉米泛化退化}
-\end{subfigure}\hfill
-\begin{subfigure}{0.48\linewidth}\centering
-\includegraphics{results/fig_degradation_heatmap_d.pdf}
-\caption{ConvGRU大豆泛化退化}
-\end{subfigure}\par\nointerlineskip\vspace{3pt}
-\begin{subfigure}{0.48\linewidth}\centering
+\caption{ConvGRU玉米泛化退化比例}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
 \includegraphics{results/fig_degradation_heatmap_b.pdf}
-\caption{3D U-Net玉米泛化退化}
-\end{subfigure}\hfill
-\begin{subfigure}{0.48\linewidth}\centering
-\includegraphics{results/fig_degradation_heatmap_e.pdf}
-\caption{3D U-Net大豆泛化退化}
-\end{subfigure}\par\nointerlineskip\vspace{3pt}
-\begin{subfigure}{0.48\linewidth}\centering
+\caption{3D U-Net玉米泛化退化比例}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
 \includegraphics{results/fig_degradation_heatmap_c.pdf}
-\caption{U-TAE玉米泛化退化}
-\end{subfigure}\hfill
-\begin{subfigure}{0.48\linewidth}\centering
+\caption{U-TAE玉米泛化退化比例}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_degradation_heatmap_d.pdf}
+\caption{ConvGRU大豆泛化退化比例}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_degradation_heatmap_e.pdf}
+\caption{3D U-Net大豆泛化退化比例}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
 \includegraphics{results/fig_degradation_heatmap_f.pdf}
-\caption{U-TAE大豆泛化退化}
-\end{subfigure}
-\end{minipage}\hfill
-\begin{minipage}[c]{0.12\textwidth}
-\centering
-\includegraphics{results/fig_degradation_heatmap_cbar.pdf}
-\end{minipage}
-\caption{不同源—目标区域组合下三种模型的玉米和大豆F1泛化退化（行为源站，列为目标站，对角线不适用）}
+\caption{U-TAE大豆泛化退化比例}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\includegraphics{results/fig_degradation_heatmap_cbar.pdf}\par\nointerlineskip\vspace{3pt}
+{\songti\zihao{-5}泛化退化比例/\%\par}
+\caption{不同源—目标区域组合下三种模型的玉米和大豆F1泛化退化比例（行为源站，列为目标站，对角线不适用）}
 \label{fig:degradation_heatmap}
 \end{figure*}
 
-\subsubsection{模型退化与空间特征的关系}
+\FloatBarrier
+\subsection{模型跨站泛化差异的空间解释}
 
 % 数据：待补——站点级（玉米/大豆/其它占比、ED、AREA_MN、AI）与 Patch 级四张表
 % 方法：按空间特征分组后汇总 CM 再算类别 F1；不直接平均 Patch F1

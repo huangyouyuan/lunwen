@@ -4,6 +4,8 @@
 计算玉米和大豆的泛化退化
 
 ΔF1 = 100 × (站内OOF F1 - 跨站平均F1)
+相对退化比例 = 100 × (站内OOF F1 - 跨站平均F1) / 站内OOF F1
+两种口径分别输出，原有百分点结果保持不变。
 """
 
 import pandas as pd
@@ -55,6 +57,19 @@ def calculate_degradation():
 
     return pd.DataFrame(results)
 
+
+def calculate_relative_degradation(degradation_df):
+    """以同一模型在目标站的站内汇总 F1 为分母，计算相对退化比例（%）。"""
+    result = degradation_df.drop(columns=['corn_loss_pp', 'soybean_loss_pp']).copy()
+    for crop in ('corn', 'soybean'):
+        within = result[f'within_{crop}_f1']
+        cross = result[f'cross_{crop}_f1_mean']
+        if not (np.isfinite(within) & (within > 0) & np.isfinite(cross)).all():
+            raise ValueError(f'{crop}: 相对退化要求站内 F1 为有限正数、跨站 F1 为有限数')
+        result[f'{crop}_relative_loss_pct'] = 100 * (within - cross) / within
+    return result
+
+
 if __name__ == '__main__':
     print("正在计算玉米/大豆泛化退化...")
 
@@ -64,6 +79,14 @@ if __name__ == '__main__':
     degradation_df.to_csv('results/summary/crop_f1_degradation_36paths.csv',
                           index=False, float_format='%.6f')
     print("已保存：results/summary/crop_f1_degradation_36paths.csv")
+
+    relative_df = calculate_relative_degradation(degradation_df)
+    relative_df.to_csv('results/summary/crop_f1_relative_degradation_36paths.csv',
+                       index=False, float_format='%.6f')
+    print("已保存：results/summary/crop_f1_relative_degradation_36paths.csv")
+    print("\n相对退化比例（%，12条路径均值）：")
+    print(relative_df.groupby('model')[['corn_relative_loss_pct',
+                                       'soybean_relative_loss_pct']].mean())
 
     # 统计摘要
     print("\n泛化退化统计（按模型）：")

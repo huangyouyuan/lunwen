@@ -57,8 +57,11 @@ Write-Host "  - results/summary/within_site_crop_f1_fold_stats.csv" -ForegroundC
 Write-Host "  - results/summary/cross_site_crop_f1_per_fold.csv" -ForegroundColor Gray
 Write-Host "  - results/summary/cross_site_crop_f1_summary.csv" -ForegroundColor Gray
 Write-Host "  - results/summary/crop_f1_degradation_36paths.csv" -ForegroundColor Gray
+Write-Host "  - results/summary/crop_f1_relative_degradation_36paths.csv" -ForegroundColor Gray
 Write-Host "  - tables/table1_within_site_baseline.csv" -ForegroundColor Gray
 Write-Host "  - tables/table1b_within_site_fold_stability.csv" -ForegroundColor Gray
+Write-Host "  - tables/table2_cross_site_f1_12paths.csv" -ForegroundColor Gray
+Write-Host "  - tables/table2_cross_site_f1_12paths_rows.tex" -ForegroundColor Gray
 Write-Host "  - tables/table2_cross_site_summary.csv" -ForegroundColor Gray
 Write-Host "  - tables/table3_significance_tests.csv" -ForegroundColor Gray
 Write-Host ""

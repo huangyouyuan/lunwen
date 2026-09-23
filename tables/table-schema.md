@@ -19,23 +19,25 @@
 **排版**：可与上表合并，pooled 值后括号注 std；写作时定
 **Status**：已生成，已验证
 
-## 跨站分类性能与泛化退化（模型汇总）
+## 12 条迁移路径跨站分类性能（正文表）
 
-**Purpose**：描述跨站表现与退化。
-**Source**：`tables/table2_cross_site_summary.csv` ← `results/summary/crop_f1_degradation_36paths.csv`
-**Rows**：模型 × 作物，6 行
-**Columns**：跨站 F1 mean±std（该模型 12 条路径的路径均值统计）| ΔF1 mean±std（pp）
+**Purpose**：完整报告各源—目标组合的实际跨站识别精度。
+**Source**：`tables/table2_cross_site_f1_12paths.csv`、`tables/table2_cross_site_f1_12paths_rows.tex` ← `results/summary/cross_site_crop_f1_summary.csv`
+**Rows**：12 条有向迁移路径 + 末行“平均”
+**Columns**：迁移路径 | ConvGRU 玉米 F1 | ConvGRU 大豆 F1 | 3D U-Net 玉米 F1 | 3D U-Net 大豆 F1 | U-TAE 玉米 F1 | U-TAE 大豆 F1
+**口径**：每格为源站 5 个折模型分别预测目标站全部 400 个图块所得 F1 的算术平均；“平均”为 12 条路径均值的算术平均；单位为百分数，保留两位小数
 **Status**：已生成，已验证
 
-## 36 路径明细（候选补充表）
+## 跨站分类性能与泛化退化（分析备查）
 
-**Source**：`results/summary/crop_f1_degradation_36paths.csv`
-**Columns**：模型 | 源→目标 | 站内 F1 | 跨站 F1 mean±std | ΔF1，玉米、大豆各一组
-**Status**：数据就绪；短文正文用热力图，明细放补充材料
+**Source**：`tables/table2_cross_site_summary.csv` ← `results/summary/crop_f1_degradation_36paths.csv`
+**Rows**：模型 × 作物，6 行
+**Columns**：跨站 F1 mean±std | ΔF1 mean±std（pp）
+**Status**：已生成；只供正文数字核对，不作为正文表
 
 ## 模型显著性检验
 
-**Purpose**：判断架构差异是否稳定。
+**Purpose**：判断架构差异是否稳定；检验结果写入正文，不单独排表。
 **Source**：`tables/table3_significance_tests.csv` ← `results/summary/cross_site_crop_f1_per_fold.csv`
 **Rows**：玉米、大豆
 **Columns**：Friedman χ² | p | ConvGRU vs 3D U-Net | ConvGRU vs U-TAE | 3D U-Net vs U-TAE（Holm 校正）
