@@ -36,7 +36,7 @@
 
 **分析备查**：`tables/table2_cross_site_summary.csv` 用于核对模型平均跨站 F1 与平均退化；`tables/table3_significance_tests.csv` 用于正文显著性判断，二者均不单独排表。
 
-**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“泛化退化比例/%”。图示相对退化比例，支持路径难度和方向不对称判断；原百分点差值仅作另一口径备查。
+**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“泛化退化比例/%”。图示相对退化比例，用于比较源—目标组合差异及不同模型对迁移方向的响应，不据此判断区域组合与模型的影响主次；原百分点差值仅作另一口径备查。
 
 **正文组织**：不用第三级标题。完整精度表回答“实际识别精度多高”，热力图回答“相对目标站当地训练下降多少”；正文提炼主要发现，不逐条复述 12 条路径。
 

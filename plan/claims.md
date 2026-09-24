@@ -49,7 +49,7 @@
 
 **输出**：`results/summary/crop_f1_degradation_36paths.csv`——36 行，含站内基准、跨站 mean ± std、ΔF1（pp）。
 
-**相对比例（2026-09-23 新增，图 4 采用）**：同一脚本从上述站内与跨站 F1 计算 R_c = 100 × (站内 F1 − 跨站 F1 五次均值) / 站内 F1，输出 `results/summary/crop_f1_relative_degradation_36paths.csv`。分母为同一模型在目标站的站内汇总 F1，必须为正；模型平均比例为 12 条路径比例的算术平均。原 ΔF1 文件与已有表格口径不变。
+**相对比例（2026-09-23 新增，图 4 采用）**：同一脚本从上述站内与跨站 F1 计算 DR_c = 100 × (站内 F1 − 跨站 F1 五次均值) / 站内 F1，单位 %，输出 `results/summary/crop_f1_relative_degradation_36paths.csv`。两种退化计算中的 F1 均取 0～1，DR 与召回率 R 区分。分母为同一模型在目标站的站内汇总 F1，必须为正；模型平均比例为 12 条路径比例的算术平均。原 ΔF1 文件与已有表格口径不变。
 
 ### S4 表格与显著性检验
 
@@ -134,17 +134,17 @@
 
 **状态**：已验证（2026-09-18）
 
-## Claim 7：路径难度主要由区域组合决定，涉及 B 站的路径最难且存在方向不对称
+## Claim 7：退化随源—目标组合变化，不同模型对迁移方向的响应存在差异
 
-**内容**：玉米退化前 5 条路径为 D→B（3D U-Net，5.85）、B→C（ConvGRU，5.30）、B→D（ConvGRU，5.26）、B→C（U-TAE，4.89）、A→C（3D U-Net，4.84）；大豆前 5 条为 B→D（ConvGRU，7.39）、D→B（3D U-Net，6.14）、B→C（ConvGRU，6.00）、B→D（U-TAE，5.74）、C→A（U-TAE，4.79）。ConvGRU 大豆 B→D 为 7.39 pp，D→B 仅 3.36 pp。三模型的困难路径高度重合。
+**内容**：在本文四站点、不微调的跨站实验中，泛化退化比例随源—目标组合变化，迁移方向改变时，不同模型的退化比例不一定同向变化。以大豆 B↔D 为例，ConvGRU 在 B→D、D→B 上的退化比例分别为 8.17%、3.75%，前者更大；3D U-Net 分别为 4.26%、6.65%，后者更大。这组对照支持不同模型对迁移方向的响应存在差异。
 
-**图 4 相对比例**：上述数值和排序为百分点口径。改用相对比例后，大豆前 5 条为 B→D（ConvGRU，8.17%）、D→B（3D U-Net，6.65%）、B→C（ConvGRU，6.63%）、B→D（U-TAE，6.09%）、C→B（ConvGRU，5.01%）；第 5 条已变化。ConvGRU 大豆 B→D 为 8.17%，D→B 为 3.75%。路径排序须按图示比例重新核对，不沿用差值排序（Verified，2026-09-23）。
+**口径与边界**：每条路径以同一模型在目标站的站内汇总 F1 为基准，跨站 F1 为 5 次完整目标站预测的算术平均；退化比例为二者之差除以该基准，再乘 100%。反向迁移时目标站与基准随之改变。上述比较是描述性结果，不能据此确定区域组合与模型的影响主次，也不预设三模型的困难路径排序一致；图 4 的路径排序须按比例核对，不沿用百分点差值排序。
 
-**数据来源**：百分点数值来自 `results/summary/crop_f1_degradation_36paths.csv`；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf` 的比例来自 `results/summary/crop_f1_relative_degradation_36paths.csv`（S3→S5）。
+**数据来源**：`results/summary/within_site_crop_f1.csv` 与 `results/summary/cross_site_crop_f1_summary.csv`，经 `scripts/calculate_crop_f1_degradation.py` 的 `calculate_degradation()`、`calculate_relative_degradation()` 现算，并与 `results/summary/crop_f1_relative_degradation_36paths.csv` 核对；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf` 使用同一比例文件（S1、S2→S3→S5）。
 
-**状态**：已验证（2026-09-18）
+**状态**：Verified（2026-09-24）；72 个比例和 72 个百分点差值均与上述脚本现算结果一致（CSV 保留 6 位小数）；本条结论限定于描述性路径差异。
 
-**正文位置**：C4—C7 均归入 3.2；连续论述跨站绝对 F1、平均退化和区域组合差异，六子图热力图作为路径层证据。
+**正文位置**：C4—C7 均归入 3.2；连续论述跨站绝对 F1、平均退化和不同模型对源—目标组合及迁移方向的响应差异，六子图热力图作为路径层证据。
 
 ## Claim 8：区域与路径差异可由地物组成和景观配置解释
 
