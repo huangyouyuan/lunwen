@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "source_pdf": {
+    "path": "main.pdf",
+    "sha256": "408267f28272c5fb11b9fc3c952550813905c578a5ea58682b4f9e90d7e0df48",
+    "pages": 6,
+    "created_at_pdf_metadata": "D:20260929012521+08'00'",
+    "size_bytes": 815240
+  },
+  "version": {
+    "base_git_commit": "92b58a2eee4d57771a355c02f52de275218bd398",
+    "state_at_build": "working-tree closeout edits on the recorded base; not yet committed at build time",
+    "source_sha256": {
+      "main.tex": "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
+      "sections/04_results.tex": "d965504eff57b6c4ad0c62dfd8d3c7c599f9553170913b260c9f3a7f4baa2830",
+      "sections/03_methods.tex": "af9f4be9f0da0791be4e52aa06f6c26f8db221b0d50da22e18ac1db2668a44e8",
+      "tables/table2_cross_site_f1_12paths_rows.tex": "47a9405f7d54bc0e14e3ad2599f0a747ad728f529a89d4bf80e65fd49a54a3da"
+    }
+  },
+  "render_command": "pdftoppm -png -r 150 -f 3 -l 5 main.pdf output/sec32_p",
+  "dpi": 150,
+  "previews": [
+    {
+      "path": "output/sec32_p-3.png",
+      "pdf_page": 3,
+      "sha256": "deba6c4f33e556f2634d318cc993389fc95cf6f97e28df176cad8be1d078d148",
+      "rendered_at": "2026-09-29T01:36:08+08:00"
+    },
+    {
+      "path": "output/sec32_p-4.png",
+      "pdf_page": 4,
+      "sha256": "221f54f5cf25b80b48fb48768dc57290fbb8b87f69bb49357fae980dd417495b",
+      "rendered_at": "2026-09-29T01:36:09+08:00"
+    },
+    {
+      "path": "output/sec32_p-5.png",
+      "pdf_page": 5,
+      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
+      "rendered_at": "2026-09-29T01:36:09+08:00"
+    },
+    {
+      "path": "output/table_page_preview.png",
+      "pdf_page": 5,
+      "alias_of": "output/sec32_p-5.png",
+      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
+      "updated_at": "2026-09-29T01:36:29+08:00"
+    },
+    {
+      "path": "output/figure4_page_preview.png",
+      "pdf_page": 5,
+      "alias_of": "output/sec32_p-5.png",
+      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
+      "updated_at": "2026-09-29T01:36:29+08:00"
+    }
+  ],
+  "verified_at": "2026-09-29T01:37:58+08:00",
+  "page_binding_verification": "Verified: independent per-page Poppler rendering has the same SHA-256 as each saved PNG; both aliases match page 5",
+  "historical_previews_not_current": [
+    "output/results_layout-3.png",
+    "output/results_layout-4.png",
+    "output/results_layout-5.png",
+    "output/results_spacing-3.png",
+    "output/results_spacing-4.png"
+  ]
+}
