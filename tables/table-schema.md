@@ -37,7 +37,7 @@
 
 ## 模型显著性检验
 
-**Purpose**：判断架构差异是否稳定；检验结果写入正文，不单独排表。
+**Purpose**：判断架构差异是否稳定；2026-09-27 作者决定检验结果不进入正文，文件仅供追溯。
 **Source**：`tables/table3_significance_tests.csv` ← `results/summary/cross_site_crop_f1_per_fold.csv`
 **Rows**：玉米、大豆
 **Columns**：Friedman χ² | p | ConvGRU vs 3D U-Net | ConvGRU vs U-TAE | 3D U-Net vs U-TAE（Holm 校正）

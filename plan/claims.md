@@ -62,7 +62,7 @@
 - 表1b：S1 折间 mean ± std，同布局。
 - 正文表2：从 S2 的路径级汇总表提取 12 条迁移路径，按 ConvGRU、3D U-Net、U-TAE 分别列出玉米和大豆 F1；每格为 5 次预测的 F1 均值，末行对 12 条路径取平均，不重复列退化值。
 - 分析备查表：S3 按模型 × 作物汇总，跨站 F1 取该模型 12 条路径的路径均值再求 mean ± std，ΔF1 同理。
-- 表3：从 S2 的 180 行按 (source, target, model) 先求 5 次均值，得 12 × 3 矩阵；对每种作物做 Friedman；三对 Wilcoxon 符号秩；Holm step-down（p 升序，第 k 个校正 p = (m−k)·p 取累积最大，首次不显著后其余不再拒绝）。检验对象是跨站 F1，不是 ΔF1。
+- 表3：从 S2 的 180 行按 (source, target, model) 先求 5 次均值，得 12 × 3 矩阵；对每种作物做 Friedman；三对 Wilcoxon 符号秩；Holm step-down（p 升序，第 k 个校正 p = (m−k)·p 取累积最大，首次不显著后其余不再拒绝）。检验对象是跨站 F1，不是 ΔF1。**2026-09-27 作者决定：本篇正文不使用该检验作显著性结论**。12 条路径共享 4 个站点，不是独立样本；脚本与结果文件保留，仅供追溯。
 
 **输出**：`tables/table1_within_site_baseline.csv`、`table1b_within_site_fold_stability.csv`、`table2_cross_site_f1_12paths.csv`、`table2_cross_site_f1_12paths_rows.tex`、`table2_cross_site_summary.csv`、`table3_significance_tests.csv`。正文通过 `\input` 读取脚本生成的表体，不重复维护数字。
 
@@ -76,9 +76,9 @@
 
 图题、子图题、图例均为 LaTeX 文本（subcaption、\modellegend / \classlegend），图片里只有图框、刻度、数值、轴标签。
 
-### 补充体系（不进正文）
+### 分析备查体系（不进正文）
 
-`results/summary/generalization_degradation_36paths.csv`、`within_site_oof_baseline.csv`、`model_significance_analysis.csv` 直接复制自 `legacy/experiment-results/paper_tables/`，是实验侧生成的 Crop-mIoU 表；`results/processed/generalization_analysis.csv` 由 `scripts/analyze_generalization_36paths.py` 从前者派生。类别顺序与主线一致，可作补充材料核对。
+`results/summary/generalization_degradation_36paths.csv`、`within_site_oof_baseline.csv`、`model_significance_analysis.csv` 直接复制自 `legacy/experiment-results/paper_tables/`，是实验侧生成的 Crop-mIoU 表；`results/processed/generalization_analysis.csv` 由 `scripts/analyze_generalization_36paths.py` 从前者派生。类别顺序与主线一致，仅供分析核对；本文不设补充材料。
 
 ---
 
@@ -106,52 +106,68 @@
 
 **状态**：已验证（2026-09-18）；与景观特征的对应关系待 3.3
 
-## Claim 4：跨站应用后全部路径均出现退化，模型排序不变
+**口径限定**（2026-09-26 核）：“C 站最难”只对 OA 成立。玉米 F1 三模型均以 C 站最低，但 ConvGRU 的 C、D 两站只差 0.01 个百分点；大豆 F1 ConvGRU 最低在 B 站（89.55%），不在 C 站。正文引用站点难度时须注明指标。
 
-**内容**：36 条路径 × 2 作物共 72 个 ΔF1 全部为正，范围 0.44–7.39 pp。跨站玉米 F1 均值 0.887 / 0.902 / 0.904，大豆 0.876 / 0.897 / 0.898，排序与站内一致。
+## Claim 4：跨站后全部模型—路径组合低于目标站当地训练基准，跨站 F1 高低与目标站有关
 
-**图 4 相对比例**：72 个值全部为正，范围 0.48%～8.17%，由 `crop_f1_relative_degradation_36paths.csv` 核对（Verified，2026-09-23）。
+**内容**：36 个模型—路径组合（3 模型 × 12 条有向路径）的玉米、大豆跨站 F1 均低于同一模型在目标站的站内汇总 F1，72 个泛化退化比例 DR 全部为正，范围 0.48%～8.17%。跨站 F1：玉米 85.68%～92.92%，大豆 83.08%～92.15%。三模型玉米、大豆跨站 F1 最高值均在以 A 为目标站的路径上（玉米均为 B→A；大豆 B→A、B→A、D→A），与站内 A 站点最高对应；三模型玉米跨站 F1 最低值均在以 C 为目标站的路径上（B→C、A→C、B→C）；大豆最低值无此一致性。
 
-**数据来源**：`results/summary/crop_f1_degradation_36paths.csv`（S3）；跨站均值为 S4 表2 口径（12 条路径均值的平均）
+**口径与边界**：差距是相对目标站当地训练基准的差距，不是同一个已训练模型离开源站前后的变化；站内基准不是理论精度上限。
 
-**状态**：已验证（2026-09-18）
+**数据来源**：`tables/table2_cross_site_f1_12paths.csv` ← `results/summary/cross_site_crop_f1_summary.csv`（S2→S4）；`results/summary/crop_f1_relative_degradation_36paths.csv`（S3）。百分点差值文件 `crop_f1_degradation_36paths.csv` 保留备查（0.44～7.39 个百分点），正文不用。
 
-## Claim 5：ConvGRU 显著弱于 3D U-Net 和 U-TAE，后两者无显著差异，两作物一致
+**状态**：Verified（2026-09-27，从 raw 混淆矩阵经 summary 重算，表 72 格一致）
 
-**内容**：以 12 条路径的五折均值为配对单位，跨站玉米 F1 Friedman χ² = 12.67（p = 1.8×10⁻³），大豆 χ² = 18.17（p = 1.1×10⁻⁴）。Holm 校正后 p：玉米 ConvGRU–3D U-Net 0.0137、ConvGRU–U-TAE 0.0029、3D U-Net–U-TAE 0.5693；大豆 0.0015、0.0015、0.9097。
+## Claim 5：按路径平均，跨站 F1 排序与站内一致，ConvGRU 最低；U-TAE 与 3D U-Net 互有高低
 
-**数据来源**：`tables/table3_significance_tests.csv`（S4，从 S2 的 per-fold 文件出发）
+**内容**：12 条路径平均跨站 F1，玉米 88.73% / 90.18% / 90.39%，大豆 87.64% / 89.69% / 89.77%（ConvGRU / 3D U-Net / U-TAE）。逐路径计数：ConvGRU 玉米 10/12、大豆 12/12 条路径为三模型最低；U-TAE 高于 3D U-Net 的路径玉米 7/12、大豆 5/12。
 
-**状态**：已验证（2026-09-18）；12 条路径共享 4 个站点，结论限定在本文四站范围
+**口径与边界**：“排序一致”只指路径平均，不指每条路径。路径计数只作描述，不解释为独立重复试验。**本篇不作显著性结论**：Friedman、Wilcoxon–Holm 结果（`tables/table3_significance_tests.csv`）保留仅供追溯，因 12 条路径共享 4 个站点，不是独立样本（作者 2026-09-27 决定）。
 
-## Claim 6：ConvGRU 退化幅度最小，但不代表泛化更好
+**数据来源**：`results/summary/cross_site_crop_f1_summary.csv`（S2）；表末行“平均”（S4）
 
-**内容**：平均退化玉米 2.79 / 3.93 / 3.97 pp，大豆 3.00 / 3.74 / 3.96 pp，ConvGRU 最小；但其站内基准最低（Claim 1），跨站绝对 F1 仍最低（Claim 4）。退化幅度必须与基准一起解读。
+**状态**：Verified（2026-09-27）
 
-**图 4 相对比例**：12 条路径比例的算术平均，玉米 3.05% / 4.18% / 4.21%，大豆 3.32% / 4.01% / 4.22%（ConvGRU / 3D U-Net / U-TAE），ConvGRU 仍最小。来源 `crop_f1_relative_degradation_36paths.csv`（Verified，2026-09-23）。
+## Claim 6：ConvGRU 平均 DR 最小，但 DR 较小不代表跨站绝对精度更高
 
-**数据来源**：`tables/table2_cross_site_summary.csv`（S4，由 S3 汇总）
+**内容**：12 条路径 DR 的算术平均，玉米 3.05% / 4.18% / 4.21%，大豆 3.32% / 4.01% / 4.22%（ConvGRU / 3D U-Net / U-TAE），ConvGRU 最小；而其跨站 F1 路径平均最低（C5）。两种排序的参照不同：跨站 F1 直接比较实际精度，DR 以各模型自身在目标站的站内汇总 F1 为参照。U-TAE 与 ConvGRU 的差距：四站点站内汇总 F1 平均 2.84 / 3.09 个百分点，跨站 F1 路径平均 1.66 / 2.13 个百分点（玉米 / 大豆），缩小但未反转。
 
-**状态**：已验证（2026-09-18）
+**口径与边界**：正文写“DR 较小不代表跨站绝对精度更高”，不写“DR 小是因为基准低”，也不写“ConvGRU 泛化能力更强”。每个目标站在 12 条路径中各出现 3 次，故路径平均的基准等于四站点站内平均，两者可比。
 
-## Claim 7：退化随源—目标组合变化，不同模型对迁移方向的响应存在差异
+**数据来源**：`crop_f1_relative_degradation_36paths.csv`（S3）；`within_site_crop_f1.csv`（S1）；`cross_site_crop_f1_summary.csv`（S2）
 
-**内容**：在本文四站点、不微调的跨站实验中，泛化退化比例随源—目标组合变化，迁移方向改变时，不同模型的退化比例不一定同向变化。以大豆 B↔D 为例，ConvGRU 在 B→D、D→B 上的退化比例分别为 8.17%、3.75%，前者更大；3D U-Net 分别为 4.26%、6.65%，后者更大。这组对照支持不同模型对迁移方向的响应存在差异。
+**状态**：Verified（2026-09-27）
 
-**口径与边界**：每条路径以同一模型在目标站的站内汇总 F1 为基准，跨站 F1 为 5 次完整目标站预测的算术平均；退化比例为二者之差除以该基准，再乘 100%。反向迁移时目标站与基准随之改变。上述比较是描述性结果，不能据此确定区域组合与模型的影响主次，也不预设三模型的困难路径排序一致；图 4 的路径排序须按比例核对，不沿用百分点差值排序。
+## Claim 7：DR 随源—目标组合变化，同一组合与迁移方向对不同模型的影响不一致
 
-**数据来源**：`results/summary/within_site_crop_f1.csv` 与 `results/summary/cross_site_crop_f1_summary.csv`，经 `scripts/calculate_crop_f1_degradation.py` 的 `calculate_degradation()`、`calculate_relative_degradation()` 现算，并与 `results/summary/crop_f1_relative_degradation_36paths.csv` 核对；图 `figures/results/fig_degradation_heatmap_{a..f}.pdf` 使用同一比例文件（S1、S2→S3→S5）。
+**内容**：
+- 路径间跨度：ConvGRU 0.48%～8.17%（全部 72 个比例的最小、最大值均来自它），3D U-Net 2.54%～6.65%，U-TAE 2.30%～6.09%。
+- 目标站一侧：按目标站对 3 条路径取平均，三模型玉米 DR 均以 C 最高（4.56% / 5.03% / 5.06%）；大豆无此一致性。
+- 源站一侧：同一目标站的 DR 随源站变化，如 ConvGRU 大豆目标站 D：C→D 0.99%（5 次 0.86%～1.09%），B→D 8.17%（5 次 3.63%～11.95%）。
+- 方向：B、D 之间，ConvGRU 玉米和大豆均 B→D 较大（大豆 8.17% / 3.75%），3D U-Net 均 D→B 较大（大豆 4.26% / 6.65%）。玉米两模型 5 次预测完全分开，大豆各有 1 次重叠。U-TAE 的方向差异主要由单次预测拉动，不作为方向证据。
 
-**状态**：Verified（2026-09-24）；72 个比例和 72 个百分点差值均与上述脚本现算结果一致（CSV 保留 6 位小数）；本条结论限定于描述性路径差异。
+**口径与边界**：描述性结果；不判断区域组合与模型的影响主次，不写“困难路径一致”。三模型之间 12 条路径的 DR 等级相关仅 −0.04～0.66（跨站 F1 为 0.73～0.84），困难路径在绝对 F1 上较一致，在 DR 上不一致。DR 较大的方向往往 5 次预测也最不稳定（大豆 F1 标准差最大三组：ConvGRU B→D 2.70、U-TAE B→D 2.20、3D U-Net D→B 1.91 个百分点），正文只写方向，不细排名次。U-TAE 以 A 为目标站时玉米 DR 偏高（A 站基准 96.23%），比例化不能代替绝对 F1。
 
-**正文位置**：C4—C7 均归入 3.2；连续论述跨站绝对 F1、平均退化和不同模型对源—目标组合及迁移方向的响应差异，六子图热力图作为路径层证据。
+**数据来源**：同 C4、C6；逐次核对用 `results/summary/cross_site_crop_f1_per_fold.csv`
 
-## Claim 8：区域与路径差异可由地物组成和景观配置解释
+**状态**：Verified（2026-09-27）
 
-**内容**：待站点级与 Patch 级空间特征数据。
+**正文位置**：C4—C7 归入 3.2 三段：第一段 C4（引表），第二段 C5、C6，第三段 C7（引图 4）并引出 3.3 的两个问题。
 
-**数据来源**：待补；处理链尚未建立
+## Claim 8：退化与目标站空间条件及源—目标站点差异的对应关系
 
-**状态**：未验证
+**问题**（作者 2026-09-27 确定，覆盖全部站点与 12 条路径，不只围绕 C 站和 B、D 组合挑证据）：
+1. 目标站在哪些空间条件下退化较大；
+2. 同一目标站的退化为什么随源站变化——以对应关系表述，不写因果机制。美国站间迁移除空间格局外，物候、管理和影像条件也可能不同。
 
-**正文位置**：3.3；以地物占比、景观指标和分组分类结果解释空间条件，不再设置第三级标题。
+**数据**（已生成，未入库）：
+- 图块级：`D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/` 下 `patch_spatial_features.csv`（1600）、`within_patch_oof.csv`（4800）、`cross_patch_fold.csv`（72000）、`cross_patch_summary.csv`（14400）；QC 报告 `patch_spatial_qc.md`（2026-09-18 passed）。
+- 站点级：`D:/label/fragstats_results/完整标签景观级指标.csv`、`完整标签类别级指标.csv`（2023 年完整标签，ED、PD、AREA_MN、AI 已从 GeoTIFF 复算）。
+
+**已核**（2026-09-26）：行数与键唯一；站内图块混淆矩阵之和 = 12 组汇总混淆矩阵；跨站图块混淆矩阵之和 = 180 个原始混淆矩阵；NA 未补零。**未核**：未从标签 GeoTIFF 重算 ED、AREA_MN、AI。
+
+**口径**：ED 为图块景观级，AREA_MN、AI 为类别级，均以单个 128×128 图块为独立景观计算，不能称为整站景观指标；真实缺类与不可计算值保留 NA。按空间特征分组时先汇总组内混淆矩阵再算类别 F1；跨站逐次计算后汇总 5 次结果，站内以同组图块为参照；不平均图块 F1。`cross_patch_summary.csv` 的 `delta_error_rate` 是三分类错误率之差，不是 F1 退化；其 QC 中的 Crop-mIoU 分组口径不沿用。
+
+**状态**：未验证；分组 F1 处理链尚未建立
+
+**正文位置**：3.3，不设第三级标题。

@@ -6,10 +6,12 @@
 
 | 论文代号 | 数据集 ID | 州 |
 |----------|-----------|-----|
-| A | iw_2023 | — |
-| B | iw2_2023 | — |
-| C | ida_2023 | — |
-| D | il_2023 | — |
+| A | iw_2023 | 爱荷华州 |
+| B | iw2_2023 | 爱荷华州 |
+| C | ida_2023 | 印第安纳州 |
+| D | il_2023 | 伊利诺伊州 |
+
+州别依据研究区 SHP 与标签 GeoTIFF（EPSG:5070）叠加美国人口普查局 2023 州界核实，四站均不跨州（2026-09-27，见 `plan/experiment-protocol.md`）。
 
 论文正文使用 A/B/C/D，代码和数据目录使用 iw2/iw/ida/il。
 
@@ -38,7 +40,7 @@
 | 站内分类 | within-site classification | 在同一站点训练和测试 |
 | 跨站点空间泛化 | cross-site spatial generalization | 在源站点训练，直接迁移至目标站点；正文可简称"跨站" |
 | 泛化退化 / 精度退化 | generalization degradation | 跨站精度相对站内精度的降幅 |
-| 迁移路径 | transfer path | 从源站点到目标站点的方向，记为 A→B |
+| 迁移路径 | transfer path | 从源站点到目标站点的方向，记为 A→B；四站共 12 条有向路径，与三模型组合为 36 个模型—路径组合，不称“36 条路径” |
 | 源站点 / 源站 | source site | 模型训练所在站点 |
 | 目标站点 / 目标站 | target site | 模型直接应用的站点 |
 | 汇总精度 | oof_pooled | 5 个测试折混淆矩阵逐元素相加后计算的指标；站内基准与退化的口径；正文不用 OOF 缩写 |
@@ -72,8 +74,8 @@
 |------|------|------|------|----------|
 | F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 | $F1_{\text{玉米}}$、$F1_{\text{大豆}}$ |
 | OA | Overall Accuracy | 总体精度 | 辅助 | OA |
-| ΔF1 | generalization degradation | 泛化退化（pp） | 主指标衍生 | $\Delta F1_{\text{玉米}}$；F1 取 0～1，站内与跨站 F1 差值乘 100，单位百分点；站内/跨站写 $F1_{\text{站内玉米}}$、$F1_{\text{跨站玉米}}$（定语在前，不用逗号） |
-| DR | relative generalization degradation | 泛化退化比例（%） | 主指标衍生，图 4 | $\mathrm{DR}_{\text{玉米}}$、$\mathrm{DR}_{\text{大豆}}$；站内与跨站 F1 差值除以同一模型的目标站站内 F1，再乘 100%；与召回率 R 区分 |
+| ΔF1 | generalization degradation | 泛化退化（pp） | 仅备查，正文不用 | 百分点差值文件保留；方法不再给独立公式（2026-09-27）；模型间 F1 差距仍写“个百分点” |
+| DR | relative generalization degradation | 泛化退化比例（%） | 正文主用，图 4 | $\mathrm{DR}_{\text{玉米}}$、$\mathrm{DR}_{\text{大豆}}$；站内与跨站 F1 差值除以同一模型的目标站站内 F1，再乘 100%；站内/跨站写 $F1_{\text{站内玉米}}$、$F1_{\text{跨站玉米}}$；与召回率 R 区分 |
 | P / R | Precision / Recall | 精确率 / 召回率 | 定义 F1 用 | $P_i$、$R_i$ |
 | Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 | — |
 | mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 | — |

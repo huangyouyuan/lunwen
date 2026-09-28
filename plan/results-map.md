@@ -24,35 +24,38 @@
 
 ## 3.2 模型跨站分类性能与泛化退化
 
-**问题**：跨站后玉米和大豆 F1 下降多少？哪些模型和源—目标区域组合表现不同？
+**问题**：跨站后玉米和大豆 F1 实际多高、相对目标站当地训练基准差多少？哪些模型和源—目标组合表现不同？
 
 **数据**：
-- `results/summary/cross_site_crop_f1_summary.csv`（36 路径，每条路径 5 次预测的均值与标准差）
-- `results/summary/cross_site_crop_f1_per_fold.csv`（180 行，显著性检验和追溯用）
-- `results/summary/crop_f1_degradation_36paths.csv`（目标站站内基准、跨站 F1 与泛化退化）
-- `results/summary/crop_f1_relative_degradation_36paths.csv`（以目标站站内 F1 为分母的相对退化比例，%，图 4 数据）
+- `results/summary/cross_site_crop_f1_summary.csv`（36 个模型—路径组合，每组合 5 次预测的均值与标准差）
+- `results/summary/cross_site_crop_f1_per_fold.csv`（180 行，逐次追溯用）
+- `results/summary/crop_f1_relative_degradation_36paths.csv`（以目标站站内 F1 为分母的泛化退化比例 DR，%，图 4 与正文数据）
+- `results/summary/crop_f1_degradation_36paths.csv`（百分点差值，仅备查，正文不引用）
 
 **正文表**：`tables/table2_cross_site_f1_12paths.csv`。12 行完整迁移路径、6 个模型—作物精度列，末行给出 12 条路径平均；每格为 5 次完整目标站预测的 F1 均值，不列退化值。
 
-**分析备查**：`tables/table2_cross_site_summary.csv` 用于核对模型平均跨站 F1 与平均退化；`tables/table3_significance_tests.csv` 用于正文显著性判断，二者均不单独排表。
+**分析备查**：`tables/table2_cross_site_summary.csv` 用于核对模型平均跨站 F1；`tables/table3_significance_tests.csv` 只供追溯，正文不作显著性结论（2026-09-27 作者决定）。二者均不排表。
 
-**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“泛化退化比例/%”。图示相对退化比例，用于比较源—目标组合差异及不同模型对迁移方向的响应，不据此判断区域组合与模型的影响主次；原百分点差值仅作另一口径备查。
+**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“泛化退化比例/%”。图示相对退化比例，用于比较源—目标组合差异及不同模型对迁移方向的响应，不据此判断区域组合与模型的影响主次。
 
-**正文组织**：不用第三级标题。完整精度表回答“实际识别精度多高”，热力图回答“相对目标站当地训练下降多少”；正文提炼主要发现，不逐条复述 12 条路径。
+**正文组织**（2026-09-27 起草，不用第三级标题）：
+1. 跨站绝对 F1 范围，36 个组合全部低于目标站站内基准，跨站 F1 高低与目标站有关（引表）—— C4
+2. 路径平均的跨站 F1 排序与平均 DR 排序的区别；DR 较小不代表跨站绝对精度更高 —— C5、C6
+3. 源—目标组合与迁移方向差异（引图 4），引出 3.3 两个问题 —— C7
 
-**位置**：表 1、图 4 排在 3.2 标题之后、3.3 标题之前；图 4 的三列容器按 Word 正文通栏 17.4 cm 均分，图框保持 3.8 cm。当前 3.2 无正文，标题随表同页；补正文后应把标题放回段首。
+**位置**：3.2 标题 → 第一段 → 表 → 第二段 → 第三段 → 图 4 → `\FloatBarrier` → 3.3。标题已移出表格浮动体（2026-09-27）；版面与分页未编译复核。
 
 **要点**：见 claims.md C4–C7。
 
 ## 3.3 模型跨站泛化差异的空间解释
 
-**问题**：泛化退化与哪些地物组成和景观结构条件相对应？这种对应是否因模型或作物而异？
+**问题**：① 目标站在哪些空间条件下退化较大；② 同一目标站的退化随源站的变化与站点之间哪些差异相对应。覆盖全部站点和 12 条路径，不只围绕 C 站和 B、D 组合；只讲对应关系，不写因果机制。
 
-**数据**：待补
-- 站点级：玉米/大豆/其它占比、ED、AREA_MN、AI
-- 图块级：`patch_spatial_features.csv`、`cross_patch_summary.csv`、`within_patch_oof.csv`、`cross_patch_fold.csv`（位置待确认）
+**数据**（已生成，未入库）：
+- 站点级：`D:/label/fragstats_results/完整标签景观级指标.csv`、`完整标签类别级指标.csv`（2023 年完整标签；ED、PD、AREA_MN、AI）
+- 图块级：`D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/` 下 `patch_spatial_features.csv`、`within_patch_oof.csv`、`cross_patch_fold.csv`、`cross_patch_summary.csv`
 
-**方法**：按空间特征分组后汇总混淆矩阵再算类别 F1；`cross_patch_summary.csv` 只用于散点和描述性关系
+**方法**：按空间特征分组后汇总混淆矩阵再算类别 F1；跨站逐次计算后汇总 5 次结果，站内以同组图块为参照；不平均图块 F1，不把错误率变化当作 F1 退化。
 
 **主要证据**：地物占比、ED、AREA_MN、AI 等景观指标，以及按空间特征分组后由汇总混淆矩阵计算的分类结果。表图设计待数据验证后确定。
 
@@ -60,6 +63,6 @@
 
 **要点**：见 claims.md C8（未验证）。
 
-## 补充材料（不控制正文结构）
+## 分析备查（不进入正文；本文不设补充材料）
 
 Crop-mIoU 体系：`results/summary/generalization_degradation_36paths.csv`、`within_site_oof_baseline.csv`、`model_significance_analysis.csv`、`results/processed/generalization_analysis.csv`。
