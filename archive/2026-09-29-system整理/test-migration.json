@@ -1,0 +1,8 @@
+{
+  "date": "2026-09-29",
+  "original": "scripts/test_sec33_protocol.py",
+  "current": "scripts/test/test_sec33_protocol.py",
+  "original_snapshot": "archive\\2026-09-29-system整理\\before-edit\\scripts\\test_sec33_protocol.py",
+  "original_sha256": "39a6eeccff5660dd8604dad6498b85c04cb58acec2e05207338de5062440bd3c",
+  "reason": "Consolidate tests under scripts/test; preserve original before import adjustment."
+}

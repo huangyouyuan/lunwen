@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-29",
+  "operation": "archive by move; no deletion",
+  "files": [
+    {
+      "original": "plan/migration-map.md",
+      "archived": "archive/2026-09-29-system整理/plan/migration-map.md",
+      "reason": "Explicitly retired plan; old Word is style/format reference only.",
+      "bytes": 5691,
+      "sha256": "545541818f3690b751297c867ae459b1289037f4a055cfc84600c589555ed9be"
+    },
+    {
+      "original": "output/results_layout-3.png",
+      "archived": "archive/2026-09-29-system整理/output/results_layout-3.png",
+      "reason": "Historical layout preview; not current PDF evidence.",
+      "bytes": 291212,
+      "sha256": "6c91e5c60189efb423d8a3c608386918ac2f1e59d219aec7cb95254915031f0c"
+    },
+    {
+      "original": "output/results_layout-4.png",
+      "archived": "archive/2026-09-29-system整理/output/results_layout-4.png",
+      "reason": "Historical layout preview; not current PDF evidence.",
+      "bytes": 429241,
+      "sha256": "cb55f3b548a61e3b4102fc7f6e93a2e70cba4ec52d148e527826f864f13f1ea8"
+    },
+    {
+      "original": "output/results_layout-5.png",
+      "archived": "archive/2026-09-29-system整理/output/results_layout-5.png",
+      "reason": "Historical layout preview; not current PDF evidence.",
+      "bytes": 105704,
+      "sha256": "c2e769fa9d044ad976b85b2f8457f08bd31c747e8db4beee2d3cce9623ffa44f"
+    },
+    {
+      "original": "output/results_spacing-3.png",
+      "archived": "archive/2026-09-29-system整理/output/results_spacing-3.png",
+      "reason": "Historical spacing preview; not current PDF evidence.",
+      "bytes": 318334,
+      "sha256": "fd63cd5e3c5cdfb4a64bd5695c319470f56c08e379a5ee8106ebf417fc8aa1cb"
+    },
+    {
+      "original": "output/results_spacing-4.png",
+      "archived": "archive/2026-09-29-system整理/output/results_spacing-4.png",
+      "reason": "Historical spacing preview; not current PDF evidence.",
+      "bytes": 458686,
+      "sha256": "7bf70ec8e460fee0bf2478d816ed53e961a08dbff57fabdffcf88c9460ac15b2"
+    }
+  ]
+}

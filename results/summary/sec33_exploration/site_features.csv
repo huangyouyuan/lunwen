@@ -1,0 +1,9 @@
+site,crop,ED,AREA_MN,AI,PD,crop_ratio,data_status,analysis_status
+ida_2023,corn,65.5297,7.9683,91.879,5.0586,0.403085479736,derived,exploratory
+ida_2023,soybean,65.5297,6.7619,91.2177,4.7292,0.31978302002,derived,exploratory
+il_2023,corn,51.759,14.0695,93.5845,2.8408,0.399691619873,derived,exploratory
+il_2023,soybean,51.759,14.9167,93.4316,2.4426,0.364355163574,derived,exploratory
+iw_2023,corn,55.2115,17.6767,93.923,2.5679,0.453918457031,derived,exploratory
+iw_2023,soybean,55.2115,14.7581,93.4591,2.4914,0.367685699463,derived,exploratory
+iw2_2023,corn,54.4747,17.1661,93.2514,2.4516,0.42083984375,derived,exploratory
+iw2_2023,soybean,54.4747,8.6368,91.601,2.7193,0.23485824585,derived,exploratory

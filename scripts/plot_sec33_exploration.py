@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+"""Review-only plots of frozen 3.3 results. No formal figure numbers."""
+import json
+from pathlib import Path
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+from matplotlib.lines import Line2D
+import numpy as np
+import pandas as pd
+
+from explore_sec33 import ROOT, SUM, SITES, MODELS, sha
+from figstyle import setup, MODEL_LABELS
+
+OUT = ROOT / 'figures/exploratory/sec33'
+SITE_NAMES = {s + '_2023': code for s, code in SITES.items()}
+COLORS = dict(zip(SITE_NAMES, ['#2166AC', '#C51B7D', '#388443', '#CA7E10']))
+CROP_NAMES = {'corn': '玉米', 'soybean': '大豆', 'all': '全部类别'}
+METRIC_NAMES = {'ED': '景观级 ED', 'AREA_MN': '类别级平均斑块面积', 'AI': '类别级 AI（补充）'}
+
+
+def canvas(title, ylabel, limits, xticks, labels):
+    fig, axes = plt.subplots(4, 3, figsize=(10.5, 10.5), sharex=True, sharey=True)
+    fig.subplots_adjust(left=.09, right=.985, bottom=.12, top=.9, hspace=.32, wspace=.12)
+    fig.suptitle(title, y=.978, fontsize=14)
+    for row, (target, code) in enumerate(SITE_NAMES.items()):
+        for col, model in enumerate(MODELS):
+            ax = axes[row, col]
+            ax.set_title(f'目标站 {code} · {MODEL_LABELS[model]}', fontsize=10)
+            ax.grid(axis='y', alpha=.2)
+            ax.set_ylim(limits)
+            ax.set_xticks(xticks, labels)
+            if col == 0:
+                ax.set_ylabel(ylabel)
+            if row == 3:
+                ax.set_xlabel('目标站内分组' if len(xticks) == 3 else '距类别交界距离 / 像元')
+    return fig, axes
+
+
+def main():
+    setup(); OUT.mkdir(parents=True, exist_ok=True)
+    d = pd.read_csv(SUM / 'group_f1_dr.csv')
+    files = []
+    for (metric, crop), data in d[d.group.isin(['low', 'mid', 'high'])].groupby(['metric', 'crop']):
+        stem = f'{metric}_{crop}'
+        pdf = OUT / f'{stem}.pdf'
+        with PdfPages(pdf, metadata={'Title': 'derived / exploratory', 'CreationDate': None, 'ModDate': None}) as book:
+            for field, err, factor, label in [('cross_f1_mean', 'cross_f1_std', 100, 'F1 / %'), ('dr_pct', 'dr_std_pct', 1, 'DR / %')]:
+                low = float(((data[field] - data[err])*factor).min())
+                high = float(((data[field] + data[err])*factor).max())
+                if field == 'cross_f1_mean':
+                    high = max(high, data.within_f1.max()*100)
+                else:
+                    low = min(0, low)
+                pad = max((high-low)*.06, .2)
+                fig, axes = canvas(f'{METRIC_NAMES[metric]}分组 · {CROP_NAMES[crop]} · {label.split(" /")[0]}\n探索候选（derived / exploratory）', label, (low-pad, high+pad), [0, 1, 2], ['低', '中', '高'])
+                for row, target in enumerate(SITE_NAMES):
+                    for col, model in enumerate(MODELS):
+                        ax = axes[row, col]
+                        z = data[(data.target == target) & (data.model == model)]
+                        for source, unit in z.groupby('source'):
+                            unit = unit.set_index('group').reindex(['low', 'mid', 'high'])
+                            ax.errorbar([0,1,2], unit[field]*factor, yerr=unit[err]*factor,
+                                        color=COLORS[source], marker='o', ms=3, capsize=2, lw=1)
+                        if field == 'cross_f1_mean':
+                            baseline = z.drop_duplicates('group').set_index('group').reindex(['low','mid','high']).within_f1
+                            ax.plot([0,1,2], baseline*100, color='#333333', linestyle='--', lw=1)
+                        else:
+                            ax.axhline(0, color='#555555', lw=.6)
+                legend = [Line2D([0],[0], color=COLORS[s], marker='o', label='源站 '+code) for s, code in SITE_NAMES.items()]
+                if field == 'cross_f1_mean':
+                    legend.append(Line2D([0],[0], color='#333333', linestyle='--', label='同组站内基准'))
+                fig.legend(handles=legend, loc='lower center', bbox_to_anchor=(.5,.048), ncol=5, frameon=False)
+                fig.text(.5,.023,'跨站点为五次均值，误差线为样本标准差；各站分位阈值独立。缺失组见数据表。', ha='center', fontsize=9)
+                book.savefig(fig)
+                png = OUT / f'{stem}_{"f1" if field == "cross_f1_mean" else "dr"}.png'
+                fig.savefig(png, dpi=150)
+                files.append(png); plt.close(fig)
+        files.append(pdf)
+    boundary = pd.read_csv(SUM / 'boundary_error_summary.csv')
+    bands = ['0<d<=1','1<d<=2','2<d<=3','3<d<=4','4<d<=5','5<d<=6','d>6']
+    for population, data in boundary.groupby('population'):
+        field, err = 'net_overall_contribution_mean', 'net_overall_contribution_std'
+        low, high = ((data[field]-data[err])*100).min(), ((data[field]+data[err])*100).max()
+        pad = (high-low)*.08
+        fig, axes = canvas(f'边界距离 · {CROP_NAMES[population]} · 净新增错误贡献\n探索候选（derived / exploratory）', '对总体错误率的净贡献 / 百分点', (min(0,low)-pad, high+pad), list(range(7)), ['(0,1]','(1,2]','(2,3]','(3,4]','(4,5]','(5,6]','>6'])
+        for row, target in enumerate(SITE_NAMES):
+            for col, model in enumerate(MODELS):
+                ax = axes[row,col]
+                for source, z in data[(data.target == target)&(data.model == model)].groupby('source'):
+                    z=z.set_index('band').reindex(bands)
+                    ax.errorbar(range(7), z[field]*100, yerr=z[err]*100, color=COLORS[source], marker='o', ms=3, capsize=2, lw=1)
+                ax.axhline(0,color='#555555',lw=.6); ax.tick_params(axis='x',labelsize=7)
+        fig.legend(handles=[Line2D([0],[0],color=COLORS[s],marker='o',label='源站 '+code) for s,code in SITE_NAMES.items()],loc='lower center',bbox_to_anchor=(.5,.048),ncol=4,frameon=False)
+        fig.text(.5,.023,'净贡献 =（跨站带内错误数 − 站内带内错误数）/ 全站该真实类别像元数；全部类别用全站像元数。\n点为五次均值，线为样本标准差；保留负值。此量不是类别 F1 或 DR。',ha='center',fontsize=9)
+        for ext in ['pdf','png']:
+            p=OUT/f'boundary_{population}.{ext}'
+            fig.savefig(p,dpi=150,**({'metadata':{'CreationDate':None,'ModDate':None}} if ext=='pdf' else {})); files.append(p)
+        plt.close(fig)
+    manifest = dict(data_status='derived', analysis_status='exploratory',
+        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [SUM/'group_f1_dr.csv',SUM/'boundary_error_summary.csv']},
+        script_sha256=sha(__file__), files={p.name:sha(p) for p in files})
+    (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(f'Created {len(files)} exploratory plot files; no manuscript changes.')
+
+
+if __name__ == '__main__':
+    main()

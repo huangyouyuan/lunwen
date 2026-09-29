@@ -1,0 +1,25 @@
+target,target_code,metric,crop,q1,q2,actual_cuts,merge_reason,finite_count,missing_count,data_status,analysis_status
+iw_2023,A,ED,corn,50.8626,58.492,"[50.8626, 58.492]",none,400,0,derived,exploratory
+iw_2023,A,ED,soybean,50.8626,58.492,"[50.8626, 58.492]",none,400,0,derived,exploratory
+iw_2023,A,AREA_MN,corn,13.725,21.6946,"[13.725, 21.6946]",none,400,0,derived,exploratory
+iw_2023,A,AREA_MN,soybean,11.2636,17.604,"[11.2636, 17.604]",none,400,0,derived,exploratory
+iw_2023,A,AI,corn,93.7917,94.8569,"[93.7917, 94.8569]",none,400,0,derived,exploratory
+iw_2023,A,AI,soybean,93.3033,94.6299,"[93.3033, 94.6299]",none,400,0,derived,exploratory
+iw2_2023,B,ED,corn,51.534,59.5296,"[51.534, 59.5296]",none,400,0,derived,exploratory
+iw2_2023,B,ED,soybean,51.534,59.5296,"[51.534, 59.5296]",none,400,0,derived,exploratory
+iw2_2023,B,AREA_MN,corn,11.0511333333,21.1975333333,"[11.051133333333329, 21.197533333333325]",none,398,2,derived,exploratory
+iw2_2023,B,AREA_MN,soybean,5.57046666667,11.2700333333,"[5.5704666666666665, 11.270033333333332]",none,399,1,derived,exploratory
+iw2_2023,B,AI,corn,92.4117,94.3264,"[92.4117, 94.3264]",none,397,3,derived,exploratory
+iw2_2023,B,AI,soybean,90.4317,93.0969,"[90.4317, 93.0969]",none,397,3,derived,exploratory
+ida_2023,C,ED,corn,58.3089,70.2718,"[58.3089, 70.2718]",none,400,0,derived,exploratory
+ida_2023,C,ED,soybean,58.3089,70.2718,"[58.3089, 70.2718]",none,400,0,derived,exploratory
+ida_2023,C,AREA_MN,corn,5.4959,10.7297,"[5.4959, 10.7297]",none,400,0,derived,exploratory
+ida_2023,C,AREA_MN,soybean,4.8562,8.7868,"[4.8562, 8.7868]",none,400,0,derived,exploratory
+ida_2023,C,AI,corn,90.7312,93.371,"[90.7312, 93.371]",none,400,0,derived,exploratory
+ida_2023,C,AI,soybean,89.9046666667,92.9329666667,"[89.90466666666667, 92.93296666666667]",none,399,1,derived,exploratory
+il_2023,D,ED,corn,47.6685,56.0506,"[47.6685, 56.0506]",none,400,0,derived,exploratory
+il_2023,D,ED,soybean,47.6685,56.0506,"[47.6685, 56.0506]",none,400,0,derived,exploratory
+il_2023,D,AREA_MN,corn,10.1348,17.7134333333,"[10.1348, 17.71343333333333]",none,399,1,derived,exploratory
+il_2023,D,AREA_MN,soybean,10.2183,19.4104666667,"[10.2183, 19.410466666666668]",none,398,2,derived,exploratory
+il_2023,D,AI,corn,93.1341,94.7086,"[93.1341, 94.7086]",none,397,3,derived,exploratory
+il_2023,D,AI,soybean,92.8384666667,94.6004,"[92.83846666666668, 94.6004]",none,398,2,derived,exploratory

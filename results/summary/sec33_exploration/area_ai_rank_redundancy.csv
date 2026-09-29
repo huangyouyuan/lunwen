@@ -1,0 +1,9 @@
+target,crop,n,spearman_rank_r,note,data_status,analysis_status
+iw_2023,corn,400,0.871835021086,descriptive; no p value,derived,exploratory
+iw_2023,soybean,400,0.8541776599,descriptive; no p value,derived,exploratory
+iw2_2023,corn,397,0.918900279583,descriptive; no p value,derived,exploratory
+iw2_2023,soybean,397,0.911289181543,descriptive; no p value,derived,exploratory
+ida_2023,corn,400,0.92664316652,descriptive; no p value,derived,exploratory
+ida_2023,soybean,399,0.927424565604,descriptive; no p value,derived,exploratory
+il_2023,corn,397,0.88919561551,descriptive; no p value,derived,exploratory
+il_2023,soybean,398,0.889145279708,descriptive; no p value,derived,exploratory

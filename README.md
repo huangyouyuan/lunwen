@@ -10,14 +10,16 @@
 ├── AGENTS.md              # AI 辅助写作最高级规则
 ├── main.tex               # LaTeX 主文件（XeLaTeX + ctex）
 ├── sections/              # 论文各章节 .tex 文件
-├── plan/                  # 论文规划（大纲、术语、迁移地图等）
+├── plan/                  # 当前论文规划（大纲、术语、实验与探索协议）
 ├── legacy/manuscript/     # 旧 Word 论文（仅参考写作风格和格式，不作为内容来源）
 ├── evidence/              # 文献证据映射
 ├── bibliography/          # BibTeX 文献数据库
 ├── results/               # 实验数据（raw → processed → summary）
 ├── tables/                # 表格定义与生成
 ├── figures/               # 图表及数据映射
-├── scripts/               # 数据处理与图表生成脚本
+├── scripts/               # 当前数据处理与图表生成脚本
+│   └── test/              # 测试脚本（不向正式结果目录写入测试数据）
+├── archive/               # 已停用文件与脚本，保留原内容和迁移清单
 ├── verification/          # 验证报告
 ├── output/                # 编译输出
 └── word/                  # 最终 Word 投稿稿件
@@ -60,10 +62,44 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 
 - [当前 PDF](main.pdf)：本轮编译生成，6 页；第 4 页为图 3 与 3.2 正文，第 5 页为完整跨站 F1 表与图 4。
 - [第 3 页](output/sec32_p-3.png)、[第 4 页正文](output/sec32_p-4.png)、[第 5 页表与图](output/sec32_p-5.png)：均从该 PDF 以 150 dpi 导出。
-- `output/table_page_preview.png`、`output/figure4_page_preview.png` 同步为当前第 5 页的副本；`results_layout-*`、`results_spacing-*` 保留为历史预览，不作为当前版面依据。
+- `output/table_page_preview.png`、`output/figure4_page_preview.png` 同步为当前第 5 页的副本；`results_layout-*`、`results_spacing-*` 已移至 `archive/2026-09-29-system整理/output/`，仅作历史预览，不作为当前版面依据。
 - 编译：`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。渲染：`pdftoppm -png -r 150 -f 3 -l 5 main.pdf output/sec32_p`。每次重建后按实际分页更新预览入口和 [预览清单](output/preview-manifest.json)，不得只更新 PDF 而继续使用旧 PNG。
 
 提交后以 `git status --porcelain=v1 --untracked-files=all` 输出为空核对工作区干净。未经作者指示不 push。
+
+## 文件保留与脚本分层
+
+- **不删除任何文件**，包括未跟踪文件、历史结果、旧图、测试产物和过时脚本。只允许有记录地归档，不用删除或新增忽略规则制造干净工作区。
+- 当前规则以 `AGENTS.md` 为准；`README.md` 维护运行入口，`plan/` 维护科学协议，`verification/` 记录实际验证范围。交接提示和旧报告不覆盖磁盘现状。
+- `scripts/` 保留当前生产与探索入口；`scripts/test/` 集中测试脚本。测试使用内存构造数据，不将 mock/placeholder 写入正式结果。
+- `archive/` 仅保存已确认停用的内容；归档清单必须记录原路径、新路径、原因和 SHA-256。先核查依赖再移动，目标同名时停止，不覆盖。用途不明的内容原位保留。
+- 不执行删除型清理命令，不运行会自动删除临时文件的测试清理流程。归档脚本只供追溯，不作为当前运行入口。
+- 3.3 现有成果为 `derived / exploratory`，不自动进入正文；历史清单的 `Verified` 不等于本轮重新验证。接手时先检查脚本、输入、产物和协议哈希。
+
+## 脚本入口与测试
+
+从仓库根目录运行；正式数据链及既有计算口径不因目录整理而改变。
+
+| 用途 | 当前入口 | 边界 |
+|---|---|---|
+| S1—S4 数据与表格 | `scripts/run_all_updates.ps1` | 调用 F1、跨站 CM、DR 和表格生成脚本；会写入既有结果，不能当只读核查命令 |
+| 正式图件 | `scripts/plot_within_site_f1.py`、`scripts/plot_within_site_map_D.py`、`scripts/plot_degradation_heatmap.py` | 共享 `scripts/figstyle.py` |
+| 3.3 分组探索 | `scripts/explore_sec33.py` | `prepare` 固定分组，`analyze` 计算；现有成果不得未经检查覆盖重跑 |
+| 3.3 边界探索 | `scripts/explore_sec33_boundary.py` | 当前探索入口，不是单元测试，不代表正式纳入正文 |
+| 3.3 候选图 | `scripts/plot_sec33_exploration.py` | 已有脚本；本次核查未发现候选图目录 |
+| 旧指标分析核对 | `scripts/analyze_generalization_36paths.py` | Crop-mIoU 备查支线，不是正文 F1 数据入口；仍有引用，暂不归档 |
+| 协议单元测试 | `scripts/test/test_sec33_protocol.py` | 7 项内存边界用例，不替代原始数据全链验证 |
+
+测试命令（不生成字节码缓存、不编译论文）：
+
+```powershell
+python -B -m unittest discover -s scripts/test -p "test_*.py" -v
+python -B scripts/test/test_sec33_protocol.py
+```
+
+`legacy/manuscript/HLS-Crop/test_semantic.py` 是历史跨站推理入口，不因名称带 `test` 就迁入单元测试目录。显著性表仍由现有表格脚本生成，仅供追溯；本轮不移动它或改动生成口径。
+
+本次整理和探索核验范围见 [核查记录](verification/system-audit-2026-09-29.md)；归档原路径与 SHA-256 见 [归档清单](archive/2026-09-29-system整理/archive-manifest.json)。
 
 ## 核心原则
 
@@ -71,4 +107,4 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 - 真实数据优于旧正文
 - 验证优于"看起来完成"
 - 论文正文和项目管理信息严格分离
-- 旧 Word 仅参考写作风格和最终格式，不迁移论点、数据或正文；`plan/migration-map.md` 仅保留已停用的历史安排
+- 旧 Word 仅参考写作风格和最终格式，不迁移论点、数据或正文；[已归档的迁移地图](archive/2026-09-29-system整理/plan/migration-map.md) 仅保留已停用的历史安排

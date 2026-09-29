@@ -56,10 +56,10 @@
   "verified_at": "2026-09-29T01:37:58+08:00",
   "page_binding_verification": "Verified: independent per-page Poppler rendering has the same SHA-256 as each saved PNG; both aliases match page 5",
   "historical_previews_not_current": [
-    "output/results_layout-3.png",
-    "output/results_layout-4.png",
-    "output/results_layout-5.png",
-    "output/results_spacing-3.png",
-    "output/results_spacing-4.png"
+    "archive/2026-09-29-system整理/output/results_layout-3.png",
+    "archive/2026-09-29-system整理/output/results_layout-4.png",
+    "archive/2026-09-29-system整理/output/results_layout-5.png",
+    "archive/2026-09-29-system整理/output/results_spacing-3.png",
+    "archive/2026-09-29-system整理/output/results_spacing-4.png"
   ]
 }

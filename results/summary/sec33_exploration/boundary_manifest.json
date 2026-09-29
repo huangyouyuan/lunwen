@@ -1,0 +1,1736 @@
+{
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "reuse_status": "Verified",
+  "metadata_status": "Partially verified",
+  "reported_fingerprint_mismatch_count": 2,
+  "missing_geotiff_tags_count": 1,
+  "limitations": "Original EDT not rerun. Reported fingerprint mismatches retained, not repaired or explained. Current pixel arrays, geometry, distance/band arrays, class counts and CM closure checked directly.",
+  "script_sha256": "33ab5c98d3c12679d0c3c9edeb60f9363e210d1286b0e509572355535cedd300",
+  "inputs": [
+    {
+      "windows_path": "D:/AI/lunwen/legacy/manuscript/HLS-Crop/src/learning/distance_band_analysis.py",
+      "wsl_path": "/mnt/d/AI/lunwen/legacy/manuscript/HLS-Crop/src/learning/distance_band_analysis.py",
+      "sha256": "1a5b4ebbed348e7ebcbac67026fdd09055c3713cff34b56acef617e12b035ea9",
+      "bytes": 17198,
+      "role": "read-only distance definition; not re-executed"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/legacy/manuscript/HLS-Crop/src/learning/spatial_stitching.py",
+      "wsl_path": "/mnt/d/AI/lunwen/legacy/manuscript/HLS-Crop/src/learning/spatial_stitching.py",
+      "sha256": "b6b4886c9af13a9177eaae14c429bc64415d56c67e73c3d1f7e0e0f05e589cba",
+      "bytes": 32071,
+      "role": "reference export mapping target + 1; NoData 0"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/raw/within_site_confusion_matrices.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/raw/within_site_confusion_matrices.csv",
+      "sha256": "cd9f055eb5b067bfc4d6a674015869d27444951e92a17da58f9875aa7dba158b",
+      "bytes": 6071,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/raw/cross_site_confusion_matrices.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/raw/cross_site_confusion_matrices.csv",
+      "sha256": "916631a58ce6f775bd1e3e40af63146331a577538de2d9cb9238525b16669df5",
+      "bytes": 16702,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/patch_spatial_features.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/patch_spatial_features.csv",
+      "sha256": "7057db02decb14d4e730e54e9003aa10f6e9ee7909aeba4418cc138ad5864666",
+      "bytes": 301768,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwconvgruresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw/2023iwconvgruresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwconvgruresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwconvgruresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwconvgruresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwconvgruresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwconvgruresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw/2023iwconvgruresults/summary/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwconvgruresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw/2023iwconvgruresults/summary/distance_summary.csv",
+      "sha256": "e2a1fb378f97f7b41b2597577eb08caa416705ef9a3cbada2660117d3a789feb",
+      "bytes": 36793,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2convgruresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw2/2023iw2convgruresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2convgruresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2convgruresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2convgruresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2convgruresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2convgruresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw2/2023iw2convgruresults/summary/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2convgruresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw2/2023iw2convgruresults/summary/distance_summary.csv",
+      "sha256": "1cd92865b455fad92782993628516d3251b343830b3ea171c520912346851f2f",
+      "bytes": 37033,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20ida/2023convgruidaresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20ida/2023convgruidaresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20ida/2023convgruidaresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20ida/2023convgruidaresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023convgruidaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20ida/2023convgruidaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023convgruidaresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20ida/2023convgruidaresults/summary/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20ida/2023convgruidaresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20ida/2023convgruidaresults/summary/distance_summary.csv",
+      "sha256": "7df5f5e9c6355c59a588cbc96b0e01928dd8598bb41c6302a48de91effa0ed53",
+      "bytes": 37095,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20il/2023convgruilresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20il/2023convgruilresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20il/2023convgruilresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20il/2023convgruilresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20il/2023convgruilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20il/2023convgruilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20il/2023convgruilresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20il/2023convgruilresults/summary/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20il/2023convgruilresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20il/2023convgruilresults/summary/distance_summary.csv",
+      "sha256": "47c8f517f9b8e4cd7b150d1f8ce342aaf9f97db5a8396900ce95ac10ff56cf72",
+      "bytes": 36833,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwunet3dresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw/2023iwunet3dresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwunet3dresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwunet3dresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwunet3dresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwunet3dresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwunet3dresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw/2023iwunet3dresults/summary/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwunet3dresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw/2023iwunet3dresults/summary/distance_summary.csv",
+      "sha256": "36c029bd1f8b58cf6b3e68ea888d8f4d2ef6472b238122b96b4e16a9dabb8aa2",
+      "bytes": 35947,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2unet3dresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw2/2023iw2unet3dresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "29a4898a7d5f18d79997375e882d4391fe0994bbaaefdaf9be959f1ce226ea48",
+      "bytes": 897,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2unet3dresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2unet3dresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2unet3dresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2unet3dresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2unet3dresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw2/2023iw2unet3dresults/summary/maps/reference.tif",
+      "sha256": "572f6861259770979fb3393a45270f2bc0ab12912f657e5f12642a006f3a0dee",
+      "bytes": 6559262,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2unet3dresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw2/2023iw2unet3dresults/summary/distance_summary.csv",
+      "sha256": "498cbb0f9aa7c43d6e5ea8f77d0fbc93340de441897e068e065a38b53c272c7a",
+      "bytes": 36637,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20ida/2023unet3didaresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20ida/2023unet3didaresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "ffffae41fc59a41bb450cfdca9118393a80d842e25a2cdfcd48d89179ed72835",
+      "bytes": 934,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20ida/2023unet3didaresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20ida/2023unet3didaresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023unet3didaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20ida/2023unet3didaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023unet3didaresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20ida/2023unet3didaresults/summary/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20ida/2023unet3didaresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20ida/2023unet3didaresults/summary/distance_summary.csv",
+      "sha256": "5b80de14be637a01ff156ba6044aaed1773af9d5973603da59e1baaa52ec0b61",
+      "bytes": 36348,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20il/2023unet3dilresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20il/2023unet3dilresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20il/2023unet3dilresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20il/2023unet3dilresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20il/2023unet3dilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20il/2023unet3dilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20il/2023unet3dilresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20il/2023unet3dilresults/summary/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20il/2023unet3dilresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20il/2023unet3dilresults/summary/distance_summary.csv",
+      "sha256": "4c20e37d9c3b0786ef862cec4783589b21a168cee0c045e89d29f420f555c793",
+      "bytes": 36650,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwutaeresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw/2023iwutaeresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "f7505749f9096755b81e47b89d3b672297c75c50f90bf468fb8842a220e1be43",
+      "bytes": 900,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwutaeresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwutaeresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwutaeresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw/2023iwutaeresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwutaeresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw/2023iwutaeresults/summary/maps/reference.tif",
+      "sha256": "7527c9154581f332e712fc6b04cf7f740dbbbc328c4507fca0a2fc716dff489b",
+      "bytes": 6559262,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw/2023iwutaeresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw/2023iwutaeresults/summary/distance_summary.csv",
+      "sha256": "bfb0916086da614dd06e9df3f15f9505eb0c489661ef1ab78f5675065b396dda",
+      "bytes": 36072,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2utaeresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20iw2/2023iw2utaeresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "29a4898a7d5f18d79997375e882d4391fe0994bbaaefdaf9be959f1ce226ea48",
+      "bytes": 897,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2utaeresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2utaeresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2utaeresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20iw2/2023iw2utaeresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2utaeresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20iw2/2023iw2utaeresults/summary/maps/reference.tif",
+      "sha256": "00dfdb07a60ae59a8424d2ef18a66fd024e2abb2f10faf02d334bc8fc73fd484",
+      "bytes": 6558978,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20iw2/2023iw2utaeresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20iw2/2023iw2utaeresults/summary/distance_summary.csv",
+      "sha256": "5a612d19ae7fea502e225839cf07afb62b159be85f950dfd64c965d3eacdbcc3",
+      "bytes": 36463,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20ida/2023utaeidaresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20ida/2023utaeidaresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "ffffae41fc59a41bb450cfdca9118393a80d842e25a2cdfcd48d89179ed72835",
+      "bytes": 934,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20ida/2023utaeidaresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20ida/2023utaeidaresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023utaeidaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20ida/2023utaeidaresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20ida/2023utaeidaresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20ida/2023utaeidaresults/summary/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20ida/2023utaeidaresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20ida/2023utaeidaresults/summary/distance_summary.csv",
+      "sha256": "384e51fbec941b145e91851faa47b92035a45549cf700b5ac3d7bfff9ec89ce4",
+      "bytes": 36084,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/20il/2023utaeilresults/summary/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/20il/2023utaeilresults/summary/details/reference_assets/reference_contract.json",
+      "sha256": "30a1297224083f3b74f60e37d4c59288c1ce5c9ae6b5e62d3723bd2483a14a43",
+      "bytes": 942,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/20il/2023utaeilresults/summary/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/20il/2023utaeilresults/summary/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/20il/2023utaeilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/20il/2023utaeilresults/summary/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/20il/2023utaeilresults/summary/maps/reference.tif",
+      "wsl_path": "/mnt/d/20il/2023utaeilresults/summary/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/20il/2023utaeilresults/summary/distance_summary.csv",
+      "wsl_path": "/mnt/d/20il/2023utaeilresults/summary/distance_summary.csv",
+      "sha256": "ffc201a1ab22ee7f66033a9b673c84bde657240d7f33ac2d92b88dc858056104",
+      "bytes": 35824,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/il_2023/distance_summary.csv",
+      "sha256": "260350e57efef244b5d1491d99146decd6b75331416c97a851f580ae8812c18e",
+      "bytes": 33883,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw2_2023/distance_summary.csv",
+      "sha256": "470e678536bc61422fc7d9a4fa81ccb610260f43fe0492163d28281e3465bdfc",
+      "bytes": 33998,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__ida_2023__2023convgruidaresults_ad649c5b/iw_2023/distance_summary.csv",
+      "sha256": "41bafba6a1aa6efcea06e5829d92a47b706437ff72ec2c31c08a5094e75f8833",
+      "bytes": 33894,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/ida_2023/distance_summary.csv",
+      "sha256": "85d09b8cde56c5001ba476e210b209905e71eb46891b074616e68b147de3e115",
+      "bytes": 33767,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw2_2023/distance_summary.csv",
+      "sha256": "fa5ab79112559757326a949ec1e109aaca70cffa89b702a40f6a1052529e5414",
+      "bytes": 33754,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__il_2023__2023convgruilresults_c79ab0e3/iw_2023/distance_summary.csv",
+      "sha256": "4f80152f4dc45a9ecb23e8584f6b38fc1f75625071df0a52c9fb162c04623cc6",
+      "bytes": 33607,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/ida_2023/distance_summary.csv",
+      "sha256": "fca94d9550cba67bdbd7511467228bc0f84bf9fe45655999138bfd2e75ffb5db",
+      "bytes": 34025,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/il_2023/distance_summary.csv",
+      "sha256": "252a767501667ca3bf7508a7f41b248d442c84eeba04357b6b24fb594602ffbc",
+      "bytes": 33820,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw2_2023__2023iw2convgruresults_100246db/iw_2023/distance_summary.csv",
+      "sha256": "8acd87356859d686a86d49c7c08f02897c27f5b9caedf9af78c2156b43e199dc",
+      "bytes": 33874,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/ida_2023/distance_summary.csv",
+      "sha256": "a7e404c7595eb145b70a5d16758cca475d4cc6029056d4dc09da479fe1690f02",
+      "bytes": 33771,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/il_2023/distance_summary.csv",
+      "sha256": "6e3edb9f0d88656bbe0b1db9925af319207d7e61e14c2e646ec79d97af906543",
+      "bytes": 33590,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/convgru__iw_2023__2023iwconvgruresults_b6d28119/iw2_2023/distance_summary.csv",
+      "sha256": "e49a019957361fb435903808db5bd81cc3fde61f518aa567ee33e1491bbf046c",
+      "bytes": 33733,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/il_2023/distance_summary.csv",
+      "sha256": "4e0825524caf7131c64c987a66ebc6720bd576fa3bfb47452bfacc91ba97bce6",
+      "bytes": 33570,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw2_2023/distance_summary.csv",
+      "sha256": "d305ea1bd9f23ad83b6237fcad7ac545ff29bd42d068b0210dcc99f1aed37508",
+      "bytes": 33709,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__ida_2023__2023unet3didaresults_78ecb223/iw_2023/distance_summary.csv",
+      "sha256": "4ecc48d38c9b8da153b59d63827d77ad88dbbdce68a7a4ebbff1dd1d169182fc",
+      "bytes": 33586,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/ida_2023/distance_summary.csv",
+      "sha256": "b977417ebaf2f7a5835db0e400e6b6a428c624f416912651d4f160d15d38f24c",
+      "bytes": 33548,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw2_2023/distance_summary.csv",
+      "sha256": "7c1e5c837a4786fec15607f540fb947e4f7089cf79c876c5eda54c9402fa5398",
+      "bytes": 33481,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__il_2023__2023unet3dilresults_c4514435/iw_2023/distance_summary.csv",
+      "sha256": "62938cc251b029c82858cc6e39cfd9cd3e8ca7a997af14c2bce3d952f7b50671",
+      "bytes": 33382,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/ida_2023/distance_summary.csv",
+      "sha256": "05154f9af46bf96495a59e90b892e61a6ad0f27da49dc6f6b968bbf4cf570881",
+      "bytes": 33799,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/il_2023/distance_summary.csv",
+      "sha256": "d2ec564d0a4888e3b4006343676a7e7c34933f62292243bb1b6b7f4839bae7eb",
+      "bytes": 33609,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw2_2023__2023iw2unet3dresults_a5dec786/iw_2023/distance_summary.csv",
+      "sha256": "f5839baac62d1ad68ceccd33139addc41351dc3f93a5fc12fbc53846993510a2",
+      "bytes": 33620,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/ida_2023/distance_summary.csv",
+      "sha256": "bc3a2830d626776725cd94bbdecd3e43be2e1157114686a8993370f5c2953040",
+      "bytes": 33585,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/il_2023/distance_summary.csv",
+      "sha256": "6fe9d4a1903e2af98a1d2deedfe3ef7d94021b41efa4528d4afedb5145cb0db8",
+      "bytes": 33384,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/distance_summary.csv",
+      "sha256": "2a4b0069f66f7d634114ddcdb915eabcf43a0e8e049b5e6e32d7ae77f89a31b8",
+      "bytes": 33465,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/il_2023/distance_summary.csv",
+      "sha256": "1ba3bc453bf68c85be2defae459a01cbdf697334ce04d9573352ed9527de8855",
+      "bytes": 33231,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw2_2023/distance_summary.csv",
+      "sha256": "6dd3d15d43cb0a6f3493f420563138686124af9d36411ff7c2e382baff6db19d",
+      "bytes": 33303,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__ida_2023__2023utaeidaresults_7523485c/iw_2023/distance_summary.csv",
+      "sha256": "091fad7be26da24fa487b6e34cbe92506ac893a7e8f352278a58f76bd18a0b2e",
+      "bytes": 33204,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/ida_2023/distance_summary.csv",
+      "sha256": "923e1c2f39b66d848578d6c9b56f26fc43119baa85535e2c9dad844026be0d36",
+      "bytes": 33210,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw2_2023/distance_summary.csv",
+      "sha256": "64a575228ec8691dbbd525bbdacb2a57e0efc0b6f901cddbf08bbd0534fb5137",
+      "bytes": 33072,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "431405a335a77a283025b07b9201c931984bbbfdd9f09e445adb30483cbfd48d",
+      "bytes": 899,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__il_2023__2023utaeilresults_699fabd8/iw_2023/distance_summary.csv",
+      "sha256": "5f982b87ccce7fceac6d09f1176c8bfc9fde8f823ea3041139eb918cde548c21",
+      "bytes": 32946,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "66a358e38cf019062e3cf2786f5be0c3fec6630c26543e658bbf613427d79028",
+      "bytes": 889,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/ida_2023/distance_summary.csv",
+      "sha256": "4fe81bb629f4e3bb183b0eda5dd3394e740970e53c21ba8334e8384d4de3cb05",
+      "bytes": 40719,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "aab77ddf3a81c91e5348e10279d6c37302a42bb294bcfb031567a753b6eeca10",
+      "bytes": 897,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/il_2023/distance_summary.csv",
+      "sha256": "d856b4dc8df4c6da1c87e6c6c5589289f63f958c34e35a61572c28c1c3345a41",
+      "bytes": 40466,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f7505749f9096755b81e47b89d3b672297c75c50f90bf468fb8842a220e1be43",
+      "bytes": 900,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "029708641e2e022744d11a2f441fc1d7b79b8fc5fb09243a8a4eef48842b3fe4",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "6fa1f814f30c18fae632a30256de570729c00a0390f857dc7a9a7aeb0c259790",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/maps/reference.tif",
+      "sha256": "dbb53ca391cbe54bb05fbbf9a86c91b4c41db026a562341ba92fcf5c8a22d025",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw2_2023__2023iw2utaeresults_cc5a4619/iw_2023/distance_summary.csv",
+      "sha256": "4903521f414afbd8291f5fc52139ec22fc392890d28c533bf3242089bc072ac1",
+      "bytes": 40511,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/reference_contract.json",
+      "sha256": "39c8b5266591962599820f5a21aaedb8c93b3b976ae914ff28b7c519ee99a748",
+      "bytes": 888,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "ec7b3d13f63efc60f5d9b6f43f7fccbd041349f8b86da8297ca031b9138adb36",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "137997f734e8032e223232d76ba292c03a95b9995ba2277bb1c4e2eae2e68bf7",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/maps/reference.tif",
+      "sha256": "c20151e0086e28e9b682dd609514af487c2b11824fed0cab0eed817fcc30e9bb",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/ida_2023/distance_summary.csv",
+      "sha256": "3b52723854d0f781a9b4786bde87c67562172f9bc21bff43dd370982d813102b",
+      "bytes": 33185,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/reference_contract.json",
+      "sha256": "f6a62b8bba649a335e64dd2b22545989714e6181c6428ac7fc71d4ac346ae9ed",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "1a1c773dae91f258190a695268fc6a975f9650ef6f657f2bec25edc750c4720b",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "49c5736d78292a078de55e7a9d66d1d1a289e9feeaa2ee77402e8bc7cbfc1732",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/maps/reference.tif",
+      "sha256": "61bf07ec675326866ef7f59aa625710397ba0b8bf33b77426ad36b58603c1d0e",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/il_2023/distance_summary.csv",
+      "sha256": "8865c3e96103125ac9d7c4a76f822b63256e79e0aa540d3f03c999e02c384953",
+      "bytes": 32999,
+      "role": "original band CM summaries"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/reference_contract.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/reference_contract.json",
+      "sha256": "c1fb7e83eb9dd8c10543d33ae79d351b045cc737346e9ee7499f68aa2e6830cb",
+      "bytes": 896,
+      "role": "boundary identity contract"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/distance_band_index.npy",
+      "sha256": "9c7e7307d6d346906640c707a226e5a4061018a885d35e110aeb88bdf885ffbf",
+      "bytes": 6553728,
+      "role": "original seven-band raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/details/reference_assets/class_boundary_distance_pixels.npy",
+      "sha256": "e960704f840a6a10d3b236d167680b7badb6c16ce359e8d068cc8d8f14c426f8",
+      "bytes": 26214528,
+      "role": "original distance raster"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/maps/reference.tif",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/maps/reference.tif",
+      "sha256": "8d160f9022db186cdb667b43adc7fed53b7cd22a893687f80a33f28217ecf1ed",
+      "bytes": 6559094,
+      "role": "exported reference raster; 1 corn / 2 other / 3 soybean"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/distance_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/distance_summary.csv",
+      "sha256": "9542a2d2e1b0d9b8f7bf36b3341893412c7dd6cdd50aa6fa87ac491c9c27df91",
+      "bytes": 33056,
+      "role": "original band CM summaries"
+    }
+  ],
+  "output_sha256": {
+    "results\\processed\\sec33_exploration\\boundary_cross_fold_cm.csv": "7751d642d6158278eeea8e1069e9ad747c2f88d4e3326900c3ad8bbc8388fbbc",
+    "results\\processed\\sec33_exploration\\boundary_within_cm.csv": "00ac75f180640c9fc6cbcd9e5af45cacc44f63de0e400fd9cb5ab8d8f3c913c1",
+    "results\\summary\\sec33_exploration\\boundary_checks.csv": "ec481b6d8970c0bdd0f3f1e5096370fd1b9c8e7b104b087fc91f35b9f3dfb396",
+    "results\\summary\\sec33_exploration\\boundary_cross_per_fold.csv": "656ad20328e6653a75a238a6b4640e4ec7d2467a5ad44dc30588d805556c6bb2",
+    "results\\summary\\sec33_exploration\\boundary_error_summary.csv": "f4299873509b2566e9c72e97b9f914b2f0e6c846132dd1edd69de8c6d8e6f02a",
+    "results\\summary\\sec33_exploration\\boundary_identity_checks.csv": "51a4af311f68bd89d103e8aad9203c8edea03bc5208c95fac5b4041d04202710",
+    "results\\summary\\sec33_exploration\\boundary_within_error.csv": "58339a4b230bcb0e7cccbd98c7cb516d27bd05dfe2c45781aab4436de9adb66b"
+  }
+}

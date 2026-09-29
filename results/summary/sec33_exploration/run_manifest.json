@@ -1,0 +1,146 @@
+{
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "pipeline_status": "Verified",
+  "spatial_metrics_status": "Partially verified",
+  "spatial_metrics_limit": "Compared named canonical CSV exports; label GeoTIFF metrics not recomputed in this run.",
+  "python": "3.12.7",
+  "pandas": "2.2.2",
+  "numpy": "1.26.4",
+  "script_sha256": "5b749c389a9998710ef8b74a74fb18168e39930549650bfc341e764b214b16c3",
+  "protocol_sha256": "78eff50e19e222ac7b8fca38cb35c74bd504f71f803a6eaa266e8a0050827728",
+  "inputs": [
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/patch_spatial_features.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/patch_spatial_features.csv",
+      "sha256": "7057db02decb14d4e730e54e9003aa10f6e9ee7909aeba4418cc138ad5864666",
+      "bytes": 301768,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/label/fragstats_results/标签切片景观级指标.csv",
+      "wsl_path": "/mnt/d/label/fragstats_results/标签切片景观级指标.csv",
+      "sha256": "e0bce3bddd79841010ed0db8f8171ee4e17279bb08a92bee8897394c8f956ddc",
+      "bytes": 260852,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/label/fragstats_results/标签切片类别级指标.csv",
+      "wsl_path": "/mnt/d/label/fragstats_results/标签切片类别级指标.csv",
+      "sha256": "b47226f595e17b55e569b3ce34ca2fe32a12d1f95dee0cf832a24e6e63a2ee9f",
+      "bytes": 1315686,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/processed/sec33_exploration/patch_groups.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/processed/sec33_exploration/patch_groups.csv",
+      "sha256": "5cd0ceaf8ef28bec742124840bc13751f507ceab8fbf1b9a2f7472af607ec18e",
+      "bytes": 921498,
+      "role": "frozen feature-only assignments"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/Patch级空间底表运行记录.json",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/Patch级空间底表运行记录.json",
+      "sha256": "6f297783ef31297c51ba5e494f805d8f6d831ad618630a7ed85f6d38c015ddfb",
+      "bytes": 127859,
+      "role": "historical provenance; not rerun"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/within_patch_oof.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/within_patch_oof.csv",
+      "sha256": "82c71caa265107aeb80e58e9ed83a0e98bf30c756d879a64dc68e1d53778edd6",
+      "bytes": 510648,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/cross_patch_fold.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/cross_patch_fold.csv",
+      "sha256": "c2d63d97b1582c2c150294016f5e58d59d3c1032e38d0a08032971cb7d6495b3",
+      "bytes": 8428095,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/cross_patch_summary.csv",
+      "wsl_path": "/mnt/d/cross_site_all_20260916/paper_tables/Patch级空间误差底表/cross_patch_summary.csv",
+      "sha256": "5d26a4c7a12a7738bb219ce845662d793f78d56629fc813f83c1aa83d72136f4",
+      "bytes": 1868855,
+      "role": "legacy error-rate summary; QC only"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/raw/within_site_confusion_matrices.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/raw/within_site_confusion_matrices.csv",
+      "sha256": "cd9f055eb5b067bfc4d6a674015869d27444951e92a17da58f9875aa7dba158b",
+      "bytes": 6071,
+      "role": "repository raw CM"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/raw/cross_site_confusion_matrices.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/raw/cross_site_confusion_matrices.csv",
+      "sha256": "916631a58ce6f775bd1e3e40af63146331a577538de2d9cb9238525b16669df5",
+      "bytes": 16702,
+      "role": "repository raw CM"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/summary/within_site_crop_f1.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/summary/within_site_crop_f1.csv",
+      "sha256": "ac7b20690d2d49235b45b07e9cdb26460d0470da145c6501e054893c0d586f1b",
+      "bytes": 780,
+      "role": "authoritative rounded summary"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/summary/cross_site_crop_f1_summary.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/summary/cross_site_crop_f1_summary.csv",
+      "sha256": "193eb45b4f9637b54e79928f5100844f28c6443ffb133ff21391b5a1ba59bd91",
+      "bytes": 2261,
+      "role": "authoritative rounded summary"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/summary/cross_site_crop_f1_per_fold.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/summary/cross_site_crop_f1_per_fold.csv",
+      "sha256": "6a82bff61306594ad206f122f3c2863ae4fc699a4fa135b062ef5dba60e766cc",
+      "bytes": 10974,
+      "role": "authoritative rounded summary"
+    },
+    {
+      "windows_path": "D:/AI/lunwen/results/summary/crop_f1_relative_degradation_36paths.csv",
+      "wsl_path": "/mnt/d/AI/lunwen/results/summary/crop_f1_relative_degradation_36paths.csv",
+      "sha256": "343d247217310fa4ebc1b7358f76bfb8cc0911b3e5c37bc9b2cd4defda667e2e",
+      "bytes": 3663,
+      "role": "authoritative rounded-summary DR"
+    },
+    {
+      "windows_path": "D:/label/fragstats_results/完整标签景观级指标.csv",
+      "wsl_path": "/mnt/d/label/fragstats_results/完整标签景观级指标.csv",
+      "sha256": "70f1dae18a9c4a31a6fdd7b190dcf33d8e1231986e357371e160aadf69414297",
+      "bytes": 568,
+      "role": "external derived input"
+    },
+    {
+      "windows_path": "D:/label/fragstats_results/完整标签类别级指标.csv",
+      "wsl_path": "/mnt/d/label/fragstats_results/完整标签类别级指标.csv",
+      "sha256": "cfdce6d5179f99a27a64a48c7ffa474df9a4c7004332d0c29eedcb772414a420",
+      "bytes": 3136,
+      "role": "external derived input"
+    }
+  ],
+  "output_sha256": {
+    "results\\processed\\sec33_exploration\\cross_group_fold_cm.csv": "46239ea1a406e86505729e179b8dc744b35ad78ab3bca73f9385bf42f00ca144",
+    "results\\processed\\sec33_exploration\\group_thresholds.csv": "15d0f1303d8b623515d657df7a4ed48b397bfd5c887b04a2b4e3bd0f9e8c7ee3",
+    "results\\processed\\sec33_exploration\\patch_groups.csv": "5cd0ceaf8ef28bec742124840bc13751f507ceab8fbf1b9a2f7472af607ec18e",
+    "results\\processed\\sec33_exploration\\within_group_cm.csv": "98d81d99b3a38fd47cc074e35e59be526caf3e43b80b26b1f167018afcd02d7a",
+    "results\\summary\\sec33_exploration\\area_ai_rank_redundancy.csv": "4b4b8c2084bb3b7bc99522d59e2cf760488de03e90a856489fae38b262f8cdeb",
+    "results\\summary\\sec33_exploration\\checks.csv": "1417965270a277cd698472ecbe19e5f92f68361100dce54a9fecec40c27c9acb",
+    "results\\summary\\sec33_exploration\\cm_closure_checks.csv": "00367064ef4db8bb5e7915c67354a09e6b277a0c6bb40b914bfb20a779e5579e",
+    "results\\summary\\sec33_exploration\\cross_group_per_fold.csv": "e0e4ac710f74565cd148dfc18d018c41b4741129ed6d47d759c5cec554f75812",
+    "results\\summary\\sec33_exploration\\full_site_f1_dr.csv": "dfb7272d99d16cba097733ce8a788b7b2146780ec0dff90584d1edf6cbd582fb",
+    "results\\summary\\sec33_exploration\\full_site_reference_checks.csv": "3f13b4aff7fe4474233dad7fcb822aa6ca2f8313e8a34179f38c0fd651826c06",
+    "results\\summary\\sec33_exploration\\group_composition.csv": "4623767af90f33db918b199f9009077eb4f833f9ed7b029fb246b2160740ca5f",
+    "results\\summary\\sec33_exploration\\group_f1_dr.csv": "557de37a922d25b3fbbf4e578f15e9a49ec55023a512434ee070f6450dbfb516",
+    "results\\summary\\sec33_exploration\\low_high_contrasts.csv": "bcf9db36d56263c55e61a31c07897b7b3e777636271a10c0ad7be7b085847d2a",
+    "results\\summary\\sec33_exploration\\site_features.csv": "f8284ceba700552fc9a8a7c168ae2c86e4ad9f5eb6ad3a4d2813e8fcac17563b",
+    "results\\summary\\sec33_exploration\\source_pair_comparisons.csv": "29ed6eb33745bf5b080343ff12fc2f12e353c3011134e3adbb7a00c4ec7802ae",
+    "results\\summary\\sec33_exploration\\source_pair_counts.csv": "c8e035427970027601f3c045522b3df63e42355ae5ffb9f9ad5b4586d36de4a3",
+    "results\\summary\\sec33_exploration\\source_target_feature_differences.csv": "a6d0c6d09f5d25c76db2d4ca36757f948485c013454508be0ebaaf79b3d6c34c",
+    "results\\summary\\sec33_exploration\\within_group_f1.csv": "724a9ffdf8b6b91ef3fec8d78b04c256973cc1ac4c35b23b02132dc10ad2e3ed"
+  }
+}
