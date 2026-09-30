@@ -1,5 +1,7 @@
 # 系统整理与探索核查（2026-09-29）
 
+B 站生产身份、修复时间线、旧指纹复算及 GeoTIFF 区分的集中记录见 [B 站身份问题追溯](iw2-identity-provenance.md)。本文件保留系统整理时的审查范围和后续更正。
+
 ## 范围与总状态
 
 **Partially verified**。本轮整理项目入口、测试目录及明确停用文件，不改正文、训练、科学计算口径和既有探索产物；不重跑产物生成、不编译、不暂存、不提交、不 push，不删除任何文件。
@@ -63,11 +65,59 @@ python -B scripts/test/test_sec33_protocol.py
 | summary | area_ai_rank_redundancy | 8 |
 | summary | boundary_within_error / boundary_cross_per_fold / boundary_error_summary | 252 / 3,780 / 756 |
 
-## 未解决项
+## 核验范围与待厘清的记录
 
-- **Partially verified**：主清单自述空间指标仅与具名 CSV 导出对照，未从标签 GeoTIFF 重算 ED、AREA_MN、AI。
-- **Partially verified**：边界清单自述复用既有结果，未重跑原始距离变换；未记录协议哈希。
-- **Partially verified**：边界身份表保留两条报告指纹不一致（3D U-Net、U-TAE 在 B 站的站内记录），其中 U-TAE B 站缺 GeoTIFF 标签。相对首份参考 TIFF 的文件哈希不同共三条，另含 U-TAE A 站站内记录。文件哈希差异不能直接解释为像元差异；这些异常不能因行状态为 Verified 就忽略。
+2026-09-30 作者纠正：景观指数和边界清单已正常计算，本轮不需要重跑；U-TAE B 站实际有 GeoTIFF 标签，生产时存在站点标记错误。原始站内分类结果位于 `D:/` 下 `20iw` 系列目录，跨站结果位于 `D:/cross_site_all_20260916`，原始训练数据位于 `G:/2560图像`；`iw2` 对应 B 站。以下“未重算”只描述本次审查范围，不构成重跑要求。
+
+此前“U-TAE B 站缺 GeoTIFF 标签”及随后“预期路径未找到文件”的表述均撤回。根据边界脚本与清单，`geotiff_tags_present=False` 表示当次读取站内导出 TIFF 时 `tifffile` 未解析到地理元数据，不代表文件不存在。该文件为 `D:/20iw2/2023iw2utaeresults/summary/maps/reference.tif`，清单记录其大小为 6,558,978 字节。
+
+本次只读原始跨站记录已确认：`batch_run.json` 中 15 条身份修正均将 U-TAE B 站来源模型的 `recorded_train_dataset_id=iw_2023` 纠正为 `corrected_train_dataset_id=iw2_2023`，覆盖 B→A/C/D、每路径五折。运行记录说明仅修正追踪字段，未修改模型权重。本次将对应 15 条仓库 raw CM 与外部逐折运行记录的来源、目标及九个矩阵元素比较，全部一致。该结论仅限已核对的跨站关联，不代表完整训练历史均已核验。
+
+外部 U-TAE 的 A/C/D→B 三份 `maps/reference.tif` 已只读检查文件头：均为 2560×2560、EPSG:5070、30 m，具有地理信息。它们与上述站内导出 TIFF 是不同文件。
+
+### 原始身份记录补查（2026-09-30）
+
+**Verified**：已直接读取站内 `D:/20iw2/2023iw2utaeresults/summary/maps/reference.tif` 文件头。文件存在，包含 30 m 像元尺度和定位标签，左上角为 `(314900.52486949, 2183972.51880609)`，但缺少 `GeoKeyDirectoryTag`，因此 `tifffile.geotiff_metadata` 返回 `None`。准确描述是“缺完整 CRS GeoKey 信息”，不是标签缺失或完全没有空间定位。该定位与 B 站另外两模型的完整 GeoTIFF 一致，与 A 站位置不同。不得将 GeoKey 缺失与站点身份误标断言为同一原因。
+
+身份问题已按三层追溯：
+
+1. **训练数据生产标记**：`G:/2560图像/20iw2/2023iw2shuju/dataset_identity_migration.json` 明确记录旧配置沿用默认 `SITE=iw`，将 `dataset_id: iw_2023 → iw2_2023`、`site: iw → iw2`，并记录影像、标签及空间字段不变。本次读取当前 `metadata.csv` 共 400 行，首条身份为 B 站，`source_label=D:/重分类/2023iw2.tif`。另读取 `G:/2560图像/标签GeoTIFF/iw2_2023_label.tif` 文件头，确认 2560×2560、EPSG:5070、30 m 及 B 站定位；未扫描像元或核查 source_label 当前文件。
+2. **站内运行与模型身份**：`D:/20iw2/2023iw2utaeresults/dataset_identity_migration.json` 记录 2026-09-16 将站内身份及实验名从 A 改为 B。当前 `conf.json`、`summary/details/summary_run.json` 与第一折 `test_patch_run.json` 指向 U-TAE、`iw2_2023` 和 `2023iw2shuju`。跨站模型身份修正及 15 条 CM 关联核查见上文。
+3. **逐图块冗余字段漏改**：`D:/20iw2/2023iw2utaeresults/site_identity_repair_20260918.json` 记录五折 `test_patch_metrics.csv` 的 `site` 从 `iw` 修正为 `iw2`。本次逐行比较当前五份文件与 `site_identity_repair_backup_20260918/summary/details/fold_*/test_patch_metrics.csv`，每折 80 行、共 400 行，只有 `site` 变化，其余字段字符串逐行一致；`dataset_id`、`patch_uid` 已是 B 站身份。
+
+**Verified**：上述文件头、具名修复记录、400 行仅 `site` 变化，以及 15 条跨站身份和 CM 关联核查。两条复合指纹的来源已由后续精确复算定位，见下节。保留原检查表布尔值，不修改历史清单，不重跑景观指数或边界计算，不宣称预测数组、权重及全部历史链条已重新验证。
+
+### 两条复合指纹来源复算
+
+**Verified**：3D U-Net 与 U-TAE 的 B 站站内报告保留了参考身份迁移前的旧复合指纹。保持实际标签数组及空间契约数值不变，仅恢复 `dataset_id=iw_2023` 和全部 400 个 `patch_uid` 的 `iw_2023__` 前缀，可精确重现两条旧报告指纹；使用当前 B 站身份则精确重现对照指纹。
+
+算法依据为 `legacy/manuscript/HLS-Crop/src/learning/study_area_products.py` 第 255—272 行 `_reference_fingerprint()`：对包含 dataset_id、网格尺寸、geo_fields、排序后 patch_uids 的身份字典执行 `json.dumps(..., sort_keys=True, ensure_ascii=False)`，再接续参考标签数组的连续字节计算 SHA-256。模型名、模型 train_dataset_id、TIFF 文件头及距离数组不参与该指纹。
+
+对两个模型分别使用其实际契约和参考 TIFF，四组控制复算结果完全相同：
+
+| 契约 dataset_id | 全部 patch_uid 前缀 | 复算 SHA-256 |
+|---|---|---|
+| iw2_2023 | iw2_2023__ | b35a97a46ff580caa4fac59269d87303191a460f0d294dbd45187f21bf01759a |
+| iw_2023 | iw2_2023__ | 86830e69c246eae575aa4a69568857bd0ce3049c8a54ca9b7636ef46aafbc175 |
+| iw2_2023 | iw_2023__ | 0ae853ec96bbbf3de29c80993355cb3dc51a6a612b7996e7c497ef5f81a69cbb |
+| iw_2023 | iw_2023__ | 7915446610aa3ee0090e8a1a54ff12399047a5504103b59e6dbf0473760ec3fd |
+
+只恢复一个身份字段不能命中旧报告；两个同时恢复则精确命中。无需改变标签字节、地理坐标、CRS 或网格尺寸。
+
+独立标签核对：读取 `G:/2560图像/20iw2/2023iw2shuju/metadata.csv` 及其 400 份 `ANNOTATIONS/TARGET_{patch_id}.npy`，按实际代码转换源标签 1/2/3 为内部 0/1/2，拼接为 uint8、2560×2560。通过 AST 仅提取所需读取、契约构造与指纹函数，未执行完整生产流程。原始标签拼接数组与 B 站三模型站内参考 TIFF 解码数组逐元素完全相等，三份空间契约均与 metadata 构造的契约相等，三模型各五折合并后的 400 个 UID 均与当前 metadata 相同。
+
+- metadata SHA-256：`7d6be84036b1134cec0a3773a52e413ddc06bcd8325511abb8dc52a0ca2c0aff`，与数据身份迁移记录 after 值一致。
+- 内部标签数组字节 SHA-256：`df281739a4c28c17a126d9d4238926acc81cd77d747f7a35c5e6916e07d627cb`。
+- ConvGRU B 站站内报告原本就是当前指纹 `b35a97…`。
+- 跨站 `unet3d__iw_2023__2023iwunet3dresults_db465976/iw2_2023/` 与 `utae__iw_2023__2023iwutaeresults_d65d9942/iw2_2023/` 的契约、参考标签与原始数据一致，报告指纹也为 `b35a97…`。这些路径均位于 `D:/cross_site_all_20260916/`。
+
+生产迁移记录支持上述旧值：G 盘数据迁移记录明确修正 dataset_id、site、patch_uid；3D U-Net B 站迁移记录日期为 2026-09-11，U-TAE B 站为 2026-09-16。当前 U-TAE `summary/details/reference_assets/reference_contract.json` 文件哈希为 `29a4898a7d5f18d79997375e882d4391fe0994bbaaefdaf9be959f1ce226ea48`，与其迁移记录 after 值一致。
+
+**Partially verified** 仅限旧文件的逐字节历史恢复：迁移记录指向的具名旧备份目录未找到；对当前契约文本反向替换身份也未重现 before 文件哈希，不能宣称恢复了完整旧文件。此限制不改变复合指纹输入差异已经精确复现的结论。两条差异应解释为参考身份迁移后保留的旧指纹，不是标签内容或空间位置差异。原始报告和检查表保留不改。
+
+- **Partially verified**：本轮对景观指标仅核对具名 CSV 导出及哈希，未独立从标签重算 ED、AREA_MN、AI；不因此否定既有计算或要求重跑。
+- **Partially verified**：本轮边界核查复用既有结果；清单未记录协议哈希，属于追溯记录范围，不是距离计算错误的证据。
+- **Verified**：两条报告复合指纹差异已定位为参考身份迁移后遗留的旧指纹，控制复算见上节。现有检查表的 `reported_fingerprint_matches_first=False` 仍如实描述旧报告字符串不同，不直接翻转。U-TAE B 站站内 TIFF 缺完整 CRS GeoKey 是独立的导出元数据现象，不是本次复合指纹差异的原因。
 - **Not verified**：`figures/exploratory/sec33/` 不存在，只有绘图脚本，没有可核验的候选图。
 - **Not verified**：本轮未独立重建原始预测至分组结果全链，未验证正式排版。
 
