@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-3.2 用图：不同源—目标区域组合下三种模型的玉米和大豆 F1 相对退化比例
+3.2 用图：不同源—目标区域组合下三种模型的玉米和大豆 F1 差值
 
 六个子图各出一个 PDF + 一个色标 PDF，LaTeX 用 subcaption 拼；子图题、图名是文本：
   a ConvGRU玉米  b 3D U-Net玉米  c U-TAE玉米
@@ -11,7 +11,7 @@
   python scripts/plot_degradation_heatmap.py 1      # 3.8 cm，适合 2 行 3 列
   python scripts/plot_degradation_heatmap.py 1.5    # 5.7 cm，适合 3 行 2 列
 
-输入：results/summary/crop_f1_relative_degradation_36paths.csv
+输入：results/summary/f1_raw_scale/crop_f1_difference_36paths.csv
 输出：figures/results/fig_degradation_heatmap_{a..f}.pdf / .png，fig_degradation_heatmap_cbar.pdf / .png
 """
 
@@ -39,7 +39,7 @@ def prepare_heatmap_data(df, model, crop):
     model_df = df[df['model'] == model].copy()
     model_df['source_abbr'] = model_df['source'].map(SITE_MAP)
     model_df['target_abbr'] = model_df['target'].map(SITE_MAP)
-    pivot = model_df.pivot(index='source_abbr', columns='target_abbr', values=f'{crop}_relative_loss_pct')
+    pivot = model_df.pivot(index='source_abbr', columns='target_abbr', values=f'{crop}_f1_difference')
     pivot = pivot.reindex(index=fs.SITES, columns=fs.SITES)
     for site in fs.SITES:
         pivot.loc[site, site] = np.nan
@@ -47,18 +47,27 @@ def prepare_heatmap_data(df, model, crop):
 
 
 def main(size):
-    df = pd.read_csv('results/summary/crop_f1_relative_degradation_36paths.csv')
+    df = pd.read_csv('results/summary/f1_raw_scale/crop_f1_difference_36paths.csv',
+                     float_precision='round_trip')
 
     all_values = np.concatenate([prepare_heatmap_data(df, m, c).values.ravel() for c, m, _ in PANELS])
-    vmin = float(np.floor(np.nanmin(all_values)))
-    vmax = float(np.ceil(np.nanmax(all_values)))
+    vmin = 0.0
+    vmax = float(np.ceil(np.nanmax(all_values) * 100) / 100)
+    if np.nanmin(all_values) < 0 or vmax <= vmin:
+        raise ValueError('当前热力图按正差值设计；数据范围改变时需重新审查色标。')
 
     for crop, model, tag in PANELS:
         fig, axes = fs.grid(1, 1, w=size, h=size)
         ax = axes[0, 0]
         sns.heatmap(prepare_heatmap_data(df, model, crop), ax=ax, cmap='YlOrRd', vmin=vmin, vmax=vmax,
                     annot=True, fmt='.2f', annot_kws={'size': fs.FS}, cbar=False,
-                    linewidths=0.5, linecolor='gray', square=True)
+                    linewidths=0, square=True)
+        # 网格只画一次，外框不裁切，避免内外线宽不同或重复描边。
+        edges = np.arange(len(fs.SITES) + 1)
+        ax.hlines(edges, 0, len(fs.SITES), colors='black', linewidths=0.6, clip_on=False)
+        ax.vlines(edges, 0, len(fs.SITES), colors='black', linewidths=0.6, clip_on=False)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
         ax.set_xlabel('目标站')
         ax.set_ylabel('源站')
         ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
@@ -74,12 +83,12 @@ def main(size):
                        bar_width / fig_width, bar_height / fig_height])
     sm = plt.cm.ScalarMappable(cmap='YlOrRd', norm=plt.Normalize(vmin, vmax))
     cb = fig.colorbar(sm, cax=cax, orientation='horizontal',
-                      ticks=np.arange(vmin, vmax + 1, 1))
+                      ticks=np.arange(vmin, vmax + 0.001, 0.02), format='%.2f')
     cb.outline.set_linewidth(0.6)
     fs.save(fig, 'fig_degradation_heatmap_cbar')
 
     print(f'Generated: figures/results/fig_degradation_heatmap_{{a..f,cbar}}.pdf / .png  (panel {size * fs.UNIT:.1f} cm)')
-    print(f'色标范围：{vmin:.0f} ~ {vmax:.0f} %')
+    print(f'色标范围：{vmin:.2f} ~ {vmax:.2f}，原始 F1 差值')
     for crop, model, tag in PANELS:
         v = prepare_heatmap_data(df, model, crop).values
         v = v[~np.isnan(v)]

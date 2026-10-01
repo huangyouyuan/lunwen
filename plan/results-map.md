@@ -7,8 +7,8 @@
 **问题**：三模型在拥有当地训练数据时能达到什么水平？玉米和大豆是否存在难度差异？训练是否稳定？
 
 **数据**：
-- `results/summary/within_site_crop_f1.csv`（汇总口径玉米 F1 / 大豆 F1 / OA，12 组）
-- `results/summary/within_site_crop_f1_fold_stats.csv`（五折 mean±std）
+- `results/summary/f1_raw_scale/within_site_crop_f1.csv`（汇总口径玉米 F1 / 大豆 F1 / OA，12 组）
+- `results/summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv`（五折 mean±std；计算不按显示精度舍入）
 
 **表**：`tables/table1_within_site_baseline.csv`、`tables/table1b_within_site_fold_stability.csv`（数据备查，正文用图不用表）
 
@@ -27,23 +27,23 @@
 **问题**：跨站后玉米和大豆 F1 实际多高、相对目标站当地训练基准差多少？哪些模型和源—目标组合表现不同？
 
 **数据**：
-- `results/summary/cross_site_crop_f1_summary.csv`（36 个模型—路径组合，每组合 5 次预测的均值与标准差）
-- `results/summary/cross_site_crop_f1_per_fold.csv`（180 行，逐次追溯用）
-- `results/summary/crop_f1_relative_degradation_36paths.csv`（以目标站站内 F1 为分母的泛化退化比例 DR，%，图 4 与正文数据）
-- `results/summary/crop_f1_degradation_36paths.csv`（百分点差值，仅备查，正文不引用）
+- `results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv`（36 个模型—路径组合，每组合 5 次预测的均值与标准差）
+- `results/summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv`（180 行，逐次追溯用）
+- `results/summary/f1_raw_scale/crop_f1_difference_36paths.csv`（同模型目标站站内汇总 F1 减跨站五次均值，图 4 与正文数据；原尺度，两位显示）
+- 旧 `crop_f1_relative_degradation_36paths.csv` 与 `crop_f1_degradation_36paths.csv` 保留历史追溯，不作为当前正文数据。
 
 **正文表**：`tables/table2_cross_site_f1_12paths.csv`。12 行完整迁移路径、6 个模型—作物精度列，末行给出 12 条路径平均；每格为 5 次完整目标站预测的 F1 均值，不列退化值。
 
 **分析备查**：`tables/table2_cross_site_summary.csv` 用于核对模型平均跨站 F1；`tables/table3_significance_tests.csv` 只供追溯，正文不作显著性结论（2026-09-27 作者决定）。二者均不排表。
 
-**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“泛化退化比例/%”。图示相对退化比例，用于比较源—目标组合差异及不同模型对迁移方向的响应，不据此判断区域组合与模型的影响主次。
+**图**：`figures/results/fig_degradation_heatmap_{a..f}.pdf` + `_cbar.pdf`。两行三列，上排玉米、下排大豆，各列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT），两排下方共用横向色标，LaTeX 标签“F1差值”，黑色内外网格统一 0.6 pt，YlOrRd 色标为 0.00～0.08。图示原尺度 F1 差值，用于比较源—目标组合差异及不同模型对迁移方向的响应，不据此判断区域组合与模型的影响主次。
 
 **正文组织**（2026-09-29 收紧，保留三段，不用第三级标题）：
-1. 跨站绝对 F1 范围，36 个组合全部低于同一模型目标站站内基准，A、C 站表现及与站内结果的对应（引表）；不据此推断分类难度，不声称 DR 消除了目标站差异 —— C4
-2. 12 条路径平均，ConvGRU 跨站 F1 最低、平均 DR 最小；DR 较小不代表跨站绝对精度更高。仅保留两类模型均值，不重复逐路径排名或站内外差距数字 —— C5、C6
+1. 跨站绝对 F1 范围，36 个组合全部低于同一模型目标站站内基准，A、C 站表现及与站内结果的对应（引表）；不据此推断分类难度，不声称差值消除了目标站差异 —— C4
+2. 12 条路径平均，ConvGRU 跨站 F1 最低、平均差值最小；差值较小不代表跨站绝对精度更高。仅保留两类模型均值，不重复逐路径排名或站内外差距数字 —— C5、C6
 3. 源—目标组合与模型间的退化差异（引图 4）：固定目标站 D 的 ConvGRU 大豆例子、B↔D 两模型方向不同的证据；明确五次预测均值口径，不推广为普遍规律，以一句话衔接空间分析 —— C7
 
-**位置与核查**：源码顺序仍为 3.2 标题 → 第一段 → 表 → 第二、三段 → 图 4 → `\FloatBarrier` → 3.3。Verified（2026-09-29）：新编译 PDF 第 4 页为图 3 与 3.2 三段正文，第 5 页为表 1 和图 4，第 6 页起为 3.3 标题；通栏浮动体延后但未越出小节，未强行调整间距。当前预览为 `output/sec32_p-{3,4,5}.png`，与 PDF 的页码及哈希绑定见 `output/preview-manifest.json`。
+**位置与核查**：源码顺序仍为 3.2 标题 → 第一段 → 表 → 第二、三段 → 图 4 → `\FloatBarrier` → 3.3。Verified（2026-10-01—02）：按用户要求编译，PDF 6 页，第 3 页站内结果、第 4 页分类图与 3.2、第 5 页完整表与热力图、第 6 页起 3.3；无 Overfull/Underfull。第 2—5 页预览已重建并与 PDF 绑定，见 `output/preview-manifest.json`。
 
 **要点**：见 claims.md C4–C7。
 

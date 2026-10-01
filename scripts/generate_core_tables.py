@@ -117,7 +117,10 @@ def generate_table2_cross_site_performance():
 
 def generate_table2_cross_site_f1_paths():
     """正文表：12条迁移路径 × 三模型玉米/大豆F1，末行给出路径平均。"""
-    df = pd.read_csv('results/summary/cross_site_crop_f1_summary.csv')
+    from calculate_f1_raw_scale import main as ensure_raw_scale
+    ensure_raw_scale(['--root', str(Path(__file__).resolve().parents[1])])
+    df = pd.read_csv('results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv',
+                     float_precision='round_trip')
 
     required = {
         'model', 'source', 'target', 'corn_f1_mean', 'soybean_f1_mean'
@@ -155,8 +158,8 @@ def generate_table2_cross_site_f1_paths():
                     raise ValueError(f'{model} {source}→{target}记录数不是1')
                 item = selected.iloc[0]
                 model_name = MODEL_MAP[model]
-                row[f'{model_name}玉米F1/%'] = 100 * item['corn_f1_mean']
-                row[f'{model_name}大豆F1/%'] = 100 * item['soybean_f1_mean']
+                row[f'{model_name}玉米F1'] = item['corn_f1_mean']
+                row[f'{model_name}大豆F1'] = item['soybean_f1_mean']
             rows.append(row)
 
     result = pd.DataFrame(rows)

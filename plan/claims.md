@@ -2,6 +2,22 @@
 
 每条论点必须有数据支撑。数字来源一律为 `results/summary/`，口径见 `plan/experiment-protocol.md`。每条 claim 标注它经过数据处理链的哪几步（S1–S5），便于回溯。
 
+## 当前 3.1—3.2 证据更新（2026-10-01）
+
+按最新口径，F1、标准差及差值以原始刻度显示两位小数；下方 S1—S5 与 C1—C7 中的旧 F1 显示、DR 数字及图表入口仅作历史追溯，当前采用本表及 `experiment-protocol.md`。C8 的研究问题和非指标约束不在本轮改写。新链为两份 raw CM → `scripts/calculate_f1_raw_scale.py` → `results/processed/f1_raw_scale/` → `results/summary/f1_raw_scale/`；计算保存 17 位有效数字，不从旧舍入表换算。
+
+| 论点 | 当前证据（两位显示，比较使用未舍入值） | 新 summary 文件 |
+|---|---|---|
+| C1 | 站内玉米 F1 为 0.91～0.96，大豆为 0.90～0.96；同站同模型玉米均较高，差值小于 0.02；U-TAE 与 3D U-Net 差值绝对值均小于 0.01 | within_site_crop_f1.csv |
+| C2 | 12 组实验的两作物 F1 折间样本标准差均小于 0.01；显示 0.00 不表示没有波动 | within_site_crop_f1_fold_stats.csv |
+| C3 | 两作物模型间最大差值在 C 站约为 0.02、D 站约为 0.04；D 站跨度最大，不扩大为所有指标的难度排序 | within_site_crop_f1.csv |
+| C4 | 36 个模型—路径组合的两作物 F1 均低于目标站基准；跨站玉米 0.86～0.93、大豆 0.83～0.92；两作物最大值目标均 A，玉米最小值目标均 C | cross_site_crop_f1_summary.csv、crop_f1_difference_36paths.csv |
+| C5 | ConvGRU 路径平均玉米/大豆 F1 为 0.89/0.88，低于另两模型（两作物均约 0.90）；不因两位显示相同断言另两模型完全相等 | cross_site_crop_f1_summary.csv |
+| C6 | 两作物平均差值 ConvGRU 均约 0.03，另两模型均约 0.04；差值较小不代表跨站绝对 F1 更高 | crop_f1_difference_36paths.csv |
+| C7 | 固定 D 目标站，ConvGRU 大豆 C→D 差值 0.01、B→D 0.07；大豆 B→D/D→B：ConvGRU 0.07/0.03，3D U-Net 0.04/0.06；玉米方向亦相反，仅描述该站点对均值 | crop_f1_difference_36paths.csv |
+
+上述文件均位于 `results/summary/f1_raw_scale/`。Verified：主干迁移时从新链核对；具体测试及未编译边界见 `plan/tasks/f1-scale-migration-checklist.md` 的执行记录。旧比例相关、逐次范围等未迁入本轮差值论点。
+
 ## 数据处理链
 
 原始实验输出不入库；下列脚本按顺序运行即可从原始输出完整重建 `results/` 与 `tables/`。一键：`scripts/run_all_updates.ps1`。

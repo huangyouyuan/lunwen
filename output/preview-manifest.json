@@ -1,60 +1,83 @@
 {
   "schema_version": 1,
+  "current_source_status": "Verified",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "408267f28272c5fb11b9fc3c952550813905c578a5ea58682b4f9e90d7e0df48",
+    "sha256": "86d81f877f81aef705970a5095636c606d381bc1c3d11739a28dac6861157421",
     "pages": 6,
-    "created_at_pdf_metadata": "D:20260929012521+08'00'",
-    "size_bytes": 815240
+    "created_at_pdf_metadata": "D:20261001225835+08'00'",
+    "size_bytes": 798475
   },
   "version": {
-    "base_git_commit": "92b58a2eee4d57771a355c02f52de275218bd398",
-    "state_at_build": "working-tree closeout edits on the recorded base; not yet committed at build time",
+    "base_git_commit": "81240f253c0d9729b2e538a7ed53f611b66b770a",
+    "state_at_build": "working-tree selective F1 migration, before commit",
     "source_sha256": {
       "main.tex": "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
-      "sections/04_results.tex": "d965504eff57b6c4ad0c62dfd8d3c7c599f9553170913b260c9f3a7f4baa2830",
-      "sections/03_methods.tex": "af9f4be9f0da0791be4e52aa06f6c26f8db221b0d50da22e18ac1db2668a44e8",
-      "tables/table2_cross_site_f1_12paths_rows.tex": "47a9405f7d54bc0e14e3ad2599f0a747ad728f529a89d4bf80e65fd49a54a3da"
+      "sections/03_methods.tex": "e7a1eac43e9610debd59c73789ca174f7597458c0cc823fa36fdd33f23be424d",
+      "sections/04_results.tex": "64ff6a4a8dc94088f249283fbb7343f5456a187f19bd92d9c4f3597fe5c588d7",
+      "tables/table2_cross_site_f1_12paths_rows.tex": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf",
+      "figures/results/fig_within_site_f1_a.pdf": "25cbf1dd1d8f6b7e05ca2969af0dc1a451f3e482a808d722f56d25631142fa87",
+      "figures/results/fig_within_site_f1_b.pdf": "589f7c44a2607dca38ef15dff3e21c04e53c4acd0ecfe089d09409b20afffb82",
+      "figures/results/fig_degradation_heatmap_a.pdf": "e335fdeebcb40a27c1ad0f2519e3e273859b451dbf25e8b35566c8900e74edc5",
+      "figures/results/fig_degradation_heatmap_b.pdf": "05873b9522465db10da7853c75e2055ad340f20b9d36235d3c8d44656f2d3c24",
+      "figures/results/fig_degradation_heatmap_c.pdf": "90e82fa595c6dc1322adef9334ad1806da050739cb5bde9579743fe5237a8ba3",
+      "figures/results/fig_degradation_heatmap_d.pdf": "00cf2aab4e49095ff3153807a9fa5a094abfedfd3e64d06004ef6f488e280cf1",
+      "figures/results/fig_degradation_heatmap_e.pdf": "5526fb3a5a05f9a828d2a1992ce688d71d1822b89add416c8b75eff11ca24192",
+      "figures/results/fig_degradation_heatmap_f.pdf": "f0f524ccd8f632e8b1b46b341a8bd66a6d650981a6d64fd301d8b94b2127c7bc",
+      "figures/results/fig_degradation_heatmap_cbar.pdf": "803985be9af5223ab080650a9b2c7211411c664edaa8c5644286b05fa5fbf923"
     }
   },
-  "render_command": "pdftoppm -png -r 150 -f 3 -l 5 main.pdf output/sec32_p",
+  "build_command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex",
+  "build_exit_code": 0,
+  "build_notes": [
+    "No Overfull/Underfull in final log.",
+    "Existing font substitutions and empty bibliography remain; BibTeX reported no citation commands."
+  ],
+  "render_command": "pdftoppm -png -r 150 -f 2 -l 5 main.pdf output/sec32_p",
   "dpi": 150,
   "previews": [
     {
+      "path": "output/sec32_p-2.png",
+      "pdf_page": 2,
+      "sha256": "7490e3ce4d67fe9f54cfe1df7a8b28ead99c4fc341330a81df62f28a0e9b878a",
+      "rendered_at": "2026-10-02T00:26:21.552040+08:00"
+    },
+    {
       "path": "output/sec32_p-3.png",
       "pdf_page": 3,
-      "sha256": "deba6c4f33e556f2634d318cc993389fc95cf6f97e28df176cad8be1d078d148",
-      "rendered_at": "2026-09-29T01:36:08+08:00"
+      "sha256": "e4734a22d32980014e5925b4a85b42c44330aecbf962f76b67443aa2ae639094",
+      "rendered_at": "2026-10-02T00:26:21.552040+08:00"
     },
     {
       "path": "output/sec32_p-4.png",
       "pdf_page": 4,
-      "sha256": "221f54f5cf25b80b48fb48768dc57290fbb8b87f69bb49357fae980dd417495b",
-      "rendered_at": "2026-09-29T01:36:09+08:00"
+      "sha256": "22e542feca8a593d38bd22068bdacc929cea4674b8e83d24beb21d050f16314e",
+      "rendered_at": "2026-10-02T00:26:21.552040+08:00"
     },
     {
       "path": "output/sec32_p-5.png",
       "pdf_page": 5,
-      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
-      "rendered_at": "2026-09-29T01:36:09+08:00"
+      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
+      "rendered_at": "2026-10-02T00:26:21.552040+08:00"
     },
     {
       "path": "output/table_page_preview.png",
       "pdf_page": 5,
       "alias_of": "output/sec32_p-5.png",
-      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
-      "updated_at": "2026-09-29T01:36:29+08:00"
+      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
+      "updated_at": "2026-10-02T00:26:21.552040+08:00"
     },
     {
       "path": "output/figure4_page_preview.png",
       "pdf_page": 5,
       "alias_of": "output/sec32_p-5.png",
-      "sha256": "8a6e905e7ad2d7a41786fbbe8cd98a27a26bd81357d8ecb85896887ef4b61fdf",
-      "updated_at": "2026-09-29T01:36:29+08:00"
+      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
+      "updated_at": "2026-10-02T00:26:21.552040+08:00"
     }
   ],
-  "verified_at": "2026-09-29T01:37:58+08:00",
-  "page_binding_verification": "Verified: independent per-page Poppler rendering has the same SHA-256 as each saved PNG; both aliases match page 5",
+  "verified_at": "2026-10-02T00:26:21.552040+08:00",
+  "page_binding_verification": "Verified: four independent single-page Poppler renders match saved PNG hashes; aliases match page 5; 78 PDF table cells match CSV.",
+  "previous_preview_backup": "D:/AI/lunwen_archive/before-f1-build-20261001-224645/manifest.json",
   "historical_previews_not_current": [
     "archive/2026-09-29-system整理/output/results_layout-3.png",
     "archive/2026-09-29-system整理/output/results_layout-4.png",
