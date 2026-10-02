@@ -30,10 +30,10 @@
 - 3.1 已润色定稿：第一段讲三模型共同表现，第二段结合图 3 讲差异。
 - 图 2、图 3 已按 3.8 cm 基本单元、逐子图 PDF、LaTeX 文本图题与图例的规范提交。
 - 结果章固定为 3.1—3.3，当前不设第三级标题。
-- 3.2 三段已完成本轮收尾（2026-09-29，待作者审阅）。第一段只报告跨站 F1、目标站基准及 A/C 站观察，不推断分类难度；第二段集中比较 12 条路径的平均 F1 与平均 DR，删去重复排名和模型差距数字；第三段保留固定目标站 D 的源站差异与 B↔D 两模型方向差异，限于五次预测均值，用一句话衔接空间分析。
-- 作者决定（2026-09-27）：正文只用跨站绝对 F1 + DR；方法删去 ΔF1 独立公式和 Friedman/Wilcoxon–Holm 段落，脚本与结果文件保留追溯；正文不作显著性结论，路径计数只作描述；写“DR 较小不代表跨站绝对精度更高”。
+- 3.2 三段已完成本轮收尾（2026-09-29，待作者审阅）。第一段只报告跨站 F1、目标站基准及 A/C 站观察，不推断分类难度；第二段集中比较 12 条路径的平均 F1 与平均 F1 差值，删去重复排名和模型差距数字；第三段保留固定目标站 D 的源站差异与 B↔D 两模型方向差异，限于五次预测均值，用一句话衔接空间分析。
+- 当前口径（2026-09-30 决定，54a2a18 已实现）：跨站绝对 F1 + 原尺度差值 ΔF1，显示两位小数；差值为同模型目标站站内汇总 F1 减跨站五次均值，不除基准、不乘 100。旧 DR 选择已被替代；不作显著性结论、路径计数只作描述的限制仍有效。
 - 四站所在州已按研究区 SHP / 标签 GeoTIFF 叠加州界核实，`02_data.tex` 原“明尼苏达州”已改正。
-- 3.3 回答两个问题并覆盖全部站点和路径：目标站在哪些空间条件下退化较大；同一目标站的退化随源站变化与站点间哪些差异相对应。2026-09-29 接手核查发现分组 F1/DR 与边界探索链已有未跟踪成果，位于 `results/processed/sec33_exploration/` 和 `results/summary/sec33_exploration/`，不再是“待建”。本轮核对现有清单哈希一致；整体 Partially verified，未从标签重算空间指标，边界元数据仍有异常，候选图目录不存在。详见 `verification/system-audit-2026-09-29.md`。外部输入仍在 `D:/label/fragstats_results/` 和 `D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/`。
+- 3.3 回答两个问题并覆盖全部站点和路径：目标站在哪些空间条件下退化较大；同一目标站的退化随源站变化与站点间哪些差异相对应。2026-09-29 接手核查发现分组 F1/DR 与边界探索链已有成果，现已入库；DR 为历史探索口径，新差值分析尚未迁移，位于 `results/processed/sec33_exploration/` 和 `results/summary/sec33_exploration/`，不再是“待建”。本轮核对现有清单哈希一致；整体 Partially verified，未从标签重算空间指标，边界元数据仍有异常，候选图目录不存在。详见 `verification/system-audit-2026-09-29.md`。外部输入仍在 `D:/label/fragstats_results/` 和 `D:/cross_site_all_20260916/paper_tables/Patch级空间误差底表/`。
 - 图表位置已编译核查（2026-09-29）：新 PDF 第 4 页为图 3 与 3.2 三段正文，第 5 页为表 1 和图 4，第 6 页起为 3.3 标题。允许通栏表图延后，未调整间距强行塞页；无未定义引用、文字截断或溢出。当前预览 `output/sec32_p-{3,4,5}.png` 及两个表图预览入口均来自新 PDF；生成时间、哈希与构建时版本状态见 `output/preview-manifest.json`，不用历史 `results_layout-*`、`results_spacing-*` 判断当前版面。
 - 引言、1.3、2.1 三模型、结论与摘要尚未完成。
 - 段落与各级标题前后间距统一为 0 pt，取消栏底对齐和浮动页间距拉伸；图表间距固定 3 pt（2026-09-23）。
@@ -42,10 +42,11 @@
 
 ## 可用数据与结果
 
-- `results/summary/within_site_crop_f1.csv`：站内汇总玉米 F1、大豆 F1、OA。
-- `results/summary/within_site_crop_f1_fold_stats.csv`：五折均值与折间标准差。
-- `results/summary/cross_site_crop_f1_summary.csv`：36 个模型—路径组合的跨站绝对精度（5 次预测均值与标准差）。
-- `results/summary/crop_f1_relative_degradation_36paths.csv`：泛化退化比例 DR，正文与图 4 数据。
+- `results/summary/f1_raw_scale/within_site_crop_f1.csv`：站内汇总玉米 F1、大豆 F1、OA。
+- `results/summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv`：五折均值与折间标准差。
+- `results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv`：36 个模型—路径组合的跨站绝对精度（5 次预测均值与标准差）。
+- `results/summary/f1_raw_scale/crop_f1_difference_36paths.csv`：当前正文与图 4 的原尺度 F1 差值。
+- `results/summary/crop_f1_relative_degradation_36paths.csv`：历史 DR，仅供追溯，不作当前正文数据。
 - `results/summary/crop_f1_degradation_36paths.csv`：百分点差值，仅备查，正文不引用。
 - `tables/table2_cross_site_f1_12paths.csv`：3.2 正文表，12 条迁移路径的三模型玉米和大豆 F1。
 - `tables/table2_cross_site_summary.csv`：模型与作物汇总，只作分析备查。
@@ -70,7 +71,7 @@
 2. 审阅已有 3.3 探索产物及未解决验证项，不从头覆盖重建；正式正文和候选图仍待后续。先区分清单一致性、独立复算及作者是否采纳。
 3. 完成引言、1.3、2.1、结论与摘要，投稿空间泛化篇。
 
-## 3.3 探索协议
+## 历史 3.3 探索协议（冻结 DR，不作当前差值分析指令）
 
 plan/sec33-exploration-protocol.md：3.3 第一轮探索协议，固定文档化分组规则（ED与AREA_MN线性插值分位点、低中高组、缺失组、CM闭合）、精度与退化计算（DR、站内F1/跨站F1五次均值）、描述性比较、边界距离指标（带内错误率、像元占比、对总体贡献）。不撰写正式正文、不编译、不改3.2。所有新结果标为 derived / exploratory。
 

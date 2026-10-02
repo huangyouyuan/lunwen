@@ -74,8 +74,8 @@
 |------|------|------|------|----------|
 | F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 | $F1_{\text{玉米}}$、$F1_{\text{大豆}}$ |
 | OA | Overall Accuracy | 总体精度 | 辅助 | OA |
-| ΔF1 | generalization degradation | 泛化退化（pp） | 仅备查，正文不用 | 百分点差值文件保留；方法不再给独立公式（2026-09-27）；模型间 F1 差距仍写“个百分点” |
-| DR | relative generalization degradation | 泛化退化比例（%） | 正文主用，图 4 | $\mathrm{DR}_{\text{玉米}}$、$\mathrm{DR}_{\text{大豆}}$；站内与跨站 F1 差值除以同一模型的目标站站内 F1，再乘 100%；站内/跨站写 $F1_{\text{站内玉米}}$、$F1_{\text{跨站玉米}}$；与召回率 R 区分 |
+| ΔF1 | F1 difference | F1 差值 | 正文及图 4 | 同模型目标站站内汇总 F1 减跨站五次均值；原尺度、两位显示；不乘 100、不除基准 |
+| DR | relative generalization degradation | 泛化退化比例（%） | 仅历史追溯，不作当前正文指标 | 历史定义为 F1 差值除以目标站站内基准再乘 100%；旧文件及冻结探索协议保留，不改名充当 ΔF1 |
 | P / R | Precision / Recall | 精确率 / 召回率 | 定义 F1 用 | $P_i$、$R_i$ |
 | Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 | — |
 | mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 | — |

@@ -58,7 +58,7 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 
 `main.pdf`、LaTeX 辅助文件和 `.gitignore` 已指定的页面预览不入库；已由 `92b58a2` 跟踪的 `output/sec32_p-{3,4,5}.png` 本轮继续跟踪并更新，不移出索引。`output/preview-manifest.json` 记录当前 PDF、源码和预览的 SHA-256、生成时间、页码及构建时版本状态。未新增忽略规则，也不整体忽略 `output/`。
 
-### 当前 3.2 PDF 与预览（2026-09-29）
+### 当前 3.2 PDF 与预览（2026-10-01—02）
 
 - [当前 PDF](main.pdf)：本轮编译生成，6 页；第 4 页为图 3 与 3.2 正文，第 5 页为完整跨站 F1 表与图 4。
 - [第 3 页](output/sec32_p-3.png)、[第 4 页正文](output/sec32_p-4.png)、[第 5 页表与图](output/sec32_p-5.png)：均从该 PDF 以 150 dpi 导出。
@@ -78,13 +78,14 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 
 ## 脚本入口与测试
 
-从仓库根目录运行；正式数据链及既有计算口径不因目录整理而改变。
+从仓库根目录运行。当前正文数据入口为 `scripts/calculate_f1_raw_scale.py` → `results/summary/f1_raw_scale/`，使用原尺度 F1 和差值、两位小数。正文表使用 `generate_core_tables.py` 中的 `generate_table2_cross_site_f1_paths()` 和 `write_table2_cross_site_f1_latex_rows()`；默认全量运行仍生成历史备查表及检验表，不等于只更新正文表。
 
 | 用途 | 当前入口 | 边界 |
 |---|---|---|
-| S1—S4 数据与表格 | `scripts/run_all_updates.ps1` | 调用 F1、跨站 CM、DR 和表格生成脚本；会写入既有结果，不能当只读核查命令 |
+| 当前 F1 数据 | `scripts/calculate_f1_raw_scale.py` | 原始 CM → 全精度 F1/差值，写入 f1_raw_scale 子目录 |
+| 历史全量更新 | `scripts/run_all_updates.ps1` | 包含旧 DR 与备查表，不是当前正文的推荐入口；保留脚本，不在本轮运行 |
 | 正式图件 | `scripts/plot_within_site_f1.py`、`scripts/plot_within_site_map_D.py`、`scripts/plot_degradation_heatmap.py` | 共享 `scripts/figstyle.py` |
-| 3.3 分组探索 | `scripts/explore_sec33.py` | `prepare` 固定分组，`analyze` 计算；现有成果不得未经检查覆盖重跑 |
+| 历史 3.3 分组探索（DR） | `scripts/explore_sec33.py` | `prepare` 固定分组，`analyze` 计算；现有成果不得未经检查覆盖重跑 |
 | 3.3 边界探索 | `scripts/explore_sec33_boundary.py` | 当前探索入口，不是单元测试，不代表正式纳入正文 |
 | 3.3 候选图 | `scripts/plot_sec33_exploration.py` | 已有脚本；本次核查未发现候选图目录 |
 | 旧指标分析核对 | `scripts/analyze_generalization_36paths.py` | Crop-mIoU 备查支线，不是正文 F1 数据入口；仍有引用，暂不归档 |
