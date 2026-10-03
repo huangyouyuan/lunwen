@@ -56,14 +56,14 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 
 正文、论文计划、交接与验证记录、文献库、数据处理脚本、结果汇总、表格和正式图件均纳入版本控制。参考论文 PDF 只保留在本地，文献元数据与阅读记录继续跟踪；已移出索引的 PDF 仍可从既有提交中追溯。
 
-`main.pdf`、LaTeX 辅助文件和 `.gitignore` 已指定的页面预览不入库；已由 `92b58a2` 跟踪的 `output/sec32_p-{3,4,5}.png` 本轮继续跟踪并更新，不移出索引。`output/preview-manifest.json` 记录当前 PDF、源码和预览的 SHA-256、生成时间、页码及构建时版本状态。未新增忽略规则，也不整体忽略 `output/`。
+`main.pdf`、LaTeX 辅助文件和 `.gitignore` 已指定的页面预览不入库；已跟踪的 `output/sec32_p-{2,3,4,5}.png` 继续随编译更新，不移出索引。`output/preview-manifest.json` 记录当前 PDF、源码和预览的 SHA-256、生成时间、页码及构建时版本状态。未新增忽略规则，也不整体忽略 `output/`。
 
 ### 当前 3.2 PDF 与预览（2026-10-01—02）
 
 - [当前 PDF](main.pdf)：本轮编译生成，6 页；第 4 页为图 3 与 3.2 正文，第 5 页为完整跨站 F1 表与图 4。
-- [第 3 页](output/sec32_p-3.png)、[第 4 页正文](output/sec32_p-4.png)、[第 5 页表与图](output/sec32_p-5.png)：均从该 PDF 以 150 dpi 导出。
+- [第 2 页方法](output/sec32_p-2.png)、[第 3 页](output/sec32_p-3.png)、[第 4 页正文](output/sec32_p-4.png)、[第 5 页表与图](output/sec32_p-5.png)：均从该 PDF 以 150 dpi 导出。
 - `output/table_page_preview.png`、`output/figure4_page_preview.png` 同步为当前第 5 页的副本；`results_layout-*`、`results_spacing-*` 已移至 `archive/2026-09-29-system整理/output/`，仅作历史预览，不作为当前版面依据。
-- 编译：`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。渲染：`pdftoppm -png -r 150 -f 3 -l 5 main.pdf output/sec32_p`。每次重建后按实际分页更新预览入口和 [预览清单](output/preview-manifest.json)，不得只更新 PDF 而继续使用旧 PNG。
+- 编译：`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。渲染：`pdftoppm -png -r 150 -f 2 -l 5 main.pdf output/sec32_p`。每次重建后按实际分页更新预览入口和 [预览清单](output/preview-manifest.json)，不得只更新 PDF 而继续使用旧 PNG。
 
 提交后以 `git status --porcelain=v1 --untracked-files=all` 输出为空核对工作区干净。未经作者指示不 push。
 
