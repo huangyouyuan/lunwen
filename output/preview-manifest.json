@@ -3,18 +3,18 @@
   "current_source_status": "Verified",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "ff29f458f952d55d18ff18951226b780c6a296642a4f685e1b5eb117b4069ca8",
+    "sha256": "9ef8e54df99a67a306c48b0e4fc927bf17ff394a362997d8d9cb2d6684f1d9c5",
     "pages": 6,
-    "created_at_pdf_metadata": "D:20261003142145+08'00'",
-    "size_bytes": 798697
+    "created_at_pdf_metadata": "D:20261004222236+08'00'",
+    "size_bytes": 798628
   },
   "version": {
-    "base_git_commit": "e889255f4087a236c74e045e03400a1b7ad73655",
-    "state_at_build": "working-tree 3.2 second polish on recorded base, before commit",
+    "base_git_commit": "cfbfc350fc7f374e242e333ca76a70b44ce38404",
+    "state_at_build": "working-tree 3.1/3.2 wording fixes on recorded base, before commit (includes 明显 deletion)",
     "source_sha256": {
       "main.tex": "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
-      "sections/03_methods.tex": "377ff9f710d05afb1e3f8e1bb955b7b42d51f50e3845a3bc877c2c66cc33d502",
-      "sections/04_results.tex": "223870974e6f34ccf59cd2bade30d21c1cd5a806818a42da600efbc99077fcdd",
+      "sections/03_methods.tex": "8ff53589ad4d10eeaae0151bc9f6c850db734be46aeb2c2b1b09a375561554aa",
+      "sections/04_results.tex": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
       "tables/table2_cross_site_f1_12paths_rows.tex": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf",
       "figures/results/fig_within_site_f1_a.pdf": "25cbf1dd1d8f6b7e05ca2969af0dc1a451f3e482a808d722f56d25631142fa87",
       "figures/results/fig_within_site_f1_b.pdf": "589f7c44a2607dca38ef15dff3e21c04e53c4acd0ecfe089d09409b20afffb82",
@@ -39,45 +39,45 @@
     {
       "path": "output/sec32_p-2.png",
       "pdf_page": 2,
-      "sha256": "7490e3ce4d67fe9f54cfe1df7a8b28ead99c4fc341330a81df62f28a0e9b878a",
-      "rendered_at": "2026-10-03T14:23:08+08:00"
+      "sha256": "85be68f0c3c2a10fa62ec55c2f3dcbb3d9aaeaf855a5722a6ae4a4c8a256e630",
+      "rendered_at": "2026-10-04T22:22:59+08:00"
     },
     {
       "path": "output/sec32_p-3.png",
       "pdf_page": 3,
-      "sha256": "e4734a22d32980014e5925b4a85b42c44330aecbf962f76b67443aa2ae639094",
-      "rendered_at": "2026-10-03T14:23:08+08:00"
+      "sha256": "6344e14906e8bc62f789ad36c242283385cf2ae4622812ae2aeeb7b5964f4893",
+      "rendered_at": "2026-10-04T22:22:59+08:00"
     },
     {
       "path": "output/sec32_p-4.png",
       "pdf_page": 4,
-      "sha256": "419b4456da59fa28078fb1ead4933a804c4b41b4a9dc76bde054e89c3a481118",
-      "rendered_at": "2026-10-03T14:23:08+08:00"
+      "sha256": "7444623dffcdc5200fa0d150ffb2a8a1fdfb6b9e778cf9004982e6df358c94b6",
+      "rendered_at": "2026-10-04T22:22:59+08:00"
     },
     {
       "path": "output/sec32_p-5.png",
       "pdf_page": 5,
       "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "rendered_at": "2026-10-03T14:23:08+08:00"
+      "rendered_at": "2026-10-04T22:22:59+08:00"
     },
     {
       "path": "output/table_page_preview.png",
       "pdf_page": 5,
       "alias_of": "output/sec32_p-5.png",
       "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "updated_at": "2026-10-03T14:23:08+08:00"
+      "updated_at": "2026-10-04T22:22:59+08:00"
     },
     {
       "path": "output/figure4_page_preview.png",
       "pdf_page": 5,
       "alias_of": "output/sec32_p-5.png",
       "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "updated_at": "2026-10-03T14:23:08+08:00"
+      "updated_at": "2026-10-04T22:22:59+08:00"
     }
   ],
-  "verified_at": "2026-10-03T14:23:08+08:00",
+  "verified_at": "2026-10-04T22:40:59+08:00",
   "page_binding_verification": "Verified: four independent single-page Poppler renders match saved PNG hashes; aliases match page 5.",
-  "previous_preview_backup": "D:/AI/lunwen_archive/before-build-20261003-142140/preview-manifest.json",
+  "previous_preview_backup": "D:\\AI\\lunwen_archive\\before-build-20261004-222232\\preview-manifest.json",
   "historical_previews_not_current": [
     "archive/2026-09-29-system整理/output/results_layout-3.png",
     "archive/2026-09-29-system整理/output/results_layout-4.png",

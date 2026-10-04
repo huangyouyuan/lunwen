@@ -74,7 +74,7 @@
 - **图名、子图题是文本**：`\caption`、`subcaption`，不画进图片。子图题格式"（a）……"，写全对象
 - **图例是文本**（`\modellegend`、`\classlegend`，颜色与 figstyle 一致）：横排居中，放在最后一个子图题之后、图名之前，代表整幅图
 - **间距**：子图题贴子图、子图之间、图例、图名之间一律 3 pt（正文行间空白），不比段落行距大。写法：`\captionsetup{skip=3pt}`；子图之间和图例之前用 `\end{subfigure}\par\nointerlineskip\vspace{3pt}`——**不要用 `\\[3pt]`**，它会连带一整行行距，实测 14.6 pt（2026-09-21 用户确认后的标准）
-- **坐标轴都要有标签**：站点轴写"站点"（竖排在左），F1 轴写"F1/%"；读者不该猜 A–D 是什么
+- **坐标轴都要有标签**：站点轴写"站点"（竖排在左），F1 轴写作物名加 F1，如“玉米 F1”“大豆 F1”；读者不该猜 A–D 是什么
 - **文件**：每个子图单独一个 PDF（`fig_xxx_a.pdf`…），`\includegraphics{}` 不带 width，按原尺寸放；PNG 只作预览
 - **脚本**：`fs.grid(nrows, ncols, w, h)` 建图，图框恰好 w×3.8 × h×3.8 cm；`fs.save(fig, stem)` 出 pdf+png
 - 三模型固定色：ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`
