@@ -1,0 +1,169 @@
+{
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "pipeline_status": "Verified",
+  "spatial_metric_status": "Partially verified",
+  "created_at_utc": "2026-10-05T08:14:43.868927+00:00",
+  "bands": [
+    "0<d<=1",
+    "1<d<=2",
+    "2<d<=3",
+    "3<d<=4",
+    "4<d<=5",
+    "5<d<=6",
+    "d>6"
+  ],
+  "band_endpoint_rule": "(left,right], final band >6, pixel unit",
+  "distance_definition": "reused class-shared-edge center EDT definition; not rerun",
+  "class_order": [
+    "corn",
+    "other",
+    "soybean"
+  ],
+  "populations": [
+    "all",
+    "corn",
+    "soybean",
+    "other"
+  ],
+  "std_ddof": 1,
+  "within_rule": "sum same-band pooled OOF CM before leakage calculation",
+  "cross_rule": "five separate fold leakage rates, then arithmetic mean and sample SD",
+  "delta_rule": "cross-site mean leakage minus within-site leakage",
+  "contribution_rule": "target-class band pixel share times delta leakage rate",
+  "source_aggregation": "equal weight of exactly three sources; no pooling of fifteen predictions",
+  "historical_limitations": {
+    "original_edt_rerun": false,
+    "reference_fingerprint_mismatches": 2,
+    "missing_geotiff_tags": 1,
+    "metadata_repaired": false
+  },
+  "inputs": [
+    {
+      "path": "results/processed/sec33_exploration/boundary_within_cm.csv",
+      "sha256": "00ac75f180640c9fc6cbcd9e5af45cacc44f63de0e400fd9cb5ab8d8f3c913c1",
+      "bytes": 7624
+    },
+    {
+      "path": "results/processed/sec33_exploration/boundary_cross_fold_cm.csv",
+      "sha256": "7751d642d6158278eeea8e1069e9ad747c2f88d4e3326900c3ad8bbc8388fbbc",
+      "bytes": 130046
+    },
+    {
+      "path": "results/raw/within_site_confusion_matrices.csv",
+      "sha256": "cd9f055eb5b067bfc4d6a674015869d27444951e92a17da58f9875aa7dba158b",
+      "bytes": 6071
+    },
+    {
+      "path": "results/raw/cross_site_confusion_matrices.csv",
+      "sha256": "916631a58ce6f775bd1e3e40af63146331a577538de2d9cb9238525b16669df5",
+      "bytes": 16702
+    },
+    {
+      "path": "legacy/manuscript/HLS-Crop/src/learning/distance_band_analysis.py",
+      "sha256": "1a5b4ebbed348e7ebcbac67026fdd09055c3713cff34b56acef617e12b035ea9",
+      "bytes": 17198
+    },
+    {
+      "path": "results/summary/sec33_exploration/boundary_manifest.json",
+      "sha256": "f47726e47d5e982ea2670821c36c9080cf1e0f893608b57b2fbe3087ac9ce9e3",
+      "bytes": 110369
+    }
+  ],
+  "script": {
+    "path": "scripts/explore_sec33_round3_distance.py",
+    "sha256": "bd3bc4bc2052198aa735308ff6170988a9e5f9f9f944804d97686615c5b21df4",
+    "bytes": 37061
+  },
+  "outputs": [
+    {
+      "path": "results/processed/sec33_round3_distance/band_metrics_cross_fold.csv",
+      "sha256": "6a3bff2bcc5ac59475877b1e0aa03cbda0dba2ac601edc6618bb0716ce8d22e3",
+      "bytes": 502264
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/band_metrics_within.csv",
+      "sha256": "b9aa08e0160cc1aa00e181db15741e43d46098a51cb1b9005eac86524b91607b",
+      "bytes": 30699
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/boundary_cross_fold_cm_reused.csv",
+      "sha256": "a8251e58e2a8b96a5395e6e9d93e3138ca8617b89ec969f72edcd5c07c500636",
+      "bytes": 128794
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/boundary_within_cm_reused.csv",
+      "sha256": "ec158f32443dc9a29f59e980b69489a9168e06383648430414f01a563acc17d0",
+      "bytes": 7548
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/d_soybean_error_decomposition.csv",
+      "sha256": "4656024bcbc7b0bfedd2b28227d41d3627587afd06cc558f26a529708541adec",
+      "bytes": 17873
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/nearest_vs_gt6_per_fold.csv",
+      "sha256": "86ee138d6adbb0a0500d660cbd96369f9a83c92b6a3ed7735c81f78cd7c52655",
+      "bytes": 84954
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/band_contribution_closure.csv",
+      "sha256": "c34c75f809dfe7a366aeeeeefec4f908b6d844483d787dbefef60b89573b0ac8",
+      "bytes": 20461
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/band_metrics_summary.csv",
+      "sha256": "df16c8c56accb156c69e47fc4dbd878823a7fbaf98e19ff1257f872e78d9eeff",
+      "bytes": 258306
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/checks.csv",
+      "sha256": "bab51bf70a7e710640bfbf6deb43a8aeb9f4e4e832a3beb7e7fa01fbe29b2ea2",
+      "bytes": 27271
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/d_soybean_error_decomposition.csv",
+      "sha256": "4656024bcbc7b0bfedd2b28227d41d3627587afd06cc558f26a529708541adec",
+      "bytes": 17873
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/nearest_vs_gt6_summary.csv",
+      "sha256": "a8bd25379286a7603bbc6e0b04511627465f87e9d065076191a794d5717b2601",
+      "bytes": 15689
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/three_source_overview.csv",
+      "sha256": "571ebb2a67c291a9375687a28623536e9c5048c8788c20696b684f8e534b1276",
+      "bytes": 54747
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/exploration-report.md",
+      "sha256": "430aed40358e77a653ceb7c138105379dbbee1a094dd8f1ddfa5ac87f6923f6a",
+      "bytes": 5612
+    },
+    {
+      "path": "figures/exploratory/sec33_round3_distance/distance_leakage_curves_overview.png",
+      "sha256": "086a2d3e60d315c45cae166fae887c73a9c20b332df8cad292540e3c0a7fa951",
+      "bytes": 869658
+    },
+    {
+      "path": "figures/exploratory/sec33_round3_distance/distance_leakage_contributions_overview.png",
+      "sha256": "569f3c2fdab21d6d5f72bd391a517d096ac62b5a6222f509d7ad170fc59fd775",
+      "bytes": 883353
+    },
+    {
+      "path": "figures/exploratory/sec33_round3_distance/d_soybean_source_model_leakage.png",
+      "sha256": "a1a3691da0c5a073b732806f388bfd26fe855c5a608bbb3f1daf875e5b483419",
+      "bytes": 251212
+    },
+    {
+      "path": "figures/exploratory/sec33_round3_distance/d_soybean_leakage_components.png",
+      "sha256": "94fc249e51da74e9c27a7adcd91da13b9c050150cc2008a2d0983b0055da013c",
+      "bytes": 248921
+    }
+  ],
+  "checks": {
+    "count": 386,
+    "all_verified": true
+  }
+}
