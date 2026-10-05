@@ -1,0 +1,7 @@
+check,status,n,maximum_abs_error
+d_soybean_within_coverage,Verified,12,0
+d_soybean_cross_coverage,Verified,180,0
+component_sum_equals_one_minus_f1,Verified,180,5.5511151231257827e-17
+component_delta_sum_recovers_delta_f1,Verified,36,1.700029006457271e-16
+five_prediction_direction_counts,Verified,36,0
+missing_group_retained,Verified,48,0
