@@ -1,0 +1,9 @@
+target,crop,n,spearman_rank_r,data_status,analysis_status
+iw_2023,corn,400,0.87183502108614996,derived,exploratory
+iw_2023,soybean,400,0.85417765989995309,derived,exploratory
+iw2_2023,corn,397,0.91890027958278442,derived,exploratory
+iw2_2023,soybean,397,0.91128918154283733,derived,exploratory
+ida_2023,corn,400,0.92664316651979106,derived,exploratory
+ida_2023,soybean,399,0.92742456560403952,derived,exploratory
+il_2023,corn,397,0.8891956155098063,derived,exploratory
+il_2023,soybean,398,0.88914527970844204,derived,exploratory

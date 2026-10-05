@@ -1,0 +1,291 @@
+check,result,detail,data_status,analysis_status
+frozen protocol hash,Verified,,derived,exploratory
+frozen assignment hash patch_groups.csv,Verified,,derived,exploratory
+frozen assignment hash group_thresholds.csv,Verified,,derived,exploratory
+historical input hash patch_spatial_features.csv,Verified,,derived,exploratory
+historical input hash 标签切片景观级指标.csv,Verified,,derived,exploratory
+historical input hash 标签切片类别级指标.csv,Verified,,derived,exploratory
+historical input hash Patch级空间底表运行记录.json,Verified,,derived,exploratory
+historical input hash within_patch_oof.csv,Verified,,derived,exploratory
+historical input hash cross_patch_fold.csv,Verified,,derived,exploratory
+historical input hash 完整标签景观级指标.csv,Verified,,derived,exploratory
+historical input hash 完整标签类别级指标.csv,Verified,,derived,exploratory
+historical product hash cross_group_fold_cm.csv,Verified,,derived,exploratory
+historical product hash within_group_cm.csv,Verified,,derived,exploratory
+historical product hash site_features.csv,Verified,,derived,exploratory
+historical product hash source_target_feature_differences.csv,Verified,,derived,exploratory
+1600 unique feature patches,Verified,,derived,exploratory
+feature dataset identity,Verified,,derived,exploratory
+feature grid and pixels,Verified,,derived,exploratory
+400 patches ida_2023,Verified,,derived,exploratory
+400 patches il_2023,Verified,,derived,exploratory
+400 patches iw2_2023,Verified,,derived,exploratory
+400 patches iw_2023,Verified,,derived,exploratory
+canonical class IDs,Verified,,derived,exploratory
+canonical ED,Verified,,derived,exploratory
+canonical pixels corn,Verified,,derived,exploratory
+canonical feature cornAREA_MN,Verified,,derived,exploratory
+canonical feature cornAI,Verified,,derived,exploratory
+canonical pixels other,Verified,,derived,exploratory
+canonical feature otherAREA_MN,Verified,,derived,exploratory
+canonical feature otherAI,Verified,,derived,exploratory
+canonical pixels soybean,Verified,,derived,exploratory
+canonical feature soybeanAREA_MN,Verified,,derived,exploratory
+canonical feature soybeanAI,Verified,,derived,exploratory
+AREA assignment coverage,Verified,,derived,exploratory
+assignment target set ida_2023corn,Verified,,derived,exploratory
+frozen labels from original features ida_2023corn,Verified,,derived,exploratory
+stored features rounding ida_2023corn,Verified,,derived,exploratory
+threshold identity ida_2023corn,Verified,,derived,exploratory
+threshold values ida_2023corn,Verified,,derived,exploratory
+assignment support ida_2023corncorn,Verified,,derived,exploratory
+assignment support ida_2023cornother,Verified,,derived,exploratory
+assignment support ida_2023cornsoybean,Verified,,derived,exploratory
+assignment target set ida_2023soybean,Verified,,derived,exploratory
+frozen labels from original features ida_2023soybean,Verified,,derived,exploratory
+stored features rounding ida_2023soybean,Verified,,derived,exploratory
+threshold identity ida_2023soybean,Verified,,derived,exploratory
+threshold values ida_2023soybean,Verified,,derived,exploratory
+assignment support ida_2023soybeancorn,Verified,,derived,exploratory
+assignment support ida_2023soybeanother,Verified,,derived,exploratory
+assignment support ida_2023soybeansoybean,Verified,,derived,exploratory
+assignment target set il_2023corn,Verified,,derived,exploratory
+frozen labels from original features il_2023corn,Verified,,derived,exploratory
+stored features rounding il_2023corn,Verified,,derived,exploratory
+threshold identity il_2023corn,Verified,,derived,exploratory
+threshold values il_2023corn,Verified,,derived,exploratory
+assignment support il_2023corncorn,Verified,,derived,exploratory
+assignment support il_2023cornother,Verified,,derived,exploratory
+assignment support il_2023cornsoybean,Verified,,derived,exploratory
+assignment target set il_2023soybean,Verified,,derived,exploratory
+frozen labels from original features il_2023soybean,Verified,,derived,exploratory
+stored features rounding il_2023soybean,Verified,,derived,exploratory
+threshold identity il_2023soybean,Verified,,derived,exploratory
+threshold values il_2023soybean,Verified,,derived,exploratory
+assignment support il_2023soybeancorn,Verified,,derived,exploratory
+assignment support il_2023soybeanother,Verified,,derived,exploratory
+assignment support il_2023soybeansoybean,Verified,,derived,exploratory
+assignment target set iw2_2023corn,Verified,,derived,exploratory
+frozen labels from original features iw2_2023corn,Verified,,derived,exploratory
+stored features rounding iw2_2023corn,Verified,,derived,exploratory
+threshold identity iw2_2023corn,Verified,,derived,exploratory
+threshold values iw2_2023corn,Verified,,derived,exploratory
+assignment support iw2_2023corncorn,Verified,,derived,exploratory
+assignment support iw2_2023cornother,Verified,,derived,exploratory
+assignment support iw2_2023cornsoybean,Verified,,derived,exploratory
+assignment target set iw2_2023soybean,Verified,,derived,exploratory
+frozen labels from original features iw2_2023soybean,Verified,,derived,exploratory
+stored features rounding iw2_2023soybean,Verified,,derived,exploratory
+threshold identity iw2_2023soybean,Verified,,derived,exploratory
+threshold values iw2_2023soybean,Verified,,derived,exploratory
+assignment support iw2_2023soybeancorn,Verified,,derived,exploratory
+assignment support iw2_2023soybeanother,Verified,,derived,exploratory
+assignment support iw2_2023soybeansoybean,Verified,,derived,exploratory
+assignment target set iw_2023corn,Verified,,derived,exploratory
+frozen labels from original features iw_2023corn,Verified,,derived,exploratory
+stored features rounding iw_2023corn,Verified,,derived,exploratory
+threshold identity iw_2023corn,Verified,,derived,exploratory
+threshold values iw_2023corn,Verified,,derived,exploratory
+assignment support iw_2023corncorn,Verified,,derived,exploratory
+assignment support iw_2023cornother,Verified,,derived,exploratory
+assignment support iw_2023cornsoybean,Verified,,derived,exploratory
+assignment target set iw_2023soybean,Verified,,derived,exploratory
+frozen labels from original features iw_2023soybean,Verified,,derived,exploratory
+stored features rounding iw_2023soybean,Verified,,derived,exploratory
+threshold identity iw_2023soybean,Verified,,derived,exploratory
+threshold values iw_2023soybean,Verified,,derived,exploratory
+assignment support iw_2023soybeancorn,Verified,,derived,exploratory
+assignment support iw_2023soybeanother,Verified,,derived,exploratory
+assignment support iw_2023soybeansoybean,Verified,,derived,exploratory
+28 AREA groups,Verified,,derived,exploratory
+CM class mapping,Verified,,derived,exploratory
+"outcome identity, target sets, integer CM and row supports False",Verified,4800,derived,exploratory
+"outcome identity, target sets, integer CM and row supports True",Verified,72000,derived,exploratory
+patch to frozen within group CM unique,Verified,,derived,exploratory
+patch to frozen within group CM,Verified,84 integer matrices,derived,exploratory
+patch to frozen cross group CM unique,Verified,,derived,exploratory
+patch to frozen cross group CM,Verified,1260 integer matrices,derived,exploratory
+OOF experiment fold to raw unique,Verified,,derived,exploratory
+OOF experiment fold to raw,Verified,60 integer matrices,derived,exploratory
+within closure including missing corn unique,Verified,,derived,exploratory
+within closure including missing corn,Verified,12 integer matrices,derived,exploratory
+within closure including missing soybean unique,Verified,,derived,exploratory
+within closure including missing soybean,Verified,12 integer matrices,derived,exploratory
+cross closure including missing corn unique,Verified,,derived,exploratory
+cross closure including missing corn,Verified,180 integer matrices,derived,exploratory
+cross closure including missing soybean unique,Verified,,derived,exploratory
+cross closure including missing soybean,Verified,180 integer matrices,derived,exploratory
+current full-site F1 reference,Verified,600 comparisons; max difference 2.22e-16,derived,exploratory
+main counts and unique keys,Verified,,derived,exploratory
+216 ordered + 36 missing results,Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'il_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw2_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('convgru', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'il_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw2_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('unet3d', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'il_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'corn', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw2_2023', 'soybean', 'missing')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three identical target conditions ('utae', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+source ranks reflect same difference,Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('ida_2023', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('il_2023', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw2_2023', 'iw_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'ida_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'il_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'corn', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'corn', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'corn', 'mid')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'soybean', 'high')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'soybean', 'low')",Verified,,derived,exploratory
+"three models same target group ('iw_2023', 'iw2_2023', 'soybean', 'mid')",Verified,,derived,exploratory
+full-site class IDs,Verified,,derived,exploratory
+full-site composition ida_2023corn,Verified,,derived,exploratory
+full-site composition ida_2023other,Verified,,derived,exploratory
+full-site composition ida_2023soybean,Verified,,derived,exploratory
+full-site composition il_2023corn,Verified,,derived,exploratory
+full-site composition il_2023other,Verified,,derived,exploratory
+full-site composition il_2023soybean,Verified,,derived,exploratory
+full-site composition iw_2023corn,Verified,,derived,exploratory
+full-site composition iw_2023other,Verified,,derived,exploratory
+full-site composition iw_2023soybean,Verified,,derived,exploratory
+full-site composition iw2_2023corn,Verified,,derived,exploratory
+full-site composition iw2_2023other,Verified,,derived,exploratory
+full-site composition iw2_2023soybean,Verified,,derived,exploratory
+legacy site differences within export precision,Verified,,derived,exploratory
