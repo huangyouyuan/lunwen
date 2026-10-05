@@ -49,7 +49,9 @@ D 站大豆的四项分量闭合核查最大绝对误差约为 `1.7×10^-16`。B
 
 D 站大豆 B 源 ConvGRU 的内部额外漏分仍然明显：大豆→玉米的 `Δe` 由最近带约 `+0.0727` 增至 `>6` 带约 `+0.1277`，而大豆→其他类由约 `+0.0574` 降至约 `+0.0007`。A、C 源和其他模型的距离分布不同，更多表现为最近带较高后快速下降，但 B 源 3D U-Net 和 U-TAE 也保留了程度不同的内部额外漏分。因此，模型和来源确实会改变错误的空间分布；现有证据不支持“所有额外错误都集中在边界”的统一模式。
 
-证据入口：[第三轮报告](sec33_round3_distance/exploration-report.md)、[数据字典](sec33_round3_distance/data_dictionary.md)、[分带汇总表](sec33_round3_distance/band_metrics_summary.csv)、[最近带—`>6` 配对表](sec33_round3_distance/nearest_vs_gt6_summary.csv)、[D 站大豆分解表](sec33_round3_distance/d_soybean_error_decomposition.csv)、[第三轮核查记录](../../verification/sec33-round3-distance-2026-10-05.md)。
+2026-10-05收尾补齐了逐次Δe两端配对、中文Δe主图和D站五次诊断，没有改变原分带或新增实验。72个作物组合中，53个五次均最近带Δe更高、2个均内部更高、17个方向混合；平均方向仍为63/9。B源ConvGRU在D站大豆的内部Δe五次均为正，但与最近带比较为2次内部更高、3次最近带更高。B源U-TAE的内部均值受预测3（约0.1562）影响，其余四次约0.0171—0.0431，五次均保留。因此“五次存在内部额外漏分”“五次两端方向一致”和“波动小”必须分别判断。空间来源状态不因本次统计完成而改变。
+
+证据入口：[第三轮原报告](sec33_round3_distance/exploration-report.md)、[原数据字典](sec33_round3_distance/data_dictionary.md)、[分带汇总表](sec33_round3_distance/band_metrics_summary.csv)、[原绝对漏分率配对表](sec33_round3_distance/nearest_vs_gt6_summary.csv)、[D站大豆分解表](sec33_round3_distance/d_soybean_error_decomposition.csv)、[原核查记录](../../verification/sec33-round3-distance-2026-10-05.md)。收尾入口：[科学结果报告](sec33_round3_closeout/closeout-report.md)、[Δe配对汇总](sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv)、[D站五次诊断](sec33_round3_closeout/d_soybean_five_prediction_diagnostic.csv)、[本次核查](../../verification/sec33-round3-closeout-2026-10-05.md)。
 
 ## 5. 三轮证据的合并判断
 

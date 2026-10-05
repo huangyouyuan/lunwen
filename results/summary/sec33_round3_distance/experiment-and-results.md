@@ -4,6 +4,8 @@
 
 本轮结果属于 `derived / exploratory`。本文档说明已做的实验、现有结果及证据边界，不是论文正文，不将尚未完成的核查写成已完成。
 
+2026-10-05收尾更新：以下原实验与原核查记录继续保留；逐次Δe两端配对、中文Δe图及D站大豆五次诊断已在独立目录补齐，见[收尾报告](../sec33_round3_closeout/closeout-report.md)。本次未重新生成空间距离。
+
 ## 1. 实验问题与前两轮的关系
 
 本轮回答：跨站相对本站增加的分类错误，在类别边界附近和图斑内部如何分布，这种分布怎样随模型和源站变化。
@@ -110,7 +112,7 @@ B 源 ConvGRU 的本站漏分率由最近带约 0.32 降至 `>6` 带约 0.00，�
 | 计算链核查 | `checks.csv` 记录 386 项 Verified，包含七带恢复 12 个站内及 180 个跨站总体矩阵、目标支持量一致和五次覆盖 | 读取核查表并确认状态计数；没有重新运行生产脚本 |
 | 贡献闭合 | `band_contribution_closure.csv` 的 144 个路径—统计对象记录均为 Verified，容差为 1e−12 | 只读检查当前表及状态 |
 | D 站大豆两去向闭合 | 原核查记录最大绝对误差约 2.78e−17，Verified | 引用原核查记录；未重算矩阵 |
-| 文件对应关系 | `run_manifest.json` 中 6 个输入、1 个脚本、17 个产物，共 24 项 SHA-256 与磁盘一致，Verified | 本次重新计算文件哈希逐项核对 |
+| 文件对应关系 | 原补记曾记录24项哈希一致；本次收尾重核为23/24一致，整体Partially verified | 原探索报告的清单哈希与HEAD文件不同；计算输入、脚本、表及图均一致，详见收尾核查。保留旧清单，不沿用旧“全部一致”说法 |
 | 结果文字与表格 | 72 条曲线的最大带、两端关系、360 对绝对漏分率比较及 D 站值，Verified | 本次对已有 CSV 做只读汇总和数字核对 |
 | 单元测试与图件目检 | 上一轮工具执行记录为 6 项新增测试及 45 项完整测试通过，并记录四图已查看 | 本次未重跑测试或重新查看导出图，不将历史结果写成本次执行 |
 | 原始标签、距离数组及 EDT | 空间来源总体为 Partially verified；原 EDT 未重新执行 | 查阅原算法与历史身份记录，未读取外部距离数组重做逐元素核验 |
@@ -121,11 +123,11 @@ GeoTIFF 问题对应 B 站站内 U-TAE 的导出 TIFF 缺完整 CRS GeoKey。文
 
 当前材料还应保留以下边界：
 
-- `nearest_vs_gt6_per_fold.csv` 实际记录的是跨站**绝对漏分率**的逐次两带差；63/9 是平均 Δe 的两端关系。现有交付尚未单独汇总逐次 Δe 两端差的方向与范围，不能把 360 对绝对漏分率结果替代这一证据。
-- D 站两去向表保留均值和标准差，尚未单列两去向的逐次变化方向。现阶段不声称 B→D 内部效应在五次预测中方向完全一致。
+- 原 `nearest_vs_gt6_per_fold.csv` 记录跨站**绝对漏分率**的逐次两带差，原位保留。本次收尾新增[逐次Δe两端汇总](../sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv)：72个作物组合中，53个五次均最近带更高、2个五次均内部更高、17个方向混合；平均方向仍为63/9。360对绝对漏分率结果不能替代该证据。新[中文Δe图](../../../figures/exploratory/sec33_round3_closeout/delta_e_distance_overview.png)直接展示原尺度额外漏分，旧绝对率图与贡献图保留。
+- 原D站两去向表保留均值和标准差。本次新增[内部逐次去向](../../processed/sec33_round3_closeout/d_soybean_gt6_delta_e_components_per_fold.csv)与[五次诊断](../sec33_round3_closeout/d_soybean_five_prediction_diagnostic.csv)：B源ConvGRU五次内部Δe均为正，但两端方向为2次内部更高、3次最近带更高；B源U-TAE预测3内部Δe约0.1562，其余四次约0.0171—0.0431。五次均保留，不能把方向一致写成波动很小。
 - 第三轮脚本以分带矩阵和总体矩阵核查为主，没有将逐行比对旧 `boundary_error_summary.csv` 或重新核对全部当前 F1 汇总列为独立核查项。总体矩阵闭合不等于这些额外核查已执行。
 
-本次只补文档，不因上述边界扩大实验。若作者需要判断平均效应是否由某一次预测主导，最小补充是利用现有逐次表和矩阵汇总逐次 Δe 及去向变化，不需要重训、重推理或改变七带。
+原补记只整理文档；上述收尾已利用现有逐次表和矩阵完成，不改变七带或增加实验。收尾计算与图件核查另见[本次核查记录](../../../verification/sec33-round3-closeout-2026-10-05.md)，不能据此把原始EDT生成改标为本次重新验证。
 
 ## 6. 对 3.3 的证据价值
 
@@ -144,4 +146,4 @@ GeoTIFF 问题对应 B 站站内 U-TAE 的导出 TIFF 缺完整 CRS GeoKey。文
 - 四张现有探索图：[漏分率概览](../../../figures/exploratory/sec33_round3_distance/distance_leakage_curves_overview.png)、[贡献与像元占比](../../../figures/exploratory/sec33_round3_distance/distance_leakage_contributions_overview.png)、[D 站来源与模型](../../../figures/exploratory/sec33_round3_distance/d_soybean_source_model_leakage.png)、[D 站漏分去向](../../../figures/exploratory/sec33_round3_distance/d_soybean_leakage_components.png)。
 - 原探索报告：[exploration-report.md](exploration-report.md)；字段说明：[data_dictionary.md](data_dictionary.md)；原核查：[verification](../../../verification/sec33-round3-distance-2026-10-05.md)；运行清单：[run_manifest.json](run_manifest.json)。
 
-本补记不改原运行清单的生成时间和产物列表，也不把事后文档冒充原运行产物。文档 SHA-256 另记在原任务记录的本次补记条目中。正文、前两轮和历史边界结果均未在本次修改。
+原运行清单的生成时间和产物列表不变，事后文档不冒充原运行产物。原任务中的文档哈希只对应当时版本；本次更新后文档哈希见[收尾交付清单](../sec33_round3_closeout/delivery_manifest.json)。正文、前两轮和历史边界结果均未在本次修改。

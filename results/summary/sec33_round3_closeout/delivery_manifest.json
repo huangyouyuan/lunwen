@@ -1,0 +1,91 @@
+{
+  "created_at_utc": "2026-10-05T13:10:02.709735+00:00",
+  "base_head": "dcbb062b7709a1d7ce9baf4f8c6c634d5f8428b9",
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "verification_status": "Verified",
+  "spatial_status": "Partially verified",
+  "note": "Hashes cover final delivery files except this self-referential manifest; old result tables and figures are not overwritten.",
+  "files": [
+    {
+      "path": "figures/exploratory/sec33_round3_closeout/delta_e_distance_overview.png",
+      "bytes": 385036,
+      "sha256": "e700e002608639a264dd4aaf98f538b51ee4955ab12414098710093d32eba7e9"
+    },
+    {
+      "path": "plan/tasks/2026-10-05-sec33-round3-closeout.md",
+      "bytes": 2887,
+      "sha256": "a8d5531578942552e408383534c3fc328eb76275ec402fb6f08b5ff25a8b0386"
+    },
+    {
+      "path": "results/processed/sec33_round3_closeout/d_soybean_gt6_delta_e_components_per_fold.csv",
+      "bytes": 13579,
+      "sha256": "30f46d483b025271907b17a693cbf4611ef3f6b89231d92651c9853bbb5b62c0"
+    },
+    {
+      "path": "results/processed/sec33_round3_closeout/nearest_vs_gt6_delta_e_per_fold.csv",
+      "bytes": 176922,
+      "sha256": "8cf1995dfaac6f0d5b8680c3a12a715141cc14bbe151f36df5364b14bbc81275"
+    },
+    {
+      "path": "results/summary/sec33_experiments_and_results.md",
+      "bytes": 14539,
+      "sha256": "e5a81c56679101fd012d97d78cc646708dc6590ce6fc194f57bc6e747eb2c995"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/checks.csv",
+      "bytes": 664,
+      "sha256": "5aceeaa9937e6660bcbb1ccfa0497f5efd2502c1c2607e1eaa572b3054b8ab27"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/closeout-report.md",
+      "bytes": 7969,
+      "sha256": "d21a6d69a7980796c93d9b9d4886c8198c07d6d1704365ce3ad226df26e40518"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/d_soybean_five_prediction_diagnostic.csv",
+      "bytes": 7583,
+      "sha256": "9e7583d80754a81d320159d755de37f81d2ce43bb971ae1915c86677c50722fa"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/data_dictionary.md",
+      "bytes": 5644,
+      "sha256": "0599895219fecb12cdef22446e4650905fb302e9c4943751145a22c21ff43e73"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv",
+      "bytes": 29459,
+      "sha256": "dcf17ea7f7213fc58b6c9d3b7f4b051c762cc593a7078e3a171aa4f874c8ed84"
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/run_manifest.json",
+      "bytes": 3319,
+      "sha256": "fa14d0f50fb04089d663570455748791b0229c463fc985933053e34730a67814"
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/data_dictionary.md",
+      "bytes": 5070,
+      "sha256": "2e394c1a4bf22676cfe6a4d592a3e0196a013c26cc59f21698080737713bf9a1"
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/experiment-and-results.md",
+      "bytes": 17015,
+      "sha256": "c4541c3a0ab982ce984789d243113b0a4d28b05ec665539b004cac69e67400f3"
+    },
+    {
+      "path": "scripts/close_sec33_round3_distance.py",
+      "bytes": 23452,
+      "sha256": "d4913c1e470fc0fb2254c66b4732b55735eef6344f49ea52cfe1ec88f6c03df2"
+    },
+    {
+      "path": "scripts/test/test_sec33_round3_closeout.py",
+      "bytes": 5642,
+      "sha256": "7f69e520834b5c1228cb958953785fcee0f4f92112b25d867a8c01caf49519c2"
+    },
+    {
+      "path": "verification/sec33-round3-closeout-2026-10-05.md",
+      "bytes": 4439,
+      "sha256": "d80fcd23d2d007b4eeaa7d5e5e741f3d0fed9b5374959548d89cb1d3997c9bea"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+check,status,records,max_abs_error,detail
+"within matrix identities, reference support and cached rates",Verified,336,0,
+"cross matrix identities, reference support and cached rates",Verified,5040,0,
+explicit-key endpoint pairing and five-prediction coverage,Verified,720,,
+mean D equals mean gt6 delta minus mean near delta,Verified,144,5.5511151231257827e-17,
+D soybean per-prediction component closure,Verified,45,2.7755575615628914e-17,
+NA not treated as equal; negative near and gt6 deltas retained,Verified,720,,"{""n_undefined_D"": 0, ""n_negative_near_delta"": 81, ""n_negative_gt6_delta"": 35}"
+plotted crop values equal three-source means,Verified,168,,

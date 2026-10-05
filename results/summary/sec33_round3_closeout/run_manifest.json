@@ -1,0 +1,85 @@
+{
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "created_at_utc": "2026-10-05T13:09:26.665502+00:00",
+  "spatial_metric_status": "Partially verified",
+  "distance_arrays_rerun": false,
+  "pair_rule": "D_k=(cross_gt6_k-within_gt6)-(cross_near_k-within_near)",
+  "source_overview": "equal weight of three source means, not fifteen repetitions",
+  "inputs": [
+    {
+      "path": "results/processed/sec33_round3_distance/band_metrics_within.csv",
+      "sha256": "b9aa08e0160cc1aa00e181db15741e43d46098a51cb1b9005eac86524b91607b",
+      "bytes": 30699
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/band_metrics_cross_fold.csv",
+      "sha256": "6a3bff2bcc5ac59475877b1e0aa03cbda0dba2ac601edc6618bb0716ce8d22e3",
+      "bytes": 502264
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/band_metrics_summary.csv",
+      "sha256": "df16c8c56accb156c69e47fc4dbd878823a7fbaf98e19ff1257f872e78d9eeff",
+      "bytes": 258306
+    },
+    {
+      "path": "results/summary/sec33_round3_distance/three_source_overview.csv",
+      "sha256": "571ebb2a67c291a9375687a28623536e9c5048c8788c20696b684f8e534b1276",
+      "bytes": 54747
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/boundary_within_cm_reused.csv",
+      "sha256": "ec158f32443dc9a29f59e980b69489a9168e06383648430414f01a563acc17d0",
+      "bytes": 7548
+    },
+    {
+      "path": "results/processed/sec33_round3_distance/boundary_cross_fold_cm_reused.csv",
+      "sha256": "a8251e58e2a8b96a5395e6e9d93e3138ca8617b89ec969f72edcd5c07c500636",
+      "bytes": 128794
+    }
+  ],
+  "script": {
+    "path": "scripts/close_sec33_round3_distance.py",
+    "sha256": "d4913c1e470fc0fb2254c66b4732b55735eef6344f49ea52cfe1ec88f6c03df2",
+    "bytes": 23452
+  },
+  "dependencies": [
+    {
+      "path": "scripts/explore_sec33_round3_distance.py",
+      "sha256": "bd3bc4bc2052198aa735308ff6170988a9e5f9f9f944804d97686615c5b21df4",
+      "bytes": 37061
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results/processed/sec33_round3_closeout/nearest_vs_gt6_delta_e_per_fold.csv",
+      "sha256": "8cf1995dfaac6f0d5b8680c3a12a715141cc14bbe151f36df5364b14bbc81275",
+      "bytes": 176922
+    },
+    {
+      "path": "results/processed/sec33_round3_closeout/d_soybean_gt6_delta_e_components_per_fold.csv",
+      "sha256": "30f46d483b025271907b17a693cbf4611ef3f6b89231d92651c9853bbb5b62c0",
+      "bytes": 13579
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv",
+      "sha256": "dcf17ea7f7213fc58b6c9d3b7f4b051c762cc593a7078e3a171aa4f874c8ed84",
+      "bytes": 29459
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/d_soybean_five_prediction_diagnostic.csv",
+      "sha256": "9e7583d80754a81d320159d755de37f81d2ce43bb971ae1915c86677c50722fa",
+      "bytes": 7583
+    },
+    {
+      "path": "results/summary/sec33_round3_closeout/checks.csv",
+      "sha256": "5aceeaa9937e6660bcbb1ccfa0497f5efd2502c1c2607e1eaa572b3054b8ab27",
+      "bytes": 664
+    },
+    {
+      "path": "figures/exploratory/sec33_round3_closeout/delta_e_distance_overview.png",
+      "sha256": "e700e002608639a264dd4aaf98f538b51ee4955ab12414098710093d32eba7e9",
+      "bytes": 385036
+    }
+  ]
+}

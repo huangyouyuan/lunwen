@@ -40,7 +40,7 @@
 
 ### `nearest_vs_gt6_summary.csv` 和 `nearest_vs_gt6_per_fold.csv`
 
-按同一来源模型预测配对比较最近带与 `d>6` 带。`per_fold` 保留每次预测的两带漏分率和方向；`summary` 汇总配对次数、方向计数及差值范围。该比较不把 `d>6` 画作等宽连续距离点。
+按同一来源模型预测配对比较最近带与 `d>6` 带的**跨站绝对漏分率**。`per_fold` 保留每次预测的两带跨站率和方向；`summary` 汇总配对次数、方向计数及差值范围。它没有扣除两带各自的本站基准，不能用来判断额外漏分Δe的逐次两端方向。收尾新增的 `sec33_round3_closeout/nearest_vs_gt6_delta_e_*.csv` 才是Δe配对，见[收尾字典](../sec33_round3_closeout/data_dictionary.md)。原表原位保留。
 
 ### `d_soybean_error_decomposition.csv`
 
