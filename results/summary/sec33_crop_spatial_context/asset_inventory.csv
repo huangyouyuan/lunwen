@@ -1,0 +1,5 @@
+target,dataset_dir,reference_folder,typed_pixels,multiple_type_pixels,typed_outside_nearest,nearest_without_type,segment_id_available,unknown_invalid_bits
+iw_2023,G:/2560图像/20iw/2023iwshuju,D:/20iw/2023iwconvgruresults/summary,1543403,159050,0,251126,False,0
+iw2_2023,G:/2560图像/20iw2/2023iw2shuju,D:/20iw2/2023iw2convgruresults/summary,1495444,114714,0,307718,False,0
+ida_2023,G:/2560图像/20ida/2023idashuju,D:/20ida/2023convgruidaresults/summary,1683273,220807,0,335734,False,0
+il_2023,G:/2560图像/20il/2023ilshuju,D:/20il/2023convgruilresults/summary,1414412,149769,0,247495,False,0

@@ -1,0 +1,55 @@
+check,status,detail
+"figure2 mean ('convgru', 'iw2_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('convgru', 'ida_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('convgru', 'il_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('convgru', 'iw_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('convgru', 'ida_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('convgru', 'il_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('convgru', 'iw_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('convgru', 'iw2_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('convgru', 'il_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('convgru', 'iw_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('convgru', 'iw2_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('convgru', 'ida_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw2_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'ida_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'il_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'ida_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'il_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw2_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'il_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'iw2_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('unet3d', 'ida_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw2_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('utae', 'ida_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('utae', 'il_2023', 'iw_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('utae', 'ida_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('utae', 'il_2023', 'iw2_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw2_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('utae', 'il_2023', 'ida_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('utae', 'iw2_2023', 'il_2023')",Verified,0.0
+"figure2 mean ('utae', 'ida_2023', 'il_2023')",Verified,0.0
+"figure3 matched difference ('convgru', 'iw_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('convgru', 'iw2_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('convgru', 'ida_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('convgru', 'iw_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('convgru', 'iw2_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('convgru', 'ida_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('unet3d', 'iw_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('unet3d', 'iw2_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('unet3d', 'ida_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('unet3d', 'iw_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('unet3d', 'iw2_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('unet3d', 'ida_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('utae', 'iw_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('utae', 'iw2_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('utae', 'ida_2023', 'area_at_close_composition')",Verified,0.0
+"figure3 matched difference ('utae', 'iw_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('utae', 'iw2_2023', 'composition_at_close_area')",Verified,0.0
+"figure3 matched difference ('utae', 'ida_2023', 'composition_at_close_area')",Verified,0.0

@@ -1,0 +1,33 @@
+{
+  "within_corn_f1_higher": 12,
+  "within_n": 12,
+  "cross_corn_f1_higher": 28,
+  "cross_n": 36,
+  "cross_f1_gap_expanded": 17,
+  "f1_and_leakage_opposite_sign": 14,
+  "within_weight_patterns": {
+    "shrunk": 8,
+    "reversed": 4
+  },
+  "cross_weight_patterns": {
+    "shrunk": 19,
+    "expanded": 12,
+    "reversed": 5
+  },
+  "delta_weight_patterns": {
+    "expanded": 18,
+    "shrunk": 18
+  },
+  "all_cross_weighted_gap_lower": true,
+  "maximum_abs_adjustment_of_increment": 0.004252465216459949,
+  "corn_soy_type_asymmetry_positive": 18,
+  "corn_soy_type_asymmetry_delta_positive": 18,
+  "corn_soy_type_abs_of_mean_asymmetry_expanded": 34,
+  "opposite_error_exceeds_third": 206,
+  "boundary_side_combinations": 216,
+  "corn_soy_type_asymmetry_delta_five_directions": {
+    "mixed": 23,
+    "all_positive": 7,
+    "all_negative": 6
+  }
+}

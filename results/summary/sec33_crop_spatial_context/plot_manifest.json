@@ -1,0 +1,64 @@
+{
+  "created_at_utc": "2026-10-05T17:53:27.353887+00:00",
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "distance_generation_status": "Partially verified",
+  "distance_transform_rerun": false,
+  "stage": "plot",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/distance_common_weights.csv",
+      "sha256": "d7ed8c40fa2cdf7327a60888c463e48c07925d7d35028f7421dc59ff885c5979",
+      "bytes": 2875,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/weighted_crop_gap_summary.csv",
+      "sha256": "4f1dfbbb7ca6f105d81843fee8b5bfdb9248dde2171967832d69a6e03d96bf09",
+      "bytes": 16846,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/boundary_asymmetry_per_prediction.csv",
+      "sha256": "cf7f923efeae3ec686bc890dd158ca526f0e6c8e1b3be28bce139d48286736ec",
+      "bytes": 272202,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/boundary_asymmetry_summary.csv",
+      "sha256": "4c561adafaee28da4f97223431d52af3f822d10ff3e9abb92084742ddabe8bd2",
+      "bytes": 104470,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/distance_direction_summary.csv",
+      "sha256": "4b0121aa51d3c1e24a0535d23bd250f48cbb827a6edf03c7d4927a19f392db60",
+      "bytes": 634058,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/matched_contrast_per_prediction.csv",
+      "sha256": "52bd42297c25cdebb61f7048fbb82dc7c2dec7114bce024e2593559a84368a89",
+      "bytes": 52843,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/matched_contrast_summary.csv",
+      "sha256": "f937945a0217edd62654a1b01461864b8e73c46ddc70bbc3e043f7fa686af74e",
+      "bytes": 21735,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/plot_sec33_crop_spatial_context.py",
+      "sha256": "120bef1cb9acdcc1c87fd1f4e851900b63d2e99e74c1e0f39d7d9a6e1930dbf6",
+      "bytes": 11888,
+      "role": "plot script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_crop_spatial_context.py",
+      "sha256": "6ca6e1f102ef1f8a9b212d7faad94f8ca6e9c2f0ba561a294462e4470a906178",
+      "bytes": 53208,
+      "role": "script"
+    }
+  ]
+}

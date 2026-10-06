@@ -1,0 +1,13 @@
+table,true_class,cross_rows,NA,negative,zero,positive
+area,corn,2520,270,373,91,1786
+area,other,2520,0,468,225,1827
+area,soybean,2520,270,436,90,1724
+distance,corn,2520,0,388,1,2131
+distance,other,2520,0,401,2,2117
+distance,soybean,2520,0,465,2,2053
+matched,corn,360,0,28,0,332
+matched,other,360,0,115,0,245
+matched,soybean,360,0,68,0,292
+whole,corn,360,0,64,1,295
+whole,other,360,0,74,0,286
+whole,soybean,360,0,74,0,286

@@ -1,0 +1,1252 @@
+{
+  "created_at_utc": "2026-10-05T16:10:06.529502+00:00",
+  "data_status": "derived",
+  "analysis_status": "exploratory",
+  "distance_generation_status": "Partially verified",
+  "distance_transform_rerun": false,
+  "stage": "analyze",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/type_band_cm.csv",
+      "sha256": "9c7548949201ff250ccc2a6dbc817e25997e2ccb375dce2d89b76cbd593516c0",
+      "bytes": 688317,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/within_site_crop_f1.csv",
+      "sha256": "5c333be499a99b6f7c6e61dbd77a66523e8bafd050707f7261b6c9d520a322d4",
+      "bytes": 1288,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv",
+      "sha256": "eadfcf53e4b6a636ed43fdae2787eb380de6a39a55c15d574c312d7d29b24aa8",
+      "bytes": 3928,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/reference_type_band_support.csv",
+      "sha256": "e847e89520b24f09536743e772493743ce66557766bffa95c031730ccffa26b2",
+      "bytes": 28227,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_iw_2023.npz",
+      "sha256": "09370ce886e8f118a96a273bd3e40add667056c4fc68238c22f3ea9c07069753",
+      "bytes": 2000740,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_iw2_2023.npz",
+      "sha256": "d1f3e5eb1fb9ac67eb91d53e9461846fbdb06bc852793d358d99432ae4ed7cd5",
+      "bytes": 2132984,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_ida_2023.npz",
+      "sha256": "cbf78f28146fc180ca1bbfaccc11c46dd468031bc9fc77a10bcff281c14f20d1",
+      "bytes": 2428547,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_il_2023.npz",
+      "sha256": "971ea14dd4670505f95c2727aed69559d6c8b37f95abb81dbcf8112685d7c9ef",
+      "bytes": 2000713,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_counts_index.csv",
+      "sha256": "3852c8cf3e38050a3c7baf2a3fddbc4a0a58ba70bfaac3d9abc302bcb5a39e31",
+      "bytes": 14139,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/frozen_area_assignments.csv",
+      "sha256": "64f59815821cb7c61807a3bf61b31c99a0688eccddb0b0dd198b369b60f5134c",
+      "bytes": 340165,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/fixed_matches.csv",
+      "sha256": "d0ac3a08ed3cd19e9c1053cd728c179d334ea5b9147b63fff2d8996540f17456",
+      "bytes": 18373,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_convgru_iw_2023_iw_2023_0.npz",
+      "sha256": "b8333351f7a07ff835e8f0f164629f9722c2b9da49f7efc807996a16d2aa6961",
+      "bytes": 61092,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_unet3d_iw_2023_iw_2023_0.npz",
+      "sha256": "c906eba8b33b5c178540d8cc557c787f4250a15587bc0d1bfa8421b7053e087c",
+      "bytes": 57887,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_utae_iw_2023_iw_2023_0.npz",
+      "sha256": "67526bc8765487c5dcd46f6d8ad360dc07b569aaa71fd69cd3e4f9b8c48fccc0",
+      "bytes": 56438,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_convgru_iw2_2023_iw2_2023_0.npz",
+      "sha256": "51a3d5f7ccb292b1adc3ad5b563238244e6858e64a0cd9df6def404744f184b7",
+      "bytes": 62009,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_unet3d_iw2_2023_iw2_2023_0.npz",
+      "sha256": "b792fa8b5e7ff183027bd7b0e6b0fae2a4a95842947aebdd6c03a8c746a3e4ce",
+      "bytes": 59336,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_utae_iw2_2023_iw2_2023_0.npz",
+      "sha256": "76851e464f423cc9560f9b953184c6c965ed1539110d443ad601a5837a0064fb",
+      "bytes": 59348,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_convgru_ida_2023_ida_2023_0.npz",
+      "sha256": "7654ec04409bc0425b3ed43b30bd2986848ac3d69a5904b33cb4c36de032e98c",
+      "bytes": 64573,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_unet3d_ida_2023_ida_2023_0.npz",
+      "sha256": "b5c54357e18d07cb52c7665efea1f7a6f227af9ea4ac80ca18fe26940a33a50a",
+      "bytes": 61848,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_utae_ida_2023_ida_2023_0.npz",
+      "sha256": "d9943d9b4b892d1fbfeee5bd4c32b1a937cc22c0a44481144b4473cc32e546db",
+      "bytes": 62119,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_convgru_il_2023_il_2023_0.npz",
+      "sha256": "e2de9594d6c3996955d47dc34a4d0e56d2754133c2e810633cbefc1143924c71",
+      "bytes": 62323,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_unet3d_il_2023_il_2023_0.npz",
+      "sha256": "09b99b0f54cb148b01966412e59804bd6199c44018281a5caef842b4a66c2e06",
+      "bytes": 59873,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_within_utae_il_2023_il_2023_0.npz",
+      "sha256": "a901ca6125a999bf6688bb1cdabaecff12035b45e232709f2206d8141322739d",
+      "bytes": 59866,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw_2023_1.npz",
+      "sha256": "58d96b79941e31a8be136767ad6053d9c05ab35c22fea025f55a7fc7cee17441",
+      "bytes": 68068,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw_2023_2.npz",
+      "sha256": "8154c80c905294b8c7f283fff63e3da0372e548bcef317eb6293dc3b974a3282",
+      "bytes": 66203,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw_2023_3.npz",
+      "sha256": "17e3b28ebd7e466f11b302a069569d2b0551277f5b6a8a1d179640a374f2a7e9",
+      "bytes": 68032,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw_2023_4.npz",
+      "sha256": "ecea49ecb5318a3a9cc6e0bab630c2686c5bb304d872555f64154932dc7c7fb8",
+      "bytes": 67206,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw_2023_5.npz",
+      "sha256": "179d4d49591a9fd70d3dabd3595f8400ec37c4ccc98be0229b654d522b490577",
+      "bytes": 67524,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw2_2023_1.npz",
+      "sha256": "620a20c2b8b95d50ba16550f7ac72e3945f21eb28b69efc240d33364062653e2",
+      "bytes": 70730,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw2_2023_2.npz",
+      "sha256": "4f46fa6f16edd01c41bc035fc72a964c6410f745f9522a7bafff2b7acefd2a47",
+      "bytes": 69352,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw2_2023_3.npz",
+      "sha256": "1184e148c44d89c8388df0776f0143c515e083e6788a865a3ae95998bef44ae8",
+      "bytes": 70136,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw2_2023_4.npz",
+      "sha256": "e2600b028ea149670ec1308a4c9e410ce374fb57381f387d7bdd3dedbf999e92",
+      "bytes": 70431,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_iw2_2023_5.npz",
+      "sha256": "74594a5beafc62aed85ce433d98317ccd8a934a763027a3693288c23f9d1c029",
+      "bytes": 70515,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_il_2023_1.npz",
+      "sha256": "6a4be733b4c3944b8a7709b23cb55398f98d5fff68df65d02699488faf3e9d12",
+      "bytes": 64899,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_il_2023_2.npz",
+      "sha256": "0be296a1920ff80ce61935acda40d7ae26785f4556997f22f9e6c6e3f9612424",
+      "bytes": 64138,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_il_2023_3.npz",
+      "sha256": "97598cebad63d990dc428ce0a02d8f4a056b351ef8b1a69d3627ba06283d0aad",
+      "bytes": 64682,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_il_2023_4.npz",
+      "sha256": "816304383424b27b458d0822ddc2009fdf157f15dda2e6bf50427d4617e3840a",
+      "bytes": 64684,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_ida_2023_il_2023_5.npz",
+      "sha256": "dd5d4d7c08a54b22ef99298f72d8e2607443e025c78efda60814433b799a8d50",
+      "bytes": 64376,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw_2023_1.npz",
+      "sha256": "425e47420450bd3f02dd5efa716085b43ca0185db8586433346ceba067e689ff",
+      "bytes": 64813,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw_2023_2.npz",
+      "sha256": "f67bac68990fd648ea29576c1ffc66527284cebcc238c36c3477e235e95be96d",
+      "bytes": 64158,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw_2023_3.npz",
+      "sha256": "ee1d3a2a29e80d1ab003ce238817b5616f863e79b312e96f7ab76122b545fda1",
+      "bytes": 63888,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw_2023_4.npz",
+      "sha256": "7efcf31f476b21f66ab696a6a3522486fe61059d5fde9bbde89fdcb7700eeead",
+      "bytes": 64314,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw_2023_5.npz",
+      "sha256": "593946c7aa85335f437423328755047cdcc8accae86c00d12499c73bfbb77e59",
+      "bytes": 64170,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw2_2023_1.npz",
+      "sha256": "9921916b24aa84ba26e23ca7c7d93748ec4592b2bbf18f21d9061631715e56d1",
+      "bytes": 66939,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw2_2023_2.npz",
+      "sha256": "576c2aca1c71199b3dcb13e986348f86fe27932bf15c902ddd441b13740b5a16",
+      "bytes": 67914,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw2_2023_3.npz",
+      "sha256": "fb772a1ec9a01958a6518e687525296159e1f4a52b1e77dc420336b2a0af9f00",
+      "bytes": 67258,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw2_2023_4.npz",
+      "sha256": "bdd00e6bbb47b77758519e8f66440eee59fd67efc6726aa4bcca5b4e9c90fb9e",
+      "bytes": 67134,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_iw2_2023_5.npz",
+      "sha256": "99b486388fc2c79052256d78975c03620d43c9eda0a8e340709f73411ef463e7",
+      "bytes": 67557,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_ida_2023_1.npz",
+      "sha256": "48275c913b67ee73bac79403404c121b8fd65766be629512ba78022bb683f4d8",
+      "bytes": 67254,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_ida_2023_2.npz",
+      "sha256": "a3aa9d295eacd34a777db434d52e6de37b65a32ba525c53ef7dd62274ad322b8",
+      "bytes": 67497,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_ida_2023_3.npz",
+      "sha256": "acb3d675389a35ff66f87dff563f7078dab2842bcbfc7359f6bdaf60b994ffea",
+      "bytes": 66918,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_ida_2023_4.npz",
+      "sha256": "687c1c76ef8f2cd5e38b18d78f78eef7ec443e5ccc3b056fa75930aa200b0dea",
+      "bytes": 67095,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_il_2023_ida_2023_5.npz",
+      "sha256": "79c6e01853efbb9617d13ec57052e80cc99726c31ffcf48e3a9c00d0ce8bf492",
+      "bytes": 67735,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_iw_2023_1.npz",
+      "sha256": "9a1d5f731326379756e65998219be26b7aec6f282f6c39de3cede06db316038e",
+      "bytes": 61912,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_iw_2023_2.npz",
+      "sha256": "5eccfa084faa97fb400b37f9acf584f842b391a42819d05385ba8a4582ff0bd2",
+      "bytes": 62581,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_iw_2023_3.npz",
+      "sha256": "79e1d8549a8085dbf0efa089ebf1e58b61c5ca6dbef19fcfef36d2f5a58bfb8d",
+      "bytes": 62191,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_iw_2023_4.npz",
+      "sha256": "76d940083d2752849544331e2603d1c674c52b45d2621fdc468bb38c8f8f723f",
+      "bytes": 61693,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_iw_2023_5.npz",
+      "sha256": "64c3b3364f670a98c457e106c11725dfcb9269dd47d0d6bef191e1cce036984c",
+      "bytes": 62259,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_ida_2023_1.npz",
+      "sha256": "129faf62cae6711a7857dfd32998a59f99b78286cb30c7014c1e2ba8a6888848",
+      "bytes": 67931,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_ida_2023_2.npz",
+      "sha256": "d3cfc521a33c7011f12ea5f2143082dd065819cd05888ee85884d2bbd0e86970",
+      "bytes": 69224,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_ida_2023_3.npz",
+      "sha256": "b3d1888f7fe9aa38ba57d528ebe95258638b0d62c7932fba402f3d1671536ca8",
+      "bytes": 68327,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_ida_2023_4.npz",
+      "sha256": "8adf3f6f004b40ff445e909dd83a612d04615285caf2ea7d5eda24773fe07eb8",
+      "bytes": 68602,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_ida_2023_5.npz",
+      "sha256": "5bdfc1df0c27ab197656592d05e0dc373bf0a6bfa26a15f856bf1efefedc0bae",
+      "bytes": 68367,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_il_2023_1.npz",
+      "sha256": "c66b0d05ff4c625e3ad4df94cd46b6a5a2549c54f53abf7c33852b3364a4db25",
+      "bytes": 64138,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_il_2023_2.npz",
+      "sha256": "c27d60c5deadfab0dd355d112dacbc8122e50187a769cf50df32db52bc11b374",
+      "bytes": 65939,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_il_2023_3.npz",
+      "sha256": "b697dba77d3c4ac71af238bf9fa4e1c150c6afb5519059a8f0c8818c724853db",
+      "bytes": 64755,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_il_2023_4.npz",
+      "sha256": "9e4753aa4ae55d572e4c6a773690a214920f3134f5b6f0af8aa5457ab05af423",
+      "bytes": 64469,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw2_2023_il_2023_5.npz",
+      "sha256": "dbf8c5b1cfd82932971b57129cc5b792b16f5771326268b0edb27235fa06df89",
+      "bytes": 64713,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_iw2_2023_1.npz",
+      "sha256": "066b751a11d06654ee2751f8e10790c1b18f02cdcc15d8994a5cb9dc7ee252c8",
+      "bytes": 65235,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_iw2_2023_2.npz",
+      "sha256": "acff2c23a369efdc26dcfbdabdc0c5b99a47add69e2f989ce830969e7050e214",
+      "bytes": 65981,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_iw2_2023_3.npz",
+      "sha256": "0532ab60bff9372bab1a8f5a8f787498ea155e8d9d19550307602fa4328db1c2",
+      "bytes": 65849,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_iw2_2023_4.npz",
+      "sha256": "b44f5c280f6d6d204629b386600aad37addef9a61c0520c689f413c394727822",
+      "bytes": 65253,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_iw2_2023_5.npz",
+      "sha256": "2982fc989c44329108d5f64c708caa243c7a23118e4d46dbb1b78e1571383850",
+      "bytes": 65811,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_ida_2023_1.npz",
+      "sha256": "20d5cbf924fa35408241890259e14423e55c85e9eb244e30a13f0a42aff54ed9",
+      "bytes": 68919,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_ida_2023_2.npz",
+      "sha256": "f19a25e67a7af4bcaf041fa61ab74496b4f913b05cd5602c50becfc20b4afa17",
+      "bytes": 68958,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_ida_2023_3.npz",
+      "sha256": "ae8002d3b86d83860a4e5a180e31089826943e2dd3f951457aa7e76e74aab1a2",
+      "bytes": 68370,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_ida_2023_4.npz",
+      "sha256": "32766bde9699ccf60b4e5add18a5bd7ccf08d779e82c74132212210e9b764044",
+      "bytes": 68555,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_ida_2023_5.npz",
+      "sha256": "b90692350c83e1f772d06a7c9fb51d1e2c75bdd39156ed994235a5056859dfe1",
+      "bytes": 69819,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_il_2023_1.npz",
+      "sha256": "aa62f2cf5909c0fa87694aa1740b4f2da8d8d46f9f0505c26d8f65c1e153a1f8",
+      "bytes": 65641,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_il_2023_2.npz",
+      "sha256": "8278730e97f31bcb671580d2f569268073eec73d3096eedcc6ad7a1f5a69f860",
+      "bytes": 66024,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_il_2023_3.npz",
+      "sha256": "156216c5d50e0eda89779344c98a52e5715cafc50a38335162be0a6f4e341333",
+      "bytes": 65122,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_il_2023_4.npz",
+      "sha256": "84073a32d42c27a415ac9a9ae4d11beb7a3a3ff74c834623617f6a0ca5323c77",
+      "bytes": 65903,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_convgru_iw_2023_il_2023_5.npz",
+      "sha256": "c6b0b26ab462f2adc020ba9225c91eb03fb64bac6f13953275e60ab4a3367f9c",
+      "bytes": 66062,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw_2023_1.npz",
+      "sha256": "4dd47d575ce286ae3d8fedb3af635140096bd19c5e35c45c472bff44d77f31b0",
+      "bytes": 62665,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw_2023_2.npz",
+      "sha256": "37972bf9c0e9d425111ab3aece274566a1cd3aa45feaa274ba36b1bbe843dddd",
+      "bytes": 63845,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw_2023_3.npz",
+      "sha256": "6c716237bca0fae16113443ca4d7a9ac5dc0478710fc0bbc10af2e2ccb828e57",
+      "bytes": 62636,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw_2023_4.npz",
+      "sha256": "6810f8dd1a4a18feeda0be78a476a4270afe6331a6b32b25e3d800eec2e58a35",
+      "bytes": 65144,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw_2023_5.npz",
+      "sha256": "dc9451921964363e5ab97dd44cb17f6f52c95fae498175871d260c662ee5a630",
+      "bytes": 64665,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw2_2023_1.npz",
+      "sha256": "6d97fe4886b0a19fd4b17b0d386985df43bcf09c5aaa8d688937951f16bd385d",
+      "bytes": 64295,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw2_2023_2.npz",
+      "sha256": "336463de9ed22b7ac5c9d6ace864565a12b2ace0a7bed5af29119fc2f065ae5f",
+      "bytes": 66128,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw2_2023_3.npz",
+      "sha256": "db995bace40235e95a706f5105bfba35f6dfdea32e713896831b0dc2bc7ee422",
+      "bytes": 63865,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw2_2023_4.npz",
+      "sha256": "a8ed188e6dc1df649aa6b1146122f213687c1702548dbbfacdb2f0df17bba5bb",
+      "bytes": 67174,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_iw2_2023_5.npz",
+      "sha256": "56f2643dcdc9591007f887cf0d49215813c029325e5ab38f97cc9df986b7f3ee",
+      "bytes": 67466,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_il_2023_1.npz",
+      "sha256": "18e4e4c7ef500ac9b93ccb75fb82887eb27f22568fcbcb32f3b365981a8d9dd5",
+      "bytes": 61478,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_il_2023_2.npz",
+      "sha256": "5449769210963d2c14051904740d3bcd2b920755ea1bdd3c52af905d860b368e",
+      "bytes": 62203,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_il_2023_3.npz",
+      "sha256": "be72fe730481f503f341c3e0f645b05864cab7558a23398f2437cdb79653f14d",
+      "bytes": 61540,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_il_2023_4.npz",
+      "sha256": "565fe25e7c09d083f26d36b9d1b44f1a8009ae160947b6814778d74c84084dc7",
+      "bytes": 64669,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_ida_2023_il_2023_5.npz",
+      "sha256": "32657903e16402b32fbffec5c088a5e7be27e538a9a227d782007a0cad74043d",
+      "bytes": 63735,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw_2023_1.npz",
+      "sha256": "f98944a2c6a31a7d432e949061965fa9ed1d4f6684b2fc53c2c3a45dd363e928",
+      "bytes": 65267,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw_2023_2.npz",
+      "sha256": "2b091fbe9c800e0faa78a24f854ae753bf71b0474d78f740146ac869165ff1ee",
+      "bytes": 63481,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw_2023_3.npz",
+      "sha256": "f44dca11c220c648000d4e10ed892ae1b0070ecfc66074b2cf07c67fca04be1e",
+      "bytes": 63577,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw_2023_4.npz",
+      "sha256": "e130bdde5c6d5233cce2fae303e5719a28518907717eee86b95751c691878a14",
+      "bytes": 63665,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw_2023_5.npz",
+      "sha256": "fcb037c857b342caaf869c12ae1830a4fffaf0430574244bfa989e460614cca2",
+      "bytes": 62722,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw2_2023_1.npz",
+      "sha256": "ec015728c52a2ce036586ff79ca4b71310d818875b1603b91d5d5130c2630f2a",
+      "bytes": 68279,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw2_2023_2.npz",
+      "sha256": "a071ec4a26af7bec2c856c045ae4e6962b82517a4706fefb918bd03b23c39916",
+      "bytes": 65559,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw2_2023_3.npz",
+      "sha256": "f98767fe5bf662dfb23a1702dfec0e823ac6920015700ba952b7bb9e6feb7ea0",
+      "bytes": 65907,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw2_2023_4.npz",
+      "sha256": "fc38e6695a4dd4908bb8fe9688e39f6a421f1b1c74edb93afb97903f9f162c46",
+      "bytes": 67893,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_iw2_2023_5.npz",
+      "sha256": "5c9970ef5bdac519951c5ae260cab239a4908c2297d9c0e5be05e14710dc5095",
+      "bytes": 66843,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_ida_2023_1.npz",
+      "sha256": "e433f812763efcfaeb09326c7117e55f2c03459748b4cee0c314de221a0d89d7",
+      "bytes": 67555,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_ida_2023_2.npz",
+      "sha256": "845e35fa8f5b22b671b7e4eaf94205f255c455f418bf852f19bb086878e3f6e9",
+      "bytes": 67590,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_ida_2023_3.npz",
+      "sha256": "255b55eff844a559891ee258c86a54634b8d69056e7f8a996263b4ae6e9c766d",
+      "bytes": 68249,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_ida_2023_4.npz",
+      "sha256": "068a29e1aadd4243cc5ef737a74c77c41d615b5ef954f95aff888ed6b23c6a89",
+      "bytes": 69051,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_il_2023_ida_2023_5.npz",
+      "sha256": "92613df991076215ae04dd892cf9ea87d492d7d6d57e5e95444de6bacd421e83",
+      "bytes": 66623,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_iw_2023_1.npz",
+      "sha256": "997081b4788c984b3b4584ed4d513a9357de9f5f148c5e043a08b00168849e94",
+      "bytes": 62830,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_iw_2023_2.npz",
+      "sha256": "8f3fe9c223db024b9a59ccfeb3e6868c2fdae834bbe0f9cc9c7b2020d05d8e5f",
+      "bytes": 61060,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_iw_2023_3.npz",
+      "sha256": "4a2b3acd9338f0f0915e0fee1966c428f0852e510173c8a78de337e886ef229c",
+      "bytes": 60523,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_iw_2023_4.npz",
+      "sha256": "2d9a7fbfdf79b44c5dc6f26c7454fc029eb32ab592ec13f99bde6e9ccfb2d56f",
+      "bytes": 61045,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_iw_2023_5.npz",
+      "sha256": "fc51bd05b7ddc3d60174fc16bc68281d11af8790d3a49d90b601765e2f0b0bae",
+      "bytes": 61989,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_ida_2023_1.npz",
+      "sha256": "3b76e20753fe4033f5a607201451ede99eaa0d9894aa5cfaa8ce7eea19fbe8ba",
+      "bytes": 68924,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_ida_2023_2.npz",
+      "sha256": "c8436866e1971de33f9741b46df191d8b35691e2ed8860f4f5e964fd98de6cf1",
+      "bytes": 68552,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_ida_2023_3.npz",
+      "sha256": "8813cf01504bb85093a5570b96f1eac9211edd78b39c619ec3be73f97bdf24cf",
+      "bytes": 67121,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_ida_2023_4.npz",
+      "sha256": "4ffe35511920b1b3461dfd48de0fe5d6ca40d5f5132628424c3965a33a2648e0",
+      "bytes": 67562,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_ida_2023_5.npz",
+      "sha256": "6afa134e6158dfc035c185a17d8485593e000de2bc9b2774d26de7efacaf448e",
+      "bytes": 68690,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_il_2023_1.npz",
+      "sha256": "5b7dbfea5595a191b6df8d3db07bba7a1aa2737066b6db61bddba44e8c280882",
+      "bytes": 64151,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_il_2023_2.npz",
+      "sha256": "ceb90c765a7adc1a6617a3bd818cccf32556baddb1da60b6ca0730d650d630db",
+      "bytes": 63618,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_il_2023_3.npz",
+      "sha256": "b2d2d394ddfa0ebfc4bef0c96cccf4d9f8951904e36001a0695bbddd68223594",
+      "bytes": 63395,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_il_2023_4.npz",
+      "sha256": "9f3fde11bb360855e5c6e1d8d32f4937153cedb84ce7a8687a62260bcf5b2417",
+      "bytes": 63266,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw2_2023_il_2023_5.npz",
+      "sha256": "c23220dc80f306edfe21a2b22ef531f3933c86102654da83c4d9161d9d5584b5",
+      "bytes": 64298,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_iw2_2023_1.npz",
+      "sha256": "a68b94ffa040be5162acafcdd3fb94e98781d59889a774db78a99e9049ac9ec9",
+      "bytes": 64438,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_iw2_2023_2.npz",
+      "sha256": "dbeba162c79c4792d26abb7f9e8be86b69ba4892327b6cb41c19691bca1ac562",
+      "bytes": 62861,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_iw2_2023_3.npz",
+      "sha256": "a7c9ba93a59959e5b471ffc2f21117a19886b7f7a5782ee433e73a2bd5ffcbfe",
+      "bytes": 63562,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_iw2_2023_4.npz",
+      "sha256": "2cb9b5c52039a289de1f47d82dafc29f2201d0927f83c4e717d40d0fcd6ddd5e",
+      "bytes": 63396,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_iw2_2023_5.npz",
+      "sha256": "0f39e8fe912a908f4ca549ad9f4e0c1be6f2f08fd6707baeff2b117e411ed43d",
+      "bytes": 63437,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_ida_2023_1.npz",
+      "sha256": "12b7640eda49858e8d667bf03f2ecd10dcd8082551db54c193c77af9dc4b8842",
+      "bytes": 70069,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_ida_2023_2.npz",
+      "sha256": "015bd6d404411b9c0d0481c6cfa62a084025bc6ef097d4e4e88e06c142ee7282",
+      "bytes": 68593,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_ida_2023_3.npz",
+      "sha256": "435d0fdaf0f3cd1ab64af28c191ae51ca0dabe9c699b2c27125bc7f889e870d5",
+      "bytes": 68609,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_ida_2023_4.npz",
+      "sha256": "8a97f0d546a0305aff0bb02d9860c46285b27d0a37f27395dcba9ac14ffc7090",
+      "bytes": 67716,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_ida_2023_5.npz",
+      "sha256": "470971ff53d1dff9ed01be77ca3341b5c54efe46d32ae8940ccf8d962e6ce957",
+      "bytes": 68635,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_il_2023_1.npz",
+      "sha256": "38342ab9983dada44e9073ba2961d9a7e6e86108650190c94516ad6af6e418f8",
+      "bytes": 65274,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_il_2023_2.npz",
+      "sha256": "458de460b499face8a64dc6ca4077821bb48ac1939ba4315e7a9f034f4687b18",
+      "bytes": 63361,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_il_2023_3.npz",
+      "sha256": "8208bd3ec2ae43c55957e44e4f115f84d53f3af68de95dda866c24ea9f4c3c9a",
+      "bytes": 64228,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_il_2023_4.npz",
+      "sha256": "ffb238e69a66ad41164d5d2280a555aaf31ad79f64d5d752797bd0140f213ef2",
+      "bytes": 63863,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_unet3d_iw_2023_il_2023_5.npz",
+      "sha256": "acedb38ef05f03994fb52d9e6e3002b84924aa4752e7647167790618bd329ef2",
+      "bytes": 63834,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw_2023_1.npz",
+      "sha256": "f23bec44f9ffb5460d405d26c1562d3637dca07bef228df1fbe41d24e900fdcb",
+      "bytes": 64323,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw_2023_2.npz",
+      "sha256": "7b3198f7868e4d078009ccf0452cb8ed0f40685657a5edde53f007f34831d8ab",
+      "bytes": 63879,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw_2023_3.npz",
+      "sha256": "c25b15df40081353ef3a5b9a3cb3d449a21ca50fdccdb7a05812b5ed696fdc37",
+      "bytes": 63336,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw_2023_4.npz",
+      "sha256": "b43973013f89d1e1b070f08a9ea3193679f817c60cbe12293bc6a268c2a60604",
+      "bytes": 64433,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw_2023_5.npz",
+      "sha256": "cdc295942bd6987fa125de75ae787f40ce9ef1fa7a2c406af8095957a2efc2ea",
+      "bytes": 64276,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw2_2023_1.npz",
+      "sha256": "7d5044563e41dd00f963e3195f7b100839896abb22cd2e0d48d3d40123930a63",
+      "bytes": 65714,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw2_2023_2.npz",
+      "sha256": "16b9c5adcdb991b9473717dbb552e65d9b48b2eaf55824823424e8ce195b69e4",
+      "bytes": 66004,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw2_2023_3.npz",
+      "sha256": "f76e84bc810a84efb24c020e2c6769a40cb2c4fcbb4d16c0caef2ea75639b098",
+      "bytes": 64828,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw2_2023_4.npz",
+      "sha256": "6eea27895a011235f63e39e3526ac25779cc12f20614296243df0255ab348d5c",
+      "bytes": 64834,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_iw2_2023_5.npz",
+      "sha256": "415b6d360e9a3453a42b35f1ed19847776b50ecf00dd9a1adbedc127dbd31259",
+      "bytes": 65880,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_il_2023_1.npz",
+      "sha256": "cda10c48031c624ed145b7b8058e71704c6ccd6489419fcc517b3060df8ebfed",
+      "bytes": 63920,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_il_2023_2.npz",
+      "sha256": "a1f393fcf5d8fd352d0793950bab0aef74f9b9dd978d755c3649e8264f89649b",
+      "bytes": 62945,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_il_2023_3.npz",
+      "sha256": "dedc9ef6dac1392f54a1deb0fb9e2b35dccd912e8b519a2539f886a8211639b3",
+      "bytes": 62480,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_il_2023_4.npz",
+      "sha256": "bbee0777f3caa1f6e583ed281d036f0d08d2735681324b9f53ae7f783e6c73e0",
+      "bytes": 62170,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_ida_2023_il_2023_5.npz",
+      "sha256": "0e024ac5d212ccdd38db42070e18c9a43c5db80b3351de73cd7d6169296e229b",
+      "bytes": 62844,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw_2023_1.npz",
+      "sha256": "86910898f3e3c7d5f637efd521ddeca28143d32736f026f5352eaddf6072f4af",
+      "bytes": 62600,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw_2023_2.npz",
+      "sha256": "5fa840874d51573edf239fe8e89727b332b5027f5e6af5a368fe1b1b29f5a8f2",
+      "bytes": 62645,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw_2023_3.npz",
+      "sha256": "217c0bd823bc55826bad991e968e75057df31cb438077192a02d459de116c77f",
+      "bytes": 62516,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw_2023_4.npz",
+      "sha256": "27a501634dc8be57c8273a9bb7deaba50aa5b7586fce1bd9ab05eaf48baa9cd7",
+      "bytes": 62735,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw_2023_5.npz",
+      "sha256": "dedc7fc05aa10c1cb33ed81b2cda58d342f5b15bdd2ce24a219cad2707292817",
+      "bytes": 62035,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw2_2023_1.npz",
+      "sha256": "5c5a27f4579ab60b9634d98bc0d5eef85fb472aad360ffce231681daec412fb9",
+      "bytes": 65181,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw2_2023_2.npz",
+      "sha256": "f0f43c4e1844df7295a31f5e974c6884b4e9a39ddce1335ff9d4f4b72154f8c9",
+      "bytes": 64421,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw2_2023_3.npz",
+      "sha256": "a3107ba7c632177e94d6915d6c9f39f1cbe86004a6cddfd1fd1090c5918a7ba9",
+      "bytes": 63533,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw2_2023_4.npz",
+      "sha256": "8281e6fbae4903ff1ba33448a401ce9b2ca51b71d6fd48cbdee50a54f4dd1e47",
+      "bytes": 64453,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_iw2_2023_5.npz",
+      "sha256": "942dccff8082eae2eba5b0b397a8cdf708c7c202e1dd9d2975ab259839cb5e61",
+      "bytes": 64360,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_ida_2023_1.npz",
+      "sha256": "8fab5b554c24606427900764fe21b187829b7bdbd3ce5f3cfbcc4945c3fa7da2",
+      "bytes": 68197,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_ida_2023_2.npz",
+      "sha256": "b2c71b5d8f4718330300d5052784ffc6cee166d98f2e3691912c0e36fad56a8b",
+      "bytes": 66810,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_ida_2023_3.npz",
+      "sha256": "98d7d83520eec425e41d5a9265dc44d833900a1b2e5a1e682146b32b171f624d",
+      "bytes": 67412,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_ida_2023_4.npz",
+      "sha256": "92b94da61a13e40e2bfdfd9e6490f9c146ff9381b8ddff0d6335d7567cb06382",
+      "bytes": 68014,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_il_2023_ida_2023_5.npz",
+      "sha256": "9b7d35dfe31f6a4a02eb6a21b7737b8ba72d03472ff93ec73a07fcf6f15d4438",
+      "bytes": 66685,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_iw_2023_1.npz",
+      "sha256": "210188ffce15f8cbee4822e332fd4a001441f5258b3eb0fbeffcfd220c1df530",
+      "bytes": 61603,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_iw_2023_2.npz",
+      "sha256": "3250772925bb65a35fab75fff3301c83c5226063f9a3a0dd23fce9ed3629fbd3",
+      "bytes": 61427,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_iw_2023_3.npz",
+      "sha256": "79ae55b95ffb24c00369f4c726d370f1c57628919d4ed15dabb819fa1ac9600a",
+      "bytes": 61916,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_iw_2023_4.npz",
+      "sha256": "745dcddeb086526f5745c6282686daf8de6254ccbd8e7dfdae9da7e6daf0f997",
+      "bytes": 62431,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_iw_2023_5.npz",
+      "sha256": "d1de5fce36d844b8a8b42ecbe42c03c9522071c58e24b2633bb3e6d0d135e23e",
+      "bytes": 61223,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_ida_2023_1.npz",
+      "sha256": "eb2c00a2234932a4f2302742f0f10f1700dd06759edeb0c1567be5b7ecdd0394",
+      "bytes": 69145,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_ida_2023_2.npz",
+      "sha256": "70efd5e4ea60f10f8bffd4fa9b517b812f9780da1517c86c03b2f02d4ed2a961",
+      "bytes": 68012,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_ida_2023_3.npz",
+      "sha256": "f6613c7e5a0b7d3e21a5cd73cd9f1d49196c7259ff0a8a85b032b8878dbc7f9a",
+      "bytes": 68185,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_ida_2023_4.npz",
+      "sha256": "127ff940e7bbba3029059d1c7a136ba51d0fe96e08f28a5fb8fad610b0274f35",
+      "bytes": 67915,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_ida_2023_5.npz",
+      "sha256": "cbdfee0fcf2323236edcd54ce152bb0946576a07df6be24109b1d49a503f7167",
+      "bytes": 67939,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_il_2023_1.npz",
+      "sha256": "e4794fe063fda8df15c17f7900305ac2d4ba406cf366b1013ba9fbf3d536c287",
+      "bytes": 63926,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_il_2023_2.npz",
+      "sha256": "74ee7b85bd34a82e7c0f206aca89b50a52835576c53554f41b04f11a8e5eaa04",
+      "bytes": 63262,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_il_2023_3.npz",
+      "sha256": "826e353d04138b0a3f9d54b0d8fc4ad6184cf486ddf14eac9cc5c60e892f3a2a",
+      "bytes": 64339,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_il_2023_4.npz",
+      "sha256": "8a25a4002438c8d6e9d673c0ad7676852225d0be097eec34530d06e5e6873013",
+      "bytes": 64185,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw2_2023_il_2023_5.npz",
+      "sha256": "59a4df72a968bf45ca55c64f3a12842fa62fba0d663fa1ab63eda4f7089f853a",
+      "bytes": 63680,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_iw2_2023_1.npz",
+      "sha256": "ac600c2b19ec306c50ab7ad0cd9f10f165f8b461c7b70e1f223fd07faa9fbf71",
+      "bytes": 63262,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_iw2_2023_2.npz",
+      "sha256": "75881f262a45ef4a5ef0acb92666e2fee0500b653795d824441a76869eab50c6",
+      "bytes": 61605,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_iw2_2023_3.npz",
+      "sha256": "4d916288a67e347a889a552666da947e4ad638add85892f79bfdc24f067ec9c3",
+      "bytes": 63313,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_iw2_2023_4.npz",
+      "sha256": "b3972c63502af3ff48aaff01521e63f72ebe38b40a510ae8e0d4c1489237bf9a",
+      "bytes": 62979,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_iw2_2023_5.npz",
+      "sha256": "79a2bcfc5f71404519c5e05d2410358c1daea0073a71571043b996ca630d41da",
+      "bytes": 62214,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_ida_2023_1.npz",
+      "sha256": "06e91547ddfa75f73af22ffa7942be29c77b94c7629b21842168fc2f85d957d5",
+      "bytes": 68174,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_ida_2023_2.npz",
+      "sha256": "5ea6d9313b3f088a4b7e198b2568d409a096b92e7d2e568ca5956ff06ed1a28a",
+      "bytes": 68081,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_ida_2023_3.npz",
+      "sha256": "60bb2937883498ad5b3e2851c6fa0cdf24014e0d17b3a0c11a1a038254f2b5c2",
+      "bytes": 68538,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_ida_2023_4.npz",
+      "sha256": "27fa6dc6281cce2a4e3f38dd1faf457e5d77c45e64c09eeb37d667e3aaa3e5e6",
+      "bytes": 68218,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_ida_2023_5.npz",
+      "sha256": "8b62193743107254fad181765475fc41d29b13682f26aa3e975a107815f8fb4f",
+      "bytes": 68923,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_il_2023_1.npz",
+      "sha256": "a896506aece3b798b17d70a459aa3eba25cc3a599a319f4a071463faf42c06a3",
+      "bytes": 63538,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_il_2023_2.npz",
+      "sha256": "e75fb0693db16531a8fe074cca3c816c1fdda1622ab11cde1ca288a4c143f132",
+      "bytes": 62078,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_il_2023_3.npz",
+      "sha256": "28ec3f590ab82ef454638adb744d50df3e755c79278bf478ce521419822e2bd4",
+      "bytes": 63611,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_il_2023_4.npz",
+      "sha256": "d047171757d897b063791626c52b1eb407afa0d512a86234d92f7cd7d2eab0ab",
+      "bytes": 63206,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/joint_cross_utae_iw_2023_il_2023_5.npz",
+      "sha256": "99699eda0a91119053ca75da460666035693afa8187ba6fc360d94b770a00ba3",
+      "bytes": 62631,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_f1_raw_scale/within_group_cm.csv",
+      "sha256": "4dd30e54cf17204efb264780e475ae528756c3afafdaa41a1ab02de12bd27aa2",
+      "bytes": 8403,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_f1_raw_scale/cross_group_fold_cm.csv",
+      "sha256": "2566a1340ac29883b5e4bf1092b7166d777bdf982f40cc4384ee1467065084ce",
+      "bytes": 138033,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/patch_features.csv",
+      "sha256": "8a96818571c27ae8d60b4dc9123f410156576302d2e2c5350aa19068892348a6",
+      "bytes": 407557,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_crop_spatial_context.py",
+      "sha256": "4f2c2abe8497d5183d8b1e37b2baeb643165feb306a1d2c53b46b8c05871cf39",
+      "bytes": 36588,
+      "role": "script"
+    }
+  ]
+}

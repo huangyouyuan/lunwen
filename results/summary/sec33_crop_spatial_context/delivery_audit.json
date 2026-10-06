@@ -1,0 +1,19 @@
+{
+  "status": "Verified",
+  "head": "2c4a1c3fefdc2805d116c5058a287941cd3729ed",
+  "tracked_changes": [],
+  "figure1_rows_checked": 76,
+  "figure3_distance_rows_checked": 126,
+  "figure2_and_figure3_matched_checks": "plot_checks.csv",
+  "three_pngs_visually_reviewed": true,
+  "nine_unit_tests": "test_results.txt",
+  "raw_distance_regenerated": false,
+  "data_status": "derived / exploratory",
+  "stage_input_counts": {
+    "prepare": 4820,
+    "count": 876,
+    "analyze": 207,
+    "diagnose": 48,
+    "plot": 9
+  }
+}

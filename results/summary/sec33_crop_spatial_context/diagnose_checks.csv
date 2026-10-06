@@ -1,0 +1,35 @@
+check,status,detail
+all exclusive masks and bands recover whole integers,Verified,
+36 paths models with exactly five explicit folds,Verified,
+whole two directed rates restore leakage,Verified,5.551115123125783e-17
+whole FN+FP restores one minus F1,Verified,5.551115123125783e-17
+distance two directed rates restore leakage,Verified,1.1102230246251565e-16
+distance FN+FP restores one minus F1,Verified,1.1102230246251565e-16
+area two directed rates restore leakage,Verified,1.1102230246251565e-16
+area FN+FP restores one minus F1,Verified,1.1102230246251565e-16
+matched two directed rates restore leakage,Verified,5.551115123125783e-17
+matched FN+FP restores one minus F1,Verified,5.551115123125783e-17
+exclusive type distance contributions restore full directed increments,Verified,2.7755575615628914e-17
+per-prediction exclusive contributions restore whole increments,Verified,5.551115123125783e-17
+same joint reference support corn,Verified,
+same joint reference support other,Verified,
+same joint reference support soybean,Verified,
+common weights sum to one by target,Verified,0.0
+original distance weights recover full-site leakage,Verified,5.551115123125783e-17
+original weighted increments recover full-site increments,Verified,5.551115123125783e-17
+four F1 terms restore per-prediction delta F1,Verified,1.249000902703301e-16
+four mean F1 terms restore delta F1,Verified,8.326672684688674e-17
+unique selected patches area_at_close_composition,Verified,
+composition caliper corn,Verified,
+composition caliper soybean,Verified,
+unique selected patches composition_at_close_area,Verified,
+AREA caliper,Verified,
+matched same-patch seven bands recover selected whole CM,Verified,
+saved distance finite positive iw_2023,Verified,
+saved distance seven intervals iw_2023,Verified,
+saved distance finite positive iw2_2023,Verified,
+saved distance seven intervals iw2_2023,Verified,
+saved distance finite positive ida_2023,Verified,
+saved distance seven intervals ida_2023,Verified,
+saved distance finite positive il_2023,Verified,
+saved distance seven intervals il_2023,Verified,

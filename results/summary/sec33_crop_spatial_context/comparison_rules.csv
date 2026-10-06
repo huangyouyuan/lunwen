@@ -1,0 +1,3 @@
+contrast,target,crop,left_group,right_group,left_candidates,right_candidates,eligible_pairs,selected_pairs,covariates,tolerances,logarithmic,other_q1,other_q2,minimum_pairs
+area_at_close_composition,il_2023,soybean,AREA_low,AREA_high,133,133,323,30,corn_ratio;soybean_ratio,"[0.05, 0.05]",False,0.0966796875,0.22200520833333309,10
+composition_at_close_area,il_2023,soybean,other_low,other_high,133,133,449,36,soybean_AREA_MN,[0.09531017980432493],True,0.0966796875,0.22200520833333309,10
