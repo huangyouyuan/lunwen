@@ -1,0 +1,15 @@
+table,metric,rows,na,negative,zero
+type_error_summary.csv,leakage_mean,1872,0,0,162
+type_error_summary.csv,delta_recall_mean,1872,0,1493,154
+type_error_summary.csv,delta_leakage_mean,1872,0,225,153
+type_error_summary.csv,delta_other_crop_rate_mean,1872,0,288,218
+type_error_summary.csv,delta_other_rate_mean,1872,0,354,207
+boundary_type_error_summary.csv,leakage_mean,1152,576,0,0
+boundary_type_error_summary.csv,delta_recall_mean,1152,576,405,0
+boundary_type_error_summary.csv,delta_leakage_mean,1152,576,171,0
+boundary_type_error_summary.csv,delta_other_crop_rate_mean,1152,576,197,0
+boundary_type_error_summary.csv,delta_other_rate_mean,1152,576,190,0
+whole_patch_miss_summary.csv,delta_no_correct_patch_fraction_mean,144,0,102,0
+whole_patch_miss_summary.csv,delta_no_correct_area_fraction_mean,144,0,91,0
+whole_patch_miss_summary.csv,delta_no_correct_patches_mean,144,0,102,0
+whole_patch_miss_summary.csv,delta_no_correct_pixels_mean,144,0,91,0

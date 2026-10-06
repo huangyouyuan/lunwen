@@ -1,0 +1,48 @@
+{
+  "T1": {
+    "cases": 72,
+    "negative_mean_leakage_delta": 31,
+    "other_crop_delta_larger": 34,
+    "boundary_delta_larger": 9,
+    "interior_delta_larger": 63,
+    "location_five_directions": {
+      "all_positive": 52,
+      "mixed": 16,
+      "all_negative": 4
+    }
+  },
+  "T2": {
+    "cases": 72,
+    "negative_mean_leakage_delta": 3,
+    "other_crop_delta_larger": 31,
+    "boundary_delta_larger": 62,
+    "interior_delta_larger": 10,
+    "location_five_directions": {
+      "all_negative": 54,
+      "mixed": 16,
+      "all_positive": 2
+    }
+  },
+  "T2_minus_T1_delta": {
+    "negative_mean": 7,
+    "positive_mean": 65,
+    "directions": {
+      "all_positive": 55,
+      "mixed": 12,
+      "all_negative": 5
+    }
+  },
+  "cross_T1_absolute_leakage_higher": 72,
+  "within_T1_absolute_leakage_higher": 24,
+  "pure_boundary": {
+    "1": {
+      "cases": 144,
+      "opposite_dominates": 144
+    },
+    "2": {
+      "cases": 144,
+      "opposite_dominates": 143
+    }
+  },
+  "T2_net_contribution_absolute_larger": 71
+}

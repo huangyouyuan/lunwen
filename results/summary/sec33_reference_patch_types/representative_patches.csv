@@ -1,0 +1,5 @@
+LID,PID,TYPE,AREA,GYRATE,SHAPE,CONTIG,ENN,input_file,target,site,crop,patch_uid,reference_pixels,touches_outer_edge,oof_fold_count,boundary_pixels,interior_pixels,far_interior_pixels,boundary_share,no_interior,row_min,row_max,col_min,col_max,feature_status,missing_reason,spatial_type
+D:\label\2023iw.tif,451,cls_1,0.17999999999999999,15,1,0.16669999999999999,94.868300000000005,2023iw.patch,iw_2023,A,corn,iw_2023__ref000451,2,False,1,2,0,0,1,True,18,19,211,211,valid,,1
+D:\label\2023iw2.tif,5045,cls_1,14.220000000000001,156.04689999999999,1.6153999999999999,0.85129999999999995,67.081999999999994,2023iw2.patch,iw2_2023,B,corn,iw2_2023__ref005045,158,False,1,73,85,0,0.46202531645569622,False,304,319,2132,2147,valid,,2
+D:\label\2023iw.tif,131,cls_3,0.17999999999999999,15,1,0.16669999999999999,94.868300000000005,2023iw.patch,iw_2023,A,soybean,iw_2023__ref000131,2,False,1,2,0,0,1,True,1,2,560,560,valid,,1
+D:\label\2023iw2.tif,9960,cls_3,14.039999999999999,148.4991,1.6000000000000001,0.84940000000000004,67.081999999999994,2023iw2.patch,iw2_2023,B,soybean,iw2_2023__ref009960,156,False,1,80,76,0,0.51282051282051277,False,623,636,1992,2004,valid,,2

@@ -1,0 +1,20 @@
+{
+  "stage": "plot_errors",
+  "created_at_utc": "2026-10-06T16:08:18.159048+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_reference_patch_types/type_error_summary.csv",
+      "sha256": "35e0a1de43236d0ee60847deee532f76f12e0b54a7091e5acb5db5827f877500",
+      "bytes": 2529585
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "adf3e327f1b9b474d603d4efa1f669ee63dbb95b19c9677fb60ff03677a83a5b",
+      "bytes": 33054
+    }
+  ],
+  "distance_regenerated": false,
+  "fragstats_rerun": false
+}

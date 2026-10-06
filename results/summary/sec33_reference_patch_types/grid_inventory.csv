@@ -1,0 +1,5 @@
+target,rows,cols,resolution_m,epsg,id_epsg_tag_present,nodata,connectivity,patches,crop_patches
+iw_2023,2560,2560,30,5070,False,none,8,37292,29841
+iw2_2023,2560,2560,30,5070,False,none,8,41056,30499
+ida_2023,2560,2560,30,5070,False,none,8,70261,57731
+il_2023,2560,2560,30,5070,False,none,8,38763,31163

@@ -1,0 +1,50 @@
+{
+  "stage": "analyze",
+  "created_at_utc": "2026-10-06T16:03:58.482027+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/frozen_configuration.json",
+      "sha256": "96cb9e642ad337094e8ad6f7f668f27599c769a6609c8817e9009c8215c3c869",
+      "bytes": 1041
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/frozen_patch_assignments.csv",
+      "sha256": "2b8c6a22f777354434693f9b404ceb5e21d62f94a58be7f284034cdbc8eda8fa",
+      "bytes": 35623969
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/type_error_counts.csv",
+      "sha256": "9a166ef286f9f0ecae2bfacada234ac09571954229bcf1d39c1ecfa186e4bf30",
+      "bytes": 2133475
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/whole_class_per_prediction.csv",
+      "sha256": "f473338a78b5b1bd011488952e0d8e174a8dd3cde7c3d3e1fb9b3266ca96f6f2",
+      "bytes": 281765
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/boundary_type_error_counts.csv",
+      "sha256": "796beac6941e69d3aaf9c26750bbd2455301bbbbafcfce81aea426d596028496",
+      "bytes": 896563
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/whole_patch_miss_counts.csv",
+      "sha256": "dde1242a043b2669244b46cabfbb2fcc2708b06a24c94eb89094df02626129e7",
+      "bytes": 99887
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/whole_crop_f1.csv",
+      "sha256": "473f043b0ba7b5e615a99e02f6f60a43dddb806d86be9175ba416ddb0a9a06c7",
+      "bytes": 25827
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "adf3e327f1b9b474d603d4efa1f669ee63dbb95b19c9677fb60ff03677a83a5b",
+      "bytes": 33054
+    }
+  ],
+  "distance_regenerated": false,
+  "fragstats_rerun": false
+}

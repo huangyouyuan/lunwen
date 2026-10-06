@@ -1,0 +1,35 @@
+{
+  "stage": "plot_features",
+  "created_at_utc": "2026-10-06T15:49:39.140618+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/frozen_patch_assignments.csv",
+      "sha256": "2b8c6a22f777354434693f9b404ceb5e21d62f94a58be7f284034cdbc8eda8fa",
+      "bytes": 35623969
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_reference_patch_types/representative_patches.csv",
+      "sha256": "470db402f1d5001ee970bdf55f3c22c025ff9b6ef46b2646669e21d5a11cf375",
+      "bytes": 1160
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_iw_2023.npz",
+      "sha256": "38270ee9aa5e5b0e23f034303b18f538eb20fd8a77185d55df778ca5f14b33cd",
+      "bytes": 3111852
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_iw2_2023.npz",
+      "sha256": "db309c96a959c75ad69568019357f825b9daa9c22b096678ed82885aeca5e21e",
+      "bytes": 3299811
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "5649536ad118412b6534572c7bfbffc1f122adb211731f82097afe0c40238281",
+      "bytes": 32434
+    }
+  ],
+  "distance_regenerated": false,
+  "fragstats_rerun": false
+}

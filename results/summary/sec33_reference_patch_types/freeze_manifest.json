@@ -1,0 +1,35 @@
+{
+  "stage": "freeze",
+  "created_at_utc": "2026-10-06T15:40:35.713458+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_patch_features.csv",
+      "sha256": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+      "bytes": 35249212
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/cluster_candidates.csv",
+      "sha256": "1196a33f18bf800f41e303a5c805750d48afb30c4c47231817c619b4c3e01513",
+      "bytes": 7374356
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_reference_patch_types/cluster_diagnostics.csv",
+      "sha256": "8415e275807c46341c249fdcc3d20b59b79517dcf483bda47086579ba6c2333a",
+      "bytes": 453
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/cluster_parameters.json",
+      "sha256": "db3409a9de1a286c5e38bda8cd39e23bdf5afc6f38b671265f33ebd1d03484ac",
+      "bytes": 1980
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "7b4110f727176f67946fcd870da758f4e32d678e3f171b48a2436b78f6f17d79",
+      "bytes": 16019
+    }
+  ],
+  "distance_regenerated": false,
+  "fragstats_rerun": false
+}

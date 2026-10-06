@@ -1,0 +1,13 @@
+# Preserve the bytes recorded by this exploration's SHA-256 manifests.
+/.gitattributes -text
+/results/raw/sec33_reference_patch_types/** -text
+/results/processed/sec33_reference_patch_types/** -text
+/results/summary/sec33_reference_patch_types/** -text
+/figures/exploratory/sec33_reference_patch_types/** -text
+/scripts/explore_sec33_reference_patch_types.py -text
+/scripts/plot_sec33_reference_patch_types.py -text
+/scripts/audit_sec33_reference_patch_types.py -text
+/scripts/export_sec33_reference_patch_raw_tables.py -text
+/scripts/test/test_sec33_reference_patch_types.py -text
+/plan/tasks/2026-10-06-sec33-reference-patch-types.md -text
+/verification/sec33-reference-patch-types-2026-10-07.md -text

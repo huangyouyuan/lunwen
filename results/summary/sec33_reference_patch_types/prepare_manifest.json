@@ -1,0 +1,110 @@
+{
+  "stage": "prepare",
+  "created_at_utc": "2026-10-06T15:38:42.465621+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023ida.patch",
+      "sha256": "898ce9c1d767c8759a780749ca089a2de8d778b2169878c922f109920010ff17",
+      "bytes": 8431377
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023il.patch",
+      "sha256": "435fb93ecd94e30f330287d5f78ba547395d16bb973c764b68397550be8255f6",
+      "bytes": 4612854
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw.patch",
+      "sha256": "4b214cd1d664722fb7a905bcd7eeafd7a369470caf200e4cf35afca54efe8bb6",
+      "bytes": 9050602
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw2.patch",
+      "sha256": "c5d44c426226d59b5d634f2ff856b160d3df34f174b8a888c4f562fe4c8c3bb5",
+      "bytes": 4926777
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw.tif",
+      "sha256": "eae9ebfab9e9a0c47102db82b1a700694e8cd55e09a24df92c2e0f95d583093a",
+      "bytes": 526106
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw_id8.tif",
+      "sha256": "030765d3a745044fdca28d406e1fce863e5dc3de4c63116a7dac51200e7bf896",
+      "bytes": 7243217
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_iw_2023.npz",
+      "sha256": "09370ce886e8f118a96a273bd3e40add667056c4fc68238c22f3ea9c07069753",
+      "bytes": 2000740
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw2.tif",
+      "sha256": "5fb952fe6a62e25e276d9b98d43c18d174746bcc49862a560e9e5e4a57594510",
+      "bytes": 513075
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023iw2_id8.tif",
+      "sha256": "00360dfd25bc85056230cbff9b079d1604f9ff9d126998ac9f510bca0c7a7b34",
+      "bytes": 6062025
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_iw2_2023.npz",
+      "sha256": "d1f3e5eb1fb9ac67eb91d53e9461846fbdb06bc852793d358d99432ae4ed7cd5",
+      "bytes": 2132984
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023ida.tif",
+      "sha256": "e79e64e14082d9b1b29f56c36b0ce49fec4f0ae7742c767262578ecede6d8487",
+      "bytes": 588839
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023ida_id8.tif",
+      "sha256": "ddf219191a408a51e499c7fac2ac81a668db5e3814f9cbf2c2351cc287025540",
+      "bytes": 6637018
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_ida_2023.npz",
+      "sha256": "cbf78f28146fc180ca1bbfaccc11c46dd468031bc9fc77a10bcff281c14f20d1",
+      "bytes": 2428547
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023il.tif",
+      "sha256": "2e0dbc0daa93b6a6770e10bb2fcf6ac0e3f3725e4f1b0d4d5d7ce81f67c79c0f",
+      "bytes": 506638
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/2023il_id8.tif",
+      "sha256": "9763382ef6f9086a9ea0b9f4353dcefbd37d4e033dcd2d9d4f6c845caaa7bb67",
+      "bytes": 6678827
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/reference_il_2023.npz",
+      "sha256": "971ea14dd4670505f95c2727aed69559d6c8b37f95abb81dbcf8112685d7c9ef",
+      "bytes": 2000713
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/fragstats_results/完整标签景观级指标.csv",
+      "sha256": "70f1dae18a9c4a31a6fdd7b190dcf33d8e1231986e357371e160aadf69414297",
+      "bytes": 568
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/fragstats_results/完整标签类别级指标.csv",
+      "sha256": "cfdce6d5179f99a27a64a48c7ffa474df9a4c7004332d0c29eedcb772414a420",
+      "bytes": 3136
+    },
+    {
+      "path": "D:/AI/lunwen/legacy/experiment-results/label/fragstats_results/完整标签邻接矩阵.csv",
+      "sha256": "4e71af8cba820313493f740c22786970eb57627ba2aac6ec7df4e450c62f9743",
+      "bytes": 4981
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "7b4110f727176f67946fcd870da758f4e32d678e3f171b48a2436b78f6f17d79",
+      "bytes": 16019
+    }
+  ],
+  "distance_regenerated": false,
+  "fragstats_rerun": false
+}

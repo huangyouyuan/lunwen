@@ -1,0 +1,86 @@
+{
+  "features": [
+    "AREA",
+    "SHAPE",
+    "ENN"
+  ],
+  "transforms": [
+    "natural_log",
+    "natural_log",
+    "natural_log"
+  ],
+  "interpretation": "area, perimeter complexity, same-class nearest-neighbor distance",
+  "standardization": "reference patch weights equal for each of eight site-crop strata",
+  "center": [
+    -0.7359469221891306,
+    0.15334837192045989,
+    4.452617672045268
+  ],
+  "scale": [
+    2.3922680928297972,
+    0.2505292371436978,
+    0.4892558065003007
+  ],
+  "random_state": 61006,
+  "centers": {
+    "2": [
+      [
+        -0.5506773250743695,
+        -0.49071776559951,
+        0.19918878427089853
+      ],
+      [
+        1.411690851409735,
+        1.2579813055270712,
+        -0.5106311294377164
+      ]
+    ],
+    "3": [
+      [
+        -0.523698636498467,
+        -0.446652439638027,
+        -0.405132331266395
+      ],
+      [
+        -0.5159791558466285,
+        -0.4694097895918074,
+        1.5855168061594465
+      ],
+      [
+        1.5102242813731945,
+        1.3133880280864572,
+        -0.5461969683005553
+      ]
+    ],
+    "4": [
+      [
+        -0.5653331505845478,
+        -0.5051490072310638,
+        -0.40046238677679374
+      ],
+      [
+        -0.533376415480981,
+        -0.4789385560900116,
+        1.5911290403192428
+      ],
+      [
+        1.1851420490810163,
+        0.6608352457960819,
+        -0.48769311909316093
+      ],
+      [
+        1.7534329211848179,
+        2.3848639455253333,
+        -0.6029368113187993
+      ]
+    ]
+  },
+  "clustering_weight": "1 / crop patch count in target-crop stratum, normalized mean=1",
+  "excluded_features": {
+    "GYRATE": "rank-redundant size and spatial extent; not pure elongation",
+    "CONTIG": "rank-redundant with AREA in this input",
+    "FRAC": "not supplied",
+    "PROX": "not supplied; no radius assumed"
+  },
+  "data_status": "reference features only; predictions not read"
+}

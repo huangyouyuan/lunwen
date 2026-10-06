@@ -1,0 +1,5 @@
+scope,dataset_id,patch_id,patch_uid,lid,source_file,ed_reported,ed_recomputed,ed_abs_error,verified
+full,ida_2023,,,D:\label\2023ida.tif,/mnt/d/label/2023ida.land,65.529700000000005,65.529734293619796,3.4293619791014862e-05,True
+full,il_2023,,,D:\label\2023il.tif,/mnt/d/label/2023il.land,51.759,51.758982340494796,1.7659505203937442e-05,True
+full,iw_2023,,,D:\label\2023iw.tif,/mnt/d/label/2023iw.land,55.211500000000001,55.211537679036461,3.7679036459792314e-05,True
+full,iw2_2023,,,D:\label\2023iw2.tif,/mnt/d/label/2023iw2.land,54.474699999999999,54.474690755208336,9.2447916628657367e-06,True

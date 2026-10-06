@@ -1,0 +1,13 @@
+test_diagonal_connectivity_and_nonmatching_ids (__main__.ReferencePatchTests.test_diagonal_connectivity_and_nonmatching_ids) ... ok
+test_directional_errors_use_true_class_denominator (__main__.ReferencePatchTests.test_directional_errors_use_true_class_denominator) ... ok
+test_five_predictions_and_na_not_equal (__main__.ReferencePatchTests.test_five_predictions_and_na_not_equal) ... ok
+test_id_crossing_class_or_splitting_component_rejected (__main__.ReferencePatchTests.test_id_crossing_class_or_splitting_component_rejected) ... ok
+test_join_by_identity_and_negative_changes (__main__.ReferencePatchTests.test_join_by_identity_and_negative_changes) ... ok
+test_patch_band_counts_and_zero_support (__main__.ReferencePatchTests.test_patch_band_counts_and_zero_support) ... ok
+test_reference_transform_is_common_and_positive (__main__.ReferencePatchTests.test_reference_transform_is_common_and_positive) ... ok
+test_whole_miss_is_no_correct_not_any_error (__main__.ReferencePatchTests.test_whole_miss_is_no_correct_not_any_error) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.026s
+
+OK

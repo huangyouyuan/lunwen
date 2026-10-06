@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-10-06T15:40:35.021857+00:00",
+  "selected_k": 2,
+  "selection": "eligible silhouette maximum; smallest K within 0.02; no prediction errors used",
+  "frozen_files": {
+    "results\\processed\\sec33_reference_patch_types\\reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results\\processed\\sec33_reference_patch_types\\cluster_candidates.csv": "1196a33f18bf800f41e303a5c805750d48afb30c4c47231817c619b4c3e01513",
+    "results\\processed\\sec33_reference_patch_types\\cluster_parameters.json": "db3409a9de1a286c5e38bda8cd39e23bdf5afc6f38b671265f33ebd1d03484ac",
+    "results\\processed\\sec33_reference_patch_types\\frozen_patch_assignments.csv": "2b8c6a22f777354434693f9b404ceb5e21d62f94a58be7f284034cdbc8eda8fa",
+    "results\\summary\\sec33_reference_patch_types\\cluster_diagnostics.csv": "8415e275807c46341c249fdcc3d20b59b79517dcf483bda47086579ba6c2333a"
+  },
+  "names_pending_reference_visual_review": true,
+  "prediction_read_gate": true
+}

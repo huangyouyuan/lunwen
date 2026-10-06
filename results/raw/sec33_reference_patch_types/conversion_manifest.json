@@ -1,0 +1,275 @@
+{
+  "created_at_utc": "2026-10-06T16:38:59.484201+00:00",
+  "data_status": "real; format conversion of supplied experimental outputs",
+  "status": "Verified",
+  "numeric_recalculation": false,
+  "verification": "All exported cells compared as strings after trimming layout whitespace; adjacency blocks reconstructed exactly; originals unchanged.",
+  "script": "scripts/export_sec33_reference_patch_raw_tables.py",
+  "script_sha256": "488086efef182be1569c136817ec4fe6334fe9f6f7dcb8e3ea6376f26f05ff87",
+  "tables": [
+    {
+      "source": "legacy/experiment-results/label/2023ida.patch",
+      "source_sha256": "898ce9c1d767c8759a780749ca089a2de8d778b2169878c922f109920010ff17",
+      "source_bytes": 8431377,
+      "output": "results/raw/sec33_reference_patch_types/2023ida_patch.csv",
+      "output_sha256": "55c4724a32dc8bf887bb132dba94a2649c1893b41d77776bb57664bf91ccae3c",
+      "output_bytes": 4939842,
+      "rows": 70261,
+      "columns": [
+        "LID",
+        "PID",
+        "TYPE",
+        "AREA",
+        "GYRATE",
+        "SHAPE",
+        "CONTIG",
+        "ENN"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023ida.tif": 70261
+      },
+      "conversion": "Whitespace trimmed; original columns, row order, duplicates and numeric literals preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023il.patch",
+      "source_sha256": "435fb93ecd94e30f330287d5f78ba547395d16bb973c764b68397550be8255f6",
+      "source_bytes": 4612854,
+      "output": "results/raw/sec33_reference_patch_types/2023il_patch.csv",
+      "output_sha256": "26aa8143b676f853a18cfefe5b3ea236012f09692a23bc08352bd4b6a1020628",
+      "output_bytes": 2688951,
+      "rows": 38763,
+      "columns": [
+        "LID",
+        "PID",
+        "TYPE",
+        "AREA",
+        "GYRATE",
+        "SHAPE",
+        "CONTIG",
+        "ENN"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023il.tif": 38763
+      },
+      "conversion": "Whitespace trimmed; original columns, row order, duplicates and numeric literals preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023iw.patch",
+      "source_sha256": "4b214cd1d664722fb7a905bcd7eeafd7a369470caf200e4cf35afca54efe8bb6",
+      "source_bytes": 9050602,
+      "output": "results/raw/sec33_reference_patch_types/2023iw_patch.csv",
+      "output_sha256": "6fc201b00320f11c613cd348410bdc495d2a3c51313c88d38fab4c39aadbcf73",
+      "output_bytes": 5277469,
+      "rows": 76055,
+      "columns": [
+        "LID",
+        "PID",
+        "TYPE",
+        "AREA",
+        "GYRATE",
+        "SHAPE",
+        "CONTIG",
+        "ENN"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023il.tif": 38763,
+        "D:\\label\\2023iw.tif": 37292
+      },
+      "conversion": "Whitespace trimmed; original columns, row order, duplicates and numeric literals preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023iw2.patch",
+      "source_sha256": "c5d44c426226d59b5d634f2ff856b160d3df34f174b8a888c4f562fe4c8c3bb5",
+      "source_bytes": 4926777,
+      "output": "results/raw/sec33_reference_patch_types/2023iw2_patch.csv",
+      "output_sha256": "d1922b228e24d8d035a0cdc16d900e073f0f4ca49902b5eb0d2d5c12ce87d717",
+      "output_bytes": 2889571,
+      "rows": 41056,
+      "columns": [
+        "LID",
+        "PID",
+        "TYPE",
+        "AREA",
+        "GYRATE",
+        "SHAPE",
+        "CONTIG",
+        "ENN"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023iw2.tif": 41056
+      },
+      "conversion": "Whitespace trimmed; original columns, row order, duplicates and numeric literals preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023ida.adj",
+      "source_sha256": "e62764f1ed0467d667cc3f2e0d7e3216569a6d7b81698f8c567c04155dd7443d",
+      "source_bytes": 173,
+      "output": "results/raw/sec33_reference_patch_types/2023ida_adjacency.csv",
+      "output_sha256": "a493689ebb07f10bdbddcbfe9353e560f8ecf8463954181d6165038434e626ff",
+      "output_bytes": 447,
+      "rows": 12,
+      "columns": [
+        "LID",
+        "CLASS_FROM",
+        "CLASS_TO",
+        "ADJACENCIES"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023ida.tif": 12
+      },
+      "conversion": "Original matrix blocks reshaped to LID/from/to/count; every matrix cell retained and reconstructed.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023il.adj",
+      "source_sha256": "dbbe0061048731904dbbe009723816e48ce24827fd25c241bb9c4b39d995b753",
+      "source_bytes": 172,
+      "output": "results/raw/sec33_reference_patch_types/2023il_adjacency.csv",
+      "output_sha256": "959bfd6b7e6fce411c022a347725b88233d88f61475338fbfe69c0f7234a8aa4",
+      "output_bytes": 435,
+      "rows": 12,
+      "columns": [
+        "LID",
+        "CLASS_FROM",
+        "CLASS_TO",
+        "ADJACENCIES"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023il.tif": 12
+      },
+      "conversion": "Original matrix blocks reshaped to LID/from/to/count; every matrix cell retained and reconstructed.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023iw.adj",
+      "source_sha256": "0c29494cb13d0ad88875dfe2fba3cf58ebdc3dbb3911b27b3287f6a9ff8b4044",
+      "source_bytes": 345,
+      "output": "results/raw/sec33_reference_patch_types/2023iw_adjacency.csv",
+      "output_sha256": "ff468b61d8b61002b62427f27c5a00b06c680eae5a1122489b4e4bea4e7b47c8",
+      "output_bytes": 832,
+      "rows": 24,
+      "columns": [
+        "LID",
+        "CLASS_FROM",
+        "CLASS_TO",
+        "ADJACENCIES"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023il.tif": 12,
+        "D:\\label\\2023iw.tif": 12
+      },
+      "conversion": "Original matrix blocks reshaped to LID/from/to/count; every matrix cell retained and reconstructed.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/2023iw2.adj",
+      "source_sha256": "3a660fc7511bf8d6aee367bbfa8cadc30c48167ef87b0f0eb21d8f23fa641c13",
+      "source_bytes": 174,
+      "output": "results/raw/sec33_reference_patch_types/2023iw2_adjacency.csv",
+      "output_sha256": "a6098f38c06ca7732c7fb112401423e361706a2537bce59e672d6b5dcf43d195",
+      "output_bytes": 448,
+      "rows": 12,
+      "columns": [
+        "LID",
+        "CLASS_FROM",
+        "CLASS_TO",
+        "ADJACENCIES"
+      ],
+      "rows_by_lid": {
+        "D:\\label\\2023iw2.tif": 12
+      },
+      "conversion": "Original matrix blocks reshaped to LID/from/to/count; every matrix cell retained and reconstructed.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/fragstats_results/完整标签景观级指标.csv",
+      "source_sha256": "70f1dae18a9c4a31a6fdd7b190dcf33d8e1231986e357371e160aadf69414297",
+      "source_bytes": 568,
+      "output": "results/raw/sec33_reference_patch_types/完整标签景观级指标.csv",
+      "output_sha256": "92b1034e8098ae593a7cfd264fa8b34fe27451836de2581d926c6a6a8b2fb538",
+      "output_bytes": 563,
+      "rows": 4,
+      "columns": [
+        "scope",
+        "dataset_id",
+        "patch_id",
+        "patch_uid",
+        "lid",
+        "source_file",
+        "ed_reported",
+        "ed_recomputed",
+        "ed_abs_error",
+        "verified"
+      ],
+      "rows_by_lid": null,
+      "conversion": "Existing full-label background CSV; field text and row order preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/fragstats_results/完整标签类别级指标.csv",
+      "source_sha256": "cfdce6d5179f99a27a64a48c7ffa474df9a4c7004332d0c29eedcb772414a420",
+      "source_bytes": 3136,
+      "output": "results/raw/sec33_reference_patch_types/完整标签类别级指标.csv",
+      "output_sha256": "411028b3d78ba98420616c13120aed8f925f2d9c5a99240129f84cd35339ef77",
+      "output_bytes": 3123,
+      "rows": 12,
+      "columns": [
+        "scope",
+        "dataset_id",
+        "patch_id",
+        "patch_uid",
+        "lid",
+        "source_file",
+        "class_id",
+        "class_name",
+        "class_present",
+        "class_pixels",
+        "patch_count_8n",
+        "pd_reported",
+        "pd_recomputed",
+        "pd_abs_error",
+        "area_mn_reported",
+        "area_mn_recomputed",
+        "area_mn_abs_error",
+        "ai_reported",
+        "ai_recomputed",
+        "ai_abs_error",
+        "verified"
+      ],
+      "rows_by_lid": null,
+      "conversion": "Existing full-label background CSV; field text and row order preserved.",
+      "status": "Verified"
+    },
+    {
+      "source": "legacy/experiment-results/label/fragstats_results/完整标签邻接矩阵.csv",
+      "source_sha256": "4e71af8cba820313493f740c22786970eb57627ba2aac6ec7df4e450c62f9743",
+      "source_bytes": 4981,
+      "output": "results/raw/sec33_reference_patch_types/完整标签邻接矩阵.csv",
+      "output_sha256": "0f68d0aeb8c6c0e4f9f55920796eeaa2755e5f687d1eeeb1db55acb8717175d4",
+      "output_bytes": 4932,
+      "rows": 48,
+      "columns": [
+        "scope",
+        "dataset_id",
+        "patch_id",
+        "patch_uid",
+        "lid",
+        "source_file",
+        "source_class_id",
+        "source_class_name",
+        "target_class_id",
+        "target_class_name",
+        "adjacency_reported",
+        "adjacency_recomputed",
+        "verified"
+      ],
+      "rows_by_lid": null,
+      "conversion": "Existing full-label background CSV; field text and row order preserved.",
+      "status": "Verified"
+    }
+  ]
+}

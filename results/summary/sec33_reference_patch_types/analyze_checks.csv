@@ -1,0 +1,12 @@
+check,status,detail
+frozen input results\processed\sec33_reference_patch_types\reference_patch_features.csv,Verified,
+frozen input results\processed\sec33_reference_patch_types\cluster_candidates.csv,Verified,
+frozen input results\processed\sec33_reference_patch_types\cluster_parameters.json,Verified,
+frozen input results\processed\sec33_reference_patch_types\frozen_patch_assignments.csv,Verified,
+frozen input results\summary\sec33_reference_patch_types\cluster_diagnostics.csv,Verified,
+type_error directional closure,Verified,
+boundary interior integer net closure,Verified,
+boundary interior rate contribution closure,Verified,
+types recover whole leakage delta,Verified,
+boundary_type_error directional closure,Verified,
+full F1 unchanged,Verified,
