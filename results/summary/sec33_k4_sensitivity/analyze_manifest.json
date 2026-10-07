@@ -1,0 +1,37 @@
+{
+  "stage": "analyze",
+  "created_at_utc": "2026-10-06T18:21:35.014016+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory; post-main K4 sensitivity",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/analysis_settings.json",
+      "sha256": "420f98edb264ec575e3c9f8f3ec04cf7ad9592ffd03ecc7b05ea32296d349dfa",
+      "bytes": 4117
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/type_error_counts.csv",
+      "sha256": "59298d6c0d989e452b1c35950abce4072cebeee11db1994c847598881f078188",
+      "bytes": 3859006
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/type_error_per_prediction.csv",
+      "sha256": "d3dd5234f6b3f61d731d8536d75d10e1e4ba51721297f06796d0998e57ba48f9",
+      "bytes": 4554038
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_k4_sensitivity.py",
+      "sha256": "c7697026414cf763ab08a6da279489ee88654b74d3b03040684b0bf6d6b1beba",
+      "bytes": 22487
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+      "bytes": 33090
+    }
+  ],
+  "kmeans_rerun": false,
+  "fragstats_rerun": false,
+  "prediction_rerun": false,
+  "distance_regenerated": false
+}

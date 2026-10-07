@@ -1,0 +1,72 @@
+{
+  "stage": "reference",
+  "created_at_utc": "2026-10-06T18:16:49.054244+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory; post-main K4 sensitivity",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_reference_patch_types/delivery_manifest.json",
+      "sha256": "79656dfe5bc8b2f45601e282358a25a892346126f45d345ecef7eb25f563e028",
+      "bytes": 65269
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_patch_features.csv",
+      "sha256": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+      "bytes": 35249212
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/cluster_candidates.csv",
+      "sha256": "1196a33f18bf800f41e303a5c805750d48afb30c4c47231817c619b4c3e01513",
+      "bytes": 7374356
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/frozen_patch_assignments.csv",
+      "sha256": "2b8c6a22f777354434693f9b404ceb5e21d62f94a58be7f284034cdbc8eda8fa",
+      "bytes": 35623969
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/cluster_parameters.json",
+      "sha256": "db3409a9de1a286c5e38bda8cd39e23bdf5afc6f38b671265f33ebd1d03484ac",
+      "bytes": 1980
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_iw_2023.npz",
+      "sha256": "38270ee9aa5e5b0e23f034303b18f538eb20fd8a77185d55df778ca5f14b33cd",
+      "bytes": 3111852
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_iw2_2023.npz",
+      "sha256": "db309c96a959c75ad69568019357f825b9daa9c22b096678ed82885aeca5e21e",
+      "bytes": 3299811
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_ida_2023.npz",
+      "sha256": "00cbe0ac3a46402e34fcaf08cb60919f01d95c8b16e0cd30739f3cfdbf523e45",
+      "bytes": 3809119
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_il_2023.npz",
+      "sha256": "201c2360bbfa1af4783309f84cd1bf93a9647e9ae660303ad9e3bd8d75a3c1de",
+      "bytes": 3121605
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/prediction_count_index.csv",
+      "sha256": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e",
+      "bytes": 47345
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_k4_sensitivity.py",
+      "sha256": "16edd1ac84ba9540e0ac6ae1b8f147db100d1516d3189835b14d97b2e6ea4a32",
+      "bytes": 22441
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+      "bytes": 33090
+    }
+  ],
+  "kmeans_rerun": false,
+  "fragstats_rerun": false,
+  "prediction_rerun": false,
+  "distance_regenerated": false
+}

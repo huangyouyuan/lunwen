@@ -1,0 +1,5 @@
+# Only the new K4 sensitivity files; prior attributes remain unchanged.
+/.gitattributes -text
+/explore_sec33_k4_sensitivity.py -text
+/plot_sec33_k4_sensitivity.py -text
+/test/test_sec33_k4_sensitivity.py -text

@@ -1,0 +1,5 @@
+metric,n,boundary_lower_interior_higher,boundary_higher_interior_lower,same_sign
+leakage,72,45,1,26
+delta_leakage,72,9,1,62
+delta_other_crop_rate,72,20,4,48
+delta_other_rate,72,7,1,64

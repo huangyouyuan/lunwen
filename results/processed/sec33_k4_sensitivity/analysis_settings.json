@@ -1,0 +1,156 @@
+{
+  "created_at_utc": "2026-10-06T18:16:48.977244+00:00",
+  "local_analysis_date": "2026-10-07",
+  "starting_head": "d29a228",
+  "status": "post-main-analysis sensitivity; K2 remains main",
+  "selected_k": 4,
+  "reason": "Author requested examination of major crop area within saved K4 C3/C4 after K2 analysis.",
+  "saved_clustering_parameters": {
+    "features": [
+      "AREA",
+      "SHAPE",
+      "ENN"
+    ],
+    "transforms": [
+      "natural_log",
+      "natural_log",
+      "natural_log"
+    ],
+    "interpretation": "area, perimeter complexity, same-class nearest-neighbor distance",
+    "standardization": "reference patch weights equal for each of eight site-crop strata",
+    "center": [
+      -0.7359469221891306,
+      0.15334837192045989,
+      4.452617672045268
+    ],
+    "scale": [
+      2.3922680928297972,
+      0.2505292371436978,
+      0.4892558065003007
+    ],
+    "random_state": 61006,
+    "centers": {
+      "2": [
+        [
+          -0.5506773250743695,
+          -0.49071776559951,
+          0.19918878427089853
+        ],
+        [
+          1.411690851409735,
+          1.2579813055270712,
+          -0.5106311294377164
+        ]
+      ],
+      "3": [
+        [
+          -0.523698636498467,
+          -0.446652439638027,
+          -0.405132331266395
+        ],
+        [
+          -0.5159791558466285,
+          -0.4694097895918074,
+          1.5855168061594465
+        ],
+        [
+          1.5102242813731945,
+          1.3133880280864572,
+          -0.5461969683005553
+        ]
+      ],
+      "4": [
+        [
+          -0.5653331505845478,
+          -0.5051490072310638,
+          -0.40046238677679374
+        ],
+        [
+          -0.533376415480981,
+          -0.4789385560900116,
+          1.5911290403192428
+        ],
+        [
+          1.1851420490810163,
+          0.6608352457960819,
+          -0.48769311909316093
+        ],
+        [
+          1.7534329211848179,
+          2.3848639455253333,
+          -0.6029368113187993
+        ]
+      ]
+    },
+    "clustering_weight": "1 / crop patch count in target-crop stratum, normalized mean=1",
+    "excluded_features": {
+      "GYRATE": "rank-redundant size and spatial extent; not pure elongation",
+      "CONTIG": "rank-redundant with AREA in this input",
+      "FRAC": "not supplied",
+      "PROX": "not supplied; no radius assumed"
+    },
+    "data_status": "reference features only; predictions not read"
+  },
+  "assignment_source": "results/processed/sec33_reference_patch_types/cluster_candidates.csv:k4",
+  "assignment_key": [
+    "target",
+    "PID"
+  ],
+  "regions": {
+    "all": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "boundary": [
+      0
+    ],
+    "interior": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "far_interior": [
+      6
+    ],
+    "band_1": [
+      0
+    ],
+    "band_2": [
+      1
+    ],
+    "band_3": [
+      2
+    ],
+    "band_4": [
+      3
+    ],
+    "band_5": [
+      4
+    ],
+    "band_6": [
+      5
+    ],
+    "band_7": [
+      6
+    ]
+  },
+  "comparison": "C4 minus C3; same source prediction number; different reference patch sets",
+  "ref_diagnosis_precedes_new_error_aggregation": true,
+  "not_initially_prespecified_main_analysis": true,
+  "locked_files": {
+    "results/processed/sec33_k4_sensitivity/selected_assignments.csv": "c2ff9f69fce427bb152f17d6826a0fa961a5e7f0c15ecdc3316c55ad46dd90b0",
+    "results/summary/sec33_k4_sensitivity/representative_patches.csv": "154bacd7340627987fa97c9b907071bb2c5734d98b3c265003e7e7465b6e89a2",
+    "results/processed/sec33_reference_patch_types/cluster_parameters.json": "db3409a9de1a286c5e38bda8cd39e23bdf5afc6f38b671265f33ebd1d03484ac",
+    "results/processed/sec33_reference_patch_types/cluster_candidates.csv": "1196a33f18bf800f41e303a5c805750d48afb30c4c47231817c619b4c3e01513",
+    "results/processed/sec33_reference_patch_types/frozen_configuration.json": "96cb9e642ad337094e8ad6f7f668f27599c769a6609c8817e9009c8215c3c869",
+    "results/processed/sec33_reference_patch_types/frozen_patch_assignments.csv": "2b8c6a22f777354434693f9b404ceb5e21d62f94a58be7f284034cdbc8eda8fa"
+  }
+}

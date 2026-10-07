@@ -1,0 +1,57 @@
+{
+  "stage": "plot_features",
+  "created_at_utc": "2026-10-06T18:18:45.647693+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory; post-main K4 sensitivity",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/analysis_settings.json",
+      "sha256": "420f98edb264ec575e3c9f8f3ec04cf7ad9592ffd03ecc7b05ea32296d349dfa",
+      "bytes": 4117
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/selected_assignments.csv",
+      "sha256": "c2ff9f69fce427bb152f17d6826a0fa961a5e7f0c15ecdc3316c55ad46dd90b0",
+      "bytes": 30503331
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_k4_sensitivity/representative_patches.csv",
+      "sha256": "154bacd7340627987fa97c9b907071bb2c5734d98b3c265003e7e7465b6e89a2",
+      "bytes": 10563
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_ida_2023.npz",
+      "sha256": "00cbe0ac3a46402e34fcaf08cb60919f01d95c8b16e0cd30739f3cfdbf523e45",
+      "bytes": 3809119
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_il_2023.npz",
+      "sha256": "201c2360bbfa1af4783309f84cd1bf93a9647e9ae660303ad9e3bd8d75a3c1de",
+      "bytes": 3121605
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_reference_patch_types/reference_full_iw2_2023.npz",
+      "sha256": "db309c96a959c75ad69568019357f825b9daa9c22b096678ed82885aeca5e21e",
+      "bytes": 3299811
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/plot_sec33_k4_sensitivity.py",
+      "sha256": "9c04caa58d24252776a107eb984e6ee034b5d13b516cd07092f5078983b2494b",
+      "bytes": 7340
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_k4_sensitivity.py",
+      "sha256": "16edd1ac84ba9540e0ac6ae1b8f147db100d1516d3189835b14d97b2e6ea4a32",
+      "bytes": 22441
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+      "bytes": 33090
+    }
+  ],
+  "kmeans_rerun": false,
+  "fragstats_rerun": false,
+  "prediction_rerun": false,
+  "distance_regenerated": false
+}

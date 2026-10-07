@@ -1,0 +1,32 @@
+{
+  "stage": "plot_errors",
+  "created_at_utc": "2026-10-06T18:22:07.479012+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory; post-main K4 sensitivity",
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_k4_sensitivity/C4_minus_C3_summary.csv",
+      "sha256": "8ce98bb40c8cfb3f131b50aba8801060b569b0ac0e7fd8d2e501eb9562bbb66c",
+      "bytes": 1086773
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/plot_sec33_k4_sensitivity.py",
+      "sha256": "9c04caa58d24252776a107eb984e6ee034b5d13b516cd07092f5078983b2494b",
+      "bytes": 7340
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_k4_sensitivity.py",
+      "sha256": "c7697026414cf763ab08a6da279489ee88654b74d3b03040684b0bf6d6b1beba",
+      "bytes": 22487
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_reference_patch_types.py",
+      "sha256": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+      "bytes": 33090
+    }
+  ],
+  "kmeans_rerun": false,
+  "fragstats_rerun": false,
+  "prediction_rerun": false,
+  "distance_regenerated": false
+}
