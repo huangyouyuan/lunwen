@@ -90,8 +90,12 @@ Zotero → Better BibTeX → Keep Updated → `bibliography/references.bib`
 | 历史 3.3 分组探索（DR） | `scripts/explore_sec33.py` | `prepare` 固定分组，`analyze` 计算；现有成果不得未经检查覆盖重跑 |
 | 3.3 边界探索 | `scripts/explore_sec33_boundary.py` | 当前探索入口，不是单元测试，不代表正式纳入正文 |
 | 3.3 候选图 | `scripts/plot_sec33_exploration.py` | 已有脚本；本次核查未发现候选图目录 |
+| 3.3 定向混淆定点收尾 | `scripts/explore_sec33_directional_confusion_closeout.py` | 复用已保存整数计数；互斥边界、六向组成、模型分层写入独立 `sec33_directional_confusion_closeout` 目录，不重算距离或覆盖历史产物 |
+| 3.3 定向混淆收尾图 | `scripts/plot_sec33_directional_confusion_closeout.py` | 互斥案例及模型—作物对照；独立探索图和同名底表，不进入正文 |
 | 旧指标分析核对 | `scripts/analyze_generalization_36paths.py` | Crop-mIoU 备查支线，不是正文 F1 数据入口；仍有引用，暂不归档 |
 | 协议单元测试 | `scripts/test/test_sec33_protocol.py` | 7 项内存边界用例，不替代原始数据全链验证 |
+
+定向混淆分析的活动修订入口为[收尾报告](results/summary/sec33_directional_confusion_closeout/exploration-report.md)、[数据字典](results/summary/sec33_directional_confusion_closeout/data_dictionary.md)及[实际核查](results/summary/sec33_directional_confusion_closeout/verification.md)。原 `sec33_directional_confusion` 的重叠边界视图及图件保留作历史/补充对照；本次937条计数检查不提升历史距离生成的验证状态。
 
 测试命令（不生成字节码缓存、不编译论文）：
 

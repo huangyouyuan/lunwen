@@ -179,7 +179,8 @@ def f1_from_matrix(m: np.ndarray, cls: int) -> tuple[float, float, float, float,
     tp = int(m[cls, cls]); fn = int(m[cls, :].sum() - tp); fp = int(m[:, cls].sum() - tp)
     recall = tp / (tp + fn) if tp + fn else np.nan
     precision = tp / (tp + fp) if tp + fp else np.nan
-    f1 = 2 * precision * recall / (precision + recall) if np.isfinite(precision) and np.isfinite(recall) and precision + recall else np.nan
+    f1_denominator = 2 * tp + fp + fn
+    f1 = 2 * tp / f1_denominator if f1_denominator else np.nan
     return f1, precision, recall, float(1 - recall) if np.isfinite(recall) else np.nan, tp, fn, fp
 
 

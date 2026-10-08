@@ -1,0 +1,361 @@
+{
+  "created_at_utc": "2026-10-07T17:33:51.705629+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "distance_generation_status": "Partially verified",
+  "distance_transform_rerun": false,
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/whole_cm.csv",
+      "sha256": "f78287adf97411a964ebe4dc1992bf07b31f6579d7c81d2a5fb6bfc765e58e2b",
+      "bytes": 18391,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/boundary_bitmask_band_cm.csv",
+      "sha256": "9c7548949201ff250ccc2a6dbc817e25997e2ccb375dce2d89b76cbd593516c0",
+      "bytes": 688317,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/directional_per_prediction.csv",
+      "sha256": "c032541bdb5b612956b37657fd33c2803988102441cf122182155fb243cdf6ef",
+      "bytes": 213387,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/crop_metrics_per_prediction.csv",
+      "sha256": "e2aa372556ae364bdd3f45e05fbbb77ffad0fc42ca64c5de8ea3c523f592344d",
+      "bytes": 188627,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/crop_metrics_summary.csv",
+      "sha256": "d865f93181fbaaf2dd671134491ab5fd9ba7f9a3eb048ef14c2c481526571f05",
+      "bytes": 95067,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/directional_summary.csv",
+      "sha256": "d22c8a10994a9411d2c08b796db32678299a223772504e508565295a7d6c7d77",
+      "bytes": 107075,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/distance_direction_per_prediction.csv",
+      "sha256": "2b808ac93cdbaea532b85eb2dc78f9105a8b3473eccd30864e26e6a1e4db46c1",
+      "bytes": 1976439,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/distance_direction_summary.csv",
+      "sha256": "1d5188ca2c2ae800c5449b7db6799ae39e03eb6c340077c73f61019e58aaa30c",
+      "bytes": 667119,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/boundary_type_direction_per_prediction.csv",
+      "sha256": "bf468904290c7765dede72fc1084c1132a8d318075bdca970c71e8fcc782283b",
+      "bytes": 4117574,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/k4_c3_c4_type_error_per_prediction.csv",
+      "sha256": "6ec4dbdd49932b102a03a3fa1930ea46775fbe1f57a8aaf1e00a60fdd6de61a8",
+      "bytes": 1641383,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/k4_c3_c4_feature_support.csv",
+      "sha256": "386e6b23db5f0c0644fe4eb96c2eef2d740c2b51ec92d40d7b2b14b1143141ca",
+      "bytes": 6337,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/within_site_crop_f1.csv",
+      "sha256": "5c333be499a99b6f7c6e61dbd77a66523e8bafd050707f7261b6c9d520a322d4",
+      "bytes": 1288,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv",
+      "sha256": "408c26df88c90db6c903f01edb05af4e8559b2433015a2e0d6af0f9c41e88266",
+      "bytes": 15417,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv",
+      "sha256": "eadfcf53e4b6a636ed43fdae2787eb380de6a39a55c15d574c312d7d29b24aa8",
+      "bytes": 3928,
+      "role": "input"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/case_B_D_soybean_to_corn_per_prediction.csv",
+      "sha256": "fd432bdd548005beedbe6184c76761d743c122eed0d44f1f6202e5f05ea8d8a0",
+      "bytes": 948,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/crop_metrics_per_prediction.csv",
+      "sha256": "dab30e84f8acd40213e6978965d2c5765b3fe7b535243f382c3ded4fd483c373",
+      "bytes": 177983,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/crop_metrics_summary_path_level.csv",
+      "sha256": "164d009543f563c0fecee75c1df6d1d5cd77dbf7160a089ac8d7df2aa899b2e0",
+      "bytes": 93013,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/directional_per_prediction.csv",
+      "sha256": "59d939f5c21a36ad9539b6d82afd02d46d7d16a194864a73236925c61bc5267d",
+      "bytes": 180720,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/exclusive_boundary_grouped_per_prediction.csv",
+      "sha256": "2991e3b13599ca80afbf0205dea7e4de7079ef01cb9de7b6be648c6b046c41d0",
+      "bytes": 1276040,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/exclusive_boundary_leakage_per_prediction.csv",
+      "sha256": "37715c1c078d3495c3038b97ab7a0a829b22b8aa0c28d3fe6881c3b0f570f5f9",
+      "bytes": 315044,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/exclusive_boundary_per_prediction.csv",
+      "sha256": "357e92b6be4c7fb1bcade601cdb4bdee6adaf28111850b048a79cf5838830fcb",
+      "bytes": 1076112,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/exclusive_boundary_row_counts.csv",
+      "sha256": "70758853af9052b83c19ea94e4e45483b0ef2b888731eecdab1164e5a513a86d",
+      "bytes": 265225,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion_closeout/overlap_reconstruction_per_prediction.csv",
+      "sha256": "f75dd2f37b42e57ff1123be9c1cc4ddd95dafe2d6c3058b24fbe13890752b0d3",
+      "bytes": 304022,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/boundary_group_mapping.csv",
+      "sha256": "7c07ad4d8069bba5fea4490f1e424efec70cfa05b60bdc978dc2713f18474728",
+      "bytes": 1829,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/case_B_D_ConvGRU_crop_metrics.csv",
+      "sha256": "983b6b5be5d7f36f89e78ec2b0a063da965d3afbfb7cadb8b462dad4fcba7a2b",
+      "bytes": 3912,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/case_B_to_D_exclusive_boundary.csv",
+      "sha256": "bbcfe9b5376a7e8f2b1b61471bcecb6ee01eed969a92c881ee6a7570db7c6941",
+      "bytes": 8280,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/case_D_C3_C4_interior_all_sources.csv",
+      "sha256": "1c72939c2ccad78791f6433df6d86d9fddd3b786463d8c94b4d6ca0f01270ee6",
+      "bytes": 8176,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/case_D_distance_all_sources.csv",
+      "sha256": "e713d810147791efdf4082b43df7c4a47c9a1900b10d6444fe00665a28c2d30c",
+      "bytes": 27696,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/case_D_exclusive_all_sources.csv",
+      "sha256": "e34a701da806fcc3844219937d6c54f4f2c288a32608712ded85416e25ed1f44",
+      "bytes": 22492,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/composition_source_order_diagnostic.csv",
+      "sha256": "6176987afcb4f020ed63de52e3b642e4baf985ef606cadc193cc0174ab7da298",
+      "bytes": 6906,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/data_dictionary.md",
+      "sha256": "0f3253d31ac51189f18b3032358f92fb595e751f4e1677382095aaa36aaa668f",
+      "bytes": 8170,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/directional_summary.csv",
+      "sha256": "3ce202204a3233c02121c4e4dbbd61fb70ce5eca8bd9b7e0cd88c8822caed876",
+      "bytes": 120220,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/exclusive_boundary_checks.csv",
+      "sha256": "1d1369194f5a634c03d0cf0ce19aa1df175df38f3ea1662ef81d1494bdb41332",
+      "bytes": 98677,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/exclusive_boundary_reference_support.csv",
+      "sha256": "d934a9516149a66c092fecf7c3a6e91edd58c39a69cd0470ef6a0e4bab95afd5",
+      "bytes": 4645,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/exclusive_boundary_summary.csv",
+      "sha256": "b28ec57d8c7c18a5bff7afd247772416a52f0409b178cdf34b2ef65d137c3288",
+      "bytes": 513881,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/exploration-report.md",
+      "sha256": "d78bb71fd1a138c993b1a4e99f88ddac34f8bd15d772bc20ed2e1bebcae681b0",
+      "bytes": 10145,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/model_crop_metrics_summary.csv",
+      "sha256": "57c191a90b15e9f83dd176d4fb84326f8dc1747a4f19fc5b1cc796fafab53b4a",
+      "bytes": 7011,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/model_crop_path_diagnostics.csv",
+      "sha256": "caf007c85fb7a4a2e9a4d5e413f1173de4fae7989aaef06a4a52bf8d67a94686",
+      "bytes": 62545,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/pooled_model_influence.csv",
+      "sha256": "8e6271d22caa832d5cbd4bebaf91c014c687bfb83f359ded29966493c2cc6d95",
+      "bytes": 724,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/source_composition_direction_contrast.csv",
+      "sha256": "1429fcaf83a75963b5bfa2603ba5066715d24118c1df4ba570c76f72f3027764",
+      "bytes": 170511,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/source_target_composition.csv",
+      "sha256": "352214607815a11d18f1204c742e32f96995cdfa9a718219be7b5a863c2166d1",
+      "bytes": 3351,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion_closeout/verification.md",
+      "sha256": "6ea3ab41ff6e299733049926586fa4445e7b3857988d1de72e3ed257b1794896",
+      "bytes": 5531,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/01_B_to_D_soybean_to_corn_exclusive_boundary.pdf",
+      "sha256": "7158493ba2ac08eb0768907b253f5fa295ea0265269a8209bc732aa84b084059",
+      "bytes": 56381,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/01_B_to_D_soybean_to_corn_exclusive_boundary.png",
+      "sha256": "11931d73e85b9625ea9f3059dfbaa01cb06f83e6f71955682c6a9e9364095c72",
+      "bytes": 311335,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/01_B_to_D_soybean_to_corn_exclusive_boundary_data.csv",
+      "sha256": "30501cb6ab7b07501690acdda3106271bf5896a946fe3b9a480db7c49917e16c",
+      "bytes": 8316,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/02_model_crop_metrics_change.pdf",
+      "sha256": "1067fe3c8b0c4127351b415a7e803fe7930957495625c5a63a27ecb03119cfb5",
+      "bytes": 35585,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/02_model_crop_metrics_change.png",
+      "sha256": "e384df370c6ad9bf37aad7cb02927846b53c6258545de74f22b7cea87c593894",
+      "bytes": 102309,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/02_model_crop_metrics_data.csv",
+      "sha256": "a6fe2dbaa0b129d673fe544e9bc94cd796446332ad8807d624068e14374e4de2",
+      "bytes": 4966,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion_closeout/figure_data_checks.csv",
+      "sha256": "58b5049d6ad92e4170935af07d015931c4ed069f879bae4208f98735e6d6327b",
+      "bytes": 257,
+      "role": "artifact"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_directional_confusion_closeout.py",
+      "sha256": "d6d1e803b82cdac2a6fed2eeb06a3255bd15456bf0715ec4d07b218eb23d5bbb",
+      "bytes": 32476,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_directional_confusion.py",
+      "sha256": "32fb99c4c0310a5effc847b639e8f1b899ce22333957a01ca014621f775906c4",
+      "bytes": 44546,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/plot_sec33_directional_confusion_closeout.py",
+      "sha256": "dba3c6a0c9b8f6f895137dc890dbb8565b763400b31ca26a3c4024d2c78a084e",
+      "bytes": 6970,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/test/test_sec33_directional_confusion_closeout.py",
+      "sha256": "30728418a6792157aa8cf5d8865279ef0b3e6551f2541056bea7ef57a943a15a",
+      "bytes": 5374,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/test/test_sec33_directional_confusion.py",
+      "sha256": "0969a9e31fd60836b4880a90505f9ff4c0d8f2b3989f7f4158a3a9f493ab52bf",
+      "bytes": 1718,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/test/test_f1_raw_scale.py",
+      "sha256": "beac50b5698887875c2e411d1d05c9a2aa9a27a63624ef2fdc2f4a5f9d8fadb9",
+      "bytes": 12926,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/test/test_f1_presentation.py",
+      "sha256": "6963fa20a57674e1f34ba5829cbba4c2bff0cf45fef679ebfc8eef3fd4bf15e0",
+      "bytes": 2883,
+      "role": "script"
+    }
+  ],
+  "historical_arrays_reused": true,
+  "baseline_head": "b5a8ef6b05c9a1bc77190f5d4cf80bf738144c74",
+  "calculation_checks": {
+    "Verified": 937
+  },
+  "identity_scope": {
+    "independent_within_model_targets": 12,
+    "cross_predictions": 180,
+    "directed_model_paths": 36,
+    "whole_direction_summaries": 216,
+    "exclusive_boundary_direction_summaries": 864
+  }
+}
