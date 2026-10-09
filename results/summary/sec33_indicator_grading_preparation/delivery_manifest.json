@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-10-09T10:23:20.114462+00:00",
+  "input_hash_recheck": "Verified",
+  "inputs": {
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/summary/sec33_reference_patch_types/feature_distributions.csv": "f421b5f1a637357a33f12e6cc2406f10507de855d76064f232be250335004a63",
+    "results/summary/sec33_k4_sensitivity/type_reference_support.csv": "99ad0a8da9bceda2c0e5ebfe8f47dfb178c80714780bdbdde3936f86cb5e6e18",
+    "results/summary/sec33_reference_patch_types/type_reference_support.csv": "161d23be1140053c7eb4a1e2059b45b80b6ba91bc7f923e4ff7d15c9ae910e2a",
+    "results/summary/sec33_reference_patch_types/grid_inventory.csv": "ddddc4dd9b10bac741c859ffb79d70a7d2e6112e986dbfa9a507a7435c0efe3e",
+    "results/summary/sec33_reference_patch_types/feature_correlations.csv": "158095f550c6938713962ae515640d2184a2ccd855945946099dd18d3fc4139b",
+    "results/processed/sec33_reference_patch_types/prediction_count_index.csv": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw_2023_iw_2023_0.npz": "80306631b06813f69acc2930d0a0fe69a438695e1f16dba17d0686cf5d7f57f6",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw2_2023_iw2_2023_0.npz": "a315b9502ac6667d4e5350a5864a6131824827978c8b96b7f52ac6b6f2c1e312",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_ida_2023_ida_2023_0.npz": "09ef42fdf385550e2f766a85faea00640f45a310c8074eb8a284b3d9a86e91aa",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_il_2023_il_2023_0.npz": "c7cfb4dcee3aaeff29cc7bd8d564046a9930621d56c891b28d2dbc1d54cb543d"
+  },
+  "files": {
+    "results/processed/sec33_indicator_grading_preparation/value_frequency_cumulative.csv": "f5d8cce6789cbbe4d8eb93beb2cb6d645cce25432617e56ccbe27900d04edc0f",
+    "results/summary/sec33_indicator_grading_preparation/all_class_reference_support.csv": "3df7bac4a2762924fccc0b6966d25c8aaf90e2bcc3eaee4f865fd95b512da082",
+    "results/summary/sec33_indicator_grading_preparation/concentrated_values.csv": "56d176de0ee2ca766c8191bd3245a90e68c0c52fed0253ee14a98a4f1974148a",
+    "results/summary/sec33_indicator_grading_preparation/count_reuse_schema.csv": "fa398bc406097853d08a6b45c45108a1cbff3621ffa08c8051745495492e164c",
+    "results/summary/sec33_indicator_grading_preparation/data_dictionary.md": "39c7d4e1e21de7c4e39e7e2c91cf1d895487fd7ee8f8acde7f2e364edf9ed898",
+    "results/summary/sec33_indicator_grading_preparation/delivery_checks.csv": "24bbf28c230e9ecad9b1ad9d14ed754c9d08eb088b9c1dcd14a45cdb58ef6713",
+    "results/summary/sec33_indicator_grading_preparation/diagnostic_value_intervals.csv": "74afb41c908f6a019a445d5888d8913f390f84cd7792a881ac061ba9462074e5",
+    "results/summary/sec33_indicator_grading_preparation/existing_gap_inventory.csv": "774e1348cc0eecfd9ca556ff232d915c44b47fd71d865804884a4126c0ef7a6c",
+    "results/summary/sec33_indicator_grading_preparation/indicator_availability.csv": "e9afd8e90348f61e1dfb3ac466af5777f6306071a147306c3ce27e4d7acaab60",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/summary/sec33_indicator_grading_preparation/preparation-report.md": "4fc21500a0c6f13f3f4fa68f2c61295f27ba4a3b933eca5d7b53c6f0c548338a",
+    "results/summary/sec33_indicator_grading_preparation/README.md": "498957167d14be9a3c006040e1b66c919ff11caa97378e7647d19d8130a32b81",
+    "results/summary/sec33_indicator_grading_preparation/reference_support_reading.csv": "79ac0540fca78f0ae53c372fd9160e2a73a980e1e9d3c8226009e63e04b84541",
+    "results/summary/sec33_indicator_grading_preparation/results_use_index.csv": "f3e551409c50b93300cf09786270e7f199c07d382cc0aca28ee9687e23d3c6ff",
+    "results/summary/sec33_indicator_grading_preparation/reused_indicator_correlations.csv": "c5b674a9e70084b6b3f5640b6e7c1d51fdbc72c477d8989be0fb59e02e659122",
+    "results/summary/sec33_indicator_grading_preparation/reused_indicator_distributions.csv": "be4860a28f597342fd9de3de340e152941161cab842814dba2cc30df62673d60",
+    "results/summary/sec33_indicator_grading_preparation/reused_type_reference_support.csv": "9c9e1854d5aa279731ae2d5061f9a713a49729686810e5cdcb6a23c065b699d3",
+    "results/summary/sec33_indicator_grading_preparation/run_manifest.json": "2b07fd1a60b6b45e015db883411e481563dbc2479cef78472a7d71504c1c0ca0",
+    "results/summary/sec33_indicator_grading_preparation/stratum_distribution_overlap.csv": "20093ba4e4d268be84f9d8409a06ad378c59bc4f4193e7eaca88c2f75561e4b3",
+    "results/summary/sec33_indicator_grading_preparation/verification.md": "6dfc156f1b4fcbc808c02e0629abe1aaf353928c265f3c7bb9e2ac0ffb0da707",
+    "results/summary/sec33_indicator_grading_preparation/verification_checks.csv": "ffa3297cb2a836b0a46ee231e99b0bdf99d137d97c866eb06726ce8eb99b248a",
+    "scripts/prepare_sec33_indicator_grading.py": "a0921c97282783f87ad6ce1cb71d2991447bbf9dee9c1a282e976b7ea456d91c",
+    "scripts/test/test_sec33_indicator_grading.py": "9bb947a7e64a3bdc61087036a7d7271ce814b32f27c28a35269ff5d64b72ede9",
+    "plan/tasks/2026-10-09-sec33-indicator-grading-preparation.md": "7d0d812af6fadc779973ee5d08ca7fe11e24a2366af6fb949888058350f66343"
+  }
+}

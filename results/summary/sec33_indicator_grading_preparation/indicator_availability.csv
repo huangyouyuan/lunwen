@@ -1,0 +1,10 @@
+metric,unit,level,available,current_use,known_definition_or_limitation,existing_evidence,this_round_action
+AREA,ha,单参考斑块,是,数值分级准备,连通斑块面积非真实农业田块面积且外框截断影响范围,reference_patch_features.csv及feature-selection-and-freeze.md,复用原值并补数量面积分布
+SHAPE,无量纲,单参考斑块,是,数值分级准备,相对同面积紧凑栅格周长的轮廓复杂度非长宽比且与AREA相关,feature_correlations.csv及feature-selection-and-freeze.md,复用原值并补数量面积分布不分离独立形状效应
+ENN,m,单参考斑块,是,邻近条件分级准备,研究区内最近同类斑块像元中心距离并受范围及8邻域定义影响,enn_reference_samples.csv及feature-selection-and-freeze.md,复用原值并检查同值集中不新增邻域指标
+GYRATE,m,单参考斑块,是,仅整理可用性及限制,空间延展不能等同纯狭长度且本批单像元为15m及与AREA强相关,feature_distributions.csv及feature_correlations.csv,原分位数相关直接整理未重新筛选
+CONTIG,无量纲,单参考斑块,是,仅整理可用性及限制,局部邻接连续性非图斑数且0是合法值及与AREA强相关,feature_distributions.csv及feature_correlations.csv,原分位数相关直接整理未重新筛选
+FRAC,未提供,单参考斑块,否,不纳入本轮,本批原始输出无此列不可补造也不作尺度不变解释,原始.patch字段及数据字典,记录缺失不重算
+PROX,未提供,单参考斑块,否,不纳入本轮,本批原始输出无此列且无可推定搜索半径,原始.patch字段及数据字典,记录缺失不重算
+类别级景观指标,各指标原单位,完整站点类别背景,是,站点背景描述,不得复制为每斑块特征或当作局部环境控制,background_class.csv,仅索引保留
+景观级指标,各指标原单位,完整站点背景,是,站点背景描述,只有四个站点且不能与像元和单斑块尺度混用,background_landscape.csv,仅索引保留

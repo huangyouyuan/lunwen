@@ -1,0 +1,5 @@
+target,site,sample_file,sampled_kind,sampled_model,sampled_fold,array_keys,array_shape,all_class_patches,all_class_pixels,current_check,remaining_count_arrays
+iw_2023,A,results/processed/sec33_reference_patch_types/counts_within_convgru_iw_2023_iw_2023_0.npz,within,convgru,0,patch_band_prediction_counts;type_band_bit_cm;PID,"(37293, 7, 3)",37292,6553600,Verified,historical_only_not_reopened
+iw2_2023,B,results/processed/sec33_reference_patch_types/counts_within_convgru_iw2_2023_iw2_2023_0.npz,within,convgru,0,patch_band_prediction_counts;type_band_bit_cm;PID,"(41057, 7, 3)",41056,6553600,Verified,historical_only_not_reopened
+ida_2023,C,results/processed/sec33_reference_patch_types/counts_within_convgru_ida_2023_ida_2023_0.npz,within,convgru,0,patch_band_prediction_counts;type_band_bit_cm;PID,"(70262, 7, 3)",70261,6553600,Verified,historical_only_not_reopened
+il_2023,D,results/processed/sec33_reference_patch_types/counts_within_convgru_il_2023_il_2023_0.npz,within,convgru,0,patch_band_prediction_counts;type_band_bit_cm;PID,"(38764, 7, 3)",38763,6553600,Verified,historical_only_not_reopened

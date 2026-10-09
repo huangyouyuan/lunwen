@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-10-09T10:08:50.758790+00:00",
+  "head": "8750231230d7a50fb68ff94cf45c430fb94d30df",
+  "data_status": "derived / exploratory",
+  "current_reference_statistics": "Verified",
+  "inputs": {
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/summary/sec33_reference_patch_types/feature_distributions.csv": "f421b5f1a637357a33f12e6cc2406f10507de855d76064f232be250335004a63",
+    "results/summary/sec33_k4_sensitivity/type_reference_support.csv": "99ad0a8da9bceda2c0e5ebfe8f47dfb178c80714780bdbdde3936f86cb5e6e18",
+    "results/summary/sec33_reference_patch_types/type_reference_support.csv": "161d23be1140053c7eb4a1e2059b45b80b6ba91bc7f923e4ff7d15c9ae910e2a",
+    "results/summary/sec33_reference_patch_types/grid_inventory.csv": "ddddc4dd9b10bac741c859ffb79d70a7d2e6112e986dbfa9a507a7435c0efe3e",
+    "results/summary/sec33_reference_patch_types/feature_correlations.csv": "158095f550c6938713962ae515640d2184a2ccd855945946099dd18d3fc4139b",
+    "results/processed/sec33_reference_patch_types/prediction_count_index.csv": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw_2023_iw_2023_0.npz": "80306631b06813f69acc2930d0a0fe69a438695e1f16dba17d0686cf5d7f57f6",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw2_2023_iw2_2023_0.npz": "a315b9502ac6667d4e5350a5864a6131824827978c8b96b7f52ac6b6f2c1e312",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_ida_2023_ida_2023_0.npz": "09ef42fdf385550e2f766a85faea00640f45a310c8074eb8a284b3d9a86e91aa",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_il_2023_il_2023_0.npz": "c7cfb4dcee3aaeff29cc7bd8d564046a9930621d56c891b28d2dbc1d54cb543d"
+  },
+  "script_sha256": "1348dc9f50ea8967c119b73ca65401771259a06c596a035e388f41b918f7490d",
+  "counts_scope": "192 index records checked; 4 OOF arrays reopened; remaining 188 not re-audited",
+  "history_distance_generation": "Partially verified; not rerun",
+  "fragstats_rerun": false,
+  "clustering_rerun": false,
+  "grades_chosen": false,
+  "figures_created": false,
+  "counts": {
+    "all_class_patches": 187372,
+    "crop_patches": 149234,
+    "crop_pixels": 19426296,
+    "frequency_rows": 45910,
+    "distribution_rows": 66,
+    "checks": 191
+  }
+}

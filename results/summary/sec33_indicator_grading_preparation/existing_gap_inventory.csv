@@ -1,0 +1,16 @@
+statistic,purpose,existing_file,existing_fields,statistical_object,denominator_or_weight,direct_reuse,this_round_action,reason
+完整参考斑块身份和指标,建立单指标等级的参考对象,results/processed/sec33_reference_patch_types/reference_patch_features.csv,"target;PID;patch_uid;crop;reference_pixels;AREA;SHAPE;ENN",整图8邻域参考斑块,每斑块一行,是,只读并核对唯一身份及数量面积,不重新分割或运行FRAGSTATS
+总体及八层斑块等权分布,提供实际范围和原有分位数,results/summary/sec33_reference_patch_types/feature_distributions.csv,"domain;metric;n;n_na;minimum;q25;median;q75;q95;maximum",全部作物合计及站点×作物,斑块等权,是,原字段直接纳入阅读表并复核一致性,已有正确口径不从头生产
+单作物跨站合并分布,比较两作物总体数值分布,results/summary/sec33_reference_patch_types/feature_distributions.csv,原表无单作物跨站domain,完整参考作物斑块,斑块等权,否,从实际斑块值补充,不能平均八层中位数或分位数
+扩展尾部分位数,检查集中区间和稀疏尾部,results/summary/sec33_reference_patch_types/feature_distributions.csv,原表无q05/q10/q90/q99,完整参考作物斑块,斑块等权,否,补充缺失分位数,给共同分级提供参考支持
+面积加权分布,识别主要作物面积覆盖区间,results/processed/sec33_reference_patch_types/reference_patch_features.csv,"reference_pixels;AREA;SHAPE;ENN",完整参考作物斑块,参考像元数作为权重,底表可复用但无同口径汇总,新增加权分位数及面积ECDF,与斑块数量权重回答不同问题
+实际取值频率和数量面积累计覆盖,识别同值集中点及不可拆分的重复值,results/processed/sec33_reference_patch_types/reference_patch_features.csv,"AREA;SHAPE;ENN;reference_pixels",完整参考作物斑块,有效斑块数及有效参考像元数,底表可复用但无同口径汇总,按保存数值精度新增频率及双ECDF,不按显示小数位舍入合并
+站点作物间重叠,检查共同数值条件及分布差异,results/summary/sec33_reference_patch_types/feature_distributions.csv,"minimum;q25;median;q75;q95;maximum",八个站点×作物层,各层自身有效数量或面积,范围和等权分位数可复用,补充范围覆盖及双ECDF最大差值,不作相关检验或独立重复推断
+类型内分布及异质性,明确已有综合类型不能替代数值等级,results/summary/sec33_k4_sensitivity/feature_distributions.csv,"spatial_type;minimum;q05;q25;median;q75;q95;maximum",既有K4类型,类型内斑块等权,是,保留来源索引不再作为新增发现,AREA跨度及跨站同类分布差异此前已报告
+K2/K4支持量和数量面积占比,保留历史类型覆盖用于对照,results/summary/sec33_k4_sensitivity/type_reference_support.csv,"n_patches;pixels;patch_fraction;area_fraction",既有综合聚类类型,同domain全部类型数量或面积,是,与K2表整理到复用支持表,不重新聚类或改归属
+单像元无内部和外框截断,检查小斑块及边缘支持限制,results/summary/sec33_k4_sensitivity/type_reference_support.csv,"singleton_count;no_interior_patches;edge_patches;edge_pixels;boundary_pixels",既有类型及共同参考域,数量比例与像元面积比例分开,计数可直接复用,求和既有整数支持并新增无内部面积覆盖,不平均各类型比例
+指标相关性,保留公式依赖和冗余限制,results/summary/sec33_reference_patch_types/feature_correlations.csv,"domain;first;second;spearman",总体及站点×作物参考斑块,斑块等权秩相关,是,复制已有结果并标记未重算,不重新筛选GYRATE/CONTIG
+192份逐斑块七带计数,支持未来数值等级错误重汇总,results/processed/sec33_reference_patch_types/prediction_count_index.csv,"kind;model;source;target;fold;file;sha256",同目标完整参考斑块,真实类别参考像元,是,核对索引完整及四份样本结构,本轮不重新分析预测误差或重审全部数组
+完整F1及六向定向错分,保留已完成科学解释及符号口径,results/summary/sec33_directional_confusion_closeout/directional_summary.csv,"model;source;target;true_class;predicted_class;delta_rate_mean",完整研究区三类混淆矩阵,定向率为真实来源类像元分母,是,索引复用不重新计算,漏分增量与完整类别ΔF1不同
+新等级×直接接触类型,未来连接错误位置与单指标等级,results/processed/sec33_reference_patch_types/counts_*.npz,type_band_bit_cm按K2汇总且图斑级数组无bits维,完整参考斑块及像元,同条件真实来源类像元,不足以直接完成,仅说明需整图PID/bands/bits和现有预测联合计数,禁止从K2/K4汇总按比例拆分
+历史图块AREA_MN分组,保留早期探索追溯,results/summary/sec33_f1_raw_scale/,AREA_MN低中高及ΔF1,128×128图块,图块分组完整CM,仅历史用途,原位保留但不作为新斑块属性,分析对象和尺度不同
