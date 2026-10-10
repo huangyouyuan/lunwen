@@ -1,5 +1,6 @@
 # Preserve the bytes recorded by this exploration's SHA-256 manifests.
 /.gitattributes -text
+/archive/2026-10-10-mainline/** -text
 /results/raw/sec33_reference_patch_types/** -text
 /results/processed/sec33_reference_patch_types/** -text
 /results/summary/sec33_reference_patch_types/** -text

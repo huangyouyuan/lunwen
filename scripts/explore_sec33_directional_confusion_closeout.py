@@ -17,9 +17,9 @@ import numpy as np
 import pandas as pd
 
 try:
-    import explore_sec33_directional_confusion as base
+    import sec33_metrics as base
 except ModuleNotFoundError:
-    from scripts import explore_sec33_directional_confusion as base
+    from scripts import sec33_metrics as base
 
 ROOT = Path(__file__).resolve().parents[1]
 OLD_PROC = ROOT / "results/processed/sec33_directional_confusion"
@@ -484,7 +484,7 @@ def seal():
     old=SUM/"analysis_manifest.json"
     manifest=json.loads(old.read_text(encoding="utf-8")) if old.exists() else {}
     if INPUTS: manifest["inputs"]=list(INPUTS.values())
-    scripts=[Path(__file__), ROOT/"scripts/explore_sec33_directional_confusion.py",
+    scripts=[Path(__file__), ROOT/"scripts/sec33_metrics.py",
              ROOT/"scripts/plot_sec33_directional_confusion_closeout.py",
              ROOT/"scripts/test/test_sec33_directional_confusion_closeout.py",
              ROOT/"scripts/test/test_sec33_directional_confusion.py",

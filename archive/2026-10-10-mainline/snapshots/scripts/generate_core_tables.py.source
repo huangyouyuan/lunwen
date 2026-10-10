@@ -1,0 +1,326 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+生成论文核心表格：
+1. 站内玉米/大豆F1基准表
+2. 12条迁移路径的跨站玉米/大豆F1正文表
+3. 跨站玉米/大豆F1及泛化退化模型汇总表
+4. 模型显著性检验表（分别对玉米和大豆）
+"""
+
+import sys
+from pathlib import Path
+import pandas as pd
+import numpy as np
+from scipy import stats
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
+# 站点映射
+SITE_MAP = {
+    'iw_2023': 'A',
+    'iw2_2023': 'B',
+    'ida_2023': 'C',
+    'il_2023': 'D'
+}
+
+MODEL_MAP = {
+    'convgru': 'ConvGRU',
+    'unet3d': '3D U-Net',
+    'utae': 'U-TAE'
+}
+
+def generate_table1_within_site_baseline():
+    """表1：站内分类性能基准（OOF pooled 玉米F1、大豆F1、OA）"""
+    df = pd.read_csv('results/summary/within_site_crop_f1.csv')
+
+    # 转换站点名称
+    df['site'] = df['target'].map(SITE_MAP)
+    df['model_name'] = df['model'].map(MODEL_MAP)
+
+    # 透视表：行=模型×指标，列=站点
+    result = pd.DataFrame()
+
+    for model in ['ConvGRU', '3D U-Net', 'U-TAE']:
+        model_df = df[df['model_name'] == model]
+
+        for metric, label in [('corn_f1', 'Corn F1'), ('soybean_f1', 'Soybean F1'), ('oa', 'OA')]:
+            row = model_df.pivot(index='model_name', columns='site', values=metric).loc[model]
+            row['Mean'] = model_df[metric].mean()
+            row.name = f'{model} ({label})'
+            result = pd.concat([result, row.to_frame().T])
+
+    return result
+
+
+def generate_table1b_within_site_fold_stability():
+    """表1b：站内五折稳定性（各测试折指标的 mean ± std）"""
+    df = pd.read_csv('results/summary/within_site_crop_f1_fold_stats.csv')
+
+    df['site'] = df['target'].map(SITE_MAP)
+    df['model_name'] = df['model'].map(MODEL_MAP)
+
+    rows = []
+    for model in ['ConvGRU', '3D U-Net', 'U-TAE']:
+        model_df = df[df['model_name'] == model].set_index('site')
+        for metric, label in [('corn_f1', 'Corn F1'), ('soybean_f1', 'Soybean F1'), ('oa', 'OA')]:
+            row = {'Model': model, 'Metric': label}
+            for site in ['A', 'B', 'C', 'D']:
+                mean = model_df.loc[site, f'{metric}_mean']
+                std = model_df.loc[site, f'{metric}_std']
+                row[site] = f'{mean:.4f}±{std:.4f}'
+            rows.append(row)
+
+    return pd.DataFrame(rows)
+
+def generate_table2_cross_site_performance():
+    """表2：跨站分类性能与泛化退化（简化版：均值±std）"""
+    df = pd.read_csv('results/summary/crop_f1_degradation_36paths.csv')
+
+    df['source_abbr'] = df['source'].map(SITE_MAP)
+    df['target_abbr'] = df['target'].map(SITE_MAP)
+    df['model_name'] = df['model'].map(MODEL_MAP)
+
+    # 按模型和作物汇总
+    summary_data = []
+
+    for model in ['ConvGRU', '3D U-Net', 'U-TAE']:
+        model_df = df[df['model_name'] == model]
+
+        corn_cross_mean = model_df['cross_corn_f1_mean'].mean()
+        corn_cross_std = model_df['cross_corn_f1_mean'].std()
+        corn_loss_mean = model_df['corn_loss_pp'].mean()
+        corn_loss_std = model_df['corn_loss_pp'].std()
+
+        soybean_cross_mean = model_df['cross_soybean_f1_mean'].mean()
+        soybean_cross_std = model_df['cross_soybean_f1_mean'].std()
+        soybean_loss_mean = model_df['soybean_loss_pp'].mean()
+        soybean_loss_std = model_df['soybean_loss_pp'].std()
+
+        summary_data.append({
+            'Model': model,
+            'Crop': 'Corn',
+            'Cross F1 (mean±std)': f'{corn_cross_mean:.4f}±{corn_cross_std:.4f}',
+            'Degradation (pp, mean±std)': f'{corn_loss_mean:.2f}±{corn_loss_std:.2f}'
+        })
+
+        summary_data.append({
+            'Model': model,
+            'Crop': 'Soybean',
+            'Cross F1 (mean±std)': f'{soybean_cross_mean:.4f}±{soybean_cross_std:.4f}',
+            'Degradation (pp, mean±std)': f'{soybean_loss_mean:.2f}±{soybean_loss_std:.2f}'
+        })
+
+    return pd.DataFrame(summary_data)
+
+
+def generate_table2_cross_site_f1_paths():
+    """正文表：12条迁移路径 × 三模型玉米/大豆F1，末行给出路径平均。"""
+    from calculate_f1_raw_scale import main as ensure_raw_scale
+    ensure_raw_scale(['--root', str(Path(__file__).resolve().parents[1])])
+    df = pd.read_csv('results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv',
+                     float_precision='round_trip')
+
+    required = {
+        'model', 'source', 'target', 'corn_f1_mean', 'soybean_f1_mean'
+    }
+    missing = required.difference(df.columns)
+    if missing:
+        raise ValueError(f'跨站F1汇总缺少字段：{sorted(missing)}')
+
+    expected_models = {'convgru', 'unet3d', 'utae'}
+    expected_sites = set(SITE_MAP)
+    if set(df['model']) != expected_models:
+        raise ValueError('跨站F1汇总的模型集合不完整')
+    if set(df['source']) != expected_sites or set(df['target']) != expected_sites:
+        raise ValueError('跨站F1汇总的站点集合不完整')
+    if (df['source'] == df['target']).any():
+        raise ValueError('跨站F1汇总不应包含源站与目标站相同的记录')
+    if df.duplicated(['model', 'source', 'target']).any() or len(df) != 36:
+        raise ValueError('跨站F1汇总必须包含36个唯一的模型—路径组合')
+
+    site_ids = ['iw_2023', 'iw2_2023', 'ida_2023', 'il_2023']
+    model_ids = ['convgru', 'unet3d', 'utae']
+    rows = []
+    for source in site_ids:
+        for target in site_ids:
+            if source == target:
+                continue
+            row = {'迁移路径': f'{SITE_MAP[source]}→{SITE_MAP[target]}'}
+            for model in model_ids:
+                selected = df[
+                    (df['model'] == model)
+                    & (df['source'] == source)
+                    & (df['target'] == target)
+                ]
+                if len(selected) != 1:
+                    raise ValueError(f'{model} {source}→{target}记录数不是1')
+                item = selected.iloc[0]
+                model_name = MODEL_MAP[model]
+                row[f'{model_name}玉米F1'] = item['corn_f1_mean']
+                row[f'{model_name}大豆F1'] = item['soybean_f1_mean']
+            rows.append(row)
+
+    result = pd.DataFrame(rows)
+    mean_row = {'迁移路径': '平均'}
+    for column in result.columns[1:]:
+        mean_row[column] = result[column].mean()
+    return pd.concat([result, pd.DataFrame([mean_row])], ignore_index=True)
+
+
+def write_table2_cross_site_f1_latex_rows(table):
+    """把已验证的正文表写成LaTeX表体，避免正文重复维护数字。"""
+    lines = []
+    for _, row in table.iterrows():
+        path = str(row['迁移路径'])
+        if path == '平均':
+            path_tex = '平均'
+        else:
+            source, target = path.split('→')
+            path_tex = f'{source}$\\rightarrow${target}'
+        values = ' & '.join(f'{float(value):.2f}' for value in row.iloc[1:])
+        lines.append(f'{path_tex} & {values} \\\\')
+        if path == 'D→C':
+            lines.append('\\midrule')
+    lines.append('\\bottomrule')
+    output = Path('tables/table2_cross_site_f1_12paths_rows.tex')
+    output.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+def friedman_posthoc_holm(data_matrix, alpha=0.05):
+    """
+    Friedman检验 + Wilcoxon配对检验 + Holm逐步校正
+
+    Parameters
+    ----------
+    data_matrix : array, shape (n_samples, n_models)
+        每行是一个配对样本（迁移路径的五折均值），每列是一个模型
+
+    Returns
+    -------
+    dict : {'friedman_stat', 'friedman_p', 'posthoc'}
+        posthoc 含 pair、wilcoxon_p、p_holm（校正后 p）、significant
+    """
+    stat, p = stats.friedmanchisquare(*data_matrix.T)
+
+    n_models = data_matrix.shape[1]
+    model_pairs = [(i, j) for i in range(n_models) for j in range(i + 1, n_models)]
+
+    posthoc = []
+    for i, j in model_pairs:
+        _, wilcoxon_p = stats.wilcoxon(data_matrix[:, i], data_matrix[:, j])
+        posthoc.append({'pair': (i, j), 'wilcoxon_p': wilcoxon_p})
+
+    posthoc_df = pd.DataFrame(posthoc).sort_values('wilcoxon_p').reset_index(drop=True)
+    m = len(posthoc_df)
+
+    # Holm step-down：按 p 升序，第 k 个（0 起）校正 p = (m − k) × p，并对前序取累积最大；
+    # 首次不显著后其余全部不拒绝
+    adjusted = (posthoc_df['wilcoxon_p'] * (m - np.arange(m))).clip(upper=1.0)
+    posthoc_df['p_holm'] = np.maximum.accumulate(adjusted.values)
+
+    significant = []
+    reject = True
+    for p_adj in posthoc_df['p_holm']:
+        reject = reject and (p_adj < alpha)
+        significant.append(reject)
+    posthoc_df['significant'] = significant
+
+    return {'friedman_stat': stat, 'friedman_p': p, 'posthoc': posthoc_df}
+
+def generate_table3_significance_tests():
+    """表3：模型显著性检验（分别对玉米和大豆）"""
+    # 读取per-fold数据
+    fold_df = pd.read_csv('results/summary/cross_site_crop_f1_per_fold.csv')
+
+    results = []
+
+    for crop, f1_col in [('Corn', 'corn_f1'), ('Soybean', 'soybean_f1')]:
+        # 构建数据矩阵：行=路径（12条），列=模型（3个）
+        # 每条路径先对5次fold求均值
+        pivot_data = []
+
+        # 获取所有路径
+        paths = fold_df.groupby(['source', 'target']).size().reset_index()[['source', 'target']]
+
+        for _, path_row in paths.iterrows():
+            source = path_row['source']
+            target = path_row['target']
+
+            path_data = fold_df[
+                (fold_df['source'] == source) &
+                (fold_df['target'] == target)
+            ]
+
+            # 对每个模型计算该路径的5-fold均值
+            convgru_mean = path_data[path_data['model'] == 'convgru'][f1_col].mean()
+            unet3d_mean = path_data[path_data['model'] == 'unet3d'][f1_col].mean()
+            utae_mean = path_data[path_data['model'] == 'utae'][f1_col].mean()
+
+            pivot_data.append([convgru_mean, unet3d_mean, utae_mean])
+
+        data_matrix = np.array(pivot_data)  # shape: (12, 3)
+
+        # 执行检验
+        test_result = friedman_posthoc_holm(data_matrix)
+
+        # 修正配对比较对应关系
+        posthoc = test_result['posthoc']
+        pair_labels = {
+            (0, 1): 'ConvGRU vs 3D U-Net',
+            (0, 2): 'ConvGRU vs U-TAE',
+            (1, 2): '3D U-Net vs U-TAE'
+        }
+
+        sig_results = {}
+        for _, row in posthoc.iterrows():
+            pair_key = tuple(row['pair'])
+            label = pair_labels[pair_key]
+            sig_results[label] = f"{'Sig.' if row['significant'] else 'n.s.'} (p_holm={row['p_holm']:.4f})"
+
+        results.append({
+            'Crop': crop,
+            'Friedman χ²': f"{test_result['friedman_stat']:.4f}",
+            'Friedman p': f"{test_result['friedman_p']:.4e}",
+            'ConvGRU vs 3D U-Net': sig_results['ConvGRU vs 3D U-Net'],
+            'ConvGRU vs U-TAE': sig_results['ConvGRU vs U-TAE'],
+            '3D U-Net vs U-TAE': sig_results['3D U-Net vs U-TAE']
+        })
+
+    return pd.DataFrame(results)
+
+if __name__ == '__main__':
+    print("正在生成表1：站内分类性能基准（OOF pooled）...")
+    table1 = generate_table1_within_site_baseline()
+    table1.to_csv('tables/table1_within_site_baseline.csv', float_format='%.4f')
+    print("已保存：tables/table1_within_site_baseline.csv")
+    print(table1)
+
+    print("\n正在生成表1b：站内五折稳定性...")
+    table1b = generate_table1b_within_site_fold_stability()
+    table1b.to_csv('tables/table1b_within_site_fold_stability.csv', index=False)
+    print("已保存：tables/table1b_within_site_fold_stability.csv")
+    print(table1b.to_string(index=False))
+
+    print("\n正在生成表2：12条迁移路径跨站F1...")
+    table2_paths = generate_table2_cross_site_f1_paths()
+    table2_paths.to_csv(
+        'tables/table2_cross_site_f1_12paths.csv', index=False,
+        float_format='%.2f', encoding='utf-8-sig'
+    )
+    write_table2_cross_site_f1_latex_rows(table2_paths)
+    print("已保存：tables/table2_cross_site_f1_12paths.csv")
+    print("已保存：tables/table2_cross_site_f1_12paths_rows.tex")
+    print(table2_paths.to_string(index=False))
+
+    print("\n正在生成跨站分类性能模型汇总...")
+    table2 = generate_table2_cross_site_performance()
+    table2.to_csv('tables/table2_cross_site_summary.csv', index=False)
+    print("已保存：tables/table2_cross_site_summary.csv")
+    print(table2)
+
+    print("\n正在生成表3：模型显著性检验...")
+    table3 = generate_table3_significance_tests()
+    table3.to_csv('tables/table3_significance_tests.csv', index=False)
+    print("已保存：tables/table3_significance_tests.csv")
+    print(table3)

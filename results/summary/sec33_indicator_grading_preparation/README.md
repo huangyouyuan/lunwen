@@ -1,6 +1,6 @@
 # 3.3 景观指标分级准备：表格阅读入口
 
-本轮为参考统计准备，不产生新的预测误差结论、图件或正式等级归属。分析对象为整幅标签的完整参考连通斑块，不是128×128图块或真实农业田块。结果性质为derived / exploratory；历史文件全部原位保留。
+本轮为参考统计准备，不产生新的预测误差结论、图件或正式等级归属。分析对象为整幅标签的完整参考连通斑块，不是128×128图块或真实农业田块。结果性质为derived / exploratory。本目录保留可复用分布表；2026-10-11已把K2/K4结果及共同五档候选恢复原位，生产源码仍保留历史状态，见[用途索引](../reuse-status.md)。
 
 | 阅读顺序 | 表格 | 用途 |
 |---|---|---|
@@ -15,8 +15,8 @@
 
 辅助入口：[指标可用性](indicator_availability.csv)、[旧等权分布](reused_indicator_distributions.csv)、[旧相关性](reused_indicator_correlations.csv)、[旧K2/K4支持](reused_type_reference_support.csv)、[三类参考支持](all_class_reference_support.csv)、[计数结构核查](count_reuse_schema.csv)。后者保留其他类，不把作物漏分率当成包含完整FP的F1。
 
-解释、算法与本次核查分别见[简短判断](preparation-report.md)、[数据字典](data_dictionary.md)、[核查记录](verification.md)。运行入口：`python -B scripts/prepare_sec33_indicator_grading.py`；脚本拒绝覆盖已有目录。交付后不重复运行该生产命令，审阅表格即可。
+解释、算法与本次核查分别见[简短判断](preparation-report.md)、[数据字典](data_dictionary.md)、[核查记录](verification.md)。此处只读表格。原生产源码已停用归档，不是活动运行入口；[迁移清单](../../../archive/2026-10-10-mainline/archive-manifest.csv)记录历史路径与现址。
 
-本轮6项专项测试通过，生产及交付表复核分别通过191和552条检查。来源记录见[运行清单](run_manifest.json)，最终脚本、任务和产物哈希见[交付清单](delivery_manifest.json)；核查结论不升级历史距离生成或FRAGSTATS工程配置的状态。
+原交付记录为6项专项测试、生产191条和交付552条检查通过，本次归档未重复这些科学核查。来源记录见[运行清单](run_manifest.json)，最终脚本、任务和产物哈希见[交付清单](delivery_manifest.json)；核查结论不升级历史距离生成或FRAGSTATS工程配置的状态。
 
-`domain=all/crop/site_crop`是三种不同阅读视图，不能把它们加在一起。AREA单位ha，SHAPE无量纲，ENN单位m。频率保持保存值精度，比例为0—1，NA为空字段；显示值相同不构成合并依据。正式共同断点及错误重汇总仍待作者审阅后确定。
+`domain=all/crop/site_crop`是三种不同阅读视图，不能把它们加在一起。AREA单位ha，SHAPE无量纲，ENN单位m。频率保持保存值精度，比例为0—1，NA为空字段；显示值相同不构成合并依据。这些表为1.3背景及按需空间条件分析提供分布信息。[共同五档候选](../sec33_common_five_grades/README.md)已恢复，候选不等于正式等级或当前必做方案。本次不冻结断点，不生成错误结果。旧CSV索引、报告和清单中的路径是原运行记录；被移动的文件按迁移及两份恢复清单定位，不据此运行历史生产流程。

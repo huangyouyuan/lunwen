@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from scripts.explore_sec33_directional_confusion import f1_from_matrix, five_stats
+from scripts.sec33_metrics import f1_from_matrix, five_stats
 
 
 class DirectionalConfusionTests(unittest.TestCase):

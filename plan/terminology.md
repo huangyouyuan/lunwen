@@ -59,7 +59,8 @@
 | CDL | Cropland Data Layer | 全文首次出现需全称 |
 | 时间步 | time step | 时间序列中的单个观测 |
 | 生育阶段 | growth stage / phenological stage | — |
-| 图块 | patch | 128×128 像素的样本单元 |
+| 图块 | training tile | 128×128像素训练及预测单元，不是本轮景观单元 |
+| 完整参考斑块 | reference connected patch | 整幅参考标签上8邻域同类连通区，键为目标站＋PID；不等同真实田块 |
 
 ## 分类类别
 
@@ -76,8 +77,8 @@
 | F1_corn / F1_soybean | 玉米 F1 / 大豆 F1 | 玉米 F1 分数、大豆 F1 分数 | 主指标，分别报告 | $F1_{\text{玉米}}$、$F1_{\text{大豆}}$ |
 | OA | Overall Accuracy | 总体精度 | 辅助 | OA |
 | ΔF1 | F1 difference | F1 差值 | 正文及图 4 | 同模型目标站站内汇总 F1 减跨站五次均值；原尺度、两位显示；不乘 100、不除基准 |
-| DR | relative generalization degradation | 泛化退化比例（%） | 仅历史追溯，不作当前正文指标 | 历史定义为 F1 差值除以目标站站内基准再乘 100%；旧文件及冻结探索协议保留，不改名充当 ΔF1 |
-| P / R | Precision / Recall | 精确率 / 召回率 | 定义 F1 用 | $P_i$、$R_i$ |
+| P / R | Precision / Recall | 精确率 / 召回率 | 用于区分误分入与漏分；各自分母判定NA | 中文类别角标 |
+| 定向错分率增量 | directional error rate increment | 跨站减本站的定向率 | 解释错分方向，可显示为百分点 | 不与ΔF1混用 |
 | Crop-mIoU | (IoU_corn + IoU_soybean)/2 | 作物平均交并比 | 补充 | — |
 | mIoU | mean Intersection over Union | 平均交并比（三类） | 补充 | — |
 | UA / PA | User's / Producer's Accuracy | 用户精度 / 制图精度 | 补充 | — |
@@ -92,7 +93,11 @@
 | ED | Edge Density | 边界密度 | — |
 | PD | Patch Density | 斑块密度 | — |
 | AREA_MN | Mean Patch Area | 平均斑块面积 | **不写"平均田块面积""平均地块面积"**——FRAGSTATS 斑块是标签上的同类连通区，不等于实际农业地块 |
-| AI | Aggregation Index | 聚集度指数 | — |
+| AI | Aggregation Index | 聚集度指数 | 指定空间范围内的汇总量 |
+| AREA | Patch Area | 参考斑块面积 | ha；1像元=0.09 ha |
+| SHAPE | Shape Index | 形状指数 | 无量纲周长复杂程度，不是长宽比 |
+| ENN | Euclidean Nearest-Neighbor Distance | 同类最近邻距离 | m；不能等同整体聚集度 |
+| GYRATE / CONTIG | Radius of Gyration / Contiguity Index | 回旋半径 / 邻接连续性 | 分别为m与无量纲，沿原软件定义 |
 
 "斑块"（patch，景观生态）与"图块"（patch，128×128 样本单元）是两个概念，正文分别用这两个词，不混用。
 

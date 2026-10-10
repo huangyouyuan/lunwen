@@ -1,0 +1,356 @@
+{
+  "created_at_utc": "2026-10-07T15:25:10.109833+00:00",
+  "status": "Verified",
+  "data_status": "derived / exploratory",
+  "distance_generation_status": "Partially verified",
+  "distance_transform_rerun": false,
+  "inputs": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/whole_cm.csv",
+      "sha256": "f78287adf97411a964ebe4dc1992bf07b31f6579d7c81d2a5fb6bfc765e58e2b",
+      "bytes": 18391,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/whole_direction_per_prediction.csv",
+      "sha256": "8b0cf0527382ddd133cde3d795c57b8cdea1d759f904150c803105a77fcb1911",
+      "bytes": 252909,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/whole_direction_summary.csv",
+      "sha256": "6cfc80ccaa4f94f994a5dffb690279d94aeb11308f1568c67bfc0c6940847414",
+      "bytes": 89394,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/whole_class_per_prediction.csv",
+      "sha256": "f473338a78b5b1bd011488952e0d8e174a8dd3cde7c3d3e1fb9b3266ca96f6f2",
+      "bytes": 281765,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/whole_class_summary.csv",
+      "sha256": "a3f66b831e8e29fbe8b092b753eceed8a1242918a47334019f84041028cb477a",
+      "bytes": 90522,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/distance_direction_per_prediction.csv",
+      "sha256": "213ab12609222318aff9dcb96214ec4342d50ec75d046a7519886f75d03d4fb7",
+      "bytes": 1808661,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/distance_direction_summary.csv",
+      "sha256": "4b0121aa51d3c1e24a0535d23bd250f48cbb827a6edf03c7d4927a19f392db60",
+      "bytes": 634058,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/type_direction_per_prediction.csv",
+      "sha256": "fc908c512cbc2d9445dabc5b8a7d24db9a4e41bf5fb64f564a52b15fc715a3d5",
+      "bytes": 4005287,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_crop_spatial_context/type_direction_summary.csv",
+      "sha256": "481f54735bd7107507562437c1888bf65f373356a0e60d149e8431a2041e8ea5",
+      "bytes": 1301970,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/type_error_per_prediction.csv",
+      "sha256": "f63fb68b716675d8ce52793ce0d11cd0359d6d51abdbfe70ae079e64e3e89ec9",
+      "bytes": 6800538,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_k4_sensitivity/type_reference_support.csv",
+      "sha256": "99ad0a8da9bceda2c0e5ebfe8f47dfb178c80714780bdbdde3936f86cb5e6e18",
+      "bytes": 13531,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/selected_assignments.csv",
+      "sha256": "c2ff9f69fce427bb152f17d6826a0fa961a5e7f0c15ecdc3316c55ad46dd90b0",
+      "bytes": 30503331,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv",
+      "sha256": "eadfcf53e4b6a636ed43fdae2787eb380de6a39a55c15d574c312d7d29b24aa8",
+      "bytes": 3928,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv",
+      "sha256": "408c26df88c90db6c903f01edb05af4e8559b2433015a2e0d6af0f9c41e88266",
+      "bytes": 15417,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/f1_raw_scale/within_site_crop_f1.csv",
+      "sha256": "5c333be499a99b6f7c6e61dbd77a66523e8bafd050707f7261b6c9d520a322d4",
+      "bytes": 1288,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_crop_spatial_context/type_band_cm.csv",
+      "sha256": "9c7548949201ff250ccc2a6dbc817e25997e2ccb375dce2d89b76cbd593516c0",
+      "bytes": 688317,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/prediction_index.csv",
+      "sha256": "cb8a4cf8923df997a3368ea8f895c32b8210471b791bec3254b34e8069efa2a5",
+      "bytes": 47822,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/directional_summary.csv",
+      "sha256": "d22c8a10994a9411d2c08b796db32678299a223772504e508565295a7d6c7d77",
+      "bytes": 107075,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_k4_sensitivity/k4_run_type_class_band_cm.npz",
+      "sha256": "38c8377f508707599fee754674d2111020bf278b661fcdd18919f172c7a27c5d",
+      "bytes": 83618,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/crop_f1_difference.csv",
+      "sha256": "b8c03ef4453e73a42ae45f0ebce4ebef3326cae4aab0d2cd5166bfe9716f83d6",
+      "bytes": 5331,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/k4_c3_c4_type_error_per_prediction.csv",
+      "sha256": "6ec4dbdd49932b102a03a3fa1930ea46775fbe1f57a8aaf1e00a60fdd6de61a8",
+      "bytes": 1641383,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/distance_direction_summary.csv",
+      "sha256": "1d5188ca2c2ae800c5449b7db6799ae39e03eb6c340077c73f61019e58aaa30c",
+      "bytes": 667119,
+      "role": "input"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_directional_confusion.py",
+      "sha256": "625da27dd93d00b55e306e82bae77c4247cb917393e6e3fbea7aa80139c3e856",
+      "bytes": 44585,
+      "role": "script"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "D:/AI/lunwen/scripts/explore_sec33_directional_confusion.py",
+      "sha256": "625da27dd93d00b55e306e82bae77c4247cb917393e6e3fbea7aa80139c3e856",
+      "bytes": 44585,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/plot_sec33_directional_confusion.py",
+      "sha256": "647a710f8af953e59dad4d5b1f23c96d707eacfc9084ebe77443b5a43de8b05c",
+      "bytes": 9159,
+      "role": "script"
+    },
+    {
+      "path": "D:/AI/lunwen/scripts/test/test_sec33_directional_confusion.py",
+      "sha256": "0969a9e31fd60836b4880a90505f9ff4c0d8f2b3989f7f4158a3a9f493ab52bf",
+      "bytes": 1718,
+      "role": "script"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/boundary_bitmask_band_cm.csv",
+      "sha256": "9c7548949201ff250ccc2a6dbc817e25997e2ccb375dce2d89b76cbd593516c0",
+      "bytes": 688317,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/boundary_type_direction_per_prediction.csv",
+      "sha256": "bf468904290c7765dede72fc1084c1132a8d318075bdca970c71e8fcc782283b",
+      "bytes": 4117574,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/case_D_soybean_k4_c3_c4_all_sources.csv",
+      "sha256": "e32b8e99479bde45f981f6e3c3c80a6c3a3ee2fae66527082bf7d7280267dd03",
+      "bytes": 185079,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/crop_metrics_per_prediction.csv",
+      "sha256": "e2aa372556ae364bdd3f45e05fbbb77ffad0fc42ca64c5de8ea3c523f592344d",
+      "bytes": 188627,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/directional_per_prediction.csv",
+      "sha256": "c032541bdb5b612956b37657fd33c2803988102441cf122182155fb243cdf6ef",
+      "bytes": 213387,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/distance_direction_per_prediction.csv",
+      "sha256": "2b808ac93cdbaea532b85eb2dc78f9105a8b3473eccd30864e26e6a1e4db46c1",
+      "bytes": 1976439,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/processed/sec33_directional_confusion/k4_c3_c4_type_error_per_prediction.csv",
+      "sha256": "6ec4dbdd49932b102a03a3fa1930ea46775fbe1f57a8aaf1e00a60fdd6de61a8",
+      "bytes": 1641383,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/boundary_type_direction_summary.csv",
+      "sha256": "01def055a5fc75afd4be59b4c043b048026d67ab1b8401a6d08b0343af0a0f13",
+      "bytes": 1323500,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_B_to_D_soybean_to_corn_by_boundary_type.csv",
+      "sha256": "ff04265a69bc82b831ab634f1106ecc3fbf460e9bbadd49df228f55415382fc5",
+      "bytes": 19058,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_B_to_D_soybean_to_corn_by_distance.csv",
+      "sha256": "60637478f5fe2d6d9ba81a263948506fb09c3a9b03394427d0611b9e89773eca",
+      "bytes": 9892,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_B_to_D_soybean_to_other_by_distance.csv",
+      "sha256": "61365282b2f2da056db9d63eb6d9761850b3b0da05e48eac663eafe38204f6b8",
+      "bytes": 9909,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_D_soybean_to_corn_by_boundary_type_all_sources.csv",
+      "sha256": "ec9c8494f21950937cd9b26ecb5500d07f6ac412fbac1e1c30a1122de8b432ee",
+      "bytes": 55450,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_D_soybean_to_corn_by_distance_all_sources.csv",
+      "sha256": "15823092bad8ae06198282e78e28071a96f4de933d16f7c0af75b7845b9d73ca",
+      "bytes": 27565,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/case_D_soybean_to_other_by_distance_all_sources.csv",
+      "sha256": "ff6b0f72ac1a5720b67ef145d143a8eaaa30762583a5fe15370da94da3fbdc64",
+      "bytes": 28663,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/crop_f1_difference.csv",
+      "sha256": "b8c03ef4453e73a42ae45f0ebce4ebef3326cae4aab0d2cd5166bfe9716f83d6",
+      "bytes": 5331,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/crop_metrics_summary.csv",
+      "sha256": "d865f93181fbaaf2dd671134491ab5fd9ba7f9a3eb048ef14c2c481526571f05",
+      "bytes": 95067,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/data_dictionary.md",
+      "sha256": "a929529dff30067d6c4e59b1dfb01a537e3994a42d1f2c6f88e445b0ac7833f9",
+      "bytes": 2378,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/directional_checks.csv",
+      "sha256": "2d8d9e6c778eef768d89366f81a4ad49c01858effe9c34463c39272ed99185d3",
+      "bytes": 1765185,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/directional_summary.csv",
+      "sha256": "d22c8a10994a9411d2c08b796db32678299a223772504e508565295a7d6c7d77",
+      "bytes": 107075,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/distance_direction_summary.csv",
+      "sha256": "1d5188ca2c2ae800c5449b7db6799ae39e03eb6c340077c73f61019e58aaa30c",
+      "bytes": 667119,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/exploration-report.md",
+      "sha256": "0068dea89164e560fde4b125b48f5f678277caed51903d40eca33adfc444ab7c",
+      "bytes": 4200,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/k4_c3_c4_feature_support.csv",
+      "sha256": "386e6b23db5f0c0644fe4eb96c2eef2d740c2b51ec92d40d7b2b14b1143141ca",
+      "bytes": 6337,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/source_composition_direction_contrast.csv",
+      "sha256": "11b4ecf868248064e0f43af95cff03dc3ca7190cd9116ba6cfb485449e3e89dc",
+      "bytes": 105537,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/results/summary/sec33_directional_confusion/source_target_composition.csv",
+      "sha256": "2d248eca0bc219cff404965654074471f9a9d032bba8b0bc4fa1b1ba30a123c9",
+      "bytes": 3351,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/01_directional_increment_overview.pdf",
+      "sha256": "3eb68fcb5fbb3b5cf154ff518b734f3405431180e5652e66d27517bfac0d173f",
+      "bytes": 44475,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/01_directional_increment_overview.png",
+      "sha256": "a28eedfb375a98fdad068a62f544ac807a020c1421101fdd7f4aebf64e9c47cd",
+      "bytes": 145873,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/01_directional_increment_overview_data.csv",
+      "sha256": "a4f6f2998eebe8ce82818442f7635650b1f72566b198845ca245e24e9aba2e2b",
+      "bytes": 27558,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/02_case_B_to_D_soybean_to_corn_spatial.pdf",
+      "sha256": "92ca795d9c3832e3f2fe52f8717d553a8bbc841a6d7d3c4f7fd1e2af9fc3759b",
+      "bytes": 43793,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/02_case_B_to_D_soybean_to_corn_spatial.png",
+      "sha256": "c8fcb94ddd1d027558d6750aa68eff9932dfe552c2d20d077803a38a32550c82",
+      "bytes": 262143,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/02_case_boundary_type_data.csv",
+      "sha256": "d517649b82554e62957f51cb5a36b0460527bb6acb79bf103cce54568d2e7b5b",
+      "bytes": 4756,
+      "role": "artifact"
+    },
+    {
+      "path": "D:/AI/lunwen/figures/exploratory/sec33_directional_confusion/02_case_distance_data.csv",
+      "sha256": "2984053c8bbe657f51187f70ae0fd67f04ff248a8738efb9f29c3fa4ca5f3655",
+      "bytes": 10065,
+      "role": "artifact"
+    }
+  ],
+  "figures_generated_at_utc": "2026-10-07T15:25:30.420005+00:00"
+}

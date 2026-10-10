@@ -1,50 +1,40 @@
-# results/summary 文件索引
+# 当前结果阅读入口
 
-论文正文数字的唯一来源。类别顺序：所有 `cm_ij` 按 corn=0, other=1, soybean=2（训练标签减 1）。
+科学数字以经过核查的summary为准；本目录是阅读入口，不将整理旧表当作新实验。类别顺序为corn=0、other=1、soybean=2。当前主线见 [总体计划](../../plan/outline.md)。
 
-## 当前正文数据（原尺度 F1，`f1_raw_scale/`）
+## 正式F1链
 
-由 `scripts/calculate_f1_raw_scale.py` 从 `results/raw/` 的整数混淆矩阵经 `results/processed/f1_raw_scale/` 生成，保存 17 位有效数字；正文、表格和图件显示两位小数，比较和均值均用未舍入值。
-
-| 文件 | 内容 |
-|------|------|
-| `f1_raw_scale/within_site_crop_f1.csv` | 12 组站内汇总玉米 F1 / 大豆 F1 / 其它 F1 / OA |
-| `f1_raw_scale/within_site_crop_f1_fold_stats.csv` | 12 组五折 mean±std（ddof=1），仅说明稳定性 |
-| `f1_raw_scale/cross_site_crop_f1_per_fold.csv` | 180 次完整目标站预测的逐次 F1 |
-| `f1_raw_scale/cross_site_crop_f1_summary.csv` | 36 个模型—路径组合的五次 mean±std（ddof=1） |
-| `f1_raw_scale/crop_f1_difference_36paths.csv` | 36 个模型—路径组合的 ΔF1 及站内、跨站 F1；正文与图 4 数据 |
-| `f1_raw_scale/run_manifest.json` | 输入、脚本与产物的 SHA-256 和运行口径 |
-
-ΔF1 = 同模型目标站站内汇总 F1 − 跨站 F1 五次均值，列为 `corn_f1_difference`、`soybean_f1_difference`；不乘 100、不除基准，与 F1 同为原始刻度。模型平均差值为 12 条路径差值的算术平均。显示 0.00 不表示真实值为零。
-
-## 历史口径（旧 DR 体系，仅供追溯）
-
-下列文件及其脚本保留，不再作为正文数据入口；不得改列名充当 ΔF1。
-
-| 文件 | 内容 | 脚本 | 上游 |
-|------|------|------|------|
-| `within_site_crop_f1.csv` | 12 组站内 OOF pooled 玉米 F1 / 大豆 F1 / 其它 F1 / OA | `calculate_crop_f1.py` | `results/raw/within_site_confusion_matrices.csv` ← `D:/20{site}/…/metrics_summary.csv` |
-| `within_site_crop_f1_fold_stats.csv` | 12 组五折 mean±std | 同上 | 同上 |
-| `cross_site_crop_f1_per_fold.csv` | 180 行 checkpoint 级 F1 | `extract_cross_site_cm.py` | `results/raw/cross_site_confusion_matrices.csv` ← `legacy/experiment-results/cross_site_all_20260916/` |
-| `cross_site_crop_f1_summary.csv` | 36 个模型—路径组合的 mean±std（每组合 5 次预测，ddof=1） | 同上 | 同上 |
-| `crop_f1_degradation_36paths.csv` | 36 个模型—路径组合的百分点差值及站内、跨站 F1 | `calculate_crop_f1_degradation.py` | 上两者 |
-| `crop_f1_relative_degradation_36paths.csv` | 36 个模型—路径组合的泛化退化比例 DR（%），历史正文与图 4 数据 | 同上 | `within_site_crop_f1.csv` + `cross_site_crop_f1_summary.csv` |
-
-历史 DR 为 `100 × (within_F1 − cross_mean_F1) / within_F1`，列 `corn_relative_loss_pct`、`soybean_relative_loss_pct`；`*_loss_pp` 为百分点差值。跨站数据覆盖 12 条有向迁移路径、36 个模型—路径组合，文件名中的 `36paths` 为历史命名，不表示 36 条独立迁移路径。数据和处理脚本不因文字口径同步而改动。
-
-`sec33_exploration/` 为 3.3 第一轮探索结果，标为 derived / exploratory，采用冻结协议中的 DR 口径，不自动进入正文。
-
-## 补充（Crop-mIoU 体系，不控制正文结构）
-
-来自 `legacy/experiment-results/paper_tables/`，类别顺序与主线一致。
+输入为 `results/raw/within_site_confusion_matrices.csv`和`cross_site_confusion_matrices.csv`，经 `scripts/calculate_f1_raw_scale.py`及 `results/processed/f1_raw_scale/`生成：
 
 | 文件 | 内容 |
-|------|------|
-| `generalization_degradation_36paths.csv` | Crop-mIoU / 三类 mIoU 退化 |
-| `within_site_oof_baseline.csv` | Crop-mIoU 站内基准（含 pooled CM） |
-| `model_significance_analysis.csv` | Crop-mIoU Friedman（12 路径） |
-| `../processed/generalization_analysis.csv` | Crop-mIoU 按源站/目标站汇总、不对称性 |
+|---|---|
+| [本站F1](f1_raw_scale/within_site_crop_f1.csv) | 12个独立模型—目标站汇总基准 |
+| [本站折间统计](f1_raw_scale/within_site_crop_f1_fold_stats.csv) | 各折指标mean/std，仅说明折间波动 |
+| [跨站逐次F1](f1_raw_scale/cross_site_crop_f1_per_fold.csv) | 180次完整目标预测 |
+| [跨站F1汇总](f1_raw_scale/cross_site_crop_f1_summary.csv) | 36个模型—路径组合，各五次 |
+| [原尺度ΔF1](f1_raw_scale/crop_f1_difference_36paths.csv) | 本站减跨站五次均值 |
+| [来源清单](f1_raw_scale/run_manifest.json) | 原运行输入、脚本和产物哈希 |
 
-## 结论与验证
+计算保存17位有效数字，F1及ΔF1采用原尺度；显示两位小数不用于重新计算。本站先加总折矩阵，跨站先逐次计算再汇总，不能混用。
 
-发现记录在 `plan/claims.md`（含 S1–S5 数据处理链说明），验证记录在 `verification/verification-report.md`。本目录不放分析结论文档。
+## 基础材料与解释证据
+
+| 入口 | 用途与边界 |
+|---|---|
+| [整图参考字典](sec33_reference_patch_types/data_dictionary.md) | 完整斑块特征、背景、参考数组和192份预测计数 |
+| [参考分布](sec33_indicator_grading_preparation/README.md) | 数量与面积加权分布，为1.3提供背景；不是正式等级 |
+| [定向混淆收尾](sec33_directional_confusion_closeout/README.md) | 完整FN/FP、六向混淆、模型分层、互斥边界与距离案例 |
+| [七带漏分率与净贡献](sec33_round3_distance/band_metrics_summary.csv) | 全路径三类/全体的本站率、五次跨站率、像元占比和贡献；[逐次底表](../processed/sec33_round3_distance/band_metrics_cross_fold.csv) |
+| [正确配对的Δe两端对照](sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv) | 最近带与`>6`带的额外漏分差；[逐次表](../processed/sec33_round3_closeout/nearest_vs_gt6_delta_e_per_fold.csv)按预测编号配对 |
+| [完整F1错分分量](sec33_crop_spatial_context/whole_f1_error_components_summary.csv) | 两种漏分与两种误分入共同连接F1；[逐次底表](../processed/sec33_crop_spatial_context/whole_f1_error_components_per_prediction.csv)使用F1自身分母 |
+| [距离共同权重与条件错误](sec33_crop_spatial_context/distance_common_weights.csv) | 参考分布权重；[逐次标准化表](../processed/sec33_crop_spatial_context/distance_weighted_per_prediction.csv)是描述性漏分率对照，不是F1或因果分解 |
+| [3.3证据总览](sec33_evidence_overview.md) | 对照3.2的现象、证据和限制 |
+| [完整斑块K2](sec33_reference_patch_types/type_error_summary.csv)与[K4](sec33_k4_sensitivity/type_error_summary.csv) | 全部类型逐次结果、参考支持和冻结归属已恢复；作为既有条件探索 |
+| [五档候选支持](sec33_common_five_grades/grade_support.csv) | 待审阅方案；没有等级误差统计，未批准冻结 |
+| [分层复用与源码索引](reuse-status.md) | 当前证据、补充探索、候选与历史方法的使用边界 |
+
+先恢复27份，2026-10-11再恢复413份，累计440份原文件回到原路径，没有重算或修改其数值。两端对照和D站逐次诊断还见`sec33_round3_closeout/`，六向两端对照见`sec33_crop_spatial_context/`。定义及历史核查也一并恢复：[七带字典](sec33_round3_distance/data_dictionary.md)、[配对字典](sec33_round3_closeout/data_dictionary.md)、[空间对照字典](sec33_crop_spatial_context/data_dictionary.md)。混合字典中旧图块匹配条目仍是历史定义，当前使用范围以[复用索引](reuse-status.md)为准，原历史验证状态不升级。
+
+当前先执行 [1.3与3.1基础材料计划](../../plan/tasks/2026-10-10-sec13-sec31-foundations.md)；该计划尚未完成统计与正文。
+
+过时口径与旧方案仍在 [独立归档](../../archive/2026-10-10-mainline/README.md)。原清单的历史路径与核验状态保持不变；不运行归档源码恢复旧流程。
