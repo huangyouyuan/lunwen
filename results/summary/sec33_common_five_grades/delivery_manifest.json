@@ -1,0 +1,40 @@
+{
+  "finalized_utc": "2026-10-10T12:29:08.473556+00:00",
+  "inputs": {
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/processed/sec33_indicator_grading_preparation/value_frequency_cumulative.csv": "f5d8cce6789cbbe4d8eb93beb2cb6d645cce25432617e56ccbe27900d04edc0f",
+    "results/summary/sec33_indicator_grading_preparation/reference_support_reading.csv": "79ac0540fca78f0ae53c372fd9160e2a73a980e1e9d3c8226009e63e04b84541",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/processed/sec33_reference_patch_types/prediction_count_index.csv": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e"
+  },
+  "files_sha256": {
+    "results/summary/sec33_common_five_grades/all_class_reference_inventory.csv": "74c1e8e25a80d1b8db37507a1fa0b7c69504bc2dac2c3609ed866583e9168d2a",
+    "results/summary/sec33_common_five_grades/area_small_interval_support.csv": "3628732503dc844e07c060fe91ad8a0c1e8e76d5b6c9f3d57f8ad4b861d83484",
+    "results/summary/sec33_common_five_grades/area_small_value_frequency.csv": "27b0ee98bc6fb0e07fc5a5bcd772819e15b9ebb4be116a57b3adec7bb0b36375",
+    "results/summary/sec33_common_five_grades/candidate_config.json": "d3b35a455bfd998d1a3b281a0866284fed71b0622fde828d5d089894dff8a852",
+    "results/summary/sec33_common_five_grades/coverage_diagnostics.csv": "ee7ea1784207869990319ae6512db320b98a10f79aaf66f61162d28d12fbfb4c",
+    "results/summary/sec33_common_five_grades/cutpoint_reference_quantiles.csv": "0339a852f4d9d48b5fec00b37a4744f08c91bbb6310f904007fab3f5ee4f6313",
+    "results/summary/sec33_common_five_grades/data_dictionary.md": "0da323a7a77c3f689520cf9ae8d96ec4ddd26e5bde0015bedac8ea31575fafcc",
+    "results/summary/sec33_common_five_grades/delivery_checks.csv": "d3ce98e85990fd2a2e3be8795d4cd22582a9693cb8d637e78a4581aac47b32b4",
+    "results/summary/sec33_common_five_grades/enn_concentration_diagnostic.csv": "b27a31d347bb823a1e91366ba110e75c725736dde21c74dc73d4af4cdb251db9",
+    "results/summary/sec33_common_five_grades/excluded_reference_support.csv": "3a6f8ef072f3711a97f71439a9887e54b1fce138e5d8bd38696b6e631e572b8b",
+    "results/summary/sec33_common_five_grades/five_grade_coverage_comparison.csv": "1540ca819e698c1ac66bf717712f3428fb6949e4434290193ff42426dc63252d",
+    "results/summary/sec33_common_five_grades/grade_definitions.csv": "db823c30bc40ce24601dbae65b2971d5f8641907c3e208b28a01497874560757",
+    "results/summary/sec33_common_five_grades/grade_support.csv": "5ae60f0f0ce6d066599ce3a3ef3c9268e07e4e11c9240e6b46f83a0b79446d88",
+    "results/summary/sec33_common_five_grades/production_checks.csv": "f8f7dadc05b0fde6fcd336f73dbf93022a2872c34a4e265ab5aad264aa1f4575",
+    "results/summary/sec33_common_five_grades/README.md": "0f1ae6e5122e7592ed91c65c5ae0b4be69aa81d0d8d850955fa00318ccca9a17",
+    "results/summary/sec33_common_five_grades/reference_diagnostic_checks.csv": "2b78db743a57894774b5fbb6d8abe35b5b6e9d9c69e64d04e62b2d217d1b2de4",
+    "results/summary/sec33_common_five_grades/report.md": "85d109968365d524e9c1be7aec5c042695177945a8227fc362698292ce2e8ac4",
+    "results/summary/sec33_common_five_grades/run_manifest.json": "e43eae648f06bd7155f72bf92d670fe824d5968d1da7a6d53ce7363917f43117",
+    "results/summary/sec33_common_five_grades/verification.md": "56f30b6281c49ff2580f02cb0a7aa40fdcb63ba92c1cfc5f1b2023eb32738de4",
+    "results/processed/sec33_common_five_grades/invalid_metric_records.csv": "7c57da058c9b9f4afabab5e7d2afdc5c328039ba3bc544d1882998db572523d8",
+    "results/processed/sec33_common_five_grades/patch_grade_assignments.csv": "99939f8c1c6bc30b91d055d366f8ca86b77fa1db4b8bf8cd14d92d24349e0c0a",
+    "scripts/prepare_sec33_common_five_grades.py": "1f2575cd139e2a0020407cd8b68657d819a297526169ecdd2f422b40c0e2e912",
+    "scripts/test/test_sec33_common_five_grades.py": "443d0815ce2b1d30d5d5a465400e120eeebecfb352041d4ab024324b0acb6daa",
+    "scripts/prepare_sec33_indicator_grading.py": "a0921c97282783f87ad6ce1cb71d2991447bbf9dee9c1a282e976b7ea456d91c",
+    "scripts/explore_sec33_reference_patch_types.py": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+    "plan/tasks/2026-10-10-sec33-common-five-grades.md": "caecdd6e2672a0034ea800c20914509098d4e34f5ded9b2c2ed2080c7febadd2"
+  },
+  "self_hash_excluded": true,
+  "scheme_status": "pending_author_review_not_frozen"
+}

@@ -1,0 +1,75 @@
+{
+  "result_kind": "derived_exploratory",
+  "scheme_status": "pending_author_review_not_frozen",
+  "analysis_unit": "full_reference_8_neighbor_connected_crop_patch",
+  "identity": [
+    "target",
+    "PID"
+  ],
+  "pixel_area_ha": 0.09,
+  "grade_labels": {
+    "1": "Ⅰ",
+    "2": "Ⅱ",
+    "3": "Ⅲ",
+    "4": "Ⅳ",
+    "5": "Ⅴ"
+  },
+  "prediction_errors_used_for_cut_selection": false,
+  "schemes": {
+    "recommended": {
+      "AREA": {
+        "raw_cuts_ascending": [
+          1,
+          10,
+          50,
+          150
+        ],
+        "pixel_cuts_ascending": [
+          11,
+          111,
+          555,
+          1666
+        ],
+        "basis": "reference_distribution_small_patch_detail_and_readable_area_intervals"
+      },
+      "SHAPE": {
+        "raw_cuts_ascending": [
+          1.3,
+          1.6,
+          2.0,
+          2.5
+        ],
+        "reverse_grade": true,
+        "basis": "readable_cuts_near_pooled_reference_area_ecdf_quintiles_not_equal_area_bins"
+      }
+    },
+    "area_ecdf_alternative": {
+      "AREA": {
+        "raw_cuts_ascending": [
+          42.48,
+          86.49,
+          134.91,
+          204.12
+        ],
+        "pixel_cuts_ascending": [
+          472,
+          961,
+          1499,
+          2268
+        ],
+        "basis": "pooled_reference_pixel_weighted_ecdf_q20_q40_q60_q80"
+      },
+      "SHAPE": {
+        "raw_cuts_ascending": [
+          1.3,
+          1.6,
+          2.0,
+          2.5
+        ],
+        "reverse_grade": true,
+        "basis": "readable_cuts_near_pooled_reference_area_ecdf_quintiles_not_equal_area_bins"
+      }
+    }
+  },
+  "ENN": "descriptive_only_no_five_grade_proposal"
+}

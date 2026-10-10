@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-10T12:20:51.795785+00:00",
+  "baseline_head": "0562e08b0e1d283dfec78deeba5883a2a7b48137",
+  "inputs": {
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/processed/sec33_indicator_grading_preparation/value_frequency_cumulative.csv": "f5d8cce6789cbbe4d8eb93beb2cb6d645cce25432617e56ccbe27900d04edc0f",
+    "results/summary/sec33_indicator_grading_preparation/reference_support_reading.csv": "79ac0540fca78f0ae53c372fd9160e2a73a980e1e9d3c8226009e63e04b84541",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/processed/sec33_reference_patch_types/prediction_count_index.csv": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e"
+  },
+  "script_sha256": "21bd8ddb27f089317b5d9176cedaf2f93fdfcab7ee0cd2f86ead0e728e3190f3",
+  "reused_helper_sha256": "a0921c97282783f87ad6ce1cb71d2991447bbf9dee9c1a282e976b7ea456d91c",
+  "hash_helper_sha256": "70e79d1bbf9352541c65ee27bc366db06a029b2eac48453fed98b4bad033d2e2",
+  "command": "python -B scripts/prepare_sec33_common_five_grades.py",
+  "scheme_status": "pending_author_review_not_frozen",
+  "result_kind": "derived_exploratory",
+  "predictions_reopened": 0,
+  "distance_or_fragstats_recomputed": false
+}

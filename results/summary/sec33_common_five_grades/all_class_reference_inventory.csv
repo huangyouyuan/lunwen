@@ -1,0 +1,13 @@
+target,site,crop,n_patches,pixels,singleton_count,no_interior_patches,with_interior_patches,edge_patches,edge_pixels,boundary_pixels,interior_pixels,far_interior_pixels,grading_scope
+ida_2023,C,corn,29837,2641661,16303,25811,4026,292,135049,698935,1942726,402580,crop_five_grade_candidates
+ida_2023,C,other,12530,1816209,6628,11487,1043,95,1726198,729402,1086807,278853,ungraded_retained_reference_class
+ida_2023,C,soybean,27894,2095730,14933,24042,3852,218,59074,590670,1505060,280774,crop_five_grade_candidates
+il_2023,D,corn,16756,2619419,8579,12913,3843,238,92478,587285,2032134,503033,crop_five_grade_candidates
+il_2023,D,other,7600,1546343,4310,7331,269,66,1514494,519580,1026763,460879,ungraded_retained_reference_class
+il_2023,D,soybean,14407,2387838,6791,10574,3833,212,83885,555042,1832796,419723,crop_five_grade_candidates
+iw2_2023,B,corn,14460,2758016,6407,9883,4577,291,115415,667983,2090033,482454,crop_five_grade_candidates
+iw2_2023,B,other,10557,2256417,5912,10093,464,71,2211442,699213,1557204,690362,ungraded_retained_reference_class
+iw2_2023,B,soybean,16039,1539167,7710,12182,3857,188,42752,435966,1103201,176737,crop_five_grade_candidates
+iw_2023,A,corn,15146,2974800,7313,10797,4349,241,78351,646146,2328654,569300,crop_five_grade_candidates
+iw_2023,A,other,7451,1169135,3935,6917,534,72,1129462,589484,579651,120066,ungraded_retained_reference_class
+iw_2023,A,soybean,14695,2409665,6966,10558,4137,231,55249,558899,1850766,388544,crop_five_grade_candidates
