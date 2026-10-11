@@ -27,7 +27,46 @@
 
 \subsection{研究区空间特征}
 
+本文基于2023年CDL参考标签，从地物组成和景观格局两个方面比较4个站点的空间特征，为后续站内分类与跨站比较提供研究区背景。
+
 \subsubsection{地物组成}
 
+如图\ref{fig:sec13_composition}所示，4个站点均以玉米和大豆为主要地物，两者面积之和占各站总面积的65.57\%～82.16\%。各站玉米面积占比为39.97\%～45.39\%，大豆占比为23.49\%～36.77\%，站点间大豆占比的变化幅度更大。A站两种作物合计占比最高，其它地物仅占17.84\%；B站大豆占比最低，其它地物占比达到34.43\%。因此，4个站点具有相同的主要作物组成，但两种作物与其它地物的面积配置存在差别。
+
+\begin{figure}[tbp]
+\centering
+\includegraphics{study_area/fig_sec13_composition.pdf}
+\par\nointerlineskip\vspace{3pt}
+\classlegend
+\caption{四个研究站点2023年地物面积占比}
+\label{fig:sec13_composition}
+\end{figure}
 
 \subsubsection{景观格局}
+
+本文采用FRAGSTATS计算完整参考斑块的面积（AREA）和形状指数（SHAPE）\citep{mcgarigal2023fragstats}。在各站2023年参考标签上，以8邻域相连的同类像元构成一个参考斑块。AREA表示斑块面积，SHAPE反映斑块边界相对于同面积紧凑形状的复杂程度。为避免大量微小斑块掩盖主要作物面积所在的斑块特征，分别按斑块等权和参考像元面积加权统计两项指标的分布；前者描述单个斑块的常见情况，后者描述随机取一个作物参考像元时其所在斑块的特征。
+
+如表\ref{tab:sec13_patch_distribution}所示，按斑块等权统计，8组作物斑块的AREA中位数均仅为0.09～0.18~ha，SHAPE中位数均为1.00，反映出完整标签中存在大量细小且规则的斑块。按参考像元面积加权后，AREA中位数升至63.27～130.95~ha，说明主要作物面积集中在较大斑块中。C站玉米和大豆的面积加权SHAPE中位数分别为2.07和1.91，高于其余站点；A站分别为1.63和1.58。B站大豆的面积加权AREA中位数为63.27~ha，是8组中最低。两种权重下的数值差异表明，比较研究区斑块格局时需要同时考虑斑块数量和其承载的作物面积。
+
+\begin{table*}[tbp]
+\centering
+\caption{四个研究站点2023年玉米和大豆完整参考斑块的AREA与SHAPE分布}
+\label{tab:sec13_patch_distribution}
+\begingroup
+\songti\zihao{-5}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc@{}}
+\toprule
+\multirow{2}{*}{站点} & \multirow{2}{*}{地物类型} & \multirow{2}{*}{斑块数} & \multicolumn{2}{c}{AREA/ha} & \multicolumn{2}{c}{SHAPE} \\
+\cmidrule(lr){4-5}\cmidrule(l){6-7}
+ & & & 斑块等权 & 面积加权 & 斑块等权 & 面积加权 \\
+\midrule
+\csname @@input\endcsname tables/sec13_patch_distribution_rows.tex
+\bottomrule
+\end{tabular*}
+\par\nointerlineskip\vspace{3pt}
+\raggedright 注：数值为中位数（Q25～Q75）；面积加权以斑块包含的参考像元数为权重；SHAPE无量纲。
+\par
+\endgroup
+\end{table*}

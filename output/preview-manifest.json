@@ -3,82 +3,91 @@
   "current_source_status": "Verified",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "9ef8e54df99a67a306c48b0e4fc927bf17ff394a362997d8d9cb2d6684f1d9c5",
-    "pages": 6,
-    "created_at_pdf_metadata": "D:20261004222236+08'00'",
-    "size_bytes": 798628
+    "sha256": "492e4ca1d03deab8f2323baa2bf32fa094344d351fde5bcd93677c7d827eb397",
+    "pages": 7,
+    "size_bytes": 835848
   },
   "version": {
-    "base_git_commit": "cfbfc350fc7f374e242e333ca76a70b44ce38404",
-    "state_at_build": "working-tree 3.1/3.2 wording fixes on recorded base, before commit (includes 明显 deletion)",
+    "base_git_commit": "969a1fe4f3fd8a2150c8a9ccabdb257c47ad39e8",
+    "state_at_build": "Uncommitted Section 1.3 composition and AREA/SHAPE table; expandable table input fix",
     "source_sha256": {
       "main.tex": "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
+      "bibliography/references.bib": "34828a0ca5d78afabb4b40daaae70ff86d5502f682ff9adf1740d3cc04ed844a",
+      "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+      "sections/02_data.tex": "8324a0254f406d578bb83893c989835fc51f1817307164e8309fbceb30592de4",
       "sections/03_methods.tex": "8ff53589ad4d10eeaae0151bc9f6c850db734be46aeb2c2b1b09a375561554aa",
       "sections/04_results.tex": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
-      "tables/table2_cross_site_f1_12paths_rows.tex": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf",
-      "figures/results/fig_within_site_f1_a.pdf": "25cbf1dd1d8f6b7e05ca2969af0dc1a451f3e482a808d722f56d25631142fa87",
-      "figures/results/fig_within_site_f1_b.pdf": "589f7c44a2607dca38ef15dff3e21c04e53c4acd0ecfe089d09409b20afffb82",
-      "figures/results/fig_degradation_heatmap_a.pdf": "e335fdeebcb40a27c1ad0f2519e3e273859b451dbf25e8b35566c8900e74edc5",
-      "figures/results/fig_degradation_heatmap_b.pdf": "05873b9522465db10da7853c75e2055ad340f20b9d36235d3c8d44656f2d3c24",
-      "figures/results/fig_degradation_heatmap_c.pdf": "90e82fa595c6dc1322adef9334ad1806da050739cb5bde9579743fe5237a8ba3",
-      "figures/results/fig_degradation_heatmap_d.pdf": "00cf2aab4e49095ff3153807a9fa5a094abfedfd3e64d06004ef6f488e280cf1",
-      "figures/results/fig_degradation_heatmap_e.pdf": "5526fb3a5a05f9a828d2a1992ce688d71d1822b89add416c8b75eff11ca24192",
-      "figures/results/fig_degradation_heatmap_f.pdf": "f0f524ccd8f632e8b1b46b341a8bd66a6d650981a6d64fd301d8b94b2127c7bc",
-      "figures/results/fig_degradation_heatmap_cbar.pdf": "803985be9af5223ab080650a9b2c7211411c664edaa8c5644286b05fa5fbf923"
+      "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+      "tables/sec13_landscape_rows.tex": "768873dad3eb74c8ab29ad322b0f60c371175de4d52c26efd472ae1b2705de0b",
+      "tables/sec13_patch_distribution_rows.tex": "7da3e2b290eada8e372ab7a6ce0fe8dfd455edfaa7d8ec5807ce03b9bc5a4969",
+      "tables/table2_cross_site_f1_12paths_rows.tex": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf"
     }
   },
   "build_command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex",
   "build_exit_code": 0,
   "build_notes": [
-    "No Overfull/Underfull in final log.",
-    "Existing font substitutions and empty bibliography remain; BibTeX reported no citation commands."
+    "Corrected Misplaced noalign at Section 1.3 bottomrule by using expandable TeX input; table values unchanged.",
+    "Final log has no Overfull/Underfull, missing characters, or unresolved references/citations.",
+    "Existing SimSun/SimHei font substitutions remain.",
+    "BibTeX warnings: software entry type unsupported by unsrtnat; FRAGSTATS entry has no year.",
+    "Draft layout: page 4 right column is blank due to existing float barrier; final pagination not optimized."
   ],
-  "render_command": "pdftoppm -png -r 150 -f 2 -l 5 main.pdf output/sec32_p",
-  "dpi": 150,
+  "render_command": "pdftoppm -png -r 120 main.pdf output/build-20261011-190347/page",
+  "dpi": 120,
   "previews": [
     {
-      "path": "output/sec32_p-2.png",
+      "path": "output/build-20261011-190347/page-1.png",
+      "pdf_page": 1,
+      "sha256": "c6b6f63506a99ae0896eb438026499275433e7080ad71a2a2ab6917b03b5657e",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
+    },
+    {
+      "path": "output/build-20261011-190347/page-2.png",
       "pdf_page": 2,
-      "sha256": "85be68f0c3c2a10fa62ec55c2f3dcbb3d9aaeaf855a5722a6ae4a4c8a256e630",
-      "rendered_at": "2026-10-04T22:22:59+08:00"
+      "sha256": "ee9c9bfed288aa12ee9594bb17564252e5666b7534d7556026f21209c94e4f87",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     },
     {
-      "path": "output/sec32_p-3.png",
+      "path": "output/build-20261011-190347/page-3.png",
       "pdf_page": 3,
-      "sha256": "6344e14906e8bc62f789ad36c242283385cf2ae4622812ae2aeeb7b5964f4893",
-      "rendered_at": "2026-10-04T22:22:59+08:00"
+      "sha256": "6d9022e871e3047323262dd288feb4316ca22174467dc20f6622b6eb1beb32d3",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     },
     {
-      "path": "output/sec32_p-4.png",
+      "path": "output/build-20261011-190347/page-4.png",
       "pdf_page": 4,
-      "sha256": "7444623dffcdc5200fa0d150ffb2a8a1fdfb6b9e778cf9004982e6df358c94b6",
-      "rendered_at": "2026-10-04T22:22:59+08:00"
+      "sha256": "c444929d20f4d626d62b7c5e91f86b5e67c8da8c84fcf6c5268878afa43bb329",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     },
     {
-      "path": "output/sec32_p-5.png",
+      "path": "output/build-20261011-190347/page-5.png",
       "pdf_page": 5,
-      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "rendered_at": "2026-10-04T22:22:59+08:00"
+      "sha256": "463a9c467a50bc28bde63de983b2c450515a4ffba3ff9411f58552cab52f6ba0",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     },
     {
-      "path": "output/table_page_preview.png",
-      "pdf_page": 5,
-      "alias_of": "output/sec32_p-5.png",
-      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "updated_at": "2026-10-04T22:22:59+08:00"
+      "path": "output/build-20261011-190347/page-6.png",
+      "pdf_page": 6,
+      "sha256": "d4684b9dab75ab38b0fd8a0434ab44ad0a919efdd8822b99e72f4a3e615a9902",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     },
     {
-      "path": "output/figure4_page_preview.png",
-      "pdf_page": 5,
-      "alias_of": "output/sec32_p-5.png",
-      "sha256": "f02abdc29336dd987b12b5507f52fb6add04cbdb752255e35736cb980db3be69",
-      "updated_at": "2026-10-04T22:22:59+08:00"
+      "path": "output/build-20261011-190347/page-7.png",
+      "pdf_page": 7,
+      "sha256": "8932e80adfc99e856aa54f40d73752714c02016329efe0e45c91bca6d3699fbd",
+      "rendered_at": "2026-10-11T19:06:28+08:00"
     }
   ],
-  "verified_at": "2026-10-04T22:40:59+08:00",
-  "page_binding_verification": "Verified: four independent single-page Poppler renders match saved PNG hashes; aliases match page 5.",
-  "previous_preview_backup": "D:\\AI\\lunwen_archive\\before-build-20261004-222232\\preview-manifest.json",
+  "verified_at": "2026-10-11T19:06:28+08:00",
+  "page_binding_verification": "Verified: all 7 current pages rendered and visually inspected; composition figure on page 2, complete AREA/SHAPE table on page 3.",
+  "previous_preview_backup": "output/build-20261011-190347/before/preview-manifest.json",
   "historical_previews_not_current": [
+    "output/sec32_p-2.png",
+    "output/sec32_p-3.png",
+    "output/sec32_p-4.png",
+    "output/sec32_p-5.png",
+    "output/table_page_preview.png",
+    "output/figure4_page_preview.png",
     "archive/2026-09-29-system整理/output/results_layout-3.png",
     "archive/2026-09-29-system整理/output/results_layout-4.png",
     "archive/2026-09-29-system整理/output/results_layout-5.png",

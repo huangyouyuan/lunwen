@@ -18,3 +18,11 @@
 /scripts/prepare_sec33_indicator_grading.py -text
 /scripts/test/test_sec33_indicator_grading.py -text
 /plan/tasks/2026-10-09-sec33-indicator-grading-preparation.md -text
+# Preserve Section 1.3 evidence hashes and compilation snapshots.
+/results/summary/sec13_sec31_foundations/** -text
+/scripts/build_sec13_sec31_foundations.py -text
+/scripts/generate_sec13_figure_table.py -text
+/tables/sec13_landscape_rows.tex -text
+/tables/sec13_patch_distribution_rows.tex -text
+/verification/sec13-figure-table*.json -text
+/output/build-20261011-190347/** -text

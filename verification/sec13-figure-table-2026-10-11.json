@@ -1,0 +1,65 @@
+{
+  "status": "Verified",
+  "data_status": "derived_from_verified_summary",
+  "scope": "2023 whole-site composition and class/landscape background for Section 1.3",
+  "checks": [
+    "input hashes",
+    "site/class identities",
+    "area and pixel closure",
+    "PD and AREA_MN denominators",
+    "figure label overlap and single-column width"
+  ],
+  "figure_axes_cm": [
+    7.6,
+    5.7
+  ],
+  "figure_width_cm": 8.308465972222221,
+  "font_size_pt": 9,
+  "manuscript_compiled": false,
+  "combined_crop_percent": {
+    "A": 82.16041564941406,
+    "B": 65.56980895996094,
+    "C": 72.28684997558594,
+    "D": 76.40467834472655
+  },
+  "inputs": [
+    {
+      "path": "results/summary/sec13_sec31_foundations/reference_composition.csv",
+      "sha256": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a"
+    },
+    {
+      "path": "results/summary/sec13_sec31_foundations/class_background_full_scope.csv",
+      "sha256": "239706dacb84ab355cf895f15cd92b398a0a3881727f8d48080bb029effa03a3"
+    },
+    {
+      "path": "results/summary/sec13_sec31_foundations/landscape_background_full_scope.csv",
+      "sha256": "2ebbf6760e13e83ee29fa9eda18bc256d8d36f9ae40af7ff77ef7ff7834e71b0"
+    },
+    {
+      "path": "results/summary/sec13_sec31_foundations/manifest.json",
+      "sha256": "c4f9afeb6ebce258486bef9c45bd88a32b83e51548c23934e3408cfde4145d53"
+    },
+    {
+      "path": "scripts/generate_sec13_figure_table.py",
+      "sha256": "012cc03ada90bf19dd9c153c86af9c2fad46408c2d26532dacbbee5ddd5a0ae5"
+    },
+    {
+      "path": "scripts/figstyle.py",
+      "sha256": "bb99c5b1fe7ac033c7d9a942fe6024df48f261e956d35569f153c4451c11e11e"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/study_area/fig_sec13_composition.pdf",
+      "sha256": "57f34f24da52bd6b36491383516e4c10b53e3ec30aa030ce6641d9cb5d78fd60"
+    },
+    {
+      "path": "figures/study_area/fig_sec13_composition.png",
+      "sha256": "48b6757eab9a60d1a57eab1c1755bdac05101d456e85546a6afcdab74fe48958"
+    },
+    {
+      "path": "tables/sec13_landscape_rows.tex",
+      "sha256": "768873dad3eb74c8ab29ad322b0f60c371175de4d52c26efd472ae1b2705de0b"
+    }
+  ]
+}

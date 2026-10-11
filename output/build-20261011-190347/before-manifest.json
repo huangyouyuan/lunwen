@@ -1,0 +1,68 @@
+﻿[
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.aux",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.aux",
+        "sha256":  "7305202cc0174550a75963ae9c5cd331d6788fc77a64266eafb6aee03d17380f",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.bbl",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.bbl",
+        "sha256":  "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.blg",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.blg",
+        "sha256":  "0f6fb05db75549e9ff9f28e4802b190cd946ee1d31c3f9098f28b36cd0bf5512",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.fdb_latexmk",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.fdb_latexmk",
+        "sha256":  "a2a0241cc12614b1b1d004a5b3a10477255c29d275e9a65ed28d4760ce2981d3",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.fls",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.fls",
+        "sha256":  "5ecae41c24125d4f1170c9fbc09a9642582eb1afab3dbd462bb385192662a62c",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.log",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.log",
+        "sha256":  "fc289450228f9c8f4d1d22bcc5e164342157b3c806f43081f98a84d1034dc2c7",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.out",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.out",
+        "sha256":  "5a0ccf0bf69105c828957568fc26ef29382be28c43a9b1f21a512aab3d11c691",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.pdf",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.pdf",
+        "sha256":  "9ef8e54df99a67a306c48b0e4fc927bf17ff394a362997d8d9cb2d6684f1d9c5",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.tex",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.tex",
+        "sha256":  "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\main.xdv",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\main.xdv",
+        "sha256":  "595f63d17bac7c4c1032087f1a9400a68004bbcaef7e8e6546d217a3ae55e677",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    },
+    {
+        "original_path":  "D:\\AI\\lunwen\\output\\preview-manifest.json",
+        "backup_path":  "D:\\AI\\lunwen\\output\\build-20261011-190347\\before\\preview-manifest.json",
+        "sha256":  "dcf4093d00c27643cb6152a0a7a3380c465f205bcdd70c28ac59564134ee554c",
+        "reason":  "Preserve previous compilation and preview binding before authorized rebuild"
+    }
+]

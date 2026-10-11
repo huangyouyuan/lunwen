@@ -1,0 +1,20 @@
+﻿[
+    {
+        "original_path":  "sections\\02_data.tex",
+        "backup_path":  "output\\build-20261011-190347\\before-table-input-fix\\02_data.tex",
+        "sha256":  "edf5d7aa18019852fc8eb46549a119278c9068629c441514aeb86e6df70331b7",
+        "reason":  "Preserve source and failed build logs before correcting table input expansion"
+    },
+    {
+        "original_path":  "main.log",
+        "backup_path":  "output\\build-20261011-190347\\before-table-input-fix\\main.log",
+        "sha256":  "ba0aff515315f6e371a095305bdaf5b88c7dee37eb9bca74ed44d8aa373797e0",
+        "reason":  "Preserve source and failed build logs before correcting table input expansion"
+    },
+    {
+        "original_path":  "main.blg",
+        "backup_path":  "output\\build-20261011-190347\\before-table-input-fix\\main.blg",
+        "sha256":  "0f6fb05db75549e9ff9f28e4802b190cd946ee1d31c3f9098f28b36cd0bf5512",
+        "reason":  "Preserve source and failed build logs before correcting table input expansion"
+    }
+]

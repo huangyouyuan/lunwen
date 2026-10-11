@@ -1,0 +1,13 @@
+model,target,site,full_site_pixels,raw_fold_sum_equals_raw_pooled,raw_pooled_equals_processed_whole_cm,reference_class_row_sums_match,tp_fn_fp_and_metrics_reconstruct,matrix_status
+convgru,iw_2023,A,6553600,True,True,True,True,Verified
+unet3d,iw_2023,A,6553600,True,True,True,True,Verified
+utae,iw_2023,A,6553600,True,True,True,True,Verified
+convgru,iw2_2023,B,6553600,True,True,True,True,Verified
+unet3d,iw2_2023,B,6553600,True,True,True,True,Verified
+utae,iw2_2023,B,6553600,True,True,True,True,Verified
+convgru,ida_2023,C,6553600,True,True,True,True,Verified
+unet3d,ida_2023,C,6553600,True,True,True,True,Verified
+utae,ida_2023,C,6553600,True,True,True,True,Verified
+convgru,il_2023,D,6553600,True,True,True,True,Verified
+unet3d,il_2023,D,6553600,True,True,True,True,Verified
+utae,il_2023,D,6553600,True,True,True,True,Verified

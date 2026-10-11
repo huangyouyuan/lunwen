@@ -1,0 +1,17 @@
+check,status,detail
+four_sites_three_reference_classes_unique,Verified,12 unique target/crop rows
+reference_composition_restores_full_site,Verified,4 site totals each equal 6553600 pixels
+class_background_reference_support_match,Verified,12 class pixel supports match composition
+landscape_edge_density_kept_at_landscape_level,Verified,"4 full-scope ED records, not copied to crop rows"
+eight_crop_groups_area_shape_distributions_complete,Verified,8 site/crop groups x AREA/SHAPE x two weightings = 32 rows
+micro_patch_and_window_limitation_support_complete,Verified,8 crop rows retain count and area shares
+twenty_four_within_crop_metric_rows_complete,Verified,12 independent model/target baselines x corn and soybean
+within_f1_matches_formal_summary_within_1e12,Verified,24 crop F1 values agree with f1_raw_scale
+twelve_raw_fold_sums_equal_pooled_matrices,Verified,5 fold matrices restore every pooled within-site matrix
+twelve_raw_and_processed_whole_matrices_identical,Verified,integer 3x3 matrices agree for all baselines
+twelve_matrices_restore_reference_support_and_tp_fn_fp,Verified,all 12 matrices contain 6553600 pixels and close against class support
+within_crop_gap_precision_recall_diagnostic_complete,Verified,12 baselines retain both recall and precision differences
+within_directional_source_repetitions_identical_before_collapse,Verified,each of 72 directions has three identical within-site records
+seventy_two_directional_errors_close_to_fn_and_fp,Verified,two outgoing directions restore FN and two incoming directions restore FP for each class
+sec32_to_sec33_bridge_selected_case_linked,Verified,"B-to-D ConvGRU soybean path links F1, directional error and d>6 evidence"
+sec32_direction_and_model_counterexamples_retained,Verified,B/D ordering is kept separately for ConvGRU and 3D U-Net

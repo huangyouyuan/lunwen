@@ -1,0 +1,66 @@
+{
+  "status": "Verified",
+  "data_status": "derived_from_verified_summary",
+  "scope": "2023 whole-site composition and crop AREA/SHAPE distributions for Section 1.3",
+  "checks": [
+    "input hashes",
+    "site/class identities",
+    "area and pixel closure",
+    "two-weight distribution identity and support",
+    "quantile ordering"
+  ],
+  "figure_checks": "reused prior figure/input hashes and visual check",
+  "figure_axes_cm": [
+    7.6,
+    5.7
+  ],
+  "figure_width_cm": 8.308465972222221,
+  "font_size_pt": 9,
+  "manuscript_compiled": false,
+  "combined_crop_percent": {
+    "A": 82.16041564941406,
+    "B": 65.56980895996094,
+    "C": 72.28684997558594,
+    "D": 76.40467834472655
+  },
+  "inputs": [
+    {
+      "path": "results/summary/sec13_sec31_foundations/reference_composition.csv",
+      "sha256": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a"
+    },
+    {
+      "path": "results/summary/sec13_sec31_foundations/crop_patch_distribution_reading.csv",
+      "sha256": "74a05d6ff9a9f7fe69fe686bb14d6004e257e4b3d06dc755dc3cd3cfaa0ea9c6"
+    },
+    {
+      "path": "results/summary/sec13_sec31_foundations/manifest.json",
+      "sha256": "c4f9afeb6ebce258486bef9c45bd88a32b83e51548c23934e3408cfde4145d53"
+    },
+    {
+      "path": "scripts/generate_sec13_figure_table.py",
+      "sha256": "8e84bcc2bef3d5848004c16ea6499828aa1543d3dd8e0b2fba26a9c11ec1082d"
+    },
+    {
+      "path": "scripts/figstyle.py",
+      "sha256": "bb99c5b1fe7ac033c7d9a942fe6024df48f261e956d35569f153c4451c11e11e"
+    },
+    {
+      "path": "verification/sec13-figure-table-2026-10-11.json",
+      "sha256": "12456d00aa21eb2f04c3a4f4a194979ff6c688d203912a91fdc9a9a01fc6c234"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/study_area/fig_sec13_composition.pdf",
+      "sha256": "57f34f24da52bd6b36491383516e4c10b53e3ec30aa030ce6641d9cb5d78fd60"
+    },
+    {
+      "path": "figures/study_area/fig_sec13_composition.png",
+      "sha256": "48b6757eab9a60d1a57eab1c1755bdac05101d456e85546a6afcdab74fe48958"
+    },
+    {
+      "path": "tables/sec13_patch_distribution_rows.tex",
+      "sha256": "7da3e2b290eada8e372ab7a6ce0fe8dfd455edfaa7d8ec5807ce03b9bc5a4969"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 日期：2026-10-10。起点：HEAD `a70e11b`。本次交付为计划及总体入口同步，尚未新增统计、表图或正文。后续统计与正文补充为 **Not verified**；已读取现稿、相关数据字段与历史核查记录，不把历史Verified改标为本次验证。
 
+> 执行记录（2026-10-11）：已依据本计划完成既有结果的只读整理和本次闭合核查，产物及输入、脚本、输出哈希见[基础证据目录](../../results/summary/sec13_sec31_foundations/README.md)。该记录不修改本计划原有的起始状态，也不表示1.3、3.1或3.3正文已完成；本次没有开展新实验、编译或修改`sections/*.tex`。
+
 总体计划：[outline.md](../outline.md)；研究逻辑：[paper-context.md](../paper-context.md)；证据路由：[results-map.md](../results-map.md)。既有未提交工作保留；此前3.3条件对照计划已归档，仅供按需查阅，不是活动待办。本次归档整理不执行本计划。
 
 ## 1. 目的与章节边界
@@ -25,7 +27,7 @@
 |---|---|---|
 | 三类参考支持与面积 | `results/summary/sec33_indicator_grading_preparation/all_class_reference_support.csv` | 四站×三类，`target,crop`；`pixels,area_ha`用于组成，其他类保留；每站三个类别求和后作占比分母 |
 | 整站组成交叉核对 | `results/summary/sec33_directional_confusion_closeout/source_target_composition.csv` | 按站点角色去重后恢复四站三类；12条来源—目标记录不能重复累加成站点面积 |
-| 类别级背景 | `results/summary/sec33_reference_patch_types/background_class.csv` | 仅`scope=full`；`dataset_id,class_name`连接站点与类别；数量、AREA_MN、PD、AI沿现有字典与单位解释 |
+| 类别级背景 | `results/summary/sec33_reference_patch_types/background_class.csv` | 仅`scope=full`；`dataset_id,class_name`连接站点与类别；旧的 AREA_MN、PD、AI 仅作可追溯辅助底表，不作为当前 1.3 主表 |
 | 景观级背景 | `results/summary/sec33_reference_patch_types/background_landscape.csv` | 仅`scope=full`；ED是整幅景观级量，不能复制成作物专属指标 |
 | 作物完整斑块分布 | `results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv`及`reference_support_reading.csv` | 取`domain=site_crop`的八组，不与总体行混加；AREA为ha、SHAPE无量纲；`patch_equal`和`reference_pixel_area`分别呈现，不能平均旧分位数 |
 | 原始特征与尺度说明 | `results/processed/sec33_reference_patch_types/reference_patch_features.csv`及对应summary的`data_dictionary.md` | `target,PID`唯一完整斑块，8邻域、30 m；原软件`.patch`的CSV在`results/raw/sec33_reference_patch_types/`；不读取旧切片景观表替代 |
@@ -41,7 +43,7 @@
 ### 阶段A：完成1.3证据底稿
 
 1. 核对四站映射、2023年参考版本、网格、类别和完整研究区范围。以三类支持量形成四站组成表，与本站矩阵真实类别行和及既有组成表核对。1.1中2021—2024年“两作物占农作物面积超过95%”是另一年际范围和分母，不用于这里的整站占比。
-2. 整理类别级与景观级背景，优先保留能描述四站差异的少量指标。AREA_MN、PD受面积与数量关系约束，AREA与SHAPE也可能共同变化；不把相关或公式关联的指标当成多条独立机制证据。
+2. 整理类别级与景观级背景，当前 1.3 主表采用完整参考斑块的 AREA、SHAPE 分布，并同时保留斑块等权和参考像元面积加权。旧的 AREA_MN、PD、AI、ED 底表继续保留用于追溯，不把它们与当前主表混用；不把相关或公式关联的指标当成多条独立机制证据。
 3. 并列八组AREA、SHAPE数量分布与面积加权分布，说明“典型斑块数量”和“主要作物面积”是否给出不同图景。ENN只在既有统计增加必要背景信息时保留；不扩展指标筛选。外框截断斑块和微小斑块使用已有支持统计，不重新分割或删除。
 4. 形成1.3的段落—证据提纲：地物组成一段；景观格局以最必要的站点差异组织。是否使用一张紧凑参考表由信息量决定，不预定新增图。共同五档只是候选，本节不依赖其冻结。
 

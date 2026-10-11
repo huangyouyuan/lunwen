@@ -21,6 +21,7 @@
 
 | 入口 | 用途与边界 |
 |---|---|
+| [1.3与3.1基础证据](sec13_sec31_foundations/README.md) | 四站组成、完整参考斑块背景、12个本站基准及其本次闭合核查；1.3 已据此补充正文、组成图和 AREA/SHAPE 分布表 |
 | [整图参考字典](sec33_reference_patch_types/data_dictionary.md) | 完整斑块特征、背景、参考数组和192份预测计数 |
 | [参考分布](sec33_indicator_grading_preparation/README.md) | 数量与面积加权分布，为1.3提供背景；不是正式等级 |
 | [定向混淆收尾](sec33_directional_confusion_closeout/README.md) | 完整FN/FP、六向混淆、模型分层、互斥边界与距离案例 |
@@ -35,6 +36,6 @@
 
 先恢复27份，2026-10-11再恢复413份，累计440份原文件回到原路径，没有重算或修改其数值。两端对照和D站逐次诊断还见`sec33_round3_closeout/`，六向两端对照见`sec33_crop_spatial_context/`。定义及历史核查也一并恢复：[七带字典](sec33_round3_distance/data_dictionary.md)、[配对字典](sec33_round3_closeout/data_dictionary.md)、[空间对照字典](sec33_crop_spatial_context/data_dictionary.md)。混合字典中旧图块匹配条目仍是历史定义，当前使用范围以[复用索引](reuse-status.md)为准，原历史验证状态不升级。
 
-当前先执行 [1.3与3.1基础材料计划](../../plan/tasks/2026-10-10-sec13-sec31-foundations.md)；该计划尚未完成统计与正文。
+已按 [1.3与3.1基础材料计划](../../plan/tasks/2026-10-10-sec13-sec31-foundations.md) 完成本次底表整理与闭合核查，见[基础证据目录](sec13_sec31_foundations/README.md)。1.3 已补充正文、组成图和 AREA/SHAPE 分布表；3.1 的正文补充和后续 3.3 证据取舍仍未完成。
 
 过时口径与旧方案仍在 [独立归档](../../archive/2026-10-10-mainline/README.md)。原清单的历史路径与核验状态保持不变；不运行归档源码恢复旧流程。
