@@ -44,29 +44,31 @@
 
 \subsubsection{景观格局}
 
-本文采用FRAGSTATS计算完整参考斑块的面积（AREA）和形状指数（SHAPE）\citep{mcgarigal2023fragstats}。在各站2023年参考标签上，以8邻域相连的同类像元构成一个参考斑块。AREA表示斑块面积，SHAPE反映斑块边界相对于同面积紧凑形状的复杂程度。为避免大量微小斑块掩盖主要作物面积所在的斑块特征，分别按斑块等权和参考像元面积加权统计两项指标的分布；前者描述单个斑块的常见情况，后者描述随机取一个作物参考像元时其所在斑块的特征。
+在各站2023年30~m参考标签上，以8邻域相连的同类像元构成一个参考斑块；它是标签中的连通区域，不等同于实际农业田块。本文采用FRAGSTATS的斑块面积（AREA）和形状指数（SHAPE）描述玉米、大豆及其它地类斑块，每个斑块等权统计\citep{mcgarigal2023fragstats}。AREA反映斑块大小，SHAPE反映其边界相对于同面积紧凑形状的复杂程度。斑块密度（PD）和聚集度指数（AI）分别描述整站对应类别的斑块数量密度和同类聚集程度；边界密度（ED）描述整站三类景观的边界密度。
 
-如表\ref{tab:sec13_patch_distribution}所示，按斑块等权统计，8组作物斑块的AREA中位数均仅为0.09～0.18~ha，SHAPE中位数均为1.00，反映出完整标签中存在大量细小且规则的斑块。按参考像元面积加权后，AREA中位数升至63.27～130.95~ha，说明主要作物面积集中在较大斑块中。C站玉米和大豆的面积加权SHAPE中位数分别为2.07和1.91，高于其余站点；A站分别为1.63和1.58。B站大豆的面积加权AREA中位数为63.27~ha，是8组中最低。两种权重下的数值差异表明，比较研究区斑块格局时需要同时考虑斑块数量和其承载的作物面积。
+如表\ref{tab:sec13_spatial_metrics}所示，四站作物斑块面积的中位数仅为0.09～0.18~ha，其中C站两种作物及D站玉米的中位数均为单像元面积，其余为0.18~ha。面积最大值的站点差异则随作物而变：玉米以C站最高，达到2043.36~ha；大豆以D站最高，为1152.00~ha。C站两种作物的SHAPE最大值均高于其余站点，但各站两种作物的SHAPE中位数均为1.00。其它地类在四站的AREA中位数均为0.09~ha，最大值却达到101427.30～198917.46~ha；这些最大斑块都接触研究窗口外框，且由多种地类归并后形成，不能视为单一实际地块。中位数与最大值所反映的差异说明，单凭最大斑块或最复杂斑块不能代表各站的典型斑块水平。
 
 \begin{table*}[tbp]
 \centering
-\caption{四个研究站点2023年玉米和大豆完整参考斑块的AREA与SHAPE分布}
-\label{tab:sec13_patch_distribution}
+\caption{四个研究站点2023年斑块、类别与整站景观格局指标}
+\label{tab:sec13_spatial_metrics}
 \begingroup
 \songti\zihao{-5}
 \setlength{\tabcolsep}{2pt}
 \renewcommand{\arraystretch}{1.08}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc@{}}
 \toprule
-\multirow{2}{*}{站点} & \multirow{2}{*}{地物类型} & \multirow{2}{*}{斑块数} & \multicolumn{2}{c}{AREA/ha} & \multicolumn{2}{c}{SHAPE} \\
-\cmidrule(lr){4-5}\cmidrule(l){6-7}
- & & & 斑块等权 & 面积加权 & 斑块等权 & 面积加权 \\
+\multirow{2}{*}{站点} & \multirow{2}{*}{地物类型} & \multicolumn{2}{c}{斑块级} & \multicolumn{2}{c}{类别级} & 景观级 \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(l){7-7}
+ & & AREA/ha & SHAPE & PD/(个/100~ha) & AI/\% & ED/(m/ha) \\
 \midrule
-\csname @@input\endcsname tables/sec13_patch_distribution_rows.tex
+\csname @@input\endcsname tables/sec13_spatial_metrics_rows.tex
 \bottomrule
 \end{tabular*}
 \par\nointerlineskip\vspace{3pt}
-\raggedright 注：数值为中位数（Q25～Q75）；面积加权以斑块包含的参考像元数为权重；SHAPE无量纲。
+\raggedright 注：AREA和SHAPE写作中位数（最小值～最大值），按完整参考斑块等权统计；SHAPE无量纲。最小值至最大值表示研究窗口内全部斑块的取值跨度，不表示多数斑块所在区间。保留单像元及外框接触斑块；各组最小值均含外框接触斑块，玉米、大豆的最大值斑块均未接触外框，其它地类的最大值斑块均接触外框。单像元SHAPE为1.00，不能解释为实际农业田块规整。PD以整站面积为分母，AI对应各类别；ED覆盖整站玉米、大豆及其它三类景观，不属于单一类别。
 \par
 \endgroup
 \end{table*}
+
+在类别和整站层级，C站玉米和大豆的PD分别为5.06和4.73个/100~ha，均为四站最高，两类AI均为四站最低，整站ED则最高，为65.53~m/ha；该站其它地类的PD也为四站最高，但其AI低于B、D两站。A站两种作物的AI分别为93.92\%和93.46\%，均为四站最高，其它地类的AI则为四站最低。B站大豆面积占比虽然最低，其PD为2.72个/100~ha，高于本站玉米的2.45个/100~ha，AI则低于玉米；其它地类的AI为四站最高。D站两种作物的AI均超过93\%，整站ED为四站最低的51.76~m/ha。四站的斑块数量密度、同类聚集程度和整站边界密度并未呈现同一排序。
