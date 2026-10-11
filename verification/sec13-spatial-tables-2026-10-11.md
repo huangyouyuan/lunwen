@@ -48,3 +48,19 @@
 作者本次确定正文、表格、图例统一称“玉米、大豆、其它地类”。图2置于1.3.1与1.3.2之间；表1改为1.3.2末段后的随文通栏表，位于第2节之前。此前使用“其它”的未提交修改已按此决定更新；旧双表、8行表及各次试排图保留作历史核查，不更改科学数值。
 
 **Verified**：`python -B scripts/generate_sec13_spatial_tables.py --check`从187372个完整参考斑块及整站汇总回算12行，逐字核对当前行文件，斑块数、数值、类别身份及外框标志均通过。`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功生成7页PDF；第2页图2位于1.3.1论述之后、1.3.2标题之前，第3页表1位于1.3.2末段之后、第2节标题之前。渲染查看`output/sec13-layout-inline-2.png`和`output/sec13-layout-inline-3.png`，图例、表格、表注完整，无裁切重叠；`git diff --check`通过。原FRAGSTATS工程未重算；编译仍有既存字体替代警告，以及随文表格的`hypcap`提示，不影响本次图表正文显示。
+
+## AREA、SHAPE改用面积加权中位数
+
+作者最新决定将表1的AREA、SHAPE中位数改为参考像元面积加权口径。每个完整参考斑块的`reference_pixels`为权重，按指标值升序累计权重，首次达到该站该类总像元数50%时的指标值作为中位数；括号内仍为全部斑块的最小值与最大值，不是四分位区间。此前斑块等权表和相关核查作为历史记录保留。PD、AI、ED及地物组成图未改变。
+
+八组玉米、大豆的面积加权中位数与`crop_patch_distribution_reading.csv`中`weighting=reference_pixel_area`、`distribution_level=reference_pixel_area`、`algorithm=inverse_weighted_ecdf`的已核验记录逐项一致。四站“其它地类”由逐斑块底表以相同算法派生；各站最大斑块均包含本类别过半像元、接触研究窗口外框，其AREA和SHAPE同时为各站最大值，故两个加权中位数均落在该斑块上。这些数值不代表按数量排序的多数斑块，也不是实际农业田块的形态。
+
+**Verified**：`python -B scripts/generate_sec13_spatial_tables.py --check`从187372个逐斑块记录回算并逐字核对12行LaTeX；同时核查两作物已验证汇总的身份、像元数、单位、极值和中位数，以及“其它地类”外框最大斑块的像元过半条件。`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功生成7页A4 PDF；`main.log`无Overfull/Underfull、未解析引用或LaTeX错误。渲染查看`output/sec13-weighted-20261011-2.png`和`-3.png`：图2和表1顺序正确，表格长数字、表注、三线与版心完整，无裁切或重叠。仍有既存字体替代与`hypcap`提示；未重跑FRAGSTATS。
+
+## 当前双作物景观表
+
+作者随后决定不在景观表中单列“其它地类”。表1现仅列四站玉米、大豆共8行；AREA、SHAPE仍为参考像元面积加权中位数（全体斑块最小值～最大值），PD、AI仍为作物类别级。ED保持原整站三类景观口径，并在同站两作物行之间合并显示。1.3.1三类面积组成及图2保留。含“其它地类”的加权预览和前述核查记录为历史版本，不代表当前表1。正文去掉该类的斑块及类别级比较，表注缩为指标口径与层级说明。
+
+**Verified（本轮双作物版）**：`python -B scripts/generate_sec13_spatial_tables.py --check`以逐斑块数据回算四站两作物共149234个参考斑块的AREA、SHAPE面积加权中位数及全体斑块极值，与已核验分布汇总及现行8行表逐字一致；同时核对整站`scope=full`的PD、AI、ED、斑块数和像元数。`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`生成7页PDF，`main.log`无Overfull/Underfull和未解析引用。渲染并查看`output/sec13-dualcrop-clearpage-2.png`和`-3.png`：图2完整位于1.3.1和1.3.2之间，表1及两行表注完整位于1.3.2与第2节之间，未见裁切、重叠或跨页拆分。试排产生的预览原位保留，未进入正文。
+
+**Partially verified**：本轮复用既有FRAGSTATS逐斑块与整站结果，未重跑原工程；期刊最终分页仍需在全文定稿时复核。编译保留原有字体替代及随文`captionof`的`hypcap`提示，未影响本次页面显示。

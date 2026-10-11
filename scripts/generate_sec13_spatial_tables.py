@@ -22,7 +22,7 @@ UPSTREAM = ROOT / "results/summary/sec33_reference_patch_types"
 FEATURES = ROOT / "results/processed/sec33_reference_patch_types/reference_patch_features.csv"
 COMBINED_TABLE = ROOT / "tables/sec13_spatial_metrics_rows.tex"
 SITES = {"A": "iw_2023", "B": "iw2_2023", "C": "ida_2023", "D": "il_2023"}
-CATEGORIES = {"corn": "玉米", "soybean": "大豆", "other": "其它地类"}
+CATEGORIES = {"corn": "玉米", "soybean": "大豆"}
 
 
 def require(condition, message):
@@ -36,6 +36,14 @@ def digest(path):
 
 def close(actual, expected):
     return bool(np.isclose(actual, expected, rtol=0, atol=1e-8))
+
+
+def pixel_weighted_median(group, metric):
+    order = np.argsort(group[metric].to_numpy(), kind="stable")
+    weights = group.reference_pixels.to_numpy()[order]
+    midpoint = (int(weights.sum()) + 1) // 2
+    median_index = order[np.searchsorted(np.cumsum(weights), midpoint, side="left")]
+    return float(group[metric].iloc[median_index]), bool(group.touches_outer_edge.iloc[median_index])
 
 
 def build_tables():
@@ -79,8 +87,9 @@ def build_tables():
     raw_whole = raw_landscape.set_index("dataset_id")
     dist = distributions.loc[
         distributions.metric.isin(["AREA", "SHAPE"])
-        & distributions.weighting.eq("patch_equal")
-        & distributions.distribution_level.eq("patch_count")
+        & distributions.weighting.eq("reference_pixel_area")
+        & distributions.distribution_level.eq("reference_pixel_area")
+        & distributions.algorithm.eq("inverse_weighted_ecdf")
     ].set_index(["target", "site", "crop", "metric"])
     limits = support.set_index(["target", "site", "crop"])
     require(len(dist) == 16 and not dist.index.has_duplicates, "patch distribution keys")
@@ -113,7 +122,7 @@ def build_tables():
                 and close(float(cls.aggregation_index), float(source_cls.ai_recomputed)),
                 f"{key}: full-scope class support or metrics")
 
-    combined_rows = ["% 斑块级统计为中位数（最小值～最大值）；PD、AI为类别级，ED为整站景观级。"]
+    combined_rows = ["% AREA、SHAPE为参考像元面积加权中位数（全体斑块最小值～最大值）；PD、AI为类别级，ED为整站景观级。"]
     extremes = []
     for site, target in SITES.items():
         site_comp = composition.loc[composition.site.eq(site)]
@@ -135,36 +144,35 @@ def build_tables():
                     f"{key}: patch count")
             require(int(group.reference_pixels.sum()) == int(comp.loc[key, "pixels"])
                     == int(cls.pixels), f"{key}: pixel support")
-            if crop != "other":
-                require(len(group) == int(limits.loc[key, "n_patches"])
-                        and int(group.reference_pixels.sum()) == int(limits.loc[key, "pixels"])
-                        and int(group.touches_outer_edge.sum()) == int(limits.loc[key, "edge_patches"]),
-                        f"{key}: crop patch support")
+            require(len(group) == int(limits.loc[key, "n_patches"])
+                    and int(group.reference_pixels.sum()) == int(limits.loc[key, "pixels"])
+                    and int(group.touches_outer_edge.sum()) == int(limits.loc[key, "edge_patches"]),
+                    f"{key}: crop patch support")
             pd_value = float(cls.patch_density_per_100ha)
             ai_value = float(cls.aggregation_index)
             require(close(pd_value, len(group) / 589824 * 100)
                     and close(pd_value, float(source_cls.pd_recomputed))
                     and close(ai_value, float(source_cls.ai_recomputed)),
                     f"{key}: class metric/source mismatch")
-
             stats = {}
             edge_status = {}
             for metric in ("AREA", "SHAPE"):
                 values = group[metric]
-                minimum, median, maximum = (float(values.min()), float(values.median()),
-                                            float(values.max()))
+                median, median_touches_edge = pixel_weighted_median(group, metric)
+                minimum, maximum = float(values.min()), float(values.max())
                 require(minimum <= median <= maximum, f"{key}: {metric} statistic ordering")
-                if crop != "other":
-                    reading = dist.loc[(*key, metric)]
-                    require(reading.current_status == "Verified"
-                            and reading.unit == ("ha" if metric == "AREA" else "dimensionless")
-                            and int(reading.n_total) == len(group)
-                            and all(close(actual, float(reading[field])) for actual, field in
-                                    ((minimum, "minimum"), (median, "median"),
-                                     (maximum, "maximum"))),
-                            f"{key}: {metric} order statistics differ from summary")
+                reading = dist.loc[(*key, metric)]
+                require(reading.current_status == "Verified"
+                        and reading.unit == ("ha" if metric == "AREA" else "dimensionless")
+                        and int(reading.n_total) == len(group)
+                        and int(reading.pixels_total) == int(group.reference_pixels.sum())
+                        and all(close(actual, float(reading[field])) for actual, field in
+                                ((minimum, "minimum"), (median, "median"),
+                                 (maximum, "maximum"))),
+                        f"{key}: {metric} order statistics differ from summary")
                 stats[metric] = (minimum, median, maximum)
                 edge_status[metric] = {
+                    "weighted_median_touches_outer_edge": median_touches_edge,
                     "minimum_touches_outer_edge": bool(group.loc[values.eq(minimum),
                                                                   "touches_outer_edge"].any()),
                     "maximum_touches_outer_edge": bool(group.loc[values.eq(maximum),
@@ -174,10 +182,10 @@ def build_tables():
                              "AREA": stats["AREA"], "SHAPE": stats["SHAPE"],
                              "outer_edge": edge_status})
 
-            site_cell = rf"\multirow{{3}}{{*}}{{{site}}}" if index == 0 else ""
+            site_cell = rf"\multirow{{2}}{{*}}{{{site}}}" if index == 0 else ""
             area_cell = f"{stats['AREA'][1]:.2f}（{stats['AREA'][0]:.2f}～{stats['AREA'][2]:.2f}）"
             shape_cell = f"{stats['SHAPE'][1]:.2f}（{stats['SHAPE'][0]:.2f}～{stats['SHAPE'][2]:.2f}）"
-            ed_cell = (rf"\multirow{{3}}{{*}}{{{float(whole.loc[(target, site), 'edge_density_m_per_ha']):.2f}}}"
+            ed_cell = (rf"\multirow{{2}}{{*}}{{{float(whole.loc[(target, site), 'edge_density_m_per_ha']):.2f}}}"
                        if index == 0 else "")
             combined_rows.append(f"{site_cell} & {crop_name} & {area_cell} & {shape_cell} & "
                                  f"{pd_value:.2f} & {ai_value:.2f} & {ed_cell} " + r"\\")
