@@ -35,10 +35,16 @@
 
 ## 三类地物整表增补与复核
 
-作者进一步决定将“其它地类”纳入同一张表。当前表为四站×三类共12行，站点和整站ED各跨三行；玉米、大豆8行的原数值保留。“其它地类”AREA、SHAPE直接从`results/processed/sec33_reference_patch_types/reference_patch_features.csv`按站点、类别逐斑块等权派生，不冒称`crop_patch_distribution_reading.csv`已有该类别的分布汇总。四站斑块数依次为7451、10557、12530、7600，对应像元数1169135、2256417、1816209、1546343，均与类别级和组成底表吻合。PD、AI沿用已核验的整站`scope=full`类别记录；ED仍为各站三类景观的唯一值。
+作者进一步决定将“其它”纳入同一张表。当前表为四站×三类共12行，站点和整站ED各跨三行；玉米、大豆8行的原数值保留。“其它”AREA、SHAPE直接从`results/processed/sec33_reference_patch_types/reference_patch_features.csv`按站点、类别逐斑块等权派生，不冒称`crop_patch_distribution_reading.csv`已有该类别的分布汇总。四站斑块数依次为7451、10557、12530、7600，对应像元数1169135、2256417、1816209、1546343，均与类别级和组成底表吻合。PD、AI沿用已核验的整站`scope=full`类别记录；ED仍为各站三类景观的唯一值。
 
-四站“其它地类”AREA中位数均为0.09 ha，最大值依次为101427.30、198917.46、155093.22、136116.36 ha；SHAPE中位数均为1.00，最大值依次为174.63、132.53、161.72、135.38（按两位小数显示）。四个最大AREA和最大SHAPE均来自接触研究窗口外框的斑块，不能解释为完整实际田块；最小值也各有外框接触斑块。其它地类由不同CDL类别合并，它的超大连通区尤其受重分类和窗口边界影响。
+四站“其它”AREA中位数均为0.09 ha，最大值依次为101427.30、198917.46、155093.22、136116.36 ha；SHAPE中位数均为1.00，最大值依次为174.63、132.53、161.72、135.38（按两位小数显示）。四个最大AREA和最大SHAPE均来自接触研究窗口外框的斑块，不能解释为完整实际田块；最小值也各有外框接触斑块。“其它”由不同CDL类别合并，它的超大连通区尤其受重分类和窗口边界影响。
 
 **Verified**：运行`python -B scripts/generate_sec13_spatial_tables.py --check`，脚本从187372个逐斑块记录回算12行统计、类别级PD/AI和整站ED，逐字核对当前LaTeX行文件；核查站点和类别身份、面积单位、斑块数、像元数、最小值—中位数—最大值顺序及外框标志。运行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功生成7页`main.pdf`；`main.log`未见Overfull/Underfull或未解析引用。渲染并查看第3页`output/sec13-threeclass-20261011-3.png`，12行、三线、表注、ED合并单元格与版心均完整，没有裁切或重叠；`git diff --check`通过。
 
 **Partially verified**：表仍浮于第3页页顶，第2页已经进入方法章；全文定稿时需处理阅读顺序。FRAGSTATS原工程未重算，字号替代警告仍存在；这两项均非此次数据增补造成。
+
+## 图表顺序与类别称谓调整
+
+作者本次确定正文、表格、图例统一称“玉米、大豆、其它地类”。图2置于1.3.1与1.3.2之间；表1改为1.3.2末段后的随文通栏表，位于第2节之前。此前使用“其它”的未提交修改已按此决定更新；旧双表、8行表及各次试排图保留作历史核查，不更改科学数值。
+
+**Verified**：`python -B scripts/generate_sec13_spatial_tables.py --check`从187372个完整参考斑块及整站汇总回算12行，逐字核对当前行文件，斑块数、数值、类别身份及外框标志均通过。`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功生成7页PDF；第2页图2位于1.3.1论述之后、1.3.2标题之前，第3页表1位于1.3.2末段之后、第2节标题之前。渲染查看`output/sec13-layout-inline-2.png`和`output/sec13-layout-inline-3.png`，图例、表格、表注完整，无裁切重叠；`git diff --check`通过。原FRAGSTATS工程未重算；编译仍有既存字体替代警告，以及随文表格的`hypcap`提示，不影响本次图表正文显示。
