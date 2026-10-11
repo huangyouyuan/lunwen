@@ -2,7 +2,8 @@
 
 | Figure | Purpose | Source data | Generation | Script | Status |
 |--------|---------|-------------|------------|--------|--------|
-| 研究区分布图 | 4 站点位置 | 旧稿 `word/media/image1.jpeg` | 从旧 Word 提取 | — | 已提取 `figures/study_area/study_area.jpg`，已插入 1.1 |
+| 四站地物分类图 | 1.1 四站地物分布；正文用中心经纬度定位 | `legacy/figures/four_site_classification/four_site_maize_soybean.png`、`site_coordinates.csv`；源图及站点身份核查见同目录 `verification.json` | 从已核验拼图无损裁出四个完整分类面板，在1.1尾部按单栏两行两列排版；图例按源图配色，子图排列不代表地理方位 | `scripts/prepare_study_area_classification.py` | 当前正文图1引用 `figures/study_area/fig_study_area_{A,B,C,D}.png`；原拼图与坐标说明原位保留 |
+| 旧研究区分布图（历史） | 旧稿四站行政区位置示意 | 旧稿 `word/media/image1.jpeg` | 从旧 Word 提取 | — | `figures/study_area/study_area.jpg`原位保留，不再由正文引用 |
 | 地物组成 | 1.3 四站三类面积占比 | `results/summary/sec13_sec31_foundations/reference_composition.csv`；2023 年整站分母 | 旧 Word 三类分组柱形图的排布；单栏横排，图框 7.6×5.7 cm，字体 9 pt | `scripts/generate_sec13_figure_table.py`（历史图件生成入口） | 组成图 `figures/study_area/fig_sec13_composition.pdf/.png` 沿用并保留在 1.3；既有数据与图件核查见 `verification/sec13-figure-table-v2-2026-10-11.json` |
 | 斑块级、类别级与景观级整表 | 1.3 四站玉米、大豆 AREA、SHAPE、PD、AI 与整站 ED | `results/processed/sec33_reference_patch_types/reference_patch_features.csv`；`results/summary/sec13_sec31_foundations/crop_patch_distribution_reading.csv`、`class_background_full_scope.csv`、`landscape_background_full_scope.csv` | 8行、通栏三线表；AREA和SHAPE为参考像元面积加权中位数（全体斑块最小值～最大值）；ED跨同站两作物行合并，数值仍覆盖整站三类景观 | `scripts/generate_sec13_spatial_tables.py` | 当前正文引用 `tables/sec13_spatial_metrics_rows.tex`；含其它地类的加权预览及此前等权版本均为历史记录，现行核查见 `verification/sec13-spatial-tables-2026-10-11.md` |
 | 分立的斑块级与类别级／景观级表（历史） | 1.3上一版两表排布 | 同上 | AREA、SHAPE最小值／中位数／最大值分列；PD、AI、ED另表 | `scripts/generate_sec13_spatial_tables.py`（上一版生成） | `tables/sec13_patch_extrema_rows.tex`与`tables/sec13_landscape_metrics_rows.tex`原位保留，不再由当前正文引用；上一版8页PDF的第2至4页预览见下文 |

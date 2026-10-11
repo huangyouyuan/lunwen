@@ -1,0 +1,296 @@
+{
+  "status": "verified",
+  "sites": [
+    {
+      "site": "A",
+      "source_code": "iw",
+      "raster": "D:\\AI\\huizhi\\资产\\iw.tif",
+      "raster_sha256": "2d4bf1f1d3c04197d22ae75ad92e41909af8d8ab6795a5038a67ce2cdc859f24",
+      "footprint_shp": "G:\\2560图像\\shp\\iw20.shp",
+      "source_crs": "EPSG:5070",
+      "geographic_crs": "EPSG:4269 (NAD83)",
+      "resolution_m": [
+        30,
+        30
+      ],
+      "shape": [
+        2560,
+        2560
+      ],
+      "projected_bounds": [
+        -30962.75827856116,
+        2170294.8986889636,
+        45837.24172143884,
+        2247094.8986889636
+      ],
+      "geographic_bounds": [
+        -96.38304276880758,
+        42.52981615904418,
+        -95.43294746120996,
+        43.218391713039026
+      ],
+      "boundary_samples_per_edge": 8193,
+      "center_lonlat": [
+        -95.90845045367173,
+        42.874589015717895
+      ],
+      "corners_lonlat": {
+        "NW": [
+          -96.38304276880758,
+          43.21783293691627
+        ],
+        "NE": [
+          -95.43294746120996,
+          43.217167116093954
+        ],
+        "SE": [
+          -95.43856037852251,
+          42.52981615904418
+        ],
+        "SW": [
+          -96.37925120704342,
+          42.53047471092332
+        ]
+      },
+      "class_counts": {
+        "1": 2974800,
+        "2": 1169135,
+        "3": 2409665
+      },
+      "source_label_encoding": "1=corn;2=other;3=soybean",
+      "footprint_symmetric_difference_m2": 0.0,
+      "asset_matches_source_copy": true,
+      "panel_caption": "（a）A站点地物分类图"
+    },
+    {
+      "site": "B",
+      "source_code": "iw2",
+      "raster": "D:\\AI\\huizhi\\资产\\iw2.tif",
+      "raster_sha256": "8ab6ec1a81bdeaa47516d0f7e4c17b8beecc888173331a1415c91169f20644b3",
+      "footprint_shp": "G:\\2560图像\\shp\\iw220.shp",
+      "source_crs": "EPSG:5070",
+      "geographic_crs": "EPSG:4269 (NAD83)",
+      "resolution_m": [
+        30,
+        30
+      ],
+      "shape": [
+        2560,
+        2560
+      ],
+      "projected_bounds": [
+        314900.52486949,
+        2107172.51880609,
+        391700.52486949,
+        2183972.51880609
+      ],
+      "geographic_bounds": [
+        -92.17607356407554,
+        41.87895298079173,
+        -91.19780042935497,
+        42.596141031998094
+      ],
+      "boundary_samples_per_edge": 8193,
+      "center_lonlat": [
+        -91.6892358835697,
+        42.238235492222266
+      ],
+      "corners_lonlat": {
+        "NW": [
+          -92.138196574584,
+          42.596141031998094
+        ],
+        "NE": [
+          -91.19780042935497,
+          42.564832146379786
+        ],
+        "SE": [
+          -91.24487300673641,
+          41.87895298079173
+        ],
+        "SW": [
+          -92.17607356407554,
+          41.90992828773799
+        ]
+      },
+      "class_counts": {
+        "1": 2758016,
+        "2": 2256417,
+        "3": 1539167
+      },
+      "source_label_encoding": "1=corn;2=other;3=soybean",
+      "footprint_symmetric_difference_m2": 0.0,
+      "asset_matches_source_copy": true,
+      "panel_caption": "（b）B站点地物分类图"
+    },
+    {
+      "site": "C",
+      "source_code": "ida",
+      "raster": "D:\\AI\\huizhi\\资产\\ida.tif",
+      "raster_sha256": "00bf5c6885da907006a841d735b40ae5c07deaaf1ebb257066374c5b732721cf",
+      "footprint_shp": "G:\\2560图像\\shp\\ida20.shp",
+      "source_crs": "EPSG:5070",
+      "geographic_crs": "EPSG:4269 (NAD83)",
+      "resolution_m": [
+        30,
+        30
+      ],
+      "shape": [
+        2560,
+        2560
+      ],
+      "projected_bounds": [
+        733605.7216,
+        1969349.2374,
+        810405.7216,
+        2046149.2374
+      ],
+      "geographic_bounds": [
+        -87.26581738458185,
+        40.3679385776416,
+        -86.26412652230256,
+        41.11695865660736
+      ],
+      "boundary_samples_per_edge": 8193,
+      "center_lonlat": [
+        -86.7671426389671,
+        40.743064801065486
+      ],
+      "corners_lonlat": {
+        "NW": [
+          -87.18120780591057,
+          41.11695865660736
+        ],
+        "NE": [
+          -86.26412652230256,
+          41.05010307180817
+        ],
+        "SE": [
+          -86.35741892113215,
+          40.3679385776416
+        ],
+        "SW": [
+          -87.26581738458185,
+          40.434122109381406
+        ]
+      },
+      "class_counts": {
+        "1": 2641661,
+        "2": 1816209,
+        "3": 2095730
+      },
+      "source_label_encoding": "1=corn;2=other;3=soybean",
+      "footprint_symmetric_difference_m2": 0.0,
+      "asset_matches_source_copy": true,
+      "panel_caption": "（c）C站点地物分类图"
+    },
+    {
+      "site": "D",
+      "source_code": "il",
+      "raster": "D:\\AI\\huizhi\\资产\\il.tif",
+      "raster_sha256": "9afbb4a6ef3c9c373a8704bd5c232c9973b50ffb812ddd9e0f5ccf7a28156c30",
+      "footprint_shp": "G:\\2560图像\\shp\\il20.shp",
+      "source_crs": "EPSG:5070",
+      "geographic_crs": "EPSG:4269 (NAD83)",
+      "resolution_m": [
+        30,
+        30
+      ],
+      "shape": [
+        2560,
+        2560
+      ],
+      "projected_bounds": [
+        532549.787167657,
+        1880896.28143859,
+        609349.787167657,
+        1957696.28143859
+      ],
+      "geographic_bounds": [
+        -89.72067835738487,
+        39.74015469396386,
+        -88.74942786049293,
+        40.47262197843423
+      ],
+      "boundary_samples_per_edge": 8193,
+      "center_lonlat": [
+        -89.23720437535906,
+        40.10705693365707
+      ],
+      "corners_lonlat": {
+        "NW": [
+          -89.66035785801014,
+          40.47262197843423
+        ],
+        "NE": [
+          -88.74942786049293,
+          40.423641084833704
+        ],
+        "SE": [
+          -88.81835348137423,
+          39.74015469396386
+        ],
+        "SW": [
+          -89.72067835738487,
+          39.78865339297072
+        ]
+      },
+      "class_counts": {
+        "1": 2619419,
+        "2": 1546343,
+        "3": 2387838
+      },
+      "source_label_encoding": "1=corn;2=other;3=soybean",
+      "footprint_symmetric_difference_m2": 0.0,
+      "asset_matches_source_copy": true,
+      "panel_caption": "（d）D站点地物分类图"
+    }
+  ],
+  "figure": {
+    "path": "D:\\AI\\huizhi\\output\\four_site_classification\\four_site_maize_soybean.png",
+    "size_px": [
+      6377,
+      7122
+    ],
+    "dpi": [
+      899.9982,
+      899.9982
+    ],
+    "sha256": "4f28e3d8bfb490122fa53066e07f759b1ed2965b97004b02f55f234f73cdd5a2",
+    "page_mm": [
+      180,
+      201
+    ],
+    "native_raster_orientation_preserved": true,
+    "resampling": "nearest during PNG rasterization only",
+    "full_source_extent": true,
+    "displayed_class_alpha": {
+      "1": 255,
+      "2": 255,
+      "3": 255
+    },
+    "displayed_class_colors": {
+      "1": "#E5BF34",
+      "2": "#C8C8C8",
+      "3": "#367451"
+    },
+    "panel_captions": [
+      "（a）A站点地物分类图",
+      "（b）B站点地物分类图",
+      "（c）C站点地物分类图",
+      "（d）D站点地物分类图"
+    ],
+    "administrative_layers_used": [],
+    "geographic_annotations": false,
+    "scale_bars": 0,
+    "north_arrows": 0,
+    "interior_grid": false,
+    "source_pixels_modified": false
+  },
+  "layout": {
+    "text_outside_page": [],
+    "text_overlaps": [],
+    "expected_captions_and_legend_only": true
+  },
+  "visual_review": "All four subfigure captions and the shared three-class legend inspected. Other land cover is opaque neutral gray. No geographic annotations, scale bars or north arrows; no text overlap or clipping."
+}
