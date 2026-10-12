@@ -43,3 +43,9 @@
 /output/previews/2026-10-12-area_shape_joint_bubbles_v3/*.log -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /output/previews/2026-10-12-area_shape_joint_bubbles_v3/*.aux -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /verification/area-shape-bubbles-archive-2026-10-12.json -text
+
+# Preserve hashes for full-reference spatial error-condition analysis.
+/results/processed/spatial_error_conditions/** -text whitespace=cr-at-eol
+/results/summary/spatial_error_conditions/** -text whitespace=cr-at-eol
+/scripts/analyze_spatial_error_conditions.py -text
+/scripts/test/check_spatial_error_conditions.py -text

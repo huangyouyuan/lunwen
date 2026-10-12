@@ -1,0 +1,48 @@
+{
+  "data_status": "derived_exploratory",
+  "area_ha": [
+    "<10",
+    "10-<50",
+    "50-<100",
+    "100-<200",
+    "200-<500",
+    ">=500"
+  ],
+  "shape": [
+    "1-<1.5",
+    "1.5-<2",
+    "2-<3",
+    ">=3"
+  ],
+  "enn_m": [
+    "60-<90",
+    "90-<120",
+    "120-<180",
+    ">=180"
+  ],
+  "contrast_arms": {
+    "area": "high AREA>=50 ha; low AREA<50 ha",
+    "shape": "high SHAPE>=2; low SHAPE<2",
+    "enn": "high ENN>=90 m; low ENN<90 m"
+  },
+  "primary_support": {
+    "patches_per_arm_or_site_per_cell": 10,
+    "pixels_per_arm_or_site_per_cell": 1000
+  },
+  "sensitivity_support": {
+    "patches": 1,
+    "pixels": 1
+  },
+  "contrast_weights": "minimum of the two arm-specific full-population pixel shares, normalize over eligible strata",
+  "site_weights": "mean of four site-specific pixel shares normalized within retained cells, equal site weight",
+  "distance_strata": [
+    "0<d<=1",
+    "1<d<=6",
+    "d>6"
+  ],
+  "no_p_values": true,
+  "source_count": 192,
+  "scripts": [
+    "scripts/analyze_spatial_error_conditions.py"
+  ]
+}
