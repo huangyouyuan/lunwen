@@ -1,0 +1,377 @@
+{
+  "status": "Verified",
+  "phase": "ready_for_commit",
+  "created_at": "2026-10-12T16:27:00.368330+08:00",
+  "base_commit": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489",
+  "purpose": "Complete archival and portable handoff: track both historical backups in full, preserve original bytes, include the already-built current PDF, and correct handoff references.",
+  "previous_archive_ledger": "verification/output-preview-archive-2026-10-12.json",
+  "directories": [
+    {
+      "original_path": "output/figure23-bars-20261012-before",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before",
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources",
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    }
+  ],
+  "moves": [
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/data-manifest.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/data-manifest.md",
+      "sha256": "2803f3090c64fb914e0ac46b7e0495d8242366d9c108f285674a92f64d473481",
+      "bytes": 9921,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/results/fig_within_site_f1_a.pdf",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/results/fig_within_site_f1_a.pdf",
+      "sha256": "25cbf1dd1d8f6b7e05ca2969af0dc1a451f3e482a808d722f56d25631142fa87",
+      "bytes": 25281,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/results/fig_within_site_f1_a.png",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/results/fig_within_site_f1_a.png",
+      "sha256": "7bf77ee8c96e2e747065d5e8158d0ce7fa7d6e6f81a44d6889551dcde3851085",
+      "bytes": 51239,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/results/fig_within_site_f1_b.pdf",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/results/fig_within_site_f1_b.pdf",
+      "sha256": "589f7c44a2607dca38ef15dff3e21c04e53c4acd0ecfe089d09409b20afffb82",
+      "bytes": 25270,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/results/fig_within_site_f1_b.png",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/results/fig_within_site_f1_b.png",
+      "sha256": "0fa53bdb38a01c923f1f8fc21e70389395154086d98052dfaa4825700b9552fc",
+      "bytes": 52202,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/study_area/fig_sec13_composition.pdf",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/study_area/fig_sec13_composition.pdf",
+      "sha256": "57f34f24da52bd6b36491383516e4c10b53e3ec30aa030ce6641d9cb5d78fd60",
+      "bytes": 26230,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/figures/study_area/fig_sec13_composition.png",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/figures/study_area/fig_sec13_composition.png",
+      "sha256": "48b6757eab9a60d1a57eab1c1755bdac05101d456e85546a6afcdab74fe48958",
+      "bytes": 52023,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/main.log",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/main.log",
+      "sha256": "9bec37d4cdba5276b95f95a9a63e10fc6ec55b77178c8753dfa25d1d1ba69a6a",
+      "bytes": 52512,
+      "previously_ignored": true,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/main.pdf",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/main.pdf",
+      "sha256": "5978237f31e2affa5e0ccf0097b2aae7e9558df6171798ca4415675c3592969a",
+      "bytes": 3407998,
+      "previously_ignored": true,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/main.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/main.tex",
+      "sha256": "be8d5b02bb7d267e6f24aa98838ede81b1d5b7f837d9101d2d6b979d210c062b",
+      "bytes": 6658,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/manifest.json",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/manifest.json",
+      "sha256": "2d59b55e800ea6425a7eb8427ebbed5119dc3fd3e0c2f6bbb9e357068cffa8d1",
+      "bytes": 45341,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/plan/format-spec.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/plan/format-spec.md",
+      "sha256": "6616a7fad1f1bbdec47fbcaa5f2ae2b3b64729dda26d5279c5f6a807fdb0a3db",
+      "bytes": 8905,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/plan/progress.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/plan/progress.md",
+      "sha256": "82df5cdfd36e49fe90e70a29921d31a8569ad1af2f5ee76fadfd53d750f0622f",
+      "bytes": 3644,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/results/summary/f1_raw_scale/within_site_crop_f1.csv",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/results/summary/f1_raw_scale/within_site_crop_f1.csv",
+      "sha256": "5c333be499a99b6f7c6e61dbd77a66523e8bafd050707f7261b6c9d520a322d4",
+      "bytes": 1288,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/results/summary/sec13_sec31_foundations/reference_composition.csv",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/results/summary/sec13_sec31_foundations/reference_composition.csv",
+      "sha256": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
+      "bytes": 1563,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/scripts/figstyle.py",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/scripts/figstyle.py",
+      "sha256": "bb99c5b1fe7ac033c7d9a942fe6024df48f261e956d35569f153c4451c11e11e",
+      "bytes": 3642,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/scripts/generate_sec13_figure_table.py",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/scripts/generate_sec13_figure_table.py",
+      "sha256": "8e84bcc2bef3d5848004c16ea6499828aa1543d3dd8e0b2fba26a9c11ec1082d",
+      "bytes": 9058,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/scripts/plot_within_site_f1.py",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/scripts/plot_within_site_f1.py",
+      "sha256": "e0d0fe64103a992735e6f980b84947c9f975258e3f6ea1a1acf47a2911ae9645",
+      "bytes": 2919,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/sections/02_data.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/sections/02_data.tex",
+      "sha256": "03aeb47addb94698f2c44e942cef84ebc80977af5c99935960777ed448e6dc66",
+      "bytes": 8807,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/figure23-bars-20261012-before/sections/04_results.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/sections/04_results.tex",
+      "sha256": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
+      "bytes": 9801,
+      "previously_ignored": false,
+      "reason": "Historical source, figures, PDF and log before bar-style unification; referenced by the figure 2/3 verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/figures/data-manifest.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/figures/data-manifest.md",
+      "sha256": "79cf141a59032c92569c5c4701242254a63616b5fc64b8b1032ec35eba7c817c",
+      "bytes": 9506,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/index.patch",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/index.patch",
+      "sha256": "5662f4e9182f6f874d22d7cf76ffef9291160742e85ad3b45d331a08d1a4bb92",
+      "bytes": 18105,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/main.log",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/main.log",
+      "sha256": "a27fdd559b23224ea21f04a0c95fb4a93e25ed6db573266bc184d6488c1f6a5a",
+      "bytes": 52512,
+      "previously_ignored": true,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/main.pdf",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/main.pdf",
+      "sha256": "b6f9affd157f1462ec71ef2ce393b46486f7cf09100b5e4e112f851b80e29a6d",
+      "bytes": 3408309,
+      "previously_ignored": true,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/main.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/main.tex",
+      "sha256": "be8d5b02bb7d267e6f24aa98838ede81b1d5b7f837d9101d2d6b979d210c062b",
+      "bytes": 6658,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/manifest.json",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/manifest.json",
+      "sha256": "73f2409f87c3492509f8e48e7e4aa21fab7d02a6da77fd75919236d2868608bb",
+      "bytes": 4836,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/plan/format-spec.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/plan/format-spec.md",
+      "sha256": "16444de19ad44f4466d59664a3e318b0537812f9c30e35e8823ce11eecd26dd2",
+      "bytes": 8807,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/plan/progress.md",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/plan/progress.md",
+      "sha256": "26a3aec202c3b5f07be16e0b9fc3f92e83732f8b4adcb7fa0caf314f48bd3c16",
+      "bytes": 3137,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/scripts/generate_core_tables.py",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/scripts/generate_core_tables.py",
+      "sha256": "93a9b71771d3d68874ae0ff4963574fabbd81d4f6433e80145288d9ba88e5c44",
+      "bytes": 3857,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/sections/02_data.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/sections/02_data.tex",
+      "sha256": "caf9e124a3722a0b339a5b039213df621dedfa69f565c01c0b2c6d1bbd6664d4",
+      "bytes": 8730,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/sections/04_results.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/sections/04_results.tex",
+      "sha256": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
+      "bytes": 9801,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    },
+    {
+      "original_path": "output/font-audit-20261012-before-sources/tables/table2_cross_site_f1_12paths_rows.tex",
+      "archive_path": "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/tables/table2_cross_site_f1_12paths_rows.tex",
+      "sha256": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf",
+      "bytes": 820,
+      "previously_ignored": false,
+      "reason": "Historical source, staged patch, PDF and log before font edits; referenced by the font verification."
+    }
+  ],
+  "copies": [
+    {
+      "original_path": "main.pdf",
+      "archive_path": "output/previews/2026-10-12-figure23-bars/manuscript.pdf",
+      "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+      "bytes": 3408076,
+      "reason": "Versioned snapshot of the current 8-page PDF matching the reviewed pages 3 and 5; no rebuild."
+    }
+  ],
+  "reference_updates": [
+    {
+      "path": "HANDOVER.md",
+      "sha256_before": "85d5756807ffbb6662d54cb97dc45083a24bf0079fed887469dc33700e0b4cef",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:HANDOVER.md",
+      "sha256_after": "e92bb5d7b8453ddf6ca2dd25ca73561c325890f9454f6910343be5a37c2d5319"
+    },
+    {
+      "path": "README.md",
+      "sha256_before": "9800387b0ca75149176f336ecbc5a0f46473063fca576eb87e05d61134e4a336",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:README.md",
+      "sha256_after": "47047fe796342173683cf3a2712eced5714de1b6a3b287c9b64554e5f5ecab04"
+    },
+    {
+      "path": "plan/progress.md",
+      "sha256_before": "c2355a1621fd39eb086d755167e8fc68a1dbe160cbcbbc8ae4df4d1f68d8a2b8",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:plan/progress.md",
+      "sha256_after": "3e3a0f4575a69fde7dd930a4906b0a248c92c4f74daffc6ea4ec309980fdd61a"
+    },
+    {
+      "path": "figures/data-manifest.md",
+      "sha256_before": "f85ca369660eb5c3d472ff965f83236a79c334f4b9f6ba70dfc8c9035cd1f438",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:figures/data-manifest.md",
+      "sha256_after": "cc026c40c5943df37b289103a57413d53fb4a4f27a43658d22e2976618080570"
+    },
+    {
+      "path": "verification/figure23-bars-2026-10-12.json",
+      "sha256_before": "9e34ece353d020aa936b573d62f231127c5f834877cc78c44748a8e59da717a8",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:verification/figure23-bars-2026-10-12.json",
+      "sha256_after": "c5e9ef548ddf83c3a2b612965e50e33f417f37344117a82b33c5e31a58276614"
+    },
+    {
+      "path": "verification/figure23-bars-2026-10-12.md",
+      "sha256_before": "cf4ee6062b0c719eeab4aa96c029735cdcb70b53f7cef5411b7f388da0862908",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:verification/figure23-bars-2026-10-12.md",
+      "sha256_after": "643b793aa98c8f7dc0ede9f96e114eca12d62250d3081c416bdc84425431d772"
+    },
+    {
+      "path": "verification/figure-table-fonts-2026-10-12.md",
+      "sha256_before": "bf1759ff78c892955efd7a1bc123a88f642df3fdd7a66e85c559927098b51ef4",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:verification/figure-table-fonts-2026-10-12.md",
+      "sha256_after": "0ddcad688a8092d680678adf55d25acbc5928b2eb525f0eca1870fe77b8c8fda"
+    },
+    {
+      "path": "output/README.md",
+      "sha256_before": "8e8511986747854b469eb5adf3e69c393b46ceff99f33d185f3d5030b67d23b3",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:output/README.md",
+      "sha256_after": "7ec7a103bdc049f5d4e7f9ceff35b419984b87a4ec7a1202dc7d8bb43a6d1683"
+    },
+    {
+      "path": "output/archive/2026-10-12/README.md",
+      "sha256_before": "783f131a2157a15db8fa011de9c8ec610494dfe9b3416cb5fe9cf4e2c2ae384e",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:output/archive/2026-10-12/README.md",
+      "sha256_after": "ab61178d7bc9df9d30585dbfd94966b141493be16a5a840d4ea5ca4b48f69899"
+    },
+    {
+      "path": "output/preview-manifest.json",
+      "sha256_before": "138dd38b6b4056855499f446e7080d1cc9cbef5592675972ab1ff36376bca3b2",
+      "before_version": "1d0bc9f5bf05504d2fc7ccf8303aa5cefaabf489:output/preview-manifest.json",
+      "sha256_after": "1b84eeff156e77a5d18b9580d1acc4649b8cb0483e036500cd9c599a3bbffbda"
+    }
+  ],
+  "historical_manifests": "Original backup manifests remain byte-for-byte unchanged. Resolve snapshot paths through this ledger; archived scripts are for review only, not active production entry points.",
+  "validation": {
+    "status": "Verified",
+    "verified_at": "2026-10-12T16:29:33.556522+08:00",
+    "moved_files_sha256_and_sizes": 32,
+    "ignored_historical_files_included": 4,
+    "versioned_current_pdf_matches_main_and_previews": true,
+    "all_original_output_files_preserved": 125,
+    "protected_manuscript_figures_scripts_summary_unchanged": 357,
+    "original_backup_manifests_preserved_and_resolved": 2,
+    "local_markdown_links": 91,
+    "obsolete_active_backup_references": 0,
+    "git_diff_check": "Verified",
+    "scope": "Archive integrity and handoff only; no scientific recomputation, compile, redraw, or push.",
+    "git_staged_snapshot_hashes_verified": 33,
+    "git_staged_scope_exact": true,
+    "git_staged_diff_check": {
+      "status": "Partially verified",
+      "active_changes": "Verified",
+      "unchanged_archived_whitespace_files": [
+        "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/main.log",
+        "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/index.patch",
+        "output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/main.log"
+      ],
+      "note": "Full diff check reports preexisting trailing spaces/blank lines in historical logs and patch. These are preserved byte-for-byte as required; all active changes pass the check, and every archived file passes SHA-256 verification."
+    },
+    "untracked_files_after_staging": 0
+  }
+}

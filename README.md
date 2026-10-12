@@ -43,7 +43,7 @@
 python -B -m unittest scripts/test/test_sec33_directional_confusion_closeout.py scripts/test/test_sec33_directional_confusion.py scripts/test/test_f1_raw_scale.py scripts/test/test_f1_presentation.py -v
 ```
 
-手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；当前本地PDF为8页，最新第3、5页预览及PDF哈希见[清单](output/preview-manifest.json)，本次归档与交接未重建。PDF及两组本地修改前备份不随本次提交传递，详见[工作区交接](HANDOVER.md#工作区交接)。
+手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；当前稿件为8页，最新第3、5页预览及PDF哈希见[清单](output/preview-manifest.json)，本次归档与交接未重建。[当前PDF快照](output/previews/2026-10-12-figure23-bars/manuscript.pdf)及两组完整修改前备份均已纳入Git，详见[工作区交接](HANDOVER.md#工作区交接)。
 
 ## 历史入口
 

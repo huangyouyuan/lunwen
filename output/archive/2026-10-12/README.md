@@ -12,7 +12,10 @@
 | [sec32-layout](sec32-layout/) | 原3.2页面预览及两个同内容副本，均完整保留 | 6 |
 | [preview-index](preview-index/) | 2026-10-11七页版本的原始预览清单 | 1 |
 | [reference-snapshots](reference-snapshots/) | 修改引用路径前的14份清单、核查记录及进度快照 | 14 |
+| [source-backups](source-backups/) | 后续补齐的字体检查前与条形样式修改前备份，含PDF、日志、源码和原始清单 | 32 |
 
 当前入口为[output/README.md](../../README.md)。迁移明细与核验结果见[归档清单](../../../verification/output-preview-archive-2026-10-12.json)。全部移动前核对用途、引用和目标路径；移动后逐文件核对哈希，没有删除或覆盖同名文件。
 
-`preview-index/`和`reference-snapshots/`保留历史内容，其中的旧路径是当时记录，不继续作为活动入口；查找迁移后的文件时使用上述清单的`original_path`与`archive_path`映射。原先已成组的编译目录和源码备份不在本次移动范围内。
+`preview-index/`和`reference-snapshots/`保留历史内容，其中的旧路径是当时记录，不继续作为活动入口；查找迁移后的文件时使用上述清单的`original_path`与`archive_path`映射。
+
+后续收尾将两组原未跟踪源码备份完整迁入`source-backups/`并纳入Git，包括原先被忽略规则排除的2份PDF和2份日志。32个文件逐字节保留，迁移映射与SHA-256见[收尾清单](../../../verification/output-handoff-closeout-2026-10-12.json)。原始备份清单中的旧路径按此映射解析，历史源码只供审阅，不运行或写入当前结果目录。已有编译目录和ENN表放大前备份仍保留原位置。

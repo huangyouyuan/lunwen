@@ -1,6 +1,6 @@
 # 论文交接
 
-更新：2026-10-12。本次提交保存页面预览归档与交接更新；提交前基线为`e25df0c`（图表字体、通栏表格及图2/图3样式），1.1首段润色已在`3841b8f`中。接手先检查`git status --short`和`git log -5 --oneline`，以实际文件与Git状态为准，不把本文件或旧提示词当作任务已经完成的证据。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)，当前缺项见[进度](plan/progress.md)；2026-10-11整理过程见[历史版本说明](plan/version-notes-2026-10-11.md)。
+更新：2026-10-12。`1d0bc9f`已保存页面预览归档与交接更新；本次在其基础上补齐两组修改前备份的完整归档、Git保存及可传递PDF。论文内容仍以`e25df0c`（图表字体、通栏表格及图2/图3样式）为基线，1.1首段润色已在`3841b8f`中。接手先检查`git status --short`和`git log -5 --oneline`，以实际文件与Git状态为准，不把本文件或旧提示词当作任务已经完成的证据。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)，当前缺项见[进度](plan/progress.md)；2026-10-11整理过程见[历史版本说明](plan/version-notes-2026-10-11.md)。
 
 ## 当前主线与优先级
 
@@ -74,12 +74,12 @@
 | Partially verified | ENN复用既有空间距离，未重算距离或恢复全部FRAGSTATS工程参数；C站玉米ENN最大值涉及外框斑块`ida_2023, PID=69765`。距离限于窗口内最近同类斑块边界像元中心，不是田块净空距离。B站限制见[身份追溯](verification/iw2-identity-provenance.md) |
 | Not verified | 全文最终分页、留白、文献格式及尚未完成章节的科学论述；既有字体替代、xeCJK、caption等警告未作为本次任务处理。图表字体通过不等于论文已定稿 |
 
-最新预览只包含最近查看的第3、5页，不是整篇逐页预览。此前7页稿件、表1位于第3页的记录均为历史状态；当前表1在第4页。`main.pdf`属于本地编译产物，不纳入Git；换机需按授权编译，不能假定PDF随提交传递。
+最新预览只包含最近查看的第3、5页，不是整篇逐页预览。此前7页稿件、表1位于第3页的记录均为历史状态；当前表1在第4页。本地`main.pdf`仍按既有规则忽略，但本次已将同字节的[8页PDF快照](output/previews/2026-10-12-figure23-bars/manuscript.pdf)纳入Git，换机可直接查看；PDF哈希及来源见[预览清单](output/preview-manifest.json)，后续改稿需重新核对版本。
 
 ## 工作区交接
 
-本次只提交预览迁移、引用修正和交接文档；正文、正式图件、表体、数据及生产脚本沿用`e25df0c`，不重新提交或重算科研结果，不推送。归档目录采用保留字节的Git属性，避免换行转换改变历史快照SHA-256；未新增忽略规则。
+本次提交补齐备份归档、可传递PDF、引用修正和交接文档；正文、正式图件、表体、数据及生产脚本沿用`e25df0c`，未重绘、编译或重算科研结果，不推送。归档目录采用保留字节的Git属性，避免换行转换改变历史快照SHA-256；未新增忽略规则。
 
-原有`output/font-audit-20261012-before-sources/`及`output/figure23-bars-20261012-before/`两组本地备份保留原位、保持未跟踪，另有按既有规则忽略的PDF和日志；不要为制造干净状态而删除。它们不随本次Git提交传递，换机如需这些完整备份，应另行复制目录并按各自`manifest.json`核对。
+上一提交遗漏的两组本地备份已完整迁至[源码备份归档](output/archive/2026-10-12/source-backups/)，共32个文件，含2份原先被忽略的PDF、2份日志、源码、图件、暂存补丁和原始清单，全部纳入Git。原清单内容不改写，旧路径按[收尾映射与核查](verification/output-handoff-closeout-2026-10-12.json)解析。迁移前后和Git保存内容均核对SHA-256，接手无需另外复制这两组备份；旧源码仅供审阅，不是活动运行入口。此前报告的“保留原位、未跟踪”只表示`1d0bc9f`当时状态。
 
 接手顺序：核查Git和实际文件 → 读规则、写作/格式规范与当前正文 → 读[进度](plan/progress.md)及对应底表 → 在作者新任务范围内继续。若续写3.1，先读`plan/experiment-protocol.md`、`sections/03_methods.tex`、`plan/results-map.md`及正式summary；若核对1.3表，优先运行只读检查，不运行历史生产脚本。保存正文默认不编译，只有作者要求或规则允许的验证任务才执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。每次编译后更新预览目录与清单，保留历史文件。

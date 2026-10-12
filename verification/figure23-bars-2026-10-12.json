@@ -171,6 +171,6 @@
     "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-3.png",
     "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-5.png"
   ],
-  "before_snapshot": "output/figure23-bars-20261012-before/manifest.json",
+  "before_snapshot": "output/archive/2026-10-12/source-backups/figure23-bars-20261012-before/manifest.json",
   "visual_findings": "Rendered manuscript pages 3 and 5 inspected: consistent bar geometry, legible labels, no overlapping or clipped text."
 }

@@ -1,0 +1,386 @@
+diff --git a/results/processed/sec11_cdl2023_crop_share/cdl2023_code_counts.csv b/results/processed/sec11_cdl2023_crop_share/cdl2023_code_counts.csv
+new file mode 100644
+index 0000000..e7f271e
+--- /dev/null
++++ b/results/processed/sec11_cdl2023_crop_share/cdl2023_code_counts.csv
+@@ -0,0 +1,145 @@
++site,dataset_id,cdl_code,pixels,crop
++A,iw_2023,1,2974800,true
++A,iw_2023,4,3265,true
++A,iw_2023,5,2409665,true
++A,iw_2023,13,79,true
++A,iw_2023,24,15,true
++A,iw_2023,27,443,true
++A,iw_2023,28,6614,true
++A,iw_2023,36,43275,true
++A,iw_2023,37,8230,true
++A,iw_2023,42,12,true
++A,iw_2023,44,1,true
++A,iw_2023,60,20,true
++A,iw_2023,61,156,true
++A,iw_2023,68,6,true
++A,iw_2023,111,16171,false
++A,iw_2023,121,216251,false
++A,iw_2023,122,88323,false
++A,iw_2023,123,72905,false
++A,iw_2023,124,22133,false
++A,iw_2023,131,13367,false
++A,iw_2023,141,57777,false
++A,iw_2023,142,1953,false
++A,iw_2023,143,23399,false
++A,iw_2023,152,745,false
++A,iw_2023,176,494831,false
++A,iw_2023,190,8362,false
++A,iw_2023,195,90151,false
++A,iw_2023,205,651,true
++B,iw2_2023,1,2758016,true
++B,iw2_2023,4,116,true
++B,iw2_2023,5,1539167,true
++B,iw2_2023,21,130,true
++B,iw2_2023,23,138,true
++B,iw2_2023,24,1192,true
++B,iw2_2023,26,109,true
++B,iw2_2023,27,1106,true
++B,iw2_2023,28,13008,true
++B,iw2_2023,29,1,true
++B,iw2_2023,36,76148,true
++B,iw2_2023,37,5329,true
++B,iw2_2023,44,20,true
++B,iw2_2023,53,4,true
++B,iw2_2023,58,63,true
++B,iw2_2023,59,264,true
++B,iw2_2023,60,32,true
++B,iw2_2023,61,22,true
++B,iw2_2023,111,48147,false
++B,iw2_2023,121,186154,false
++B,iw2_2023,122,237830,false
++B,iw2_2023,123,133389,false
++B,iw2_2023,124,37175,false
++B,iw2_2023,131,10304,false
++B,iw2_2023,141,408640,false
++B,iw2_2023,142,1765,false
++B,iw2_2023,143,28086,false
++B,iw2_2023,152,546,false
++B,iw2_2023,176,893389,false
++B,iw2_2023,190,150666,false
++B,iw2_2023,195,22626,false
++B,iw2_2023,205,13,true
++B,iw2_2023,228,1,true
++B,iw2_2023,229,4,true
++C,ida_2023,1,2641661,true
++C,ida_2023,4,584,true
++C,ida_2023,5,2095730,true
++C,ida_2023,6,972,true
++C,ida_2023,12,33,true
++C,ida_2023,13,167101,true
++C,ida_2023,14,3804,true
++C,ida_2023,24,63003,true
++C,ida_2023,26,18357,true
++C,ida_2023,27,356,true
++C,ida_2023,28,1653,true
++C,ida_2023,29,1,true
++C,ida_2023,30,38,true
++C,ida_2023,36,62357,true
++C,ida_2023,37,11822,true
++C,ida_2023,42,2,true
++C,ida_2023,43,3025,true
++C,ida_2023,44,69,true
++C,ida_2023,48,8,true
++C,ida_2023,54,218,true
++C,ida_2023,58,11,true
++C,ida_2023,59,167,true
++C,ida_2023,61,13,true
++C,ida_2023,70,2,true
++C,ida_2023,111,40893,false
++C,ida_2023,121,217922,false
++C,ida_2023,122,198470,false
++C,ida_2023,123,84385,false
++C,ida_2023,124,27265,false
++C,ida_2023,131,10309,false
++C,ida_2023,141,562339,false
++C,ida_2023,142,1497,false
++C,ida_2023,143,15147,false
++C,ida_2023,152,987,false
++C,ida_2023,176,281277,false
++C,ida_2023,190,34264,false
++C,ida_2023,195,6410,false
++C,ida_2023,205,103,true
++C,ida_2023,209,6,true
++C,ida_2023,225,127,true
++C,ida_2023,228,123,true
++C,ida_2023,229,73,true
++C,ida_2023,242,2,true
++C,ida_2023,254,1014,true
++D,il_2023,1,2619419,true
++D,il_2023,4,1,true
++D,il_2023,5,2387838,true
++D,il_2023,6,18,true
++D,il_2023,12,27,true
++D,il_2023,13,2317,true
++D,il_2023,24,29815,true
++D,il_2023,26,9737,true
++D,il_2023,27,43,true
++D,il_2023,28,39,true
++D,il_2023,36,14761,true
++D,il_2023,37,1657,true
++D,il_2023,42,21,true
++D,il_2023,43,3,true
++D,il_2023,44,3,true
++D,il_2023,57,3,true
++D,il_2023,58,21,true
++D,il_2023,59,111,true
++D,il_2023,61,381,true
++D,il_2023,67,50,true
++D,il_2023,70,1,true
++D,il_2023,76,5,true
++D,il_2023,111,58560,false
++D,il_2023,121,177314,false
++D,il_2023,122,291578,false
++D,il_2023,123,133889,false
++D,il_2023,124,43680,false
++D,il_2023,131,3246,false
++D,il_2023,141,284185,false
++D,il_2023,142,236,false
++D,il_2023,143,29150,false
++D,il_2023,152,134,false
++D,il_2023,176,395630,false
++D,il_2023,190,59059,false
++D,il_2023,195,1872,false
++D,il_2023,225,5,true
++D,il_2023,228,2,true
++D,il_2023,229,8789,true
+diff --git a/results/summary/sec11_cdl2023_crop_share/crop_share_2023.csv b/results/summary/sec11_cdl2023_crop_share/crop_share_2023.csv
+new file mode 100644
+index 0000000..331b2c1
+--- /dev/null
++++ b/results/summary/sec11_cdl2023_crop_share/crop_share_2023.csv
+@@ -0,0 +1,5 @@
++site,dataset_id,raw_cdl,raw_cdl_sha256,label_tif,label_sha256,label_pixel_match,total_pixels,corn_pixels,soybean_pixels,crop_pixels,corn_soybean_share_of_crop,crop_share_of_site,corn_soybean_share_of_site,largest_other_crop_code,largest_other_crop_pixels
++A,iw_2023,D:\标签\2023iwcdl.tif,4df249d10d9958741df58eb81f19986c3c65fa840aa2b49ede84261cda2df557,G:\2560图像\标签GeoTIFF\iw.tif,2d4bf1f1d3c04197d22ae75ad92e41909af8d8ab6795a5038a67ce2cdc859f24,true,6553600,2974800,2409665,5447232,0.988477,0.831182,0.821604,36,43275
++B,iw2_2023,D:\标签\2023iw2cdl.tif,b3bd406317a0e27551b7ad3278659943eefd9423fe2ba29a66ec1bc2457ed811,G:\2560图像\标签GeoTIFF\iw2.tif,8ab6ec1a81bdeaa47516d0f7e4c17b8beecc888173331a1415c91169f20644b3,true,6553600,2758016,1539167,4394883,0.977770,0.670606,0.655698,36,76148
++C,ida_2023,D:\标签\2023idacdl.tif,4c907255a6d028d9be726e0e6e062bf907220c72bc347e509124930ec9eb65ac,G:\2560图像\标签GeoTIFF\ida.tif,00bf5c6885da907006a841d735b40ae5c07deaaf1ebb257066374c5b732721cf,true,6553600,2641661,2095730,5072435,0.933948,0.773992,0.722868,13,167101
++D,il_2023,D:\标签\2023ilcdl.tif,6f5aebe8ec9c85890379860b41c8b16a602141f264008f64b7d2d06482b6f55c,G:\2560图像\标签GeoTIFF\il.tif,9afbb4a6ef3c9c373a8704bd5c232c9973b50ffb812ddd9e0f5ccf7a28156c30,true,6553600,2619419,2387838,5075067,0.986639,0.774394,0.764047,24,29815
+diff --git a/scripts/compute_cdl2023_crop_share.py b/scripts/compute_cdl2023_crop_share.py
+new file mode 100644
+index 0000000..f96ced5
+--- /dev/null
++++ b/scripts/compute_cdl2023_crop_share.py
+@@ -0,0 +1,175 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++"""1.1研究区概况：2023年CDL中玉米与大豆占各站农作物面积的比例。
++
++输入为仓库外的原始数据，只读：
++- 四站2023年CDL原始类别裁剪栅格 D:\\标签\\2023<代码>cdl.tif；
++- 正式三类标签 G:\\2560图像\\标签GeoTIFF\\<代码>.tif（1=玉米、2=其它地类、3=大豆）。
++
++脚本先核对两者行列数、地理变换和投影一致，原始CDL按“1→玉米、5→大豆、其余→其它地类”
++重分类后与正式标签逐像元相同，且正式标签与图1源栅格的SHA-256一致；再统计CDL类别代码
++像元数。农作物取CDL作物类别代码1–61、66–77、204–254（含牧草、休耕地和双季作物），
++这是CDL中最宽的作物口径，分母最大、比例最低。分子只计代码1（玉米）和5（大豆），与正式
++标签一致；甜玉米、爆裂玉米和含玉米或大豆的双季作物只进入分母。
++
++用法（需含GDAL的环境，例如conda环境tnt）：
++    python -B scripts/compute_cdl2023_crop_share.py          # 计算并与已有输出逐字核对
++    python -B scripts/compute_cdl2023_crop_share.py --write  # 写出；已有文件内容不同则报错，不覆盖
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import hashlib
++import io
++import json
++from pathlib import Path
++
++import numpy as np
++from osgeo import gdal, osr
++
++gdal.UseExceptions()
++
++ROOT = Path(__file__).resolve().parents[1]
++RAW_DIR = Path(r"D:\标签")
++LABEL_DIR = Path(r"G:\2560图像\标签GeoTIFF")
++FIGURE_VERIFICATION = ROOT / "legacy" / "figures" / "four_site_classification" / "verification.json"
++PROCESSED = ROOT / "results" / "processed" / "sec11_cdl2023_crop_share" / "cdl2023_code_counts.csv"
++SUMMARY = ROOT / "results" / "summary" / "sec11_cdl2023_crop_share" / "crop_share_2023.csv"
++
++SITES = (("A", "iw"), ("B", "iw2"), ("C", "ida"), ("D", "il"))
++SHAPE = (2560, 2560)
++CORN, SOYBEAN = 1, 5
++CROP_CODES = frozenset(range(1, 62)) | frozenset(range(66, 78)) | frozenset(range(204, 255))
++
++
++def sha256(path: Path) -> str:
++    digest = hashlib.sha256()
++    with path.open("rb") as stream:
++        for block in iter(lambda: stream.read(1 << 20), b""):
++            digest.update(block)
++    return digest.hexdigest()
++
++
++def read_raster(path: Path):
++    dataset = gdal.Open(str(path), gdal.GA_ReadOnly)
++    if dataset is None or dataset.RasterCount != 1:
++        raise RuntimeError(f"无法读取单波段栅格: {path}")
++    array = dataset.GetRasterBand(1).ReadAsArray()
++    geotransform = dataset.GetGeoTransform()
++    projection = dataset.GetProjection()
++    dataset = None
++    return array, geotransform, projection
++
++
++def same_projection(left_wkt: str, right_wkt: str) -> bool:
++    left, right = osr.SpatialReference(), osr.SpatialReference()
++    if left.ImportFromWkt(left_wkt) != 0 or right.ImportFromWkt(right_wkt) != 0:
++        return False
++    return bool(left.IsSame(right))
++
++
++def compute():
++    figure_sources = json.loads(FIGURE_VERIFICATION.read_text(encoding="utf-8"))["sites"]
++    figure_sha = {item["site"]: item["raster_sha256"] for item in figure_sources}
++    code_rows, summary_rows = [], []
++    for site, code in SITES:
++        raw_path = RAW_DIR / f"2023{code}cdl.tif"
++        label_path = LABEL_DIR / f"{code}.tif"
++        raw, raw_gt, raw_wkt = read_raster(raw_path)
++        label, label_gt, label_wkt = read_raster(label_path)
++        if raw.shape != SHAPE or label.shape != SHAPE:
++            raise ValueError(f"{site}站栅格尺寸不是2560×2560: {raw.shape}, {label.shape}")
++        if not np.allclose(raw_gt, label_gt, rtol=0.0, atol=1e-6):
++            raise ValueError(f"{site}站原始CDL与正式标签地理变换不同")
++        if not same_projection(raw_wkt, label_wkt):
++            raise ValueError(f"{site}站原始CDL与正式标签投影不同")
++        reclassified = np.full(SHAPE, 2, dtype=np.int16)
++        reclassified[raw == CORN] = 1
++        reclassified[raw == SOYBEAN] = 3
++        mismatch = int(np.count_nonzero(reclassified != label))
++        if mismatch:
++            raise ValueError(f"{site}站原始CDL重分类后与正式标签有{mismatch}个像元不同")
++        label_sha = sha256(label_path)
++        if label_sha != figure_sha[site]:
++            raise ValueError(f"{site}站正式标签与图1源栅格SHA-256不一致")
++
++        counts = np.bincount(raw.ravel().astype(np.int64), minlength=256)
++        present = [int(value) for value in np.flatnonzero(counts)]
++        for value in present:
++            code_rows.append({
++                "site": site,
++                "dataset_id": f"{code}_2023",
++                "cdl_code": value,
++                "pixels": int(counts[value]),
++                "crop": "true" if value in CROP_CODES else "false",
++            })
++        total = int(counts.sum())
++        corn, soybean = int(counts[CORN]), int(counts[SOYBEAN])
++        crop = int(sum(int(counts[value]) for value in present if value in CROP_CODES))
++        other_crops = sorted(
++            ((int(counts[value]), value) for value in present
++             if value in CROP_CODES and value not in (CORN, SOYBEAN)),
++            reverse=True,
++        )
++        top_pixels, top_code = other_crops[0] if other_crops else (0, "")
++        summary_rows.append({
++            "site": site,
++            "dataset_id": f"{code}_2023",
++            "raw_cdl": str(raw_path),
++            "raw_cdl_sha256": sha256(raw_path),
++            "label_tif": str(label_path),
++            "label_sha256": label_sha,
++            "label_pixel_match": "true",
++            "total_pixels": total,
++            "corn_pixels": corn,
++            "soybean_pixels": soybean,
++            "crop_pixels": crop,
++            "corn_soybean_share_of_crop": f"{(corn + soybean) / crop:.6f}",
++            "crop_share_of_site": f"{crop / total:.6f}",
++            "corn_soybean_share_of_site": f"{(corn + soybean) / total:.6f}",
++            "largest_other_crop_code": top_code,
++            "largest_other_crop_pixels": top_pixels,
++        })
++    return code_rows, summary_rows
++
++
++def to_csv(rows) -> str:
++    buffer = io.StringIO()
++    writer = csv.DictWriter(buffer, fieldnames=list(rows[0]), lineterminator="\n")
++    writer.writeheader()
++    writer.writerows(rows)
++    return buffer.getvalue()
++
++
++def emit(path: Path, text: str, write: bool) -> str:
++    if path.exists():
++        if path.read_text(encoding="utf-8") == text:
++            return "与已有文件逐字一致"
++        raise SystemExit(f"{path} 已存在且内容不同；不覆盖，请人工核查")
++    if not write:
++        return "未写出（加 --write 写出）"
++    path.parent.mkdir(parents=True, exist_ok=True)
++    with path.open("x", encoding="utf-8", newline="\n") as stream:
++        stream.write(text)
++    return "已写出"
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
++    parser.add_argument("--write", action="store_true")
++    args = parser.parse_args()
++    code_rows, summary_rows = compute()
++    for row in summary_rows:
++        print(
++            f"{row['site']}站：玉米+大豆占农作物 {float(row['corn_soybean_share_of_crop']):.2%}，"
++            f"农作物占全站 {float(row['crop_share_of_site']):.2%}，"
++            f"玉米+大豆占全站 {float(row['corn_soybean_share_of_site']):.2%}，"
++            f"其余作物中最大为代码{row['largest_other_crop_code']}（{row['largest_other_crop_pixels']}像元）"
++        )
++    print("processed:", emit(PROCESSED, to_csv(code_rows), args.write))
++    print("summary:", emit(SUMMARY, to_csv(summary_rows), args.write))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/sections/02_data.tex b/sections/02_data.tex
+index 7160d31..90b64fb 100644
+--- a/sections/02_data.tex
++++ b/sections/02_data.tex
+@@ -4,11 +4,11 @@
+ 
+ \subsection{研究区概况}
+ 
+-本文选取美国中西部玉米带内4个典型农业站点作为研究区，分别记为A、B、C和D，单个站点空间范围约为77~km~$\times$~77~km。四站的中心坐标（NAD83）依次为A（西经95.9085°、北纬42.8746°）、B（西经91.6892°、北纬42.2382°）、C（西经86.7671°、北纬40.7431°）和D（西经89.2372°、北纬40.1071°）。该区域是美国重要的商品粮生产区，种植类型以玉米和大豆为主，适合开展玉米大豆时空深度学习模型遥感识别及空间泛化能力分析。四站2023年地物分类图如图\ref{fig:study_area}所示；子图仅按版面排列，不表示站点间的实际方位。
++4个站点均位于美国中西部玉米带内，该区域以玉米和大豆种植为主，分别记为A、B、C和D。四站彼此相互独立，站点中心间距为221~km至793~km，平均间距约452~km；各站均为沿投影坐标轴方向裁剪的76.8~km~$\times$~76.8~km正方形区域。四站中心经纬度（NAD83）依次为A（西经95.9085°、北纬42.8746°）、B（西经91.6892°、北纬42.2382°）、C（西经86.7671°、北纬40.7431°）和D（西经89.2372°、北纬40.1071°）。四站2023年地物分类图见图\ref{fig:study_area}，子图采用相同的范围和显示比例，排列仅反映版面顺序，不表示站点间的实际方位。
+ 
+-为分析研究区地表覆盖组成，本文采用美国农业部国家农业统计服务局发布的耕地数据层（Cropland Data Layer，CDL）数据。基于2021—2024年CDL数据统计结果，4个站点均以玉米和大豆为主要作物类型，两者面积之和均超过农作物总面积的95\%。本文将CDL原始类别重分类为玉米、大豆和其它地类3类，其中除玉米和大豆以外的农作物和非农作物地类都归并为其它地类。
++图\ref{fig:study_area}中的数据来自美国农业部国家农业统计局（USDA NASS）发布的耕地数据层（Cropland Data Layer，CDL）。基于2023年CDL数据统计结果，4个站点均以玉米和大豆为主要作物类型，两者面积之和均超过农作物总面积的90\%。本文将CDL原始类别重分类为玉米、大豆和其它地类3类，其中除玉米和大豆以外的农作物和非农作物地类均归并为其它地类。四站均以玉米和大豆为主要作物，但地物组成与景观格局存在差异。
+ 
+-玉米和大豆物候信息来自美国农业部国家农业统计服务发布的作物进度报告（Crop Progress Report, CPR），其数据通过USDA NASS官网获取。结合CPR物候信息，本文将每年DOY~116—266作为主要观测窗口，该时间范围能够覆盖玉米和大豆的主要生育阶段。
++玉米和大豆的物候信息来自美国农业部国家农业统计局发布的作物进度报告（Crop Progress Report，CPR）。结合该报告，本文以年积日（DOY）116–266作为主要观测窗口，该窗口覆盖玉米和大豆的主要生育阶段。
+ 
+ \par\addvspace{3pt}
+ \noindent\begin{minipage}{\columnwidth}
+@@ -82,18 +82,17 @@
+ \label{tab:sec13_spatial_metrics}
+ \begingroup
+ \songti\rmfamily\zihao{-5}
+-\xeCJKsetup{PunctStyle=banjiao}
+-\setlength{\tabcolsep}{1.5pt}
+-\renewcommand{\arraystretch}{1.08}
+-\begin{tabular}{@{}ccccccccc@{}}
++\setlength{\tabcolsep}{2pt}
++\renewcommand{\arraystretch}{1.2}
++\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccccc@{}}
+ \toprule
+ \multirow{2}{*}{站点} & \multirow{2}{*}{作物} & \multicolumn{4}{c}{斑块级} & \multicolumn{2}{c}{类别级} & 景观级 \\
+ \cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(l){9-9}
+- & & AREA/ha & SHAPE & ENN/m & 斑块数 & \shortstack{PD\\(个/100~ha)} & AI/\% & \shortstack{ED\\(m/ha)} \\
++ & & AREA/ha & SHAPE & ENN/m & 斑块数 & PD/(个/100~ha) & AI/\% & ED/(m/ha) \\
+ \midrule
+ \csname @@input\endcsname tables/sec13_spatial_metrics_enn_equal_rows.tex
+ \bottomrule
+-\end{tabular}
++\end{tabular*}
+ \par\nointerlineskip\vspace{3pt}
+ \zihao{-5}
+ \raggedright 注：AREA、SHAPE为参考像元面积加权中位数，ENN为斑块等权中位数；括号内均为全体斑块最小值～最大值。SHAPE无量纲。ENN按研究区内最近同类斑块的边界像元中心计算，最小可能值为60~m，非田块间净空距离。PD以整站面积为分母；ED覆盖玉米、大豆及其它地类。

@@ -1,0 +1,104 @@
+% !TEX root = ../main.tex
+
+\section{研究区域与数据}
+
+\subsection{研究区概况}
+
+4个站点均位于美国中西部玉米带内，该区域以玉米和大豆种植为主，分别记为A、B、C和D。四站彼此相互独立，站点中心间距为221~km至793~km，平均间距约452~km；各站均为沿投影坐标轴方向裁剪的76.8~km~$\times$~76.8~km正方形区域。四站中心经纬度（NAD83）依次为A（西经95.9085°、北纬42.8746°）、B（西经91.6892°、北纬42.2382°）、C（西经86.7671°、北纬40.7431°）和D（西经89.2372°、北纬40.1071°）。四站2023年地物分类图见图\ref{fig:study_area}，子图采用相同的范围和显示比例，排列仅反映版面顺序，不表示站点间的实际方位。
+
+图\ref{fig:study_area}中的数据来自美国农业部国家农业统计局（USDA NASS）发布的耕地数据层（Cropland Data Layer，CDL）。基于2023年CDL数据统计结果，4个站点均以玉米和大豆为主要作物类型，两者面积之和均超过农作物总面积的90\%。本文将CDL原始类别重分类为玉米、大豆和其它地类3类，其中除玉米和大豆以外的农作物和非农作物地类均归并为其它地类。四站均以玉米和大豆为主要作物，但地物组成与景观格局存在差异。
+
+玉米和大豆的物候信息来自美国农业部国家农业统计局发布的作物进度报告（Crop Progress Report，CPR）。结合该报告，本文以年积日（DOY）116–266作为主要观测窗口，该窗口覆盖玉米和大豆的主要生育阶段。
+
+\par\addvspace{3pt}
+\noindent\begin{minipage}{\columnwidth}
+\captionsetup{type=figure}
+\centering
+\begin{subfigure}{3.8cm}\centering
+\includegraphics[width=\linewidth]{study_area/fig_study_area_A.png}
+\caption{A站点地物分类图}
+\end{subfigure}\hspace{3pt}
+\begin{subfigure}{3.8cm}\centering
+\includegraphics[width=\linewidth]{study_area/fig_study_area_B.png}
+\caption{B站点地物分类图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\begin{subfigure}{3.8cm}\centering
+\includegraphics[width=\linewidth]{study_area/fig_study_area_C.png}
+\caption{C站点地物分类图}
+\end{subfigure}\hspace{3pt}
+\begin{subfigure}{3.8cm}\centering
+\includegraphics[width=\linewidth]{study_area/fig_study_area_D.png}
+\caption{D站点地物分类图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\definecolor{studyCorn}{HTML}{E5BF34}
+\definecolor{studySoy}{HTML}{367451}
+\definecolor{studyOther}{HTML}{C8C8C8}
+{\songti\zihao{-5}\legbox{studyCorn}\,玉米\quad\legbox{studySoy}\,大豆\quad\legbox{studyOther}\,其它地类}
+\caption{四个研究站点2023年地物分类图}
+\label{fig:study_area}
+\end{minipage}\par\addvspace{3pt}
+
+\subsection{数据获取与预处理}
+
+本文采用的多时相遥感数据源自美国国家航空航天局（NASA）地球数据科学系统提供的协同陆地卫星和哨兵2号数据（Harmonized Landsat and Sentinel-2，HLS）第2版。该产品通过对Landsat-8/9 OLI与Sentinel-2 MSI的观测影像进行辐射定标、大气校正、几何精校正以及网格重采样，实现了两类卫星数据的深度融合。本研究选取其空间分辨率为30~m的多时相地表反射率数据，包含蓝光、绿光、红光、近红外、短波红外1和短波红外2共6个核心波段作为深度学习模型的输入特征。
+
+标签数据采用USDA NASS CropScape门户网站提供的2023年CDL产品。CDL数据提供了美国本土逐像素的年度作物类型分类信息，在本研究中用于模型训练的真值标记与精度检验。研究对原始的CDL分类体系进行重分类，统一划分为玉米（Corn）、大豆（Soybean）和其它地类（Others）3个目标类别。重分类后的标签数据在空间投影和分辨率上与对应的多时相HLS影像进行严格对齐。
+
+在预处理阶段，首先对影像进行镶嵌、云掩膜和裁剪处理。随后，对时间序列采用时序线性插值方法补齐无效观测，并统一4个站点的时间跨度与时间间隔。最终，构建得到空间大小为2560$\times$2560像素，时间分辨率为5天、包含31个时间步、空间分辨率为30~m、光谱波段数为6的数据集。样本构建时，将多时相影像及其对应标签裁剪为128~$\times$~128像素图块，相邻图块无重叠；在此基础上，最终每个站点每年获得400个样本用于后续模型训练与验证。
+
+\subsection{研究区空间特征}
+
+本文基于2023年CDL参考标签，从地物组成和景观格局两个方面比较4个站点的空间特征，为后续站内分类与跨站比较提供研究区背景。
+
+\subsubsection{地物组成}
+
+如图\ref{fig:sec13_composition}所示，4个站点均以玉米和大豆为主要地物，两者面积之和占各站总面积的65.57\%～82.16\%。各站玉米面积占比为39.97\%～45.39\%，大豆占比为23.49\%～36.77\%，站点间大豆占比的变化幅度更大。A站两种作物合计占比最高，其它地类仅占17.84\%；B站大豆占比最低，其它地类占比达到34.43\%。因此，4个站点具有相同的主要作物组成，但两种作物与其它地类的面积配置存在差别。
+
+\newpage
+\noindent\begin{minipage}{\columnwidth}
+\centering
+\includegraphics{study_area/fig_sec13_composition.pdf}
+\par\nointerlineskip\vspace{3pt}
+\classlegend
+\captionof{figure}{四个研究站点2023年地物面积占比}
+\label{fig:sec13_composition}
+\end{minipage}
+
+\FloatBarrier
+
+\subsubsection{景观格局}
+
+在各站2023年30~m参考标签上，将8邻域相连的同类像元视为一个参考斑块，它不等同于实际农业田块。四站玉米和大豆均有大量单像元斑块，占各站相应作物斑块总数的44.31\%～54.64\%，但仅占相应作物总面积的0.23\%～0.71\%。为描述主要作物面积所在斑块的大小和轮廓复杂程度，斑块面积（AREA）与形状指数（SHAPE）采用参考像元面积加权中位数\citep{mcgarigal2023fragstats}，即按指标值升序累计参考像元数，取首次达到该站该作物总像元数50\%时的指标值。同类最近邻距离（ENN）按斑块等权计算中位数，每个完整参考斑块计一次；三项指标均保留全部斑块，并报告斑块数量与完整取值范围。
+
+如表\ref{tab:sec13_spatial_metrics}所示，四站两种作物均具有较高的同类聚集程度，聚集度指数（AI）为91.22\%～93.92\%，站点间数值接近。四站玉米的AREA面积加权中位数也较接近，为116.91～130.95~ha；两种作物八组ENN斑块等权中位数均为67.08~m。ENN描述斑块与最近另一个同类斑块的距离，与AI所反映的同类聚集程度含义不同；中位数相同不表示完整距离分布相同。
+
+在上述共同背景下，大豆斑块大小的站间变化更大，AREA面积加权中位数为63.27～114.39~ha。B站玉米与大豆的斑块大小差别最突出，D站两者最接近。C站两种作物的SHAPE面积加权中位数和斑块密度（PD）均为四站最高，AI相对最低，整站三类景观的边缘密度（ED）也最高，为65.53~m/ha；但该站两种作物的AREA面积加权中位数均非最低，斑块数量多并不意味着主要作物面积集中于最小斑块。四站面积相同，斑块数量与PD成比例。这些共同特点与差异为后续从斑块大小、形状、聚集和邻近条件考察分类错误提供空间背景。
+
+\clearpage
+\begin{strip}
+\begin{minipage}{\textwidth}
+\centering
+\captionof{table}{四个研究站点2023年作物斑块、类别与整站景观格局指标}
+\label{tab:sec13_spatial_metrics}
+\begingroup
+\songti\rmfamily\zihao{-5}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccccc@{}}
+\toprule
+\multirow{2}{*}{站点} & \multirow{2}{*}{作物} & \multicolumn{4}{c}{斑块级} & \multicolumn{2}{c}{类别级} & 景观级 \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(l){9-9}
+ & & AREA/ha & SHAPE & ENN/m & 斑块数 & PD/(个/100~ha) & AI/\% & ED/(m/ha) \\
+\midrule
+\csname @@input\endcsname tables/sec13_spatial_metrics_enn_equal_rows.tex
+\bottomrule
+\end{tabular*}
+\par\nointerlineskip\vspace{3pt}
+\zihao{-5}
+\raggedright 注：AREA、SHAPE为参考像元面积加权中位数，ENN为斑块等权中位数；括号内均为全体斑块最小值～最大值。SHAPE无量纲。ENN按研究区内最近同类斑块的边界像元中心计算，最小可能值为60~m，非田块间净空距离。PD以整站面积为分母；ED覆盖玉米、大豆及其它地类。
+\par
+\endgroup
+\end{minipage}
+\end{strip}
+
+\FloatBarrier
