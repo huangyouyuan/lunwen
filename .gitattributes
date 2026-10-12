@@ -49,3 +49,9 @@
 /results/summary/spatial_error_conditions/** -text whitespace=cr-at-eol
 /scripts/analyze_spatial_error_conditions.py -text
 /scripts/test/check_spatial_error_conditions.py -text
+
+# Preserve hashes for the bounded C/D soybean finding refinement.
+/results/processed/spatial_findings_refinement/** -text whitespace=cr-at-eol
+/results/summary/spatial_findings_refinement/** -text whitespace=cr-at-eol
+/scripts/refine_spatial_findings.py -text
+/scripts/test/check_spatial_findings_refinement.py -text
