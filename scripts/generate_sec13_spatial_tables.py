@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the Section 1.3 table with patch counts and ENN from full-site data.
+"""Generate the Section 1.3 table with metric-specific median weighting.
+
+AREA/SHAPE use reference-pixel area weights; ENN counts every patch once.
 
 Run: python scripts/generate_sec13_spatial_tables.py
 Check existing outputs: python scripts/generate_sec13_spatial_tables.py --check
@@ -21,10 +23,11 @@ SOURCE = ROOT / "results/summary/sec13_sec31_foundations"
 UPSTREAM = ROOT / "results/summary/sec33_reference_patch_types"
 FEATURES = ROOT / "results/processed/sec33_reference_patch_types/reference_patch_features.csv"
 GRADING = ROOT / "results/summary/sec33_indicator_grading_preparation"
-# Preserve the preceding AREA/SHAPE-only table at its original path.
-COMBINED_TABLE = ROOT / "tables/sec13_spatial_metrics_enn_rows.tex"
+# Preserve both the AREA/SHAPE-only and area-weighted ENN tables in place.
+COMBINED_TABLE = ROOT / "tables/sec13_spatial_metrics_enn_equal_rows.tex"
 SITES = {"A": "iw_2023", "B": "iw2_2023", "C": "ida_2023", "D": "il_2023"}
 CATEGORIES = {"corn": "玉米", "soybean": "大豆"}
+METRIC_WEIGHTING = {"AREA": "reference_pixel_area", "SHAPE": "reference_pixel_area", "ENN": "patch_equal"}
 
 
 def require(condition, message):
@@ -114,8 +117,8 @@ def build_tables():
     require(len(dist) == 16 and not dist.index.has_duplicates, "patch distribution keys")
     enn_dist = enn_reading.loc[
         enn_reading.domain.eq("site_crop") & enn_reading.metric.eq("ENN")
-        & enn_reading.weighting.eq("reference_pixel_area")
-        & enn_reading.algorithm.eq("inverse_weighted_ecdf")
+        & enn_reading.weighting.eq("patch_equal")
+        & enn_reading.algorithm.eq("linear_order_statistics")
     ].set_index(["target", "site", "crop", "metric"])
     require(len(enn_dist) == 8 and enn_dist.index.is_unique, "ENN distribution keys")
     expected_keys = {(target, site, crop) for site, target in SITES.items()
@@ -147,7 +150,7 @@ def build_tables():
                 and close(float(cls.aggregation_index), float(source_cls.ai_recomputed)),
                 f"{key}: full-scope class support or metrics")
 
-    combined_rows = ["% AREA、SHAPE、ENN为参考像元面积加权中位数（全体斑块最小值～最大值）；斑块数与斑块属性并列，PD、AI为类别级，ED为整站三类景观级。"]
+    combined_rows = ["% AREA、SHAPE为参考像元面积加权中位数，ENN为斑块等权中位数（每个完整参考斑块计一次，单位m）；括号内均为全体斑块最小值～最大值。斑块数列归入斑块级，PD、AI为类别级，ED为整站三类景观级。"]
     extremes = []
     for site, target in SITES.items():
         site_comp = composition.loc[composition.site.eq(site)]
@@ -190,7 +193,15 @@ def build_tables():
             edge_status = {}
             for metric in ("AREA", "SHAPE", "ENN"):
                 values = group[metric]
-                median, median_touches_edge = pixel_weighted_median(group, metric)
+                if metric == "ENN":
+                    require(np.isfinite(values).all(), f"{key}: non-finite ENN")
+                    # Standard unweighted median, averaging both central values for even n.
+                    median = float(values.median())
+                    matches = values.eq(median)
+                    median_touches_edge = (bool(group.loc[matches, "touches_outer_edge"].any())
+                                           if matches.any() else None)
+                else:
+                    median, median_touches_edge = pixel_weighted_median(group, metric)
                 minimum, maximum = float(values.min()), float(values.max())
                 require(minimum <= median <= maximum, f"{key}: {metric} statistic ordering")
                 reading = (enn_dist if metric == "ENN" else dist).loc[(*key, metric)]
@@ -211,7 +222,8 @@ def build_tables():
                             f"{key}: ENN coverage or 30-m/8-neighbor lower bound")
                 stats[metric] = (minimum, median, maximum)
                 edge_status[metric] = {
-                    "weighted_median_touches_outer_edge": median_touches_edge,
+                    "median_weighting": METRIC_WEIGHTING[metric],
+                    "median_touches_outer_edge": median_touches_edge,
                     "minimum_touches_outer_edge": bool(group.loc[values.eq(minimum),
                                                                   "touches_outer_edge"].any()),
                     "maximum_touches_outer_edge": bool(group.loc[values.eq(maximum),
@@ -259,6 +271,7 @@ def main():
             with path.open("x", encoding="utf-8", newline="\n") as output:
                 output.write(content)
     print(json.dumps({"status": "Verified", "check_only": args.check,
+                      "metric_weighting": METRIC_WEIGHTING,
                       "patches": sum(row["n_patches"] for row in extremes),
                       "extremes": extremes}, ensure_ascii=False))
 

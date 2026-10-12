@@ -5,6 +5,7 @@ import csv
 import hashlib
 import json
 import re
+import statistics
 import subprocess
 import sys
 from collections import Counter, defaultdict
@@ -47,17 +48,24 @@ def main():
         assert pixels == summary["reference_pixels"] and len(records) == summary["n_patches"]
         assert sum(int(row["reference_pixels"]) == 1 for row in records) == summary["singleton_count"]
         for metric in ("AREA", "SHAPE", "ENN"):
-            # Aggregate tied values first, independently of the producer's row sort.
+            # Independently check the two area-weighted metrics and equal-patch ENN.
             frequencies = Counter()
             for row in records:
-                frequencies[float(row[metric])] += int(row["reference_pixels"])
-            cumulative = 0
-            for value in sorted(frequencies):
-                cumulative += frequencies[value]
-                if 2 * cumulative >= pixels:
-                    median = value
-                    break
+                frequencies[float(row[metric])] += (1 if metric == "ENN" else int(row["reference_pixels"]))
+            if metric == "ENN":
+                median = statistics.median(float(row[metric]) for row in records)
+                assert sum(frequencies.values()) == len(records)
+            else:
+                cumulative = 0
+                for value in sorted(frequencies):
+                    cumulative += frequencies[value]
+                    if 2 * cumulative >= pixels:
+                        median = value
+                        break
             assert [min(frequencies), median, max(frequencies)] == summary[metric], (key, metric)
+    assert report["metric_weighting"] == {
+        "AREA": "reference_pixel_area", "SHAPE": "reference_pixel_area", "ENN": "patch_equal",
+    }
 
     raw_dir = Path("results/raw/sec33_reference_patch_types")
     manifest = json.loads((ROOT / raw_dir / "conversion_manifest.json").read_text(encoding="utf-8"))
@@ -74,7 +82,7 @@ def main():
             assert row["TYPE"] == original["TYPE"]
             assert all(float(row[metric]) == float(original[metric]) for metric in ("AREA", "SHAPE", "ENN"))
 
-    table_path = Path("tables/sec13_spatial_metrics_enn_rows.tex")
+    table_path = Path("tables/sec13_spatial_metrics_enn_equal_rows.tex")
     lines = [line for line in (ROOT / table_path).read_text(encoding="utf-8").splitlines() if " & " in line]
     assert len(lines) == 8
     table_cells = []
@@ -120,7 +128,7 @@ def main():
     assert spans["soybean"] > spans["corn"]
     gaps = {site: abs(stats[(site, "corn")]["AREA"][1] - stats[(site, "soybean")]["AREA"][1]) for site in "ABCD"}
     assert max(gaps, key=gaps.get) == "B" and min(gaps, key=gaps.get) == "D"
-    assert all(row["ENN"][1] == 60.0 for row in stats.values())
+    assert all(row["ENN"][1] == 67.082 for row in stats.values())
     assert max(stats.values(), key=lambda row: row["ED"])["site"] == "C"
 
     body = (ROOT / "sections/02_data.tex").read_text(encoding="utf-8")
@@ -131,6 +139,8 @@ def main():
     assert len(part.split(r"\clearpage")[0].strip().split("\n\n")) == 3
     assert part.count(r"\captionof{table}") == part.count(r"\label{tab:sec13_spatial_metrics}") == 1
     assert table_path.as_posix() in part
+    assert "八组ENN斑块等权中位数均为67.08~m" in part
+    assert "ENN面积加权" not in part
     assert re.search(r"mcgarigal2023fragstats\s*,", (ROOT / "bibliography/references.bib").read_text(encoding="utf-8"))
     for environment in ("strip", "minipage", "tabular"):
         assert part.count(r"\begin{" + environment + "}") == part.count(r"\end{" + environment + "}") == 1
@@ -141,11 +151,11 @@ def main():
     assert depth == 0
 
     # Font metrics are a width estimate, explicitly not a LaTeX rendering check.
-    latin = ImageFont.truetype("C:/Windows/Fonts/times.ttf", 1050)
-    cjk = ImageFont.truetype("C:/Windows/Fonts/simsun.ttc", 1050)
+    latin = ImageFont.truetype("C:/Windows/Fonts/times.ttf", 900)
+    cjk = ImageFont.truetype("C:/Windows/Fonts/simsun.ttc", 900)
     def width(text):
         # The table uses xeCJK's half-width punctuation spacing, with unchanged glyphs.
-        return sum(525 if char in "（）" else (latin if ord(char) < 128 else cjk).getlength(char)
+        return sum(450 if char in "（）" else (latin if ord(char) < 128 else cjk).getlength(char)
                    for char in text) / 100
     headings = ["站点", "作物", "AREA/ha", "SHAPE", "ENN/m", "斑块数", "(个/100 ha)", "AI/%", "景观级"]
     widths = [width(heading) for heading in headings]
@@ -169,7 +179,7 @@ def main():
     input_hashes.update({path: sha(path) for path in input_paths})
     report.update({
         "data_status": "derived_from_existing_verified_data",
-        "independent_frequency_median_audit": "Verified", "raw_csv_metric_audit": "Verified",
+        "independent_metric_specific_median_audit": "Verified", "raw_csv_metric_audit": "Verified",
         "raw_crop_records_compared": sum(len(records) for records in groups.values()),
         "narrative_comparisons_unrounded": "Verified", "ranges": ranges, "area_crop_gaps": gaps,
         "latex_source_structure": "Verified", "sections_before_132_unchanged": "Verified",
