@@ -1,0 +1,27 @@
+{
+  "status": "Verified",
+  "scope": "Square plotting regions and globally doubled bubble area; source data and bin-summary CSVs unchanged; final export visually reviewed",
+  "files": {
+    "scripts/plot_area_shape_joint_bubbles.py": "c412caeee16188c352aff898d85b79f03da1063843f24d72aa9082c64637a3bf",
+    "scripts/test/check_area_shape_joint_bubbles.py": "2cd891baa6323f94ab16508dc39155340f042a8c27196c612c1575368c2eb1b9",
+    "results/summary/area_shape_joint_bubbles/README.md": "af08a88a70dd171b79aaf5b0c9cb48686b552276e28eeaafdb95d4c29db7450d",
+    "results/summary/area_shape_joint_bubbles_v2/USE_STATUS.md": "f3eeeb3fb162c81f8d42d406ae3fe6b8f2c8e80d051c6d8080e8c2a68998556f",
+    "output/archive/2026-10-12/area-shape-square-before/manifest.json": "08b1637bd8b9c44608aaa67ee404cf4223760edb8760c022c140808a0f3851df",
+    "output/archive/2026-10-12/area-shape-square-before/results/summary/area_shape_joint_bubbles/README.md.source": "1cc3c83f7abe9c714004cddf5bc35fb61522edf84a53414dc56de506734a73e7",
+    "output/archive/2026-10-12/area-shape-square-before/scripts/plot_area_shape_joint_bubbles.py.source": "c61e9d21820594631cc2e40b6eb0179a16f5233b21d21fea0dec8fa58c26556f",
+    "output/archive/2026-10-12/area-shape-square-before/scripts/test/check_area_shape_joint_bubbles.py.source": "efcd5cad556e80b1d23066e0257545254f752e4379b7078a10002082d6e00397",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/area_shape_joint_bubbles_v3/closure_checks.csv": "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+    "results/summary/area_shape_joint_bubbles_v3/manifest.json": "21504b96dc8d5488e3096f6dd5660346aaa0a0aec1b19271e0a155572fe1790a",
+    "results/summary/area_shape_joint_bubbles_v3/README.md": "eac7219e0fca1a91053b0bf286d96ef491bab9a82bd4bf28eaa8fbd807b38a8c",
+    "results/summary/area_shape_joint_bubbles_v3/verification.json": "6ac79ae64e76fe4f2746b85d64a75d9ed610d10fc9dfb873875c0c20bc602028",
+    "results/summary/area_shape_joint_bubbles_v3/visual-review.md": "a03c55d109b113bfb025f6d7b7927d17baea9191ecd16e688ca95b66f116a622",
+    "figures/exploratory/area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.pdf": "87eeb7bd8e6403fbdacc3160b0285485902d5436b880166b29501b41f12cc38f",
+    "figures/exploratory/area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.png": "bf550a70b56901acf166c2ffab1efa946a770558bdf60725c361c804e846fea4",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.aux": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.log": "f291f98618ad00fbc5f4fda27d8579591d511b6e7dddb43e1f0109a3374e0112",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.pdf": "87eeb7bd8e6403fbdacc3160b0285485902d5436b880166b29501b41f12cc38f",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.tex": "b5fda9124897205124b657af0705a4b442a036686e56ac6925d3e914af3d7ecc",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v3/frames.pdf": "34e858aba740cbf07d6bb11d0fe8020f8239e0836c74fbd91f04807430f76125"
+  }
+}

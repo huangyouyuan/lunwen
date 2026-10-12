@@ -1,0 +1,24 @@
+{
+  "status": "Verified",
+  "operation": "byte-preserving snapshot, no move or deletion",
+  "files": [
+    {
+      "original_path": "scripts/plot_area_shape_joint_bubbles.py",
+      "snapshot_path": "output/archive/2026-10-12/area-shape-square-before/scripts/plot_area_shape_joint_bubbles.py.source",
+      "sha256": "c61e9d21820594631cc2e40b6eb0179a16f5233b21d21fea0dec8fa58c26556f",
+      "reason": "Retain v2 generating code, independent checker and entry point before square-panel / doubled-area layout revision; originals remain active and will be updated."
+    },
+    {
+      "original_path": "scripts/test/check_area_shape_joint_bubbles.py",
+      "snapshot_path": "output/archive/2026-10-12/area-shape-square-before/scripts/test/check_area_shape_joint_bubbles.py.source",
+      "sha256": "efcd5cad556e80b1d23066e0257545254f752e4379b7078a10002082d6e00397",
+      "reason": "Retain v2 generating code, independent checker and entry point before square-panel / doubled-area layout revision; originals remain active and will be updated."
+    },
+    {
+      "original_path": "results/summary/area_shape_joint_bubbles/README.md",
+      "snapshot_path": "output/archive/2026-10-12/area-shape-square-before/results/summary/area_shape_joint_bubbles/README.md.source",
+      "sha256": "1cc3c83f7abe9c714004cddf5bc35fb61522edf84a53414dc56de506734a73e7",
+      "reason": "Retain v2 generating code, independent checker and entry point before square-panel / doubled-area layout revision; originals remain active and will be updated."
+    }
+  ]
+}

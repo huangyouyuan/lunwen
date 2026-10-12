@@ -1,0 +1,107 @@
+{
+  "status": "Verified",
+  "scope": "aggregation, numeric closure and plot geometry; final exported visual review recorded separately",
+  "data_status": "derived_exploratory",
+  "created_at": "2026-10-12T19:16:16.162106+08:00",
+  "git_head": "89e0bf7b767a5441e8d4a102439103ec97d88f70",
+  "site_map": {
+    "iw_2023": "A",
+    "iw2_2023": "B",
+    "ida_2023": "C",
+    "il_2023": "D"
+  },
+  "bins": {
+    "area": [
+      "<10",
+      "10–<50",
+      "50–<100",
+      "100–<200",
+      "200–<500",
+      "≥500"
+    ],
+    "shape": [
+      "1–<1.5",
+      "1.5–<2",
+      "2–<3",
+      "≥3"
+    ],
+    "convention": "left closed, right open; last unbounded"
+  },
+  "geometry": {
+    "fonts": {
+      "Times New Roman": "C:\\Windows\\Fonts\\times.ttf",
+      "SimSun": "C:\\Windows\\Fonts\\simsun.ttc"
+    },
+    "panels": [
+      {
+        "crop": "corn",
+        "nonzero_bubbles": 86,
+        "width_cm": 7.6,
+        "height_cm": 5.7
+      },
+      {
+        "crop": "soybean",
+        "nonzero_bubbles": 83,
+        "width_cm": 7.6,
+        "height_cm": 5.7
+      }
+    ],
+    "scatter_s_pt2_per_pct": 7.582241850822376,
+    "circle_area_pt2_per_pct": 5.955078824071163,
+    "observed_max_share_pct": 22.42412935323383,
+    "max_diameter_mm": 4.6,
+    "min_nonzero_share_pct": 0.02577940084466515,
+    "min_circle_gap_mm": 1.473682757349825,
+    "offsets": {
+      "A": [
+        -0.22,
+        0.2
+      ],
+      "B": [
+        0.22,
+        0.2
+      ],
+      "C": [
+        -0.22,
+        -0.2
+      ],
+      "D": [
+        0.22,
+        -0.2
+      ]
+    },
+    "legend": [
+      {
+        "share_pct": 1,
+        "diameter_pt": 2.7535870879313724,
+        "diameter_mm": 0.9714043337980119
+      },
+      {
+        "share_pct": 5,
+        "diameter_pt": 6.157207910580239,
+        "diameter_mm": 2.172126124010251
+      },
+      {
+        "share_pct": 20,
+        "diameter_pt": 12.314415821160479,
+        "diameter_mm": 4.344252248020502
+      }
+    ]
+  },
+  "input_sha256": {
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/summary/sec13_sec31_foundations/reference_composition.csv": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
+    "results/summary/sec13_sec31_foundations/crop_patch_support_and_limitations.csv": "0fc170374abf4855f9e0092b3ea5a606a5a808b013683be01a3bbeea2b4beb58",
+    "scripts/plot_area_shape_joint_bubbles.py": "c61e9d21820594631cc2e40b6eb0179a16f5233b21d21fea0dec8fa58c26556f",
+    "scripts/figstyle.py": "257cd3d0f635f61d607dead85f5a0e47b6eefe33b6fdacf80eebc5f48794aa69"
+  },
+  "output_sha256": {
+    "results/summary/area_shape_joint_bubbles_v2/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/area_shape_joint_bubbles_v2/closure_checks.csv": "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+    "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf": "a3de8f5409813e6969611a1f2866783bcce627400137905a40e48f45d0dc49df",
+    "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.png": "e16979fc61a4892e3d0d366bcffa062b9c12bba905ad00b55b3d62fdf4078fc4",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.tex": "7e3bf284f352023c4a39c2da88dd4d3c56744d30cbde4b1e5d507b3103c9b9a5",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/frames.pdf": "d090ebac1a659f21a5a397f73417b1418cf7e79348cec44be17b07d524bb38e0",
+    "results/summary/area_shape_joint_bubbles_v2/README.md": "37cd2663deb11b77afbad2588c8b8bca02980d191c0b6206038ce58087413415"
+  }
+}

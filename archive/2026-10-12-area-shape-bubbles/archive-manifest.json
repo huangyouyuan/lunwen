@@ -1,0 +1,263 @@
+{
+    "schema_version":  1,
+    "status":  "Verified",
+    "scope":  "All archived/snapshot files retain original bytes; destination paths checked inside workspace; no deletion or overwrite",
+    "files":  [
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles/area_shape_joint_bins.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles/area_shape_joint_bins.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+                      "bytes":  27152
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles/closure_checks.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles/closure_checks.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+                      "bytes":  1255
+                  },
+                  {
+                      "original_path":  "figures/exploratory/area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/figures/exploratory/area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "a1cfda2b154ac954dda0532da084d5c08ff7ddc6707971460fec91a692103bc2",
+                      "bytes":  83925
+                  },
+                  {
+                      "original_path":  "figures/exploratory/area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.png",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/figures/exploratory/area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.png",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "a79206c4dc497601bf51aa8ba541ade11e1a9a007702d429862a6ad1e8eb86bc",
+                      "bytes":  384835
+                  },
+                  {
+                      "original_path":  "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "a3de8f5409813e6969611a1f2866783bcce627400137905a40e48f45d0dc49df",
+                      "bytes":  83919
+                  },
+                  {
+                      "original_path":  "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.png",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.png",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "e16979fc61a4892e3d0d366bcffa062b9c12bba905ad00b55b3d62fdf4078fc4",
+                      "bytes":  384616
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v1/area_shape_joint_bins.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v1/area_shape_joint_bins.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+                      "bytes":  27152
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v1/closure_checks.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v1/closure_checks.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+                      "bytes":  1255
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v1/manifest.json",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v1/manifest.json",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "3fccedf9ed9b47b9616f6cd6b531807c959ab5e9db2a54dfa8b303f21f70c55b",
+                      "bytes":  3824
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v1/README.md",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v1/README.md",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "928a2b1d6ecdf658a68afc9f5f10be11906cfbee51a2e5ae00eceed827210573",
+                      "bytes":  3460
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/area_shape_joint_bins.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/area_shape_joint_bins.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+                      "bytes":  27152
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/closure_checks.csv",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/closure_checks.csv",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+                      "bytes":  1255
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/delivery-manifest.json",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/delivery-manifest.json",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "fe17531cded320f6a654c15426fef061d48ebc04643a6618fcde0765b59950c5",
+                      "bytes":  2560
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/manifest.json",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/manifest.json",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "cac9f29e90a6ff217bc4725a09ace65e5176ffc1f433a7898580464b82a40a22",
+                      "bytes":  3824
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/README.md",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/README.md",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "37cd2663deb11b77afbad2588c8b8bca02980d191c0b6206038ce58087413415",
+                      "bytes":  3460
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/USE_STATUS.md",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/USE_STATUS.md",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "f3eeeb3fb162c81f8d42d406ae3fe6b8f2c8e80d051c6d8080e8c2a68998556f",
+                      "bytes":  614
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/verification.json",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/verification.json",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "4d963db35ce91ef0fe4899f743ae0f3c34a18afe440d19dbf987102e1d11578a",
+                      "bytes":  951
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles_v2/visual-review.md",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/visual-review.md",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "b0bfc9da120263d40b6e338e1986caaff1eb7fab4cfa4bf7eb6842c2c8f7bef4",
+                      "bytes":  3181
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.aux",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.aux",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+                      "bytes":  32
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.log",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.log",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "7c885641095fea72daca8c12e1cc27bcb1c9b07754638698604f6ac96f12c604",
+                      "bytes":  27506
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "a1cfda2b154ac954dda0532da084d5c08ff7ddc6707971460fec91a692103bc2",
+                      "bytes":  83925
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.tex",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v1/fig_area_shape_joint_bubbles.tex",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "7e3bf284f352023c4a39c2da88dd4d3c56744d30cbde4b1e5d507b3103c9b9a5",
+                      "bytes":  1777
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v1/frames.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v1/frames.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "ccff67f4e362899ee4cb33d0927a6a2d88c9aa246191a5655fb7e90d6e734fa5",
+                      "bytes":  54482
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.aux",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.aux",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+                      "bytes":  32
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.log",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.log",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "610f562d73a4f4970748e27e7fe891530c46b676fa2bfbb71723a70152fde335",
+                      "bytes":  27506
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "a3de8f5409813e6969611a1f2866783bcce627400137905a40e48f45d0dc49df",
+                      "bytes":  83919
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.tex",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.tex",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "7e3bf284f352023c4a39c2da88dd4d3c56744d30cbde4b1e5d507b3103c9b9a5",
+                      "bytes":  1777
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-12-area_shape_joint_bubbles_v2/frames.pdf",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/history/output/previews/2026-10-12-area_shape_joint_bubbles_v2/frames.pdf",
+                      "action":  "move",
+                      "reason":  "Superseded bubble-figure layout or duplicate statistical snapshot; current v3 retained. v2 baseline remains available read-only in archive.",
+                      "sha256":  "d090ebac1a659f21a5a397f73417b1418cf7e79348cec44be17b07d524bb38e0",
+                      "bytes":  54489
+                  },
+                  {
+                      "original_path":  ".gitattributes",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/before-entry-update/.gitattributes.source",
+                      "action":  "snapshot",
+                      "reason":  "Preserve original bytes and historical manifest hashes before updating active archive references.",
+                      "sha256":  "619eef1ecc961ca3b46dd28c245d3abab9324cc9b1256e314643bf8b1e65be0a",
+                      "bytes":  2205
+                  },
+                  {
+                      "original_path":  "scripts/plot_area_shape_joint_bubbles.py",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/before-entry-update/scripts/plot_area_shape_joint_bubbles.py.source",
+                      "action":  "snapshot",
+                      "reason":  "Preserve original bytes and historical manifest hashes before updating active archive references.",
+                      "sha256":  "c412caeee16188c352aff898d85b79f03da1063843f24d72aa9082c64637a3bf",
+                      "bytes":  24462
+                  },
+                  {
+                      "original_path":  "scripts/test/check_area_shape_joint_bubbles.py",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/before-entry-update/scripts/test/check_area_shape_joint_bubbles.py.source",
+                      "action":  "snapshot",
+                      "reason":  "Preserve original bytes and historical manifest hashes before updating active archive references.",
+                      "sha256":  "2cd891baa6323f94ab16508dc39155340f042a8c27196c612c1575368c2eb1b9",
+                      "bytes":  12234
+                  },
+                  {
+                      "original_path":  "results/summary/area_shape_joint_bubbles/README.md",
+                      "archive_path":  "archive/2026-10-12-area-shape-bubbles/before-entry-update/results/summary/area_shape_joint_bubbles/README.md.source",
+                      "action":  "snapshot",
+                      "reason":  "Preserve original bytes and historical manifest hashes before updating active archive references.",
+                      "sha256":  "af08a88a70dd171b79aaf5b0c9cb48686b552276e28eeaafdb95d4c29db7450d",
+                      "bytes":  2467
+                  }
+              ]
+}

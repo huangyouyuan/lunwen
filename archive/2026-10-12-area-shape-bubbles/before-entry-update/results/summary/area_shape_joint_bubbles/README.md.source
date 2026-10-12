@@ -1,0 +1,26 @@
+# 面积—形状联合气泡图：用途入口
+
+2026-10-12。本次仅作完整参考斑块联合分布统计与探索绘图，未修改论文正文或既有科研结果。
+
+**当前交付为v3**：两个7.6×7.6 cm正方形绘图区，气泡圆面积及占比图例统一为v2的2倍；保持严格正比，不额外设置最小气泡下限。统计CSV与v2逐字节一致。
+
+- [统计口径与复现说明](../area_shape_joint_bubbles_v3/README.md)
+- [联合分档汇总CSV](../area_shape_joint_bubbles_v3/area_shape_joint_bins.csv)
+- [八组闭合检查](../area_shape_joint_bubbles_v3/closure_checks.csv)
+- [高清PNG](../../../figures/exploratory/area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.png)
+- [矢量PDF](../../../figures/exploratory/area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.pdf)
+- [独立数值及PDF核查](../area_shape_joint_bubbles_v3/verification.json)
+- [实际查看与交付记录](../area_shape_joint_bubbles_v3/visual-review.md)
+
+## 保留的过程文件
+
+| 位置 | 用途与状态 |
+|---|---|
+| 本目录两份CSV | 初次汇总快照。图形导出前自检发现纵轴文字越出预设页面，停止出图；统计内容与v2完全一致，原位保留 |
+| `results/summary/area_shape_joint_bubbles_v1/`及同名图件、预览目录 | 第一轮完整导出；查看时发现tight裁边使横轴文字与子图题间距过小。保留用于过程追溯，不作为本次交付图；其当时manifest中的Verified仅覆盖所写范围 |
+| `results/summary/area_shape_joint_bubbles_v2/`及同名图件、预览目录 | 上一轮完整交付，绘图区7.6×5.7 cm。数据、图件、源码清单和历史核查记录原位保留；统计CSV仍作为v3逐字节复用的基线 |
+| `results/summary/area_shape_joint_bubbles_v3/`及同名图件、预览目录 | 当前正方形与圆面积2倍排版，数据及口径不变；全部169个非零气泡、图例及分档边界经数值和实际导出核查 |
+
+所有版本原位保留，未删除、移动或覆盖旧文件。本次没有重算原始空间指标、修改共同五档候选或冻结形态类型。
+
+v3修订前的绘图脚本、独立核查脚本和本入口均已按原字节保存，见[快照与SHA-256映射](../../../output/archive/2026-10-12/area-shape-square-before/manifest.json)。v2清单中的代码哈希对应这些历史快照，当前活动脚本已切换v3；历史README里的v2绘图/核查命令不能当作当前活动入口。

@@ -1,0 +1,23 @@
+{
+  "status": "Verified",
+  "scope": "Final delivery paths and SHA-256 after numeric, vector and visual checks; intermediate files retained",
+  "files": {
+    "scripts/plot_area_shape_joint_bubbles.py": "c61e9d21820594631cc2e40b6eb0179a16f5233b21d21fea0dec8fa58c26556f",
+    "scripts/test/check_area_shape_joint_bubbles.py": "efcd5cad556e80b1d23066e0257545254f752e4379b7078a10002082d6e00397",
+    ".gitattributes": "619eef1ecc961ca3b46dd28c245d3abab9324cc9b1256e314643bf8b1e65be0a",
+    "results/summary/area_shape_joint_bubbles/README.md": "1cc3c83f7abe9c714004cddf5bc35fb61522edf84a53414dc56de506734a73e7",
+    "results/summary/area_shape_joint_bubbles_v2/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/area_shape_joint_bubbles_v2/closure_checks.csv": "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+    "results/summary/area_shape_joint_bubbles_v2/manifest.json": "cac9f29e90a6ff217bc4725a09ace65e5176ffc1f433a7898580464b82a40a22",
+    "results/summary/area_shape_joint_bubbles_v2/README.md": "37cd2663deb11b77afbad2588c8b8bca02980d191c0b6206038ce58087413415",
+    "results/summary/area_shape_joint_bubbles_v2/verification.json": "4d963db35ce91ef0fe4899f743ae0f3c34a18afe440d19dbf987102e1d11578a",
+    "results/summary/area_shape_joint_bubbles_v2/visual-review.md": "b0bfc9da120263d40b6e338e1986caaff1eb7fab4cfa4bf7eb6842c2c8f7bef4",
+    "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf": "a3de8f5409813e6969611a1f2866783bcce627400137905a40e48f45d0dc49df",
+    "figures/exploratory/area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.png": "e16979fc61a4892e3d0d366bcffa062b9c12bba905ad00b55b3d62fdf4078fc4",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.aux": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.log": "610f562d73a4f4970748e27e7fe891530c46b676fa2bfbb71723a70152fde335",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.pdf": "a3de8f5409813e6969611a1f2866783bcce627400137905a40e48f45d0dc49df",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/fig_area_shape_joint_bubbles.tex": "7e3bf284f352023c4a39c2da88dd4d3c56744d30cbde4b1e5d507b3103c9b9a5",
+    "output/previews/2026-10-12-area_shape_joint_bubbles_v2/frames.pdf": "d090ebac1a659f21a5a397f73417b1418cf7e79348cec44be17b07d524bb38e0"
+  }
+}

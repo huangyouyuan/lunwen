@@ -1,0 +1,42 @@
+{
+  "status": "Verified",
+  "scope": "independent raw-to-summary checks and exported vector geometry/font checks",
+  "raw_duplicates_checked": 38763,
+  "crop_patches_checked": 149234,
+  "cells": 192,
+  "plotted_nonzero_cells": 169,
+  "zero_cells": 23,
+  "area_share_sums": {
+    "A/corn": 100.0,
+    "A/soybean": 100.0,
+    "B/corn": 100.0,
+    "B/soybean": 100.0,
+    "C/corn": 100.0,
+    "C/soybean": 100.0,
+    "D/corn": 100.0,
+    "D/soybean": 100.0
+  },
+  "actual_pdf_min_circle_gap_mm": 0.2188819885259922,
+  "actual_pdf_min_cell_boundary_clearance_mm": 0.16419098820944036,
+  "plot_frame_cm": [
+    7.6,
+    7.6
+  ],
+  "bubble_area_multiplier_vs_v2": 2,
+  "same_csv_bytes_as_v2": true,
+  "min_bubble_floor": null,
+  "max_actual_diameter_error_pt": 2.7828994761058823e-05,
+  "all_pdf_text_pt": 9,
+  "embedded_fonts": [
+    "SimSun",
+    "TimesNewRomanPSMT"
+  ],
+  "pdf_raster_image_count": 0,
+  "png_pixels": [
+    4111,
+    2646
+  ],
+  "png_dpi": 600,
+  "visual_review": "Not verified by this automated checker; recorded separately",
+  "pdf_sha256": "87eeb7bd8e6403fbdacc3160b0285485902d5436b880166b29501b41f12cc38f"
+}

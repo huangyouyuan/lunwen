@@ -1,0 +1,379 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""完整参考斑块的面积—形状联合分布；不修改论文或既有科学结果。
+
+从仓库根目录运行：
+    python -B scripts/plot_area_shape_joint_bubbles.py
+只读复核：
+    python -B scripts/plot_area_shape_joint_bubbles.py --check
+另存一次复现（已有文件不覆盖）：
+    python -B scripts/plot_area_shape_joint_bubbles.py --tag area_shape_joint_bubbles_r2
+
+依赖 numpy、pandas、matplotlib、XeLaTeX、Poppler。子图题和共享图例由
+独立 LaTeX 图件排版，主论文不编译。所有中间产物保留在任务预览目录。
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+import re
+import shutil
+import subprocess
+from datetime import datetime, timezone, timedelta
+
+import numpy as np
+import pandas as pd
+from matplotlib import font_manager
+
+import figstyle as fs
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE = ROOT / "results/processed/sec33_reference_patch_types/reference_patch_features.csv"
+COMPOSITION = ROOT / "results/summary/sec13_sec31_foundations/reference_composition.csv"
+SUPPORT = ROOT / "results/summary/sec13_sec31_foundations/crop_patch_support_and_limitations.csv"
+BASELINE_DIR = ROOT / "results/summary/area_shape_joint_bubbles_v2"
+PIXEL_HA = 0.09
+CROPS = {"corn": "玉米", "soybean": "大豆"}
+AREA_EDGES = np.array([0, 10, 50, 100, 200, 500, np.inf])
+SHAPE_EDGES = np.array([1, 1.5, 2, 3, np.inf])
+AREA_LABELS = ["<10", "10–<50", "50–<100", "100–<200", "200–<500", "≥500"]
+SHAPE_LABELS = ["1–<1.5", "1.5–<2", "2–<3", "≥3"]
+SITE_COLORS = {"A": "#0072B2", "B": "#E69F00", "C": "#009E73", "D": "#CC79A7"}
+OFFSETS = {"A": (-0.23, 0.20), "B": (0.245, 0.20),
+           "C": (-0.23, -0.20), "D": (0.245, -0.20)}
+AREA_SCALE_MULTIPLIER = 2.0
+MAX_DIAMETER_MM = 4.6 * math.sqrt(AREA_SCALE_MULTIPLIER)
+PANEL_SIDE_CM = 7.6
+LEGEND_PCTS = [1, 5, 20]
+STEM = "fig_area_shape_joint_bubbles"
+
+
+def require(condition, message):
+    if not bool(condition):
+        raise ValueError(message)
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def rel(path):
+    return Path(path).relative_to(ROOT).as_posix()
+
+
+def bin_values(values, edges, name):
+    values = np.asarray(values, dtype=float)
+    require(np.isfinite(values).all(), f"{name}存在NA/无穷值；停止，不缩减分母")
+    require((values >= edges[0]).all(), f"{name}存在展示区间未覆盖的值")
+    bins = np.searchsorted(edges, values, side="right") - 1
+    require(((bins >= 0) & (bins < len(edges) - 1)).all(), f"{name}分档不完整")
+    return bins
+
+
+def aggregate():
+    data = pd.read_csv(SOURCE, float_precision="round_trip")
+    require(not data.duplicated(["target", "PID"]).any(), "target/PID重复")
+    require(not data.patch_uid.duplicated().any(), "patch_uid重复")
+    require(data.target.map(fs.SITE_MAP).equals(data.site), "站点映射不符")
+    require(set(data.crop) == {"corn", "soybean", "other"}, "类别身份不符")
+    require(data.crop.map({"corn": "cls_1", "other": "cls_2", "soybean": "cls_3"}).equals(data.TYPE), "原始类别编码不符")
+    crop = data[data.crop.isin(CROPS)].copy()
+    require(crop.feature_status.eq("valid").all(), "存在非valid作物记录")
+    require(crop.missing_reason.isna().all(), "存在缺失说明，需核查")
+    require(crop.reference_pixels.notna().all(), "参考像元数缺失")
+    require(((crop.reference_pixels > 0) & (crop.reference_pixels % 1 == 0)).all(), "像元数不是正整数")
+    require(np.isfinite(crop.AREA).all() and (crop.AREA > 0).all(), "面积不合法")
+    require(np.allclose(crop.AREA, crop.reference_pixels * PIXEL_HA, rtol=0, atol=1e-9), "AREA与0.09 ha/像元不符")
+    require(crop.touches_outer_edge.isin([True, False]).all(), "外缘标记缺失")
+    crop["area_bin_order"] = bin_values(crop.AREA, AREA_EDGES, "AREA")
+    crop["shape_bin_order"] = bin_values(crop.SHAPE, SHAPE_EDGES, "SHAPE")
+    crop["is_singleton"] = crop.reference_pixels.eq(1).astype(int)
+    crop["edge_pixels"] = crop.reference_pixels.where(crop.touches_outer_edge, 0)
+
+    rows = []
+    checks = []
+    comp = pd.read_csv(COMPOSITION, float_precision="round_trip").set_index(["site", "crop"])
+    support = pd.read_csv(SUPPORT, float_precision="round_trip").set_index(["site", "crop"])
+    for site in fs.SITES:
+        for crop_id, crop_cn in CROPS.items():
+            group = crop[(crop.site == site) & (crop.crop == crop_id)]
+            require(len(group) > 0, f"{site}/{crop_id}没有参考支持")
+            total_pixels = int(group.reference_pixels.sum())
+            total_area = total_pixels * PIXEL_HA
+            require(total_pixels == int(comp.loc[(site, crop_id), "pixels"]), "与正式组成表像元不符")
+            require(len(group) == int(support.loc[(site, crop_id), "n_patches"]), "与完整斑块支持表数量不符")
+            grouped = group.groupby(["area_bin_order", "shape_bin_order"], observed=True)
+            local = []
+            for ai in range(6):
+                for si in range(4):
+                    part = grouped.get_group((ai, si)) if (ai, si) in grouped.groups else group.iloc[0:0]
+                    pixels = int(part.reference_pixels.sum())
+                    row = dict(target=group.target.iloc[0], site=site, crop=crop_id,
+                               crop_label=crop_cn, area_bin_order=ai, area_bin=AREA_LABELS[ai],
+                               area_lower_ha=float(AREA_EDGES[ai]),
+                               area_upper_ha=None if ai == 5 else float(AREA_EDGES[ai + 1]),
+                               shape_bin_order=si, shape_bin=SHAPE_LABELS[si],
+                               shape_lower=float(SHAPE_EDGES[si]),
+                               shape_upper=None if si == 3 else float(SHAPE_EDGES[si + 1]),
+                               patch_count=len(part), reference_pixels=pixels,
+                               area_ha=pixels * PIXEL_HA,
+                               total_crop_area_ha=total_area,
+                               area_share_pct=100 * pixels / total_pixels,
+                               singleton_patch_count=int(part.is_singleton.sum()),
+                               outer_edge_patch_count=int(part.touches_outer_edge.sum()),
+                               outer_edge_pixels=int(part.edge_pixels.sum()), data_status="derived_exploratory")
+                    rows.append(row)
+                    local.append(row)
+            before_single = int(group.is_singleton.sum())
+            before_edge = int(group.touches_outer_edge.sum())
+            before_edge_pixels = int(group.edge_pixels.sum())
+            check = dict(site=site, crop=crop_id, input_patches=len(group),
+                         binned_patches=sum(r["patch_count"] for r in local),
+                         input_pixels=total_pixels,
+                         binned_pixels=sum(r["reference_pixels"] for r in local),
+                         input_area_ha=math.fsum(group.AREA),
+                         binned_area_ha=math.fsum(r["area_ha"] for r in local),
+                         area_share_sum_pct=math.fsum(r["area_share_pct"] for r in local),
+                         singleton_patches_before=before_single,
+                         singleton_patches_after=sum(r["singleton_patch_count"] for r in local),
+                         outer_edge_patches_before=before_edge,
+                         outer_edge_patches_after=sum(r["outer_edge_patch_count"] for r in local),
+                         outer_edge_pixels_before=before_edge_pixels,
+                         outer_edge_pixels_after=sum(r["outer_edge_pixels"] for r in local),
+                         missing_area=0, missing_shape=0, unassigned_patches=0, status="Verified")
+            for before, after in [("input_patches", "binned_patches"), ("input_pixels", "binned_pixels"),
+                                  ("singleton_patches_before", "singleton_patches_after"),
+                                  ("outer_edge_patches_before", "outer_edge_patches_after"),
+                                  ("outer_edge_pixels_before", "outer_edge_pixels_after")]:
+                require(check[before] == check[after], f"{site}/{crop_id} {before}不闭合")
+            require(abs(check["input_area_ha"] - check["binned_area_ha"]) < 1e-8, "面积不闭合")
+            require(abs(check["area_share_sum_pct"] - 100) < 1e-10, "面积占比不闭合")
+            require(before_single == int(support.loc[(site, crop_id), "singleton_count"]), "单像元支持不符")
+            require(before_edge == int(support.loc[(site, crop_id), "edge_patches"]), "外缘支持不符")
+            require(before_edge_pixels == int(support.loc[(site, crop_id), "edge_pixels"]), "外缘面积不符")
+            checks.append(check)
+    return pd.DataFrame(rows), pd.DataFrame(checks)
+
+
+def draw_frames(summary, path):
+    fs.setup()
+    fonts = {name: font_manager.findfont(name, fallback_to_default=False)
+             for name in ["Times New Roman", "SimSun"]}
+    max_share = float(summary.area_share_pct.max())
+    baseline = json.loads((BASELINE_DIR / "manifest.json").read_text(encoding="utf-8"))
+    baseline_scale = baseline["geometry"]["scatter_s_pt2_per_pct"]
+    scale = baseline_scale * AREA_SCALE_MULTIPLIER
+    # s是标记包围正方形的面积；圆面积=(pi/4)*s，故s与占比线性对应。
+    fig, axes = fs.grid(1, 2, w=2, h=2, wgap=0.5, margin=(1.5, 1.4, 0.2, 0.2))
+    all_gaps = []
+    cell_clearances = []
+    panels = []
+    positive = summary[summary.reference_pixels > 0]
+    for j, crop_id in enumerate(CROPS):
+        ax = axes[0, j]
+        circles = []
+        for site in fs.SITES:
+            points = positive[(positive.crop == crop_id) & (positive.site == site)]
+            dx, dy = OFFSETS[site]
+            x = points.area_bin_order.to_numpy() + dx
+            y = points.shape_bin_order.to_numpy() + dy
+            sizes = points.area_share_pct.to_numpy() * scale
+            ax.scatter(x, y, s=sizes, color=SITE_COLORS[site], edgecolors="none", linewidths=0, alpha=1, zorder=3)
+            circles.extend(zip(x, y, np.sqrt(sizes) / 2))
+        ax.set_xlim(-0.5, 5.5)
+        ax.set_ylim(-0.5, 3.5)
+        # 长档名分两行，保留9 pt，不旋转、不压缩字形。
+        ax.set_xticks(range(6), ["<10", "10–\n<50", "50–\n<100", "100–\n<200", "200–\n<500", "≥500"])
+        ax.set_yticks(range(4), SHAPE_LABELS if j == 0 else [""] * 4)
+        ax.tick_params(length=0)
+        ax.set_xlabel("AREA区间/ha", labelpad=3)
+        if j == 0:
+            ax.set_ylabel("SHAPE区间", labelpad=4)
+        for x in np.arange(0.5, 5.5, 1):
+            ax.axvline(x, **fs.GROUPED_BAR_GRID, zorder=0)
+        for y in np.arange(0.5, 3.5, 1):
+            ax.axhline(y, **fs.GROUPED_BAR_GRID, zorder=0)
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        bounds = ax.get_window_extent(renderer)
+        require(abs(bounds.width / fig.dpi * 2.54 - 7.6) < 1e-8, "图框宽度不符")
+        require(abs(bounds.height / fig.dpi * 2.54 - PANEL_SIDE_CM) < 1e-8, "正方形图框高度不符")
+        centers = ax.transData.transform(np.array([[x, y] for x, y, _ in circles]))
+        radii = np.array([r for _, _, r in circles]) * fig.dpi / 72
+        for i, (center, radius) in enumerate(zip(centers, radii)):
+            require(center[0] - radius > bounds.x0 and center[0] + radius < bounds.x1
+                    and center[1] - radius > bounds.y0 and center[1] + radius < bounds.y1, "气泡越出图框")
+            x, y, _ = circles[i]
+            ai, si = round(x), round(y)
+            low = ax.transData.transform((ai - .5, si - .5))
+            high = ax.transData.transform((ai + .5, si + .5))
+            clearance = min(center[0] - radius - low[0], high[0] - center[0] - radius,
+                            center[1] - radius - low[1], high[1] - center[1] - radius)
+            # 留在自己的联合档内，并与0.4 pt网格线本身保持净空。
+            require(clearance > .2 * fig.dpi / 72, "气泡接触或越过分档网格线")
+            cell_clearances.append(float(clearance / fig.dpi * 25.4))
+            for k in range(i):
+                gap = np.linalg.norm(center - centers[k]) - radius - radii[k]
+                require(gap > 0, "气泡相互重叠")
+                all_gaps.append(float(gap / fig.dpi * 25.4))
+        labels = [t.get_window_extent(renderer) for t in ax.get_xticklabels()]
+        require(not any(a.overlaps(b) for i, a in enumerate(labels) for b in labels[i + 1:]), "横轴标签重叠")
+        panels.append(dict(crop=crop_id, nonzero_bubbles=len(circles), width_cm=7.6, height_cm=7.6))
+    renderer = fig.canvas.get_renderer()
+    for ax in axes.flat:
+        for item in [*ax.get_xticklabels(), *ax.get_yticklabels(), ax.xaxis.label, ax.yaxis.label]:
+            if item.get_text():
+                box = item.get_window_extent(renderer)
+                require(box.x0 >= 0 and box.y0 >= 0 and box.x1 <= fig.bbox.width
+                        and box.y1 <= fig.bbox.height, "坐标文字越出导出页面")
+    # figstyle默认tight裁边；独立LaTeX按物理坐标拼版时必须关闭它。
+    with fs.plt.rc_context({"savefig.bbox": None}):
+        fig.savefig(path, bbox_inches=None, facecolor="white")
+    fs.plt.close(fig)
+    return dict(fonts=fonts, panels=panels, scatter_s_pt2_per_pct=scale,
+                circle_area_pt2_per_pct=math.pi / 4 * scale,
+                observed_max_share_pct=max_share, max_diameter_mm=MAX_DIAMETER_MM,
+                min_nonzero_share_pct=float(positive.area_share_pct.min()),
+                min_circle_gap_mm=min(all_gaps), min_cell_boundary_clearance_mm=min(cell_clearances),
+                offsets=OFFSETS, baseline_scale_pt2_per_pct=baseline_scale,
+                circle_area_multiplier_vs_v2=AREA_SCALE_MULTIPLIER,
+                min_bubble_floor=None, figure_width_cm=17.4, figure_height_cm=11.2,
+                legend=[dict(share_pct=p, diameter_pt=math.sqrt(scale * p),
+                             diameter_mm=math.sqrt(scale * p) / 72 * 25.4) for p in LEGEND_PCTS])
+
+
+def latex_wrapper(geometry):
+    lines = [r"\documentclass[tikz,border=0pt]{standalone}",
+             r"\usepackage{fontspec,xeCJK,graphicx}",
+             r"\setmainfont{Times New Roman}", r"\setCJKmainfont{SimSun}",
+             r"\begin{document}",
+             r"\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={inner sep=0pt,font=\fontsize{9bp}{11bp}\selectfont}]",
+             r"\path[use as bounding box] (0,0) rectangle (17.4,11.2);",
+             r"\node[anchor=south west] at (0,2.0) {\includegraphics{frames.pdf}};",
+             r"\node at (5.3,2.00) {（a）玉米};",
+             r"\node at (13.4,2.00) {（b）大豆};",
+             r"\node[anchor=west] at (1.4,1.40) {站点};"]
+    for i, site in enumerate(fs.SITES):
+        x = 2.5 + 1.0 * i
+        lines += [rf"\definecolor{{site{site}}}{{HTML}}{{{SITE_COLORS[site][1:]}}}",
+                  rf"\fill[site{site}] ({x:.4f},1.40) circle[radius=0.09cm];",
+                  rf"\node[anchor=west] at ({x + 0.17:.4f},1.40) {{{site}}};"]
+    lines += [r"\node[anchor=west] at (7.0,1.40) {作物面积占比};",
+              r"\definecolor{bubblegray}{HTML}{777777}"]
+    for item, x in zip(geometry["legend"], [9.65, 11.25, 13.05]):
+        radius_cm = item["diameter_mm"] / 20
+        # 与Matplotlib同一物理直径；不用LaTeX pt（1/72.27 inch）代替bp。
+        lines += [rf"\fill[bubblegray] ({x:.6f},1.40) circle[radius={radius_cm:.12f}cm];",
+                  rf"\node[anchor=west] at ({x + radius_cm + 0.13:.6f},1.40) {{{item['share_pct']}\%}};"]
+    lines += [r"\node[anchor=west] at (0.1,0.80) {每格A左上、B右上、C左下、D右下；位置偏移仅用于区分站点，不表示档内数值差异。};",
+              r"\node[anchor=west] at (0.1,0.39) {气泡圆面积表示该站该作物的面积占比；分档仅供探索，气泡代表档内汇总，不代表单个斑块。};",
+              r"\end{tikzpicture}", r"\end{document}"]
+    return "\n".join(lines) + "\n"
+
+
+def run_command(args, cwd):
+    result = subprocess.run(args, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    require(result.returncode == 0, f"命令失败：{args[0]}\n{result.stdout[-4000:]}\n{result.stderr[-2000:]}")
+    return result.stdout
+
+
+def write_readme(path, tag, summary, geometry):
+    text = f"""# 面积—形状联合气泡图（探索）
+
+本次只汇总完整参考斑块并绘图，不修改论文，不生成分类精度或泛化解释。
+结果性质为 **derived / exploratory**，不是已确定的形态类型。
+
+## 数据与口径
+
+- 来源：`{rel(SOURCE)}`；A/B/C/D依次为iw_2023/iw2_2023/ida_2023/il_2023。
+- 对象：整幅30 m参考标签的8邻域同类连通斑块；不等同于农业田块。保留单像元和研究区外缘斑块。
+- 两作物共{int(summary.patch_count.sum()):,}个斑块；AREA与SHAPE均无缺失，所有记录为valid。脚本遇NA、无穷值或范围外值会停止，不静默排除或改变分母。
+- AREA单位ha，SHAPE无量纲。逐记录核对AREA = reference_pixels × 0.09 ha；汇总按整数像元求和后换算面积，避免浮点累加误差。
+- AREA：<10、10–<50、50–<100、100–<200、200–<500、≥500；SHAPE：1–<1.5、1.5–<2、2–<3、≥3。均左闭右开，末档无上界；第一面积档仅含实际正面积。
+- 分母是该站该作物的完整参考面积。`area_share_pct = 100 × 档内参考像元数 / 该站该作物参考像元数`。八组分别合计100%，不以全站面积或斑块数量为分母。
+- CSV列出全部192个组合；无支持的{int((summary.patch_count == 0).sum())}个组合为真实零值，图中留空；其余{int((summary.patch_count > 0).sum())}个全部绘制，不设最小气泡，不插值、不平滑。
+
+## 文件与复现
+
+- [联合汇总](area_shape_joint_bins.csv)：`target/site/crop/crop_label`为身份；`area_bin/shape_bin`为展示分档；上下界空值只表示末档无上界；`patch_count/area_ha/area_share_pct`为数量、面积和组内面积占比。
+- `reference_pixels/total_crop_area_ha`保留整数计数与分母；单像元及外缘支持列用于核查，没有据此筛选。
+- [闭合检查](closure_checks.csv)：八组分档前后斑块数、像元、面积、单像元和外缘支持，以及占比总和。
+- 图件：`figures/exploratory/{tag}/{STEM}.pdf`及同名600 dpi PNG。
+- 生产脚本：`scripts/plot_area_shape_joint_bubbles.py`。运行`python -B scripts/plot_area_shape_joint_bubbles.py --check --tag {tag}`可只读核对；另存复现用新的`--tag`，已有输出不覆盖。
+- 独立核查：`python -B scripts/test/check_area_shape_joint_bubbles.py --tag {tag}`。
+- 中间图框、独立LaTeX图件源码与日志在`output/previews/2026-10-12-{tag}/`，不是主论文编译产物。
+
+## 图形语义与核查范围
+
+两个图框均为7.6×7.6 cm正方形，沿用figstyle的宋体/Times New Roman、小五9 pt及浅灰网格。画布17.4×11.2 cm，保持宽度并增加高度。子图题、共享图例和注释由独立LaTeX图件排版。仅左侧显示共享SHAPE刻度。
+四站颜色固定；每格A左上、B右上、C左下、D右下，偏移不表示档内数值差异。气泡是联合档内的实际面积汇总，不代表分档中心存在一个真实斑块。
+Matplotlib的`s = {geometry['scatter_s_pt2_per_pct']:.12g} × 占比（%）`，真实圆面积为`πs/4`；相对v2所有气泡圆面积统一乘2，直径乘√2；共享1%、5%、20%图例用同一物理直径换算。最大直径{MAX_DIAMETER_MM:.4f} mm，无轮廓描边放大小值。按本轮确认，保持严格正比，不额外设置最小气泡下限。每个圆均留在自己的分档内。
+
+本版仅调整排版；两份CSV从v2按原字节复制，生成前与完整参考数据重新汇总的结果对照一致。原始数据、分档和统计口径不变。
+
+**Verified**：本次数据覆盖、八组闭合、与既有组成/支持表一致、圆面积比例及气泡不相交。视觉及PDF核查见本目录`verification.json`（如已生成）。
+本次没有重算FRAGSTATS指标或恢复原工程配置，不升级其历史验证范围。
+"""
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--tag", default="area_shape_joint_bubbles_v3")
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    require(re.fullmatch(r"[a-zA-Z0-9_-]+", args.tag), "tag只能使用字母、数字、下划线和连字符")
+    summary_dir = ROOT / "results/summary" / args.tag
+    figure_dir = ROOT / "figures/exploratory" / args.tag
+    build_dir = ROOT / "output/previews" / f"2026-10-12-{args.tag}"
+    summary, checks = aggregate()
+    for name, actual in [("area_shape_joint_bins.csv", summary), ("closure_checks.csv", checks)]:
+        baseline = pd.read_csv(BASELINE_DIR / name, float_precision="round_trip")
+        pd.testing.assert_frame_equal(actual, baseline, check_exact=False, check_dtype=False, rtol=1e-14, atol=1e-10)
+    if args.check:
+        for name, actual in [("area_shape_joint_bins.csv", summary), ("closure_checks.csv", checks)]:
+            saved = pd.read_csv(summary_dir / name, float_precision="round_trip")
+            pd.testing.assert_frame_equal(actual, saved, check_exact=False, check_dtype=False, rtol=1e-14, atol=1e-10)
+        print("Verified: 192 joint cells; 149234 crop patches; 8 group closures; saved CSVs match.")
+        return
+    for command in ["xelatex", "pdftoppm"]:
+        require(shutil.which(command), f"缺少{command}")
+    for folder in [summary_dir, figure_dir, build_dir]:
+        require(not folder.exists(), f"输出目录已存在，不覆盖：{folder}；另存请使用新--tag")
+    for folder in [summary_dir, figure_dir, build_dir]:
+        folder.mkdir(parents=True)
+    for name in ["area_shape_joint_bins.csv", "closure_checks.csv"]:
+        shutil.copyfile(BASELINE_DIR / name, summary_dir / name)
+        require(digest(BASELINE_DIR / name) == digest(summary_dir / name), "统计文件字节发生变化")
+    geometry = draw_frames(summary, build_dir / "frames.pdf")
+    tex_path = build_dir / f"{STEM}.tex"
+    tex_path.write_text(latex_wrapper(geometry), encoding="utf-8", newline="\n")
+    run_command(["xelatex", "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error", tex_path.name], build_dir)
+    final_pdf = figure_dir / f"{STEM}.pdf"
+    shutil.copyfile(build_dir / f"{STEM}.pdf", final_pdf)
+    run_command(["pdftoppm", "-r", "600", "-png", "-singlefile", str(final_pdf), str(figure_dir / STEM)], ROOT)
+    write_readme(summary_dir / "README.md", args.tag, summary, geometry)
+    inputs = [SOURCE, COMPOSITION, SUPPORT, Path(__file__), ROOT / "scripts/figstyle.py",
+              BASELINE_DIR / "area_shape_joint_bins.csv", BASELINE_DIR / "closure_checks.csv",
+              BASELINE_DIR / "manifest.json"]
+    outputs = [summary_dir / "area_shape_joint_bins.csv", summary_dir / "closure_checks.csv",
+               final_pdf, final_pdf.with_suffix(".png"), tex_path, build_dir / "frames.pdf", summary_dir / "README.md"]
+    manifest = dict(status="Verified", scope="aggregation, numeric closure and plot geometry; final exported visual review recorded separately",
+                    data_status="derived_exploratory", created_at=datetime.now(timezone(timedelta(hours=8))).isoformat(),
+                    git_head=run_command(["git", "rev-parse", "HEAD"], ROOT).strip(),
+                    site_map=fs.SITE_MAP, bins=dict(area=AREA_LABELS, shape=SHAPE_LABELS, convention="left closed, right open; last unbounded"),
+                    geometry=geometry,
+                    input_sha256={rel(p): digest(p) for p in inputs}, output_sha256={rel(p): digest(p) for p in outputs})
+    (summary_dir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(dict(status="Verified", patch_count=int(summary.patch_count.sum()), rows=len(summary),
+                          nonzero_bubbles=int((summary.patch_count > 0).sum()), min_gap_mm=geometry["min_circle_gap_mm"],
+                          pdf=rel(final_pdf)), ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

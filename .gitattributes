@@ -32,3 +32,14 @@
 /output/README.md -text whitespace=cr-at-eol
 /output/preview-manifest.json -text whitespace=cr-at-eol
 /verification/output-preview-archive-2026-10-12.json -text whitespace=cr-at-eol
+
+# Preserve hashes for the complete-reference AREA-SHAPE joint exploration.
+/results/summary/area_shape_joint_bubbles*/** -text whitespace=cr-at-eol
+/figures/exploratory/area_shape_joint_bubbles*/** -text
+/output/previews/2026-10-12-area_shape_joint_bubbles*/** -text
+/scripts/plot_area_shape_joint_bubbles.py -text
+/scripts/test/check_area_shape_joint_bubbles.py -text
+/archive/2026-10-12-area-shape-bubbles/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/previews/2026-10-12-area_shape_joint_bubbles_v3/*.log -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/previews/2026-10-12-area_shape_joint_bubbles_v3/*.aux -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/verification/area-shape-bubbles-archive-2026-10-12.json -text
