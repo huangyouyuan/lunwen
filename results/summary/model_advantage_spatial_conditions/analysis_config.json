@@ -1,0 +1,37 @@
+{
+  "data_status": "derived_exploratory",
+  "date_client": "2026-10-13",
+  "advantage": "ConvGRU omission minus comparison model omission",
+  "small_total_rate": 0.001,
+  "paired_by": "same source training/validation/test split and target; not random initialization",
+  "area_bins": [
+    "<10",
+    "10-<50",
+    "50-<100",
+    "100-<200",
+    "200-<500",
+    ">=500"
+  ],
+  "shape_bins": [
+    "1-<1.5",
+    "1.5-<2",
+    "2-<3",
+    ">=3"
+  ],
+  "distance_bands": [
+    "0<d<=1",
+    "1<d<=2",
+    "2<d<=3",
+    "3<d<=4",
+    "4<d<=5",
+    "5<d<=6",
+    "d>6"
+  ],
+  "conditional_distance_bands": [
+    "0<d<=1",
+    "1<d<=6",
+    "d>6"
+  ],
+  "same_support_comparison": "fixed eligible area/shape-distance cells and outer weights; vary only within-control distance weights",
+  "no_significance_or_causal_inference": true
+}

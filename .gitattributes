@@ -55,3 +55,9 @@
 /results/summary/spatial_findings_refinement/** -text whitespace=cr-at-eol
 /scripts/refine_spatial_findings.py -text
 /scripts/test/check_spatial_findings_refinement.py -text
+
+# Preserve saved-count model comparison and provenance snapshot hashes.
+/results/processed/model_advantage_spatial_conditions/** -text whitespace=cr-at-eol
+/results/summary/model_advantage_spatial_conditions/** -text whitespace=cr-at-eol
+/scripts/analyze_model_advantage_spatial_conditions.py -text
+/scripts/test/check_model_advantage_spatial_conditions.py -text

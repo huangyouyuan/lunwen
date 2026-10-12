@@ -4,6 +4,8 @@
 
 先读[提炼报告](refinement-report.md)。各站主要面积—形状分布直接引用[气泡图v3原汇总](../area_shape_joint_bubbles_v3/area_shape_joint_bins.csv)，本轮没有重做该统计。SHAPE=2二分是条件对照，不是形态分类。
 
+后续[模型优势空间分析](../model_advantage_spatial_conditions/README.md)把单模型错误转成U-TAE/3D U-Net相对ConvGRU的差额，核对同编号划分，并在同一支持范围内比较统一距离前后。此处原表及权重保留，C/D细分结果由后续直接复用。
+
 | 阅读目的 | 文件 |
 |---|---|
 | 共同A/B来源、三模型的精简对照，含三套分层 | [core_common_source_comparisons.csv](core_common_source_comparisons.csv)（36行） |
