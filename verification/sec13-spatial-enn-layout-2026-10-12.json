@@ -1,0 +1,46 @@
+{
+  "status": "Verified",
+  "command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex",
+  "exit_code": 0,
+  "pages": 8,
+  "table_page": 4,
+  "table_font_bp": 10.5,
+  "table_rule_bounds_bp": [
+    [
+      54.308,
+      89.086,
+      540.967
+    ],
+    [
+      54.308,
+      141.538,
+      540.967
+    ],
+    [
+      54.308,
+      294.653,
+      540.967
+    ]
+  ],
+  "table_width_bp": 486.659,
+  "available_width_bp": 493.22834645669286,
+  "counts_rendered_in_order": true,
+  "overfull_underfull": false,
+  "undefined_references": false,
+  "visual_review": "Verified: single intact table, three level headers, patch counts under patch level, readable type, no clipped or overlapping table content. Section 2 follows the table.",
+  "retained_warnings": [
+    "SimSun/SimHei bold shape substitutions",
+    "xeCJK main-family redefinition",
+    "caption hypcap ignored for inline captions",
+    "Perl locale fallback"
+  ],
+  "files_sha256": {
+    "main.pdf": "7906ddf459fb2a7ca2e950d79d8e6ee2fb434673ae3bf3bcbf3637d8549109ec",
+    "main.log": "cb5f67a4be3e79710216581cec977452f1e8fa2d7602ea612441cd616d9d6b5c",
+    "sections/02_data.tex": "8d80b972c72ec2b0badf7a13bab9df8409b79e787dffa5d4bd402a2ad0929aa3",
+    "tables/sec13_spatial_metrics_enn_rows.tex": "6f56ba2e2fb3b1bf848cfd342e85f9a9352649d4e8a1af5f2ce6c5af01452564",
+    "scripts/generate_sec13_spatial_tables.py": "6197fcef7dd5dcc5efe1eef28f9530510e13511798018b09a93093d5a0dbaee0",
+    "scripts/test/check_sec13_spatial_enn.py": "bd4c667f73a281c9379cd456fbd5be228e21bbcd54a7f04096048f989799407e",
+    "output/sec13-enn-20261012-large-v1-4.png": "5d0698191e73316b9d9732500c031c11c64b887975eeb3c30238b8b4346a27b5"
+  }
+}

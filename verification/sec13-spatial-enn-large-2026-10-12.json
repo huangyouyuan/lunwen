@@ -1,0 +1,490 @@
+{
+  "status": "Verified",
+  "check_only": true,
+  "patches": 149234,
+  "extremes": [
+    {
+      "site": "A",
+      "crop": "corn",
+      "n_patches": 15146,
+      "reference_pixels": 2974800,
+      "singleton_count": 7313,
+      "singleton_patch_share": 0.48283375148554075,
+      "singleton_area_share": 0.0024583165254807044,
+      "AREA": [
+        0.09,
+        116.91,
+        455.4
+      ],
+      "SHAPE": [
+        1.0,
+        1.6292,
+        5.5769
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        729.9315
+      ],
+      "PD": 2.5678846571180554,
+      "AI": 93.92302582343197,
+      "ED": 55.21153767903646,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            24056
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            34536
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            21993
+          ]
+        }
+      }
+    },
+    {
+      "site": "A",
+      "crop": "soybean",
+      "n_patches": 14695,
+      "reference_pixels": 2409665,
+      "singleton_count": 6966,
+      "singleton_patch_share": 0.4740387887036407,
+      "singleton_area_share": 0.0028908582728304558,
+      "AREA": [
+        0.09,
+        92.43,
+        348.21
+      ],
+      "SHAPE": [
+        1.0,
+        1.5789,
+        5.4091
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        930.0
+      ],
+      "PD": 2.491421169704861,
+      "AI": 93.45908880918147,
+      "ED": 55.21153767903646,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            9564
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            34096
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            22358
+          ]
+        }
+      }
+    },
+    {
+      "site": "B",
+      "crop": "corn",
+      "n_patches": 14460,
+      "reference_pixels": 2758016,
+      "singleton_count": 6407,
+      "singleton_patch_share": 0.44308437067773165,
+      "singleton_area_share": 0.002323046711839235,
+      "AREA": [
+        0.09,
+        130.95,
+        731.52
+      ],
+      "SHAPE": [
+        1.0,
+        1.8824,
+        5.5872
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        2015.366
+      ],
+      "PD": 2.451578776041667,
+      "AI": 93.25143169149112,
+      "ED": 54.474690755208336,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            35735
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            7982
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            34796
+          ]
+        }
+      }
+    },
+    {
+      "site": "B",
+      "crop": "soybean",
+      "n_patches": 16039,
+      "reference_pixels": 1539167,
+      "singleton_count": 7710,
+      "singleton_patch_share": 0.4807032857410063,
+      "singleton_area_share": 0.005009203029950616,
+      "AREA": [
+        0.09,
+        63.27,
+        388.89
+      ],
+      "SHAPE": [
+        1.0,
+        1.6071,
+        4.8958
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        3886.245
+      ],
+      "PD": 2.719285753038194,
+      "AI": 91.60096129462666,
+      "ED": 54.474690755208336,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            35677
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            22490
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            35446
+          ]
+        }
+      }
+    },
+    {
+      "site": "C",
+      "crop": "corn",
+      "n_patches": 29837,
+      "reference_pixels": 2641661,
+      "singleton_count": 16303,
+      "singleton_patch_share": 0.5464021181754197,
+      "singleton_area_share": 0.006171495888382348,
+      "AREA": [
+        0.09,
+        127.44,
+        2043.36
+      ],
+      "SHAPE": [
+        1.0,
+        2.0714,
+        9.4735
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        780.5767
+      ],
+      "PD": 5.058627658420138,
+      "AI": 91.87902965698757,
+      "ED": 65.5297342936198,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            20908
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            20908
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": true,
+          "maximum_PIDs": [
+            69765
+          ]
+        }
+      }
+    },
+    {
+      "site": "C",
+      "crop": "soybean",
+      "n_patches": 27894,
+      "reference_pixels": 2095730,
+      "singleton_count": 14933,
+      "singleton_patch_share": 0.5353481035348103,
+      "singleton_area_share": 0.007125440777199353,
+      "AREA": [
+        0.09,
+        103.32,
+        904.32
+      ],
+      "SHAPE": [
+        1.0,
+        1.908,
+        7.1688
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        1218.2364
+      ],
+      "PD": 4.729207356770833,
+      "AI": 91.21765836692481,
+      "ED": 65.5297342936198,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            51379
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            23441
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            37848
+          ]
+        }
+      }
+    },
+    {
+      "site": "D",
+      "crop": "corn",
+      "n_patches": 16756,
+      "reference_pixels": 2619419,
+      "singleton_count": 8579,
+      "singleton_patch_share": 0.5119957030317498,
+      "singleton_area_share": 0.0032751537650143026,
+      "AREA": [
+        0.09,
+        121.86,
+        1188.27
+      ],
+      "SHAPE": [
+        1.0,
+        1.7342,
+        7.5714
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        2206.1732
+      ],
+      "PD": 2.840847439236111,
+      "AI": 93.58446145915245,
+      "ED": 51.758982340494796,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            14545
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            5129
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            33242
+          ]
+        }
+      }
+    },
+    {
+      "site": "D",
+      "crop": "soybean",
+      "n_patches": 14407,
+      "reference_pixels": 2387838,
+      "singleton_count": 6791,
+      "singleton_patch_share": 0.47136808495870064,
+      "singleton_area_share": 0.002843995279411752,
+      "AREA": [
+        0.09,
+        114.39,
+        1152.0
+      ],
+      "SHAPE": [
+        1.0,
+        1.7294,
+        6.5789
+      ],
+      "ENN": [
+        60.0,
+        60.0,
+        2323.9836
+      ],
+      "PD": 2.442593044704861,
+      "AI": 93.4315889606995,
+      "ED": 51.758982340494796,
+      "outer_edge": {
+        "AREA": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            6026
+          ]
+        },
+        "SHAPE": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            12222
+          ]
+        },
+        "ENN": {
+          "weighted_median_touches_outer_edge": false,
+          "minimum_touches_outer_edge": true,
+          "maximum_touches_outer_edge": false,
+          "maximum_PIDs": [
+            38394
+          ]
+        }
+      }
+    }
+  ],
+  "data_status": "derived_from_existing_verified_data",
+  "independent_frequency_median_audit": "Verified",
+  "raw_csv_metric_audit": "Verified",
+  "raw_crop_records_compared": 149234,
+  "narrative_comparisons_unrounded": "Verified",
+  "ranges": {
+    "singleton_patch_share": [
+      44.30843706777316,
+      54.640211817541974
+    ],
+    "singleton_area_share": [
+      0.2323046711839235,
+      0.7125440777199353
+    ],
+    "AI": [
+      91.21765836692481,
+      93.92302582343197
+    ],
+    "corn_area": [
+      116.91,
+      130.95
+    ],
+    "soybean_area": [
+      63.27,
+      114.39
+    ]
+  },
+  "area_crop_gaps": {
+    "A": 24.47999999999999,
+    "B": 67.67999999999998,
+    "C": 24.120000000000005,
+    "D": 7.469999999999999
+  },
+  "latex_source_structure": "Verified",
+  "sections_before_132_unchanged": "Verified",
+  "width_estimate_bp": 482.17033623910334,
+  "available_width_bp": 493.22834645669286,
+  "layout_status": "Not verified",
+  "compiled_this_task": false,
+  "inputs_sha256": {
+    "results/raw/sec33_reference_patch_types/2023ida_patch.csv": "55c4724a32dc8bf887bb132dba94a2649c1893b41d77776bb57664bf91ccae3c",
+    "results/raw/sec33_reference_patch_types/2023il_patch.csv": "26aa8143b676f853a18cfefe5b3ea236012f09692a23bc08352bd4b6a1020628",
+    "results/raw/sec33_reference_patch_types/2023iw2_patch.csv": "d1922b228e24d8d035a0cdc16d900e073f0f4ca49902b5eb0d2d5c12ce87d717",
+    "results/raw/sec33_reference_patch_types/2023iw_patch.csv": "6fc201b00320f11c613cd348410bdc495d2a3c51313c88d38fab4c39aadbcf73",
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/summary/sec33_reference_patch_types/background_class.csv": "0f1c47d43d77a59563057e03163398a372ea0d35075f9e55791c973a393ee3a1",
+    "results/summary/sec33_reference_patch_types/background_landscape.csv": "c4b911bb9d71c788b70d004feab8ee386f5bfd583657d5358906e59f06149ae7",
+    "results/summary/sec13_sec31_foundations/reference_composition.csv": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
+    "results/summary/sec13_sec31_foundations/crop_patch_distribution_reading.csv": "74a05d6ff9a9f7fe69fe686bb14d6004e257e4b3d06dc755dc3cd3cfaa0ea9c6",
+    "results/summary/sec13_sec31_foundations/crop_patch_support_and_limitations.csv": "0fc170374abf4855f9e0092b3ea5a606a5a808b013683be01a3bbeea2b4beb58",
+    "results/summary/sec13_sec31_foundations/class_background_full_scope.csv": "239706dacb84ab355cf895f15cd92b398a0a3881727f8d48080bb029effa03a3",
+    "results/summary/sec13_sec31_foundations/landscape_background_full_scope.csv": "2ebbf6760e13e83ee29fa9eda18bc256d8d36f9ae40af7ff77ef7ff7834e71b0"
+  },
+  "outputs_sha256": {
+    "sections/02_data.tex": "8d80b972c72ec2b0badf7a13bab9df8409b79e787dffa5d4bd402a2ad0929aa3",
+    "scripts/generate_sec13_spatial_tables.py": "6197fcef7dd5dcc5efe1eef28f9530510e13511798018b09a93093d5a0dbaee0",
+    "tables/sec13_spatial_metrics_enn_rows.tex": "6f56ba2e2fb3b1bf848cfd342e85f9a9352649d4e8a1af5f2ce6c5af01452564"
+  }
+}
