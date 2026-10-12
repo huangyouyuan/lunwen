@@ -34,7 +34,7 @@
     "sections/02_data.tex": "cbe566b1a6d3dd5c8a8e47b43af79a228527b3a210b4bfa8179a14c5e3ea4fef",
     "scripts/test/check_sec13_spatial_enn.py": "da9a86fd6c5bd0aad5388c6fdb438153f60454146c85db6f5ec91eda6b1fb4e8",
     "tables/sec13_spatial_metrics_enn_equal_rows.tex": "b5743be595cf47cf8d9ffbc6671ed57bdada7b2de4cbd0a0557432ac324ccb1f",
-    "output/sec13-fullwidth-20261012-v1-3.png": "d530588a4b13060a49a6c67cba95199ef5faa4a21d3f4af9ce3fdb7f973177fc",
-    "output/sec13-fullwidth-20261012-v1-table.png": "369fdd4c6766cb97313dbef6fcff38e3a9b72ee34b99153de1cc1388ba18e0e1"
+    "output/archive/2026-10-12/sec13-layout/sec13-fullwidth-20261012-v1-3.png": "d530588a4b13060a49a6c67cba95199ef5faa4a21d3f4af9ce3fdb7f973177fc",
+    "output/archive/2026-10-12/sec13-layout/sec13-fullwidth-20261012-v1-table.png": "369fdd4c6766cb97313dbef6fcff38e3a9b72ee34b99153de1cc1388ba18e0e1"
   }
 }

@@ -20,7 +20,7 @@
 | 表2 跨站F1 | 7 | 宋体 / Times New Roman | 9 pt | 表题、表头、12条路径及平均行、表注，含修正的箭头 |
 | 图5 F1差值热力图 | 7 | 宋体 / Times New Roman | 9 pt | 六个子图的坐标及数值、子图题、色标刻度与标题、图题 |
 
-图2、图3和图5的源PDF与嵌入正文后的文字均为9 pt，未因插图缩放变小。使用PyMuPDF提取实际字形字体和字号，并用Poppler渲染第2至7页逐页查看；修正后重新渲染并查看第7页。未发现图表文字重叠、截断或缺字。预览为`output/font-audit-20261012-before-{2..7}.png`及`output/font-audit-20261012-after-7.png`。
+图2、图3和图5的源PDF与嵌入正文后的文字均为9 pt，未因插图缩放变小。使用PyMuPDF提取实际字形字体和字号，并用Poppler渲染第2至7页逐页查看；修正后重新渲染并查看第7页。未发现图表文字重叠、截断或缺字。预览为`output/archive/2026-10-12/font-audit/font-audit-20261012-before-{2..7}.png`及`output/archive/2026-10-12/font-audit/font-audit-20261012-after-7.png`。
 
 执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，返回目标已更新；实际PDF已包含12个新文本箭头。当前日志无Overfull、Underfull、Missing character、未定义引用或编译错误。既有标题粗体替代、xeCJK字体重定义、随文caption的hypcap提示及Perl locale提示不属于本次图表字体问题。
 

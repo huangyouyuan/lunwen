@@ -1,6 +1,6 @@
 # 论文交接
 
-更新：2026-10-11。本版以`a70e11b`为整理前基线，保存主线整理与两次成果恢复；详细改动和新起点见[版本说明](plan/version-notes-2026-10-11.md)。接手先检查`git status --short`和`git log -3 --oneline`，以实际状态为准。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)。
+更新：2026-10-12。本次提交保存页面预览归档与交接更新；提交前基线为`e25df0c`（图表字体、通栏表格及图2/图3样式），1.1首段润色已在`3841b8f`中。接手先检查`git status --short`和`git log -5 --oneline`，以实际文件与Git状态为准，不把本文件或旧提示词当作任务已经完成的证据。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)，当前缺项见[进度](plan/progress.md)；2026-10-11整理过程见[历史版本说明](plan/version-notes-2026-10-11.md)。
 
 ## 当前主线与优先级
 
@@ -8,12 +8,23 @@
 
 | 章节 | 职责 | 当前状态 |
 |---|---|---|
-| 1.3研究区空间特征 | 四站参考组成、完整参考斑块及整站景观背景 | 已写入两小节、组成图和 AREA、SHAPE 双权重分布表；2026-10-11 授权编译为 7 页，1.3 图表排版已核查 |
+| 1.1研究区概况 | 四站范围、经纬度和分类图 | 润色及2023年CDL追溯已提交；仅使用经纬度与分类图，不补写未经核实的行政区；图1在1.1末尾 |
+| 1.3研究区空间特征 | 四站参考组成、完整参考斑块及整站景观背景 | 地物组成、景观格局两小节；图2及一张双栏表1。AREA/SHAPE面积加权、ENN斑块等权；当前PDF为8页，表1在第4页 |
 | 3.1本站分类性能 | F1及必要的精确率、召回率和六向错分基准 | 主体和正式图已有，补充底表已核验，正文待最小补充 |
 | 3.2跨站分类性能与差距 | 绝对F1、原尺度ΔF1、模型与来源差异 | 已有正文和表图，本次不变 |
 | 3.3空间解释 | 差距对应什么错误、发生在哪里、怎样随模型来源变化 | 已有探索和最小衔接表，正文未写；先围绕3.2选择具体差异 |
 
-基础材料的只读整理与核查见[1.3与3.1基础证据](results/summary/sec13_sec31_foundations/README.md)及其[段落—证据提纲](results/summary/sec13_sec31_foundations/paragraph_evidence_outline.md)。2026-10-11 后续按作者最新要求完成 1.3 正文、组成图及 AREA、SHAPE 双权重分布表，采用 2023 年完整参考斑块数据，见[本轮核查 JSON](verification/sec13-figure-table-v2-2026-10-11.json)。3.1 保持现有主体，3.3 正文仍为空。
+基础材料的整理与核查已完成，见[1.3与3.1基础证据](results/summary/sec13_sec31_foundations/README.md)及其[段落—证据提纲](results/summary/sec13_sec31_foundations/paragraph_evidence_outline.md)，不再把它列为尚未开始的任务。3.1保持现有主体，3.3正文仍未写；2.1模型原理、引言、摘要与结论也未完成。后续优先从既有12个独立本站基准组织3.1的必要补充，再从3.2选择3.3的具体比较对象，不自动启动聚类、共同五档或联合建模。
+
+## 1.3与图表的现行决定
+
+- 1.3.1沿用2023年整站三类面积占比，正文、图例统一写“玉米、大豆、其它地类”。表1只列玉米、大豆，共8组；其它地类仍计入组成图及整站ED。
+- 1.3.2按“单像元斑块数量多、面积少 → 面积加权理由 → 四站共性 → 站间差别”连续写三段。参考斑块来自30 m标签的8邻域同类连通区域，不等同于农业田块；保留单像元及外框接触斑块，不据此预判分类难度。
+- 表1斑块级包含AREA、SHAPE、ENN及斑块数。AREA/SHAPE用参考像元数为权重的加权中位数，ENN每个完整斑块计一次、采用等权中位数；三项均显示“中位数（全体最小值～最大值）”，不能将范围写成多数斑块的区间。现行八组ENN中位数均为67.08 m，旧面积加权版的60 m不是当前表值。
+- 类别级PD、AI及景观级ED均用`scope=full`的结果。PD分母为整站面积，ED覆盖三类景观、同站合并单元格；不混入128×128图块尺度。PD与斑块数在等面积站点中成比例，不作为两条独立证据反复强调。
+- 活动表体为[tables/sec13_spatial_metrics_enn_equal_rows.tex](tables/sec13_spatial_metrics_enn_equal_rows.tex)，来源及独立复核见[ENN等权核查](verification/sec13-enn-patch-equal-2026-10-12.md)。旧双表、双权重分布和ENN面积加权表均保留为历史成果；PD/AI/ED恢复到正文源于作者决定，不代表旧数据失效。
+- 表格占满所选一栏或两栏，使用三线表并合理分配行列间距；表1铺满双栏17.4 cm，PD/ED单位与指标同行。图表文字、图题、表题、图例和注均为小五9 pt宋体与Times New Roman。图2和图3(a,b)有效图框均为7.6×5.7 cm、条形厚3.705 mm，间距和网格共用`figstyle.py`参数。
+- 图1在1.1末尾；图2在1.3.1与1.3.2之间；表1在1.3.2与第2节之间。当前页码见下方核查记录，后续改稿不可沿用旧页码推断排版已通过。
 
 ## 活动证据入口
 
@@ -21,6 +32,8 @@
 |---|---|
 | 正式F1与ΔF1 | `results/summary/f1_raw_scale/`；原矩阵在 `results/raw/` |
 | 1.3与3.1基础阅读表及本次核查 | [基础证据目录](results/summary/sec13_sec31_foundations/README.md)；输入、脚本与输出哈希见其中`manifest.json` |
+| 当前表1统计与生成入口 | `scripts/generate_sec13_spatial_tables.py --check`；独立核对为`scripts/test/check_sec13_spatial_enn.py`，不带`--report`时不写报告 |
+| 当前组成图生成入口 | `scripts/plot_sec13_composition.py`；历史组合生成器保留，不能为重绘图2而连带写入旧表 |
 | 完整参考斑块与192份计数 | `results/processed/sec33_reference_patch_types/`；字典在对应summary目录 |
 | 四站景观背景 | `results/summary/sec33_reference_patch_types/background_{class,landscape,adjacency}.csv`，读取 `scope=full` |
 | 组成、分布与支持 | [参考分布入口](results/summary/sec33_indicator_grading_preparation/README.md) |
@@ -47,10 +60,26 @@
 
 当前仍归档旧DR、重复F1、被后续互斥分组替代的主视图、图块景观/匹配结果和旧任务。原生产源码与测试保持`.source`历史状态，可按[源码索引](results/summary/reuse-status.md)查阅，恢复计算需先检查写入目标与依赖，不把历史脚本重新列为默认运行入口。
 
-本次只恢复与只读核对，不产生新科研结果、不编译。原22份快照及本次12份文档快照保留。初次核查与首次纠偏仍是各自当日记录，当前以[二次核查](verification/second-pass-reuse-2026-10-11.md)为准；距离生成、FRAGSTATS工程和B站身份限制不升级。
+2026-10-11恢复阶段仅恢复与只读核对，没有生成新科研结果或编译；该阶段原22份快照及12份文档快照保留。初次核查与首次纠偏仍是各自当日记录，成果恢复以[二次核查](verification/second-pass-reuse-2026-10-11.md)为准；距离生成、FRAGSTATS工程和B站身份限制不升级。
+
+2026-10-12页面预览整理已完成：原`output`根目录58张图片中，最新2张放入`output/previews/2026-10-12-figure23-bars/`，其余56张按任务放入`output/archive/2026-10-12/`；配套文本与旧清单一并保存，共移动60个文件。原125个output文件全部保留，14份引用文档原字节快照、移动前后SHA-256及13份引用路径更新均已核对；根目录不再散放图片，递归图片总数仍为68。入口见[预览索引](output/README.md)、[归档索引](output/archive/2026-10-12/README.md)和[迁移核查](verification/output-preview-archive-2026-10-12.json)。旧清单和文档快照中的旧路径按迁移映射解析，不改写历史原件。
+
+## 验证状态与尚未验证事项
+
+| 状态 | 范围与证据 |
+|---|---|
+| Verified | 既有数据核查复核149234条作物斑块记录、统计权重、单位、极值及`scope=full`；见[ENN核查](verification/sec13-enn-patch-equal-2026-10-12.md)。本次归档与交接没有重新计算这些指标 |
+| Verified | 最近一次编译为8页，图2/图3样式核查查看第3、5页；当前PDF哈希与[最新记录](verification/figure23-bars-2026-10-12.json)及[预览清单](output/preview-manifest.json)一致。5图2表字体的既有检查见[字体核查](verification/figure-table-fonts-2026-10-12.md)，随后仅图2/图3样式变化，以后者记录的哈希为准 |
+| Verified | 本次归档核对文件字节、哈希和入口引用，357份正文、图件、脚本及汇总文件保持不变；没有重绘或编译。归档报告中的暂存区未变和未提交描述指归档核验时点，随后按作者授权提交；后续交接文字更新不回写历史核查结论 |
+| Partially verified | ENN复用既有空间距离，未重算距离或恢复全部FRAGSTATS工程参数；C站玉米ENN最大值涉及外框斑块`ida_2023, PID=69765`。距离限于窗口内最近同类斑块边界像元中心，不是田块净空距离。B站限制见[身份追溯](verification/iw2-identity-provenance.md) |
+| Not verified | 全文最终分页、留白、文献格式及尚未完成章节的科学论述；既有字体替代、xeCJK、caption等警告未作为本次任务处理。图表字体通过不等于论文已定稿 |
+
+最新预览只包含最近查看的第3、5页，不是整篇逐页预览。此前7页稿件、表1位于第3页的记录均为历史状态；当前表1在第4页。`main.pdf`属于本地编译产物，不纳入Git；换机需按授权编译，不能假定PDF随提交传递。
 
 ## 工作区交接
 
-本版一并保存整理前已有的规则、计划、交接和文献库更新；文献库原样纳入，本次未重新核验其元数据。修订前原字节快照保留，正文、正式图表、原始数据和有效F1链未变。本次按作者要求本地提交，不推送。历史任务中“当时未提交”的描述保留其时间含义，当前状态以Git记录为准。
+本次只提交预览迁移、引用修正和交接文档；正文、正式图件、表体、数据及生产脚本沿用`e25df0c`，不重新提交或重算科研结果，不推送。归档目录采用保留字节的Git属性，避免换行转换改变历史快照SHA-256；未新增忽略规则。
 
-下一次从3.1的12个独立本站基准接续，组织必要正文后再决定3.3的最小缺项。1.3 已有正文和图表，2026-10-11 授权编译后已检查第 2 页组成图及第 3 页通栏表，见[v2 核查补记](verification/sec13-figure-table-v2-2026-10-11.md)；全文仍有分页留白及字体、文献格式警告。五档未冻结，3.3 正文未写。上面的归档与提交记录仍指此前整理阶段。本轮按作者要求将 1.3 正文、图表、基础证据、核查和编译预览纳入本地提交，不推送；具体提交号以 Git 记录为准。
+原有`output/font-audit-20261012-before-sources/`及`output/figure23-bars-20261012-before/`两组本地备份保留原位、保持未跟踪，另有按既有规则忽略的PDF和日志；不要为制造干净状态而删除。它们不随本次Git提交传递，换机如需这些完整备份，应另行复制目录并按各自`manifest.json`核对。
+
+接手顺序：核查Git和实际文件 → 读规则、写作/格式规范与当前正文 → 读[进度](plan/progress.md)及对应底表 → 在作者新任务范围内继续。若续写3.1，先读`plan/experiment-protocol.md`、`sections/03_methods.tex`、`plan/results-map.md`及正式summary；若核对1.3表，优先运行只读检查，不运行历史生产脚本。保存正文默认不编译，只有作者要求或规则允许的验证任务才执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。每次编译后更新预览目录与清单，保留历史文件。

@@ -41,6 +41,6 @@
     "tables/sec13_spatial_metrics_enn_rows.tex": "6f56ba2e2fb3b1bf848cfd342e85f9a9352649d4e8a1af5f2ce6c5af01452564",
     "scripts/generate_sec13_spatial_tables.py": "6197fcef7dd5dcc5efe1eef28f9530510e13511798018b09a93093d5a0dbaee0",
     "scripts/test/check_sec13_spatial_enn.py": "bd4c667f73a281c9379cd456fbd5be228e21bbcd54a7f04096048f989799407e",
-    "output/sec13-enn-20261012-large-v1-4.png": "5d0698191e73316b9d9732500c031c11c64b887975eeb3c30238b8b4346a27b5"
+    "output/archive/2026-10-12/sec13-layout/sec13-enn-20261012-large-v1-4.png": "5d0698191e73316b9d9732500c031c11c64b887975eeb3c30238b8b4346a27b5"
   }
 }

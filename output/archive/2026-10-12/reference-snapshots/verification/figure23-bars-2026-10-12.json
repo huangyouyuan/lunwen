@@ -1,0 +1,176 @@
+{
+  "status": "Verified",
+  "visual_review": "Verified",
+  "scope": "Figure 2 and figure 3(a,b) bar geometry and grid style only.",
+  "panels": [
+    {
+      "path": "figures/study_area/fig_sec13_composition.pdf",
+      "sha256": "ef716442d4135da1ee082faede1796a2c1ddcf1a77cc6d9ce9736ad7c235aca5",
+      "axes_cm": [
+        7.6000002113978065,
+        5.699999838935004
+      ],
+      "bar_count": 12,
+      "bar_thickness_mm": [
+        3.704995642768012,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704998334248861,
+        3.704998334248861,
+        3.705001025729709,
+        3.704998334248861,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704995642768012
+      ],
+      "within_group_gaps_mm": [
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387
+      ],
+      "between_group_gaps_mm": [
+        2.5649973975287543,
+        2.5650000890096027,
+        2.5649973975287543
+      ],
+      "fonts_and_sizes": [
+        [
+          "SimSun",
+          9.0
+        ],
+        [
+          "TimesNewRomanPSMT",
+          9.0
+        ]
+      ],
+      "pdf_width_cm": 8.291863598293729,
+      "label_count": 12,
+      "numbers_and_bar_endpoints_unchanged": true,
+      "grid_style": "#D8D8D8 dashed 0.4 pt"
+    },
+    {
+      "path": "figures/results/fig_within_site_f1_a.pdf",
+      "sha256": "662d9901c53854cd3867055e51655b5a8b627a4554f262bc77a1cddc3113867f",
+      "axes_cm": [
+        7.6000002113978065,
+        5.699999838935004
+      ],
+      "bar_count": 12,
+      "bar_thickness_mm": [
+        3.704995642768012,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704998334248861,
+        3.704998334248861,
+        3.705001025729709,
+        3.704998334248861,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704995642768012
+      ],
+      "within_group_gaps_mm": [
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387
+      ],
+      "between_group_gaps_mm": [
+        2.5649973975287543,
+        2.5650000890096027,
+        2.5649973975287543
+      ],
+      "fonts_and_sizes": [
+        [
+          "SimSun",
+          9.0
+        ],
+        [
+          "TimesNewRomanPSMT",
+          9.0
+        ]
+      ],
+      "pdf_width_cm": 8.291863598293729,
+      "label_count": 12,
+      "numbers_and_bar_endpoints_unchanged": true,
+      "grid_style": "#D8D8D8 dashed 0.4 pt"
+    },
+    {
+      "path": "figures/results/fig_within_site_f1_b.pdf",
+      "sha256": "1d6548b42f45f80e5f1b4ea8daf0a7319633364ec1f2c9696b67cb21eb06deed",
+      "axes_cm": [
+        7.6000002113978065,
+        5.699999838935004
+      ],
+      "bar_count": 12,
+      "bar_thickness_mm": [
+        3.704995642768012,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704998334248861,
+        3.704998334248861,
+        3.705001025729709,
+        3.704998334248861,
+        3.705001025729709,
+        3.705001025729709,
+        3.705001025729709,
+        3.704995642768012
+      ],
+      "within_group_gaps_mm": [
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387,
+        0.2850009070502387
+      ],
+      "between_group_gaps_mm": [
+        2.5649973975287543,
+        2.5650000890096027,
+        2.5649973975287543
+      ],
+      "fonts_and_sizes": [
+        [
+          "SimSun",
+          9.0
+        ],
+        [
+          "TimesNewRomanPSMT",
+          9.0
+        ]
+      ],
+      "pdf_width_cm": 8.291863598293729,
+      "label_count": 12,
+      "numbers_and_bar_endpoints_unchanged": true,
+      "grid_style": "#D8D8D8 dashed 0.4 pt"
+    }
+  ],
+  "protected_source_and_data_files": 268,
+  "protected_files_unchanged": true,
+  "index_unchanged": true,
+  "main_pdf_sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+  "pages": 8,
+  "compile": "Verified",
+  "compile_errors": [],
+  "previews": [
+    "output/figure23-bars-20261012-3.png",
+    "output/figure23-bars-20261012-5.png"
+  ],
+  "before_snapshot": "output/figure23-bars-20261012-before/manifest.json",
+  "visual_findings": "Rendered manuscript pages 3 and 5 inspected: consistent bar geometry, legible labels, no overlapping or clipped text."
+}

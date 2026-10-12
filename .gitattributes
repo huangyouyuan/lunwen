@@ -26,3 +26,9 @@
 /tables/sec13_patch_distribution_rows.tex -text
 /verification/sec13-figure-table*.json -text
 /output/build-20261011-190347/** -text
+# Preserve archived preview bytes and the hashes in the current preview index.
+/output/archive/2026-10-12/** -text whitespace=cr-at-eol
+/output/previews/2026-10-12-figure23-bars/** -text
+/output/README.md -text whitespace=cr-at-eol
+/output/preview-manifest.json -text whitespace=cr-at-eol
+/verification/output-preview-archive-2026-10-12.json -text whitespace=cr-at-eol

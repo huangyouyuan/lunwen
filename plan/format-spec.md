@@ -76,6 +76,7 @@
 - **间距**：子图题贴子图、子图之间、图例、图名之间一律 3 pt（正文行间空白），不比段落行距大。写法：`\captionsetup{skip=3pt}`；子图之间和图例之前用 `\end{subfigure}\par\nointerlineskip\vspace{3pt}`——**不要用 `\\[3pt]`**，它会连带一整行行距，实测 14.6 pt（2026-09-21 用户确认后的标准）
 - **坐标轴都要有标签**：站点轴写"站点"（竖排在左），F1 轴写作物名加 F1，如“玉米 F1”“大豆 F1”；读者不该猜 A–D 是什么
 - **文件**：每个子图单独一个 PDF（`fig_xxx_a.pdf`…），`\includegraphics{}` 不带 width，按原尺寸放；PNG 只作预览
+- **页面预览归档**：预览按任务放在`output/previews/<日期-任务>/`，根目录由`output/README.md`及`preview-manifest.json`提供最新入口；历史预览经用途与引用核对后移入`output/archive/`，记录新旧路径与SHA-256，不再平铺PNG。
 - **脚本**：`fs.grid(nrows, ncols, w, h)` 建图，图框恰好 w×3.8 × h×3.8 cm；`fs.save(fig, stem)` 出 pdf+png
 - 三模型固定色：ConvGRU 紫 `#7B3FA0`、3D U-Net 青 `#1B9E9E`、U-TAE 橘 `#E8731A`
 - 三类地物固定色：玉米 `#F2C14E`、大豆 `#4C9F70`、其它地类 `#BDBDBD`；图例顺序玉米、大豆、其它地类
@@ -108,7 +109,7 @@
 - Word 模板正文通栏宽实测 17.399 cm，LaTeX 按 17.4 cm 排版；首页单栏宽 14.651 cm 不用于结果章。
 - 图 2 必须位于 3.1 第一段之后、第二段之前，采用随文 minipage 与 caption 保持阅读顺序。
 - 图 3 位于 3.1 第二段之后；3.2 前设置浮动体边界，防止图 3 越过小节。
-- 表 1 与图 4 位于 3.2；3.3 前设置浮动体边界。3.2 标题位于正文段首，源码顺序为标题 → 第一段 → 表 → 第二、三段 → 图 4。双栏通栏表图允许延后，不强求表紧接第一段，也不靠缩放或反复调间距塞页；既有编译与分页记录见 `archive/2026-10-10-mainline/history/verification/verification-report.md` 和 `output/preview-manifest.json`，本次整理未重新编译。
+- 表 1 与图 4 位于 3.2；3.3 前设置浮动体边界。3.2 标题位于正文段首，源码顺序为标题 → 第一段 → 表 → 第二、三段 → 图 4。双栏通栏表图允许延后，不强求表紧接第一段，也不靠缩放或反复调间距塞页；既有编译与分页记录见 `archive/2026-10-10-mainline/history/verification/verification-report.md` 和 `output/archive/2026-10-12/preview-index/preview-manifest.json`，本次整理未重新编译。
 - 图 4 保留两行三列和 3.8 cm 有效图框，各列排版容器均分 17.4 cm 通栏宽（列容器之间 3 pt）；不缩放子图 PDF，文字仍为 9 pt。
 - 正文 `\parskip` 和各级标题 `beforeskip`、`afterskip` 均为 0 pt，采用 `\raggedbottom`；浮动体与正文、浮动页内图表之间固定 3 pt，取消可拉伸间隔。源码空行只用于分段，不代表打印空行（2026-09-23）。
 - Verified（2026-09-23）：编译与第 3—5 页渲染核查通过，无 Overfull/Underfull；阅读顺序为 3.1 第一段 → 图 2 → 第二段 → 图 3 → 3.2 与表 1 → 图 4 → 3.3。

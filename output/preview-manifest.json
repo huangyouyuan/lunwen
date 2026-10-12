@@ -1,97 +1,29 @@
 {
-  "schema_version": 1,
-  "current_source_status": "Verified",
+  "schema_version": 2,
+  "status": "Verified",
+  "scope": "Latest reviewed pages 3 and 5 for the figure 2/3 bar-style revision; older previews are indexed separately.",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "492e4ca1d03deab8f2323baa2bf32fa094344d351fde5bcd93677c7d827eb397",
-    "pages": 7,
-    "size_bytes": 835848
+    "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+    "pages": 8
   },
-  "version": {
-    "base_git_commit": "969a1fe4f3fd8a2150c8a9ccabdb257c47ad39e8",
-    "state_at_build": "Uncommitted Section 1.3 composition and AREA/SHAPE table; expandable table input fix",
-    "source_sha256": {
-      "main.tex": "4430becd53448494a9bad4cd0ac000f2611cb070b8fa297be5e2cb4e5cd5cb7f",
-      "bibliography/references.bib": "34828a0ca5d78afabb4b40daaae70ff86d5502f682ff9adf1740d3cc04ed844a",
-      "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
-      "sections/02_data.tex": "8324a0254f406d578bb83893c989835fc51f1817307164e8309fbceb30592de4",
-      "sections/03_methods.tex": "8ff53589ad4d10eeaae0151bc9f6c850db734be46aeb2c2b1b09a375561554aa",
-      "sections/04_results.tex": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
-      "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
-      "tables/sec13_landscape_rows.tex": "768873dad3eb74c8ab29ad322b0f60c371175de4d52c26efd472ae1b2705de0b",
-      "tables/sec13_patch_distribution_rows.tex": "7da3e2b290eada8e372ab7a6ce0fe8dfd455edfaa7d8ec5807ce03b9bc5a4969",
-      "tables/table2_cross_site_f1_12paths_rows.tex": "73fa7c7a8e9d31e0f6fd588e7e3f271fc8e9fd4906e490a90f6a43ce4cb03baf"
-    }
-  },
-  "build_command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex",
-  "build_exit_code": 0,
-  "build_notes": [
-    "Corrected Misplaced noalign at Section 1.3 bottomrule by using expandable TeX input; table values unchanged.",
-    "Final log has no Overfull/Underfull, missing characters, or unresolved references/citations.",
-    "Existing SimSun/SimHei font substitutions remain.",
-    "BibTeX warnings: software entry type unsupported by unsrtnat; FRAGSTATS entry has no year.",
-    "Draft layout: page 4 right column is blank due to existing float barrier; final pagination not optimized."
-  ],
-  "render_command": "pdftoppm -png -r 120 main.pdf output/build-20261011-190347/page",
-  "dpi": 120,
+  "source_verification": "verification/figure23-bars-2026-10-12.json",
   "previews": [
     {
-      "path": "output/build-20261011-190347/page-1.png",
-      "pdf_page": 1,
-      "sha256": "c6b6f63506a99ae0896eb438026499275433e7080ad71a2a2ab6917b03b5657e",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
-    },
-    {
-      "path": "output/build-20261011-190347/page-2.png",
-      "pdf_page": 2,
-      "sha256": "ee9c9bfed288aa12ee9594bb17564252e5666b7534d7556026f21209c94e4f87",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
-    },
-    {
-      "path": "output/build-20261011-190347/page-3.png",
+      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-3.png",
       "pdf_page": 3,
-      "sha256": "6d9022e871e3047323262dd288feb4316ca22174467dc20f6622b6eb1beb32d3",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
+      "sha256": "48efd4cce8f24d6a659c5dc75abed5aeb4dfc377ecbea0e4d0dcd043d2078138",
+      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
     },
     {
-      "path": "output/build-20261011-190347/page-4.png",
-      "pdf_page": 4,
-      "sha256": "c444929d20f4d626d62b7c5e91f86b5e67c8da8c84fcf6c5268878afa43bb329",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
-    },
-    {
-      "path": "output/build-20261011-190347/page-5.png",
+      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-5.png",
       "pdf_page": 5,
-      "sha256": "463a9c467a50bc28bde63de983b2c450515a4ffba3ff9411f58552cab52f6ba0",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
-    },
-    {
-      "path": "output/build-20261011-190347/page-6.png",
-      "pdf_page": 6,
-      "sha256": "d4684b9dab75ab38b0fd8a0434ab44ad0a919efdd8822b99e72f4a3e615a9902",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
-    },
-    {
-      "path": "output/build-20261011-190347/page-7.png",
-      "pdf_page": 7,
-      "sha256": "8932e80adfc99e856aa54f40d73752714c02016329efe0e45c91bca6d3699fbd",
-      "rendered_at": "2026-10-11T19:06:28+08:00"
+      "sha256": "9859f036a943c43e5cf4e9d03b1712074ea0c38de3b84d7d9115abc353b4744d",
+      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
     }
   ],
-  "verified_at": "2026-10-11T19:06:28+08:00",
-  "page_binding_verification": "Verified: all 7 current pages rendered and visually inspected; composition figure on page 2, complete AREA/SHAPE table on page 3.",
-  "previous_preview_backup": "output/build-20261011-190347/before/preview-manifest.json",
-  "historical_previews_not_current": [
-    "output/sec32_p-2.png",
-    "output/sec32_p-3.png",
-    "output/sec32_p-4.png",
-    "output/sec32_p-5.png",
-    "output/table_page_preview.png",
-    "output/figure4_page_preview.png",
-    "archive/2026-09-29-system整理/output/results_layout-3.png",
-    "archive/2026-09-29-system整理/output/results_layout-4.png",
-    "archive/2026-09-29-system整理/output/results_layout-5.png",
-    "archive/2026-09-29-system整理/output/results_spacing-3.png",
-    "archive/2026-09-29-system整理/output/results_spacing-4.png"
-  ]
+  "historical_manifest": "output/archive/2026-10-12/preview-index/preview-manifest.json",
+  "archive_ledger": "verification/output-preview-archive-2026-10-12.json",
+  "entry_point": "output/README.md",
+  "organized_at": "2026-10-12T14:21:17.497141+08:00"
 }

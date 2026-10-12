@@ -538,13 +538,13 @@
   ],
   "build_errors": [],
   "visual_previews": [
-    "output/font-audit-20261012-before-2.png",
-    "output/font-audit-20261012-before-3.png",
-    "output/font-audit-20261012-before-4.png",
-    "output/font-audit-20261012-before-5.png",
-    "output/font-audit-20261012-before-6.png",
-    "output/font-audit-20261012-before-7.png",
-    "output/font-audit-20261012-after-7.png"
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-2.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-3.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-4.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-5.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-6.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-before-7.png",
+    "output/archive/2026-10-12/font-audit/font-audit-20261012-after-7.png"
   ],
   "index_matches_start_at_font_audit": true,
   "final_git_state": {

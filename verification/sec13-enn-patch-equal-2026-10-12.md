@@ -20,7 +20,7 @@
 
 **Verified**：`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功，全文8页，表1位于第4页，仍在1.3.2与第2节之间。实际PDF字体核查：表头、单元格和组成图为SimSun/TimesNewRomanPSMT、9 pt；表题和表注保持小五。表宽420.552 bp（14.84 cm），小于17.4 cm版心，固定窄列距不伸展。渲染查看最终第3、4页，整表完整、无文字重叠或裁切，正文无单行跨栏；日志无Overfull/Underfull、缺字或未定义引用。沿用既有SimSun/SimHei粗体替代、xeCJK、caption hypcap及Perl区域设置警告。
 
-最终预览为`output/sec13-enn-equal-final-20261012-{3,4}.png`。初次预览`output/sec13-enn-equal-20261012-{3,4}.png`原位保留。
+最终预览为`output/archive/2026-10-12/sec13-layout/sec13-enn-equal-final-20261012-{3,4}.png`。初次预览`output/archive/2026-10-12/sec13-layout/sec13-enn-equal-20261012-{3,4}.png`原位保留。
 
 ## 历史保留与边界
 
@@ -36,4 +36,4 @@
 
 **Verified**：正常编译完成。当前稿件包含同时进行的1.1修订，共7页；表1在第3页，仍位于1.3.2之后、第2节之前。实测三条主横线宽均为493.228 bp（17.4 cm）；字体仍为9 pt的SimSun与TimesNewRomanPSMT；PD/ED单位没有换行。相邻两作物行基线距约16.848 bp、站点组间约18.84 bp。日志无Overfull/Underfull、缺字或未定义引用；渲染查看整页及表格，列、行、表头和表注无重叠、裁切。既有字体替代及caption警告不变。
 
-源码与PDF哈希及实测记录见[通栏版面核查](sec13-fullwidth-layout-2026-10-12.json)。新预览为`output/sec13-fullwidth-20261012-v1-3.png`，表格局部为`output/sec13-fullwidth-20261012-v1-table.png`；旧预览原位保留。本轮未操作Git暂存或提交，已有暂存内容保持。
+源码与PDF哈希及实测记录见[通栏版面核查](sec13-fullwidth-layout-2026-10-12.json)。新预览为`output/archive/2026-10-12/sec13-layout/sec13-fullwidth-20261012-v1-3.png`，表格局部为`output/archive/2026-10-12/sec13-layout/sec13-fullwidth-20261012-v1-table.png`；旧预览原位保留。本轮未操作Git暂存或提交，已有暂存内容保持。

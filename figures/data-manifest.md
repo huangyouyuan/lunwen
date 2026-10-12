@@ -19,7 +19,7 @@
 | D 站三模型站内分类结果对比 | 3.1 | `D:/20il/2023{model}ilresults/summary/maps/reference.tif`、`oof_prediction.tif`（五折交叉验证拼接，每图块预测来自未训练过它的模型；三模型 reference sha256 一致） | matplotlib；8 个子图各一个 PDF，图框各 3.8×3.8 cm，LaTeX subcaption 拼通栏 `figure*` 2 行 4 列；上行 (a)–(d) 全站 2560×2560 各标同一红框，下行 (e)–(h) 红框窗口放大；同一配色（玉米黄/大豆绿/其它地类为灰色）；子图题、图例（`\classlegend`，最后子图题之后）、图名为 LaTeX 文本。窗口 = 图块网格 (13,8) 起 2×2，像元行 1664–1920、列 1024–1280；选窗只看真实玉米/大豆像元：作物像元错误率 12.1/5.8/4.8%，类别边界带错误率 32.0/15.3/13.4%，玉米↔大豆互混 6.8/2.6/2.2%（ConvGRU/3D U-Net/U-TAE） | `scripts/plot_within_site_map_D.py` | 已生成 `fig_within_site_map_D_{a..h}.pdf/.png`；已插入 04_results.tex 3.1 第二段后（2026-09-20 换窗、逐子图 PDF） |
 | 玉米/大豆 F1 差值热力图 | 3.2 | `results/summary/f1_raw_scale/crop_f1_difference_36paths.csv` | matplotlib+seaborn；6 个子图各一个 PDF + 色标 PDF，LaTeX subcaption 拼两行三列，上玉米、下大豆，列依次为 ConvGRU、3D U-Net、U-TAE；图框各 3.8×3.8 cm（1 UNIT）；行=源站，列=目标站，轴标签"源站""目标站"；对角线留空；单元格标两位小数，内外网格均为黑色 0.6 pt；YlOrRd 共用横向色标 0.00–0.08，宽 7.6 cm（2 UNIT），放在两排子图下方；子图题、色标文字“F1差值”、图名均为 LaTeX 文本，间距 3 pt | `scripts/calculate_f1_raw_scale.py` → `scripts/plot_degradation_heatmap.py 1` | 已生成 `fig_degradation_heatmap_{a..f,cbar}.pdf/.png`（3.8 cm 版），已插入 04_results.tex 3.2（2026-09-23） |
 
-`output/preview-manifest.json`对应7页双权重分布表历史版本。`output/sec13-current-20261011-2.png`至`-4.png`对应随后8页双表版本，`output/sec13-combined-20261011-2.png`及`-3.png`对应8行整表历史版本；12行整表的旧预览为`output/sec13-threeclass-20261011-3.png`，图表顺序调整后的旧第2、3页预览为`output/sec13-layout-inline-2.png`和`-3.png`，含其它地类的面积加权预览为`output/sec13-weighted-20261011-2.png`和`-3.png`。未含斑块数与ENN的双作物面积加权版预览为`output/sec13-dualcrop-clearpage-2.png`和`-3.png`，历史核查见`verification/sec13-spatial-tables-2026-10-11.md`；2026-10-12新版无编译预览。
+`output/archive/2026-10-12/preview-index/preview-manifest.json`对应7页双权重分布表历史版本。`output/archive/2026-10-12/sec13-layout/sec13-current-20261011-2.png`至`-4.png`对应随后8页双表版本，`output/archive/2026-10-12/sec13-layout/sec13-combined-20261011-2.png`及`-3.png`对应8行整表历史版本；12行整表的旧预览为`output/archive/2026-10-12/sec13-layout/sec13-threeclass-20261011-3.png`，图表顺序调整后的旧第2、3页预览为`output/archive/2026-10-12/sec13-layout/sec13-layout-inline-2.png`和`-3.png`，含其它地类的面积加权预览为`output/archive/2026-10-12/sec13-layout/sec13-weighted-20261011-2.png`和`-3.png`。未含斑块数与ENN的双作物面积加权版预览为`output/archive/2026-10-12/sec13-layout/sec13-dualcrop-clearpage-2.png`和`-3.png`，历史核查见`verification/sec13-spatial-tables-2026-10-11.md`；2026-10-12新版无编译预览。
 
 ## 3.1 图题（已写入 04_results.tex caption）
 
@@ -38,7 +38,7 @@
 
 注：行为源站，列为目标站；数值为同模型目标站站内汇总 F1 − 跨站 F1 五次均值，不乘 100、不除基准；对角线不适用；六个子图共用同一色标。显示两位小数，0.00 不表示真实差值严格为零。子图 (a)–(f) 依次为 ConvGRU 玉米、3D U-Net 玉米、U-TAE 玉米、ConvGRU 大豆、3D U-Net 大豆、U-TAE 大豆。
 
-2026-10-01—02：图 2、图 4 已在主干按新数据重绘，随后按用户要求编译为 6 页 PDF；第 2—5 页 PNG 及表图预览副本已更新，当前绑定见 `output/preview-manifest.json`。
+2026-10-01—02：图 2、图 4 已在主干按新数据重绘，随后按用户要求编译为 6 页 PDF；第 2—5 页 PNG 及表图预览副本已更新，当前绑定见 `output/archive/2026-10-12/preview-index/preview-manifest.json`。
 
 ## 已删除
 
