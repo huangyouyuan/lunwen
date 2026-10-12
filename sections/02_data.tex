@@ -4,11 +4,11 @@
 
 \subsection{研究区概况}
 
-本文选取美国中西部玉米带内4个典型农业站点作为研究区，分别记为A、B、C和D，单个站点空间范围约为77~km~$\times$~77~km。四站的中心坐标（NAD83）依次为A（西经95.9085°、北纬42.8746°）、B（西经91.6892°、北纬42.2382°）、C（西经86.7671°、北纬40.7431°）和D（西经89.2372°、北纬40.1071°）。该区域是美国重要的商品粮生产区，种植类型以玉米和大豆为主，适合开展玉米大豆时空深度学习模型遥感识别及空间泛化能力分析。四站2023年地物分类图如图\ref{fig:study_area}所示；子图仅按版面排列，不表示站点间的实际方位。
+4个站点均位于美国中西部玉米带内，该区域以玉米和大豆种植为主，分别记为A、B、C和D。四站彼此相互独立，站点中心间距平均约452~km，最大约793~km；各站均为76.8~km~$\times$~76.8~km的正方形区域，边界沿等积投影的坐标轴方向延伸，与经纬线方向存在一定偏差。四站中心坐标依次为A（西经95.9085°、北纬42.8746°）、B（西经91.6892°、北纬42.2382°）、C（西经86.7671°、北纬40.7431°）和D（西经89.2372°、北纬40.1071°）。四站2023年地物分类图见图\ref{fig:study_area}，子图采用相同的范围和显示比例，排列仅反映版面顺序，不表示站点间的实际方位。
 
-为分析研究区地表覆盖组成，本文采用美国农业部国家农业统计服务局发布的耕地数据层（Cropland Data Layer，CDL）数据。基于2021—2024年CDL数据统计结果，4个站点均以玉米和大豆为主要作物类型，两者面积之和均超过农作物总面积的95\%。本文将CDL原始类别重分类为玉米、大豆和其它地类3类，其中除玉米和大豆以外的农作物和非农作物地类都归并为其它地类。
+图\ref{fig:study_area}中的数据来自美国农业部国家农业统计局（USDA NASS）发布的耕地数据层（Cropland Data Layer，CDL）。基于2023年CDL数据统计结果，4个站点均以玉米和大豆为主要作物类型，两者面积之和均超过农作物总面积的90\%。本文将CDL原始类别重分类为玉米、大豆和其它地类3类，其中除玉米和大豆以外的农作物和非农作物地类均归并为其它地类。四站均以玉米和大豆为主要作物，但地物组成与景观格局存在差异。
 
-玉米和大豆物候信息来自美国农业部国家农业统计服务发布的作物进度报告（Crop Progress Report, CPR），其数据通过USDA NASS官网获取。结合CPR物候信息，本文将每年DOY~116—266作为主要观测窗口，该时间范围能够覆盖玉米和大豆的主要生育阶段。
+玉米和大豆的物候信息来自美国农业部国家农业统计局发布的作物进度报告（Crop Progress Report，CPR）。结合该报告，本文以年积日（DOY）116–266作为主要观测窗口，该窗口覆盖玉米和大豆的主要生育阶段。
 
 \par\addvspace{3pt}
 \noindent\begin{minipage}{\columnwidth}
@@ -82,18 +82,17 @@
 \label{tab:sec13_spatial_metrics}
 \begingroup
 \songti\rmfamily\zihao{-5}
-\xeCJKsetup{PunctStyle=banjiao}
-\setlength{\tabcolsep}{1.5pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabular}{@{}ccccccccc@{}}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccccc@{}}
 \toprule
 \multirow{2}{*}{站点} & \multirow{2}{*}{作物} & \multicolumn{4}{c}{斑块级} & \multicolumn{2}{c}{类别级} & 景观级 \\
 \cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(l){9-9}
- & & AREA/ha & SHAPE & ENN/m & 斑块数 & \shortstack{PD\\(个/100~ha)} & AI/\% & \shortstack{ED\\(m/ha)} \\
+ & & AREA/ha & SHAPE & ENN/m & 斑块数 & PD/(个/100~ha) & AI/\% & ED/(m/ha) \\
 \midrule
 \csname @@input\endcsname tables/sec13_spatial_metrics_enn_equal_rows.tex
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \par\nointerlineskip\vspace{3pt}
 \zihao{-5}
 \raggedright 注：AREA、SHAPE为参考像元面积加权中位数，ENN为斑块等权中位数；括号内均为全体斑块最小值～最大值。SHAPE无量纲。ENN按研究区内最近同类斑块的边界像元中心计算，最小可能值为60~m，非田块间净空距离。PD以整站面积为分母；ED覆盖玉米、大豆及其它地类。
