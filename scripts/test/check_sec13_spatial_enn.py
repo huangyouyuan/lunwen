@@ -29,6 +29,8 @@ def sha(relative):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path, help="write a new JSON report; never overwrite")
+    parser.add_argument("--scope-baseline", default="HEAD",
+                        help="Git ref for prefix comparison; INDEX preserves other staged section edits")
     args = parser.parse_args()
     result = subprocess.run(
         [sys.executable, "-B", str(ROOT / "scripts/generate_sec13_spatial_tables.py"), "--check"],
@@ -132,7 +134,9 @@ def main():
     assert max(stats.values(), key=lambda row: row["ED"])["site"] == "C"
 
     body = (ROOT / "sections/02_data.tex").read_text(encoding="utf-8")
-    old = subprocess.check_output(["git", "show", "HEAD:sections/02_data.tex"], cwd=ROOT).decode("utf-8")
+    baseline = (":sections/02_data.tex" if args.scope_baseline == "INDEX"
+                else args.scope_baseline + ":sections/02_data.tex")
+    old = subprocess.check_output(["git", "show", baseline], cwd=ROOT).decode("utf-8")
     marker = r"\subsubsection{景观格局}"
     assert body.split(marker)[0] == old.split(marker)[0]
     part = body.split(marker)[1]
@@ -142,7 +146,7 @@ def main():
     assert "八组ENN斑块等权中位数均为67.08~m" in part
     assert "ENN面积加权" not in part
     assert re.search(r"mcgarigal2023fragstats\s*,", (ROOT / "bibliography/references.bib").read_text(encoding="utf-8"))
-    for environment in ("strip", "minipage", "tabular"):
+    for environment in ("strip", "minipage", "tabular*"):
         assert part.count(r"\begin{" + environment + "}") == part.count(r"\end{" + environment + "}") == 1
     depth = 0
     for character in part:
@@ -154,16 +158,16 @@ def main():
     latin = ImageFont.truetype("C:/Windows/Fonts/times.ttf", 900)
     cjk = ImageFont.truetype("C:/Windows/Fonts/simsun.ttc", 900)
     def width(text):
-        # The table uses xeCJK's half-width punctuation spacing, with unchanged glyphs.
-        return sum(450 if char in "（）" else (latin if ord(char) < 128 else cjk).getlength(char)
+        return sum((latin if ord(char) < 128 else cjk).getlength(char)
                    for char in text) / 100
-    headings = ["站点", "作物", "AREA/ha", "SHAPE", "ENN/m", "斑块数", "(个/100 ha)", "AI/%", "景观级"]
+    headings = ["站点", "作物", "AREA/ha", "SHAPE", "ENN/m", "斑块数", "PD/(个/100 ha)", "AI/%", "ED/(m/ha)"]
     widths = [width(heading) for heading in headings]
     for cells in table_cells:
         for column, text in enumerate(cells):
             text = re.sub(r"\\multirow\{2\}\{\*\}\{([^{}]+)\}", r"\1", text)
             widths[column] = max(widths[column], width(text))
-    estimated_bp = sum(widths) + 16 * 1.5 * 72 / 72.27
+    # Minimum width before tabular* distributes the remaining space across columns.
+    estimated_bp = sum(widths) + 16 * 2 * 72 / 72.27
     available_bp = 17.4 / 2.54 * 72
     assert estimated_bp < available_bp
 
@@ -183,6 +187,7 @@ def main():
         "raw_crop_records_compared": sum(len(records) for records in groups.values()),
         "narrative_comparisons_unrounded": "Verified", "ranges": ranges, "area_crop_gaps": gaps,
         "latex_source_structure": "Verified", "sections_before_132_unchanged": "Verified",
+        "scope_baseline": args.scope_baseline,
         "width_estimate_bp": estimated_bp, "available_width_bp": available_bp,
         "layout_status": "Not verified", "compiled_this_task": False,
         "inputs_sha256": input_hashes,

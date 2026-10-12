@@ -80,7 +80,7 @@ def write_table2_cross_site_f1_latex_rows(table):
             path_tex = '平均'
         else:
             source, target = path.split('→')
-            path_tex = f'{source}$\\rightarrow${target}'
+            path_tex = f'{source}→{target}'
         values = ' & '.join(f'{float(value):.2f}' for value in row.iloc[1:])
         lines.append(f'{path_tex} & {values} \\\\')
         if path == 'D→C':

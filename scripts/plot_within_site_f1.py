@@ -8,6 +8,7 @@
   fig_within_site_f1_b  四站点大豆分类精度
 每个子图图框 7.6 × 5.7 cm（2 × 1.5 UNIT），横向条形：纵轴站点 A–D（自上而下），
 每站 ConvGRU / 3D U-Net / U-TAE 三条（自上而下）；横轴使用原始 F1 刻度，标注保留两位小数。
+条形厚度、组内间距和网格线与组成图共享 figstyle 的 GROUPED_BAR_* 参数。
 
 输入：results/summary/f1_raw_scale/within_site_crop_f1.csv（未按显示位数舍入的站内汇总 F1）
 输出：figures/results/fig_within_site_f1_{a,b}.pdf / .png
@@ -31,7 +32,6 @@ def main():
     df['site'] = df['target'].map(fs.SITE_MAP)
 
     y = np.arange(len(fs.SITES))
-    h = 0.30                          # 三条占 0.90，组间留 0.10
     xmin, xmax = 0.88, 0.985
 
     for col, tag, title in CROPS:
@@ -39,7 +39,8 @@ def main():
         ax = axes[0, 0]
         for k, key in enumerate(fs.MODEL_ORDER):
             vals = [df[(df['model'] == key) & (df['site'] == s)][col].iloc[0] for s in fs.SITES]
-            bars = ax.barh(y + (k - 1) * h, vals, h, color=fs.MODEL_COLORS[key],
+            bars = ax.barh(y + (k - 1) * fs.GROUPED_BAR_STEP, vals,
+                           height=fs.GROUPED_BAR_HEIGHT, color=fs.MODEL_COLORS[key],
                            edgecolor='black', linewidth=0.4)
             for b, v in zip(bars, vals):
                 ax.text(v + 0.001, b.get_y() + b.get_height() / 2, f'{v:.2f}',
@@ -50,7 +51,7 @@ def main():
         ax.set_xlim(xmin, xmax)
         ax.set_xticks(np.arange(0.88, 0.981, 0.02))
         ax.xaxis.set_major_formatter('{x:.2f}')
-        ax.grid(axis='x', alpha=0.3, linestyle='--', linewidth=0.4)
+        ax.grid(axis='x', **fs.GROUPED_BAR_GRID)
         ax.set_axisbelow(True)
         ax.tick_params(axis='y', length=0, pad=1.5)
         ax.set_xlabel('玉米 F1' if col == 'corn_f1' else '大豆 F1')

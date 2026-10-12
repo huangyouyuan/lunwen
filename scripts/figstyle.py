@@ -36,6 +36,11 @@ SITES = ['A', 'B', 'C', 'D']
 
 FS = 9                              # 小五
 
+# 图2、图3的三条一组横向柱形；站点中心间距为1，图框高5.7 cm。
+GROUPED_BAR_HEIGHT = 0.26            # 实际厚度3.705 mm，原0.22与0.30的中间值
+GROUPED_BAR_STEP = 0.28              # 同组留0.02，站点组间留0.18
+GROUPED_BAR_GRID = {'color': '#D8D8D8', 'linestyle': '--', 'linewidth': 0.4}
+
 OUT_DIR = 'figures/results'
 
 
