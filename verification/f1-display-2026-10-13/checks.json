@@ -1,0 +1,115 @@
+{
+  "status": "Verified",
+  "scope": "Numerical display, figure PDF fonts and numeric bounds, compiled text and color preservation",
+  "pages": 8,
+  "unchanged_text_pages": [
+    1,
+    2,
+    3,
+    8
+  ],
+  "identical_heatmap_cell_colors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+  ],
+  "chart_pdfs": {
+    "fig_within_site_f1_a": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "8d8c85dd866f5004c251fbcfc6faa86b3558524a53b92d981b185b5773e74101"
+    },
+    "fig_within_site_f1_b": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "5d36d1540767d36e326c88f947460cc0b0006c63e220c5658265f2f99ecb63a3"
+    },
+    "fig_degradation_heatmap_a": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "b829a26d8287e972b1a4b52853557f8ede3348a308d4e1b08f2d8c6d178ed0a9"
+    },
+    "fig_degradation_heatmap_b": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "eb46401dd614935623dd3e000af03aa73189efad269c935b400da2acee2b1d11"
+    },
+    "fig_degradation_heatmap_c": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "deb6972858d48bf5c1818286a4f327f19e1e342981aed2fe235dc587cd129084"
+    },
+    "fig_degradation_heatmap_d": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "d0db60b55be634586306651f8df180d63ff514ade893532074064502fedff0a5"
+    },
+    "fig_degradation_heatmap_e": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "016cd4b7894eba358ed066b546e7fea6966b6030f65dd16314cf6ed4c7c761eb"
+    },
+    "fig_degradation_heatmap_f": {
+      "font_names": [
+        "SimSun",
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "36b7f99f3de9e4141669117e35318e581e98176ba25240fbc375ca0067307e5d"
+    },
+    "fig_degradation_heatmap_cbar": {
+      "font_names": [
+        "TimesNewRomanPSMT"
+      ],
+      "text_size_pt": 9,
+      "numeric_page_bounds": "Verified",
+      "sha256": "96e60fdb317fb9bedf322479ff49e0be1e6956f1769bc6a5b6549b413285022f"
+    }
+  },
+  "manuscript_sha256": "8aa13e11c46225a2b9c03d3954a3013f6b1771320e7b4e3970cde15bd7f0e5ed",
+  "compiled_table_mean_sd_cells": 72,
+  "raw_chain_hash_count": 10,
+  "backup_file_count": 40,
+  "regression_tests": 7,
+  "shared_color_limits_pp": [
+    0,
+    8
+  ],
+  "formal_manifest_hashes_verified": 10,
+  "preview_hashes_verified": 10,
+  "local_links_verified": 107,
+  "deletions": false,
+  "staged_changes": false
+}

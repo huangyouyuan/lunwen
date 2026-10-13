@@ -5,6 +5,7 @@
 from pathlib import Path
 
 import pandas as pd
+from f1_display import f1_number, f1_mean_sd
 
 SITE_MAP = {
     'iw_2023': 'A',
@@ -71,6 +72,29 @@ def generate_table2_cross_site_f1_paths():
     return pd.concat([result, pd.DataFrame([mean_row])], ignore_index=True)
 
 
+def table2_display(table):
+    """Presentation CSV only; all numerical inputs remain raw, full precision."""
+    stats = pd.read_csv('results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv',
+                        float_precision='round_trip').set_index(['model', 'source', 'target'])
+    inverse_sites = {v: k for k, v in SITE_MAP.items()}
+    rows = []
+    for _, row in table.iterrows():
+        path = row['迁移路径']
+        formatted = {'迁移路径': path}
+        for model, name in MODEL_MAP.items():
+            for crop, label in [('corn', '玉米'), ('soybean', '大豆')]:
+                mean = row[f'{name}{label}F1']
+                if path == '平均':
+                    text = f1_number(mean)
+                else:
+                    source, target = path.split('→')
+                    sd = stats.loc[(model, inverse_sites[source], inverse_sites[target]), f'{crop}_f1_std']
+                    text = f1_mean_sd(mean, sd)
+                formatted[f'{name}{label}F1（%）'] = text
+        rows.append(formatted)
+    return pd.DataFrame(rows)
+
+
 def write_table2_cross_site_f1_latex_rows(table):
     """把已验证的正文表写成LaTeX表体，避免正文重复维护数字。"""
     lines = []
@@ -81,7 +105,7 @@ def write_table2_cross_site_f1_latex_rows(table):
         else:
             source, target = path.split('→')
             path_tex = f'{source}→{target}'
-        values = ' & '.join(f'{float(value):.2f}' for value in row.iloc[1:])
+        values = ' & '.join(str(value) for value in row.iloc[1:])
         lines.append(f'{path_tex} & {values} \\\\')
         if path == 'D→C':
             lines.append('\\midrule')
@@ -89,11 +113,70 @@ def write_table2_cross_site_f1_latex_rows(table):
     output = Path('tables/table2_cross_site_f1_12paths_rows.tex')
     output.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
+
+def f1_text_values():
+    """Only reproduce comparisons already cited in 3.1/3.2 from saved results.
+
+    Values stay raw until TeX formatting. No scientific result is written.
+    """
+    base = Path('results/summary/f1_raw_scale')
+    read = lambda name: pd.read_csv(base / name, float_precision='round_trip')
+    within = read('within_site_crop_f1.csv')
+    cross = read('cross_site_crop_f1_summary.csv')
+    delta = read('crop_f1_difference_36paths.csv')
+    runs = read('cross_site_crop_f1_per_fold.csv')
+    values = {}
+    for crop, tag in [('corn', 'Corn'), ('soybean', 'Soy')]:
+        values[f'FWithin{tag}Min'] = within[f'{crop}_f1'].min()
+        values[f'FWithin{tag}Max'] = within[f'{crop}_f1'].max()
+        values[f'FCross{tag}Min'] = cross[f'{crop}_f1_mean'].min()
+        values[f'FCross{tag}Max'] = cross[f'{crop}_f1_mean'].max()
+    site_diffs = {}
+    for site in ['ida_2023', 'il_2023']:
+        w = within[within.target == site].set_index('model')
+        site_diffs[site] = [w.loc[m, f'{c}_f1'] - w.loc['convgru', f'{c}_f1']
+                            for m in ['utae', 'unet3d'] for c in ['corn', 'soybean']]
+    for site, tag in [('ida_2023', 'C'), ('il_2023', 'D')]:
+        values[f'FModelGap{tag}Min'] = min(site_diffs[site])
+        values[f'FModelGap{tag}Max'] = max(site_diffs[site])
+    w = within[within.target == 'ida_2023'].set_index('model')
+    values['FCUtaeUnetCorn'] = w.loc['utae', 'corn_f1'] - w.loc['unet3d', 'corn_f1']
+    values['FCUtaeUnetSoy'] = w.loc['utae', 'soybean_f1'] - w.loc['unet3d', 'soybean_f1']
+    means = cross.groupby('model')[['corn_f1_mean', 'soybean_f1_mean']].mean()
+    gaps = delta.groupby('model')[['corn_f1_difference', 'soybean_f1_difference']].mean()
+    for crop, tag in [('corn', 'Corn'), ('soybean', 'Soy')]:
+        values[f'FConvCross{tag}'] = means.loc['convgru', f'{crop}_f1_mean']
+        values[f'FConvGap{tag}'] = gaps.loc['convgru', f'{crop}_f1_difference']
+    higher_means = means.loc[['unet3d', 'utae']].to_numpy().ravel()
+    higher_gaps = gaps.loc[['unet3d', 'utae']].to_numpy().ravel()
+    model_gaps = (means.loc[['unet3d', 'utae']] - means.loc['convgru']).to_numpy().ravel()
+    for tag, arr in [('OtherCross', higher_means), ('OtherGap', higher_gaps), ('CrossModelGap', model_gaps)]:
+        values[f'F{tag}Min'], values[f'F{tag}Max'] = min(arr), max(arr)
+    for model, tag in [('convgru', 'Conv'), ('unet3d', 'Unet')]:
+        for source, target, path in [('iw2_2023', 'il_2023', 'BD'), ('il_2023', 'iw2_2023', 'DB'), ('ida_2023', 'il_2023', 'CD')]:
+            row = delta[(delta.model == model) & (delta.source == source) & (delta.target == target)].iloc[0]
+            values[f'F{tag}Soy{path}'] = row.soybean_f1_difference
+    ref = within[(within.model == 'convgru') & (within.target == 'il_2023')].soybean_f1.iloc[0]
+    for source, tag in [('ida_2023', 'CD'), ('iw2_2023', 'BD')]:
+        x = ref - runs[(runs.model == 'convgru') & (runs.source == source) & (runs.target == 'il_2023')].soybean_f1
+        values[f'FConvSoy{tag}RunMin'], values[f'FConvSoy{tag}RunMax'] = x.min(), x.max()
+    return values
+
+
+def write_f1_text_values():
+    lines = ['% Generated from full-precision results/summary/f1_raw_scale; display only.',
+             '% F1 numbers: percent; differences: percentage points. Units are in the prose.']
+    for name, raw in f1_text_values().items():
+        lines.append(f'\\newcommand{{\\{name}}}{{{f1_number(raw)}}}')
+    Path('tables/f1_text_values.tex').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
 if __name__ == "__main__":
     table = generate_table2_cross_site_f1_paths()
-    table.to_csv(
+    display = table2_display(table)
+    display.to_csv(
         "tables/table2_cross_site_f1_12paths.csv", index=False,
-        float_format="%.2f", encoding="utf-8-sig",
+        encoding="utf-8-sig",
     )
-    write_table2_cross_site_f1_latex_rows(table)
-    print("Current cross-site F1 table saved.")
+    write_table2_cross_site_f1_latex_rows(display)
+    write_f1_text_values()
+    print("F1 presentation table (percent, mean ± SD) and text values saved; raw summaries unchanged.")

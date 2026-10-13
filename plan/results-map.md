@@ -11,7 +11,7 @@
 | 3.1折间波动 | `summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv` | 不替代本站汇总F1 |
 | 3.1本站错分 | `processed/sec33_directional_confusion_closeout/crop_metrics_per_prediction.csv`、`summary/sec33_directional_confusion_closeout/directional_summary.csv` | 筛本站，重复方向基准验证后去重 |
 | 3.2跨站F1 | `summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv`、`cross_site_crop_f1_summary.csv` | 五次分别算，再均值与样本标准差 |
-| 3.2差距 | `summary/f1_raw_scale/crop_f1_difference_36paths.csv` | ΔF1=本站−跨站，原尺度 |
+| 3.2差距 | `summary/f1_raw_scale/crop_f1_difference_36paths.csv` | ΔF1=本站−跨站，存储原尺度、展示百分点 |
 | 3.3方向与模型 | `summary/sec33_directional_confusion_closeout/directional_summary.csv`、`model_crop_metrics_summary.csv`、`model_crop_path_diagnostics.csv` | 六向计数、率及指标，保留逐次和路径例外 |
 | 3.3位置与来源 | `summary/sec33_directional_confusion_closeout/exclusive_boundary_summary.csv`、`case_D_distance_all_sources.csv` | 互斥最近带与七带定位，不传播直接接触类型 |
 | 3.3全路径七带 | `summary/sec33_round3_distance/band_metrics_summary.csv`、`summary/sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv` | 类内漏分增量、像元权重与净贡献；最近和远内部逐次配对，均非F1 |
@@ -31,7 +31,7 @@
 | 12路径跨站F1 | `tables/table2_cross_site_f1_12paths.csv`及 `_rows.tex` |
 | ΔF1 | `figures/results/fig_degradation_heatmap_{a..f,cbar}.pdf` |
 
-正文在 `sections/04_results.tex` 引用，图件和版式本次不变；探索图不自动进入论文。
+正文在 `sections/04_results.tex` 引用；F1及标准差显示百分数，差值显示百分点。`scripts/generate_core_tables.py`生成展示表及`tables/f1_text_values.tex`正文数值；两绘图入口分别为`plot_within_site_f1.py`、`plot_degradation_heatmap.py`，共用`scripts/f1_display.py`。`tables/table2_cross_site_f1_12paths.csv`为带单位的展示CSV，计算仍读取正式summary。探索图不自动进入论文。
 
 ## 底表与分母
 

@@ -61,3 +61,9 @@
 /results/summary/model_advantage_spatial_conditions/** -text whitespace=cr-at-eol
 /scripts/analyze_model_advantage_spatial_conditions.py -text
 /scripts/test/check_model_advantage_spatial_conditions.py -text
+
+# Preserve F1 display revision backups and verification bytes.
+/output/archive/2026-10-13/f1-display-before/** -text whitespace=cr-at-eol
+/output/previews/2026-10-13-f1-percent/** -text
+/verification/f1-display-2026-10-13/** -text whitespace=cr-at-eol
+/verification/f1-display-2026-10-13/*-log.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

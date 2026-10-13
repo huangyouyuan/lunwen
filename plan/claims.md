@@ -4,16 +4,16 @@
 
 ## 3.1与3.2
 
-以下文件均位于 `results/summary/f1_raw_scale/`。显示采用原尺度两位小数，比较使用未舍入值；历史核查见 [迁移核查](../archive/2026-10-10-mainline/history/plan/tasks/f1-scale-migration-checklist.md)。
+以下文件均位于 `results/summary/f1_raw_scale/`。2026-10-13展示统一为F1及标准差用百分数、差值用百分点，均保留两位小数；计算和比较仍使用原尺度未舍入值。当前[展示核查](../verification/f1-display-2026-10-13/README.md)仅更新表示方式；历史核查见[迁移核查](../archive/2026-10-10-mainline/history/plan/tasks/f1-scale-migration-checklist.md)。
 
 | 论点 | 可支持的判断 | 证据 |
 |---|---|---|
-| C1 本站模型与作物差异 | 本站玉米F1为0.91～0.96、大豆为0.90～0.96；12个独立组合中玉米均较高，差值小于0.02。U-TAE与3D U-Net的差值绝对值均小于0.01 | `within_site_crop_f1.csv` |
-| C2 折间波动 | 12组两作物F1的折间样本标准差均小于0.01；不能据此证明训练充分收敛 | `within_site_crop_f1_fold_stats.csv` |
-| C3 站点差异 | 两作物模型间最大F1差值在C站约0.02、D站约0.04；D站跨度最大，不能扩大为所有指标的统一难度排序 | `within_site_crop_f1.csv` |
-| C4 跨站绝对表现 | 36个模型—路径组合的两作物F1均低于同模型目标站本站基准；玉米0.86～0.93、大豆0.83～0.92 | `cross_site_crop_f1_summary.csv`、`crop_f1_difference_36paths.csv` |
+| C1 本站模型与作物差异 | 本站玉米F1为90.98%～96.23%、大豆为89.55%～95.89%；12个独立组合中玉米均较高，差值小于2.00个百分点。U-TAE与3D U-Net相差均小于1.00个百分点，保留各站高低方向 | `within_site_crop_f1.csv` |
+| C2 折间波动 | 12组两作物F1的折间样本标准差均小于1.00%；不能据此证明训练充分收敛 | `within_site_crop_f1_fold_stats.csv` |
+| C3 站点差异 | 两作物U-TAE/3D U-Net高于ConvGRU的F1差距在C站为1.43～1.61个百分点、D站为3.34～3.98个百分点；D站的跨作物最大跨度较大，不能扩大为每种作物或所有指标的统一难度排序 | `within_site_crop_f1.csv` |
+| C4 跨站绝对表现 | 36个模型—路径组合的两作物F1均低于同模型目标站本站基准；玉米85.68%～92.92%、大豆83.08%～92.15% | `cross_site_crop_f1_summary.csv`、`crop_f1_difference_36paths.csv` |
 | C5 绝对F1与差距分开理解 | ConvGRU跨站路径平均F1较低，而平均ΔF1较小；差距小不能解释为跨站绝对精度更高或普遍泛化更强 | 同上 |
-| C6 模型与来源条件 | 固定D目标站，ConvGRU大豆C→D差值约0.01、B→D约0.07；B↔D较大差距的方向随模型改变 | `crop_f1_difference_36paths.csv` |
+| C6 模型与来源条件 | 固定D目标站，ConvGRU大豆C→D差值0.90个百分点、B→D差值7.39个百分点；B↔D较大差距的方向随模型改变 | `crop_f1_difference_36paths.csv` |
 
 上述判断为既有正式数据支持；不将两位显示相同解释为未舍入值相等，不将共享四站的路径作为独立地理重复。
 

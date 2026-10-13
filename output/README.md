@@ -1,17 +1,23 @@
 # 预览与归档入口
 
-本目录存放页面预览和核查备份。正式论文图件在[figures](../figures/)，最近核查的8页稿件已保存为[可随Git传递的PDF](previews/2026-10-12-figure23-bars/manuscript.pdf)，与本地`main.pdf`在本次交接时哈希一致。
+本目录存放页面预览和核查备份。正式论文图件在[figures](../figures/)，2026-10-13统一F1展示后的8页稿件已保存为[可审阅PDF](previews/2026-10-13-f1-percent/manuscript.pdf)，与当前本地`main.pdf`哈希一致。2026-10-14按作者明确指令随本次提交保存。
 
 ## 最新预览
 
-最近一次图2、图3柱形样式修订已编译并查看以下两页；这两张图对应同一份8页PDF，不代表整篇论文均已定稿。
+2026-10-13已将F1及标准差改为百分数、差值改为百分点，重新编译8页并渲染全页。重点逐页检查第4—7页，其余页结合总览核对；此次验证限于F1展示及受影响版面，不代表论文已定稿。
 
-- [第3页：图2及1.3.2正文](previews/2026-10-12-figure23-bars/figure23-bars-20261012-3.png)
-- [第5页：图3及相邻正文](previews/2026-10-12-figure23-bars/figure23-bars-20261012-5.png)
+- [第4页：方法中的F1定义](previews/2026-10-13-f1-percent/page-4.png)
+- [第5页：本站F1条形图及3.1正文](previews/2026-10-13-f1-percent/page-5.png)
+- [第6页：3.2正文](previews/2026-10-13-f1-percent/page-6.png)
+- [第7页：跨站均值±标准差表及六幅差值热力图](previews/2026-10-13-f1-percent/page-7.png)
+- [全部8页预览目录](previews/2026-10-13-f1-percent/)
 
-对应PDF和图片哈希见[当前预览清单](preview-manifest.json)，尺寸、字体及数据检查见[图2/图3核查](../verification/figure23-bars-2026-10-12.md)。若后续修改稿件，以清单中的PDF哈希判断这些预览是否仍对应当前版本。
+对应PDF和图片哈希见[当前预览清单](preview-manifest.json)，数值、字体及版面检查见[F1展示核查](../verification/f1-display-2026-10-13/README.md)。若后续修改稿件，以清单中的PDF哈希判断这些预览是否仍对应当前版本。
 
 ## 历史预览
+
+- [2026-10-12图2/图3样式版PDF](previews/2026-10-12-figure23-bars/manuscript.pdf)及同目录第3、5页预览保留原位。
+- [2026-10-13 F1展示修改前备份](archive/2026-10-13/f1-display-before/)保存40份原文件，包括旧正式图、表、脚本、正文、规范、PDF及预览清单；[备份清单](archive/2026-10-13/f1-display-before/manifest.json)记录原路径、备份路径、用途与SHA-256。仅为历史审阅，不作为当前生成入口。
 
 [2026-10-12归档索引](archive/2026-10-12/README.md)按研究区、1.1润色、1.3表格、字体检查等任务收纳此前散放的图片。文件原名和内容均保留；原路径、新路径、原因及SHA-256见[迁移清单](../verification/output-preview-archive-2026-10-12.json)。
 

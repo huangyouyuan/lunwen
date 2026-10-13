@@ -68,7 +68,7 @@ Ubuntu 22.04；Intel Xeon Gold 6430（32 核）；120 GB RAM；RTX 4090 24 GB。
 
 F1直接按计数计算：`2TP/(2TP+FP+FN)`，仅当分母为0时记NA。Precision与Recall分别按各自分母判断，不由它们的NA状态替代F1的判定。正常整站结果的有效F1未因这一公式修正而改变，原核查见 [定向收尾记录](../results/summary/sec33_directional_confusion_closeout/verification.md)。
 
-ΔF1 = 同模型目标站本站汇总F1 − 跨站五次完整预测F1的算术平均，采用原0—1尺度，不除以基准。正值表示跨站F1较低，负值表示较高；基准不是源站F1，也不是理论上限。模型概览按12条路径等权平均。F1、其标准差和ΔF1显示两位小数，计算使用未舍入值。
+ΔF1 = 同模型目标站本站汇总F1 − 跨站五次完整预测F1的算术平均，采用原0—1尺度，不除以基准。正值表示跨站F1较低，负值表示较高；基准不是源站F1，也不是理论上限。模型概览按12条路径等权平均。F1及其标准差展示时乘100，以百分数保留两位小数；ΔF1及其它模型间F1差值展示时乘100，以百分点保留两位小数，保留各自相减方向。计算与CSV/NPZ存储仍为原尺度完整精度，不从显示值反算差值，舍入产生的−0.00显示为0.00。
 
 当前链为两份 `results/raw/` 整数CM → `scripts/calculate_f1_raw_scale.py` → `results/processed/f1_raw_scale/` → `results/summary/f1_raw_scale/`，保存17位有效数字。完整跨站F1表由 `scripts/generate_core_tables.py`读取已保存的summary生成；读表函数不触发上游重算。未经请求不运行生产或图表写入命令。
 

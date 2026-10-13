@@ -24,6 +24,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import figstyle as fs
+from f1_display import display_number
 
 fs.setup()
 
@@ -35,7 +36,7 @@ PANELS = [('corn', 'convgru', 'a'), ('corn', 'unet3d', 'b'), ('corn', 'utae', 'c
 
 
 def prepare_heatmap_data(df, model, crop):
-    """4×4 透视表：行=源站，列=目标站，对角线 NaN"""
+    """4×4 展示表（百分点）：行=源站，列=目标站，对角线 NaN。"""
     model_df = df[df['model'] == model].copy()
     model_df['source_abbr'] = model_df['source'].map(SITE_MAP)
     model_df['target_abbr'] = model_df['target'].map(SITE_MAP)
@@ -43,7 +44,18 @@ def prepare_heatmap_data(df, model, crop):
     pivot = pivot.reindex(index=fs.SITES, columns=fs.SITES)
     for site in fs.SITES:
         pivot.loc[site, site] = np.nan
-    return pivot
+    return pivot * 100
+
+
+def shared_color_scale(all_values):
+    """One common scale for all six panels, including any negative differences."""
+    values = np.asarray(all_values)
+    low, high = float(np.nanmin(values)), float(np.nanmax(values))
+    if low < 0:
+        # A single zero-centred diverging scale; never clip or take abs of data.
+        limit = max(1.0, float(np.ceil(max(-low, high))))
+        return -limit, limit, 'RdBu_r'
+    return 0.0, max(1.0, float(np.ceil(high))), 'YlOrRd'
 
 
 def main(size):
@@ -51,16 +63,15 @@ def main(size):
                      float_precision='round_trip')
 
     all_values = np.concatenate([prepare_heatmap_data(df, m, c).values.ravel() for c, m, _ in PANELS])
-    vmin = 0.0
-    vmax = float(np.ceil(np.nanmax(all_values) * 100) / 100)
-    if np.nanmin(all_values) < 0 or vmax <= vmin:
-        raise ValueError('当前热力图按正差值设计；数据范围改变时需重新审查色标。')
+    vmin, vmax, cmap = shared_color_scale(all_values)
 
     for crop, model, tag in PANELS:
         fig, axes = fs.grid(1, 1, w=size, h=size)
         ax = axes[0, 0]
-        sns.heatmap(prepare_heatmap_data(df, model, crop), ax=ax, cmap='YlOrRd', vmin=vmin, vmax=vmax,
-                    annot=True, fmt='.2f', annot_kws={'size': fs.FS}, cbar=False,
+        values = prepare_heatmap_data(df, model, crop)
+        labels = values.map(display_number)
+        sns.heatmap(values, ax=ax, cmap=cmap, vmin=vmin, vmax=vmax,
+                    annot=labels, fmt='', annot_kws={'size': fs.FS}, cbar=False,
                     linewidths=0, square=True)
         # 网格只画一次，外框不裁切，避免内外线宽不同或重复描边。
         edges = np.arange(len(fs.SITES) + 1)
@@ -81,14 +92,14 @@ def main(size):
     fig = plt.figure(figsize=(fig_width * fs.CM, fig_height * fs.CM))
     cax = fig.add_axes([0.3 / fig_width, 0.7 / fig_height,
                        bar_width / fig_width, bar_height / fig_height])
-    sm = plt.cm.ScalarMappable(cmap='YlOrRd', norm=plt.Normalize(vmin, vmax))
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin, vmax))
     cb = fig.colorbar(sm, cax=cax, orientation='horizontal',
-                      ticks=np.arange(vmin, vmax + 0.001, 0.02), format='%.2f')
+                      ticks=np.linspace(vmin, vmax, 5), format='%.2f')
     cb.outline.set_linewidth(0.6)
     fs.save(fig, 'fig_degradation_heatmap_cbar')
 
     print(f'Generated: figures/results/fig_degradation_heatmap_{{a..f,cbar}}.pdf / .png  (panel {size * fs.UNIT:.1f} cm)')
-    print(f'色标范围：{vmin:.2f} ~ {vmax:.2f}，原始 F1 差值')
+    print(f'色标范围：{vmin:.2f} ~ {vmax:.2f}，F1下降（百分点）')
     for crop, model, tag in PANELS:
         v = prepare_heatmap_data(df, model, crop).values
         v = v[~np.isnan(v)]

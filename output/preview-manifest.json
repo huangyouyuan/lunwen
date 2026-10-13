@@ -1,36 +1,61 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "status": "Verified",
-  "scope": "Latest reviewed pages 3 and 5 for the figure 2/3 bar-style revision; older previews are indexed separately.",
+  "scope": "F1 percentage/percentage-point presentation; all 8 pages rendered, pages 4-7 reviewed individually, others reviewed as contact sheet; not full scientific completion",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+    "sha256": "8aa13e11c46225a2b9c03d3954a3013f6b1771320e7b4e3970cde15bd7f0e5ed",
     "pages": 8
   },
-  "source_verification": "verification/figure23-bars-2026-10-12.json",
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-13-f1-percent/manuscript.pdf",
+    "sha256": "8aa13e11c46225a2b9c03d3954a3013f6b1771320e7b4e3970cde15bd7f0e5ed",
+    "pages": 8
+  },
+  "source_verification": "verification/f1-display-2026-10-13/README.md",
   "previews": [
     {
-      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-3.png",
-      "pdf_page": 3,
-      "sha256": "48efd4cce8f24d6a659c5dc75abed5aeb4dfc377ecbea0e4d0dcd043d2078138",
-      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
+      "path": "output/previews/2026-10-13-f1-percent/page-1.png",
+      "pdf_page": 1,
+      "sha256": "a58c1083f075bfbdc1a89f4e9ba7563e9aa69c5f105735b42b0890a63c5a370c"
     },
     {
-      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-5.png",
+      "path": "output/previews/2026-10-13-f1-percent/page-2.png",
+      "pdf_page": 2,
+      "sha256": "10a63f3500cb7afec45c6490a9df19485ab426fd15902240883bd2b88d40791e"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-3.png",
+      "pdf_page": 3,
+      "sha256": "7f11b5ffb4ffcc9117a663707dceebd26302e1010d4b70a6afa38f8296408b4e"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-4.png",
+      "pdf_page": 4,
+      "sha256": "25aa9194eb74e877fd8a16c30ccf811937f9a46ffdb8a2e645bacf2813b0cfa3"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-5.png",
       "pdf_page": 5,
-      "sha256": "9859f036a943c43e5cf4e9d03b1712074ea0c38de3b84d7d9115abc353b4744d",
-      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
+      "sha256": "66e0f912505ec3e835fdafff39f237ced3e7d4a65b586e2af127a0a735fb1b7e"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-6.png",
+      "pdf_page": 6,
+      "sha256": "8212629655b849f7f05c8ba0090ee6865ca184d14724ced8a7dd62f72602bbaf"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-7.png",
+      "pdf_page": 7,
+      "sha256": "f227b52c3a816df6188a9427ec4e20259d2679bfd66ddc0c07bf9070317b75ab"
+    },
+    {
+      "path": "output/previews/2026-10-13-f1-percent/page-8.png",
+      "pdf_page": 8,
+      "sha256": "a2801d36ff3df11e4cd533b165d39ef37a3839ecb316b2de85a9f5f0e3332d3a"
     }
   ],
-  "historical_manifest": "output/archive/2026-10-12/preview-index/preview-manifest.json",
-  "archive_ledger": "verification/output-preview-archive-2026-10-12.json",
+  "historical_manifest": "output/archive/2026-10-13/f1-display-before/output/preview-manifest.json",
   "entry_point": "output/README.md",
-  "organized_at": "2026-10-12T14:21:17.497141+08:00",
-  "versioned_pdf": {
-    "path": "output/previews/2026-10-12-figure23-bars/manuscript.pdf",
-    "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
-    "pages": 8,
-    "purpose": "Versioned copy of the already-built PDF corresponding to the reviewed previews; no rebuild."
-  },
-  "handoff_closeout_ledger": "verification/output-handoff-closeout-2026-10-12.json"
+  "generated_for": "2026-10-13 F1 display revision"
 }

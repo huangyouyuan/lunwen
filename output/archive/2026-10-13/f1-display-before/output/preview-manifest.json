@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "status": "Verified",
+  "scope": "Latest reviewed pages 3 and 5 for the figure 2/3 bar-style revision; older previews are indexed separately.",
+  "source_pdf": {
+    "path": "main.pdf",
+    "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+    "pages": 8
+  },
+  "source_verification": "verification/figure23-bars-2026-10-12.json",
+  "previews": [
+    {
+      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-3.png",
+      "pdf_page": 3,
+      "sha256": "48efd4cce8f24d6a659c5dc75abed5aeb4dfc377ecbea0e4d0dcd043d2078138",
+      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
+    },
+    {
+      "path": "output/previews/2026-10-12-figure23-bars/figure23-bars-20261012-5.png",
+      "pdf_page": 5,
+      "sha256": "9859f036a943c43e5cf4e9d03b1712074ea0c38de3b84d7d9115abc353b4744d",
+      "purpose": "Latest reviewed figure 2/3 manuscript page preview; not a complete manuscript-page set."
+    }
+  ],
+  "historical_manifest": "output/archive/2026-10-12/preview-index/preview-manifest.json",
+  "archive_ledger": "verification/output-preview-archive-2026-10-12.json",
+  "entry_point": "output/README.md",
+  "organized_at": "2026-10-12T14:21:17.497141+08:00",
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-12-figure23-bars/manuscript.pdf",
+    "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+    "pages": 8,
+    "purpose": "Versioned copy of the already-built PDF corresponding to the reviewed previews; no rebuild."
+  },
+  "handoff_closeout_ledger": "verification/output-handoff-closeout-2026-10-12.json"
+}

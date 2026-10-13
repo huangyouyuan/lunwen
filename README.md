@@ -6,6 +6,8 @@
 
 2026-10-12现状：1.3已采用单张通栏景观表，AREA/SHAPE面积加权、ENN斑块等权；图表字体和图2/图3条形样式已统一。预览已按任务整理，最新与历史入口见[output/README.md](output/README.md)。此前成果恢复过程见[2026-10-11版本说明](plan/version-notes-2026-10-11.md)。
 
+2026-10-13展示更新：F1及其标准差显示为百分数，F1差值显示为百分点，均保留两位小数；原尺度计算和完整精度数据不变。正文、表格和正式图的生成入口已同步，见[修改与核查清单](verification/f1-display-2026-10-13/README.md)。
+
 ## 活动目录
 
 | 目录 | 用途 |
@@ -29,7 +31,7 @@
 | 脚本 | 职责 |
 |---|---|
 | `calculate_f1_raw_scale.py` | 两份raw矩阵→有效F1链，阅读前先校验已有产物 |
-| `generate_core_tables.py` | 仅生成现行12路径正文表，不生成旧口径和检验表 |
+| `generate_core_tables.py`、`f1_display.py` | 生成12路径百分数展示表（均值±标准差）及正文数值宏；共用F1格式函数，不写科学结果 |
 | `generate_sec13_spatial_tables.py` | 当前表1；优先用`--check`只读核对，AREA/SHAPE面积加权、ENN斑块等权 |
 | `plot_sec13_composition.py` | 仅重绘现行组成图，避免调用历史组合生成器连带写入旧表 |
 | `plot_within_site_f1.py`、`plot_within_site_map_D.py`、`plot_degradation_heatmap.py` | 正式图件，共享 `figstyle.py` |
@@ -43,7 +45,7 @@
 python -B -m unittest scripts/test/test_sec33_directional_confusion_closeout.py scripts/test/test_sec33_directional_confusion.py scripts/test/test_f1_raw_scale.py scripts/test/test_f1_presentation.py -v
 ```
 
-手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；当前稿件为8页，最新第3、5页预览及PDF哈希见[清单](output/preview-manifest.json)，本次归档与交接未重建。[当前PDF快照](output/previews/2026-10-12-figure23-bars/manuscript.pdf)及两组完整修改前备份均已纳入Git，详见[工作区交接](HANDOVER.md#工作区交接)。
+手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；2026-10-13已按F1展示统一任务重新编译为8页，完整页面预览及PDF哈希见[清单](output/preview-manifest.json)。[当前PDF快照](output/previews/2026-10-13-f1-percent/manuscript.pdf)对应新展示规范；旧快照及修改前原字节备份保留，2026-10-14按作者指令随本次提交保存。
 
 ## 历史入口
 
@@ -51,4 +53,4 @@ python -B -m unittest scripts/test/test_sec33_directional_confusion_closeout.py 
 
 旧DR、重复数值链、图块AREA_MN与匹配方案、被替代主视图和旧任务仍在归档；历史源码以`.source`保留，可审阅但不自动运行。原路径按原迁移清单、首次及[第二次恢复清单](archive/2026-10-10-mainline/restored-second-pass.csv)解析。历史报告中的“K2主方案”等安排不代表当前决策。
 
-不得删除文件或新增忽略规则制造干净状态。本次按作者要求本地提交预览归档和交接更新，不推送；历史核查中的“未提交”指各自记录时点。
+不得删除文件或新增忽略规则制造干净状态。历史核查中的提交描述指各自记录时点；F1展示修改阶段未自动提交，2026-10-14按作者后续明确指令提交。

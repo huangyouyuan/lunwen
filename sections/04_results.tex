@@ -1,13 +1,14 @@
 % !TEX root = ../main.tex
+\input{tables/f1_text_values.tex}
 
 \section{实验结果与分析}
 
 \subsection{模型站内分类性能}
 
 % 数据：results/summary/f1_raw_scale/within_site_crop_f1.csv（汇总口径）、within_site_crop_f1_fold_stats.csv（折间标准差）
-% 图表显示两位小数，计算和比较使用未按显示精度舍入的值。
+% F1以百分数、差值以百分点显示两位小数；正文数值由generate_core_tables.py从完整精度生成。
 
-如图\ref{fig:within_site_f1}所示，三种模型在四个站点的站内玉米F1为0.91～0.96，大豆F1为0.90～0.96。三种模型的分类表现呈现出两点共性：在四个站点上，玉米F1均高于大豆F1，差值均小于0.02；跨站点比较，各模型的玉米和大豆F1均在A站点取得各自最高值。五折交叉验证中，同一数据集不同划分下的每折独立训练，12组实验（3种模型×4个站点）的玉米和大豆F1折间标准差均小于0.01。
+如图\ref{fig:within_site_f1}所示，三种模型在四个站点的站内玉米F1为\FWithinCornMin{}\%～\FWithinCornMax{}\%，大豆F1为\FWithinSoyMin{}\%～\FWithinSoyMax{}\%。三种模型的分类表现呈现出两点共性：在四个站点上，玉米F1均高于大豆F1，差值均小于2.00个百分点；跨站点比较，各模型的玉米和大豆F1均在A站点取得各自最高值。五折交叉验证中，同一数据集不同划分下的每折独立训练，12组实验（3种模型×4个站点）的玉米和大豆F1折间标准差均小于1.00\%。
 
 \par\addvspace{3pt}
 \noindent\begin{minipage}{\linewidth}
@@ -28,7 +29,7 @@
 \label{fig:within_site_f1}
 \end{minipage}\par\addvspace{3pt}
 
-三种模型之间的差异主要体现在ConvGRU与另两种模型之间。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而二者之间差值均小于0.01，互有高低：U-TAE在A、B两个站点略优，3D U-Net在D站点略优，C站点两者相当。ConvGRU与前两者的差距因站点而异：两种作物在C站点均约为0.02，在D站点均约为0.04。图\ref{fig:within_site_map_D}以差距较大的D站点为例对比了三种模型的站内交叉验证分类结果：在选中局部区域中，ConvGRU的玉米和大豆像元错误率为12.1\%，高于3D U-Net（5.8\%）和U-TAE（4.8\%）。
+三种模型之间的差异主要体现在ConvGRU与另两种模型之间。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而二者之间差值均小于1.00个百分点，互有高低：U-TAE在A、B两个站点略优，3D U-Net在D站点略优，C站点U-TAE的玉米和大豆F1分别高出\FCUtaeUnetCorn{}和\FCUtaeUnetSoy{}个百分点。ConvGRU与前两者的差距因站点而异：两种作物在C站点为\FModelGapCMin{}～\FModelGapCMax{}个百分点，在D站点为\FModelGapDMin{}～\FModelGapDMax{}个百分点。图\ref{fig:within_site_map_D}以差距较大的D站点为例对比了三种模型的站内交叉验证分类结果：在选中局部区域中，ConvGRU的玉米和大豆像元错误率为12.1\%，高于3D U-Net（5.8\%）和U-TAE（4.8\%）。
 
 % 图 3：上行全站 2560×2560 标红框，下行红框窗口放大；窗口 = D 站图块网格 (13,8) 起 2×2，像元行 1664–1920、列 1024–1280
 % 选窗标准：只看真实玉米/大豆像元——作物像元错误率 ConvGRU 12.1% / 3D U-Net 5.8% / U-TAE 4.8%；
@@ -82,7 +83,7 @@
 %       results/summary/f1_raw_scale/within_site_crop_f1.csv（同模型目标站站内基准）
 %       results/summary/f1_raw_scale/crop_f1_difference_36paths.csv（图 4，原尺度差值）
 
-如表\ref{tab:cross_site_f1_paths}所示，源站模型不经微调直接用于目标站后，36个模型—路径组合的玉米和大豆跨站F1均低于同一模型在目标站的站内汇总F1。跨站玉米F1为0.86～0.93，大豆F1为0.83～0.92，每项为五次完整目标站预测的均值。按目标站对3条路径取平均，三种模型的玉米和大豆跨站F1均在以A站点为目标站时最高，与站内结果中A站点精度最高相对应；玉米跨站F1则均在以C站点为目标站时最低，大豆跨站F1的最低目标站则不一致。
+如表\ref{tab:cross_site_f1_paths}所示，源站模型不经微调直接用于目标站后，36个模型—路径组合的玉米和大豆跨站F1均低于同一模型在目标站的站内汇总F1。跨站玉米F1为\FCrossCornMin{}\%～\FCrossCornMax{}\%，大豆F1为\FCrossSoyMin{}\%～\FCrossSoyMax{}\%，每项为五次完整目标站预测的均值。按目标站对3条路径取平均，三种模型的玉米和大豆跨站F1均在以A站点为目标站时最高，与站内结果中A站点精度最高相对应；玉米跨站F1则均在以C站点为目标站时最低，大豆跨站F1的最低目标站则不一致。
 
 \begin{table*}[tbp]
 \centering
@@ -90,18 +91,18 @@
 \label{tab:cross_site_f1_paths}
 {\songti\zihao{-5}
 \renewcommand{\arraystretch}{1.12}
-\setlength{\tabcolsep}{7pt}
+\setlength{\tabcolsep}{3pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c*{6}{c}}
 \toprule
 \multirow{2}{*}{迁移路径} & \multicolumn{2}{c}{ConvGRU} & \multicolumn{2}{c}{3D U-Net} & \multicolumn{2}{c}{U-TAE} \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
- & 玉米F1 & 大豆F1 & 玉米F1 & 大豆F1 & 玉米F1 & 大豆F1 \\
+ & 玉米F1（\%） & 大豆F1（\%） & 玉米F1（\%） & 大豆F1（\%） & 玉米F1（\%） & 大豆F1（\%） \\
 \midrule
 \input{tables/table2_cross_site_f1_12paths_rows.tex}
 \end{tabular*}
 \par\nointerlineskip\vspace{3pt}
 \begin{minipage}{\textwidth}
-\noindent 注：箭头左侧为源站，右侧为目标站。每格为源站5个折模型分别预测目标站全部400个图块所得F1的算术平均，未进行微调和模型集成；“平均”为12条迁移路径F1均值的算术平均。
+\noindent 注：箭头左侧为源站，右侧为目标站。各路径单元格为均值±标准差，二者均按百分数尺度显示；源站5个折模型分别预测目标站全部400个图块后计算F1，标准差采用样本标准差（分母为4），未进行微调和模型集成。“平均”行仅列12条迁移路径F1均值的算术平均。
 \end{minipage}
 }
 \end{table*}
@@ -109,13 +110,13 @@
 % 第二段：12 条路径平均跨站 F1 与平均 F1 差值均从完整精度计算。
 % 两种排序分别对应实际精度与相对同一模型目标站当地训练基准的差距。
 
-按12条路径取算术平均，ConvGRU的跨站F1均值最低，但平均F1差值最小：其跨站玉米和大豆F1分别为0.89和0.88，比3D U-Net和U-TAE低0.01～0.02（后两者两种作物的均值均约为0.90）；而玉米和大豆平均F1差值均约为0.03，小于3D U-Net和U-TAE（均约为0.04）。跨站F1比较的是模型在目标站的实际分类精度，F1差值衡量的则是跨站F1与同一模型在目标站站内汇总F1之间的差距。因此，F1差值较小不代表跨站绝对精度更高，评价模型的跨站表现需要同时考察这两个指标。
+按12条路径取算术平均，ConvGRU的跨站F1均值最低，但平均F1差值最小：其跨站玉米和大豆F1分别为\FConvCrossCorn{}\%和\FConvCrossSoy{}\%，比3D U-Net和U-TAE低\FCrossModelGapMin{}～\FCrossModelGapMax{}个百分点（后两者两种作物的均值为\FOtherCrossMin{}\%～\FOtherCrossMax{}\%）；而玉米和大豆平均F1差值分别为\FConvGapCorn{}和\FConvGapSoy{}个百分点，小于3D U-Net和U-TAE（\FOtherGapMin{}～\FOtherGapMax{}个百分点）。跨站F1比较的是模型在目标站的实际分类精度，F1差值衡量的则是跨站F1与同一模型在目标站站内汇总F1之间的差距。因此，F1差值较小不代表跨站绝对精度更高，评价模型的跨站表现需要同时考察这两个指标。
 
 % 第三段：图 4 数据 results/summary/f1_raw_scale/crop_f1_difference_36paths.csv。
-% 固定目标站 D：ConvGRU 大豆 C→D 0.01（五次 0.0077～0.0099）、B→D 0.07（五次 0.0329～0.1081）。
+% 固定目标站D的单次差值由未舍入本站基准减每次跨站F1生成，不由显示值反算。
 % B↔D：ConvGRU 玉米、大豆均 B→D 较大，3D U-Net 均 D→B 较大；比较基于各路径五次预测均值。
 
-如图\ref{fig:degradation_heatmap}所示，F1差值随源—目标组合而变化，且三种模型的变化并不一致。即使目标站相同，F1差值也会随源站不同而改变：以D站点为目标站时，ConvGRU的大豆F1差值在源站为C时为0.01，源站为B时为0.07；这两种源站下五次预测对应的F1差值分别约为0.01和0.03～0.11，源站为B时的每一次结果均高于源站为C时，但五次之间的波动也更大。在B、D两个站点之间，两个方向上的F1差值大小关系也因模型而异：ConvGRU的玉米和大豆F1差值均为B→D方向较大，3D U-Net则均为D→B方向较大；以大豆为例，ConvGRU在B→D和D→B路径上分别为0.07和0.03，3D U-Net分别为0.04和0.06。上述方向差异基于五次预测的均值，仅反映这一站点对上的表现，不代表普遍的迁移规律。这些差异与站点空间特征的对应关系，将在后文结合地物组成与景观结构分析。
+如图\ref{fig:degradation_heatmap}所示，F1差值随源—目标组合而变化，且三种模型的变化并不一致。即使目标站相同，F1差值也会随源站不同而改变：以D站点为目标站时，ConvGRU的大豆F1差值在源站为C时为\FConvSoyCD{}个百分点，源站为B时为\FConvSoyBD{}个百分点；这两种源站下五次预测对应的F1差值分别为\FConvSoyCDRunMin{}～\FConvSoyCDRunMax{}和\FConvSoyBDRunMin{}～\FConvSoyBDRunMax{}个百分点，源站为B时的每一次结果均高于源站为C时，但五次之间的波动也更大。在B、D两个站点之间，两个方向上的F1差值大小关系也因模型而异：ConvGRU的玉米和大豆F1差值均为B→D方向较大，3D U-Net则均为D→B方向较大；以大豆为例，ConvGRU在B→D和D→B路径上分别为\FConvSoyBD{}和\FConvSoyDB{}个百分点，3D U-Net分别为\FUnetSoyBD{}和\FUnetSoyDB{}个百分点。上述方向差异基于五次预测的均值，仅反映这一站点对上的表现，不代表普遍的迁移规律。这些差异与站点空间特征的对应关系，将在后文结合地物组成与景观结构分析。
 
 \begin{figure*}[tbp]
 \centering
@@ -144,8 +145,8 @@
 \caption{U-TAE大豆F1差值}
 \end{subfigure}\par\nointerlineskip\vspace{3pt}
 \includegraphics{results/fig_degradation_heatmap_cbar.pdf}\par\nointerlineskip\vspace{3pt}
-{\songti\zihao{-5}F1差值\par}
-\caption{不同源—目标区域组合下三种模型的玉米和大豆F1差值（行为源站，列为目标站，对角线不适用；数值保留两位小数，0.00不表示差值严格为零）}
+{\songti\zihao{-5}F1下降（百分点）\par}
+\caption{不同源—目标区域组合下三种模型的玉米和大豆F1差值（单位：百分点；行为源站，列为目标站，对角线不适用；同模型目标站站内F1减跨站五次均值，六幅子图共用色标）}
 \label{fig:degradation_heatmap}
 \end{figure*}
 

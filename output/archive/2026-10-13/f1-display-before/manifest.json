@@ -1,0 +1,259 @@
+{
+  "head": "3d0f21cc21ef77d3ef3dfd7a9bb8867e0924468f",
+  "status": "Verified",
+  "scope": "Pre-edit byte copies and calculation-input hashes; no scientific recalculation",
+  "copies": [
+    {
+      "original": "sections/03_methods.tex",
+      "backup": "output/archive/2026-10-13/f1-display-before/sections/03_methods.tex",
+      "sha256": "cc0791ff51efae3831ccc2d78f35abcb092a3fa1a47fb75a4af00fad2d15b8d0",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "sections/04_results.tex",
+      "backup": "output/archive/2026-10-13/f1-display-before/sections/04_results.tex",
+      "sha256": "c92cfddeb99874eb4b93304e64036c89a1d386342a046137dcab3b64480e291d",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "scripts/plot_within_site_f1.py",
+      "backup": "output/archive/2026-10-13/f1-display-before/scripts/plot_within_site_f1.py",
+      "sha256": "2f6c508cbca61185ea4f3a806ec3265056908b8a0e28fa2171688d4ce03a889e",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "scripts/plot_degradation_heatmap.py",
+      "backup": "output/archive/2026-10-13/f1-display-before/scripts/plot_degradation_heatmap.py",
+      "sha256": "c4dfb892b237c270be8897ec2ea3aeb5d98a596d596d497cfe484cca04dc9434",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "scripts/generate_core_tables.py",
+      "backup": "output/archive/2026-10-13/f1-display-before/scripts/generate_core_tables.py",
+      "sha256": "beefa37954bb7bd8966639ee80ae0d41b4fb5d4d0367d329c847a7fbbccdfdec",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "scripts/test/test_f1_presentation.py",
+      "backup": "output/archive/2026-10-13/f1-display-before/scripts/test/test_f1_presentation.py",
+      "sha256": "6963fa20a57674e1f34ba5829cbba4c2bff0cf45fef679ebfc8eef3fd4bf15e0",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "tables/table2_cross_site_f1_12paths_rows.tex",
+      "backup": "output/archive/2026-10-13/f1-display-before/tables/table2_cross_site_f1_12paths_rows.tex",
+      "sha256": "9cd393eb525cb17bdf20f459b0e48853c9562029701d5f645a03f167ea2003e1",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "tables/table2_cross_site_f1_12paths.csv",
+      "backup": "output/archive/2026-10-13/f1-display-before/tables/table2_cross_site_f1_12paths.csv",
+      "sha256": "e5642c6e296e4bc9a3feffa9f32336c3f9bf3bdc8e77c0f1ebb19150ff348e32",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/README_heatmap.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/README_heatmap.md",
+      "sha256": "5b0c5577c71dd9c58c8be847b8eea61ac76eb25abcb3d29dcbf8e9ea5f343fb7",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/experiment-protocol.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/experiment-protocol.md",
+      "sha256": "914a59b44516465fb0362b91b3a0c47be705cf1a3e68050f3ba9afcbe4b17e47",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/format-spec.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/format-spec.md",
+      "sha256": "bacec80d5f73235a1576226c61d4cd43b27a99283e27da772c92497e8d4e42ab",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/style-guide.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/style-guide.md",
+      "sha256": "030a342118423e2c8fb8324d8caa7ea1ec0cb48deca36fe5fabfc8046b4976d9",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/terminology.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/terminology.md",
+      "sha256": "2c6c2a340a1b3a8b92f87493ea0295dcf8bb1788210dfab95532af71f3afda63",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/results-map.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/results-map.md",
+      "sha256": "043418484595e65d8c91e79175d74bcedff9e01e98f5156ee3b1ebcf0b769c9a",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "HANDOVER.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/HANDOVER.md",
+      "sha256": "e92bb5d7b8453ddf6ca2dd25ca73561c325890f9454f6910343be5a37c2d5319",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "README.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/README.md",
+      "sha256": "47047fe796342173683cf3a2712eced5714de1b6a3b287c9b64554e5f5ecab04",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "output/README.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/output/README.md",
+      "sha256": "7ec7a103bdc049f5d4e7f9ceff35b419984b87a4ec7a1202dc7d8bb43a6d1683",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "output/preview-manifest.json",
+      "backup": "output/archive/2026-10-13/f1-display-before/output/preview-manifest.json",
+      "sha256": "1b84eeff156e77a5d18b9580d1acc4649b8cb0483e036500cd9c599a3bbffbda",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_within_site_f1_a.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_within_site_f1_a.pdf",
+      "sha256": "662d9901c53854cd3867055e51655b5a8b627a4554f262bc77a1cddc3113867f",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_within_site_f1_a.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_within_site_f1_a.png",
+      "sha256": "f69db406ff0ec9b97f3f22b76f79c6c28a0c52ad28f2aab4f749409a2e0d3dc8",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_within_site_f1_b.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_within_site_f1_b.pdf",
+      "sha256": "1d6548b42f45f80e5f1b4ea8daf0a7319633364ec1f2c9696b67cb21eb06deed",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_within_site_f1_b.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_within_site_f1_b.png",
+      "sha256": "f77cf9c36584b7fedaebfe1f6893961c9927e503ed3084677c17e1d56d5ef060",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_a.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_a.pdf",
+      "sha256": "e335fdeebcb40a27c1ad0f2519e3e273859b451dbf25e8b35566c8900e74edc5",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_a.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_a.png",
+      "sha256": "69a68cdb473caa2ce1d93e7b0304425886ce3cd65b283dd978bb5c56da64073a",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_b.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_b.pdf",
+      "sha256": "05873b9522465db10da7853c75e2055ad340f20b9d36235d3c8d44656f2d3c24",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_b.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_b.png",
+      "sha256": "1d76e2fd1236df65757dcecb6059335d97baf000d2b2991b8814401c2f9570a3",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_c.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_c.pdf",
+      "sha256": "90e82fa595c6dc1322adef9334ad1806da050739cb5bde9579743fe5237a8ba3",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_c.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_c.png",
+      "sha256": "48f90240f72438102154aaad8a21cb85ce94fe22c1a7c85fa025512c23bc63e2",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_cbar.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_cbar.pdf",
+      "sha256": "803985be9af5223ab080650a9b2c7211411c664edaa8c5644286b05fa5fbf923",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_cbar.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_cbar.png",
+      "sha256": "2606561836aff2a55cd70dd13af05f8daede15a946d216421c5d4f3d379ea51c",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_d.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_d.pdf",
+      "sha256": "00cf2aab4e49095ff3153807a9fa5a094abfedfd3e64d06004ef6f488e280cf1",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_d.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_d.png",
+      "sha256": "7071be9d00ce240ad86aeb52121242fba3cec81e6db3d6ad92fa66a405b9ee01",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_e.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_e.pdf",
+      "sha256": "5526fb3a5a05f9a828d2a1992ce688d71d1822b89add416c8b75eff11ca24192",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_e.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_e.png",
+      "sha256": "47cd360cc48cd7f0ab85fd4bbddb77200d34fc5820bf2323232408ac3ff98c41",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_f.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_f.pdf",
+      "sha256": "f0f524ccd8f632e8b1b46b341a8bd66a6d650981a6d64fd301d8b94b2127c7bc",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "figures/results/fig_degradation_heatmap_f.png",
+      "backup": "output/archive/2026-10-13/f1-display-before/figures/results/fig_degradation_heatmap_f.png",
+      "sha256": "9b924dc3f98ebe57be6458812bd94ab7eb49fd3bd10fe7fee2a81bcdd42b7977",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "main.pdf",
+      "backup": "output/archive/2026-10-13/f1-display-before/manuscript-before.pdf",
+      "sha256": "c9630215baf7c72b2300d1757d93f2a9a05f86a097812290c98bb66b7127abea",
+      "reason": "Preserve pre-percentage presentation; copied before authorized edits; original active paths retained."
+    },
+    {
+      "original": "plan/claims.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/claims.md",
+      "sha256": "cde0519b4b9f5ee54827485dc23b540f934889a1130b419771cf1ea6e7178e43",
+      "reason": "Active display guidance and entry-point synchronization; preserve previous version."
+    },
+    {
+      "original": "plan/progress.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/plan/progress.md",
+      "sha256": "3e3a0f4575a69fde7dd930a4906b0a248c92c4f74daffc6ea4ec309980fdd61a",
+      "reason": "Active display guidance and entry-point synchronization; preserve previous version."
+    },
+    {
+      "original": "results/summary/README.md",
+      "backup": "output/archive/2026-10-13/f1-display-before/results/summary/README.md",
+      "sha256": "711fb74e674093567a18d0a21b8aabc497b5f0e7b52bd5d541c277c8b0057b93",
+      "reason": "Active display guidance and entry-point synchronization; preserve previous version."
+    }
+  ],
+  "unchanged_data": {
+    "results/summary/f1_raw_scale/crop_f1_difference_36paths.csv": "6cc27df10824c6aa07bcf7a262337c3fdbfb1641ed9014c0eb0d30c18cdc9c33",
+    "results/summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv": "408c26df88c90db6c903f01edb05af4e8559b2433015a2e0d6af0f9c41e88266",
+    "results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv": "eadfcf53e4b6a636ed43fdae2787eb380de6a39a55c15d574c312d7d29b24aa8",
+    "results/summary/f1_raw_scale/run_manifest.json": "5920a2fcbe3d1a8f111cecf8d07eef5d1319131fd9a5a7c9af7773712c5b5765",
+    "results/summary/f1_raw_scale/within_site_crop_f1.csv": "5c333be499a99b6f7c6e61dbd77a66523e8bafd050707f7261b6c9d520a322d4",
+    "results/summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv": "d5692f76a6e3b9bdf5846cc00f9937fd0a102593b57c9e607d098ae3d6a06210",
+    "results/processed/f1_raw_scale/cross_site_metrics.csv": "6bcf9b697eed21676b8af8065db63b5a9f678f85889cf441620b5c3e419ff675",
+    "results/processed/f1_raw_scale/within_site_metrics.csv": "946eb977e7a672146d21612548fa9a74e89783799e64afced57ddfb099533abe",
+    "results/raw/cross_site_confusion_matrices.csv": "916631a58ce6f775bd1e3e40af63146331a577538de2d9cb9238525b16669df5",
+    "results/raw/within_site_confusion_matrices.csv": "cd9f055eb5b067bfc4d6a674015869d27444951e92a17da58f9875aa7dba158b"
+  }
+}
