@@ -31,8 +31,8 @@ Verified：[v2 JSON](sec13-figure-table-v2-2026-10-11.json) 中的 6 项输入�
 
 ## 后续授权编译（2026-10-11）
 
-用户要求编译后，以 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` 生成 7 页 [main.pdf](../main.pdf)。首次编译发现表格输入后的 `bottomrule` 触发 `Misplaced noalign`，将 02_data.tex 中表格行文件的输入改为可展开的 TeX 输入后通过，表内数据未变。修订前正文、旧编译产物及日志均保留于 [本次编译目录](../output/build-20261011-190347/)，快照清单记录路径与 SHA-256；上面的正文哈希及未编译状态保留为此前核查记录。
+用户要求编译后，以 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` 生成 7 页 [main.pdf](../main.pdf)。首次编译发现表格输入后的 `bottomrule` 触发 `Misplaced noalign`，将 02_data.tex 中表格行文件的输入改为可展开的 TeX 输入后通过，表内数据未变。修订前正文、旧编译产物及日志均保留于 [本次编译目录](../output/archive/2026-10-11/build-20261011-190347/)，快照清单记录路径与 SHA-256；上面的正文哈希及未编译状态保留为此前核查记录。
 
-Verified：最终编译退出码 0，无 Overfull/Underfull、缺字及未解析的引用；渲染并查看全部 7 页，组成图位于第 2 页，完整 AREA/SHAPE 表位于第 3 页，表头、8 行数据、底线及表注均完整。当前 PDF、源码与逐页预览哈希见 [预览清单](../output/archive/2026-10-12/preview-index/preview-manifest.json)及[编译清单](../output/build-20261011-190347/build-manifest.json)。
+Verified：最终编译退出码 0，无 Overfull/Underfull、缺字及未解析的引用；渲染并查看全部 7 页，组成图位于第 2 页，完整 AREA/SHAPE 表位于第 3 页，表头、8 行数据、底线及表注均完整。当前 PDF、源码与逐页预览哈希见 [预览清单](../output/archive/2026-10-12/preview-index/preview-manifest.json)及[编译清单](../output/archive/2026-10-11/build-20261011-190347/build-manifest.json)。
 
 Partially verified：全文定稿排版与参考文献格式。现有浮动体边界使第 4 页右栏留白；仍有宋体、黑体粗体替代警告，以及 FRAGSTATS 的 software 条目不被 unsrtnat 支持、年份字段为空的 BibTeX 警告。本次未改变文献元数据或扩大正文修改范围。

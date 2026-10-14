@@ -86,3 +86,13 @@
 /sections/02_data.tex text eol=crlf
 # Compiler transcripts retain their original spacing.
 /output/previews/2026-10-14-sec132-landscape/**/compile-*.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve original bytes at the 2026-10-15 archive/build destinations.
+/archive/2026-10-15-cancel-remote-plan/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/archive/2026-10-11/build-20261011-190347/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/archive/2026-10-13/f1-percent-preview/** -text whitespace=cr-at-eol
+/output/archive/2026-10-14/cross-f1-means-preview/** -text whitespace=cr-at-eol
+/output/archive/2026-10-14/sec132-landscape-pass1-preview/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/archive/2026-10-15/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/output/build/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/verification/output-organization-2026-10-15.json -text whitespace=cr-at-eol

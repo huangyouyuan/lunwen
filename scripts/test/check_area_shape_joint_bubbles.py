@@ -35,11 +35,12 @@ def rows(path):
 def verify_recorded_hash(name, expected):
     """历史清单保留原文；移动文件及旧代码按归档映射核对原字节。"""
     candidates = [ROOT / name]
-    ledger_path = ROOT / "archive/2026-10-12-area-shape-bubbles/archive-manifest.json"
-    if ledger_path.exists():
-        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
-        candidates.extend(ROOT / r["archive_path"] for r in ledger["files"]
-                          if r["original_path"] == name and r["sha256"] == expected)
+    for ledger_path in [ROOT / "archive/2026-10-12-area-shape-bubbles/archive-manifest.json",
+                        ROOT / "verification/output-organization-2026-10-15.json"]:
+        if ledger_path.exists():
+            ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+            candidates.extend(ROOT / r["archive_path"] for r in ledger["files"]
+                              if r["original_path"] == name and r["sha256"] == expected)
     require(any(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == expected
                 for p in candidates), f"哈希不符或缺少归档映射：{name}")
 

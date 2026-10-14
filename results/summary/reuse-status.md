@@ -1,11 +1,18 @@
 # 成果用途与复用入口
 
+2026-10-15用途复核：缩小仓库计划已取消，[额外副本及配套流程](../../archive/2026-10-15-cancel-remote-plan/README.md)归档。科研成果和下面的科学追溯链全部原位保留，不按大小或是否进入正文归档。下方2026-10-11的恢复核查是历史记录；基础整理、后续空间分析和1.3修订已完成，不能据其旧“下一步”重复执行。
+
+当前阅读顺序是：1.3现行展示及基础表 → 本站模型优势主表 → 全路径跨站保持与固定D来源对照；完整章节取舍见[交接](../../HANDOVER.md)。3.1必要补充与3.3正文仍待写，不再遍历指标寻找统一主因。
+
 更新：2026-10-11，整理前基线`a70e11b`，本版范围见[版本说明](../../plan/version-notes-2026-10-11.md)。这里区分“文件值得保留”与“方案是否用于论文”。有效结果不因来自旧轮次而失去价值；本次未生成新科研结果，也未批准等级候选。
 
 ## 当前证据与可复用探索
 
 | 层级 | 入口 | 可直接复用什么 | 解释和执行边界 |
 |---|---|---|---|
+| 当前1.3展示与本站基础 | [现行表1及联合图](sec13_landscape_display/README.md)、[联合份额v3](area_shape_joint_bubbles_v3/area_shape_joint_bins.csv)、[基础表](sec13_sec31_foundations/README.md) | 四站组成、联合面积份额、NP/AI/ENN P90/ED及12个本站基准 | 1.3已完成，不再以旧表主导叙述；旧中位数、极值、PD及图表仍可复核 |
+| 当前3.1/3.3优先证据 | [模型优势主表](model_advantage_spatial_conditions/main_reading_table.md)、[路径表](model_advantage_spatial_conditions/cross_path_overview.csv) | 16个本站模型比较、48条跨站对照、同支持距离权重及五次方向 | 先补本站参照，再追踪固定D换来源的优势变化；漏分优势不能替代完整F1 |
+| 针对性补充与反例 | [发现提炼](spatial_findings_refinement/README.md)、[全路径空间条件](spatial_error_conditions/README.md) | C/D大豆共同来源与支持、自然计数、四站完整条件表 | 已完成统计，不重做整轮分析；三套权重不混合，形状关联不写成独立作用 |
 | 当前数值基准 | [正式F1](f1_raw_scale/crop_f1_difference_36paths.csv)、[定向收尾](sec33_directional_confusion_closeout/README.md) | 原尺度F1/ΔF1、六向错分、模型分层、六向组成、互斥最近带 | 后续修正优先于旧重叠视图或缺两方向的旧组成表 |
 | 基础参考 | [整图斑块字典](sec33_reference_patch_types/data_dictionary.md)、[分布](sec33_indicator_grading_preparation/README.md) | 完整参考斑块、192份预测计数、参考数组、整站背景与两种权重分布 | `target,PID`连接；完整斑块不同于存储图块和真实田块 |
 | 已有距离证据 | [七带字典](sec33_round3_distance/data_dictionary.md)、[增量配对](sec33_round3_closeout/data_dictionary.md) | 七带整数矩阵、类内漏分率/净贡献、逐次两端Δe、D站五次诊断与原图 | 绝对漏分率配对和Δe配对分别保留，不相互替代；>6是开放远内部 |
@@ -15,6 +22,8 @@
 | 描述性标准化与完整分量 | [距离共同权重](sec33_crop_spatial_context/distance_common_weights.csv)、[完整F1分量](sec33_crop_spatial_context/whole_f1_error_components_summary.csv) | 环境分布和条件错误的描述性对照，两个漏分与两个误分入分量 | 标准化漏分率不是F1；F1分量用自身分母，不是因果贡献 |
 
 类型结果、候选、参考分布不是三种互相替代的证据。1.3可直接复用整站参考背景与连续分布；3.1可直接复用本站矩阵、完整指标和六向错误；3.3可按明确比较复用已有位置和类型证据，不必重新做整轮统计。
+
+本轮暂不投入新的统计：K2/K4重新聚类、共同五档冻结与等级错误、ENN及整站指标的全面扩展。它们的原统计、候选、支持量、字典和核查均保留；ENN中位数相同不表示无信息，AI/ED/NP也不能复制为斑块级独立样本。旧表生成器、探索图和已完成任务记录仍有引用或复现用途，继续原位保存，只按历史用途阅读，不自动执行旧计划。
 
 ## 为什么仍保留一部分归档
 

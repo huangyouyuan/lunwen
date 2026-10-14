@@ -9,7 +9,7 @@
 - 六幅热力图仍为同模型目标站本站F1减跨站五次平均F1，单位为百分点，共享0.00～8.00色标。9份正式F1图PDF的哈希与上轮一致，本轮未重绘。
 - 两份原始矩阵、原计算脚本及7份正式处理/汇总表共10项哈希与原清单一致。180份逐次跨站记录及汇总标准差完整保留。正文既有ConvGRU大豆B→D比C→D波动更大的具体描述保留，没有加入模型稳定性排序。
 - 延续此前展示统一任务的编译验证授权，已成功编译8页PDF，无Overfull/Underfull、缺字或未定义引用。实际查看第7页，表头、数值、表注和热力图无重叠、裁切，表内数字仍为9 pt；其余7页文本与上一版相同。
-- 活动生成说明和写作约定已同步。旧PDF、旧页面预览及历史核查保留原样；新[PDF](../output/previews/2026-10-14-cross-f1-means/manuscript.pdf)和[预览入口](../output/README.md)已更新。
+- 活动生成说明和写作约定已同步。旧PDF、旧页面预览及历史核查保留原样；新[PDF](../output/archive/2026-10-14/cross-f1-means-preview/manuscript.pdf)和[预览入口](../output/README.md)已更新。
 
 机器核查与本次PDF哈希见[记录](cross-f1-mean-only-2026-10-14.json)。展示验证命令：`python -B scripts/test/test_f1_presentation.py`。
 

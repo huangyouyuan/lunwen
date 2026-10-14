@@ -14,6 +14,7 @@ ENN每个完整参考斑块计一次。P90沿用pandas线性顺序统计量：�
 ## 活动文件与复现
 
 - 脚本：`scripts/generate_sec13_landscape_display.py`，只读取保存的summary，不调用原探索脚本的聚合入口。
+- 图件编译中间文件：`output/build/sec132-landscape/figure/`；2026-10-15从预览目录迁出，原脚本字节见[迁移与快照清单](../../../verification/output-organization-2026-10-15.json)。`--check`仍严格检查现有数据和正式输出；生成时脚本哈希按原字节快照核对，不改写历史manifest冒充重新生成。
 - 表体：`tables/sec13_landscape_context_rows.tex`。
 - 联合图：`figures/study_area/fig_sec13_area_shape_joint.pdf`及600 dpi PNG；两份面板PDF均按原尺寸进入LaTeX，图框各7.6×7.6 cm；`.tex`与`_legend.tex`在主文排子图题和共享图例。
 - 正文标签：`tab:sec13_spatial_metrics`、`fig:sec13_area_shape_joint`。当前为表1与图3，数字编号由LaTeX生成。

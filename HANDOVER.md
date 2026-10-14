@@ -8,9 +8,9 @@
 
 本地最新PDF为 `output/previews/2026-10-14-sec132-landscape/manuscript.pdf`，9页，表1与联合图在第4页，SHA-256为 `b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275`。正文现有6图2表：图1研究区、图2组成、图3面积—形状联合分布、图4本站F1、图5 D站本站示例、图6六幅F1差值热力图；图号由LaTeX自动生成。2.1三个模型小节仍只有标题，3.3仍只有标题，引言、摘要与结论未完成；不能把分析报告完成当成正文已写完。本轮只更新交接及必要入口，不修改正文、图表或科学结果，不编译。
 
-作者已要求保存此次修改：完整科研目录 `D:/AI/lunwen/`中的交接修订作本地提交，并同步到 `D:/AI/lunwen-remote-2026-10-14/`，在那里建立用于重推的初始提交。两套提交历史有不同用途，最终提交号与状态以各目录Git为准；本轮不删除远端、不推送。
+2026-10-15作者已取消缩小仓库计划，并改为归档额外副本。继续在完整科研目录 `D:/AI/lunwen/` 工作；本轮起点HEAD为 `4e2562c`，该提交已保存上次交接补全和CC的三处证据路由。原 `D:/AI/lunwen-remote-2026-10-14/` 已连同.git移至 `D:/AI/lunwen_archive/2026-10-15-cancel-remote-plan/lunwen-remote-2026-10-14/`，只作历史保存，不再同步或作为推送入口。本轮没有提交、推送或改写原Git历史。
 
-远端减量保留结果与小型文本，排除归档、资产和达到2,000,000字节的文件；新目录含.git约79 MB，提交后重查100,000,000字节上限。原数据、旧Git和既有工作树保留。完整旧refs已备份为 `D:/AI/lunwen_archive/2026-10-14-remote-slim/full-history.bundle`并通过bundle核验；整理前完整交接在 `D:/AI/lunwen_archive/2026-10-14-source-only-handoff/before/HANDOVER.md`，过度精简的中间稿也留有备份。详见[保存范围](plan/remote-storage.md)及 `plan/remote-local-files.json`。旧文中“全部纳入Git”“可随Git传递”只代表当时版本，不能据此假定新远端包含大表、数组、图片或归档。
+仅停用流程的10份规则、清单、脚本与钩子移入[本轮归档](archive/2026-10-15-cancel-remote-plan/README.md)，保存原路径、原字节和SHA-256；AGENTS.md只撤回末尾“远端保存与交接（作者2026-10-14决定）”一节，其余字节与计划前原件一致；.gitignore同时恢复原规则。完整旧refs备份 `D:/AI/lunwen_archive/2026-10-14-remote-slim/full-history.bundle`、整理前交接 `D:/AI/lunwen_archive/2026-10-14-source-only-handoff/before/HANDOVER.md`及过度精简中间稿继续保留，旧核查仍限于当时时点。科研结果、完整参考斑块、计数、旧图表和Word均原位保留；[用途索引](results/summary/reuse-status.md)区分当前写作重点与保留备查成果，不再按文件大小决定科研材料的去留。
 
 接手先读本节及下面三节主线，再读[写作流程](plan/writing-workflow.md)、[协议](plan/experiment-protocol.md)和[证据路由](plan/results-map.md)。当前任务是把已有证据写清楚，不再无明确问题地探索指标。作者没有认定AREA或SHAPE是分类主因，也没有批准把“边界错误多”作为主要亮点。
 
@@ -153,6 +153,8 @@
 
 ## 归档与验证（历史过程，本地完整保留）
 
+2026-10-15继续整理output：当前9页PDF与第3—5页保持原位；旧整稿预览、试排及根目录备份归档，编译文件转入`output/build/`。下方历史记录中的原路径依[本次迁移清单](verification/output-organization-2026-10-15.json)定位，当前入口为[output/README.md](output/README.md)。只修改目录和引用，未重新编译或变更论文、科学结果；AGENTS.md保持本轮开始时原字节。
+
 [初次归档](archive/2026-10-10-mainline/README.md)范围过宽。632份移入文件先恢复27份，2026-10-11逐项复查其余605份后再恢复413份；累计440份已回原路径，192份仍在归档。完整K2/K4结果、配置、支持、报告和探索图，以及五档候选都已恢复。恢复不批准候选，也不要求沿用旧主方案。路径见[首次恢复](archive/2026-10-10-mainline/restored-reusable.csv)、[第二次恢复](archive/2026-10-10-mainline/restored-second-pass.csv)及[全量复查](archive/2026-10-10-mainline/second-pass-review.csv)。
 
 当前仍归档旧DR、重复F1、被后续互斥分组替代的主视图、图块景观/匹配结果和旧任务。原生产源码与测试保持`.source`历史状态，可按[源码索引](results/summary/reuse-status.md)查阅，恢复计算需先检查写入目标与依赖，不把历史脚本重新列为默认运行入口。
@@ -171,7 +173,7 @@
 | Partially verified | ENN复用既有空间距离，未重算距离或恢复全部FRAGSTATS工程参数；C站玉米ENN最大值涉及外框斑块`ida_2023, PID=69765`。距离限于窗口内最近同类斑块边界像元中心，不是田块净空距离。B站限制见[身份追溯](verification/iw2-identity-provenance.md) |
 | Not verified | 全文最终分页、留白、文献格式及尚未完成章节的科学论述；既有字体替代、xeCJK、caption等警告未作为本次任务处理。图表字体通过不等于论文已定稿 |
 
-2026-10-13版本预览包含8页，F1展示变化集中于第4—7页；表1仍在第4页。旧7页稿件、表1位于第3页以及仅预览第3、5页的记录均为历史状态。本地`main.pdf`仍按既有规则忽略，同字节[当前8页PDF快照](output/previews/2026-10-13-f1-percent/manuscript.pdf)已保存，并按2026-10-14作者指令随本次提交纳入Git；PDF哈希及来源见[预览清单](output/preview-manifest.json)。
+2026-10-13版本预览包含8页，F1展示变化集中于第4—7页；表1仍在第4页。旧7页稿件、表1位于第3页以及仅预览第3、5页的记录均为历史状态。本地`main.pdf`仍按既有规则忽略，同字节[该次8页PDF快照](output/archive/2026-10-13/f1-percent-preview/manuscript.pdf)已保存，并按2026-10-14作者指令随本次提交纳入Git；PDF哈希及来源见[预览清单](output/preview-manifest.json)。
 
 ## 工作区交接（2026-10-12收尾历史记录）
 

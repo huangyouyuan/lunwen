@@ -1,40 +1,47 @@
-# 预览与归档入口
+# 论文预览、编译文件与历史归档
 
-**2026-10-14当前版本：**[9页PDF](previews/2026-10-14-sec132-landscape/manuscript.pdf)。1.3.2已重写，表1采用斑块数、AI、ENN等权P90和整站ED，面积—形状联合图接入为图3；表1与图3均在第4页。[第3页正文](previews/2026-10-14-sec132-landscape/page-3.png)、[第4页表图](previews/2026-10-14-sec132-landscape/page-4.png)、[第5页衔接](previews/2026-10-14-sec132-landscape/page-5.png)已查看。哈希见[清单](preview-manifest.json)，范围见[核查记录](../verification/sec132-landscape-2026-10-14.md)；未自动提交。此前跨站主表仅均值的改动保留。
+当前可审阅稿为[9页PDF](previews/2026-10-14-sec132-landscape/manuscript.pdf)，对应论文提交`17eb1e4`。1.3.2、表1及面积—形状联合图已更新，跨站主表只显示平均F1。表1与图3在第4页；已保存的页面预览为[第3页](previews/2026-10-14-sec132-landscape/page-3.png)、[第4页](previews/2026-10-14-sec132-landscape/page-4.png)、[第5页](previews/2026-10-14-sec132-landscape/page-5.png)。
 
-**2026-10-14上一版（仅跨站表均值调整）：**[8页PDF](previews/2026-10-14-cross-f1-means/manuscript.pdf)；跨站主表仅显示平均F1（%），[第7页预览](previews/2026-10-14-cross-f1-means/page-7.png)已核对，热力图不变。其余7页文本与上一版本相同。该版[哈希清单](previews/2026-10-14-sec132-landscape/previous-preview-manifest.json)及[核查记录](../verification/cross-f1-mean-only-2026-10-14.md)对应此版本；本次未提交。
+PDF及页面哈希见[当前清单](preview-manifest.json)，2026-10-14版面与数字核查见[原记录](../verification/sec132-landscape-2026-10-14.md)。这不是整篇定稿验证。2026-10-15仅整理文件位置，PDF、预览、正文、科学数据和正式图件均未改变，也没有重新编译。
 
-以下为2026-10-13上一版本的预览与归档说明，保留其记录时点；其中主表仍显示“±标准差”。
+## 目录分工
 
-本目录存放页面预览和核查备份。正式论文图件在[figures](../figures/)，2026-10-13统一F1展示后的8页稿件已保存为[可审阅PDF](previews/2026-10-13-f1-percent/manuscript.pdf)，与当前本地`main.pdf`哈希一致。2026-10-14按作者明确指令随本次提交保存。
+| 位置 | 内容与使用规则 |
+|---|---|
+| `previews/<日期-任务>/` | 当前可审阅整稿PDF和必要页面图片；现仅保留上述9页稿，旧稿退出此目录 |
+| `build/<任务>/` | 图件独立编译源码、中间PDF、日志及整稿编译日志；不作为整稿审阅入口 |
+| `archive/<日期>/<任务>/` | 被替代的整稿预览、试排、修改前备份和检查产物；原字节保留，不自动执行其中的旧源码 |
+| `preview-manifest.json` | 绑定当前PDF、页面图片及原核查范围；历史清单按归档映射定位 |
 
-## 2026-10-13预览
+正式论文图件仍在[figures](../figures/)，正式表体在[tables](../tables/)，数值权威为[results/summary](../results/summary/)。`output`不保存新的科学结果副本。
 
-2026-10-13已将F1及标准差改为百分数、差值改为百分点，重新编译8页并渲染全页。重点逐页检查第4—7页，其余页结合总览核对；此次验证限于F1展示及受影响版面，不代表论文已定稿。
+## 当前编译文件
 
-- [第4页：方法中的F1定义](previews/2026-10-13-f1-percent/page-4.png)
-- [第5页：本站F1条形图及3.1正文](previews/2026-10-13-f1-percent/page-5.png)
-- [第6页：3.2正文](previews/2026-10-13-f1-percent/page-6.png)
-- [第7页：跨站均值±标准差表及六幅差值热力图](previews/2026-10-13-f1-percent/page-7.png)
-- [全部8页预览目录](previews/2026-10-13-f1-percent/)
+- [景观联合图编译文件](build/sec132-landscape/figure/)及[对应整稿日志](build/sec132-landscape/)；生成入口为`scripts/generate_sec13_landscape_display.py`。
+- [独立气泡图v3编译文件](build/area_shape_joint_bubbles_v3/)；生成入口为`scripts/plot_area_shape_joint_bubbles.py`，正式探索图仍在`figures/exploratory/area_shape_joint_bubbles_v3/`。
 
-对应PDF和图片哈希见[当前预览清单](preview-manifest.json)，数值、字体及版面检查见[F1展示核查](../verification/f1-display-2026-10-13/README.md)。若后续修改稿件，以清单中的PDF哈希判断这些预览是否仍对应当前版本。
+两个生成入口已改为写入`build/`；已有输出先按规则保存，不能覆盖后再补备份。正常修改仍遵守AGENTS.md的编译授权条件。
 
-## 历史预览
+## 历史入口
 
-- [2026-10-12图2/图3样式版PDF](previews/2026-10-12-figure23-bars/manuscript.pdf)及同目录第3、5页预览保留原位。
-- [2026-10-13 F1展示修改前备份](archive/2026-10-13/f1-display-before/)保存40份原文件，包括旧正式图、表、脚本、正文、规范、PDF及预览清单；[备份清单](archive/2026-10-13/f1-display-before/manifest.json)记录原路径、备份路径、用途与SHA-256。仅为历史审阅，不作为当前生成入口。
+| 任务 | 位置 |
+|---|---|
+| 2026-10-14景观首轮试排 | [试排PDF、页面及日志](archive/2026-10-14/sec132-landscape-pass1-preview/) |
+| 2026-10-14跨站主表仅均值版 | [8页PDF及第7页预览](archive/2026-10-14/cross-f1-means-preview/)，[该版清单](archive/2026-10-14/cross-f1-means-preview/preview-manifest.json) |
+| 2026-10-13 F1百分数版 | [8页PDF与全页预览](archive/2026-10-13/f1-percent-preview/)，[该版清单](archive/2026-10-14/cross-f1-means-preview/previous-preview-manifest.json)；此版主表仍为均值±标准差 |
+| 2026-10-12图2/图3条形版 | [8页PDF及第3、5页预览](archive/2026-10-12/figure23-bars-preview/) |
+| 2026-10-11编译与修改前备份 | [编译目录](archive/2026-10-11/build-20261011-190347/) |
+| ENN表放大前备份、字体与条形修改前备份 | [源码备份](archive/2026-10-12/source-backups/)；各组原清单均保留 |
+| F1展示修改前备份 | [原文件及清单](archive/2026-10-13/f1-display-before/) |
+| 1.3.2景观修订前备份 | [原文件及清单](archive/2026-10-14/sec132-landscape-before/) |
+| 更早的研究区、正文与表格页面 | [2026-10-12归档索引](archive/2026-10-12/README.md) |
+| 本次整理前入口、脚本与引用说明 | [原字节快照](archive/2026-10-15/organization-before/)；只保存本轮实际修改的文件 |
+| 根目录遗留的文献检查产物 | [参考文献检查归档](archive/2026-10-15/reference-audit/)；归档日期不代表生成日期 |
 
-[2026-10-12归档索引](archive/2026-10-12/README.md)按研究区、1.1润色、1.3表格、字体检查等任务收纳此前散放的图片。文件原名和内容均保留；原路径、新路径、原因及SHA-256见[迁移清单](../verification/output-preview-archive-2026-10-12.json)。
+## 整理记录与后续保存
 
-已完整纳入Git的修改前备份：
+[本次迁移与核查清单](../verification/output-organization-2026-10-15.json)记录67份移动文件、3个遗留空目录、修改前快照的原/新路径、原因与SHA-256。原有历史JSON及快照不改写，旧路径通过该清单和既有迁移记录解析；同内容但承担不同备份用途的文件保留。
 
-- [图表字体检查前备份](archive/2026-10-12/source-backups/font-audit-20261012-before-sources/)，12个文件，含原PDF、日志和暂存补丁。
-- [图2/图3样式统一前备份](archive/2026-10-12/source-backups/figure23-bars-20261012-before/)，20个文件，含原图件、PDF、日志和源码。
+**Verified（2026-10-15）**：原236份文件全部保留并逐字节核对，当前PDF及3张页面图片哈希不变；201个本地文档链接和两项受影响的只读检查通过。AGENTS.md、忽略规则、正文、正式图件和科学数值未改。本轮未暂存或提交；清单的`git_preservation`列明15份原已跟踪、迁移后仍匹配既有忽略规则的文件，后续提交须显式纳入，不能因忽略规则漏掉它们。
 
-两组原始清单和源码内容不变，旧路径按[收尾迁移清单](../verification/output-handoff-closeout-2026-10-12.json)解析；源码仅供历史审阅，不作为执行入口。此前已纳入版本的成组资料仍在原位置：
-
-- [2026-10-11编译与修改前备份](build-20261011-190347/)
-- [ENN表放大前备份](sec13-enn-20261012-before-large/)
-
-后续页面预览放入`previews/<日期-任务>/`，每次更新清单和本入口；历史版本经用途与引用核对后按任务归档，不再把PNG平铺在根目录。
+后续完成新稿审阅后，把旧稿整体移入对应日期归档，更新本入口和当前清单；试排不与最终预览并列，编译中间文件不写入`previews/`或根目录。归档前先查引用和目标是否存在，移动后核对原字节，修正活动链接。不得用删除或扩大忽略范围来清理目录。

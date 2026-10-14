@@ -21,7 +21,7 @@
 - 图件：`figures/exploratory/area_shape_joint_bubbles_v3/fig_area_shape_joint_bubbles.pdf`及同名600 dpi PNG。
 - 生产脚本：`scripts/plot_area_shape_joint_bubbles.py`。运行`python -B scripts/plot_area_shape_joint_bubbles.py --check --tag area_shape_joint_bubbles_v3`可只读核对；另存复现用新的`--tag`，已有输出不覆盖。
 - 独立核查：`python -B scripts/test/check_area_shape_joint_bubbles.py --tag area_shape_joint_bubbles_v3`。
-- 中间图框、独立LaTeX图件源码与日志在`output/previews/2026-10-12-area_shape_joint_bubbles_v3/`，不是主论文编译产物。
+- 中间图框、独立LaTeX图件源码与日志在`output/build/area_shape_joint_bubbles_v3/`，不是主论文编译产物。2026-10-15只迁移中间文件并同步路径；原manifest的路径与哈希按[迁移清单](../../../verification/output-organization-2026-10-15.json)及已有气泡图归档映射核对，统计和图件没有重生成。
 
 ## 图形语义与核查范围
 

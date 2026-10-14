@@ -27,7 +27,7 @@ JOINT = ROOT / "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bin
 SUMMARY = ROOT / "results/summary/sec13_landscape_display"
 FIGURES = ROOT / "figures/study_area"
 TABLE = ROOT / "tables/sec13_landscape_context_rows.tex"
-BUILD = ROOT / "output/previews/2026-10-14-sec132-landscape/figure-build"
+BUILD = ROOT / "output/build/sec132-landscape/figure"
 STEM = "fig_sec13_area_shape_joint"
 SITES = {"A": "iw_2023", "B": "iw2_2023", "C": "ida_2023", "D": "il_2023"}
 CROPS = {"corn": "玉米", "soybean": "大豆"}
@@ -186,18 +186,28 @@ def main():
         for path, value in texts.items():
             require(path.read_text(encoding="utf-8") == value, f"Display output differs: {path}")
         manifest = json.loads((SUMMARY / "manifest.json").read_text(encoding="utf-8"))
+        relocation_path = ROOT / "verification/output-organization-2026-10-15.json"
+        relocations = json.loads(relocation_path.read_text(encoding="utf-8"))["files"] if relocation_path.exists() else []
         for group in ("input_sha256", "output_sha256"):
             for name, expected in manifest[group].items():
-                require(digest(ROOT / name) == expected, f"Recorded hash differs: {name}")
+                candidates = [ROOT / name]
+                # Preserve the recorded generation source; path-only maintenance
+                # does not retroactively change which script produced the figures.
+                if group == "input_sha256" and name.startswith("scripts/"):
+                    candidates.extend(ROOT / row["archive_path"] for row in relocations
+                                      if row["action"] == "snapshot" and row["original_path"] == name
+                                      and row["sha256"] == expected)
+                require(any(path.is_file() and digest(path) == expected for path in candidates),
+                        f"Recorded hash differs: {name}")
         print(json.dumps(dict(status="Verified", groups=8, joint_cells=192,
                               patches=int(table.patch_count.sum()), enn="reused patch-equal P90")))
         return
     figure_paths = [FIGURES / f"{STEM}{suffix}" for suffix in
                     ["_frames.pdf", "_a.pdf", "_b.pdf", "_legend.tex", ".tex", ".pdf", ".png"]]
-    for path in [*texts, *figure_paths, SUMMARY / "manifest.json"]:
+    for path in [*texts, *figure_paths, SUMMARY / "manifest.json", BUILD]:
         require(not path.exists(), f"Preserve existing output first: {path}")
     SUMMARY.mkdir(parents=True, exist_ok=True)
-    BUILD.mkdir(parents=True, exist_ok=True)
+    BUILD.mkdir(parents=True, exist_ok=False)
     for path, value in texts.items():
         path.write_text(value, encoding="utf-8", newline="\n")
     geometry = bubbles.draw_frames(joint, FIGURES / f"{STEM}_frames.pdf")

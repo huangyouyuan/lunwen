@@ -1,0 +1,746 @@
+\begin{thebibliography}{73}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Banerjee et~al.({\natexlab{a}})Banerjee, Nandi, Sati, Mezlini,
+  Alkhuraiji, Al-Halbouni, and Zhran]{banerjeeIntegratingRemoteSensing2025}
+Surajit Banerjee, Tuhina Nandi, Vishwambhar~Prasad Sati, Wiem Mezlini,
+  Wafa~Saleh Alkhuraiji, Djamil Al-Halbouni, and Mohamed Zhran.
+\newblock Integrating {{Remote Sensing}}, {{Landscape Metrics}}, and {{Random
+  Forest Algorithm}} to {{Analyze Crop Patterns}}, {{Factors}}, {{Diversity}},
+  and {{Fragmentation}} in a {{Kharif Agricultural Landscape}}.
+\newblock 14\penalty0 (6):\penalty0 1203, {\natexlab{a}}.
+\newblock ISSN 2073-445X.
+\newblock \doi{10.3390/land14061203}.
+\newblock URL \url{https://www.mdpi.com/2073-445X/14/6/1203}.
+
+\bibitem[Banerjee et~al.({\natexlab{b}})Banerjee, Nandi, Sati, Mezlini,
+  Alkhuraiji, Al-Halbouni, and Zhran]{banerjeeIntegratingRemoteSensing2025a}
+Surajit Banerjee, Tuhina Nandi, Vishwambhar~Prasad Sati, Wiem Mezlini,
+  Wafa~Saleh Alkhuraiji, Djamil Al-Halbouni, and Mohamed Zhran.
+\newblock Integrating {{Remote Sensing}}, {{Landscape Metrics}}, and {{Random
+  Forest Algorithm}} to {{Analyze Crop Patterns}}, {{Factors}}, {{Diversity}},
+  and {{Fragmentation}} in a {{Kharif Agricultural Landscape}}.
+\newblock 14\penalty0 (6):\penalty0 1203, {\natexlab{b}}.
+\newblock ISSN 2073-445X.
+\newblock \doi{10.3390/land14061203}.
+\newblock URL \url{https://www.mdpi.com/2073-445X/14/6/1203}.
+
+\bibitem[Che et~al.()Che, Pan, Xia, Zhu, Li, Huang, Zheng, and
+  Wang]{cheNewTransferableDeep2024}
+Hongyan Che, Yaozhong Pan, Xingsheng Xia, Xiufang Zhu, Le~Li, Yongsheng Huang,
+  Xuechang Zheng, and Lingang Wang.
+\newblock A new transferable deep learning approach for crop mapping.
+\newblock 61\penalty0 (1):\penalty0 2395700.
+\newblock ISSN 1548-1603.
+\newblock \doi{10.1080/15481603.2024.2395700}.
+\newblock URL \url{https://doi.org/10.1080/15481603.2024.2395700}.
+
+\bibitem[Chen et~al.({\natexlab{a}})Chen, Hu, Cai, Yang, Zhou, Hu, Wang, You,
+  and Xu]{chenPhenologybasedVegetationIndex2024a}
+Yunping Chen, Jie Hu, Zhiwen Cai, Jingya Yang, Wei Zhou, Qiong Hu, Cong Wang,
+  Liangzhi You, and Baodong Xu.
+\newblock A phenology-based vegetation index for improving ratoon rice mapping
+  using harmonized {{Landsat}} and {{Sentinel-2}} data.
+\newblock 23\penalty0 (4):\penalty0 1164--1178, {\natexlab{a}}.
+\newblock ISSN 20953119.
+\newblock \doi{10.1016/j.jia.2023.05.035}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S2095311923001600}.
+
+\bibitem[Chen et~al.({\natexlab{b}})Chen, Hu, Cai, Yang, Zhou, Hu, Wang, You,
+  and Xu]{chenPhenologybasedVegetationIndex2024b}
+Yunping Chen, Jie Hu, Zhiwen Cai, Jingya Yang, Wei Zhou, Qiong Hu, Cong Wang,
+  Liangzhi You, and Baodong Xu.
+\newblock A phenology-based vegetation index for improving ratoon rice mapping
+  using harmonized {{Landsat}} and {{Sentinel-2}} data.
+\newblock 23\penalty0 (4):\penalty0 1164--1178, {\natexlab{b}}.
+\newblock ISSN 2095-3119.
+\newblock \doi{10.1016/j.jia.2023.05.035}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2095311923001600}.
+
+\bibitem[{陈诗扬} and
+  {刘佳}()]{ChenShiYangJiYuGF6ShiXuShuJuDeNongZuoWuShiBieShenDuXueXiSuanFaPingGu2021a}
+{陈诗扬} and {刘佳}.
+\newblock 基于gf-6时序数据的农作物识别深度学习算法评估.
+\newblock 37\penalty0 (15):\penalty0 161--168.
+\newblock ISSN 1002-6819.
+\newblock \doi{10.11975/j.issn.1002-6819.2021.15.020}.
+\newblock URL \url{https://d.wanfangdata.com.cn/periodical/nygcxb202115020}.
+
+\bibitem[Dakir et~al.(2023/17/31)Dakir, Barramou, and
+  Alami]{dakirMachineLearningbasedModel2023}
+Asmae Dakir, Fatimazahra Barramou, and Omar~Bachir Alami.
+\newblock Towards a {{Machine Learning-based Model}} for {{Automated Crop Type
+  Mapping}}.
+\newblock 14\penalty0 (1), 2023/17/31.
+\newblock ISSN 2156-5570.
+\newblock \doi{10.14569/IJACSA.2023.0140185}.
+\newblock URL
+  \url{https://thesai.org/Publications/ViewPaper?Volume=14&Issue=1&Code=IJACSA&SerialNo=85}.
+
+\bibitem[Decourt et~al.()Decourt, VanRullen, Salle, and
+  Oberlin]{decourtRecurrentCNNOnline2024}
+Colin Decourt, Rufin VanRullen, Didier Salle, and Thomas Oberlin.
+\newblock A recurrent {{CNN}} for online object detection on raw radar frames.
+\newblock 25\penalty0 (10):\penalty0 13432--13441.
+\newblock ISSN 1524-9050, 1558-0016.
+\newblock \doi{10.1109/TITS.2024.3404076}.
+\newblock URL \url{http://arxiv.org/abs/2212.11172}.
+
+\bibitem[Fare~Garnot and
+  Landrieu()]{faregarnotPanopticSegmentationSatellite2021}
+Vivien~Sainte Fare~Garnot and Loic Landrieu.
+\newblock Panoptic {{Segmentation}} of {{Satellite Image Time Series}} with
+  {{Convolutional Temporal Attention Networks}}.
+\newblock In \emph{2021 {{IEEE}}/{{CVF International Conference}} on {{Computer
+  Vision}} ({{ICCV}})}, pages 4852--4861.
+\newblock \doi{10.1109/ICCV48922.2021.00483}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/9711189}.
+
+\bibitem[盖爽 et~al.()盖爽, 张锦水, and
+  朱爽]{GaiShuangShenDuXueXiZuoWuFenLeiMoXingKongJianFanHuaNengLiFenXi2024}
+盖爽, 张锦水, and 朱爽.
+\newblock 深度学习作物分类模型空间泛化能力分析.
+\newblock 27\penalty0 (12):\penalty0 2796--2814.
+\newblock ISSN 1007-4619.
+\newblock \doi{10.11834/jrs.20221408}.
+\newblock URL
+  \url{https://www.ygxb.ac.cn/zh/article/doi/10.11834/jrs.20221408/}.
+
+\bibitem[Garnot and Landrieu()]{garnotLightweightTemporalSelfattention2020}
+Vivien Sainte~Fare Garnot and Loic Landrieu.
+\newblock Lightweight {{Temporal Self-attention}} for~{{Classifying Satellite
+  Images Time~Series}}.
+\newblock In Vincent Lemaire, Simon Malinowski, Anthony Bagnall, Thomas Guyet,
+  Romain Tavenard, and Georgiana Ifrim, editors, \emph{Advanced {{Analytics}}
+  and {{Learning}} on {{Temporal Data}}}, pages 171--181. Springer
+  International Publishing.
+\newblock ISBN 978-3-030-65742-0.
+\newblock \doi{10.1007/978-3-030-65742-0_12}.
+
+\bibitem[Ge et~al.()Ge, Zhang, Pan, Yang, and
+  Zhu]{geTransferableDeepLearning2021}
+Shuang Ge, Jinshui Zhang, Yaozhong Pan, Zhi Yang, and Shuang Zhu.
+\newblock Transferable deep learning model based on the phenological matching
+  principle for mapping crop extent.
+\newblock 102:\penalty0 102451.
+\newblock ISSN 1569-8432, 1872-826X.
+\newblock \doi{10.1016/j.jag.2021.102451}.
+
+\bibitem[Gevaert and Belgiu()]{gevaertAssessingGeneralizationCapability2022}
+Caroline~M. Gevaert and Mariana Belgiu.
+\newblock Assessing the generalization capability of deep learning networks for
+  aerial image classification using landscape metrics.
+\newblock 114:\penalty0 103054.
+\newblock ISSN 1569-8432.
+\newblock \doi{10.1016/j.jag.2022.103054}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1569843222002424}.
+
+\bibitem[Hao et~al.()Hao, Di, Zhang, and Guo]{haoTransferLearningCrop2020a}
+Pengyu Hao, Liping Di, Chen Zhang, and Liying Guo.
+\newblock Transfer {{Learning}} for {{Crop}} classification with {{Cropland
+  Data Layer}} data ({{CDL}}) as training samples.
+\newblock 733:\penalty0 138869.
+\newblock ISSN 0048-9697.
+\newblock \doi{10.1016/j.scitotenv.2020.138869}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S004896972032386X}.
+
+\bibitem[Hesselbarth et~al.()Hesselbarth, Sciaini, With, Wiegand, and
+  Nowosad]{hesselbarthLandscapemetricsOpensourceTool2019}
+Maximilian Hesselbarth, Marco Sciaini, Kimberly With, Kerstin Wiegand, and
+  Jakub Nowosad.
+\newblock Landscapemetrics : An open‐source {{R}} tool to calculate landscape
+  metrics.
+\newblock 42:\penalty0 1648--1657.
+\newblock \doi{10.1111/ecog.04617}.
+
+\bibitem[{黄健熙} et~al.(){黄健熙}, {侯矞焯}, {苏伟}, {刘峻明},
+  and
+  {朱德海}]{HuangJianXiJiYuGF1WFVShuJuDeYuMiYuDaDouZhongZhiMianJiTiQuFangFa2017}
+{黄健熙}, {侯矞焯}, {苏伟}, {刘峻明}, and {朱德海}.
+\newblock 基于gf-1 wfv数据的玉米与大豆种植面积提取方法.
+\newblock 33\penalty0 (7):\penalty0 164--170.
+\newblock ISSN 1002-6819.
+\newblock \doi{10.11975/j.issn.1002-6819.2017.07.021}.
+\newblock URL
+  \url{http://www.tcsae.org/cn/article/doi/10.11975/j.issn.1002-6819.2017.07.021}.
+
+\bibitem[Int()]{IntegratingRemoteSensing}
+Integrating {{Remote Sensing}}, {{Landscape Metrics}}, and {{Random Forest
+  Algorithm}} to {{Analyze Crop Patterns}}, {{Factors}}, {{Diversity}}, and
+  {{Fragmentation}} in a {{Kharif Agricultural Landscape}}.
+\newblock URL \url{https://www.mdpi.com/2073-445X/14/6/1203}.
+
+\bibitem[Ji et~al.()Ji, Zhang, Xu, Shi, and Duan]{ji3DConvolutionalNeural2018}
+Shunping Ji, Chi Zhang, Anjian Xu, Yun Shi, and Yulin Duan.
+\newblock {{3D Convolutional Neural Networks}} for {{Crop Classification}} with
+  {{Multi-Temporal Remote Sensing Images}}.
+\newblock 10\penalty0 (1):\penalty0 75.
+\newblock ISSN 2072-4292.
+\newblock \doi{10.3390/rs10010075}.
+\newblock URL \url{https://www.mdpi.com/2072-4292/10/1/75}.
+
+\bibitem[Joshi et~al.()Joshi, Pradhan, Chakraborty, Varatharajoo, Gite, and
+  Alamri]{joshiDeepTransferLearningStrategiesCrop2024}
+Abhasha Joshi, Biswajeet Pradhan, Subrata Chakraborty, Renuganth Varatharajoo,
+  Shilpa Gite, and Abdullah Alamri.
+\newblock Deep-{{Transfer-Learning Strategies}} for {{Crop Yield Prediction
+  Using Climate Records}} and {{Satellite Image Time-Series Data}}.
+\newblock 16\penalty0 (24):\penalty0 4804.
+\newblock ISSN 2072-4292.
+\newblock \doi{10.3390/rs16244804}.
+\newblock URL \url{https://www.mdpi.com/2072-4292/16/24/4804}.
+
+\bibitem[Kussul et~al.()Kussul, Lavreniuk, Skakun, and
+  Shelestov]{kussulDeepLearningClassification2017}
+Nataliia Kussul, Mykola Lavreniuk, Sergii Skakun, and Andrii Shelestov.
+\newblock Deep {{Learning Classification}} of {{Land Cover}} and {{Crop Types
+  Using Remote Sensing Data}}.
+\newblock 14\penalty0 (5):\penalty0 778--782.
+\newblock ISSN 1558-0571.
+\newblock \doi{10.1109/LGRS.2017.2681128}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/7891032}.
+
+\bibitem[Li et~al.({\natexlab{a}})Li, Di, Zhang, Lin, Guo, Yu, and
+  Yang]{liAutomatedInSeasonCropType2024}
+Hui Li, Liping Di, Chen Zhang, Li~Lin, Liying Guo, Eugene~G. Yu, and Zhengwei
+  Yang.
+\newblock Automated {{In-Season Crop-Type Data Layer Mapping Without Ground
+  Truth}} for the {{Conterminous United States Based}} on {{Multisource
+  Satellite Imagery}}.
+\newblock 62:\penalty0 1--14, {\natexlab{a}}.
+\newblock ISSN 1558-0644.
+\newblock \doi{10.1109/TGRS.2024.3361895}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/10419370/}.
+
+\bibitem[Li et~al.({\natexlab{b}})Li, Tian, and
+  Tian]{liDeepLearningApplication2023}
+Qianjing Li, Jia Tian, and Qingjiu Tian.
+\newblock Deep {{Learning Application}} for {{Crop Classification}} via
+  {{Multi-Temporal Remote Sensing Images}}.
+\newblock 13\penalty0 (4):\penalty0 906, {\natexlab{b}}.
+\newblock ISSN 2077-0472.
+\newblock \doi{10.3390/agriculture13040906}.
+\newblock URL \url{https://www.mdpi.com/2077-0472/13/4/906}.
+
+\bibitem[Li et~al.({\natexlab{c}})Li, Song, Hansen, Becker-Reshef, Adusei,
+  Pickering, Wang, Wang, Lin, Zalles, Potapov, Stehman, and
+  Justice]{liDevelopment10mResolution2023}
+Haijun Li, Xiao-Peng Song, Matthew~C. Hansen, Inbal Becker-Reshef, Bernard
+  Adusei, Jeffrey Pickering, Li~Wang, Lei Wang, Zhengyang Lin, Viviana Zalles,
+  Peter Potapov, Stephen~V. Stehman, and Chris Justice.
+\newblock Development of a 10-m resolution maize and soybean map over
+  {{China}}: {{Matching}} satellite-based crop classification with sample-based
+  area estimation.
+\newblock 294:\penalty0 113623, {\natexlab{c}}.
+\newblock ISSN 0034-4257.
+\newblock \doi{10.1016/j.rse.2023.113623}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0034425723001748}.
+
+\bibitem[Lu et~al.()Lu, Wan, and Wang]{luFineCropClassification2022}
+Tingyu Lu, Luhe Wan, and Lei Wang.
+\newblock Fine crop classification in high resolution remote sensing based on
+  deep learning.
+\newblock 10.
+\newblock ISSN 2296-665X.
+\newblock \doi{10.3389/fenvs.2022.991173}.
+\newblock URL
+  \url{https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.991173/full}.
+
+\bibitem[Luo et~al.()Luo, Meng, Hu, Wang, and
+  Zhong]{luoCropnetDeepSpatialTemporalSpectral2020}
+Chang Luo, Shiyao Meng, Xin Hu, Xinyu Wang, and Yanfei Zhong.
+\newblock Cropnet: {{Deep Spatial-Temporal-Spectral Feature Learning Network}}
+  for {{Crop Classification}} from {{Time-Series Multi-Spectral Images}}.
+\newblock In \emph{{{IGARSS}} 2020 - 2020 {{IEEE INTERNATIONAL GEOSCIENCE AND
+  REMOTE SENSING SYMPOSIUM}}}, pages 4187--4190. IEEE.
+\newblock ISBN 978-1-7281-6374-1.
+\newblock \doi{10.1109/IGARSS39084.2020.9324097}.
+\newblock URL
+  \url{https://webofscience.clarivate.cn/wos/woscc/full-record/WOS:000664335304019}.
+
+\bibitem[Maleki et~al.()Maleki, Wu, Oubara, Fathollahi, and
+  Yang]{malekiRefinementCroplandData2024}
+Reza Maleki, Falin Wu, Amel Oubara, Loghman Fathollahi, and Gongliu Yang.
+\newblock Refinement of {{Cropland Data Layer}} with {{Effective Confidence
+  Layer Interval}} and {{Image Filtering}}.
+\newblock 14\penalty0 (8):\penalty0 1285.
+\newblock ISSN 2077-0472.
+\newblock \doi{10.3390/agriculture14081285}.
+\newblock URL
+  \url{https://www.proquest.com/docview/3097802729?pq-origsite=wos&accountid=36206}.
+
+\bibitem[Map()]{MappingCropType2025}
+Mapping crop type in {{Northeast China}} during 2017-2023 ({{Including}} code
+  for classification).
+\newblock URL
+  \url{https://figshare.com/articles/dataset/Mapping_crop_type_in_Northeast_China_during_2017-2023_Including_code_for_classification_/25346038/1}.
+
+\bibitem[Mccormick et~al.()Mccormick, Thenkabail, Aneece, Teluguntla, Oliphant,
+  and Foley]{mccormickArtificialNeuralNetwork2025}
+Richard Mccormick, Prasad~S. Thenkabail, Itiya Aneece, Pardhasaradhi
+  Teluguntla, Adam~J. Oliphant, and Daniel Foley.
+\newblock Artificial {{Neural Network Multi-layer Perceptron Models}} to
+  {{Classify California}}'s {{Crops}} using {{Harmonized Landsat Sentinel}}
+  ({{HLS}}) {{Data}}.
+\newblock 91\penalty0 (2).
+\newblock ISSN 0099-1112, 2374-8079.
+\newblock \doi{10.14358/PERS.24-00072R3}.
+
+\bibitem[McGarigal et~al.({\natexlab{a}})McGarigal, Cushman, and
+  Ene]{mcgarigal2023fragstats}
+Kevin McGarigal, Samuel~A. Cushman, and Eduard Ene.
+\newblock {{FRAGSTATS}} v4: {{Spatial}} pattern analysis program for
+  categorical maps, {\natexlab{a}}.
+\newblock URL \url{https://www.fragstats.org}.
+
+\bibitem[McGarigal et~al.({\natexlab{b}})McGarigal, Cushman, Neel, and
+  Ene]{mcgarigalFRAGSTATSSpatialPattern2002}
+K.S. McGarigal, Samuel Cushman, Maile Neel, and E.~Ene.
+\newblock {{FRAGSTATS}}: {{Spatial}} pattern analysis program for categorical
+  maps.
+\newblock {\natexlab{b}}.
+
+\bibitem[Miller et~al.()Miller, Pelletier, and
+  Webb]{millerDeepLearningSatellite2024}
+Lynn Miller, Charlotte Pelletier, and Geoffrey~I. Webb.
+\newblock Deep {{Learning}} for {{Satellite Image Time-Series Analysis}}: {{A}}
+  review.
+\newblock 12\penalty0 (3):\penalty0 81--124.
+\newblock ISSN 2168-6831.
+\newblock \doi{10.1109/MGRS.2024.3393010}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/10529247}.
+
+\bibitem[PDF({\natexlab{a}})]{PDFFRAGSTATSFenLeiTuDeKongJianMoShiFenXiChengXu}
+（{{PDF}}）{{FRAGSTATS}}：分类图的空间模式分析程序,
+  {\natexlab{a}}.
+\newblock URL
+  \url{https://www.researchgate.net/publication/259011515_FRAGSTATS_Spatial_pattern_analysis_program_for_categorical_maps}.
+
+\bibitem[PDF({\natexlab{b}})]{PDFLandscapemetricsOpensourcea}
+({{PDF}}) landscapemetrics : An open‐source {{R}} tool to calculate landscape
+  metrics, {\natexlab{b}}.
+\newblock URL
+  \url{https://www.researchgate.net/publication/334190357_landscapemetrics_an_open-source_R_tool_to_calculate_landscape_metrics}.
+
+\bibitem[Peng et~al.({\natexlab{a}})Peng, Zhang, Xie, and
+  Qu]{pengCSTNCrossregionCrop2025}
+Shuwen Peng, Liqiang Zhang, Rongchang Xie, and Ying Qu.
+\newblock {{CSTN}}: {{A}} cross-region crop mapping method integrating
+  self-training and contrastive domain adaptation.
+\newblock 136:\penalty0 104379, {\natexlab{a}}.
+\newblock ISSN 1569-8432.
+\newblock \doi{10.1016/j.jag.2025.104379}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1569843225000263}.
+
+\bibitem[Peng et~al.({\natexlab{b}})Peng, Wang, Zhang, Wu, Li, and
+  Li]{pengEvaluatingEffectivenessLandscape2010}
+Jian Peng, Yanglin Wang, Yuan Zhang, Jiansheng Wu, Weifeng Li, and You Li.
+\newblock Evaluating the effectiveness of landscape metrics in quantifying
+  spatial patterns.
+\newblock 10\penalty0 (2):\penalty0 217--223, {\natexlab{b}}.
+\newblock ISSN 1470-160X.
+\newblock \doi{10.1016/j.ecolind.2009.04.017}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1470160X09000843}.
+
+\bibitem[Pham et~al.()Pham, Tetteh, Thiel, Erasmi, Schwieder, Frantz, and
+  family=Linden]{phamTemporallyTransferableCrop2024}
+Vu-Dong Pham, Gideon Tetteh, Fabian Thiel, Stefan Erasmi, Marcel Schwieder,
+  David Frantz, and prefix=van der~useprefix=true family=Linden,
+  given=Sebastian.
+\newblock Temporally transferable crop mapping with temporal encoding and deep
+  learning augmentations.
+\newblock 129:\penalty0 103867.
+\newblock ISSN 1569-8432.
+\newblock \doi{10.1016/j.jag.2024.103867}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1569843224002218}.
+
+\bibitem[Qin({\natexlab{a}})]{QingShaoHou}
+请稍候…, {\natexlab{a}}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1470160X1200283X}.
+
+\bibitem[Qin({\natexlab{b}})]{QingShaoHoua}
+请稍候…, {\natexlab{b}}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1470160X1200283X}.
+
+\bibitem[Qin et~al.()Qin, Zhang, and
+  Tang]{qinTransferabilitySemanticSegmentation2025}
+Rongjun Qin, Guixiang Zhang, and Yang Tang.
+\newblock On the {{Transferability}} of {{Semantic Segmentation}} for
+  {{Very-High-Resolution Remote Sensing Data}} of {{Multi-City Environments}}.
+\newblock 91\penalty0 (8):\penalty0 517--528.
+\newblock \doi{10.14358/PERS.24-00140R3}.
+
+\bibitem[{任利强} et~al.(){任利强}, {贾舒宜}, {王海鹏}, and
+  {王子玲}]{RenLiQiangJiYuShenDuXueXiDeShiJianXuLieFenLeiYanJiuZongShu2024}
+{任利强}, {贾舒宜}, {王海鹏}, and {王子玲}.
+\newblock 基于深度学习的时间序列分类研究综述.
+\newblock 46\penalty0 (8):\penalty0 3094--3116.
+\newblock ISSN 1009-5896.
+\newblock URL
+  \url{https://kns.cnki.net/kcms2/article/abstract?v=amOBmv6QLtq8l4ywbYRHOCkFrjVL3wJ4JJ5JkScgndB78NeOUHJmro9w691kYknYwQMOfAfSfdnroD5bjcl8t5YIOJ8We-x8P9_yyD_vaaNJO0JAV9wCwFpcs8K5YJb7y0YySlbPja6Ej3PPthbfxpgYcNWw70JhvoY3YOWdjKcbN2cQY7IZgNBE-n0gIkq6&uniplatform=NZKPT&language=CHS}.
+
+\bibitem[Rol()]{RoleHarmonizedLandsat2023}
+The role of harmonized {{Landsat Sentinel-2}} ({{HLS}}) products to reveal
+  multiple trajectories and determinants of cropland abandonment in subtropical
+  mountainous areas.
+\newblock 336:\penalty0 117621.
+\newblock ISSN 0301-4797.
+\newblock \doi{10.1016/j.jenvman.2023.117621}.
+\newblock URL
+  \url{https://libvpn.cqjtu.edu.cn/https/vpn/51/P75YPLUUMNVXK5UDMWTGT6UFMN4C6Z5QNF/science/article/pii/S0301479723004097}.
+
+\bibitem[Rußwurm and
+  Körner({\natexlab{a}})]{russwurmMultitemporalLandCover2018}
+Marc Rußwurm and Marco Körner.
+\newblock Multi-temporal land cover classification with sequential recurrent
+  encoders.
+\newblock 7\penalty0 (129), {\natexlab{a}}.
+\newblock ISSN 2220-9964.
+\newblock \doi{10.3390/ijgi7040129}.
+\newblock URL \url{https://www.mdpi.com/2220-9964/7/4/129}.
+
+\bibitem[Rußwurm and
+  Körner({\natexlab{b}})]{russwurmSelfattentionRawOptical2020}
+Marc Rußwurm and Marco Körner.
+\newblock Self-attention for raw optical {{Satellite Time Series
+  Classification}}.
+\newblock 169:\penalty0 421--435, {\natexlab{b}}.
+\newblock ISSN 0924-2716.
+\newblock \doi{10.1016/j.isprsjprs.2020.06.006}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0924271620301647}.
+
+\bibitem[Sagan et~al.()Sagan, Maimaitijiang, Bhadra, Maimaitiyiming, Brown,
+  Sidike, and Fritschi]{saganFieldscaleCropYield2021}
+Vasit Sagan, Maitiniyazi Maimaitijiang, Sourav Bhadra, Matthew Maimaitiyiming,
+  Davis~R. Brown, Paheding Sidike, and Felix~B. Fritschi.
+\newblock Field-scale crop yield prediction using multi-temporal
+  {{WorldView-3}} and {{PlanetScope}} satellite data and deep learning.
+\newblock 174:\penalty0 265--281.
+\newblock ISSN 0924-2716.
+\newblock \doi{10.1016/j.isprsjprs.2021.02.008}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0924271621000411}.
+
+\bibitem[Sainte Fare~Garnot et~al.()Sainte Fare~Garnot, Landrieu, Giordano, and
+  Chehata]{saintefaregarnotSatelliteImageTime2020a}
+Vivien Sainte Fare~Garnot, Loic Landrieu, Sebastien Giordano, and Nesrine
+  Chehata.
+\newblock Satellite {{Image Time Series Classification With Pixel-Set
+  Encoders}} and {{Temporal Self-Attention}}.
+\newblock In \emph{2020 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and
+  {{Pattern Recognition}} ({{CVPR}})}, pages 12322--12331.
+\newblock \doi{10.1109/CVPR42600.2020.01234}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/9157055}.
+
+\bibitem[沈宇 et~al.()沈宇, 李强子, 杜鑫, 王红岩, and
+  张源]{ShenYuYuMiDaDouShengChangZhongHouQiYaoGanBianShiDeZhiShiXingTeZhengYanJiu2022}
+沈宇, 李强子, 杜鑫, 王红岩, and 张源.
+\newblock 玉米大豆生长中后期遥感辨识的指示性特征研究.
+\newblock 26\penalty0 (7):\penalty0 1410--1422.
+\newblock ISSN 1007-4619.
+\newblock \doi{10.11834/jrs.20209078}.
+\newblock URL
+  \url{https://www.ygxb.ac.cn/zh/article/doi/10.11834/jrs.20209078/}.
+
+\bibitem[Teimouri et~al.()Teimouri, Dyrmann, and
+  Jørgensen]{teimouriNovelSpatioTemporalFCNLSTM2019}
+Nima Teimouri, Mads Dyrmann, and Rasmus~Nyholm Jørgensen.
+\newblock A {{Novel Spatio-Temporal FCN-LSTM Network}} for {{Recognizing
+  Various Crop Types Using Multi-Temporal Radar Images}}.
+\newblock 11\penalty0 (8):\penalty0 990.
+\newblock ISSN 2072-4292.
+\newblock \doi{10.3390/rs11080990}.
+\newblock URL \url{https://www.mdpi.com/2072-4292/11/8/990}.
+
+\bibitem[Tran et~al.()Tran, Zhang, McMaine, Zhang, and
+  Luo]{tran10CropType2022a}
+Khuong~H. Tran, Hankui~K. Zhang, John~T. McMaine, Xiaoyang Zhang, and Dong Luo.
+\newblock 10~m crop type mapping using {{Sentinel-2}} reflectance and 30~m
+  cropland data layer product.
+\newblock 107:\penalty0 102692.
+\newblock ISSN 1569-8432.
+\newblock \doi{10.1016/j.jag.2022.102692}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0303243422000186}.
+
+\bibitem[Uuemaa et~al.()Uuemaa, Mander, and
+  Marja]{uuemaaTrendsUseLandscape2013}
+Evelyn Uuemaa, Ülo Mander, and Riho Marja.
+\newblock Trends in the use of landscape spatial metrics as landscape
+  indicators: {{A}} review.
+\newblock 28:\penalty0 100--106.
+\newblock ISSN 1470-160X.
+\newblock \doi{10.1016/j.ecolind.2012.07.018}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1470160X1200283X}.
+
+\bibitem[Vaswani et~al.()Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{vaswaniAttentionAllYou2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Łukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In \emph{Proceedings of the 31st {{International Conference}} on
+  {{Neural Information Processing Systems}}}, {{NIPS}}'17, pages 6000--6010.
+  Curran Associates Inc.
+\newblock ISBN 978-1-5108-6096-4.
+
+\bibitem[Vincent et~al.()Vincent, Ponce, and
+  Aubry]{vincentSatelliteImageTime2024}
+Elliot Vincent, Jean Ponce, and Mathieu Aubry.
+\newblock Satellite {{Image Time Series Semantic Change Detection}}: {{Novel
+  Architecture}} and {{Analysis}} of {{Domain Shift}}.
+\newblock URL \url{http://arxiv.org/abs/2407.07616}.
+
+\bibitem[Wang et~al.({\natexlab{a}})Wang, Liu, Yang, Yang, and
+  Fu]{wangApplicationRandomForest2018}
+Li-Min Wang, Jia Liu, Ling-Bo Yang, Fu-Gang Yang, and Chang-Hong Fu.
+\newblock Application of {{Random Forest Method}} in {{Maize-soybean Accurate
+  Identification}}.
+\newblock 44\penalty0 (4):\penalty0 569, {\natexlab{a}}.
+\newblock ISSN 0496-3490.
+\newblock \doi{10.3724/SP.J.1006.2018.00569}.
+\newblock URL \url{http://zwxb.chinacrops.org/CN/10.3724/SP.J.1006.2018.00569}.
+
+\bibitem[Wang et~al.({\natexlab{b}})Wang, Zhang, Xie, Liu, and
+  Liu]{wangHowDoesDifferent2022}
+Liye Wang, Siyu Zhang, Yifan Xie, Yanfang Liu, and Yaolin Liu.
+\newblock How {{Does Different Cropland Expansion Trajectories Affect Cropland
+  Fragmentation}}? {{Insights From Three Urban Agglomerations}} in {{Yangtze
+  River Economic Belt}}, {{China}}.
+\newblock 10, {\natexlab{b}}.
+\newblock ISSN 2296-701X.
+\newblock \doi{10.3389/fevo.2022.927238}.
+\newblock URL
+  \url{https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2022.927238/full}.
+
+\bibitem[王晶晶 et~al.()王晶晶, 兰仕浩, 邱琳, 汪曙, 单捷,
+  黄晓军, and
+  李牧]{WangJingJingJiYuShaoBingErHaoDeDaDouYuMiYaoGanShiBieYiJiangSuXuHuaiDiQuWeiLi2023}
+王晶晶, 兰仕浩, 邱琳, 汪曙, 单捷, 黄晓军, and 李牧.
+\newblock
+  基于哨兵二号的大豆、玉米遥感识别——以江苏徐淮地区为例.
+\newblock 39\penalty0 (8):\penalty0 1698--1706.
+\newblock URL
+  \url{https://d.wanfangdata.com.cn/periodical/Ch9QZXJpb2RpY2FsQ0hJTmV3UzIwMjUwMTE2MTYzNjE0Eg9qc255eGIyMDIzMDgwMDkaCDY2dmkyamx4}.
+
+\bibitem[Wang et~al.({\natexlab{c}})Wang, Di~Tommaso, Deines, and
+  Lobell]{wangMappingTwentyYears2020}
+Sherrie Wang, Stefania Di~Tommaso, Jillian~M. Deines, and David~B. Lobell.
+\newblock Mapping twenty years of corn and soybean across the {{US Midwest}}
+  using the {{Landsat}} archive.
+\newblock 7\penalty0 (1):\penalty0 307, {\natexlab{c}}.
+\newblock ISSN 2052-4463.
+\newblock \doi{10.1038/s41597-020-00646-4}.
+\newblock URL
+  \url{https://www.proquest.com/docview/2442691721?pq-origsite=wos&accountid=36206}.
+
+\bibitem[{王小慧} et~al.(){王小慧}, {姜雨林}, {傅漫琪},
+  {尹小刚}, and
+  {陈阜}]{WangXiaoHuiHaiHeDiPingYuanDianXingXianZhongZhiZhiDuYuNongTianJingGuanGeJuBianHuaYaoGanJianCe2022}
+{王小慧}, {姜雨林}, {傅漫琪}, {尹小刚}, and {陈阜}.
+\newblock
+  海河低平原典型县种植制度与农田景观格局变化遥感监测.
+\newblock 38\penalty0 (1):\penalty0 297--304.
+\newblock URL
+  \url{https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2022&filename=NYGU202201032}.
+
+\bibitem[Weber et~al.()Weber, Auch, Doblander, Mandl, and
+  Jacobsen]{weberTransferLearningTime2021}
+Manuel Weber, Maximilian Auch, Christoph Doblander, Peter Mandl, and Hans-Arno
+  Jacobsen.
+\newblock Transfer {{Learning With Time Series Data}}: {{A Systematic Mapping
+  Study}}.
+\newblock 9:\penalty0 165409--165432.
+\newblock ISSN 2169-3536.
+\newblock \doi{10.1109/ACCESS.2021.3134628}.
+\newblock URL \url{https://ieeexplore.ieee.org/abstract/document/9646532}.
+
+\bibitem[Wei et~al.()Wei, Ye, Qiao, Liu, Nie, Zhang, Song, and
+  Huang]{weiEarlyCropMapping2023}
+Peng Wei, Huichun Ye, Shuting Qiao, Ronghao Liu, Chaojia Nie, Bingrui Zhang,
+  Lijuan Song, and Shanyu Huang.
+\newblock Early {{Crop Mapping Based}} on {{Sentinel-2 Time-Series Data}} and
+  the {{Random Forest Algorithm}}.
+\newblock 15\penalty0 (13):\penalty0 3212.
+\newblock ISSN 2072-4292.
+\newblock \doi{10.3390/rs15133212}.
+\newblock URL \url{https://www.mdpi.com/2072-4292/15/13/3212}.
+
+\bibitem[family=Weixiong et~al.({\natexlab{a}})family=Weixiong, family=Ping,
+  family=Yu, family=Lijun, family=Zhitao, and
+  family=Zheng]{weixiongCropTypeClassification2024}
+given-i=ZHANG family=Weixiong, given=ZHANG, given-i=TANG family=Ping,
+  given=TANG, given-i=MENG family=Yu, given=MENG, given-i=ZHAO family=Lijun,
+  given=ZHAO, given-i=ZHAO family=Zhitao, given=ZHAO, and given-i=ZHANG
+  family=Zheng, given=ZHANG.
+\newblock Crop type classification of remote sensing image time series based on
+  multi-scale spatial-temporal global attention model.
+\newblock 28\penalty0 (11):\penalty0 2865--2877, {\natexlab{a}}.
+\newblock ISSN 1007-4619.
+\newblock \doi{10.11834/jrs.20243557}.
+\newblock URL
+  \url{https://www.ygxb.ac.cn/zh/article/doi/10.11834/jrs.20243557/}.
+
+\bibitem[family=Weixiong et~al.({\natexlab{b}})family=Weixiong, family=Ping,
+  and
+  family=Zheng]{weixiongJiYuShiXuZiZhuYiLiJiZhiDeYaoGanShuJuShiJianXuLieFenLei2023}
+given-i=ZHANG family=Weixiong, given=ZHANG, given-i=TANG family=Ping,
+  given=TANG, and given-i=ZHANG family=Zheng, given=ZHANG.
+\newblock 基于时序自注意力机制的遥感数据时间序列分类.
+\newblock 27\penalty0 (8):\penalty0 1914--1924, {\natexlab{b}}.
+\newblock ISSN 1007-4619.
+\newblock \doi{10.11834/jrs.20210453}.
+\newblock URL
+  \url{https://www.ygxb.ac.cn/zh/article/doi/10.11834/jrs.20210453/}.
+
+\bibitem[Wijesingha et~al.()Wijesingha, Dzene, and
+  Wachendorf]{wijesinghaEvaluatingSpatialTemporal2024}
+Jayan Wijesingha, Ilze Dzene, and Michael Wachendorf.
+\newblock Evaluating the spatial–temporal transferability of models for
+  agricultural land cover mapping using {{Landsat}} archive.
+\newblock 213:\penalty0 72--86.
+\newblock ISSN 0924-2716.
+\newblock \doi{10.1016/j.isprsjprs.2024.05.020}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0924271624002181}.
+
+\bibitem[{吴禹瑨} et~al.(){吴禹瑨}, {李禹萱}, {宋茜}, {任超}, and
+  {冷佩}]{WuYuJinJiYuQianYiXueXiDeNenJiangShiZhuYaoNongZuoWuYaoGanFenLei2023}
+{吴禹瑨}, {李禹萱}, {宋茜}, {任超}, and {冷佩}.
+\newblock 基于迁移学习的嫩江市主要农作物遥感分类.
+\newblock 35\penalty0 (4):\penalty0 1--10.
+\newblock ISSN 1672-0423.
+\newblock URL
+  \url{https://kns.cnki.net/kcms2/article/abstract?v=amOBmv6QLtqV1RLCzGc1Hdq-vRB_9Rezg9zTaDZufhlGyq2AXNSa54iqdfR2eSL7V4ePpLSJP7gPrgNLIHx03A65cFqtoEkahm7a8NUdArrQ734prMfBcC1QeTpBHo3BTfYteXW7zviJ8taO-49tGJztJdoN4bsoozHO7oBZs1f7xhCZjPOxMJrRNejbknFj&uniplatform=NZKPT&language=CHS}.
+
+\bibitem[Xuan et~al.()Xuan, Dong, Li, Li, Su, Huang, Huang, Xie, Li, Liu, Tao,
+  Wen, and Zhang]{xuanMappingCropType2023}
+Fu~Xuan, Yi~Dong, Jiayu Li, Xuecao Li, Wei Su, Xianda Huang, Jianxi Huang,
+  Zixuan Xie, Ziqian Li, Hui Liu, Wancheng Tao, Yanan Wen, and Ying Zhang.
+\newblock Mapping crop type in {{Northeast China}} during 2013–2021 using
+  automatic sampling and tile-based image classification.
+\newblock 117:\penalty0 103178.
+\newblock ISSN 1569-8432.
+\newblock \doi{10.1016/j.jag.2022.103178}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1569843222003661}.
+
+\bibitem[Xu et~al.({\natexlab{a}})Xu, Kong, Huang, Wang, and
+  Plumbley]{xuConvolutionalGatedRecurrent2017}
+Yong Xu, Qiuqiang Kong, Qiang Huang, Wenwu Wang, and Mark~D. Plumbley.
+\newblock Convolutional gated recurrent neural network incorporating spatial
+  features for audio tagging.
+\newblock In \emph{2017 {{International Joint Conference}} on {{Neural
+  Networks}} ({{IJCNN}})}, pages 3461--3466, {\natexlab{a}}.
+\newblock \doi{10.1109/IJCNN.2017.7966291}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/7966291}.
+
+\bibitem[Xu et~al.({\natexlab{b}})Xu, Zhu, Zhong, Lin, Xu, Jiang, Huang, Li,
+  and Lin]{xuDeepCropMappingMultitemporalDeep2020}
+Jinfan Xu, Yue Zhu, Renhai Zhong, Zhixian Lin, Jialu Xu, Hao Jiang, Jingfeng
+  Huang, Haifeng Li, and Tao Lin.
+\newblock {{DeepCropMapping}}: {{A}} multi-temporal deep learning approach with
+  improved spatial generalizability for dynamic corn and soybean mapping.
+\newblock 247:\penalty0 111946, {\natexlab{b}}.
+\newblock ISSN 0034-4257.
+\newblock \doi{10.1016/j.rse.2020.111946}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0034425720303163}.
+
+\bibitem[Xu et~al.({\natexlab{c}})Xu, Yang, Xiong, Li, Huang, Ting, Ying, and
+  Lin]{xuInterpretingMultitemporalDeep2021}
+Jinfan Xu, Jie Yang, Xingguo Xiong, Haifeng Li, Jingfeng Huang, K.~C. Ting,
+  Yibin Ying, and Tao Lin.
+\newblock Towards interpreting multi-temporal deep learning models in crop
+  mapping.
+\newblock 264:\penalty0 112599, {\natexlab{c}}.
+\newblock ISSN 0034-4257.
+\newblock \doi{10.1016/j.rse.2021.112599}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0034425721003199}.
+
+\bibitem[Yan et~al.()Yan, Liu, Wang, Liang, Cao, Zhang, and
+  Peng]{yanLandCoverClassificationTimeSeries2022}
+Jining Yan, Jingwei Liu, Lizhe Wang, Dong Liang, Qingcheng Cao, Wanfeng Zhang,
+  and Jianyi Peng.
+\newblock Land-{{Cover Classification With Time-Series Remote Sensing Images}}
+  by {{Complete Extraction}} of {{Multiscale Timing Dependence}}.
+\newblock 15:\penalty0 1953--1967.
+\newblock ISSN 2151-1535.
+\newblock \doi{10.1109/JSTARS.2022.3150430}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/9712171}.
+
+\bibitem[You et~al.()You, Dong, Huang, Du, Zhang, He, Yang, Di, and
+  Xiao]{you10mCropType2021}
+Nanshan You, Jinwei Dong, Jianxi Huang, Guoming Du, Geli Zhang, Yingli He, Tong
+  Yang, Yuanyuan Di, and Xiangming Xiao.
+\newblock The 10-m crop type maps in {{Northeast China}} during 2017–2019.
+\newblock 8\penalty0 (1):\penalty0 41.
+\newblock ISSN 2052-4463.
+\newblock \doi{10.1038/s41597-021-00827-9}.
+\newblock URL \url{https://www.nature.com/articles/s41597-021-00827-9}.
+
+\bibitem[张冬韵 et~al.()张冬韵, 吴田军, 骆剑承, 董文, 孙营伟,
+  杨颖频, 海云瑞, 孟博文, and
+  刘巍]{ZhangDongYunShiKongXieTongDeNongYeZhongZhiJieGouYaoGanJingXiZhiTu2024}
+张冬韵, 吴田军, 骆剑承, 董文, 孙营伟, 杨颖频, 海云瑞,
+  孟博文, and 刘巍.
+\newblock 时空协同的农业种植结构遥感精细制图.
+\newblock 28\penalty0 (8):\penalty0 2014--2029.
+\newblock ISSN 1007-4619.
+\newblock \doi{10.11834/jrs.20241349}.
+\newblock URL
+  \url{https://www.ygxb.ac.cn/zh/article/doi/10.11834/jrs.20241349/}.
+
+\bibitem[{张凤} et~al.(){张凤}, {张锦水}, {段雅鸣}, and
+  {杨志}]{ZhangFengQianYiShenDuJuanJiShenJingWangLuoMoXingQiuLiangZuoWuFanHuaShiBie2024}
+{张凤}, {张锦水}, {段雅鸣}, and {杨志}.
+\newblock 迁移深度卷积神经网络模型秋粮作物泛化识别.
+\newblock 28\penalty0 (3):\penalty0 661--676.
+\newblock ISSN 1007-4619.
+\newblock URL
+  \url{https://kns.cnki.net/kcms2/article/abstract?v=4mdsUcMtJE05gMQyExjJGJ88iWZUxJjQPS4as7oagkz2WDoTfWbEF-Ru_0YqLFiElXcTdtQdWcVvZpO5FZNJCclfiywNFJfAplqhfZhnt8PP_Ja0DxUT4snPmbke78GsAwG-XL1qid-NB9hWEF_F1120P-O5nI9GXIBiLphBddjCr_szHgb6xNWQ5Pu84hF5&uniplatform=NZKPT&language=CHS}.
+
+\bibitem[Zhang et~al.()Zhang, Di, Hao, Yang, Lin, Zhao, and
+  Guo]{zhangRapidInseasonMapping2021}
+Chen Zhang, Liping Di, Pengyu Hao, Zhengwei Yang, Li~Lin, Haoteng Zhao, and
+  Liying Guo.
+\newblock Rapid in-season mapping of corn and soybeans using machine-learned
+  trusted pixels from {{Cropland Data Layer}}.
+\newblock 102:\penalty0 102374.
+\newblock ISSN 1569-8432, 1872-826X.
+\newblock \doi{10.1016/j.jag.2021.102374}.
+
+\bibitem[Zhao and Ji()]{zhaoCNNRNNViT2022}
+Linying Zhao and Shunping Ji.
+\newblock {{CNN}}, {{RNN}}, or {{ViT}}? {{An Evaluation}} of {{Different Deep
+  Learning Architectures}} for {{Spatio-Temporal Representation}} of {{Sentinel
+  Time Series}}.
+\newblock PP:\penalty0 1--14.
+\newblock \doi{10.1109/JSTARS.2022.3219816}.
+
+\bibitem[Zhong et~al.()Zhong, Hu, and Zhou]{zhongDeepLearningBased2019a}
+Liheng Zhong, Lina Hu, and Hang Zhou.
+\newblock Deep learning based multi-temporal crop classification.
+\newblock 221:\penalty0 430--443.
+\newblock ISSN 0034-4257.
+\newblock \doi{10.1016/j.rse.2018.11.032}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0034425718305418}.
+
+\end{thebibliography}

@@ -2,7 +2,7 @@
 
 2026-10-14当前状态：景观格局及跨站均值表已保存于原历史`17eb1e4`，最新本地PDF为9页；下文带日期的“未提交”和8页说明为当时记录。详细章节主线、后续取舍与验证边界见[完整交接](HANDOVER.md)，写作执行见[流程](plan/writing-workflow.md)。
 
-远端减量只影响上传范围：结果和小型文本保留，归档、资产与大文件保留本地；新上传目录不继承旧历史，详见[保存说明](plan/remote-storage.md)。本文及科学数据本轮未修改。
+2026-10-15作者已取消缩小仓库计划。继续使用 `D:/AI/lunwen/`；额外上传副本及配套流程已归档，位置、原字节清单与用途复核见[归档说明](archive/2026-10-15-cancel-remote-plan/README.md)。AGENTS.md和忽略规则恢复到该计划前版本；完整交接、写作流程及科研成果保留。本轮未改论文或科学数据，未提交、推送。
 
 2026-10-14景观格局更新：1.3.2围绕面积—形状联合分布组织；表1改为斑块数、AI、ENN等权P90和整站ED，联合图已接入为图3。原数据与旧版本保留，生成入口和核查见[现行展示说明](results/summary/sec13_landscape_display/README.md)；最新PDF以[预览入口](output/README.md)为准。本轮未自动提交。
 
@@ -14,7 +14,7 @@
 
 2026-10-13展示更新：F1及其标准差显示为百分数，F1差值显示为百分点，均保留两位小数；原尺度计算和完整精度数据不变。正文、表格和正式图的生成入口已同步，见[修改与核查清单](verification/f1-display-2026-10-13/README.md)。
 
-2026-10-14后续调整：跨站主表仅显示平均F1，保留百分数和两位小数；逐次值与标准差保留在数据中。已更新[8页PDF](output/previews/2026-10-14-cross-f1-means/manuscript.pdf)并检查表格，见[本次核查](verification/cross-f1-mean-only-2026-10-14.md)。热力图及科学结果未变，本次尚未提交。
+2026-10-14后续调整：跨站主表仅显示平均F1，保留百分数和两位小数；逐次值与标准差保留在数据中。已更新[8页PDF](output/archive/2026-10-14/cross-f1-means-preview/manuscript.pdf)并检查表格，见[本次核查](verification/cross-f1-mean-only-2026-10-14.md)。热力图及科学结果未变，本次尚未提交。
 
 ## 活动目录
 
@@ -54,7 +54,7 @@
 python -B -m unittest scripts/test/test_sec33_directional_confusion_closeout.py scripts/test/test_sec33_directional_confusion.py scripts/test/test_f1_raw_scale.py scripts/test/test_f1_presentation.py -v
 ```
 
-手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；2026-10-13已按F1展示统一任务重新编译为8页，完整页面预览及PDF哈希见[清单](output/preview-manifest.json)。[当前PDF快照](output/previews/2026-10-13-f1-percent/manuscript.pdf)对应新展示规范；旧快照及修改前原字节备份保留，2026-10-14按作者指令随本次提交保存。
+手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；2026-10-13已按F1展示统一任务重新编译为8页，完整页面预览及PDF哈希见[清单](output/preview-manifest.json)。[10月13日历史PDF快照](output/archive/2026-10-13/f1-percent-preview/manuscript.pdf)对应新展示规范；旧快照及修改前原字节备份保留，2026-10-14按作者指令随本次提交保存。
 
 ## 历史入口
 
