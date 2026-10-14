@@ -91,7 +91,7 @@
 \label{tab:cross_site_f1_paths}
 {\songti\zihao{-5}
 \renewcommand{\arraystretch}{1.12}
-\setlength{\tabcolsep}{3pt}
+\setlength{\tabcolsep}{7pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c*{6}{c}}
 \toprule
 \multirow{2}{*}{迁移路径} & \multicolumn{2}{c}{ConvGRU} & \multicolumn{2}{c}{3D U-Net} & \multicolumn{2}{c}{U-TAE} \\
@@ -102,7 +102,7 @@
 \end{tabular*}
 \par\nointerlineskip\vspace{3pt}
 \begin{minipage}{\textwidth}
-\noindent 注：箭头左侧为源站，右侧为目标站。各路径单元格为均值±标准差，二者均按百分数尺度显示；源站5个折模型分别预测目标站全部400个图块后计算F1，标准差采用样本标准差（分母为4），未进行微调和模型集成。“平均”行仅列12条迁移路径F1均值的算术平均。
+\noindent 注：箭头左侧为源站，右侧为目标站。每格为源站5个折模型分别预测目标站全部400个图块所得5次F1的算术平均，以百分数表示，未进行微调和模型集成；“平均”行为12条迁移路径F1均值的算术平均。
 \end{minipage}
 }
 \end{table*}

@@ -1,61 +1,36 @@
 {
   "schema_version": 3,
   "status": "Verified",
-  "scope": "F1 percentage/percentage-point presentation; all 8 pages rendered, pages 4-7 reviewed individually, others reviewed as contact sheet; not full scientific completion",
+  "scope": "Section 1.3.2, table1 and AREA-SHAPE plot; saved statistics and pages 3-5; not a full scientific review",
   "source_pdf": {
     "path": "main.pdf",
-    "sha256": "8aa13e11c46225a2b9c03d3954a3013f6b1771320e7b4e3970cde15bd7f0e5ed",
-    "pages": 8
+    "sha256": "b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275",
+    "pages": 9
   },
   "versioned_pdf": {
-    "path": "output/previews/2026-10-13-f1-percent/manuscript.pdf",
-    "sha256": "8aa13e11c46225a2b9c03d3954a3013f6b1771320e7b4e3970cde15bd7f0e5ed",
-    "pages": 8
+    "path": "output/previews/2026-10-14-sec132-landscape/manuscript.pdf",
+    "sha256": "b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275",
+    "pages": 9
   },
-  "source_verification": "verification/f1-display-2026-10-13/README.md",
+  "source_verification": "verification/sec132-landscape-2026-10-14.md",
   "previews": [
     {
-      "path": "output/previews/2026-10-13-f1-percent/page-1.png",
-      "pdf_page": 1,
-      "sha256": "a58c1083f075bfbdc1a89f4e9ba7563e9aa69c5f105735b42b0890a63c5a370c"
-    },
-    {
-      "path": "output/previews/2026-10-13-f1-percent/page-2.png",
-      "pdf_page": 2,
-      "sha256": "10a63f3500cb7afec45c6490a9df19485ab426fd15902240883bd2b88d40791e"
-    },
-    {
-      "path": "output/previews/2026-10-13-f1-percent/page-3.png",
+      "path": "output/previews/2026-10-14-sec132-landscape/page-3.png",
       "pdf_page": 3,
-      "sha256": "7f11b5ffb4ffcc9117a663707dceebd26302e1010d4b70a6afa38f8296408b4e"
+      "sha256": "2c1efa81a285ac91b47e11c5359a1970e29e5524df9d3b49113c997fb04bc9ec"
     },
     {
-      "path": "output/previews/2026-10-13-f1-percent/page-4.png",
+      "path": "output/previews/2026-10-14-sec132-landscape/page-4.png",
       "pdf_page": 4,
-      "sha256": "25aa9194eb74e877fd8a16c30ccf811937f9a46ffdb8a2e645bacf2813b0cfa3"
+      "sha256": "f81b7eb005ddf627bfc79baff61c8944159d47a21ffdeb85504281fc95f6affa"
     },
     {
-      "path": "output/previews/2026-10-13-f1-percent/page-5.png",
+      "path": "output/previews/2026-10-14-sec132-landscape/page-5.png",
       "pdf_page": 5,
-      "sha256": "66e0f912505ec3e835fdafff39f237ced3e7d4a65b586e2af127a0a735fb1b7e"
-    },
-    {
-      "path": "output/previews/2026-10-13-f1-percent/page-6.png",
-      "pdf_page": 6,
-      "sha256": "8212629655b849f7f05c8ba0090ee6865ca184d14724ced8a7dd62f72602bbaf"
-    },
-    {
-      "path": "output/previews/2026-10-13-f1-percent/page-7.png",
-      "pdf_page": 7,
-      "sha256": "f227b52c3a816df6188a9427ec4e20259d2679bfd66ddc0c07bf9070317b75ab"
-    },
-    {
-      "path": "output/previews/2026-10-13-f1-percent/page-8.png",
-      "pdf_page": 8,
-      "sha256": "a2801d36ff3df11e4cd533b165d39ef37a3839ecb316b2de85a9f5f0e3332d3a"
+      "sha256": "7d21d8ebde1d9b226921342aacdf0eaec61e0829010592d2816de695573023ba"
     }
   ],
-  "historical_manifest": "output/archive/2026-10-13/f1-display-before/output/preview-manifest.json",
+  "historical_manifest": "output/previews/2026-10-14-sec132-landscape/previous-preview-manifest.json",
   "entry_point": "output/README.md",
-  "generated_for": "2026-10-13 F1 display revision"
+  "generated_for": "2026-10-14 Section 1.3.2 landscape table and joint distribution figure"
 }

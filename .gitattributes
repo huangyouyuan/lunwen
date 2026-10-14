@@ -67,3 +67,22 @@
 /output/previews/2026-10-13-f1-percent/** -text
 /verification/f1-display-2026-10-13/** -text whitespace=cr-at-eol
 /verification/f1-display-2026-10-13/*-log.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve the mean-only table revision preview and its hash record.
+/output/previews/2026-10-14-cross-f1-means/** -text whitespace=cr-at-eol
+/verification/cross-f1-mean-only-2026-10-14.json -text whitespace=cr-at-eol
+
+# Preserve Section 1.3.2 presentation, source snapshots and preview hashes.
+/output/archive/2026-10-14/sec132-landscape-before/** -text whitespace=cr-at-eol
+/output/previews/2026-10-14-sec132-landscape/** -text whitespace=cr-at-eol
+/results/summary/sec13_landscape_display/** -text whitespace=cr-at-eol
+/scripts/generate_sec13_landscape_display.py -text
+/scripts/test/check_sec13_landscape_display.py -text
+/tables/sec13_landscape_context_rows.tex -text
+/figures/study_area/fig_sec13_area_shape_joint* -text
+/verification/sec132-landscape-2026-10-14.* -text whitespace=cr-at-eol
+# Keep the reviewed source bytes reproducible on checkout.
+/main.tex text eol=lf
+/sections/02_data.tex text eol=crlf
+# Compiler transcripts retain their original spacing.
+/output/previews/2026-10-14-sec132-landscape/**/compile-*.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

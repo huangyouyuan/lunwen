@@ -1,0 +1,9 @@
+target,site,crop,crop_label,patch_count,ai_pct,enn_p90_m,enn_median_m,enn_weighting,enn_quantile_algorithm,reference_pixels,landscape_ed_m_per_ha,ed_scope
+iw_2023,A,corn,玉米,15146,93.923025823431971,161.5549,67.081999999999994,patch_equal,linear_order_statistics,2974800,55.211537679036461,whole_landscape_all_three_classes
+iw_2023,A,soybean,大豆,14695,93.459088809181466,180,67.081999999999994,patch_equal,linear_order_statistics,2409665,55.211537679036461,whole_landscape_all_three_classes
+iw2_2023,B,corn,玉米,14460,93.251431691491121,180,67.081999999999994,patch_equal,linear_order_statistics,2758016,54.474690755208336,whole_landscape_all_three_classes
+iw2_2023,B,soybean,大豆,16039,91.600961294626657,240,67.081999999999994,patch_equal,linear_order_statistics,1539167,54.474690755208336,whole_landscape_all_three_classes
+ida_2023,C,corn,玉米,29837,91.879029656987569,152.97059999999999,67.081999999999994,patch_equal,linear_order_statistics,2641661,65.529734293619796,whole_landscape_all_three_classes
+ida_2023,C,soybean,大豆,27894,91.217658366924809,180,67.081999999999994,patch_equal,linear_order_statistics,2095730,65.529734293619796,whole_landscape_all_three_classes
+il_2023,D,corn,玉米,16756,93.58446145915245,180,67.081999999999994,patch_equal,linear_order_statistics,2619419,51.758982340494796,whole_landscape_all_three_classes
+il_2023,D,soybean,大豆,14407,93.4315889606995,189.73670000000001,67.081999999999994,patch_equal,linear_order_statistics,2387838,51.758982340494796,whole_landscape_all_three_classes

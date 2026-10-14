@@ -36,7 +36,7 @@ class F1PresentationTests(unittest.TestCase):
         self.assertEqual(f1_number(np.nan), 'NA')
         self.assertEqual(shared_color_scale([-0.004, 7.39]), (-8.0, 8.0, 'RdBu_r'))
 
-    def test_table_all_means_and_sample_sds_from_full_precision(self):
+    def test_table_means_only_from_full_precision(self):
         actual = pd.read_csv(ROOT / 'tables/table2_cross_site_f1_12paths.csv', dtype=str)
         stats = read('cross_site_crop_f1_summary.csv').set_index(['model','source','target'])
         expected_cells = []
@@ -49,14 +49,14 @@ class F1PresentationTests(unittest.TestCase):
                     else:
                         src,tgt=row['迁移路径'].split('→')
                         ref=stats.loc[(model,SITES[src],SITES[tgt])]
-                        expected=f'{100*ref[f"{crop}_f1_mean"]:.2f} ± {100*ref[f"{crop}_f1_std"]:.2f}'
+                        expected=f'{100*ref[f"{crop}_f1_mean"]:.2f}'
                     self.assertEqual(row[f'{label}{name}F1（%）'],expected)
                     expected_cells.append(expected)
         latex=(ROOT/'tables/table2_cross_site_f1_12paths_rows.tex').read_text(encoding='utf-8')
         cells=[c.strip() for line in latex.splitlines() if '&' in line for c in line.removesuffix(r'\\').split('&')[1:]]
         self.assertEqual(cells,expected_cells)
         self.assertEqual(len(cells),78)
-        self.assertEqual(sum('±' in c for c in cells),72)
+        self.assertTrue(all(re.fullmatch(r'\d+\.\d{2}', c) for c in cells))
         # The table's calculation interface itself still returns raw full precision.
         raw=generate_table2_cross_site_f1_paths()
         self.assertTrue((raw.iloc[:,1:].to_numpy()<1).all())
@@ -116,7 +116,8 @@ class F1PresentationTests(unittest.TestCase):
         methods=(ROOT/'sections/03_methods.tex').read_text(encoding='utf-8')
         results=(ROOT/'sections/04_results.tex').read_text(encoding='utf-8')
         self.assertIn('F1下降（百分点）',results)
-        self.assertIn('均值±标准差',results)
+        self.assertIn('5次F1的算术平均',results)
+        self.assertNotIn('均值±标准差',results)
         self.assertIn('F1（\\%）',results)
         self.assertNotIn('采用原始刻度',methods)
         self.assertNotIn('mathrm{DR}',methods+results)

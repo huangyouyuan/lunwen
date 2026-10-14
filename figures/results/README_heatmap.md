@@ -13,7 +13,7 @@ python scripts/plot_degradation_heatmap.py
 
 数值为同模型目标站站内汇总F1减跨站五次均值，不除以基准，不从显示值反算。保留正负值；若今后输入有负值，所有子图一起切换为以0为中心的共同发散色标，不截断负值，不分别拉伸颜色范围。仅将舍入产生的−0.00写为0.00。
 
-本站图由`plot_within_site_f1.py`绘制五折汇总F1（%），不把折间标准差当作汇总F1的误差线。当前正式稿没有F1误差线。跨站表由`generate_core_tables.py`将已有均值与样本标准差同步乘100，显示“均值±标准差”；格式函数共用`f1_display.py`。正文数值由同一表生成器写入`tables/f1_text_values.tex`；计算仍读取正式summary，展示CSV不得作为计算输入。
+本站图由`plot_within_site_f1.py`绘制五折汇总F1（%），不把折间标准差当作汇总F1的误差线。当前正式稿没有F1误差线。跨站主表由`generate_core_tables.py`将已有五次平均F1乘100，仅显示百分数均值；逐次值及标准差保留在原数据中。格式函数共用`f1_display.py`。正文数值由同一表生成器写入`tables/f1_text_values.tex`；计算仍读取正式summary，展示CSV不得作为计算输入。
 
 图题与图注文本见 `figures/data-manifest.md`。
 

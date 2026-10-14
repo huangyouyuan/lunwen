@@ -1,8 +1,14 @@
 # 预览与归档入口
 
+**2026-10-14当前版本：**[9页PDF](previews/2026-10-14-sec132-landscape/manuscript.pdf)。1.3.2已重写，表1采用斑块数、AI、ENN等权P90和整站ED，面积—形状联合图接入为图3；表1与图3均在第4页。[第3页正文](previews/2026-10-14-sec132-landscape/page-3.png)、[第4页表图](previews/2026-10-14-sec132-landscape/page-4.png)、[第5页衔接](previews/2026-10-14-sec132-landscape/page-5.png)已查看。哈希见[清单](preview-manifest.json)，范围见[核查记录](../verification/sec132-landscape-2026-10-14.md)；未自动提交。此前跨站主表仅均值的改动保留。
+
+**2026-10-14上一版（仅跨站表均值调整）：**[8页PDF](previews/2026-10-14-cross-f1-means/manuscript.pdf)；跨站主表仅显示平均F1（%），[第7页预览](previews/2026-10-14-cross-f1-means/page-7.png)已核对，热力图不变。其余7页文本与上一版本相同。该版[哈希清单](previews/2026-10-14-sec132-landscape/previous-preview-manifest.json)及[核查记录](../verification/cross-f1-mean-only-2026-10-14.md)对应此版本；本次未提交。
+
+以下为2026-10-13上一版本的预览与归档说明，保留其记录时点；其中主表仍显示“±标准差”。
+
 本目录存放页面预览和核查备份。正式论文图件在[figures](../figures/)，2026-10-13统一F1展示后的8页稿件已保存为[可审阅PDF](previews/2026-10-13-f1-percent/manuscript.pdf)，与当前本地`main.pdf`哈希一致。2026-10-14按作者明确指令随本次提交保存。
 
-## 最新预览
+## 2026-10-13预览
 
 2026-10-13已将F1及标准差改为百分数、差值改为百分点，重新编译8页并渲染全页。重点逐页检查第4—7页，其余页结合总览核对；此次验证限于F1展示及受影响版面，不代表论文已定稿。
 

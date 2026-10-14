@@ -1,0 +1,62 @@
+{
+  "status": "Verified",
+  "scope": "Byte-preserving source copies before this edit; no deletion or move",
+  "git_head": "1d7d025532a8d2c1038ff72db9c4aba4b9f1b652",
+  "initial_git_status": " M .gitattributes\n M HANDOVER.md\n M README.md\n M figures/results/README_heatmap.md\n M output/README.md\n M output/preview-manifest.json\n M plan/experiment-protocol.md\n M plan/style-guide.md\n M scripts/generate_core_tables.py\n M scripts/test/test_f1_presentation.py\n M sections/04_results.tex\n M tables/table2_cross_site_f1_12paths.csv\n M tables/table2_cross_site_f1_12paths_rows.tex\n?? output/archive/2026-10-14/\n?? output/previews/2026-10-14-cross-f1-means/\n?? verification/cross-f1-mean-only-2026-10-14.json\n?? verification/cross-f1-mean-only-2026-10-14.md\n",
+  "files": [
+    {
+      "original_path": "sections/02_data.tex",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/sections/02_data.tex",
+      "sha256": "03aeb47addb94698f2c44e942cef84ebc80977af5c99935960777ed448e6dc66",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "main.tex",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/main.tex",
+      "sha256": "be8d5b02bb7d267e6f24aa98838ede81b1d5b7f837d9101d2d6b979d210c062b",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "README.md",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/README.md",
+      "sha256": "7db09a5afb3ba7d6801fb64650ef4b77591a4dfd9402a96ab1382f02e70576ca",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "HANDOVER.md",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/HANDOVER.md",
+      "sha256": "4fc0dc7499808dde762c9bcfd6031f78ea8a601efa7b9483432650697122886d",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "plan/results-map.md",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/plan/results-map.md",
+      "sha256": "afedf375bcbcc586ada88dc8bc612a4111f250bc1afcf0d92b9cf90a7935abae",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "plan/format-spec.md",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/plan/format-spec.md",
+      "sha256": "79178502c6ff0a7cbc6c1a4d80fb50573f9a054fb8ed98d857753c2c3bc79cc3",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "output/README.md",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/output/README.md",
+      "sha256": "c8630041f98582fac01d3d74b909891ecad7846d05cbe050fbc563166607474b",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": "output/preview-manifest.json",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/output/preview-manifest.json",
+      "sha256": "a070d9cdf7256dbbddce9747f0e6cfdb7b2bd2b6b9f4b0f567951a931f0af4f1",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    },
+    {
+      "original_path": ".gitattributes",
+      "archive_path": "output/archive/2026-10-14/sec132-landscape-before/.gitattributes",
+      "sha256": "59229d2476f01ce8b40580f8782bf4233a30bd0b1b4f482679175a55339ac1f2",
+      "reason": "Before Section 1.3.2 landscape presentation update; original remains active until edited"
+    }
+  ]
+}

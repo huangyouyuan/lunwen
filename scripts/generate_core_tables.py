@@ -5,7 +5,7 @@
 from pathlib import Path
 
 import pandas as pd
-from f1_display import f1_number, f1_mean_sd
+from f1_display import f1_number
 
 SITE_MAP = {
     'iw_2023': 'A',
@@ -73,24 +73,13 @@ def generate_table2_cross_site_f1_paths():
 
 
 def table2_display(table):
-    """Presentation CSV only; all numerical inputs remain raw, full precision."""
-    stats = pd.read_csv('results/summary/f1_raw_scale/cross_site_crop_f1_summary.csv',
-                        float_precision='round_trip').set_index(['model', 'source', 'target'])
-    inverse_sites = {v: k for k, v in SITE_MAP.items()}
+    """Mean F1 only, in percent; per-run results and SDs stay in the summaries."""
     rows = []
     for _, row in table.iterrows():
-        path = row['迁移路径']
-        formatted = {'迁移路径': path}
-        for model, name in MODEL_MAP.items():
-            for crop, label in [('corn', '玉米'), ('soybean', '大豆')]:
-                mean = row[f'{name}{label}F1']
-                if path == '平均':
-                    text = f1_number(mean)
-                else:
-                    source, target = path.split('→')
-                    sd = stats.loc[(model, inverse_sites[source], inverse_sites[target]), f'{crop}_f1_std']
-                    text = f1_mean_sd(mean, sd)
-                formatted[f'{name}{label}F1（%）'] = text
+        formatted = {'迁移路径': row['迁移路径']}
+        for name in MODEL_MAP.values():
+            for label in ['玉米', '大豆']:
+                formatted[f'{name}{label}F1（%）'] = f1_number(row[f'{name}{label}F1'])
         rows.append(formatted)
     return pd.DataFrame(rows)
 
@@ -179,4 +168,4 @@ if __name__ == "__main__":
     )
     write_table2_cross_site_f1_latex_rows(display)
     write_f1_text_values()
-    print("F1 presentation table (percent, mean ± SD) and text values saved; raw summaries unchanged.")
+    print("F1 presentation table (percent, mean only) and text values saved; raw summaries unchanged.")

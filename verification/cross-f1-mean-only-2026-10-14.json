@@ -1,0 +1,25 @@
+{
+  "status": "Verified",
+  "date": "2026-10-14",
+  "base_head": "1d7d025532a8d2c1038ff72db9c4aba4b9f1b652",
+  "scope": "Mean-only cross-site F1 presentation; no scientific recalculation",
+  "tests_passed": 7,
+  "table_values_checked_in_compiled_pdf": 78,
+  "table_font_pt": 9,
+  "pages": 8,
+  "unchanged_text_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "formal_chain_hashes_verified": 10,
+  "unchanged_chart_pdf_hashes": 9,
+  "manuscript_sha256": "f3cd0e6b8182b129cd4293637e04cccb90b023b5455eae0e0da60df7e4254adc",
+  "old_pdf_retained": "output/previews/2026-10-13-f1-percent/manuscript.pdf",
+  "compiled_pdf": "output/previews/2026-10-14-cross-f1-means/manuscript.pdf",
+  "reviewed_page": 7
+}

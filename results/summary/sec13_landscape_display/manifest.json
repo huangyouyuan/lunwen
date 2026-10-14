@@ -1,0 +1,99 @@
+{
+  "status": "Verified",
+  "scope": "Saved-statistic selection, closure and plot geometry; visual review recorded separately",
+  "data_status": "derived",
+  "enn_source": "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, q90",
+  "enn_algorithm": "patch_equal; sort n values; interpolate linearly at zero-based (n-1)*0.9",
+  "geometry": {
+    "fonts": {
+      "Times New Roman": "C:\\Windows\\Fonts\\times.ttf",
+      "SimSun": "C:\\Windows\\Fonts\\simsun.ttc"
+    },
+    "panels": [
+      {
+        "crop": "corn",
+        "nonzero_bubbles": 86,
+        "width_cm": 7.6,
+        "height_cm": 7.6
+      },
+      {
+        "crop": "soybean",
+        "nonzero_bubbles": 83,
+        "width_cm": 7.6,
+        "height_cm": 7.6
+      }
+    ],
+    "scatter_s_pt2_per_pct": 15.164483701644752,
+    "circle_area_pt2_per_pct": 11.910157648142325,
+    "observed_max_share_pct": 22.42412935323383,
+    "max_diameter_mm": 6.505382386916237,
+    "min_nonzero_share_pct": 0.02577940084466515,
+    "min_circle_gap_mm": 0.21888522112011816,
+    "min_cell_boundary_clearance_mm": 0.1641049912211755,
+    "offsets": {
+      "A": [
+        -0.23,
+        0.2
+      ],
+      "B": [
+        0.245,
+        0.2
+      ],
+      "C": [
+        -0.23,
+        -0.2
+      ],
+      "D": [
+        0.245,
+        -0.2
+      ]
+    },
+    "baseline_scale_pt2_per_pct": 7.582241850822376,
+    "circle_area_multiplier_vs_v2": 2.0,
+    "min_bubble_floor": null,
+    "figure_width_cm": 17.4,
+    "figure_height_cm": 11.2,
+    "legend": [
+      {
+        "share_pct": 1,
+        "diameter_pt": 3.8941602049279833,
+        "diameter_mm": 1.3737731834051496
+      },
+      {
+        "share_pct": 5,
+        "diameter_pt": 8.707606933493482,
+        "diameter_mm": 3.0718502237602006
+      },
+      {
+        "share_pct": 20,
+        "diameter_pt": 17.415213866986964,
+        "diameter_mm": 6.143700447520401
+      }
+    ]
+  },
+  "input_sha256": {
+    "results/summary/sec13_sec31_foundations/class_background_full_scope.csv": "239706dacb84ab355cf895f15cd92b398a0a3881727f8d48080bb029effa03a3",
+    "results/summary/sec13_sec31_foundations/landscape_background_full_scope.csv": "2ebbf6760e13e83ee29fa9eda18bc256d8d36f9ae40af7ff77ef7ff7834e71b0",
+    "results/summary/sec13_sec31_foundations/crop_patch_support_and_limitations.csv": "0fc170374abf4855f9e0092b3ea5a606a5a808b013683be01a3bbeea2b4beb58",
+    "results/summary/sec13_sec31_foundations/reference_composition.csv": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "scripts/generate_sec13_landscape_display.py": "60544e0f19a1b986c94b2ac13d11ec1be63343121e040f70f82a27b4eeaed350",
+    "scripts/plot_area_shape_joint_bubbles.py": "14dbdb3d78b901b55564417f0d04570caa26a396efc550965114ecbf23e20c5c",
+    "scripts/figstyle.py": "257cd3d0f635f61d607dead85f5a0e47b6eefe33b6fdacf80eebc5f48794aa69",
+    "archive/2026-10-12-area-shape-bubbles/history/results/summary/area_shape_joint_bubbles_v2/manifest.json": "cac9f29e90a6ff217bc4725a09ace65e5176ffc1f433a7898580464b82a40a22"
+  },
+  "output_sha256": {
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+    "figures/study_area/fig_sec13_area_shape_joint_frames.pdf": "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7",
+    "figures/study_area/fig_sec13_area_shape_joint_a.pdf": "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af",
+    "figures/study_area/fig_sec13_area_shape_joint_b.pdf": "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d",
+    "figures/study_area/fig_sec13_area_shape_joint_legend.tex": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41",
+    "figures/study_area/fig_sec13_area_shape_joint.tex": "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4",
+    "figures/study_area/fig_sec13_area_shape_joint.pdf": "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975",
+    "figures/study_area/fig_sec13_area_shape_joint.png": "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b"
+  }
+}

@@ -7,6 +7,7 @@
 | 1.3组成 | `summary/sec33_indicator_grading_preparation/all_class_reference_support.csv` | 四站三类，分母为整站有效参考像元 |
 | 1.3景观背景 | `summary/sec33_reference_patch_types/background_class.csv`、`background_landscape.csv` | 只用 `scope=full`，类别与景观层级分开 |
 | 1.3斑块分布 | `summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv`、`reference_support_reading.csv` | 八组 `site_crop`，数量和面积权重分开 |
+| 1.3.2现行表1及联合图 | `summary/sec13_landscape_display/`、`summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv` | 表1选NP、AI、ENN等权P90与整站ED；联合图复用六档AREA×四档SHAPE，分母为本站该作物总面积；不定义形态类型 |
 | 3.1本站F1 | `summary/f1_raw_scale/within_site_crop_f1.csv` | 12个独立本站汇总基准 |
 | 3.1折间波动 | `summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv` | 不替代本站汇总F1 |
 | 3.1本站错分 | `processed/sec33_directional_confusion_closeout/crop_metrics_per_prediction.csv`、`summary/sec33_directional_confusion_closeout/directional_summary.csv` | 筛本站，重复方向基准验证后去重 |
@@ -26,6 +27,8 @@
 
 | 内容 | 保留产物 |
 |---|---|
+| 景观格局表1 | `tables/sec13_landscape_context_rows.tex`；`scripts/generate_sec13_landscape_display.py` |
+| 面积—形状联合分布 | `figures/study_area/fig_sec13_area_shape_joint{,_a,_b}.pdf`及同名`.tex`拼版；旧v3保留 |
 | 本站F1 | `figures/results/fig_within_site_f1_{a,b}.pdf` |
 | D站本站示例 | `figures/results/fig_within_site_map_D_{a..h}.pdf` |
 | 12路径跨站F1 | `tables/table2_cross_site_f1_12paths.csv`及 `_rows.tex` |

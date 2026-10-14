@@ -1,5 +1,7 @@
 # 玉米—大豆分类空间泛化论文
 
+2026-10-14景观格局更新：1.3.2围绕面积—形状联合分布组织；表1改为斑块数、AI、ENN等权P90和整站ED，联合图已接入为图3。原数据与旧版本保留，生成入口和核查见[现行展示说明](results/summary/sec13_landscape_display/README.md)；最新PDF以[预览入口](output/README.md)为准。本轮未自动提交。
+
 当前主线：四站空间背景 → 本站错误基准 → 跨站F1差距 → 空间条件与错分变化的对应关系。
 
 总体计划见 [plan/outline.md](plan/outline.md)，最新交接见 [HANDOVER.md](HANDOVER.md)，规则见 [AGENTS.md](AGENTS.md)。
@@ -7,6 +9,8 @@
 2026-10-12现状：1.3已采用单张通栏景观表，AREA/SHAPE面积加权、ENN斑块等权；图表字体和图2/图3条形样式已统一。预览已按任务整理，最新与历史入口见[output/README.md](output/README.md)。此前成果恢复过程见[2026-10-11版本说明](plan/version-notes-2026-10-11.md)。
 
 2026-10-13展示更新：F1及其标准差显示为百分数，F1差值显示为百分点，均保留两位小数；原尺度计算和完整精度数据不变。正文、表格和正式图的生成入口已同步，见[修改与核查清单](verification/f1-display-2026-10-13/README.md)。
+
+2026-10-14后续调整：跨站主表仅显示平均F1，保留百分数和两位小数；逐次值与标准差保留在数据中。已更新[8页PDF](output/previews/2026-10-14-cross-f1-means/manuscript.pdf)并检查表格，见[本次核查](verification/cross-f1-mean-only-2026-10-14.md)。热力图及科学结果未变，本次尚未提交。
 
 ## 活动目录
 
@@ -31,8 +35,9 @@
 | 脚本 | 职责 |
 |---|---|
 | `calculate_f1_raw_scale.py` | 两份raw矩阵→有效F1链，阅读前先校验已有产物 |
-| `generate_core_tables.py`、`f1_display.py` | 生成12路径百分数展示表（均值±标准差）及正文数值宏；共用F1格式函数，不写科学结果 |
-| `generate_sec13_spatial_tables.py` | 当前表1；优先用`--check`只读核对，AREA/SHAPE面积加权、ENN斑块等权 |
+| `generate_core_tables.py`、`f1_display.py` | 生成12路径百分数展示表（仅平均F1）及正文数值宏；共用F1格式函数，逐次值和标准差仍保留于原数据，不写科学结果 |
+| `generate_sec13_landscape_display.py` | 当前表1与面积—形状联合图；复用NP、AI、ENN等权P90、整站ED和v3联合汇总；`--check`只读核对 |
+| `generate_sec13_spatial_tables.py` | 历史表1及分布核查；AREA/SHAPE面积加权、ENN等权中位数和极值原位保留 |
 | `plot_sec13_composition.py` | 仅重绘现行组成图，避免调用历史组合生成器连带写入旧表 |
 | `plot_within_site_f1.py`、`plot_within_site_map_D.py`、`plot_degradation_heatmap.py` | 正式图件，共享 `figstyle.py` |
 | `sec33_metrics.py` | 只读指标和五次完整统计函数 |

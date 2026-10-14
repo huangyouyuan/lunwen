@@ -1,0 +1,26 @@
+{
+  "schema_version": 3,
+  "status": "Verified",
+  "scope": "Mean-only cross-site F1 table; page 7 rendered and reviewed; other seven pages have unchanged text; not a full scientific review",
+  "source_pdf": {
+    "path": "main.pdf",
+    "sha256": "f3cd0e6b8182b129cd4293637e04cccb90b023b5455eae0e0da60df7e4254adc",
+    "pages": 8
+  },
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-14-cross-f1-means/manuscript.pdf",
+    "sha256": "f3cd0e6b8182b129cd4293637e04cccb90b023b5455eae0e0da60df7e4254adc",
+    "pages": 8
+  },
+  "source_verification": "verification/cross-f1-mean-only-2026-10-14.md",
+  "previews": [
+    {
+      "path": "output/previews/2026-10-14-cross-f1-means/page-7.png",
+      "pdf_page": 7,
+      "sha256": "4e464b31c9fd9549bd380824409704d56765febc4d675ea158a8b2724d36b6c1"
+    }
+  ],
+  "historical_manifest": "output/previews/2026-10-14-cross-f1-means/previous-preview-manifest.json",
+  "entry_point": "output/README.md",
+  "generated_for": "2026-10-14 mean-only cross-site F1 table"
+}
