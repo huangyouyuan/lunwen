@@ -1,6 +1,6 @@
 # 3.3 证据总览
 
-更新：2026-10-11。供选择证据，不是正文。本次整理只引用已保存结果，没有重算预测误差；原轮次总览与历史判断保存在 [快照](../../archive/2026-10-10-mainline/snapshots/results/summary/sec33_evidence_overview.md)。当前优先完成1.3四站参考背景与3.1本站错分基准，再围绕3.2组织3.3。完整K2/K4探索、参考等级候选和空间底表已恢复原位，见[复用入口](reuse-status.md)，不以是否成为主方案判断是否保留。
+更新：2026-10-11；2026-10-14补入新增证据入口。供选择证据，不是正文。本次整理只引用已保存结果，没有重算预测误差；原轮次总览与历史判断保存在 [快照](../../archive/2026-10-10-mainline/snapshots/results/summary/sec33_evidence_overview.md)。当前优先完成1.3四站参考背景与3.1本站错分基准，再围绕3.2组织3.3。完整K2/K4探索、参考等级候选和空间底表已恢复原位，见[复用入口](reuse-status.md)，不以是否成为主方案判断是否保留。
 
 ## 围绕3.2已能说明什么
 
@@ -34,6 +34,12 @@ B→D大豆→玉米的远内部d>6增量为ConvGRU +12.77、3D U-Net +1.43、U-
 源站整站组成对照已覆盖六个方向，存在反向和无明确对应的情况。仅三个来源的排序不能证明组成决定误差，也不能据反例排除其作用；固定目标格局本身也不能独自解释来源变化。背景数值与局部邻接不是同一尺度。
 
 来源：[六向组成对照](sec33_directional_confusion_closeout/source_composition_direction_contrast.csv)、[来源排序诊断](sec33_directional_confusion_closeout/composition_source_order_diagnostic.csv)、[保留的C3/C4案例](sec33_directional_confusion_closeout/case_D_C3_C4_interior_all_sources.csv)。参考特征见 [分布入口](sec33_indicator_grading_preparation/README.md)。
+
+## 新增证据入口（2026-10-12/13）
+
+- [四站空间条件与分类错误](spatial_error_conditions/README.md)：全路径分档、共同权重与空间子集实际贡献；为3.1/3.3提供条件基准与反例，不识别独立作用。
+- [空间条件发现提炼](spatial_findings_refinement/README.md)：共同A/B来源下，C大豆高SHAPE组跨站额外漏分对照为正、D为负，六个模型—来源组合均五次同向；不称独立形状效应。
+- [模型优势在空间条件中的分布](model_advantage_spatial_conditions/README.md)：以ConvGRU为参照的模型漏分优势分解；固定D换来源时优势幅度与最近带以外份额改变，C玉米本站优势跨站均值为负；完整F1单列。
 
 ## 当前收敛建议
 

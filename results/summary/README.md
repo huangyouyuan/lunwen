@@ -30,6 +30,9 @@
 | [完整F1错分分量](sec33_crop_spatial_context/whole_f1_error_components_summary.csv) | 两种漏分与两种误分入共同连接F1；[逐次底表](../processed/sec33_crop_spatial_context/whole_f1_error_components_per_prediction.csv)使用F1自身分母 |
 | [距离共同权重与条件错误](sec33_crop_spatial_context/distance_common_weights.csv) | 参考分布权重；[逐次标准化表](../processed/sec33_crop_spatial_context/distance_weighted_per_prediction.csv)是描述性漏分率对照，不是F1或因果分解 |
 | [3.3证据总览](sec33_evidence_overview.md) | 对照3.2的现象、证据和限制 |
+| [四站空间条件与分类错误](spatial_error_conditions/README.md) | 全路径分档、共同权重与空间子集实际贡献；条件对应与反例，边界和距离仅作定位 |
+| [空间条件发现提炼（C/D大豆）](spatial_findings_refinement/README.md) | 共同A/B来源下，高SHAPE组跨站额外漏分对照C为正、D为负；三套分层不可混合 |
+| [模型优势在空间条件中的分布](model_advantage_spatial_conditions/README.md) | 优势=ConvGRU漏分率减对照模型漏分率；本站16比较与48条跨站路径；完整F1另见`complete_F1_comparisons.csv` |
 | [完整斑块K2](sec33_reference_patch_types/type_error_summary.csv)与[K4](sec33_k4_sensitivity/type_error_summary.csv) | 全部类型逐次结果、参考支持和冻结归属已恢复；作为既有条件探索 |
 | [五档候选支持](sec33_common_five_grades/grade_support.csv) | 待审阅方案；没有等级误差统计，未批准冻结 |
 | [分层复用与源码索引](reuse-status.md) | 当前证据、补充探索、候选与历史方法的使用边界 |

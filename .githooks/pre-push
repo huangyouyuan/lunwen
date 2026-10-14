@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python -B scripts/manage_remote_repository.py check --history

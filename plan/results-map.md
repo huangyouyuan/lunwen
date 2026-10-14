@@ -18,6 +18,9 @@
 | 3.3全路径七带 | `summary/sec33_round3_distance/band_metrics_summary.csv`、`summary/sec33_round3_closeout/nearest_vs_gt6_delta_e_summary.csv` | 类内漏分增量、像元权重与净贡献；最近和远内部逐次配对，均非F1 |
 | 3.3完整F1分量与环境分布 | `summary/sec33_crop_spatial_context/whole_f1_error_components_summary.csv`、`distance_common_weights.csv` | 分量沿F1自身分母；共同权重只作描述性距离标准化 |
 | 3.3组成限制 | `summary/sec33_directional_confusion_closeout/source_composition_direction_contrast.csv` | 固定模型目标比较来源，不等同局部邻接 |
+| 3.1/3.3空间条件与错误定位 | `summary/spatial_error_conditions/`、`processed/spatial_error_conditions/` | 全路径分档、共同权重与空间子集实际贡献；条件对应与反例，边界和距离仅作定位 |
+| 3.3条件性发现（C/D大豆） | `summary/spatial_findings_refinement/`、`processed/spatial_findings_refinement/` | 共同A/B来源下，高SHAPE组跨站额外漏分对照C为正、D为负；三套分层不可混合，不称独立形状效应 |
+| 3.1/3.3模型优势与跨站保持 | `summary/model_advantage_spatial_conditions/`、`processed/model_advantage_spatial_conditions/` | 优势=ConvGRU漏分率减对照模型漏分率；本站16比较、48条跨站路径；完整F1见`complete_F1_comparisons.csv`，不以漏分排序替代 |
 | 完整斑块条件探索 | `summary/sec33_reference_patch_types/`、`summary/sec33_k4_sensitivity/` | 配置、逐次、支持和图件原位恢复；作为已有补充探索，不自动确定论文主方案 |
 | 共同五档候选 | `summary/sec33_common_five_grades/` | 仅参考支持、待审阅；没有等级错误结果 |
 
