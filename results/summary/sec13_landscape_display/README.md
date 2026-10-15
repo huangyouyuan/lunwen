@@ -4,12 +4,12 @@
 
 2026-10-15最新展示修订：图3保留左右并排，图框各为7.6×7.6 cm方框；每幅外部画布宽8.9 cm，图框左侧留1.25 cm，两图纵轴标题和区间数值均在左侧旋转90°。整行按原尺寸居中，画布在通栏两侧各外扩0.2 cm，增加的空间用于轴标。区间标签保留“1.5–2”等形式，图注说明左闭右开；分档、169个非零气泡、原面积比例和全部CSV字节保持不变。核查见[本轮记录](../../../verification/sec132-square-axes-2026-10-15.json)，原图及旧manifest见[修订前快照](../../../archive/manuscript/2026-10-15/sec132-square-axes-before/manifest.json)。此前横排纵轴标题版见[历史核查](../../../verification/sec132-joint-2026-10-15.md)，旧探索图v3继续原位保留。
 
-- [表1数据](table1_landscape_context.csv)：8个站点—作物组，斑块数、AI及整站ED来自[基础表](../sec13_sec31_foundations/README.md)的`scope=full`结果；ENN P90直接复用[已有分布表](../sec33_indicator_grading_preparation/indicator_distribution_reading.csv)的`domain=site_crop, metric=ENN, weighting=patch_equal, q90`。CSV中的整站ED为方便连接而重复附列，LaTeX按站点合并，不能当作两种作物各自的ED。
+- [表1数据](table1_landscape_context.csv)：8个站点—作物组，斑块数、AI及整站ED来自[基础表](../sec13_sec31_foundations/README.md)的`scope=full`结果；ENN直接复用[已有分布表](../sec33_indicator_grading_preparation/indicator_distribution_reading.csv)的`domain=site_crop, metric=ENN, weighting=patch_equal`：2026-10-15起表1显示中位数（最小值～最大值），`median/minimum/maximum`入CSV；原P90仍保留在CSV的`enn_p90_m`列，不再进入表1。CSV中的整站ED为方便连接而重复附列，LaTeX按站点合并，不能当作两种作物各自的ED。
 - [联合分布阅读表](joint_distribution_reading.csv)：对[气泡图v3原汇总](../area_shape_joint_bubbles_v3/area_shape_joint_bins.csv)作必要的行筛选与加总；只服务本节文字核对。最大单格、前三格总份额、小于10 ha的数量/面积份额和大型复杂组合分别保留，不能将最大单格称为绝对多数。
 - [闭合检查](closure_checks.csv)：149,234个作物斑块、192个联合格；八组分档面积占比各自为100%。169个非零格绘制，23个零格留空。
 - [生成与几何清单](manifest.json)：输入输出SHA-256、旧版缩放参数及最小圆间净距。
 
-ENN每个完整参考斑块计一次。P90沿用pandas线性顺序统计量：升序后在从0开始的位置`(n−1)×0.9`按相邻值线性插值；独立核查从完整参考表手工排序验证，未重算ENN距离。八组没有缺失/无效ENN，单像元及外缘斑块均保留。ENN是窗口内最近同类斑块边界像元中心距离，不是田块间净空距离；历史FRAGSTATS工程参数的核查范围没有升级。
+ENN每个完整参考斑块计一次。中位数与P90均沿用pandas线性顺序统计量：升序后在从0开始的位置`(n−1)×q`按相邻值线性插值（中位数q=0.5，P90 q=0.9），最小值、最大值为实测极值；独立核查从完整参考表手工排序验证，未重算ENN距离。八组没有缺失/无效ENN，单像元及外缘斑块均保留。ENN是窗口内最近同类斑块边界像元中心距离，不是田块间净空距离；历史FRAGSTATS工程参数的核查范围没有升级。
 
 联合图沿用六档AREA（ha）：<10、10–<50、50–<100、100–<200、200–<500、≥500；四档SHAPE：1–<1.5、1.5–<2、2–<3、≥3。面积份额分母为本站该作物的完整参考面积。图中的面积份额、正文辅助引用的AREA面积加权中位数、表中ENN斑块等权P90是三种不同口径；展示分档不定义形态类型。
 

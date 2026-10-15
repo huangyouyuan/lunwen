@@ -1,0 +1,13 @@
+Initial Win CP for (console input, console output, system): (CP936, CP936, CP936)
+I changed them all to CP936
+Rc files read (in order):
+  ./.latexmkrc
+Latexmk: Run number 1 of rule 'xelatex'
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+Latexmk: Getting log file 'output/build/main/main.log'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'output/build/main/main.bbl' for 'xelatex'
+Latexmk: Run number 1 of rule 'xdvipdfmx'
+

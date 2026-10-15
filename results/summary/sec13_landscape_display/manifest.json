@@ -2,8 +2,8 @@
   "status": "Verified",
   "scope": "Saved-statistic selection, closure and plot geometry; visual review recorded separately",
   "data_status": "derived",
-  "enn_source": "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, q90",
-  "enn_algorithm": "patch_equal; sort n values; interpolate linearly at zero-based (n-1)*0.9",
+  "enn_source": "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, median/minimum/maximum (q90 retained in CSV)",
+  "enn_algorithm": "patch_equal median (linear order statistics) with observed minimum and maximum; P90 kept in CSV only",
   "geometry": {
     "fonts": {
       "Times New Roman": "C:\\Windows\\Fonts\\times.ttf",
@@ -112,14 +112,14 @@
     "results/summary/sec13_sec31_foundations/reference_composition.csv": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
     "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
     "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
-    "scripts/generate_sec13_landscape_display.py": "5ff04786183dd86deda283a8fc8f317bb1830ca30b925b281f64ceed079bc0f6",
+    "scripts/generate_sec13_landscape_display.py": "528e6b003e27a56b3733cd3728966889fde2a1d0d52de8c86bedfc765e69a8fb",
     "scripts/plot_area_shape_joint_bubbles.py": "6ffa0c3d01b715f4484745cd2f83e8cd5786259a3f6e8598f79f8fee388b0021",
     "scripts/figstyle.py": "257cd3d0f635f61d607dead85f5a0e47b6eefe33b6fdacf80eebc5f48794aa69",
     "results/summary/area_shape_joint_bubbles_v3/manifest.json": "21504b96dc8d5488e3096f6dd5660346aaa0a0aec1b19271e0a155572fe1790a"
   },
   "output_sha256": {
-    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
-    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "tables/sec13_landscape_context_rows.tex": "9b4fdf72403f76376d17bc0e7050e834efebe11095a9758a1d1f3839ae1e7690",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "b711d3cb23baea89be4525ad919643b01eae3f45f2ed8565fe2c64f452cbd769",
     "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
     "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
     "figures/study_area/fig_sec13_area_shape_joint_frames.pdf": "3f63a416183f1cabaf9494500137d77fe99396b9dba127b2eded275b6707c056",
@@ -129,5 +129,12 @@
     "figures/study_area/fig_sec13_area_shape_joint.tex": "bcc5ba9a03be677699373aab6c5f40bdf97e0c0fa38f7b3f76a959a1f8cba5fd",
     "figures/study_area/fig_sec13_area_shape_joint.pdf": "ab5622113ec029a4d65d120b992b451134afd8534231bdd8d5ac8f4dd8e9a6df",
     "figures/study_area/fig_sec13_area_shape_joint.png": "ce50418aa2999b87bc4e5c919378dcf5e4afe97cac4f81433f95ec4faf84d5c0"
+  },
+  "figure_generation_script_sha256": "615ba97e28355abc2258b9d037e8c80741bb6c04deb8895738f8a41b4e5ba388",
+  "table_revision": {
+    "date": "2026-10-15",
+    "archive": "archive/manuscript/2026-10-15/sec13-merge-before",
+    "change": "Table 1 ordered patch/class/landscape level; class area share added from reference_composition.csv",
+    "script_sha256": "528e6b003e27a56b3733cd3728966889fde2a1d0d52de8c86bedfc765e69a8fb"
   }
 }

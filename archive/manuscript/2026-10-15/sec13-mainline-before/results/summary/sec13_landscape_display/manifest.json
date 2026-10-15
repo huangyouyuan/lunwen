@@ -1,0 +1,133 @@
+{
+  "status": "Verified",
+  "scope": "Saved-statistic selection, closure and plot geometry; visual review recorded separately",
+  "data_status": "derived",
+  "enn_source": "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, q90",
+  "enn_algorithm": "patch_equal; sort n values; interpolate linearly at zero-based (n-1)*0.9",
+  "geometry": {
+    "fonts": {
+      "Times New Roman": "C:\\Windows\\Fonts\\times.ttf",
+      "SimSun": "C:\\Windows\\Fonts\\simsun.ttc"
+    },
+    "panels": [
+      {
+        "crop": "corn",
+        "nonzero_bubbles": 86,
+        "left_cm": 1.25,
+        "bottom_cm": 0.8,
+        "width_cm": 7.6000000000000005,
+        "height_cm": 7.6000000000000005,
+        "y_axis_label": "形状指数（SHAPE）",
+        "y_ticks": [
+          "1–1.5",
+          "1.5–2",
+          "2–3",
+          "≥3"
+        ],
+        "y_axis_label_rotation_deg": 90,
+        "y_tick_rotation_deg": 90
+      },
+      {
+        "crop": "soybean",
+        "nonzero_bubbles": 83,
+        "left_cm": 10.15,
+        "bottom_cm": 0.8,
+        "width_cm": 7.6000000000000005,
+        "height_cm": 7.6000000000000005,
+        "y_axis_label": "形状指数（SHAPE）",
+        "y_ticks": [
+          "1–1.5",
+          "1.5–2",
+          "2–3",
+          "≥3"
+        ],
+        "y_axis_label_rotation_deg": 90,
+        "y_tick_rotation_deg": 90
+      }
+    ],
+    "scatter_s_pt2_per_pct": 15.164483701644752,
+    "circle_area_pt2_per_pct": 11.910157648142325,
+    "observed_max_share_pct": 22.42412935323383,
+    "min_circle_gap_mm": 0.21888522112011816,
+    "min_cell_boundary_clearance_mm": 0.16410499122116107,
+    "offsets": {
+      "A": [
+        -0.23,
+        0.2
+      ],
+      "B": [
+        0.245,
+        0.2
+      ],
+      "C": [
+        -0.23,
+        -0.2
+      ],
+      "D": [
+        0.245,
+        -0.2
+      ]
+    },
+    "min_bubble_floor": null,
+    "figure_width_cm": 17.8,
+    "frame_height_cm": 9.0,
+    "panel_canvas_width_cm": 8.9,
+    "area_tick_labels": [
+      "<10",
+      "10–50",
+      "50–100",
+      "100–200",
+      "200–500",
+      "≥500"
+    ],
+    "shape_tick_labels": [
+      "1–1.5",
+      "1.5–2",
+      "2–3",
+      "≥3"
+    ],
+    "interval_convention": "left closed, right open; last includes its lower limit",
+    "legend": [
+      {
+        "share_pct": 1,
+        "diameter_pt": 3.8941602049279833,
+        "diameter_mm": 1.3737731834051496
+      },
+      {
+        "share_pct": 5,
+        "diameter_pt": 8.707606933493482,
+        "diameter_mm": 3.0718502237602006
+      },
+      {
+        "share_pct": 20,
+        "diameter_pt": 17.415213866986964,
+        "diameter_mm": 6.143700447520401
+      }
+    ]
+  },
+  "input_sha256": {
+    "results/summary/sec13_sec31_foundations/class_background_full_scope.csv": "239706dacb84ab355cf895f15cd92b398a0a3881727f8d48080bb029effa03a3",
+    "results/summary/sec13_sec31_foundations/landscape_background_full_scope.csv": "2ebbf6760e13e83ee29fa9eda18bc256d8d36f9ae40af7ff77ef7ff7834e71b0",
+    "results/summary/sec13_sec31_foundations/crop_patch_support_and_limitations.csv": "0fc170374abf4855f9e0092b3ea5a606a5a808b013683be01a3bbeea2b4beb58",
+    "results/summary/sec13_sec31_foundations/reference_composition.csv": "08d0872d424f1ac1369399ae59a9c65d3e5141c7feee7e4d70f2f8297ce0e94a",
+    "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv": "cad735b37fdcc8140bf722c3a5b704c7800a5a0211ea81426ae48fdae2a940da",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "scripts/generate_sec13_landscape_display.py": "5ff04786183dd86deda283a8fc8f317bb1830ca30b925b281f64ceed079bc0f6",
+    "scripts/plot_area_shape_joint_bubbles.py": "6ffa0c3d01b715f4484745cd2f83e8cd5786259a3f6e8598f79f8fee388b0021",
+    "scripts/figstyle.py": "257cd3d0f635f61d607dead85f5a0e47b6eefe33b6fdacf80eebc5f48794aa69",
+    "results/summary/area_shape_joint_bubbles_v3/manifest.json": "21504b96dc8d5488e3096f6dd5660346aaa0a0aec1b19271e0a155572fe1790a"
+  },
+  "output_sha256": {
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+    "figures/study_area/fig_sec13_area_shape_joint_frames.pdf": "3f63a416183f1cabaf9494500137d77fe99396b9dba127b2eded275b6707c056",
+    "figures/study_area/fig_sec13_area_shape_joint_a.pdf": "e0be9b0c8944d2bb637b820a453e869b8551bbe1f6f7c31de256727a6e8398ed",
+    "figures/study_area/fig_sec13_area_shape_joint_b.pdf": "fd0243d92167ab99184bddeb2ddf0787782c947d29645cb977032f7f369e892e",
+    "figures/study_area/fig_sec13_area_shape_joint_legend.tex": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41",
+    "figures/study_area/fig_sec13_area_shape_joint.tex": "bcc5ba9a03be677699373aab6c5f40bdf97e0c0fa38f7b3f76a959a1f8cba5fd",
+    "figures/study_area/fig_sec13_area_shape_joint.pdf": "ab5622113ec029a4d65d120b992b451134afd8534231bdd8d5ac8f4dd8e9a6df",
+    "figures/study_area/fig_sec13_area_shape_joint.png": "ce50418aa2999b87bc4e5c919378dcf5e4afe97cac4f81433f95ec4faf84d5c0"
+  }
+}

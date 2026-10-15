@@ -69,7 +69,14 @@ def main():
     require(len([x for x in table_tex.splitlines() if x.endswith(r"\\")]) == 8, "Expected eight table rows")
     for line in table_tex.splitlines():
         if line.endswith(r"\\"):
-            require(line.count("&") == 5, "Expected six table columns")
+            require(line.count("&") == 6, "Expected seven table columns")
+    composition = read("results/summary/sec13_sec31_foundations/reference_composition.csv").set_index(["site", "crop"])
+    for row in table.itertuples():
+        comp = composition.loc[(row.site, row.crop)]
+        # Area share: class pixels over all valid reference pixels of the site.
+        require(comp.pixels == row.reference_pixels and comp.total_pixels == 2560 * 2560
+                and abs(row.area_share_pct - 100 * row.reference_pixels / comp.total_pixels) < 1e-10,
+                "Area share denominator differs")
 
     current = json.loads((SUMMARY / "manifest.json").read_text(encoding="utf-8"))
     scale = recorded["geometry"]["scatter_s_pt2_per_pct"]

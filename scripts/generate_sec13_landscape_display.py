@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Section 1.3.2 presentation only: reuse saved P90 and AREA-SHAPE bins.
+"""Section 1.3.2 presentation only: reuse saved ENN median/range and AREA-SHAPE bins.
 
 python -B scripts/generate_sec13_landscape_display.py
 python -B scripts/generate_sec13_landscape_display.py --check
@@ -98,9 +98,16 @@ def build_reading():
                     and quant.pixels_total == quant.pixels_valid == cls.pixels == sup.pixels
                     and quant.n_missing_or_invalid == quant.pixels_missing_or_invalid == 0,
                     "ENN complete-reference support")
+            comp = composition.loc[(site, crop)]
+            require(comp.target == target and int(comp.pixels) == int(cls.pixels)
+                    and abs(comp.area_share - comp.pixels / comp.total_pixels) < 1e-12,
+                    "Composition share/denominator")
             table.append(dict(target=target, site=site, crop=crop, crop_label=label,
+                              area_share_pct=float(100 * comp.area_share),
+                              site_total_pixels=int(comp.total_pixels),
                               patch_count=int(cls.patch_count_8n), ai_pct=float(cls.aggregation_index),
-                              enn_p90_m=float(quant.q90), enn_median_m=float(quant['median']),
+                              enn_median_m=float(quant['median']), enn_min_m=float(quant.minimum),
+                              enn_max_m=float(quant.maximum), enn_p90_m=float(quant.q90),
                               enn_weighting="patch_equal", enn_quantile_algorithm="linear_order_statistics",
                               reference_pixels=int(cls.pixels),
                               landscape_ed_m_per_ha=float(land.edge_density_m_per_ha),
@@ -138,14 +145,16 @@ def build_reading():
 
 
 def table_rows(table):
-    lines = ["% Complete reference patches; ENN P90 is patch-equal, linear order statistics."]
+    lines = ["% Patch level: ENN patch-equal median (minimum to maximum); class level: area share, NP, AI;",
+             "% landscape level: whole-site three-class ED."]
     for site in SITES:
         for i, crop in enumerate(CROPS):
             row = table.loc[table.site.eq(site) & table.crop.eq(crop)].iloc[0]
             site_cell = rf"\multirow{{2}}{{*}}{{{site}}}" if i == 0 else ""
             ed_cell = rf"\multirow{{2}}{{*}}{{{row.landscape_ed_m_per_ha:.2f}}}" if i == 0 else ""
-            lines.append(f"{site_cell} & {CROPS[crop]} & {int(row.patch_count)} & "
-                         f"{row.ai_pct:.2f} & {row.enn_p90_m:.2f} & {ed_cell} " + r"\\")
+            lines.append(f"{site_cell} & {CROPS[crop]} & "
+                         f"{row.enn_median_m:.2f}（{row.enn_min_m:.2f}～{row.enn_max_m:.2f}） & "
+                         f"{row.area_share_pct:.2f} & {int(row.patch_count)} & {row.ai_pct:.2f} & {ed_cell} " + r"\\")
         if site != "D":
             lines.append(r"\addlinespace[2pt]")
     return "\n".join(lines) + "\n"
@@ -278,6 +287,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="read-only source and output verification")
     parser.add_argument("--figure-only", action="store_true", help="verify and preserve saved tables; generate figure only")
+    parser.add_argument("--table-only", metavar="ARCHIVE_DIR",
+                        help="rewrite table/CSV outputs only after byte-identical archiving; figure untouched")
     args = parser.parse_args()
     table, reading, closure, joint, sources = build_reading()
     texts = {TABLE: table_rows(table)}
@@ -306,10 +317,37 @@ def main():
                 require(any(path.is_file() and digest(path) == expected for path in candidates),
                         f"Recorded hash differs: {name}")
         print(json.dumps(dict(status="Verified", groups=8, joint_cells=192,
-                              patches=int(table.patch_count.sum()), enn="reused patch-equal P90")))
+                              patches=int(table.patch_count.sum()), enn="reused patch-equal median and range")))
         return
     figure_paths = [FIGURES / f"{STEM}{suffix}" for suffix in
                     ["_frames.pdf", "_a.pdf", "_b.pdf", "_legend.tex", ".tex", ".pdf", ".png"]]
+    if args.table_only:
+        # Rewrite text outputs only; figure 3 must stay byte-identical and every
+        # replaced file must already have a byte-identical copy in the archive.
+        archive = ROOT / args.table_only
+        manifest_path = SUMMARY / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        for path in figure_paths:
+            name = path.relative_to(ROOT).as_posix()
+            require(digest(path) == manifest["output_sha256"][name], f"Figure changed: {name}")
+        for path in [*texts, manifest_path]:
+            if path.exists():
+                kept = archive / path.relative_to(ROOT)
+                require(kept.is_file() and digest(kept) == digest(path), f"Archive first: {path}")
+        old_script = manifest["input_sha256"]["scripts/generate_sec13_landscape_display.py"]
+        for path, value in texts.items():
+            path.write_text(value, encoding="utf-8", newline="\n")
+        manifest["figure_generation_script_sha256"] = old_script
+        manifest["table_revision"] = dict(
+            date="2026-10-15", archive=args.table_only,
+            change="Table 1 ordered patch/class/landscape level; class area share added from reference_composition.csv",
+            script_sha256=digest(Path(__file__)))
+        manifest["input_sha256"]["scripts/generate_sec13_landscape_display.py"] = digest(Path(__file__))
+        manifest["output_sha256"].update({p.relative_to(ROOT).as_posix(): digest(p) for p in texts})
+        manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(dict(status="Verified", groups=8, table_only=True,
+                              patches=int(table.patch_count.sum())), ensure_ascii=False))
+        return
     if args.figure_only:
         for path, value in texts.items():
             require(path.read_text(encoding="utf-8") == value, f"Saved display data differs: {path}")
@@ -360,7 +398,7 @@ def main():
                 JOINT.parent / "manifest.json"]
     manifest = dict(status="Verified", scope="Saved-statistic selection, closure and plot geometry; visual review recorded separately",
         data_status="derived", enn_source=dist_source(),
-        enn_algorithm="patch_equal; sort n values; interpolate linearly at zero-based (n-1)*0.9",
+        enn_algorithm="patch_equal median (linear order statistics) with observed minimum and maximum; P90 kept in CSV only",
         geometry=geometry,
         input_sha256={p.relative_to(ROOT).as_posix(): digest(p) for p in sources},
         output_sha256={p.relative_to(ROOT).as_posix(): digest(p) for p in [*texts, *figure_paths]})
@@ -370,7 +408,7 @@ def main():
 
 
 def dist_source():
-    return "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, q90"
+    return "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, median/minimum/maximum (q90 retained in CSV)"
 
 
 if __name__ == "__main__":
