@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Section 1.3.2 presentation only: reuse saved ENN median/range and AREA-SHAPE bins.
+"""Section 1.3.2 presentation only: reuse saved ENN median/minimum/P90 and AREA-SHAPE bins.
 
 python -B scripts/generate_sec13_landscape_display.py
 python -B scripts/generate_sec13_landscape_display.py --check
@@ -145,7 +145,7 @@ def build_reading():
 
 
 def table_rows(table):
-    lines = ["% Patch level: ENN patch-equal median (minimum to maximum); class level: area share, NP, AI;",
+    lines = ["% Patch level: ENN patch-equal median (minimum to P90); class level: area share, NP, AI;",
              "% landscape level: whole-site three-class ED."]
     for site in SITES:
         for i, crop in enumerate(CROPS):
@@ -153,7 +153,7 @@ def table_rows(table):
             site_cell = rf"\multirow{{2}}{{*}}{{{site}}}" if i == 0 else ""
             ed_cell = rf"\multirow{{2}}{{*}}{{{row.landscape_ed_m_per_ha:.2f}}}" if i == 0 else ""
             lines.append(f"{site_cell} & {CROPS[crop]} & "
-                         f"{row.enn_median_m:.2f}（{row.enn_min_m:.2f}～{row.enn_max_m:.2f}） & "
+                         f"{row.enn_median_m:.2f}（{row.enn_min_m:.2f}～{row.enn_p90_m:.2f}） & "
                          f"{row.area_share_pct:.2f} & {int(row.patch_count)} & {row.ai_pct:.2f} & {ed_cell} " + r"\\")
         if site != "D":
             lines.append(r"\addlinespace[2pt]")
@@ -317,7 +317,7 @@ def main():
                 require(any(path.is_file() and digest(path) == expected for path in candidates),
                         f"Recorded hash differs: {name}")
         print(json.dumps(dict(status="Verified", groups=8, joint_cells=192,
-                              patches=int(table.patch_count.sum()), enn="reused patch-equal median and range")))
+                              patches=int(table.patch_count.sum()), enn="reused patch-equal median, minimum and P90")))
         return
     figure_paths = [FIGURES / f"{STEM}{suffix}" for suffix in
                     ["_frames.pdf", "_a.pdf", "_b.pdf", "_legend.tex", ".tex", ".pdf", ".png"]]
@@ -339,8 +339,8 @@ def main():
             path.write_text(value, encoding="utf-8", newline="\n")
         manifest["figure_generation_script_sha256"] = old_script
         manifest["table_revision"] = dict(
-            date="2026-10-15", archive=args.table_only,
-            change="Table 1 ordered patch/class/landscape level; class area share added from reference_composition.csv",
+            date="2026-10-16", archive=args.table_only,
+            change="Table 1 ENN column shows patch-equal median (minimum to P90); maximum kept in CSV only",
             script_sha256=digest(Path(__file__)))
         manifest["input_sha256"]["scripts/generate_sec13_landscape_display.py"] = digest(Path(__file__))
         manifest["output_sha256"].update({p.relative_to(ROOT).as_posix(): digest(p) for p in texts})
@@ -398,7 +398,7 @@ def main():
                 JOINT.parent / "manifest.json"]
     manifest = dict(status="Verified", scope="Saved-statistic selection, closure and plot geometry; visual review recorded separately",
         data_status="derived", enn_source=dist_source(),
-        enn_algorithm="patch_equal median (linear order statistics) with observed minimum and maximum; P90 kept in CSV only",
+        enn_algorithm="patch_equal median and P90 (linear order statistics) with observed minimum; maximum kept in CSV only",
         geometry=geometry,
         input_sha256={p.relative_to(ROOT).as_posix(): digest(p) for p in sources},
         output_sha256={p.relative_to(ROOT).as_posix(): digest(p) for p in [*texts, *figure_paths]})
@@ -408,7 +408,7 @@ def main():
 
 
 def dist_source():
-    return "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, median/minimum/maximum (q90 retained in CSV)"
+    return "results/summary/sec33_indicator_grading_preparation/indicator_distribution_reading.csv: site_crop, ENN, patch_equal, median/minimum/q90 (maximum retained in CSV)"
 
 
 if __name__ == "__main__":

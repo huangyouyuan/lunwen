@@ -1,0 +1,9 @@
+site,crop,patch_count,reference_pixels,area_ha,area_share_sum_pct,zero_cells,status
+A,corn,15146,2974800,267732,100,4,Verified
+A,soybean,14695,2409665,216869.85000000001,100,4,Verified
+B,corn,14460,2758016,248221.44,100,2,Verified
+B,soybean,16039,1539167,138525.03,100,5,Verified
+C,corn,29837,2641661,237749.48999999999,100,2,Verified
+C,soybean,27894,2095730,188615.69999999998,100,2,Verified
+D,corn,16756,2619419,235747.70999999999,100,2,Verified
+D,soybean,14407,2387838,214905.41999999998,100,2,Verified

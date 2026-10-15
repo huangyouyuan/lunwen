@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-16",
+  "base_head": "9242477",
+  "files": [
+    {
+      "original_path": "results/summary/sec13_landscape_display/closure_checks.csv",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/results/summary/sec13_landscape_display/closure_checks.csv",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/joint_distribution_reading.csv",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/results/summary/sec13_landscape_display/joint_distribution_reading.csv",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/manifest.json",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/results/summary/sec13_landscape_display/manifest.json",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "ab3210c6f71097c83f68b01a13278ec2aa7ef4b40dfa2ff05fad7b8b8a7c1cf8"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/README.md",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/results/summary/sec13_landscape_display/README.md",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "123705f1dfe6e79304475999c9df850f463d1c49250cf34b347c80c76191b694"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/table1_landscape_context.csv",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/results/summary/sec13_landscape_display/table1_landscape_context.csv",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "b711d3cb23baea89be4525ad919643b01eae3f45f2ed8565fe2c64f452cbd769"
+    },
+    {
+      "original_path": "scripts/generate_sec13_landscape_display.py",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/scripts/generate_sec13_landscape_display.py",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "528e6b003e27a56b3733cd3728966889fde2a1d0d52de8c86bedfc765e69a8fb"
+    },
+    {
+      "original_path": "sections/02_data.tex",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/sections/02_data.tex",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "cc3c99ee25991faa532e6311ccab5abe2e22f390715ad0cfe78bd7e3701ccc1a"
+    },
+    {
+      "original_path": "tables/sec13_landscape_context_rows.tex",
+      "archive_path": "archive/manuscript/2026-10-16/sec13-enn-p90-before/tables/sec13_landscape_context_rows.tex",
+      "reason": "Preserve original bytes before Table 1 ENN column changed from median (min~max) to median (min~P90) and section 1.3.2 ENN paragraph rewrite",
+      "sha256": "9b4fdf72403f76376d17bc0e7050e834efebe11095a9758a1d1f3839ae1e7690"
+    }
+  ]
+}
