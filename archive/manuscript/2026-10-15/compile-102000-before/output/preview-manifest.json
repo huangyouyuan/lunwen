@@ -1,0 +1,38 @@
+{
+  "schema_version": 3,
+  "status": "Verified",
+  "date": "2026-10-15",
+  "scope": "Joint figure axes, interval labels and width; figure geometry and pages 3-5; no new scientific results",
+  "base_head": "69c310e",
+  "source_pdf": {
+    "path": "output/build/sec132-joint-2026-10-15/manuscript/main.pdf",
+    "sha256": "c8c97c22c4467183e8aba80f8647c2d23e188ef19f606d4c72c587bced63498a",
+    "pages": 8
+  },
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+    "sha256": "c8c97c22c4467183e8aba80f8647c2d23e188ef19f606d4c72c587bced63498a",
+    "pages": 8
+  },
+  "source_verification": "verification/sec132-joint-2026-10-15.md",
+  "previews": [
+    {
+      "path": "output/previews/2026-10-15-sec132-joint/page-3.png",
+      "pdf_page": 3,
+      "sha256": "61b82f7cacdd811b767d05bd3d2c2f84eb6ed89afe43a8ce24a62a34bbd52574"
+    },
+    {
+      "path": "output/previews/2026-10-15-sec132-joint/page-4.png",
+      "pdf_page": 4,
+      "sha256": "92398df1ebd6dfe069187ecbeca5414c730ccc185bf5b225c66620ad8eed9ca6"
+    },
+    {
+      "path": "output/previews/2026-10-15-sec132-joint/page-5.png",
+      "pdf_page": 5,
+      "sha256": "bcada714b2bc9279e327b491e0359af423158a71085188278fb1d866be2417cd"
+    }
+  ],
+  "historical_manifest": "output/archive/2026-10-15/sec132-joint-before/output/preview-manifest.json",
+  "entry_point": "output/README.md",
+  "path_mapping": "verification/sec132-joint-2026-10-15.json"
+}

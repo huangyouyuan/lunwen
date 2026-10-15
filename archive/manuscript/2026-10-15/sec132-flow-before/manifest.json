@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-15",
+  "base_head": "69c310e",
+  "files": [
+    {
+      "original_path": "sections/02_data.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/sections/02_data.tex",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "e5fdafe1838db4c260d95441d10a15015bc760a00a8488b3b1ded70e8fc2b7d9"
+    },
+    {
+      "original_path": "output/README.md",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/output/README.md",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "71d14284f033bf55de3985b26dd5cd913ab88c937e3d344625ea8d8c887bc66e"
+    },
+    {
+      "original_path": "output/preview-manifest.json",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/output/preview-manifest.json",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "edb9f406601aba1608ebd7b77acfe1e2e58b87b618b9c312b741dc007df9a96f"
+    },
+    {
+      "original_path": "HANDOVER.md",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/HANDOVER.md",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "c58933df0055d106412ad430e2a630d6b65f317cd33704a2fa1316ab95158d13"
+    },
+    {
+      "original_path": "plan/progress.md",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/plan/progress.md",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "8538d579325c9acc6b7a266ccf7d3dd939a83d447597f551d9f9c8a296e6cf3a"
+    },
+    {
+      "original_path": "plan/format-spec.md",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/plan/format-spec.md",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "a4176a1d1bb6a7788a8f37ef2199225c8e1aedf653afb1b9c490a3e709d3e3ac"
+    },
+    {
+      "original_path": "verification/sec132-landscape-2026-10-14.md",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-before/verification/sec132-landscape-2026-10-14.md",
+      "reason": "Preserve original bytes before section 1.3.2 wording, pagination and preview entry updates",
+      "sha256": "0e25ccb931c5ff0d89aad098a391c57be123937d9774b3fa8c3f98ecdff1c28e"
+    }
+  ],
+  "protected_sha256": {
+    "AGENTS.md": "ca2e429d621c087603fbcb4cdacc5a8fdbb6c45d79849dd16d7c5113f11ab8bd",
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_sec31_foundations/crop_patch_distribution_reading.csv": "74a05d6ff9a9f7fe69fe686bb14d6004e257e4b3d06dc755dc3cd3cfaa0ea9c6",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "figures/study_area/fig_sec13_area_shape_joint.pdf": "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975",
+    "figures/study_area/fig_sec13_area_shape_joint.png": "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b",
+    "figures/study_area/fig_sec13_area_shape_joint.tex": "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4",
+    "figures/study_area/fig_sec13_area_shape_joint_a.pdf": "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af",
+    "figures/study_area/fig_sec13_area_shape_joint_b.pdf": "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d",
+    "figures/study_area/fig_sec13_area_shape_joint_frames.pdf": "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7",
+    "figures/study_area/fig_sec13_area_shape_joint_legend.tex": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+  }
+}

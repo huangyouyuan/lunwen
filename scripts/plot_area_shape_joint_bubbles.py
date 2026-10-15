@@ -306,7 +306,7 @@ def write_readme(path, tag, summary, geometry):
 - 图件：`figures/exploratory/{tag}/{STEM}.pdf`及同名600 dpi PNG。
 - 生产脚本：`scripts/plot_area_shape_joint_bubbles.py`。运行`python -B scripts/plot_area_shape_joint_bubbles.py --check --tag {tag}`可只读核对；另存复现用新的`--tag`，已有输出不覆盖。
 - 独立核查：`python -B scripts/test/check_area_shape_joint_bubbles.py --tag {tag}`。
-- 中间图框、独立LaTeX图件源码与日志在`output/build/{tag}/`，不是主论文编译产物；整稿审阅页面另存于`output/previews/`。
+- 中间图框、独立LaTeX图件源码与日志在`output/build/{tag}/`，不是主论文编译产物；当前整稿PDF为`output/main.pdf`，页面检查图片在`verification/layout/`。
 
 ## 图形语义与核查范围
 

@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-15",
+  "status": "Verified",
+  "scope": "Requested wording and pagination only",
+  "base_head": "69c310e",
+  "compile_command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=output/build/sec132-flow-2026-10-15/final main.tex",
+  "pages_before": 9,
+  "pages_after": 8,
+  "table1_page": 4,
+  "figure3_page": 4,
+  "page3_right_column_bottom_y_pt": {
+    "before": 282.091064453125,
+    "after": 775.6309814453125
+  },
+  "unchanged_first_two_pages_text": true,
+  "unchanged_table1_pdf_text": true,
+  "unchanged_protected_sha256": {
+    "AGENTS.md": "ca2e429d621c087603fbcb4cdacc5a8fdbb6c45d79849dd16d7c5113f11ab8bd",
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_sec31_foundations/crop_patch_distribution_reading.csv": "74a05d6ff9a9f7fe69fe686bb14d6004e257e4b3d06dc755dc3cd3cfaa0ea9c6",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "figures/study_area/fig_sec13_area_shape_joint.pdf": "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975",
+    "figures/study_area/fig_sec13_area_shape_joint.png": "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b",
+    "figures/study_area/fig_sec13_area_shape_joint.tex": "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4",
+    "figures/study_area/fig_sec13_area_shape_joint_a.pdf": "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af",
+    "figures/study_area/fig_sec13_area_shape_joint_b.pdf": "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d",
+    "figures/study_area/fig_sec13_area_shape_joint_frames.pdf": "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7",
+    "figures/study_area/fig_sec13_area_shape_joint_legend.tex": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+  },
+  "source_sha256": "27bffdee703f9923ace42341ee35791144c50f25747ee87e22a75e80289ec6e2",
+  "pdf_sha256": "80b24d6fa2eb7ae147d942d9f966771de38cef3522f29307528fda19084c208d",
+  "visual_review": {
+    "pages_rendered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "pages_inspected_full_size": [
+      3,
+      4,
+      5
+    ],
+    "contact_sheet": "output/archive/2026-10-15/sec132-flow-final-review/all-pages.png"
+  },
+  "compile_checks": {
+    "overfull": 0,
+    "underfull": 0,
+    "undefined_references": 0,
+    "missing_characters": 0,
+    "new_caption_type_warning": 0
+  },
+  "remaining_historical_warnings": [
+    "CJK family redefinition",
+    "SimSun/SimHei bold font substitutions",
+    "caption hypcap ignored on existing composition figure",
+    "unsrtnat software entry/year warnings in bibliography"
+  ],
+  "archive_mapping": "verification/sec132-flow-2026-10-15-archive.json",
+  "limits": [
+    "No rerun of scientific analysis, training or inference",
+    "No claim of complete manuscript or final bibliography verification"
+  ]
+}

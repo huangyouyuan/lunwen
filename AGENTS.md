@@ -102,6 +102,8 @@
 ## LaTeX 编译规则
 
 - 正常修改正文时：修改 → 保存 → **不自动编译**。
+- 主稿入口是根目录 `main.tex`；默认编译配置为 `.latexmkrc`，VS Code 设置与其一致。唯一当前整稿 PDF 为 `output/main.pdf`，辅助文件与编译日志放在 `output/build/main/`。不再生成或同步根目录 `main.pdf`，不再创建 `output/previews/` 当前稿副本。
+- 页面检查图片放 `verification/layout/<任务>/`；旧稿、试排和修改前版本放 `archive/manuscript/<日期>/<任务>/`。归档遵循上述原字节、引用与 SHA-256 规则；已有匹配版本直接引用，不重复复制。各文档职责和更新顺序见 `plan/writing-workflow.md`。
 - 仅在以下情况执行 Build：
   - 用户明确要求编译
   - 用户要求验证

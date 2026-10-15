@@ -42,4 +42,4 @@
 
 **Verified**：执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功，全文8页。PDF第4页表1保持完整单表，表头及数值的实际字号均为10.5 pt，三条主横线宽486.659 bp（17.17 cm），小于493.228 bp（17.4 cm）版心。8个斑块数按原顺序完整显示；表格与第2节之间顺序正确。渲染并查看第4页，未见文字重叠、裁切或缺失，表注为3行。编译日志无Overfull、Underfull、缺字或未定义引用；仍有既有SimSun/SimHei粗体替代、xeCJK字体族重设、随文caption的hypcap及Perl区域设置警告。
 
-放大前源码、整表和两个脚本的字节快照保存在`output/archive/2026-10-12/source-backups/sec13-enn-20261012-before-large/`，`manifest.json`记录原路径、快照路径、原因和SHA-256；未删除或覆盖历史预览。第一次编译的第3、4页预览为`output/archive/2026-10-12/sec13-layout/sec13-enn-20261012-compile-v1-{3,4}.png`，放大后的表格预览为`output/archive/2026-10-12/sec13-layout/sec13-enn-20261012-large-v1-4.png`。源码、数据及版面验证分别记录，不将旧报告的哈希当作新排版的哈希。
+放大前源码、整表和两个脚本的字节快照保存在`archive/manuscript/2026-10-12/source-backups/sec13-enn-20261012-before-large/`，`manifest.json`记录原路径、快照路径、原因和SHA-256；未删除或覆盖历史预览。第一次编译的第3、4页预览为`archive/manuscript/2026-10-12/sec13-layout/sec13-enn-20261012-compile-v1-{3,4}.png`，放大后的表格预览为`archive/manuscript/2026-10-12/sec13-layout/sec13-enn-20261012-large-v1-4.png`。源码、数据及版面验证分别记录，不将旧报告的哈希当作新排版的哈希。

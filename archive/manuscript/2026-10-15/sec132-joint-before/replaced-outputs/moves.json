@@ -1,0 +1,50 @@
+﻿[
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint.pdf",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.pdf",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint.png",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.png",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint.tex",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.tex",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7"
+    },
+    {
+        "original_path":  "figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+    },
+    {
+        "original_path":  "results/summary/sec13_landscape_display/manifest.json",
+        "archive_path":  "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/results/summary/sec13_landscape_display/manifest.json",
+        "reason":  "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+        "sha256":  "99f1921c65bb7e6bbf3d3d24a86da520257c6fc24fd625fd4f257734cbdb9800"
+    }
+]

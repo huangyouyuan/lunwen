@@ -1,0 +1,105 @@
+{
+  "status": "Verified",
+  "date": "2026-10-15",
+  "scope": "Explicit recompilation and PDF synchronization; no manuscript or scientific data edits",
+  "command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=output/build/compile-2026-10-15-102000 main.tex",
+  "exit_code": 0,
+  "source_pdf": "output/build/compile-2026-10-15-102000/main.pdf",
+  "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea",
+  "pages": 8,
+  "source_hashes_unchanged": {
+    "main.tex": true,
+    "sections/01_introduction.tex": true,
+    "sections/02_data.tex": true,
+    "sections/03_methods.tex": true,
+    "sections/04_results.tex": true,
+    "sections/06_conclusion.tex": true,
+    "tables/f1_text_values.tex": true,
+    "tables/sec13_landscape_context_rows.tex": true,
+    "tables/sec13_landscape_metrics_rows.tex": true,
+    "tables/sec13_landscape_rows.tex": true,
+    "tables/sec13_patch_distribution_rows.tex": true,
+    "tables/sec13_patch_extrema_rows.tex": true,
+    "tables/sec13_spatial_metrics_enn_equal_rows.tex": true,
+    "tables/sec13_spatial_metrics_enn_rows.tex": true,
+    "tables/sec13_spatial_metrics_rows.tex": true,
+    "tables/table2_cross_site_f1_12paths_rows.tex": true
+  },
+  "archives_verified": {
+    "output/archive/2026-10-15/compile-102000-before/main.pdf": true,
+    "output/archive/2026-10-15/compile-102000-before/output/preview-manifest.json": true,
+    "output/archive/2026-10-15/compile-102000-before/output/README.md": true,
+    "output/archive/2026-10-15/compile-102000-before/output/previews/2026-10-15-sec132-joint/manuscript.pdf": true
+  },
+  "backup_manifest": "output/archive/2026-10-15/compile-102000-before/manifest.json",
+  "comparison_pdf": "output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+  "page_comparisons": [
+    {
+      "page": 1,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 2,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 3,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 4,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 5,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 6,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 7,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    },
+    {
+      "page": 8,
+      "text_equal": true,
+      "size_equal": true,
+      "pixels_equal_140dpi": true
+    }
+  ],
+  "render_comparison_dpi": 140,
+  "errors_missing_characters_undefined_references_overfull_underfull": [],
+  "existing_warning_categories": [
+    "CJK family redefinition",
+    "SimSun and SimHei bold font substitution",
+    "caption hypcap option ignored",
+    "BibTeX unsupported software entry type and empty year"
+  ],
+  "publication_pending": false,
+  "synchronized_pdfs": [
+    {
+      "path": "main.pdf",
+      "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea"
+    },
+    {
+      "path": "output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+      "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea"
+    }
+  ]
+}

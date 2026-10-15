@@ -53,6 +53,6 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 - **Verified**：最终9页编译完成，无Overfull/Underfull、未定义引用或缺字。此前已有的宋体/黑体粗体替代、`caption hypcap`及`unsrtnat`不识别软件条目/年份的警告仍保留，未借本次修改文献样式。
 - **Verified**：1.3.2之前的研究区与数据正文保持；其余章节、正式F1统计和图件未因本次修改而变化，仅自动图号及分页顺延。跨站主表继续保留上一轮的仅均值百分数格式。
 
-最终[9页PDF](../output/previews/2026-10-14-sec132-landscape/manuscript.pdf)、[第3页](../output/previews/2026-10-14-sec132-landscape/page-3.png)、[第4页](../output/previews/2026-10-14-sec132-landscape/page-4.png)及[第5页](../output/previews/2026-10-14-sec132-landscape/page-5.png)保存供审阅；哈希及范围见[机器记录](sec132-landscape-2026-10-14.json)。首轮排版已于2026-10-15移至[历史试排](../output/archive/2026-10-14/sec132-landscape-pass1-preview/)，不作为当前PDF；仅移动位置，原字节和原核查范围不变。
+最终[9页PDF](../archive/manuscript/2026-10-15/sec132-landscape-previous-preview/manuscript.pdf)、[第3页](../archive/manuscript/2026-10-15/sec132-landscape-previous-preview/page-3.png)、[第4页](../archive/manuscript/2026-10-15/sec132-landscape-previous-preview/page-4.png)及[第5页](../archive/manuscript/2026-10-15/sec132-landscape-previous-preview/page-5.png)保存供审阅；哈希及范围见[机器记录](sec132-landscape-2026-10-14.json)。首轮排版已于2026-10-15移至[历史试排](../archive/manuscript/2026-10-14/sec132-landscape-pass1-preview/)，不作为当前PDF；仅移动位置，原字节和原核查范围不变。
 
-原活动源码及入口修改前备份在[保留目录](../output/archive/2026-10-14/sec132-landscape-before/)，原路径、备份路径、原因及SHA-256见其中两份manifest；未删除或移动旧统计、脚本和预览。
+原活动源码及入口修改前备份在[保留目录](../archive/manuscript/2026-10-14/sec132-landscape-before/)，原路径、备份路径、原因及SHA-256见其中两份manifest；未删除或移动旧统计、脚本和预览。

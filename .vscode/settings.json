@@ -1,5 +1,8 @@
 {
     "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoClean.run": "never",
+    "latex-workshop.latex.outDir": "%DIR%/output",
+    "latex-workshop.latex.auxDir": "%DIR%/output/build/main",
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
         {
@@ -15,7 +18,10 @@
                 "-xelatex",
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "-halt-on-error",
                 "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
                 "%DOC%"
             ],
             "env": {}

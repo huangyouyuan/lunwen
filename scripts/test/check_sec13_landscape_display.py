@@ -71,7 +71,9 @@ def main():
         if line.endswith(r"\\"):
             require(line.count("&") == 5, "Expected six table columns")
 
+    current = json.loads((SUMMARY / "manifest.json").read_text(encoding="utf-8"))
     scale = recorded["geometry"]["scatter_s_pt2_per_pct"]
+    require(current["geometry"]["scatter_s_pt2_per_pct"] == scale, "Original bubble scale changed")
     cm = 72 / 2.54
     offsets = recorded["geometry"]["offsets"]
     with pymupdf.open(FIGURES / f"{STEM}_frames.pdf") as frames:
@@ -80,10 +82,10 @@ def main():
         require(len(curves) == len(joint.loc[joint.reference_pixels.gt(0)]) == 169, "Nonzero bubbles")
         points, clearances, errors = [], [], []
         for row in joint.loc[joint.reference_pixels.gt(0)].itertuples():
-            left = 1.5 if row.crop == "corn" else 9.6
+            left = 1.25 if row.crop == "corn" else 10.15
             dx, dy = offsets[row.site]
             x = (left + (row.area_bin_order + .5 + dx) * 7.6 / 6) * cm
-            y = page.rect.height - (1.4 + (row.shape_bin_order + .5 + dy) * 7.6 / 4) * cm
+            y = page.rect.height - (.8 + (row.shape_bin_order + .5 + dy) * 7.6 / 4) * cm
             drawing = min(curves, key=lambda d: math.hypot((d["rect"].x0+d["rect"].x1)/2-x,
                                                          (d["rect"].y0+d["rect"].y1)/2-y))
             box = drawing["rect"]
@@ -93,7 +95,7 @@ def main():
             rgb = tuple(int(COLORS[row.site][i:i+2], 16)/255 for i in (0, 2, 4))
             require(max(abs(a-b) for a,b in zip(rgb,drawing["fill"])) < .001, "Station color")
             cell_left = (left + row.area_bin_order * 7.6/6) * cm
-            cell_bottom = page.rect.height - (1.4 + row.shape_bin_order * 7.6/4) * cm
+            cell_bottom = page.rect.height - (.8 + row.shape_bin_order * 7.6/4) * cm
             clearance = min(box.x0-cell_left, cell_left+7.6/6*cm-box.x1,
                             box.y0-(cell_bottom-7.6/4*cm), cell_bottom-box.y1)
             require(clearance > .2, "Circle touches a bin boundary")
@@ -103,6 +105,38 @@ def main():
         gaps = [math.hypot(x-x2,y-y2)-r-r2 for i,(crop,x,y,r) in enumerate(points)
                 for crop2,x2,y2,r2 in points[:i] if crop==crop2]
         require(min(gaps) > 0, "Overlapping bubbles")
+    for suffix in ["a", "b"]:
+        with pymupdf.open(FIGURES / f"{STEM}_{suffix}.pdf") as doc:
+            page = doc[0]
+            require(abs(page.rect.width / cm - 8.9) < .001, "Panel canvas width")
+            # Measure exported frame strokes, independent of the plot manifest.
+            left, right = 1.25 * cm, (1.25 + 7.6) * cm
+            top, bottom = page.rect.height - (.8 + 7.6) * cm, page.rect.height - .8 * cm
+            strokes = [d["rect"] for d in page.get_drawings() if d["type"] == "s"]
+            for edge in [(left, top, left, bottom), (right, top, right, bottom),
+                         (left, top, right, top), (left, bottom, right, bottom)]:
+                require(any(max(abs(a-b) for a,b in zip(box,edge)) < .002 for box in strokes),
+                        f"Exported frame must be 7.6 x 7.6 cm on panel {suffix}")
+            text = page.get_text()
+            for label in ["形状指数（SHAPE）", "面积区间（ha）", "1–1.5", "1.5–2", "2–3", "≥3",
+                          "<10", "10–50", "50–100", "100–200", "200–500", "≥500"]:
+                require(label in text, f"Missing axis label on panel {suffix}: {label}")
+            require("–<" not in text, "Old mixed interval notation")
+            lines = [line for block in page.get_text("dict")["blocks"] if "lines" in block
+                     for line in block["lines"]]
+            axis_boxes = []
+            for label in ["形状指数（SHAPE）", "1–1.5", "1.5–2", "2–3", "≥3"]:
+                matches = [line for line in lines if "".join(s["text"] for s in line["spans"]) == label]
+                require(len(matches) == 1, f"Expected one y-axis label on panel {suffix}: {label}")
+                line = matches[0]
+                require(abs(line["dir"][0]) < 1e-6 and abs(line["dir"][1]+1) < 1e-6,
+                        f"Y-axis text must rotate 90 degrees: {label}")
+                box = pymupdf.Rect(line["bbox"])
+                require(page.rect.contains(box) and box.x1 < left,
+                        f"Y-axis text must fit to the left of the frame: {label}")
+                axis_boxes.append(box)
+            require(not any(a.intersects(b) for i,a in enumerate(axis_boxes) for b in axis_boxes[i+1:]),
+                    f"Y-axis labels overlap on panel {suffix}")
     with pymupdf.open(FIGURES / f"{STEM}.pdf") as doc:
         page = doc[0]
         gray = [d for d in page.get_drawings() if d["type"] == "f" and d["items"][0][0] == "c"
@@ -120,6 +154,8 @@ def main():
                   max_circle_diameter_error_pt=max(errors),
                   min_circle_gap_mm=min(gaps)/cm*10,
                   min_cell_boundary_clearance_mm=min(clearances),
+                  frame_width_cm=7.6, frame_height_cm=7.6, panel_canvas_width_cm=8.9,
+                  y_axis_title_and_ticks_rotation_deg=90, y_axis_text_left_and_unclipped=True,
                   legend_matches_circle_area_scale=True, vector_only=True, text_size_pt=9)
     print(json.dumps(report, ensure_ascii=False, indent=2))
 

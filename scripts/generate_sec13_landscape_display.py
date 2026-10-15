@@ -11,12 +11,14 @@ outputs are protected; preserve them before generating another revision.
 import argparse
 import hashlib
 import json
+import math
 import shutil
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import pymupdf
+from matplotlib import font_manager
 
 import plot_area_shape_joint_bubbles as bubbles
 
@@ -27,10 +29,18 @@ JOINT = ROOT / "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bin
 SUMMARY = ROOT / "results/summary/sec13_landscape_display"
 FIGURES = ROOT / "figures/study_area"
 TABLE = ROOT / "tables/sec13_landscape_context_rows.tex"
-BUILD = ROOT / "output/build/sec132-landscape/figure"
+BUILD = ROOT / "output/build/sec132-square-axes-2026-10-15/figure"
 STEM = "fig_sec13_area_shape_joint"
 SITES = {"A": "iw_2023", "B": "iw2_2023", "C": "ida_2023", "D": "il_2023"}
 CROPS = {"corn": "玉米", "soybean": "大豆"}
+PANEL_WIDTH_CM = 7.6
+PANEL_HEIGHT_CM = 7.6
+PANEL_CANVAS_CM = 8.9
+FRAME_HEIGHT_CM = 9.0
+FRAME_LEFT_CM = 1.25
+FRAME_BOTTOM_CM = .8
+AREA_TICKS = ["<10", "10–50", "50–100", "100–200", "200–500", "≥500"]
+SHAPE_TICKS = ["1–1.5", "1.5–2", "2–3", "≥3"]
 
 
 def digest(path):
@@ -141,6 +151,94 @@ def table_rows(table):
     return "\n".join(lines) + "\n"
 
 
+def draw_current_frames(summary, path):
+    """Use saved bins and bubble scale, with complete axes on both panels."""
+    fs = bubbles.fs
+    fs.setup()
+    baseline = json.loads((JOINT.parent / "manifest.json").read_text(encoding="utf-8"))
+    scale = baseline["geometry"]["scatter_s_pt2_per_pct"]
+    offsets = baseline["geometry"]["offsets"]
+    width = 2 * PANEL_CANVAS_CM
+    fig = fs.plt.figure(figsize=(width / 2.54, FRAME_HEIGHT_CM / 2.54))
+    axes, panels, gaps, clearances = [], [], [], []
+    positive = summary.loc[summary.reference_pixels.gt(0)]
+    for j, crop in enumerate(CROPS):
+        left = FRAME_LEFT_CM + j * PANEL_CANVAS_CM
+        ax = fig.add_axes([left / width, FRAME_BOTTOM_CM / FRAME_HEIGHT_CM,
+                           PANEL_WIDTH_CM / width, PANEL_HEIGHT_CM / FRAME_HEIGHT_CM])
+        axes.append(ax)
+        circles = []
+        for site in SITES:
+            points = positive.loc[positive.crop.eq(crop) & positive.site.eq(site)]
+            dx, dy = offsets[site]
+            x = points.area_bin_order.to_numpy() + dx
+            y = points.shape_bin_order.to_numpy() + dy
+            sizes = points.area_share_pct.to_numpy() * scale
+            ax.scatter(x, y, s=sizes, color=bubbles.SITE_COLORS[site],
+                       edgecolors="none", linewidths=0, alpha=1, zorder=3)
+            circles.extend(zip(x, y, np.sqrt(sizes) / 2))
+        ax.set_xlim(-.5, 5.5)
+        ax.set_ylim(-.5, 3.5)
+        ax.set_xticks(range(6), AREA_TICKS)
+        ax.set_yticks(range(4), SHAPE_TICKS)
+        ax.tick_params(length=0, pad=2)
+        ax.tick_params(axis="y", labelrotation=90)
+        for tick in ax.get_yticklabels():
+            tick.set_verticalalignment("center")
+        ax.set_xlabel("面积区间（ha）", labelpad=3)
+        ax.set_ylabel("形状指数（SHAPE）", rotation=90, labelpad=2)
+        for x in np.arange(.5, 5.5, 1):
+            ax.axvline(x, **fs.GROUPED_BAR_GRID, zorder=0)
+        for y in np.arange(.5, 3.5, 1):
+            ax.axhline(y, **fs.GROUPED_BAR_GRID, zorder=0)
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        bounds = ax.get_window_extent(renderer)
+        centers = ax.transData.transform(np.array([[x, y] for x, y, _ in circles]))
+        radii = np.array([r for _, _, r in circles]) * fig.dpi / 72
+        for i, (center, radius) in enumerate(zip(centers, radii)):
+            x, y, _ = circles[i]
+            low = ax.transData.transform((round(x) - .5, round(y) - .5))
+            high = ax.transData.transform((round(x) + .5, round(y) + .5))
+            clearance = min(center[0] - radius - low[0], high[0] - center[0] - radius,
+                            center[1] - radius - low[1], high[1] - center[1] - radius)
+            require(clearance > .2 * fig.dpi / 72, "Bubble touches a bin boundary")
+            clearances.append(float(clearance / fig.dpi * 25.4))
+            for k in range(i):
+                gap = np.linalg.norm(center - centers[k]) - radius - radii[k]
+                require(gap > 0, "Overlapping bubbles")
+                gaps.append(float(gap / fig.dpi * 25.4))
+        labels = [t.get_window_extent(renderer) for t in ax.get_xticklabels()]
+        require(not any(a.overlaps(b) for i, a in enumerate(labels) for b in labels[i+1:]),
+                "Overlapping horizontal labels")
+        panels.append(dict(crop=crop, nonzero_bubbles=len(circles),
+                           left_cm=left, bottom_cm=FRAME_BOTTOM_CM,
+                           width_cm=bounds.width / fig.dpi * 2.54,
+                           height_cm=bounds.height / fig.dpi * 2.54,
+                           y_axis_label="形状指数（SHAPE）", y_ticks=SHAPE_TICKS,
+                           y_axis_label_rotation_deg=90, y_tick_rotation_deg=90))
+    for j, ax in enumerate(axes):
+        for item in [*ax.get_xticklabels(), *ax.get_yticklabels(), ax.xaxis.label, ax.yaxis.label]:
+            box = item.get_window_extent(renderer)
+            lo, hi = j * PANEL_CANVAS_CM / 2.54 * fig.dpi, (j+1) * PANEL_CANVAS_CM / 2.54 * fig.dpi
+            require(box.x0 >= lo and box.x1 <= hi and box.y0 >= 0 and box.y1 <= fig.bbox.height,
+                    f"Axis text outside its panel: {item.get_text()} {box.bounds}")
+    with fs.plt.rc_context({"savefig.bbox": None}):
+        fig.savefig(path, bbox_inches=None, facecolor="white")
+    fs.plt.close(fig)
+    return dict(fonts={name: font_manager.findfont(name, fallback_to_default=False)
+                       for name in ["Times New Roman", "SimSun"]},
+                panels=panels, scatter_s_pt2_per_pct=scale, circle_area_pt2_per_pct=math.pi/4*scale,
+                observed_max_share_pct=float(positive.area_share_pct.max()),
+                min_circle_gap_mm=min(gaps), min_cell_boundary_clearance_mm=min(clearances),
+                offsets=offsets, min_bubble_floor=None, figure_width_cm=width,
+                frame_height_cm=FRAME_HEIGHT_CM, panel_canvas_width_cm=PANEL_CANVAS_CM,
+                area_tick_labels=AREA_TICKS, shape_tick_labels=SHAPE_TICKS,
+                interval_convention="left closed, right open; last includes its lower limit",
+                legend=[dict(share_pct=p, diameter_pt=math.sqrt(scale*p),
+                             diameter_mm=math.sqrt(scale*p)/72*25.4) for p in [1,5,20]])
+
+
 def legend_tex(geometry):
     lines = [r"\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={inner sep=0pt,font=\songti\rmfamily\zihao{-5}}]",
              r"\path[use as bounding box] (0,0) rectangle (13.5,0.72);",
@@ -161,14 +259,17 @@ def legend_tex(geometry):
 
 def figure_body():
     return rf"""% Generated presentation; original bins and v3 plot remain unchanged.
-\begin{{subfigure}}{{9.1cm}}\centering
+% Center the wider canvas without scaling the square plotting frames.
+\noindent\makebox[\linewidth][c]{{%
+\begin{{subfigure}}{{{PANEL_CANVAS_CM:.1f}cm}}\centering
 \includegraphics{{study_area/{STEM}_a.pdf}}
 \caption{{玉米面积—形状联合分布}}
 \end{{subfigure}}%
-\begin{{subfigure}}{{8.3cm}}\centering
+\begin{{subfigure}}{{{PANEL_CANVAS_CM:.1f}cm}}\centering
 \includegraphics{{study_area/{STEM}_b.pdf}}
 \caption{{大豆面积—形状联合分布}}
-\end{{subfigure}}\par\nointerlineskip\vspace{{3pt}}
+\end{{subfigure}}%
+}}\par\nointerlineskip\vspace{{3pt}}
 \input{{figures/study_area/{STEM}_legend.tex}}
 """
 
@@ -176,6 +277,7 @@ def figure_body():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="read-only source and output verification")
+    parser.add_argument("--figure-only", action="store_true", help="verify and preserve saved tables; generate figure only")
     args = parser.parse_args()
     table, reading, closure, joint, sources = build_reading()
     texts = {TABLE: table_rows(table)}
@@ -188,14 +290,18 @@ def main():
         manifest = json.loads((SUMMARY / "manifest.json").read_text(encoding="utf-8"))
         relocation_path = ROOT / "verification/output-organization-2026-10-15.json"
         relocations = json.loads(relocation_path.read_text(encoding="utf-8"))["files"] if relocation_path.exists() else []
+        routing_path = ROOT / "verification/artifact-locations-2026-10-15.json"
+        if routing_path.exists():
+            relocations += json.loads(routing_path.read_text(encoding="utf-8"))["files"]
         for group in ("input_sha256", "output_sha256"):
             for name, expected in manifest[group].items():
                 candidates = [ROOT / name]
                 # Preserve the recorded generation source; path-only maintenance
                 # does not retroactively change which script produced the figures.
                 if group == "input_sha256" and name.startswith("scripts/"):
-                    candidates.extend(ROOT / row["archive_path"] for row in relocations
-                                      if row["action"] == "snapshot" and row["original_path"] == name
+                    candidates.extend(ROOT / row["archive_path"].replace("output/archive/", "archive/manuscript/", 1)
+                                      for row in relocations
+                                      if row["action"] in ("snapshot", "reuse_snapshot") and row["original_path"] == name
                                       and row["sha256"] == expected)
                 require(any(path.is_file() and digest(path) == expected for path in candidates),
                         f"Recorded hash differs: {name}")
@@ -204,16 +310,20 @@ def main():
         return
     figure_paths = [FIGURES / f"{STEM}{suffix}" for suffix in
                     ["_frames.pdf", "_a.pdf", "_b.pdf", "_legend.tex", ".tex", ".pdf", ".png"]]
-    for path in [*texts, *figure_paths, SUMMARY / "manifest.json", BUILD]:
+    if args.figure_only:
+        for path, value in texts.items():
+            require(path.read_text(encoding="utf-8") == value, f"Saved display data differs: {path}")
+    for path in [*([] if args.figure_only else texts), *figure_paths, SUMMARY / "manifest.json", BUILD]:
         require(not path.exists(), f"Preserve existing output first: {path}")
     SUMMARY.mkdir(parents=True, exist_ok=True)
     BUILD.mkdir(parents=True, exist_ok=False)
-    for path, value in texts.items():
-        path.write_text(value, encoding="utf-8", newline="\n")
-    geometry = bubbles.draw_frames(joint, FIGURES / f"{STEM}_frames.pdf")
-    # Split the existing two-panel vector canvas at 9.1 cm without scaling.
+    if not args.figure_only:
+        for path, value in texts.items():
+            path.write_text(value, encoding="utf-8", newline="\n")
+    geometry = draw_current_frames(joint, FIGURES / f"{STEM}_frames.pdf")
+    # Equal canvas widths; each panel includes its own y-axis and labels.
     with pymupdf.open(FIGURES / f"{STEM}_frames.pdf") as frames:
-        split = 9.1 / 2.54 * 72
+        split = PANEL_CANVAS_CM / 2.54 * 72
         for suffix, rect in [("a", pymupdf.Rect(0, 0, split, frames[0].rect.height)),
                              ("b", pymupdf.Rect(split, 0, frames[0].rect.width, frames[0].rect.height))]:
             with pymupdf.open() as out:
@@ -230,7 +340,7 @@ def main():
 \DeclareCaptionFont{{jointfont}}{{\songti\rmfamily\zihao{{-5}}}}
 \captionsetup[sub]{{font=jointfont,labelformat=cnparen,labelsep=none,skip=3pt}}
 \begin{{document}}
-\begin{{minipage}}{{17.4cm}}\centering
+\begin{{minipage}}{{{2 * PANEL_CANVAS_CM:.1f}cm}}\centering
 \captionsetup{{type=figure}}\songti\rmfamily\zihao{{-5}}
 \input{{figures/study_area/{STEM}.tex}}
 \end{{minipage}}
@@ -247,7 +357,7 @@ def main():
     bubbles.run_command(["pdftoppm", "-r", "600", "-png", "-singlefile", str(final_pdf),
                          str(FIGURES / STEM)], ROOT)
     sources += [Path(__file__), Path(bubbles.__file__), ROOT / "scripts/figstyle.py",
-                bubbles.BASELINE_DIR / "manifest.json"]
+                JOINT.parent / "manifest.json"]
     manifest = dict(status="Verified", scope="Saved-statistic selection, closure and plot geometry; visual review recorded separately",
         data_status="derived", enn_source=dist_source(),
         enn_algorithm="patch_equal; sort n values; interpolate linearly at zero-based (n-1)*0.9",

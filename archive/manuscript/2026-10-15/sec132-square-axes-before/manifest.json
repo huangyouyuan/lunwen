@@ -1,0 +1,125 @@
+{
+    "status":  "Verified",
+    "date":  "2026-10-15",
+    "scope":  "Pre-edit preservation only; final layout has not yet been verified",
+    "files":  [
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "512c1bdf5b885da1d0939209d3b39f966c5abe31d7a75d3f583a1561d5c3dc30"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "44403a07ea4166c94f48b3c65b62d74f352dfbc3c47c4feeb3fdd4f17bbec53c"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "ca408366ee1942b5f68adf7a2b5dc65ab5b8aab65339e6283936d6c265dad29e"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint.tex",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint.tex",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "e781a3a61dff09fda5c89ec9c22cefe74555f5701cad4bd49b02fbc46b7cae3c"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint.pdf",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint.pdf",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "4673c4c1e1f8003a1532696e8bd2f94f8c5140947fbedfe562fbb0543f25ab7e"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "figures/study_area/fig_sec13_area_shape_joint.png",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/figures/study_area/fig_sec13_area_shape_joint.png",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "185a742e085a85d61908a02f43f0aabc74807815af5b6fc3077da0907a7f9661"
+                  },
+                  {
+                      "action":  "move",
+                      "original_path":  "results/summary/sec13_landscape_display/manifest.json",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/results/summary/sec13_landscape_display/manifest.json",
+                      "reason":  "Preserve previous Figure 3 presentation before square frames and vertical left axes; active paths will be regenerated",
+                      "sha256":  "b1314349d11e5e11db0c8ce920e1978935893ce496225aca637d573d015bab91"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "scripts/generate_sec13_landscape_display.py",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/scripts/generate_sec13_landscape_display.py",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "b7b4fd9c83fc8fd0994a7c254136ebe31affa70c1a3aa7a0e3a5040fd7d818ba"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "scripts/test/check_sec13_landscape_display.py",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/scripts/test/check_sec13_landscape_display.py",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "13cfb4b942b5c2447357fffbcb3a3fb15166230c4d67945a6319ec313a8218f2"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "plan/format-spec.md",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/plan/format-spec.md",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "ced2e035dc8ec3d8ef85b9ce09793a2df04839c6f33c1b769d147527dacf2aaa"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "plan/progress.md",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/plan/progress.md",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "1807bc1cd142b023a19550961fa0bf12af53416264a9c7de2d7f56744d432266"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "results/summary/sec13_landscape_display/README.md",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/results/summary/sec13_landscape_display/README.md",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "42860e4ff967ef0dd7d7dd7448a0b5bf8f00549d56d4500354d855eacbc1b208"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "output/main.pdf",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/output/main.pdf",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "97792ae32b96a8b6b9e20c958822c8d654ad910d4f3ee8833efd27b704aa622b"
+                  },
+                  {
+                      "action":  "snapshot",
+                      "original_path":  "output/build/main/main.log",
+                      "archive_path":  "archive/manuscript/2026-10-15/sec132-square-axes-before/output/build/main/main.log",
+                      "reason":  "Preserve current source or manuscript before the scoped Figure 3 update",
+                      "sha256":  "306c19910875f964f9f85ba7414b6f5fee0e2f5a5d35c5fa31d39de2d9be442b"
+                  }
+              ],
+    "unchanged_source_sha256":  {
+                                    "sections/01_introduction.tex":  "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+                                    "sections/02_data.tex":  "62a8108d76fcc5445fd17fb61f472bffe53483ac1b09c8a1699e9799f33a05ab",
+                                    "sections/03_methods.tex":  "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+                                    "sections/04_results.tex":  "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+                                    "sections/06_conclusion.tex":  "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+                                    "main.tex":  "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+                                    "tables/sec13_landscape_context_rows.tex":  "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+                                    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv":  "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+                                    "results/summary/sec13_landscape_display/closure_checks.csv":  "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+                                    "results/summary/sec13_landscape_display/joint_distribution_reading.csv":  "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+                                    "results/summary/sec13_landscape_display/table1_landscape_context.csv":  "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976"
+                                }
+}

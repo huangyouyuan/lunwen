@@ -1,5 +1,23 @@
 # 玉米—大豆分类空间泛化论文
 
+当前整稿只打开[output/main.pdf](output/main.pdf)。正文入口是根目录`main.tex`；命令行与VS Code默认编译到`output/`，辅助文件在`output/build/main/`。根目录PDF和原`output/previews/`已退出活动流程，见[归档与默认输出核查](verification/default-output-2026-10-15.json)。
+
+## 从哪里开始
+
+| 需要做什么 | 入口 |
+|---|---|
+| 查必须遵守的规则 | [AGENTS.md](AGENTS.md) |
+| 看当前稿和编译文件 | [output/README.md](output/README.md) |
+| 理清写作顺序、目录和各文档职责 | [写作与文件组织流程](plan/writing-workflow.md) |
+| 看当前完成状态和下一步 | [progress.md](plan/progress.md) |
+| 接手研究背景、决策与限制 | [HANDOVER.md](HANDOVER.md) |
+| 找章节安排及已有证据 | [outline.md](plan/outline.md)、[results-map.md](plan/results-map.md)、[科学结果入口](results/summary/README.md) |
+| 查旧稿和归档位置 | [archive/manuscript/README.md](archive/manuscript/README.md) |
+
+本文件负责导航；完整文档职责与更新规则集中在写作流程中。下方带日期的状态和提交说明保留当时范围，不代表当前稿页数或本次复验。
+
+## 既有状态记录（历史时点）
+
 2026-10-14当前状态：景观格局及跨站均值表已保存于原历史`17eb1e4`，最新本地PDF为9页；下文带日期的“未提交”和8页说明为当时记录。详细章节主线、后续取舍与验证边界见[完整交接](HANDOVER.md)，写作执行见[流程](plan/writing-workflow.md)。
 
 2026-10-15作者已取消缩小仓库计划。继续使用 `D:/AI/lunwen/`；额外上传副本及配套流程已归档，位置、原字节清单与用途复核见[归档说明](archive/2026-10-15-cancel-remote-plan/README.md)。AGENTS.md和忽略规则恢复到该计划前版本；完整交接、写作流程及科研成果保留。本轮未改论文或科学数据，未提交、推送。
@@ -10,11 +28,11 @@
 
 总体计划见 [plan/outline.md](plan/outline.md)，最新交接见 [HANDOVER.md](HANDOVER.md)，规则见 [AGENTS.md](AGENTS.md)。
 
-2026-10-12现状：1.3已采用单张通栏景观表，AREA/SHAPE面积加权、ENN斑块等权；图表字体和图2/图3条形样式已统一。预览已按任务整理，最新与历史入口见[output/README.md](output/README.md)。此前成果恢复过程见[2026-10-11版本说明](plan/version-notes-2026-10-11.md)。
+2026-10-12现状：1.3已采用单张通栏景观表，AREA/SHAPE面积加权、ENN斑块等权；图表字体和图2/图3条形样式已统一。预览已按任务整理，最新与历史入口见[output/README.md](output/README.md)。此前成果恢复过程见[2026-10-11版本说明](plan/tasks/version-notes-2026-10-11.md)。
 
 2026-10-13展示更新：F1及其标准差显示为百分数，F1差值显示为百分点，均保留两位小数；原尺度计算和完整精度数据不变。正文、表格和正式图的生成入口已同步，见[修改与核查清单](verification/f1-display-2026-10-13/README.md)。
 
-2026-10-14后续调整：跨站主表仅显示平均F1，保留百分数和两位小数；逐次值与标准差保留在数据中。已更新[8页PDF](output/archive/2026-10-14/cross-f1-means-preview/manuscript.pdf)并检查表格，见[本次核查](verification/cross-f1-mean-only-2026-10-14.md)。热力图及科学结果未变，本次尚未提交。
+2026-10-14后续调整：跨站主表仅显示平均F1，保留百分数和两位小数；逐次值与标准差保留在数据中。已更新[8页PDF](archive/manuscript/2026-10-14/cross-f1-means-preview/manuscript.pdf)并检查表格，见[本次核查](verification/cross-f1-mean-only-2026-10-14.md)。热力图及科学结果未变，本次尚未提交。
 
 ## 活动目录
 
@@ -28,9 +46,10 @@
 | `figures/`、`tables/` | 正式图表及可复用探索图，后者不自动进入正文 |
 | `scripts/`、`scripts/test/` | 当前数据与图表脚本、相关测试 |
 | `bibliography/`、`evidence/` | 文献元数据与证据映射 |
-| `verification/` | 当前核查、恢复的历史科学核查及B站身份说明 |
-| `archive/` | 停用文件、原字节快照与迁移清单 |
-| `legacy/`、`output/`、`word/` | 实验和写作参考、既有编译产物及投稿稿件 |
+| `verification/` | 核查记录、B站身份说明；页面检查图片放在`layout/<任务>/` |
+| `archive/` | 停用文件与原字节快照；稿件旧版、试排和备份集中在`manuscript/<日期>/<任务>/` |
+| `output/` | 唯一当前整稿`main.pdf`、源码跳转信息与`build/`编译工作区 |
+| `legacy/`、`word/` | 实验和写作参考、Word投稿稿件 |
 
 [1.3与3.1基础材料整理](plan/tasks/2026-10-10-sec13-sec31-foundations.md)已经完成，1.3已写入正文；后续从既有本站底表组织3.1必要补充，再决定3.3的具体证据。其余缺项见[当前进度](plan/progress.md)，不默认执行分级、聚类或联合建模。
 
@@ -54,7 +73,7 @@
 python -B -m unittest scripts/test/test_sec33_directional_confusion_closeout.py scripts/test/test_sec33_directional_confusion.py scripts/test/test_f1_raw_scale.py scripts/test/test_f1_presentation.py -v
 ```
 
-手动编译为 `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；2026-10-13已按F1展示统一任务重新编译为8页，完整页面预览及PDF哈希见[清单](output/preview-manifest.json)。[10月13日历史PDF快照](output/archive/2026-10-13/f1-percent-preview/manuscript.pdf)对应新展示规范；旧快照及修改前原字节备份保留，2026-10-14按作者指令随本次提交保存。
+手动编译为`latexmk -xelatex -synctex=1 -interaction=nonstopmode -halt-on-error main.tex`，只在授权任务中运行；`.latexmkrc`默认生成`output/main.pdf`。编译与归档步骤见[写作流程](plan/writing-workflow.md)。[10月13日历史PDF快照](archive/manuscript/2026-10-13/f1-percent-preview/manuscript.pdf)及旧快照、修改前版本继续保留，2026-10-14按作者指令随当次提交保存。
 
 ## 历史入口
 

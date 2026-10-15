@@ -1,0 +1,39 @@
+﻿{
+    "date":  "2026-10-15",
+    "status":  "Verified",
+    "files":  [
+                  {
+                      "original_path":  "output/previews/2026-10-14-sec132-landscape/manuscript.pdf",
+                      "archive_path":  "output/archive/2026-10-15/sec132-landscape-previous-preview/manuscript.pdf",
+                      "reason":  "Superseded by the verified 2026-10-15 section 1.3.2 wording and pagination preview",
+                      "sha256":  "b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275"
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-14-sec132-landscape/page-3.png",
+                      "archive_path":  "output/archive/2026-10-15/sec132-landscape-previous-preview/page-3.png",
+                      "reason":  "Superseded by the verified 2026-10-15 section 1.3.2 wording and pagination preview",
+                      "sha256":  "2c1efa81a285ac91b47e11c5359a1970e29e5524df9d3b49113c997fb04bc9ec"
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-14-sec132-landscape/page-4.png",
+                      "archive_path":  "output/archive/2026-10-15/sec132-landscape-previous-preview/page-4.png",
+                      "reason":  "Superseded by the verified 2026-10-15 section 1.3.2 wording and pagination preview",
+                      "sha256":  "f81b7eb005ddf627bfc79baff61c8944159d47a21ffdeb85504281fc95f6affa"
+                  },
+                  {
+                      "original_path":  "output/previews/2026-10-14-sec132-landscape/page-5.png",
+                      "archive_path":  "output/archive/2026-10-15/sec132-landscape-previous-preview/page-5.png",
+                      "reason":  "Superseded by the verified 2026-10-15 section 1.3.2 wording and pagination preview",
+                      "sha256":  "7d21d8ebde1d9b226921342aacdf0eaec61e0829010592d2816de695573023ba"
+                  }
+              ],
+    "references_reviewed":  [
+                                "HANDOVER.md",
+                                "output/README.md",
+                                "output/preview-manifest.json",
+                                "verification/sec132-landscape-2026-10-14.md",
+                                "verification/sec132-landscape-2026-10-14.json",
+                                "verification/output-organization-2026-10-15.json"
+                            ],
+    "historical_manifests":  "Historical JSON paths and hashes remain unchanged; resolve their old paths through this mapping."
+}

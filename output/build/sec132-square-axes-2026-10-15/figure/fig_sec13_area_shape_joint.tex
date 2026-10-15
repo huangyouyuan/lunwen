@@ -1,0 +1,13 @@
+\documentclass[border=0pt]{standalone}
+\usepackage{ctex,graphicx,subcaption,tikz}
+\setCJKmainfont{SimSun}\setmainfont{Times New Roman}
+\graphicspath{{figures/}}
+\DeclareCaptionLabelFormat{cnparen}{（#2）}
+\DeclareCaptionFont{jointfont}{\songti\rmfamily\zihao{-5}}
+\captionsetup[sub]{font=jointfont,labelformat=cnparen,labelsep=none,skip=3pt}
+\begin{document}
+\begin{minipage}{17.8cm}\centering
+\captionsetup{type=figure}\songti\rmfamily\zihao{-5}
+\input{figures/study_area/fig_sec13_area_shape_joint.tex}
+\end{minipage}
+\end{document}

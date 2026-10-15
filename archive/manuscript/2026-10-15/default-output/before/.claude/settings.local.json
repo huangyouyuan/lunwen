@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pytest *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(ls *)",
+      "Bash(sed *)",
+      "Bash(grep *)",
+      "Bash(git check-ignore *)",
+      "Bash(mkdir -p /d/AI/lunwen_archive/2026-09-28_过度改动)",
+      "Bash(mkdir -p *)",
+      "Bash(pwd)",
+      "Bash(git branch *)",
+      "Read(//d/label/fragstats_results/**)",
+      "Read(//d/AI/**)",
+      "Read(//d/20iw/2023iwconvgruresults/summary/details/**)",
+      "Read(//d/20iw/2023iwconvgruresults/summary/**)",
+      "Read(//d/cross_site_all_20260916/**)",
+      "Bash(PYTHONIOENCODING=utf-8 python -B -)",
+      "Read(//d/20iw2/2023iw2unet3dresults/summary/details/**)",
+      "Read(//g/2560图像/20iw2/2023iw2shuju/**)",
+      "Bash(pdftoppm -png -r 150 -f 2 -l 5 main.pdf output/sec32_p)",
+      "Bash(pdfinfo main.pdf)",
+      "Bash(command -v python python3 py)",
+      "Bash(conda env *)",
+      "Bash(command -v gdalinfo)"
+    ],
+    "additionalDirectories": [
+      "D:\\AI\\lunwen_archive"
+    ]
+  }
+}

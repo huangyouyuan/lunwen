@@ -1,0 +1,295 @@
+{
+  "status": "Verified",
+  "date": "2026-10-15",
+  "scope": "Figure 3 square plotting frames and vertical left axes; saved data, exported geometry, default manuscript and visual layout",
+  "archive_manifest": "archive/manuscript/2026-10-15/sec132-square-axes-before/manifest.json",
+  "saved_statistic_check": {
+    "status": "Verified",
+    "groups": 8,
+    "joint_cells": 192,
+    "patches": 149234,
+    "enn": "reused patch-equal P90"
+  },
+  "independent_vector_check": {
+    "status": "Verified",
+    "scope": "Independent saved-statistic, P90 and exported vector checks",
+    "patches": 149234,
+    "enn_p90_m": {
+      "A/corn": 161.5549,
+      "A/soybean": 180,
+      "B/corn": 180,
+      "B/soybean": 240,
+      "C/corn": 152.9706,
+      "C/soybean": 180,
+      "D/corn": 180,
+      "D/soybean": 189.7367
+    },
+    "plotted_nonzero_cells": 169,
+    "zero_cells": 23,
+    "max_circle_diameter_error_pt": 2.7809525615651864e-05,
+    "min_circle_gap_mm": 0.21888855828178813,
+    "min_cell_boundary_clearance_mm": 0.16410556369359425,
+    "frame_width_cm": 7.6,
+    "frame_height_cm": 7.6,
+    "panel_canvas_width_cm": 8.9,
+    "y_axis_title_and_ticks_rotation_deg": 90,
+    "y_axis_text_left_and_unclipped": true,
+    "legend_matches_circle_area_scale": true,
+    "vector_only": true,
+    "text_size_pt": 9
+  },
+  "unchanged_source_sha256": {
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/02_data.tex": "62a8108d76fcc5445fd17fb61f472bffe53483ac1b09c8a1699e9799f33a05ab",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976"
+  },
+  "manuscript": {
+    "path": "output/main.pdf",
+    "sha256": "0d9491459dbefd7a9c0dfccd439f1522da95f1d38d20d3b51d292768013c2730",
+    "pages": 8,
+    "figure_page": 4,
+    "frame_edges_pt": {
+      "horizontal": [
+        [
+          80.79,
+          288.75,
+          296.22,
+          288.75
+        ],
+        [
+          80.79,
+          504.19,
+          296.22,
+          504.19
+        ],
+        [
+          333.07,
+          288.75,
+          548.5,
+          288.75
+        ],
+        [
+          333.07,
+          504.19,
+          548.5,
+          504.19
+        ]
+      ],
+      "vertical": [
+        [
+          80.79,
+          288.75,
+          80.79,
+          504.19
+        ],
+        [
+          296.22,
+          288.75,
+          296.22,
+          504.19
+        ],
+        [
+          333.07,
+          288.75,
+          333.07,
+          504.19
+        ],
+        [
+          548.5,
+          288.75,
+          548.5,
+          504.19
+        ]
+      ]
+    },
+    "axis_labels": [
+      {
+        "label": "形状指数（SHAPE）",
+        "panel": 1,
+        "bbox_pt": [
+          58.66632080078125,
+          355.2139587402344,
+          68.64732360839844,
+          437.7212829589844
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "形状指数（SHAPE）",
+        "panel": 2,
+        "bbox_pt": [
+          310.94927978515625,
+          355.2139587402344,
+          320.9302978515625,
+          437.7212829589844
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "1–1.5",
+        "panel": 1,
+        "bbox_pt": [
+          68.83819580078125,
+          467.1336975097656,
+          78.81919860839844,
+          487.3836975097656
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "1–1.5",
+        "panel": 2,
+        "bbox_pt": [
+          321.12115478515625,
+          467.1336975097656,
+          331.1021728515625,
+          487.3836975097656
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "1.5–2",
+        "panel": 1,
+        "bbox_pt": [
+          68.83819580078125,
+          413.2754211425781,
+          78.81919860839844,
+          433.5254211425781
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "1.5–2",
+        "panel": 2,
+        "bbox_pt": [
+          321.12115478515625,
+          413.2754211425781,
+          331.1021728515625,
+          433.5254211425781
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "2–3",
+        "panel": 1,
+        "bbox_pt": [
+          68.83819580078125,
+          362.79217529296875,
+          78.81919860839844,
+          376.29217529296875
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "2–3",
+        "panel": 2,
+        "bbox_pt": [
+          321.12115478515625,
+          362.79217529296875,
+          331.1021728515625,
+          376.29217529296875
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "≥3",
+        "panel": 1,
+        "bbox_pt": [
+          68.83819580078125,
+          310.9616394042969,
+          78.81919860839844,
+          320.40264892578125
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "label": "≥3",
+        "panel": 2,
+        "bbox_pt": [
+          321.12115478515625,
+          310.9616394042969,
+          331.1021728515625,
+          320.40264892578125
+        ],
+        "direction": [
+          0.0,
+          -1.0
+        ]
+      }
+    ],
+    "identical_other_pages_at_110dpi": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "table_above_figure_unchanged_at_110dpi": true,
+    "body_below_figure_unchanged_at_110dpi": true,
+    "default_output_only": true
+  },
+  "compile": {
+    "command": "latexmk -xelatex -synctex=1 -interaction=nonstopmode -halt-on-error main.tex",
+    "exit_code": 0,
+    "log": "output/build/main/main.log",
+    "console_log": "output/build/sec132-square-axes-2026-10-15/manuscript-compile.txt",
+    "warnings": [
+      "Package xeCJK Warning: Redefining CJKfamily `\\CJKrmdefault' (SimSun(0)).",
+      "LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined",
+      "LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined",
+      "Package caption Warning: The option `hypcap=true' will be ignored for this",
+      "LaTeX Font Warning: Some font shapes were not available, defaults substituted."
+    ],
+    "new_warnings": [],
+    "overfull_missing_characters_undefined_references": false
+  },
+  "visual_review": {
+    "status": "Verified",
+    "pages": [
+      3,
+      4,
+      5
+    ],
+    "render_tool": "pdftoppm at 140 dpi",
+    "directory": "verification/layout/sec132-square-axes-2026-10-15",
+    "figure_standalone_png_inspected": true,
+    "findings": "Both square panels side by side; titles and tick labels rotated 90 degrees on the left; no clipping or overlaps; pagination preserved"
+  }
+}

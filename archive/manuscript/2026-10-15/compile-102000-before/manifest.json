@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-15",
+  "files": [
+    {
+      "original_path": "main.pdf",
+      "archive_path": "output/archive/2026-10-15/compile-102000-before/main.pdf",
+      "reason": "Preserve existing PDF and preview entries before explicit recompilation",
+      "sha256": "b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275"
+    },
+    {
+      "original_path": "output/preview-manifest.json",
+      "archive_path": "output/archive/2026-10-15/compile-102000-before/output/preview-manifest.json",
+      "reason": "Preserve existing PDF and preview entries before explicit recompilation",
+      "sha256": "7f808b9a1bf0db42d1413eb8440e6af409989d6eaab708a1fceba2a543230acc"
+    },
+    {
+      "original_path": "output/README.md",
+      "archive_path": "output/archive/2026-10-15/compile-102000-before/output/README.md",
+      "reason": "Preserve existing PDF and preview entries before explicit recompilation",
+      "sha256": "52ea8a49e3a9f900d1efbfe087cd648a94bf83195beca0ff410e80368bcc47f2"
+    },
+    {
+      "original_path": "output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+      "archive_path": "output/archive/2026-10-15/compile-102000-before/output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+      "reason": "Preserve existing PDF and preview entries before explicit recompilation",
+      "sha256": "c8c97c22c4467183e8aba80f8647c2d23e188ef19f606d4c72c587bced63498a"
+    }
+  ],
+  "source_sha256": {
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/02_data.tex": "62a8108d76fcc5445fd17fb61f472bffe53483ac1b09c8a1699e9799f33a05ab",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "tables/f1_text_values.tex": "6a85bfe27b7f725ded3f2ea39e43ab1ac6b306c2d8179a95ad665d8f45d2c736",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "tables/sec13_landscape_metrics_rows.tex": "825b650f38a90bcab47ffa16b3503812a88b51d1e3e08cb92ce2aace50ba387f",
+    "tables/sec13_landscape_rows.tex": "768873dad3eb74c8ab29ad322b0f60c371175de4d52c26efd472ae1b2705de0b",
+    "tables/sec13_patch_distribution_rows.tex": "7da3e2b290eada8e372ab7a6ce0fe8dfd455edfaa7d8ec5807ce03b9bc5a4969",
+    "tables/sec13_patch_extrema_rows.tex": "e151720d49823d1c8ea274724a40f51ca92268b28235b5b0ec5f761d8663b293",
+    "tables/sec13_spatial_metrics_enn_equal_rows.tex": "b5743be595cf47cf8d9ffbc6671ed57bdada7b2de4cbd0a0557432ac324ccb1f",
+    "tables/sec13_spatial_metrics_enn_rows.tex": "6f56ba2e2fb3b1bf848cfd342e85f9a9352649d4e8a1af5f2ce6c5af01452564",
+    "tables/sec13_spatial_metrics_rows.tex": "2d82a2c093ffdf47c3c7b0257a05ee3d95624a6fad82dc1b926e103f93851280",
+    "tables/table2_cross_site_f1_12paths_rows.tex": "35ee8f46fb361f65082d7bb695819e92e32b15d8dd4479ad055308e09c6bbc32"
+  }
+}

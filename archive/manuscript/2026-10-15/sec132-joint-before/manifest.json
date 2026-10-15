@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-15",
+  "base_head": "69c310e",
+  "files": [
+    {
+      "original_path": "scripts/generate_sec13_landscape_display.py",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/scripts/generate_sec13_landscape_display.py",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "26e780d83e262211fccce65bc56bc472453b99fd2ca5cf8d92f5cce46a73c6e7"
+    },
+    {
+      "original_path": "scripts/test/check_sec13_landscape_display.py",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/scripts/test/check_sec13_landscape_display.py",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "fd4dfe8aa1285b270d35e47d52f2e9c54f9125e61ed64142e7a593d682d4880b"
+    },
+    {
+      "original_path": "sections/02_data.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/sections/02_data.tex",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "27bffdee703f9923ace42341ee35791144c50f25747ee87e22a75e80289ec6e2"
+    },
+    {
+      "original_path": "plan/format-spec.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/plan/format-spec.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "a42292fb29ca49b571cc358a8643420051ab528f364bdb7aaf8261ff74dcab61"
+    },
+    {
+      "original_path": "HANDOVER.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/HANDOVER.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "cc00ea34ecf6ba3e928153bb37629707cb9ac5804055c1486171862c8f3148a0"
+    },
+    {
+      "original_path": "plan/progress.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/plan/progress.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "d6588103bed295f6c3a997f4832f069fc97db567377c865cd9968eb53879ee8c"
+    },
+    {
+      "original_path": "output/README.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/output/README.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "3cf4e3c891243cf72acab32f88d65fe8162c8fb587344d11a812a979848bd204"
+    },
+    {
+      "original_path": "output/preview-manifest.json",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/output/preview-manifest.json",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "f60cf28d5498dbd10d82f16b5806746e07917a18c2d247209699d1f148b81ac5"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/README.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/results/summary/sec13_landscape_display/README.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "1a280f107127160d1d3dfc0261d13dd104930b214de5278523a1d82aa7c059f1"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/manifest.json",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/results/summary/sec13_landscape_display/manifest.json",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "99f1921c65bb7e6bbf3d3d24a86da520257c6fc24fd625fd4f257734cbdb9800"
+    },
+    {
+      "original_path": "verification/sec132-flow-2026-10-15.md",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/verification/sec132-flow-2026-10-15.md",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "8ac6ba4385a6b623cf282a417f89e3b0b04c1b095ca98166a05a317ded96d8e3"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint.pdf",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.png",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint.png",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint.tex",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+      "reason": "Preserve existing uncommitted wording/pagination and previous joint-figure assets before requested axis and width revision",
+      "sha256": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+    }
+  ],
+  "protected_sha256": {
+    "AGENTS.md": "ca2e429d621c087603fbcb4cdacc5a8fdbb6c45d79849dd16d7c5113f11ab8bd",
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "scripts/plot_area_shape_joint_bubbles.py": "ebf38e44bf029dab927a3fb842fcd72bc8b16aa6e944c1547625209b41dc73cc",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/area_shape_joint_bubbles_v3/archive-status.md": "025553c721eca54f339141f0360cec700677edd17b8a5f24fab2d29c0a8b7dac",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/area_shape_joint_bubbles_v3/closure_checks.csv": "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+    "results/summary/area_shape_joint_bubbles_v3/delivery-manifest.json": "8a7401d08c803b3bdbe9bd0d42e399ee596f223e660f34942897cadf03e81dda",
+    "results/summary/area_shape_joint_bubbles_v3/manifest.json": "21504b96dc8d5488e3096f6dd5660346aaa0a0aec1b19271e0a155572fe1790a",
+    "results/summary/area_shape_joint_bubbles_v3/README.md": "6106bed004caa5f84171b2630ec5bb03a30390535482aa99953f4b55fd33bc69",
+    "results/summary/area_shape_joint_bubbles_v3/verification.json": "6ac79ae64e76fe4f2746b85d64a75d9ed610d10fc9dfb873875c0c20bc602028",
+    "results/summary/area_shape_joint_bubbles_v3/visual-review.md": "a03c55d109b113bfb025f6d7b7927d17baea9191ecd16e688ca95b66f116a622"
+  }
+}

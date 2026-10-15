@@ -18,8 +18,8 @@
 3. ConvGRU大豆B→A：本站92.03%，跨站91.59±0.13%（标准差同为百分数尺度），下降0.44个百分点。差值来自未舍入基准与未舍入跨站均值；完整原值和转换见[逐项展示核对表](display-audit.csv)。ConvGRU大豆C→D为89.57±0.08%，下降0.90个百分点。
 4. 正文旧“C站模型差距约0.02、D站约0.04”已改为1.43～1.61、3.34～3.98个百分点；固定D时ConvGRU大豆C源五次下降为0.77～0.99个百分点，B源为3.29～10.81个百分点。均从未舍入结果提取，见[正文数值核对表](text-value-audit.csv)。未由图表显示数字重新计算差值。
 5. 9份重绘PDF的文字均为9 pt，字体为Times New Roman及宋体；数值标注在页面内，热力图数值框互不相交。实际查看导出图所在的第5、7页，没有数字遮挡、越界、单位缺失或表格拥挤。六幅热力图的填色与旧图逐格一致，见[机器核查](checks.json)。
-6. `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功，稿件8页，无Overfull/Underfull、缺失字符或未定义引用。全部页面由Poppler渲染，第4—7页逐页查看；第1、2、3、8页文本与旧PDF相同，并查看总览。最新PDF与根目录`main.pdf`哈希一致，见[该版预览清单](../../output/archive/2026-10-14/cross-f1-means-preview/previous-preview-manifest.json)。
-7. 修改前40份文件保留原字节，原路径、备份路径、原因和SHA-256见[备份清单](../../output/archive/2026-10-13/f1-display-before/manifest.json)。没有删除文件。
+6. `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`成功，稿件8页，无Overfull/Underfull、缺失字符或未定义引用。全部页面由Poppler渲染，第4—7页逐页查看；第1、2、3、8页文本与旧PDF相同，并查看总览。最新PDF与根目录`main.pdf`哈希一致，见[该版预览清单](../../archive/manuscript/2026-10-14/cross-f1-means-preview/previous-preview-manifest.json)。
+7. 修改前40份文件保留原字节，原路径、备份路径、原因和SHA-256见[备份清单](../../archive/manuscript/2026-10-13/f1-display-before/manifest.json)。没有删除文件。
 
 ## Partially verified
 
@@ -43,7 +43,7 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 
 这些展示入口读取完整精度summary，只写正文数值、展示表和图。上述展示测试同时核对修改前记录的原计算数据哈希；原计算脚本没有`--check`参数，本轮一次带该参数的尝试仅返回用法错误，没有执行计算或写入。不能为格式调整运行上游重算。
 
-- [可审阅PDF](../../output/archive/2026-10-13/f1-percent-preview/manuscript.pdf)
+- [可审阅PDF](../../archive/manuscript/2026-10-13/f1-percent-preview/manuscript.pdf)
 - [完整页面预览及版本入口](../../output/README.md)
 - [编译日志](compile-log.txt)、[文献处理日志](bibliography-log.txt)、[编译后文本](manuscript-text.txt)
 

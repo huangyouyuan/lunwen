@@ -25,4 +25,4 @@
 
 ## 历史保留与复现
 
-旧图及统计文件原位保留。修订前的活动绘图脚本、核查脚本、用途入口已另存原字节快照，原路径、快照路径、理由及SHA-256见[快照清单](../../../output/archive/2026-10-12/area-shape-square-before/manifest.json)。当前入口见[用途索引](../area_shape_joint_bubbles/README.md)，复现使用本版[README](README.md)中的命令。
+旧图及统计文件原位保留。修订前的活动绘图脚本、核查脚本、用途入口已另存原字节快照，原路径、快照路径、理由及SHA-256见[快照清单](../../../archive/manuscript/2026-10-12/area-shape-square-before/manifest.json)。当前入口见[用途索引](../area_shape_joint_bubbles/README.md)，复现使用本版[README](README.md)中的命令。

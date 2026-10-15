@@ -23,6 +23,6 @@
 
 旧版集中放在[归档入口](../../../archive/2026-10-12-area-shape-bubbles/README.md)；[迁移清单](../../../archive/2026-10-12-area-shape-bubbles/archive-manifest.json)记录28份移动文件和4份入口更新前快照的原路径、新路径、用途及SHA-256。全部保留原字节，没有删除文件。本次归档未改变v3图件、统计CSV或论文正文。
 
-v3修订前的绘图脚本、独立核查脚本和本入口均已按原字节保存，见[快照与SHA-256映射](../../../output/archive/2026-10-12/area-shape-square-before/manifest.json)。v2清单中的代码哈希对应这些历史快照，当前活动脚本已切换v3；历史README里的v2绘图/核查命令不能当作当前活动入口。
+v3修订前的绘图脚本、独立核查脚本和本入口均已按原字节保存，见[快照与SHA-256映射](../../../archive/manuscript/2026-10-12/area-shape-square-before/manifest.json)。v2清单中的代码哈希对应这些历史快照，当前活动脚本已切换v3；历史README里的v2绘图/核查命令不能当作当前活动入口。
 
 历史manifest和交付清单保留生成时内容，旧路径按迁移清单解析；活动核查脚本支持这种原路径及哈希映射。当前执行命令仍见v3的README，归档源码只供审阅。

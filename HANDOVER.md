@@ -2,11 +2,19 @@
 
 ## 当前状态与本次交接（2026-10-15，优先于下方历史记录）
 
+2026-10-15最终输出约定：当前整稿统一为[output/main.pdf](output/main.pdf)，`.latexmkrc`及VS Code均采用此默认位置，主稿辅助文件位于`output/build/main/`。根目录PDF、旧辅助文件、`output/previews/`和旧预览清单已归档，见[路径及默认编译核查](verification/default-output-2026-10-15.json)。本次调整只涉及编译和文件组织，正文、图表与科学数据沿用前次修订。各文档职责集中见[写作流程](plan/writing-workflow.md)：README管导航，progress管当前状态，本交接保留决策背景及历史限制；不把每轮编译过程重复写入所有文档。下方较早的目录约定均以本段为准。
+
+2026-10-15目录职责调整：按作者意见，将原`output/archive/`整体迁至[archive/manuscript/](archive/manuscript/README.md)，当前第3—5页检查图迁至`verification/layout/sec132-joint-2026-10-15/`。`output/`保留当前整稿PDF、索引与编译工作区；散放编译日志已收入对应任务目录。迁移和历史路径解析见[记录](verification/artifact-locations-2026-10-15.json)，旧清单与快照不改写；本轮不编译、不改正文与科研结果。后续使用已有同哈希备份，避免先复制后再归档造成重复。
+
+2026-10-15图3后续修订：按作者选择保留左右并排，两个面板各8.7 cm、图框各7.8×7.6 cm；两图补全纵坐标，纵轴标题横排于图框上方，区间改用“1.5–2”等简洁标签并在图注说明左闭右开。气泡数值、大小比例与全部科学底表未变。该次[8页PDF](archive/manuscript/2026-10-15/default-output/previews/2026-10-15-sec132-joint/manuscript.pdf)已归档，图3仍在第4页；先前行文与分页修订保留。已核对169个矢量气泡、两图坐标和第3—5页，见[本次核查](verification/sec132-joint-2026-10-15.md)；旧图、源码及前版预览已原字节保存，当时未提交或推送。
+
+2026-10-15后续更新：已按作者意见压缩1.3.2第三段的统计说明，补上转向面积—形状联合图的承接；表1、图3改用各自的正常通栏浮动，取消该处强制换页与末尾浮动屏障。现为[8页PDF](archive/manuscript/2026-10-15/sec132-flow-previous-preview/manuscript.pdf)，第3页右栏由原有方法正文接续，表1与图3仍在第4页。已编译、查看第3—5页并核对数值及图件未变，见[本次核查](verification/sec132-flow-2026-10-15.md)。未提交或推送；下方9页稿、未编译等描述为本轮修订前的历史记录，原稿已按字节保存并记录[迁移映射](verification/sec132-flow-2026-10-15-archive.json)。
+
 本交接在原完整文档上增补，不再为仓库减量删减研究历史、证据入口、已有反例或核查边界。下方2026-10-12/13的归档与编译过程保留原范围，不能把旧页数、旧图号和“当时未提交”读作当前状态。
 
 当前论文内容对应原历史最新提交 `17eb1e4`：1.3.2和表1、联合图已更新；跨站主表只显示平均F1。此前 `427fc89`、`b812fb1`、`3d0f21c`分别保存全路径空间条件分析、C/D大豆发现提炼、本站模型优势及跨站保持分析；`1d7d025`保存F1展示统一。这些分析已经完成，不因尚未进入正文而重做。
 
-本地最新PDF为 `output/previews/2026-10-14-sec132-landscape/manuscript.pdf`，9页，表1与联合图在第4页，SHA-256为 `b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275`。正文现有6图2表：图1研究区、图2组成、图3面积—形状联合分布、图4本站F1、图5 D站本站示例、图6六幅F1差值热力图；图号由LaTeX自动生成。2.1三个模型小节仍只有标题，3.3仍只有标题，引言、摘要与结论未完成；不能把分析报告完成当成正文已写完。本轮只更新交接及必要入口，不修改正文、图表或科学结果，不编译。
+本轮修订前PDF为 `archive/manuscript/2026-10-15/sec132-landscape-previous-preview/manuscript.pdf`，9页，表1与联合图在第4页，SHA-256为 `b18c11d72a4abecf5b0ee8b955bb00b7a3c58a0a8a0bd2d03459fd4e697d7275`。正文现有6图2表：图1研究区、图2组成、图3面积—形状联合分布、图4本站F1、图5 D站本站示例、图6六幅F1差值热力图；图号由LaTeX自动生成。2.1三个模型小节仍只有标题，3.3仍只有标题，引言、摘要与结论未完成；不能把分析报告完成当成正文已写完。当时只更新交接及必要入口，不修改正文、图表或科学结果，不编译。
 
 2026-10-15作者已取消缩小仓库计划，并改为归档额外副本。继续在完整科研目录 `D:/AI/lunwen/` 工作；本轮起点HEAD为 `4e2562c`，该提交已保存上次交接补全和CC的三处证据路由。原 `D:/AI/lunwen-remote-2026-10-14/` 已连同.git移至 `D:/AI/lunwen_archive/2026-10-15-cancel-remote-plan/lunwen-remote-2026-10-14/`，只作历史保存，不再同步或作为推送入口。本轮没有提交、推送或改写原Git历史。
 
@@ -20,7 +28,7 @@
 
 2026-10-13最新展示更新：从`3d0f21c`开始，将论文F1及标准差统一为百分数、差值为百分点，原尺度数据不变；正文、活动图表及生成脚本已同步，已编译8页并检查第4—7页。最新[PDF及全页预览](output/README.md)、[核查记录](verification/f1-display-2026-10-13/README.md)优先于下方10月12日预览说明；旧PDF、清单和原字节备份均保留。2026-10-14按作者明确指令随本次提交保存。下方旧提交和核查描述保留各自日期的范围，不代表本次重验。
 
-更新：2026-10-12。`1d0bc9f`已保存页面预览归档与交接更新；本次在其基础上补齐两组修改前备份的完整归档、Git保存及可传递PDF。论文内容仍以`e25df0c`（图表字体、通栏表格及图2/图3样式）为基线，1.1首段润色已在`3841b8f`中。接手先检查`git status --short`和`git log -5 --oneline`，以实际文件与Git状态为准，不把本文件或旧提示词当作任务已经完成的证据。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)，当前缺项见[进度](plan/progress.md)；2026-10-11整理过程见[历史版本说明](plan/version-notes-2026-10-11.md)。
+更新：2026-10-12。`1d0bc9f`已保存页面预览归档与交接更新；本次在其基础上补齐两组修改前备份的完整归档、Git保存及可传递PDF。论文内容仍以`e25df0c`（图表字体、通栏表格及图2/图3样式）为基线，1.1首段润色已在`3841b8f`中。接手先检查`git status --short`和`git log -5 --oneline`，以实际文件与Git状态为准，不把本文件或旧提示词当作任务已经完成的证据。规则见[AGENTS.md](AGENTS.md)，总体计划见[plan/outline.md](plan/outline.md)，当前缺项见[进度](plan/progress.md)；2026-10-11整理过程见[历史版本说明](plan/tasks/version-notes-2026-10-11.md)。
 
 ## 当前主线与优先级
 
@@ -161,27 +169,27 @@
 
 2026-10-11恢复阶段仅恢复与只读核对，没有生成新科研结果或编译；该阶段原22份快照及12份文档快照保留。初次核查与首次纠偏仍是各自当日记录，成果恢复以[二次核查](verification/second-pass-reuse-2026-10-11.md)为准；距离生成、FRAGSTATS工程和B站身份限制不升级。
 
-2026-10-12页面预览整理已完成：原`output`根目录58张图片中，最新2张放入`output/previews/2026-10-12-figure23-bars/`，其余56张按任务放入`output/archive/2026-10-12/`；配套文本与旧清单一并保存，共移动60个文件。原125个output文件全部保留，14份引用文档原字节快照、移动前后SHA-256及13份引用路径更新均已核对；根目录不再散放图片，递归图片总数仍为68。入口见[预览索引](output/README.md)、[归档索引](output/archive/2026-10-12/README.md)和[迁移核查](verification/output-preview-archive-2026-10-12.json)。旧清单和文档快照中的旧路径按迁移映射解析，不改写历史原件。
+2026-10-12页面预览整理已完成：原`output`根目录58张图片中，最新2张放入`output/previews/2026-10-12-figure23-bars/`，其余56张按任务放入`archive/manuscript/2026-10-12/`；配套文本与旧清单一并保存，共移动60个文件。原125个output文件全部保留，14份引用文档原字节快照、移动前后SHA-256及13份引用路径更新均已核对；根目录不再散放图片，递归图片总数仍为68。入口见[预览索引](output/README.md)、[归档索引](archive/manuscript/2026-10-12/README.md)和[迁移核查](verification/output-preview-archive-2026-10-12.json)。旧清单和文档快照中的旧路径按迁移映射解析，不改写历史原件。
 
 ## 验证状态与尚未验证事项（以下为各次历史核查范围）
 
 | 状态 | 范围与证据 |
 |---|---|
 | Verified | 既有数据核查复核149234条作物斑块记录、统计权重、单位、极值及`scope=full`；见[ENN核查](verification/sec13-enn-patch-equal-2026-10-12.md)。本次归档与交接没有重新计算这些指标 |
-| Verified | 2026-10-13按F1展示任务编译8页，重点查看第4—7页并渲染全部页面；当前哈希见[展示核查](verification/f1-display-2026-10-13/README.md)及[预览清单](output/preview-manifest.json)。2026-10-12图2/图3和5图2表字体核查仍为历史记录 |
+| Verified | 2026-10-13按F1展示任务编译8页，重点查看第4—7页并渲染全部页面；当前哈希见[展示核查](verification/f1-display-2026-10-13/README.md)及[预览清单](archive/manuscript/2026-10-15/default-output/preview-manifest.json)。2026-10-12图2/图3和5图2表字体核查仍为历史记录 |
 | Verified | 本次归档核对文件字节、哈希和入口引用，357份正文、图件、脚本及汇总文件保持不变；没有重绘或编译。归档报告中的暂存区未变和未提交描述指归档核验时点，随后按作者授权提交；后续交接文字更新不回写历史核查结论 |
 | Partially verified | ENN复用既有空间距离，未重算距离或恢复全部FRAGSTATS工程参数；C站玉米ENN最大值涉及外框斑块`ida_2023, PID=69765`。距离限于窗口内最近同类斑块边界像元中心，不是田块净空距离。B站限制见[身份追溯](verification/iw2-identity-provenance.md) |
 | Not verified | 全文最终分页、留白、文献格式及尚未完成章节的科学论述；既有字体替代、xeCJK、caption等警告未作为本次任务处理。图表字体通过不等于论文已定稿 |
 
-2026-10-13版本预览包含8页，F1展示变化集中于第4—7页；表1仍在第4页。旧7页稿件、表1位于第3页以及仅预览第3、5页的记录均为历史状态。本地`main.pdf`仍按既有规则忽略，同字节[该次8页PDF快照](output/archive/2026-10-13/f1-percent-preview/manuscript.pdf)已保存，并按2026-10-14作者指令随本次提交纳入Git；PDF哈希及来源见[预览清单](output/preview-manifest.json)。
+2026-10-13版本预览包含8页，F1展示变化集中于第4—7页；表1仍在第4页。旧7页稿件、表1位于第3页以及仅预览第3、5页的记录均为历史状态。本地`main.pdf`仍按既有规则忽略，同字节[该次8页PDF快照](archive/manuscript/2026-10-13/f1-percent-preview/manuscript.pdf)已保存，并按2026-10-14作者指令随本次提交纳入Git；PDF哈希及来源见[预览清单](archive/manuscript/2026-10-15/default-output/preview-manifest.json)。
 
 ## 工作区交接（2026-10-12收尾历史记录）
 
 本次提交补齐备份归档、可传递PDF、引用修正和交接文档；正文、正式图件、表体、数据及生产脚本沿用`e25df0c`，未重绘、编译或重算科研结果，不推送。归档目录采用保留字节的Git属性，避免换行转换改变历史快照SHA-256；未新增忽略规则。
 
-上一提交遗漏的两组本地备份已完整迁至[源码备份归档](output/archive/2026-10-12/source-backups/)，共32个文件，含2份原先被忽略的PDF、2份日志、源码、图件、暂存补丁和原始清单，全部纳入Git。原清单内容不改写，旧路径按[收尾映射与核查](verification/output-handoff-closeout-2026-10-12.json)解析。迁移前后和Git保存内容均核对SHA-256，接手无需另外复制这两组备份；旧源码仅供审阅，不是活动运行入口。此前报告的“保留原位、未跟踪”只表示`1d0bc9f`当时状态。
+上一提交遗漏的两组本地备份已完整迁至[源码备份归档](archive/manuscript/2026-10-12/source-backups/)，共32个文件，含2份原先被忽略的PDF、2份日志、源码、图件、暂存补丁和原始清单，全部纳入Git。原清单内容不改写，旧路径按[收尾映射与核查](verification/output-handoff-closeout-2026-10-12.json)解析。迁移前后和Git保存内容均核对SHA-256，接手无需另外复制这两组备份；旧源码仅供审阅，不是活动运行入口。此前报告的“保留原位、未跟踪”只表示`1d0bc9f`当时状态。
 
-接手顺序：核查Git和实际文件 → 读规则、写作/格式规范与当前正文 → 读[进度](plan/progress.md)及对应底表 → 在作者新任务范围内继续。若续写3.1，先读`plan/experiment-protocol.md`、`sections/03_methods.tex`、`plan/results-map.md`及正式summary；若核对1.3表，优先运行只读检查，不运行历史生产脚本。保存正文默认不编译，只有作者要求或规则允许的验证任务才执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`。每次编译后更新预览目录与清单，保留历史文件。
+接手顺序：核查Git和实际文件 → 读规则、写作/格式规范与当前正文 → 读[进度](plan/progress.md)及对应底表 → 在作者新任务范围内继续。若续写3.1，先读`plan/experiment-protocol.md`、`sections/03_methods.tex`、`plan/results-map.md`及正式summary；若核对1.3表，优先运行只读检查，不运行历史生产脚本。保存正文默认不编译，只有作者要求或规则允许的验证任务才执行`latexmk -xelatex -synctex=1 -interaction=nonstopmode -halt-on-error main.tex`，默认输出`output/main.pdf`。核查受影响页面并保留必要历史版本；不再创建当前预览副本。
 
 ## 本次交接核查范围
 

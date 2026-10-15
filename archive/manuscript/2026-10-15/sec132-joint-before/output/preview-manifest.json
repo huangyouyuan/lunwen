@@ -1,0 +1,38 @@
+{
+  "schema_version": 3,
+  "status": "Verified",
+  "date": "2026-10-15",
+  "scope": "Section 1.3.2 third-paragraph wording and pagination; compiled eight pages, inspected pages 3-5 and full-page contact sheet; no new scientific analysis",
+  "base_head": "69c310e",
+  "source_pdf": {
+    "path": "output/build/sec132-flow-2026-10-15/final/main.pdf",
+    "sha256": "80b24d6fa2eb7ae147d942d9f966771de38cef3522f29307528fda19084c208d",
+    "pages": 8
+  },
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-15-sec132-flow/manuscript.pdf",
+    "sha256": "80b24d6fa2eb7ae147d942d9f966771de38cef3522f29307528fda19084c208d",
+    "pages": 8
+  },
+  "source_verification": "verification/sec132-flow-2026-10-15.md",
+  "previews": [
+    {
+      "path": "output/previews/2026-10-15-sec132-flow/page-3.png",
+      "pdf_page": 3,
+      "sha256": "5dc48fc3ea99be1d22bd10edcfe0c80b2658101e7236b62f4f92ed3e4dc9f211"
+    },
+    {
+      "path": "output/previews/2026-10-15-sec132-flow/page-4.png",
+      "pdf_page": 4,
+      "sha256": "2214d266b2ce87c9aabb749dcd69327862458399ab024018beaa3641c820d5c3"
+    },
+    {
+      "path": "output/previews/2026-10-15-sec132-flow/page-5.png",
+      "pdf_page": 5,
+      "sha256": "1834b9d2dd7fa0f5dba6125f32579e5d8fd26fbfee11c49322146dd55a9c9f23"
+    }
+  ],
+  "historical_manifest": "output/archive/2026-10-15/sec132-flow-before/output/preview-manifest.json",
+  "entry_point": "output/README.md",
+  "path_mapping": "verification/sec132-flow-2026-10-15-archive.json"
+}

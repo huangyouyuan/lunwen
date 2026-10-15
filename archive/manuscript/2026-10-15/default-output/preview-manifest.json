@@ -1,0 +1,51 @@
+{
+  "schema_version": 3,
+  "status": "Verified",
+  "date": "2026-10-15",
+  "scope": "Joint figure axes, interval labels and width; figure geometry and pages 3-5; no new scientific results",
+  "base_head": "69c310e",
+  "source_pdf": {
+    "path": "output/build/compile-2026-10-15-102000/main.pdf",
+    "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea",
+    "pages": 8
+  },
+  "versioned_pdf": {
+    "path": "output/previews/2026-10-15-sec132-joint/manuscript.pdf",
+    "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea",
+    "pages": 8
+  },
+  "source_verification": "verification/sec132-joint-2026-10-15.md",
+  "previews": [
+    {
+      "path": "verification/layout/sec132-joint-2026-10-15/page-3.png",
+      "pdf_page": 3,
+      "sha256": "61b82f7cacdd811b767d05bd3d2c2f84eb6ed89afe43a8ce24a62a34bbd52574"
+    },
+    {
+      "path": "verification/layout/sec132-joint-2026-10-15/page-4.png",
+      "pdf_page": 4,
+      "sha256": "92398df1ebd6dfe069187ecbeca5414c730ccc185bf5b225c66620ad8eed9ca6"
+    },
+    {
+      "path": "verification/layout/sec132-joint-2026-10-15/page-5.png",
+      "pdf_page": 5,
+      "sha256": "bcada714b2bc9279e327b491e0359af423158a71085188278fb1d866be2417cd"
+    }
+  ],
+  "historical_manifest": "archive/manuscript/2026-10-15/sec132-joint-before/output/preview-manifest.json",
+  "entry_point": "output/README.md",
+  "path_mapping": "verification/sec132-joint-2026-10-15.json",
+  "root_pdf": {
+    "path": "main.pdf",
+    "sha256": "044d2e73317fe858df35ab1f869516cfa37e06eb5eb92b20e65a2cf2b1fcf4ea",
+    "pages": 8
+  },
+  "compile_verification": "verification/compile-2026-10-15-102000.json",
+  "compile_backup_manifest": "archive/manuscript/2026-10-15/compile-102000-before/manifest.json",
+  "previews_match_recompiled_pdf": {
+    "status": "Verified",
+    "comparison": "All 8 pages have identical extracted text, page dimensions and rendered pixels at 140 dpi",
+    "previews_regenerated": false
+  },
+  "artifact_location_mapping": "verification/artifact-locations-2026-10-15.json"
+}

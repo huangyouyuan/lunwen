@@ -20,7 +20,7 @@
 | 表2 跨站F1 | 7 | 宋体 / Times New Roman | 9 pt | 表题、表头、12条路径及平均行、表注，含修正的箭头 |
 | 图5 F1差值热力图 | 7 | 宋体 / Times New Roman | 9 pt | 六个子图的坐标及数值、子图题、色标刻度与标题、图题 |
 
-图2、图3和图5的源PDF与嵌入正文后的文字均为9 pt，未因插图缩放变小。使用PyMuPDF提取实际字形字体和字号，并用Poppler渲染第2至7页逐页查看；修正后重新渲染并查看第7页。未发现图表文字重叠、截断或缺字。预览为`output/archive/2026-10-12/font-audit/font-audit-20261012-before-{2..7}.png`及`output/archive/2026-10-12/font-audit/font-audit-20261012-after-7.png`。
+图2、图3和图5的源PDF与嵌入正文后的文字均为9 pt，未因插图缩放变小。使用PyMuPDF提取实际字形字体和字号，并用Poppler渲染第2至7页逐页查看；修正后重新渲染并查看第7页。未发现图表文字重叠、截断或缺字。预览为`archive/manuscript/2026-10-12/font-audit/font-audit-20261012-before-{2..7}.png`及`archive/manuscript/2026-10-12/font-audit/font-audit-20261012-after-7.png`。
 
 执行`latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`，返回目标已更新；实际PDF已包含12个新文本箭头。当前日志无Overfull、Underfull、Missing character、未定义引用或编译错误。既有标题粗体替代、xeCJK字体重定义、随文caption的hypcap提示及Perl locale提示不属于本次图表字体问题。
 
@@ -30,6 +30,6 @@
 - 所有当前图件、F1汇总CSV、表2的CSV、表1表体、`main.tex`、方法与结果正文均与本次起始快照相同。未运行FRAGSTATS或精度生产流程。
 - 起始时已有暂存与未暂存修改。本次未暂存、提交或推送；核查时Git暂存区与起始快照相同。工作期间1.1另有独立修订，原样保留；`sections/02_data.tex`从图1入口起的内容未变。第2至8页提取文本与起始PDF相同；第1页变化对应独立1.1修订，不归入本次字体修改。
 - 收尾检查时，独立1.1任务已形成提交`fce1b87`，因此暂存区相对起始快照发生变化；当前暂存区为空。本次字体修订仍在工作区，PDF哈希仍与上述字体核查一致。
-- 修改前PDF、日志及相关源码快照保存在`output/archive/2026-10-12/source-backups/font-audit-20261012-before-sources/`，原路径、快照路径关系及哈希见该目录`manifest.json`，旧文件和预览均保留。
+- 修改前PDF、日志及相关源码快照保存在`archive/manuscript/2026-10-12/source-backups/font-audit-20261012-before-sources/`，原路径、快照路径关系及哈希见该目录`manifest.json`，旧文件和预览均保留。
 
 本次核查的PDF为8页，SHA-256为`8a0194369c716438b7536efaed92fd75214425e942fd646b033fefadb641ac05`。此前7页及表1第3页的记录属于上一轮排版预览。**Not verified**：本次未全面审查分页留白、论文科学结论或未被正文引用的历史图件；不将本次字体通过等同于整篇定稿通过。

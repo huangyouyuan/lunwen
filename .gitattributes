@@ -27,7 +27,7 @@
 /verification/sec13-figure-table*.json -text
 /output/build-20261011-190347/** -text
 # Preserve archived preview bytes and the hashes in the current preview index.
-/output/archive/2026-10-12/** -text whitespace=cr-at-eol
+/archive/manuscript/2026-10-12/** -text whitespace=cr-at-eol
 /output/previews/2026-10-12-figure23-bars/** -text
 /output/README.md -text whitespace=cr-at-eol
 /output/preview-manifest.json -text whitespace=cr-at-eol
@@ -63,7 +63,7 @@
 /scripts/test/check_model_advantage_spatial_conditions.py -text
 
 # Preserve F1 display revision backups and verification bytes.
-/output/archive/2026-10-13/f1-display-before/** -text whitespace=cr-at-eol
+/archive/manuscript/2026-10-13/f1-display-before/** -text whitespace=cr-at-eol
 /output/previews/2026-10-13-f1-percent/** -text
 /verification/f1-display-2026-10-13/** -text whitespace=cr-at-eol
 /verification/f1-display-2026-10-13/*-log.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
@@ -73,7 +73,7 @@
 /verification/cross-f1-mean-only-2026-10-14.json -text whitespace=cr-at-eol
 
 # Preserve Section 1.3.2 presentation, source snapshots and preview hashes.
-/output/archive/2026-10-14/sec132-landscape-before/** -text whitespace=cr-at-eol
+/archive/manuscript/2026-10-14/sec132-landscape-before/** -text whitespace=cr-at-eol
 /output/previews/2026-10-14-sec132-landscape/** -text whitespace=cr-at-eol
 /results/summary/sec13_landscape_display/** -text whitespace=cr-at-eol
 /scripts/generate_sec13_landscape_display.py -text
@@ -89,10 +89,15 @@
 
 # Preserve original bytes at the 2026-10-15 archive/build destinations.
 /archive/2026-10-15-cancel-remote-plan/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
-/output/archive/2026-10-11/build-20261011-190347/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
-/output/archive/2026-10-13/f1-percent-preview/** -text whitespace=cr-at-eol
-/output/archive/2026-10-14/cross-f1-means-preview/** -text whitespace=cr-at-eol
-/output/archive/2026-10-14/sec132-landscape-pass1-preview/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
-/output/archive/2026-10-15/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/archive/manuscript/2026-10-11/build-20261011-190347/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/archive/manuscript/2026-10-13/f1-percent-preview/** -text whitespace=cr-at-eol
+/archive/manuscript/2026-10-14/cross-f1-means-preview/** -text whitespace=cr-at-eol
+/archive/manuscript/2026-10-14/sec132-landscape-pass1-preview/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/archive/manuscript/2026-10-15/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /output/build/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /verification/output-organization-2026-10-15.json -text whitespace=cr-at-eol
+
+# Preserve all relocated manuscript artifacts and current layout evidence.
+/archive/manuscript/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/verification/layout/** -text
+/verification/artifact-locations-2026-10-15.json -text whitespace=cr-at-eol

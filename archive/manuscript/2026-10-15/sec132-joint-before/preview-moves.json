@@ -1,0 +1,26 @@
+﻿[
+    {
+        "original_path":  "output/previews/2026-10-15-sec132-flow/manuscript.pdf",
+        "archive_path":  "output/archive/2026-10-15/sec132-flow-previous-preview/manuscript.pdf",
+        "reason":  "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+        "sha256":  "80b24d6fa2eb7ae147d942d9f966771de38cef3522f29307528fda19084c208d"
+    },
+    {
+        "original_path":  "output/previews/2026-10-15-sec132-flow/page-3.png",
+        "archive_path":  "output/archive/2026-10-15/sec132-flow-previous-preview/page-3.png",
+        "reason":  "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+        "sha256":  "5dc48fc3ea99be1d22bd10edcfe0c80b2658101e7236b62f4f92ed3e4dc9f211"
+    },
+    {
+        "original_path":  "output/previews/2026-10-15-sec132-flow/page-4.png",
+        "archive_path":  "output/archive/2026-10-15/sec132-flow-previous-preview/page-4.png",
+        "reason":  "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+        "sha256":  "2214d266b2ce87c9aabb749dcd69327862458399ab024018beaa3641c820d5c3"
+    },
+    {
+        "original_path":  "output/previews/2026-10-15-sec132-flow/page-5.png",
+        "archive_path":  "output/archive/2026-10-15/sec132-flow-previous-preview/page-5.png",
+        "reason":  "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+        "sha256":  "1834b9d2dd7fa0f5dba6125f32579e5d8fd26fbfee11c49322146dd55a9c9f23"
+    }
+]

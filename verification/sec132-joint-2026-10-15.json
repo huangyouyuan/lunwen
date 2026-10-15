@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-15",
+  "status": "Verified",
+  "scope": "Requested joint-figure interval notation, complete axes, and horizontal layout; preserves earlier uncommitted edits",
+  "base_head": "69c310e",
+  "pages": 8,
+  "figure3_page": 4,
+  "unchanged_pdf_text_pages": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8
+  ],
+  "unchanged_table1_pdf_text": true,
+  "protected_sha256": {
+    "AGENTS.md": "ca2e429d621c087603fbcb4cdacc5a8fdbb6c45d79849dd16d7c5113f11ab8bd",
+    "main.tex": "3b187ae5ec849d8653b32ab852e25ea8ce0fa4c2d48e2fd53f95e223feb771d7",
+    "scripts/plot_area_shape_joint_bubbles.py": "ebf38e44bf029dab927a3fb842fcd72bc8b16aa6e944c1547625209b41dc73cc",
+    "tables/sec13_landscape_context_rows.tex": "10d1e345b77d5c791441a949cf67ca47ef40fe474d0997241697eb2fadb61adc",
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/03_methods.tex": "c7a4bf9cb1429478c43b748e8a7044cb1d70ee605e28eca1a01b750eb3e7c05b",
+    "sections/04_results.tex": "6c0417a902da2b25f5d7a2e10b7c3a00ecdda1cea55a12f002b9bf3f383fa39f",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3",
+    "results/summary/sec13_landscape_display/closure_checks.csv": "900acb3e98d357b98e3317f81a300874f47eb9a626fdc72270898329d24a9c1d",
+    "results/summary/sec13_landscape_display/joint_distribution_reading.csv": "8443b3389e6517d191a85be9c6b086647e8c88cb439652f86782e018b50b3043",
+    "results/summary/sec13_landscape_display/table1_landscape_context.csv": "640f6151bfc71860c6e94c1ba20e73ffd1d38378953513851037eb857da94976",
+    "results/summary/area_shape_joint_bubbles_v3/archive-status.md": "025553c721eca54f339141f0360cec700677edd17b8a5f24fab2d29c0a8b7dac",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/summary/area_shape_joint_bubbles_v3/closure_checks.csv": "f77e4fd787c728cacb93e63ba899556d40dfd28c59e89b1bba477606a6dfebd2",
+    "results/summary/area_shape_joint_bubbles_v3/delivery-manifest.json": "8a7401d08c803b3bdbe9bd0d42e399ee596f223e660f34942897cadf03e81dda",
+    "results/summary/area_shape_joint_bubbles_v3/manifest.json": "21504b96dc8d5488e3096f6dd5660346aaa0a0aec1b19271e0a155572fe1790a",
+    "results/summary/area_shape_joint_bubbles_v3/README.md": "6106bed004caa5f84171b2630ec5bb03a30390535482aa99953f4b55fd33bc69",
+    "results/summary/area_shape_joint_bubbles_v3/verification.json": "6ac79ae64e76fe4f2746b85d64a75d9ed610d10fc9dfb873875c0c20bc602028",
+    "results/summary/area_shape_joint_bubbles_v3/visual-review.md": "a03c55d109b113bfb025f6d7b7927d17baea9191ecd16e688ca95b66f116a622"
+  },
+  "source_sha256": "62a8108d76fcc5445fd17fb61f472bffe53483ac1b09c8a1699e9799f33a05ab",
+  "pdf_sha256": "c8c97c22c4467183e8aba80f8647c2d23e188ef19f606d4c72c587bced63498a",
+  "figure_geometry": {
+    "fonts": {
+      "Times New Roman": "C:\\Windows\\Fonts\\times.ttf",
+      "SimSun": "C:\\Windows\\Fonts\\simsun.ttc"
+    },
+    "panels": [
+      {
+        "crop": "corn",
+        "nonzero_bubbles": 86,
+        "left_cm": 0.85,
+        "bottom_cm": 0.8,
+        "width_cm": 7.800000000000001,
+        "height_cm": 7.6000000000000005,
+        "y_axis_label": "形状指数（SHAPE）",
+        "y_ticks": [
+          "1–1.5",
+          "1.5–2",
+          "2–3",
+          "≥3"
+        ]
+      },
+      {
+        "crop": "soybean",
+        "nonzero_bubbles": 83,
+        "left_cm": 9.549999999999999,
+        "bottom_cm": 0.8,
+        "width_cm": 7.800000000000001,
+        "height_cm": 7.6000000000000005,
+        "y_axis_label": "形状指数（SHAPE）",
+        "y_ticks": [
+          "1–1.5",
+          "1.5–2",
+          "2–3",
+          "≥3"
+        ]
+      }
+    ],
+    "scatter_s_pt2_per_pct": 15.164483701644752,
+    "circle_area_pt2_per_pct": 11.910157648142325,
+    "observed_max_share_pct": 22.42412935323383,
+    "min_circle_gap_mm": 0.3772185544534443,
+    "min_cell_boundary_clearance_mm": 0.24910499122117064,
+    "offsets": {
+      "A": [
+        -0.23,
+        0.2
+      ],
+      "B": [
+        0.245,
+        0.2
+      ],
+      "C": [
+        -0.23,
+        -0.2
+      ],
+      "D": [
+        0.245,
+        -0.2
+      ]
+    },
+    "min_bubble_floor": null,
+    "figure_width_cm": 17.4,
+    "frame_height_cm": 9.0,
+    "panel_canvas_width_cm": 8.7,
+    "area_tick_labels": [
+      "<10",
+      "10–50",
+      "50–100",
+      "100–200",
+      "200–500",
+      "≥500"
+    ],
+    "shape_tick_labels": [
+      "1–1.5",
+      "1.5–2",
+      "2–3",
+      "≥3"
+    ],
+    "interval_convention": "left closed, right open; last includes its lower limit",
+    "legend": [
+      {
+        "share_pct": 1,
+        "diameter_pt": 3.8941602049279833,
+        "diameter_mm": 1.3737731834051496
+      },
+      {
+        "share_pct": 5,
+        "diameter_pt": 8.707606933493482,
+        "diameter_mm": 3.0718502237602006
+      },
+      {
+        "share_pct": 20,
+        "diameter_pt": 17.415213866986964,
+        "diameter_mm": 6.143700447520401
+      }
+    ]
+  },
+  "checks": {
+    "exported_nonzero_bubbles": 169,
+    "unplotted_zero_cells": 23,
+    "vector_only": true,
+    "font_size_pt": 9,
+    "max_diameter_error_pt": 2.8117276471562036e-05,
+    "min_circle_gap_mm": 0.3772165086534285,
+    "min_cell_boundary_clearance_mm": 0.2490999857584708,
+    "overfull_underfull": 0,
+    "undefined_references": 0,
+    "missing_characters": 0
+  },
+  "commands": [
+    "python -B scripts/generate_sec13_landscape_display.py --figure-only",
+    "python -B scripts/generate_sec13_landscape_display.py --check",
+    "python -B scripts/test/check_sec13_landscape_display.py",
+    "latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=output/build/sec132-joint-2026-10-15/manuscript main.tex"
+  ],
+  "visual_review": [
+    "standalone figure",
+    "manuscript page 3",
+    "manuscript page 4",
+    "manuscript page 5"
+  ],
+  "files": [
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.pdf",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "74753e2f4ec015dc4d8052b565a2fe158fbdbc111f5c7c15d5aeeb85af15c975"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.png",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.png",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "bd0efcb2a4c137d6a7c63fdbd909eda0ffd318695ff6c0469fbb266c63da861b"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint.tex",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "1447020d78e5d53d72073a368812897a2c9c952162ce868db1c0f376ec7daea4"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_a.pdf",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "0a94c628e6169e05529350d2507d66fce5757dce1699072be82e1352b5c5e7af"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_b.pdf",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "c4ed2ac72684189171a4aa89984a2a445b730b458c0b23f9d4d4e5134eeb029d"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_frames.pdf",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "fad6bb5669bcc5c67e8b6239559d83dab27f999c349a23772fe09e76183f03b7"
+    },
+    {
+      "original_path": "figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/figures/study_area/fig_sec13_area_shape_joint_legend.tex",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "afea317d4ddd1a432fe61beb8dd414495fb357686c7491a0ba942b8383d28c41"
+    },
+    {
+      "original_path": "results/summary/sec13_landscape_display/manifest.json",
+      "archive_path": "output/archive/2026-10-15/sec132-joint-before/replaced-outputs/results/summary/sec13_landscape_display/manifest.json",
+      "reason": "Superseded formal figure and presentation manifest; active paths will be regenerated from unchanged saved bins",
+      "sha256": "99f1921c65bb7e6bbf3d3d24a86da520257c6fc24fd625fd4f257734cbdb9800"
+    },
+    {
+      "original_path": "output/previews/2026-10-15-sec132-flow/manuscript.pdf",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-previous-preview/manuscript.pdf",
+      "reason": "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+      "sha256": "80b24d6fa2eb7ae147d942d9f966771de38cef3522f29307528fda19084c208d"
+    },
+    {
+      "original_path": "output/previews/2026-10-15-sec132-flow/page-3.png",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-previous-preview/page-3.png",
+      "reason": "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+      "sha256": "5dc48fc3ea99be1d22bd10edcfe0c80b2658101e7236b62f4f92ed3e4dc9f211"
+    },
+    {
+      "original_path": "output/previews/2026-10-15-sec132-flow/page-4.png",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-previous-preview/page-4.png",
+      "reason": "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+      "sha256": "2214d266b2ce87c9aabb749dcd69327862458399ab024018beaa3641c820d5c3"
+    },
+    {
+      "original_path": "output/previews/2026-10-15-sec132-flow/page-5.png",
+      "archive_path": "output/archive/2026-10-15/sec132-flow-previous-preview/page-5.png",
+      "reason": "Superseded by the joint-figure axis and width revision, retaining the earlier wording and pagination fixes",
+      "sha256": "1834b9d2dd7fa0f5dba6125f32579e5d8fd26fbfee11c49322146dd55a9c9f23"
+    }
+  ],
+  "empty_build_attempt": {
+    "original_path": "output/build/sec132-joint-2026-10-15/figure",
+    "archive_path": "output/archive/2026-10-15/sec132-joint-before/first-build-attempt",
+    "reason": "Empty directory from initial axis-label bounds check; retained before successful generation",
+    "file_count": 0
+  },
+  "limits": [
+    "No metric re-estimation, bin reassignment, training or inference",
+    "Historical ENN/FRAGSTATS provenance limits unchanged",
+    "Existing font/bibliography warnings unchanged; incomplete manuscript is not a final publication check"
+  ]
+}

@@ -127,11 +127,12 @@ class F1PresentationTests(unittest.TestCase):
         self.assertIn('差值不除以站内基准',methods)
 
     def test_scientific_data_and_backups_unchanged(self):
-        manifest=json.loads((ROOT/'output/archive/2026-10-13/f1-display-before/manifest.json').read_text(encoding='utf-8'))
+        manifest=json.loads((ROOT/'archive/manuscript/2026-10-13/f1-display-before/manifest.json').read_text(encoding='utf-8'))
         for name,expected in manifest['unchanged_data'].items():
             self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),expected,name)
         for entry in manifest['copies']:
-            self.assertEqual(hashlib.sha256((ROOT/entry['backup']).read_bytes()).hexdigest(),entry['sha256'])
+            backup=entry['backup'].replace('output/archive/', 'archive/manuscript/', 1)
+            self.assertEqual(hashlib.sha256((ROOT/backup).read_bytes()).hexdigest(),entry['sha256'])
 
 
 if __name__ == '__main__':
