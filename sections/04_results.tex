@@ -1,5 +1,6 @@
 % !TEX root = ../main.tex
 \input{tables/f1_text_values.tex}
+\input{tables/sec31_spatial_text_values.tex}
 
 \section{实验结果与分析}
 
@@ -31,17 +32,21 @@
 
 三种模型之间的差异主要体现在ConvGRU与另两种模型之间。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而二者之间差值均小于1.00个百分点，互有高低：U-TAE在A、B两个站点略优，3D U-Net在D站点略优，C站点U-TAE的玉米和大豆F1分别高出\FCUtaeUnetCorn{}和\FCUtaeUnetSoy{}个百分点。ConvGRU与前两者的差距因站点而异：两种作物在C站点为\FModelGapCMin{}～\FModelGapCMax{}个百分点，在D站点为\FModelGapDMin{}～\FModelGapDMax{}个百分点。
 
-结合1.3节的面积—形状分布，B站两种作物的漏分来源也存在差别。面积小于50~ha的大豆斑块占该站大豆面积的39.20\%，却包含三种模型大豆漏分的65.53\%～66.96\%；玉米同一面积范围斑块的漏分贡献比例为44.52\%～46.57\%。这说明B站大豆的漏分更集中于较小斑块。相比以较规则斑块为主的A站，C站包含较多大型复杂斑块，但C站模型间的F1差距反而小于D站，斑块形态的站间差异不能直接用于判断模型差距大小。
+结合1.3节的面积—形状分布，进一步按完整参考斑块分组考察漏分位置，图\ref{fig:within_site_errors}给出三模型的全站作物对错分布。A站两种作物面积占比最大的组合均为100～200~ha、形状指数1.5～2，分别占全站玉米和大豆面积的\SACropCorn{}\%和\SACropSoy{}\%。这两个组合的边界占比均低于对应作物的全站水平，三模型的内部漏分率最高为\SAInteriorMax{}\%，边界漏分率也低于同站对应作物的全站边界水平。主要面积所在组合的边界和内部均有较好的识别表现，与A站两种作物F1均最高相对应。
 
-从全站错误位置看，四站两种作物的边界面积占比为21.72\%～28.32\%，漏分贡献比例却达到81.78\%～96.05\%。三种模型的边界漏分率为17.21\%～34.20\%，内部仅为0.21\%～2.19\%。相对ConvGRU，另两模型在各站两种作物上的漏分均较少，其中边界漏分计数的减少占全站该作物漏分计数净减少量的51.58\%～85.74\%，表明模型间漏分差异主要发生在边界。图\ref{fig:within_site_errors}展示各站三模型对错分歧比例最高的局部窗口，既可见边界附近的错分，也可见部分内部区域的成片错分。局部排序不一定与全站相同：D站所选窗口中，ConvGRU、3D U-Net和U-TAE的两种作物合并漏分率分别为20.61\%、14.10\%和25.69\%。这些窗口用于展示差异案例，不能代表全站典型表现；上述漏分分析也未包含参考其它地类误分入作物的影响，不能直接分解F1差异。
+B站大豆较小斑块中的漏分，主要来自有较大面积支持的较规则形状组。面积小于50~ha、形状指数小于1.5的斑块占该站大豆面积的\SBSmallArea{}\%，包含三模型全站大豆漏分的\SBSmallFnMin{}\%～\SBSmallFnMax{}\%。该组边界占比为\SBSmallBound{}\%，ConvGRU在边界和内部的漏分率分别为\SBSmallBoundaryFn{}\%和\SBSmallInteriorFn{}\%，说明漏分量既与边界所占面积有关，也与边界内的识别不足对应。形状指数不小于3的小斑块虽有更高的边界占比和组内漏分率，却仅占大豆面积的\SBComplexArea{}\%，不是全站漏分的主要来源。D站两种作物在小于50~ha、形状指数小于1.5组中的面积占比分别为\SDSmallCorn{}\%和\SDSmallSoy{}\%，组内边界占比和内部漏分率也接近，与两作物分类表现接近相对应，但不能仅据面积或形状分布判断识别难度。
 
-\begin{figure*}[!t]
+模型间漏分差异在C、D站对应的组合也不同。D站玉米10～50~ha、形状指数小于1.5组占玉米面积的\SDMainArea{}\%，3D U-Net相对ConvGRU在该组边界和内部的漏分率分别降低\SDReductionBoundary{}和\SDReductionInterior{}个百分点，二者合计占全站玉米漏分净减少量的\SDNetShare{}\%；该组也是D站大豆两种比较模型漏分净减少量最大的组合。C站玉米中，3D U-Net漏分净减少量最大的组合为200～500~ha、形状指数不小于3，占玉米面积的\SCMainArea{}\%，边界和内部漏分率分别降低\SCReductionBoundary{}和\SCReductionInterior{}个百分点，占全站玉米漏分净减少量的\SCNetShare{}\%。D站这一主要组合的改善幅度和贡献均大于C站上述组合，但两站其余组合仍共同影响全站差距。ConvGRU的内部漏分也并非只集中于复杂斑块：A站两种作物、B站大豆和D站两种作物的内部漏分计数最多的组合均为10～50~ha、形状指数小于1.5，而C站玉米为上述大型复杂组合。
+
+U-TAE与3D U-Net在边界和内部的优势并不总是一致。C站玉米的全站边界漏分率，U-TAE为\SCUtaeBoundary{}\%，低于3D U-Net的\SCUnetBoundary{}\%；内部则为\SCUtaeInterior{}\%，高于3D U-Net的\SCUnetInterior{}\%，D站大豆也存在同样的位置差异。模型改善还存在反例：C站面积不小于500~ha、形状指数不小于3的玉米斑块占该站玉米面积的\SCNegativeArea{}\%，U-TAE在其内部的漏分率比ConvGRU高\SCNegativePp{}个百分点。图\ref{fig:within_site_errors}用于观察全站错分的空间聚集，细小边界及组内差异由上述全站统计定位。这些面积—形状与错误位置的对应不表示独立因果作用；作物漏分分析也未包含参考其它地类误分入作物的影响，不能直接分解F1差异。
+
+\begin{figure*}[!tp]
 \centering
-\input{figures/results/fig_within_site_errors.tex}
-\caption{四站局部作物参考像元的错分分布}
+\input{figures/results/fig_within_site_full_errors.tex}
+\caption{四站三种模型的全站作物参考像元错分分布}
 \label{fig:within_site_errors}
 \par\noindent\begin{minipage}{\textwidth}\songti\zihao{-5}
-注：各站选取三模型作物像元对错分歧比例最高的局部窗口，用于展示分类差异。窗口均为256×256像元（7.68~km×7.68~km），参考标签全部有效，玉米和大豆各占至少10\%。至少一个模型正确、至少一个模型错误的作物像元计为分歧，比例以窗口全部参考作物像元为分母。红色包括作物间互混及作物判为其它地类，参考其它地类始终为灰色。所选窗口不代表全站典型表现，也不用于比较站点整体难度。
+注：红色包括作物间互混及作物判为其它地类，不显示参考其它地类误分入作物的像元。同站三图覆盖一致，保留原始像元。
 \end{minipage}
 \end{figure*}
 

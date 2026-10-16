@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-17",
+  "head": "953cbd2",
+  "files": [
+    {
+      "original_path": "output/main.pdf",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/output/main.pdf",
+      "sha256": "69e5e72b052212bb6b2fdbf08cf45c0746ad06b5f3e9bef2eb720f6eadb4ae81",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "sections/04_results.tex",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/sections/04_results.tex",
+      "sha256": "c4093edff95f770f145eeaac53de6c745edbcb22e71cfaeb6fd90ed50e292388",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "plan/results-map.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/plan/results-map.md",
+      "sha256": "f6b16929f29d101829aba74c0e85d8a32c8a0a206630617722fb1c503c47e98f",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "plan/experiment-protocol.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/plan/experiment-protocol.md",
+      "sha256": "91c6c87f4961cb9252eedc4dafb4d06fdb35efc2e1aad2d0dce0feecdaba993c",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "plan/format-spec.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/plan/format-spec.md",
+      "sha256": "2a184c493ae2f1cb33c8f31c68761738b38f9b36255365bfb9d664f4534c5652",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "plan/chapter-blueprints/sec31-spatial-error-figure.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/plan/chapter-blueprints/sec31-spatial-error-figure.md",
+      "sha256": "ef4a196f2b7214b047a9435383af28a08f1a87c08a897c4b24731a886102716b",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "plan/tasks/2026-10-16-sec31-spatial-error-figure.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/plan/tasks/2026-10-16-sec31-spatial-error-figure.md",
+      "sha256": "a01b2b8bd2c6dc15f811f4043d69e72170f98382dd0d767a6209cb9a3015f166",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    },
+    {
+      "original_path": "results/summary/sec31_spatial_examples/README.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/results/summary/sec31_spatial_examples/README.md",
+      "sha256": "b461a898dc0f93b1e3bf50463ef404d2a9ff90a75ee732ab5d5d4657cb81f00d",
+      "reused": false,
+      "reason": "Before authorized section3.1 joint-position analysis and full-site figure replacement"
+    }
+  ]
+}

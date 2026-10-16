@@ -109,3 +109,13 @@
 /figures/results/fig_within_site_errors.tex -text
 /plan/chapter-blueprints/sec31-spatial-error-figure.md -text
 /verification/sec31-spatial-errors-2026-10-16.json -text
+# Preserve hashes for the full-site joint-position evidence and figure 4.
+/sections/04_results.tex text eol=crlf
+/results/summary/sec31_joint_boundary/** -text whitespace=cr-at-eol
+/scripts/analyze_sec31_joint_boundary.py -text
+/scripts/plot_within_site_full_errors.py -text
+/scripts/summarize_sec31_joint_boundary.py -text
+/scripts/test/check_sec31_joint_boundary.py -text
+/tables/sec31_spatial_text_values.tex -text
+/figures/results/fig_within_site_full_errors.tex -text
+/verification/sec31-joint-boundary-2026-10-17.json -text

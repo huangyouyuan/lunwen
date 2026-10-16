@@ -1,0 +1,277 @@
+{
+  "date": "2026-10-17",
+  "verification": "Verified",
+  "scope": "Section 3.1 full-patch joint-position analysis, full-site figure 4, canonical PDF and source/history protection; not whole-manuscript completion.",
+  "starting_head": "953cbd2",
+  "data": {
+    "status": "derived",
+    "reference_combinations": 192,
+    "supported_combinations": 169,
+    "zero_support_combinations": 23,
+    "position_metrics_rows": 1152,
+    "comparison_rows": 1152,
+    "summary_checks": 151,
+    "independent_artifact_checks": 442,
+    "unit_tests": 2,
+    "existing_local_unit_tests": 5,
+    "prose_candidates_verified": 31,
+    "prose_values_used": 26,
+    "boundary": "Crop centers within <=30 m of valid unlike four-neighbor shared edges on the complete reference; external, invalid and artificial edges excluded.",
+    "interior": "All remaining reference crop pixels; saved distance bands 1 through 6 merged.",
+    "verified": [
+      "Same model reference supports; complete-patch PID/AREA/SHAPE and figure-2 bin support identity",
+      "Boundary plus entire interior and 24 groups close to full-site integers",
+      "Independent raw reference/prediction per-pixel 24 x 2 counts and full-reference boundary masks",
+      "Signed net counts, percentage-point differences, whole-crop omission and net-difference denominators; negative and >100% contributions; NA at zero denominator",
+      "All 31 source selectors and rounding; 26 used manuscript values",
+      "All four reading outputs reproduced in memory without changing data or macros"
+    ],
+    "negative_cells_vs_convgru": {
+      "unet3d": 8,
+      "utae": 8
+    }
+  },
+  "pdf": {
+    "path": "output/main.pdf",
+    "sha256": "15785608b0942a77c4d1cffab5a95e013b81f04c324c07f5d2c8bc341caa974a",
+    "pages": 9,
+    "figure4_page": 7,
+    "panel_checks": [
+      {
+        "panel": "A_convgru",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "A_unet3d",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.199999673631456,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "A_utae",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "B_convgru",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "B_unet3d",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.199999673631456,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "B_utae",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "C_convgru",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "C_unet3d",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.199999673631456,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "C_utae",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200000211927626
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "D_convgru",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200001288519966
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "D_unet3d",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.199999673631456,
+          5.200001288519966
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "panel": "D_utae",
+        "pixels": [
+          2560,
+          2560
+        ],
+        "width_height_cm": [
+          5.200000211927626,
+          5.200001288519966
+        ],
+        "native_pixel_bytes_equal": true
+      }
+    ],
+    "text_size_pt": 9,
+    "scale_20km_cm": 1.3541561465793186,
+    "first_four_and_last_pages_pixel_identical_to_before": true
+  },
+  "build": {
+    "command": "latexmk -xelatex -synctex=1 -interaction=nonstopmode -halt-on-error main.tex",
+    "exit_code": 0,
+    "transcript": "output/build/main/sec31-joint-boundary-build3.txt",
+    "fatal_or_overfull_or_float_too_large_or_missing_glyph_or_undefined_reference": false,
+    "retained_warnings": "Existing xeCJK/font fallback and section 1.3 Underfull hbox badness 2376 at lines 55-56."
+  },
+  "layout": {
+    "verification": "Verified",
+    "reviewed_pages": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "final_figure_preview": "verification/layout/sec31-joint-boundary-2026-10-17/final-proof/page-7.png",
+    "explanation": "verification/layout/sec31-joint-boundary-2026-10-17/README.md",
+    "no_added_forced_pagination": true,
+    "no_figure_crop_overlap_or_overheight": true,
+    "remaining_whitespace": [
+      "Page 6 lower right: downstream existing section 3.2 spanning floats/barrier; source unchanged.",
+      "Page 9: unfinished downstream sections; pixel-identical to original final page."
+    ]
+  },
+  "source_protection": {
+    "overall_f1_two_paragraphs_and_figure3_unchanged": true,
+    "sections_3_2_and_later_suffix_unchanged": true,
+    "other_sections_unchanged": true,
+    "old_local_figure_manifest_outputs_unchanged": true,
+    "original_processed_raw_and_legacy_unchanged": true,
+    "no_deletions": true,
+    "no_root_main_pdf": true,
+    "no_output_previews": true
+  },
+  "archives": [
+    {
+      "manifest": "archive/manuscript/2026-10-17/sec31-joint-boundary-before/manifest.json",
+      "sha256": "a4ce281914151702100558a4c0aa88634bc723a6f22c43523310a65b84ca7cd7",
+      "files": 8,
+      "verification": "Verified"
+    },
+    {
+      "manifest": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/manifest.json",
+      "sha256": "741fc1b20794c351c9bffc7dd7d4afb970adc08bbc6565477cb211bdf74dc8f1",
+      "files": 4,
+      "verification": "Verified"
+    },
+    {
+      "manifest": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/manifest.json",
+      "sha256": "fca9941ab40255f7c2b5a02a9f5603f2799894bed425413e1906444fd45fb4dd",
+      "files": 5,
+      "verification": "Verified"
+    }
+  ],
+  "limits": [
+    "Omission analysis excludes reference-other false positives into crops and cannot decompose complete F1 differences.",
+    "AREA-SHAPE associations are descriptive; independent causal effects are not identified.",
+    "Full-site paper panels show spatial clusters; individual 30 m pixels and small boundary differences require integer statistics.",
+    "Only the <=30 m boundary mask was geometrically revalidated; all other bands are merged into the exhaustive interior, not reinterpreted individually.",
+    "B U-TAE source raster lacks a CRS tag; same-site grid and exact reference identity verified; no projection metadata invented.",
+    "Original maximum-disagreement local products are supplementary; they do not establish site-wide typicality."
+  ],
+  "git": "Uncommitted; no commit or push performed.",
+  "protected_source_sha256": {
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/02_data.tex": "4939398686bd18c320b5a63bf207a7e509a22c212c6981afd526214b66627b93",
+    "sections/03_methods.tex": "a343a6c46e0e73cc19cc65c63d7a1cedaf42e9b1afc0a2f4488676a89b2fa666",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3"
+  },
+  "artifact_sha256": {
+    "output/main.pdf": "15785608b0942a77c4d1cffab5a95e013b81f04c324c07f5d2c8bc341caa974a",
+    "output/build/main/main.log": "4903acf5c7fe868d26f505a24761d61e20f927a82f674daa523729ab2d0394a7",
+    "output/build/main/sec31-joint-boundary-build3.txt": "0baa9fe2e0ce4af4fd156093da73b6b1083361d7c6d69e1e810bdc55fca932c1",
+    "sections/04_results.tex": "0323c35456485eb9befbd09b10164a505d705be647f908241d7eb44ef2481edb",
+    "figures/results/fig_within_site_full_errors.tex": "ee3d9cc24be75a43398369cfb9a0d0f7c751f512b8e696047afd1b7a085d253a",
+    "scripts/test/check_sec31_joint_boundary.py": "656d0b6a6e2ddd4a213f74f074669b5ab904346f60de93cc25baad0a397ce742",
+    "results/summary/sec31_joint_boundary/manifest.json": "0e23010d79ef5fb029b66c57047fc72c5e74923f0d9e24dea690ddeb4d31fda2",
+    "results/summary/sec31_joint_boundary/figure_manifest.json": "07c02237dbc622402f0b028217499feb5afaa484da479fcb5694060047ba3301",
+    "results/summary/sec31_joint_boundary/reading_manifest.json": "4a9065d167640ed6021ebd2af96d89a5a4aa87866064703046a293af49023fe3",
+    "tables/sec31_spatial_text_values.tex": "dfc3f4aed9964161f463540e5664f2b8d2a61ba5a354a63eae03d13d5d3fb1e6"
+  },
+  "precommit_formatting": {
+    "file": "figures/results/fig_within_site_full_errors.tex",
+    "change": "Remove trailing empty lines only; LaTeX tokens and verified PDF unchanged.",
+    "original_archive": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/fig_within_site_full_errors.tex",
+    "original_sha256": "c494ccb26ed9361de6282beca3f0f146d6c2d0321c679674a6347c60778e637f"
+  }
+}

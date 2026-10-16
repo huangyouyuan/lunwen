@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-17",
+  "files": [
+    {
+      "original_path": "output/main.pdf",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/output/main.pdf",
+      "sha256": "ac3d9bf8f725db4d6d3e6065a490e821e603ff892cdd79b282c6a4c7bbae04c5",
+      "reused": false,
+      "reason": "Preserve proof before final caption line-fit and evidence-report corrections"
+    },
+    {
+      "original_path": "sections/04_results.tex",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/sections/04_results.tex",
+      "sha256": "4b91175859cff2d7565e3b540fce85bd1d87bfca9834511bdc3278ab3747cc55",
+      "reused": false,
+      "reason": "Preserve proof before final caption line-fit and evidence-report corrections"
+    },
+    {
+      "original_path": "results/summary/sec31_joint_boundary/analysis.md",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/results/summary/sec31_joint_boundary/analysis.md",
+      "sha256": "5699935ee36a29601362203324c80857752774c3a14120632c0b9b0ff48c06cf",
+      "reused": false,
+      "reason": "Preserve proof before final caption line-fit and evidence-report corrections"
+    },
+    {
+      "original_path": "scripts/summarize_sec31_joint_boundary.py",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/scripts/summarize_sec31_joint_boundary.py",
+      "sha256": "d3dca2107b82aa9fd81f3f56668bbef2691c247fcb819e2637cb8b0646af8338",
+      "reused": false,
+      "reason": "Preserve proof before final caption line-fit and evidence-report corrections"
+    },
+    {
+      "original_path": "results/summary/sec31_joint_boundary/reading_manifest.json",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-proof-before/results/summary/sec31_joint_boundary/reading_manifest.json",
+      "sha256": "6263f27a0f616dae8a1306d6928a528b590bc9ac791ea2c28045cd7bf8fd03d6",
+      "reused": false,
+      "reason": "Preserve proof before final caption line-fit and evidence-report corrections"
+    }
+  ]
+}

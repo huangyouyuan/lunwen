@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-17",
+  "data_status": "derived",
+  "verification": "Verified",
+  "scope": "Saved integer counts and same-reference joint-position aggregation; raw raster and figure verification recorded separately.",
+  "area_bins": [
+    "<10",
+    "10-<50",
+    "50-<100",
+    "100-<200",
+    "200-<500",
+    ">=500"
+  ],
+  "shape_bins": [
+    "1-<1.5",
+    "1.5-<2",
+    "2-<3",
+    ">=3"
+  ],
+  "boundary": "saved band0; independently verified <=30m full-reference class edges",
+  "interior": "all saved bands1:7; every non-boundary reference crop pixel",
+  "input_sha256": {
+    "results/summary/spatial_error_conditions/reference_group_support.csv": "0c90b083e7ff5d819dec6ea257080799e250418764f246c7ab5924678229ca7e",
+    "results/summary/spatial_error_conditions/within_group_metrics.csv": "35968b486e20ef762be9ec952934129bb4b4bb3ff3769e3f4e09b27e08291174",
+    "results/summary/area_shape_joint_bubbles_v3/area_shape_joint_bins.csv": "30600776a67b88fcb2e2344b275d0aa0910a656c9962fe3713a52e64cd4a43e2",
+    "results/processed/sec33_reference_patch_types/reference_patch_features.csv": "fdfe31beefcbe9a1b0661ee76d48fe240b33cd88ae5027ac6fdcc3af81e857ab",
+    "results/processed/sec33_reference_patch_types/prediction_count_index.csv": "59098bff4663a1468798bae6e3c9d9749291ed1355e6dac3a2cdcff7bfa3199e",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw_2023_iw_2023_0.npz": "80306631b06813f69acc2930d0a0fe69a438695e1f16dba17d0686cf5d7f57f6",
+    "results/processed/sec33_reference_patch_types/counts_within_unet3d_iw_2023_iw_2023_0.npz": "1c0d88b8edc860b6a26df514c0b64a60614cfcf201bce0d4054a579a7cb76c8d",
+    "results/processed/sec33_reference_patch_types/counts_within_utae_iw_2023_iw_2023_0.npz": "fef756f545ed066fdb6f9071e57e4af189e6ae60bbc1a0540e3883dd67115bbd",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_iw2_2023_iw2_2023_0.npz": "a315b9502ac6667d4e5350a5864a6131824827978c8b96b7f52ac6b6f2c1e312",
+    "results/processed/sec33_reference_patch_types/counts_within_unet3d_iw2_2023_iw2_2023_0.npz": "04fdf48e0395969421a8beb8ded16e6725d1094e612b3a3415c7d9deb36c5ac0",
+    "results/processed/sec33_reference_patch_types/counts_within_utae_iw2_2023_iw2_2023_0.npz": "d8ee9c771a8afde894dfe4c78c193943cccc3481b3778ad3de52477d56874045",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_ida_2023_ida_2023_0.npz": "09ef42fdf385550e2f766a85faea00640f45a310c8074eb8a284b3d9a86e91aa",
+    "results/processed/sec33_reference_patch_types/counts_within_unet3d_ida_2023_ida_2023_0.npz": "102985e22202acd385d8a9753a09490c2e5a5c7b407aab2a593a31b884c3770d",
+    "results/processed/sec33_reference_patch_types/counts_within_utae_ida_2023_ida_2023_0.npz": "dda44045a332c0a03bf39af5b6af6ce897f9ee6f4d81f89aa133f180db7f66ec",
+    "results/processed/sec33_reference_patch_types/counts_within_convgru_il_2023_il_2023_0.npz": "c7cfb4dcee3aaeff29cc7bd8d564046a9930621d56c891b28d2dbc1d54cb543d",
+    "results/processed/sec33_reference_patch_types/counts_within_unet3d_il_2023_il_2023_0.npz": "8d54ce1e0f837d5fdd9fbe9050a54db99be6c8c4f217b9d176fa34c68a666dd5",
+    "results/processed/sec33_reference_patch_types/counts_within_utae_il_2023_il_2023_0.npz": "a5f35822c0390a2e367cb13bab22cf037c7535aa8fb1b1e14eb6852c684fa4e8"
+  },
+  "script_sha256": "d39276dbeefc867d0b7510e122d287b6a2af8c3b2b0e8587b29eeff1f813ecf5",
+  "output_sha256": {
+    "results/summary/sec31_joint_boundary/reference_support.csv": "c441bc9f3303928b3d29414a5980bea7dc95af52c8d72dc2698de62684fa14ff",
+    "results/summary/sec31_joint_boundary/within_position_metrics.csv": "0fa244d4ff82bd36d94dd311bb5af55f76ffda71e61721451071e6044bfff6c4",
+    "results/summary/sec31_joint_boundary/within_joint_metrics.csv": "00b95338547162162eeac18787d7a9ff78ff7a56a09403eb927b124ad84afdca",
+    "results/summary/sec31_joint_boundary/within_site_position_metrics.csv": "ad9108d780cd00e67e585abaeb91b93d6a5916db60326553c377f6584ebf80bd",
+    "results/summary/sec31_joint_boundary/small_area_by_shape.csv": "41119279705b292f90638d6c59c92971dc50a5ce0e42ef163b8ce9a6fac0939c",
+    "results/summary/sec31_joint_boundary/model_comparisons.csv": "84f1505894654c825d2dac82b25e36d42a642581049698984110d0cfd284a20f",
+    "results/summary/sec31_joint_boundary/verification_checks.csv": "2ef841fbe0477f83b4f03c7686bcbcbabe40942fe3f70da6b9879f6ec3365211"
+  }
+}

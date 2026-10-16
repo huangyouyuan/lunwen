@@ -1,0 +1,152 @@
+check,status
+192 joint combinations match figure2 reference and patch counts,Verified
+complete 1728 joint-distance rows,Verified
+identical reference pixels across models,Verified
+1152 joint-position model rows,Verified
+reference boundary plus entire interior closes,Verified
+12 within-site prediction identities,Verified
+iw_2023/convgru saved-count SHA256,Verified
+iw_2023/convgru unique PID,Verified
+iw_2023/convgru unmatched PID is zero background,Verified
+iw_2023/convgru full-patch support,Verified
+iw_2023/convgru/corn/boundary independent integers,Verified
+iw_2023/convgru/corn/interior independent integers,Verified
+iw_2023/convgru/soybean/boundary independent integers,Verified
+iw_2023/convgru/soybean/interior independent integers,Verified
+iw_2023/unet3d saved-count SHA256,Verified
+iw_2023/unet3d unique PID,Verified
+iw_2023/unet3d unmatched PID is zero background,Verified
+iw_2023/unet3d full-patch support,Verified
+iw_2023/unet3d/corn/boundary independent integers,Verified
+iw_2023/unet3d/corn/interior independent integers,Verified
+iw_2023/unet3d/soybean/boundary independent integers,Verified
+iw_2023/unet3d/soybean/interior independent integers,Verified
+iw_2023/utae saved-count SHA256,Verified
+iw_2023/utae unique PID,Verified
+iw_2023/utae unmatched PID is zero background,Verified
+iw_2023/utae full-patch support,Verified
+iw_2023/utae/corn/boundary independent integers,Verified
+iw_2023/utae/corn/interior independent integers,Verified
+iw_2023/utae/soybean/boundary independent integers,Verified
+iw_2023/utae/soybean/interior independent integers,Verified
+iw2_2023/convgru saved-count SHA256,Verified
+iw2_2023/convgru unique PID,Verified
+iw2_2023/convgru unmatched PID is zero background,Verified
+iw2_2023/convgru full-patch support,Verified
+iw2_2023/convgru/corn/boundary independent integers,Verified
+iw2_2023/convgru/corn/interior independent integers,Verified
+iw2_2023/convgru/soybean/boundary independent integers,Verified
+iw2_2023/convgru/soybean/interior independent integers,Verified
+iw2_2023/unet3d saved-count SHA256,Verified
+iw2_2023/unet3d unique PID,Verified
+iw2_2023/unet3d unmatched PID is zero background,Verified
+iw2_2023/unet3d full-patch support,Verified
+iw2_2023/unet3d/corn/boundary independent integers,Verified
+iw2_2023/unet3d/corn/interior independent integers,Verified
+iw2_2023/unet3d/soybean/boundary independent integers,Verified
+iw2_2023/unet3d/soybean/interior independent integers,Verified
+iw2_2023/utae saved-count SHA256,Verified
+iw2_2023/utae unique PID,Verified
+iw2_2023/utae unmatched PID is zero background,Verified
+iw2_2023/utae full-patch support,Verified
+iw2_2023/utae/corn/boundary independent integers,Verified
+iw2_2023/utae/corn/interior independent integers,Verified
+iw2_2023/utae/soybean/boundary independent integers,Verified
+iw2_2023/utae/soybean/interior independent integers,Verified
+ida_2023/convgru saved-count SHA256,Verified
+ida_2023/convgru unique PID,Verified
+ida_2023/convgru unmatched PID is zero background,Verified
+ida_2023/convgru full-patch support,Verified
+ida_2023/convgru/corn/boundary independent integers,Verified
+ida_2023/convgru/corn/interior independent integers,Verified
+ida_2023/convgru/soybean/boundary independent integers,Verified
+ida_2023/convgru/soybean/interior independent integers,Verified
+ida_2023/unet3d saved-count SHA256,Verified
+ida_2023/unet3d unique PID,Verified
+ida_2023/unet3d unmatched PID is zero background,Verified
+ida_2023/unet3d full-patch support,Verified
+ida_2023/unet3d/corn/boundary independent integers,Verified
+ida_2023/unet3d/corn/interior independent integers,Verified
+ida_2023/unet3d/soybean/boundary independent integers,Verified
+ida_2023/unet3d/soybean/interior independent integers,Verified
+ida_2023/utae saved-count SHA256,Verified
+ida_2023/utae unique PID,Verified
+ida_2023/utae unmatched PID is zero background,Verified
+ida_2023/utae full-patch support,Verified
+ida_2023/utae/corn/boundary independent integers,Verified
+ida_2023/utae/corn/interior independent integers,Verified
+ida_2023/utae/soybean/boundary independent integers,Verified
+ida_2023/utae/soybean/interior independent integers,Verified
+il_2023/convgru saved-count SHA256,Verified
+il_2023/convgru unique PID,Verified
+il_2023/convgru unmatched PID is zero background,Verified
+il_2023/convgru full-patch support,Verified
+il_2023/convgru/corn/boundary independent integers,Verified
+il_2023/convgru/corn/interior independent integers,Verified
+il_2023/convgru/soybean/boundary independent integers,Verified
+il_2023/convgru/soybean/interior independent integers,Verified
+il_2023/unet3d saved-count SHA256,Verified
+il_2023/unet3d unique PID,Verified
+il_2023/unet3d unmatched PID is zero background,Verified
+il_2023/unet3d full-patch support,Verified
+il_2023/unet3d/corn/boundary independent integers,Verified
+il_2023/unet3d/corn/interior independent integers,Verified
+il_2023/unet3d/soybean/boundary independent integers,Verified
+il_2023/unet3d/soybean/interior independent integers,Verified
+il_2023/utae saved-count SHA256,Verified
+il_2023/utae unique PID,Verified
+il_2023/utae unmatched PID is zero background,Verified
+il_2023/utae full-patch support,Verified
+il_2023/utae/corn/boundary independent integers,Verified
+il_2023/utae/corn/interior independent integers,Verified
+il_2023/utae/soybean/boundary independent integers,Verified
+il_2023/utae/soybean/interior independent integers,Verified
+joint FN and reference counts close to existing tables,Verified
+"('ida_2023', 'corn', 'convgru', 'unet3d') signed net differences close",Verified
+"('ida_2023', 'corn', 'convgru', 'unet3d') signed contribution closes",Verified
+"('ida_2023', 'corn', 'convgru', 'utae') signed net differences close",Verified
+"('ida_2023', 'corn', 'convgru', 'utae') signed contribution closes",Verified
+"('ida_2023', 'corn', 'unet3d', 'utae') signed net differences close",Verified
+"('ida_2023', 'corn', 'unet3d', 'utae') signed contribution closes",Verified
+"('ida_2023', 'soybean', 'convgru', 'unet3d') signed net differences close",Verified
+"('ida_2023', 'soybean', 'convgru', 'unet3d') signed contribution closes",Verified
+"('ida_2023', 'soybean', 'convgru', 'utae') signed net differences close",Verified
+"('ida_2023', 'soybean', 'convgru', 'utae') signed contribution closes",Verified
+"('ida_2023', 'soybean', 'unet3d', 'utae') signed net differences close",Verified
+"('ida_2023', 'soybean', 'unet3d', 'utae') signed contribution closes",Verified
+"('il_2023', 'corn', 'convgru', 'unet3d') signed net differences close",Verified
+"('il_2023', 'corn', 'convgru', 'unet3d') signed contribution closes",Verified
+"('il_2023', 'corn', 'convgru', 'utae') signed net differences close",Verified
+"('il_2023', 'corn', 'convgru', 'utae') signed contribution closes",Verified
+"('il_2023', 'corn', 'unet3d', 'utae') signed net differences close",Verified
+"('il_2023', 'corn', 'unet3d', 'utae') signed contribution closes",Verified
+"('il_2023', 'soybean', 'convgru', 'unet3d') signed net differences close",Verified
+"('il_2023', 'soybean', 'convgru', 'unet3d') signed contribution closes",Verified
+"('il_2023', 'soybean', 'convgru', 'utae') signed net differences close",Verified
+"('il_2023', 'soybean', 'convgru', 'utae') signed contribution closes",Verified
+"('il_2023', 'soybean', 'unet3d', 'utae') signed net differences close",Verified
+"('il_2023', 'soybean', 'unet3d', 'utae') signed contribution closes",Verified
+"('iw2_2023', 'corn', 'convgru', 'unet3d') signed net differences close",Verified
+"('iw2_2023', 'corn', 'convgru', 'unet3d') signed contribution closes",Verified
+"('iw2_2023', 'corn', 'convgru', 'utae') signed net differences close",Verified
+"('iw2_2023', 'corn', 'convgru', 'utae') signed contribution closes",Verified
+"('iw2_2023', 'corn', 'unet3d', 'utae') signed net differences close",Verified
+"('iw2_2023', 'corn', 'unet3d', 'utae') signed contribution closes",Verified
+"('iw2_2023', 'soybean', 'convgru', 'unet3d') signed net differences close",Verified
+"('iw2_2023', 'soybean', 'convgru', 'unet3d') signed contribution closes",Verified
+"('iw2_2023', 'soybean', 'convgru', 'utae') signed net differences close",Verified
+"('iw2_2023', 'soybean', 'convgru', 'utae') signed contribution closes",Verified
+"('iw2_2023', 'soybean', 'unet3d', 'utae') signed net differences close",Verified
+"('iw2_2023', 'soybean', 'unet3d', 'utae') signed contribution closes",Verified
+"('iw_2023', 'corn', 'convgru', 'unet3d') signed net differences close",Verified
+"('iw_2023', 'corn', 'convgru', 'unet3d') signed contribution closes",Verified
+"('iw_2023', 'corn', 'convgru', 'utae') signed net differences close",Verified
+"('iw_2023', 'corn', 'convgru', 'utae') signed contribution closes",Verified
+"('iw_2023', 'corn', 'unet3d', 'utae') signed net differences close",Verified
+"('iw_2023', 'corn', 'unet3d', 'utae') signed contribution closes",Verified
+"('iw_2023', 'soybean', 'convgru', 'unet3d') signed net differences close",Verified
+"('iw_2023', 'soybean', 'convgru', 'unet3d') signed contribution closes",Verified
+"('iw_2023', 'soybean', 'convgru', 'utae') signed net differences close",Verified
+"('iw_2023', 'soybean', 'convgru', 'utae') signed contribution closes",Verified
+"('iw_2023', 'soybean', 'unet3d', 'utae') signed net differences close",Verified
+"('iw_2023', 'soybean', 'unet3d', 'utae') signed contribution closes",Verified

@@ -25,6 +25,6 @@
 
 ## 复现与核查
 
-生产入口为`scripts/plot_within_site_errors.py --prepare`和`--plot`；前者生成统计，后者只按冻结坐标生成图件。遇到同名现有输出会停止，须先按项目规范核查归档，不能直接覆盖或删除。脚本不写正文。拼版为`figures/results/fig_within_site_errors.tex`，由当前3.1图4引用。历史D图和脚本保留，不再是当前正式入口。
+生产入口为`scripts/plot_within_site_errors.py --prepare`和`--plot`；前者生成统计，后者只按冻结坐标生成图件。遇到同名现有输出会停止，须先按项目规范核查归档，不能直接覆盖或删除。脚本不写正文。拼版为`figures/results/fig_within_site_errors.tex`。2026-10-17起本目录及16幅局部图原位保留为补充差异案例与选择追溯，不再由当前图4引用；当前全站图4和3.1分组证据见[`../sec31_joint_boundary/`](../sec31_joint_boundary/README.md)。历史D图和脚本仍保留，不是当前正式入口。
 
 `python -B scripts/test/check_sec31_spatial_examples.py`运行独立小数组暴力选窗、几何线段距离、颜色与分母检查；加`--artifacts`以完整窗口数组复核四站全局最高分、并列坐标、局部闭合、输入哈希及PDF内嵌原始像元。实际执行范围与排版结论续记任务文档及`verification/`记录。

@@ -1,0 +1,59 @@
+% Native 5.2 cm panels; full 2560x2560 reference extent. No rescaling.
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_A_convgru.pdf}
+\caption{A站ConvGRU作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_A_unet3d.pdf}
+\caption{A站3D U-Net作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_A_utae.pdf}
+\caption{A站U-TAE作物对错图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_B_convgru.pdf}
+\caption{B站ConvGRU作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_B_unet3d.pdf}
+\caption{B站3D U-Net作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_B_utae.pdf}
+\caption{B站U-TAE作物对错图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_C_convgru.pdf}
+\caption{C站ConvGRU作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_C_unet3d.pdf}
+\caption{C站3D U-Net作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_C_utae.pdf}
+\caption{C站U-TAE作物对错图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_D_convgru.pdf}
+\caption{D站ConvGRU作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_D_unet3d.pdf}
+\caption{D站3D U-Net作物对错图}
+\end{subfigure}\hspace{3pt}%
+\begin{subfigure}{\dimexpr(\textwidth-6pt)/3\relax}\centering
+\includegraphics{results/fig_within_site_full_errors_D_utae.pdf}
+\caption{D站U-TAE作物对错图}
+\end{subfigure}\par\nointerlineskip\vspace{3pt}
+\definecolor{sec31FullCorrect}{HTML}{377EB8}
+\definecolor{sec31FullError}{HTML}{D73027}
+{\songti\zihao{-5}\legbox{sec31FullCorrect}\,正确作物像元\quad\legbox{sec31FullError}\,错分作物像元\quad\legbox{cOther}\,参考其它地类\qquad
+\begin{tikzpicture}[x=0.677083333cm,y=1cm,baseline=-0.7ex]
+\draw[line width=0.6pt] (0,0)--(2,0);
+\foreach \x in {0,1,2} {\draw[line width=0.6pt] (\x,0)--(\x,0.07);}
+\node[anchor=north,font=\songti\zihao{-5},inner sep=1pt] at (0,0) {0};
+\node[anchor=north,font=\songti\zihao{-5},inner sep=1pt] at (1,0) {10};
+\node[anchor=north west,font=\songti\zihao{-5},inner sep=1pt] at (2,0) {20 km};
+\end{tikzpicture}\par}

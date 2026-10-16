@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-17",
+  "data_status": "derived",
+  "script_sha256": "28382856f92d6471225753b3ddf78549244bc625693b3b0386cb66f527b72f2e",
+  "input_sha256": {
+    "results/summary/sec31_joint_boundary/reference_support.csv": "c441bc9f3303928b3d29414a5980bea7dc95af52c8d72dc2698de62684fa14ff",
+    "results/summary/sec31_joint_boundary/within_position_metrics.csv": "0fa244d4ff82bd36d94dd311bb5af55f76ffda71e61721451071e6044bfff6c4",
+    "results/summary/sec31_joint_boundary/within_joint_metrics.csv": "00b95338547162162eeac18787d7a9ff78ff7a56a09403eb927b124ad84afdca",
+    "results/summary/sec31_joint_boundary/within_site_position_metrics.csv": "ad9108d780cd00e67e585abaeb91b93d6a5916db60326553c377f6584ebf80bd",
+    "results/summary/sec31_joint_boundary/small_area_by_shape.csv": "41119279705b292f90638d6c59c92971dc50a5ce0e42ef163b8ce9a6fac0939c",
+    "results/summary/sec31_joint_boundary/model_comparisons.csv": "84f1505894654c825d2dac82b25e36d42a642581049698984110d0cfd284a20f"
+  },
+  "output_sha256": {
+    "results/summary/sec31_joint_boundary/analysis.md": "36e04b3925ebebc0f860de0ea8d514d30edfe0566c1d3dec4063ca73923bb67b",
+    "results/summary/sec31_joint_boundary/prose_evidence.csv": "5d55d98136a14a54531e6a3e253ca82a1dce078e8567b7d16b3703ff17fd7265",
+    "tables/sec31_spatial_text_values.tex": "dfc3f4aed9964161f463540e5664f2b8d2a61ba5a354a63eae03d13d5d3fb1e6"
+  }
+}

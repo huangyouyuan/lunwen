@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-17",
+  "files": [
+    {
+      "original_path": "output/main.pdf",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/main.pdf",
+      "sha256": "9fdc2ae5b1d564d0f966d0663ca614efcd8bc37bd085772712eab3a53b51e88b",
+      "reason": "First full-site trial; figure height exceeds textheight by 8.85806pt; preserve before caption/layout correction"
+    },
+    {
+      "original_path": "output/build/main/main.log",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/main.log",
+      "sha256": "8686e31f65322ab5994999619a7d5dc2813c364c75f22c9e50a4105b2cb08bf1",
+      "reason": "First full-site trial; figure height exceeds textheight by 8.85806pt; preserve before caption/layout correction"
+    },
+    {
+      "original_path": "sections/04_results.tex",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/04_results.tex",
+      "sha256": "e8e0bd1b8963f77bf08d99ec1ddb4feabc0f34f10598706bbe7a661e331936a3",
+      "reason": "First full-site trial; figure height exceeds textheight by 8.85806pt; preserve before caption/layout correction"
+    },
+    {
+      "original_path": "figures/results/fig_within_site_full_errors.tex",
+      "archive_path": "archive/manuscript/2026-10-17/sec31-joint-boundary-first-build/fig_within_site_full_errors.tex",
+      "sha256": "c494ccb26ed9361de6282beca3f0f146d6c2d0321c679674a6347c60778e637f",
+      "reason": "First full-site trial; figure height exceeds textheight by 8.85806pt; preserve before caption/layout correction"
+    }
+  ]
+}
