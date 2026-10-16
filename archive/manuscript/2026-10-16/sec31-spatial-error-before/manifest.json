@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-16",
+  "reference_review": "Current manuscript remains output/main.pdf; old D figure assets are retained in place and their active entry is replaced only after verification.",
+  "files": [
+    {
+      "original_path": "output/main.pdf",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-spatial-error-before/output/main.pdf",
+      "sha256": "82ad810eac3422808bfebe9286879e3bfdef423ec47f3a589c97534b67442522",
+      "operation": "snapshot",
+      "reason": "Preserve current manuscript and active entry points before authorized section 3.1 figure replacement."
+    },
+    {
+      "original_path": "sections/04_results.tex",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-spatial-error-before/sections/04_results.tex",
+      "sha256": "a1bfd5dcea3283af7757d66c7a8f11dadbb54519032c4fdd616c9b015b5d23fc",
+      "operation": "snapshot",
+      "reason": "Preserve current manuscript and active entry points before authorized section 3.1 figure replacement."
+    },
+    {
+      "original_path": "plan/results-map.md",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-spatial-error-before/plan/results-map.md",
+      "sha256": "1e0b013ad96d9422c7d9420f89f53b64f177f3c71f06c86b0ee796ab0ebc6a7e",
+      "operation": "snapshot",
+      "reason": "Preserve current manuscript and active entry points before authorized section 3.1 figure replacement."
+    },
+    {
+      "original_path": "README.md",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-spatial-error-before/README.md",
+      "sha256": "282389ae4e40b8f383913ba538ba86af8c362417c080c3912f7dc4f83de571c5",
+      "operation": "snapshot",
+      "reason": "Preserve current manuscript and active entry points before authorized section 3.1 figure replacement."
+    }
+  ],
+  "protected_sections": {
+    "sections/01_introduction.tex": "ae4d21b7b1c3e7cacac5174da2106d8bba95aa78cd9e85c016760ce6da4e0f76",
+    "sections/02_data.tex": "4939398686bd18c320b5a63bf207a7e509a22c212c6981afd526214b66627b93",
+    "sections/03_methods.tex": "a343a6c46e0e73cc19cc65c63d7a1cedaf42e9b1afc0a2f4488676a89b2fa666",
+    "sections/04_results.tex": "a1bfd5dcea3283af7757d66c7a8f11dadbb54519032c4fdd616c9b015b5d23fc",
+    "sections/06_conclusion.tex": "4949adbc3920ef1c492ce81be0f62b70c10becaf4ab0580acafd6b05bbf3e4e3"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-16",
+  "verification": "Verified",
+  "scope": "Four-site within-site error figure, section 3.1 linkage, canonical PDF and source protection; not full-manuscript scientific verification.",
+  "pdf": {
+    "path": "output/main.pdf",
+    "sha256": "69e5e72b052212bb6b2fdbf08cf45c0746ad06b5f3e9bef2eb720f6eadb4ae81",
+    "pages": 9,
+    "figure4_page": 6,
+    "panel_checks": [
+      {
+        "site": "A",
+        "column": "reference",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.800000206629435,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "A",
+        "column": "convgru",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "A",
+        "column": "unet3d",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "A",
+        "column": "utae",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.7999995337592227,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "B",
+        "column": "reference",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.800000206629435,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "B",
+        "column": "convgru",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "B",
+        "column": "unet3d",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "B",
+        "column": "utae",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.7999995337592227,
+          3.800000072055393
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "C",
+        "column": "reference",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.800000206629435,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "C",
+        "column": "convgru",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "C",
+        "column": "unet3d",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "C",
+        "column": "utae",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.7999995337592227,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "D",
+        "column": "reference",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.800000206629435,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "D",
+        "column": "convgru",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "D",
+        "column": "unet3d",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.8000006103515624,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      },
+      {
+        "site": "D",
+        "column": "utae",
+        "image_pixels": [
+          256,
+          256
+        ],
+        "width_height_cm": [
+          3.7999995337592227,
+          3.8000006103515624
+        ],
+        "native_pixel_bytes_equal": true
+      }
+    ],
+    "first_four_pages_pixel_identical_to_before": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "last_page_pixel_identical_to_before_last_page": true
+  },
+  "protected_sources": {
+    "sections/01_introduction.tex": true,
+    "sections/02_data.tex": true,
+    "sections/03_methods.tex": true,
+    "sections/06_conclusion.tex": true
+  },
+  "sections_3_2_and_3_3_source_unchanged": true,
+  "data_checks": {
+    "manifest_outputs_and_production_script_hashes_match": true,
+    "prose_readings_recomputed_from_source": 23,
+    "whole_site_reused_rows": 48,
+    "local_rows": 108
+  },
+  "checks_completed_earlier_in_this_task": {
+    "algorithm_tests": "Verified: 5 test groups; brute-force oracle, disagreement semantics, model order, eligibility and ties, point-to-segment boundary geometry, RGB and zero denominators.",
+    "artifact_tests": "Verified: independent all-window arrays for 4 sites, maximum/tie rule, local closure, source hashes, 16 standalone PDF rasters, opacity and absence of boundary overlay lines.",
+    "full_site_boundary_masks": "Verified: 4 regenerated <=30 m masks, zero pixel differences from saved first distance band.",
+    "layout_visual_review": "Verified: final pages 5-9 reviewed; figure 4 clear on page 6; following text flows on page 5 and below figure 4."
+  },
+  "build": {
+    "command": "latexmk -xelatex -synctex=1 -interaction=nonstopmode -halt-on-error main.tex",
+    "exit_code": 0,
+    "fatal_or_overfull_or_missing_glyph_or_undefined_reference": false,
+    "retained_warnings": "Existing xeCJK/font fallback warnings and section 1.3 Underfull hbox badness 2376 at lines 55-56."
+  },
+  "limits": [
+    "Maximum-disagreement local cases do not represent site-wide typical performance or rank overall site difficulty.",
+    "Omission location and net omission reduction are not a decomposition of F1.",
+    "Only <=30 m boundary masks revalidated; other distance bands and FRAGSTATS not regenerated.",
+    "B U-TAE raster lacks CRS tag; same-site pixel/grid identity checked against established references; no CRS invented.",
+    "Later section 3.2 float and unfinished endmatter whitespace remains; no downstream source changes made."
+  ],
+  "layout_directory": "verification/layout/sec31-spatial-errors-2026-10-16",
+  "current_output_constraints": {
+    "no_root_main_pdf": true,
+    "no_current_output_previews": true
+  },
+  "artifact_sha256": {
+    "output/main.pdf": "69e5e72b052212bb6b2fdbf08cf45c0746ad06b5f3e9bef2eb720f6eadb4ae81",
+    "output/build/main/main.log": "27cd8e7aa1d1e651a20d121423e3de99b68ada76ddb7f4aa1b28cd08699a0200",
+    "output/build/main/build-sec31-spatial-errors-2026-10-16-top.txt": "61e46ca4ac5a0fcc56373de8962ed1e7c232ef98a9c1a35a70517062f5315dc7",
+    "sections/04_results.tex": "c4093edff95f770f145eeaac53de6c745edbcb22e71cfaeb6fd90ed50e292388",
+    "figures/results/fig_within_site_errors.tex": "65f2c9cb77063dd39aef70de6d170e2134e74c96d45863bcf645c29b4be0222b",
+    "scripts/plot_within_site_errors.py": "afc863d77d8f2646afbbd1c897ac89f444e901bfc013d60098664f7970b3da37",
+    "scripts/test/check_sec31_spatial_examples.py": "e58dd5cdd17057b2d7519c74273b903c6a4329251e5c852bef87b5add69c28ea",
+    "plan/chapter-blueprints/sec31-spatial-error-figure.md": "ef4a196f2b7214b047a9435383af28a08f1a87c08a897c4b24731a886102716b",
+    "results/summary/sec31_spatial_examples/README.md": "b461a898dc0f93b1e3bf50463ef404d2a9ff90a75ee732ab5d5d4657cb81f00d",
+    "results/summary/sec31_spatial_examples/prose_evidence.csv": "4b44ddffc2cb365b8f499165775d23d8b977a9c2ff94167a63afa3ec97fa4ca4",
+    "results/summary/sec31_spatial_examples/manifest.json": "6141902b83509c0ec3c133d842c28a705e658e88822b0fe24612954392bbe382",
+    "results/summary/sec31_spatial_examples/figure_manifest.json": "8e460ecb7712179ad1b1207084c5fd522ed0d3dd3c89946cf0fb2728c0511cb3"
+  },
+  "git": "Uncommitted; no commit or push performed."
+}

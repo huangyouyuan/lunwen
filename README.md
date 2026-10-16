@@ -51,7 +51,7 @@
 | `output/` | 唯一当前整稿`main.pdf`、源码跳转信息与`build/`编译工作区 |
 | `legacy/`、`word/` | 实验和写作参考、Word投稿稿件 |
 
-[1.3与3.1基础材料整理](plan/tasks/2026-10-10-sec13-sec31-foundations.md)已经完成，1.3已写入正文；后续从既有本站底表组织3.1必要补充，再决定3.3的具体证据。其余缺项见[当前进度](plan/progress.md)，不默认执行分级、聚类或联合建模。
+[1.3与3.1基础材料整理](plan/tasks/2026-10-10-sec13-sec31-foundations.md)已经完成，1.3已写入正文；3.1四站差异案例与全站漏分衔接见[当前任务](plan/tasks/2026-10-16-sec31-spatial-error-figure.md)和[统计入口](results/summary/sec31_spatial_examples/README.md)。其余缺项见[当前进度](plan/progress.md)，不默认执行分级、聚类或联合建模。
 
 ## 保留脚本
 
@@ -62,7 +62,9 @@
 | `generate_sec13_landscape_display.py` | 当前表1与面积—形状联合图；复用NP、AI、ENN等权P90、整站ED和v3联合汇总；`--check`只读核对 |
 | `generate_sec13_spatial_tables.py` | 历史表1及分布核查；AREA/SHAPE面积加权、ENN等权中位数和极值原位保留 |
 | `plot_sec13_composition.py` | 仅重绘现行组成图，避免调用历史组合生成器连带写入旧表 |
-| `plot_within_site_f1.py`、`plot_within_site_map_D.py`、`plot_degradation_heatmap.py` | 正式图件，共享 `figstyle.py` |
+| `plot_within_site_f1.py`、`plot_degradation_heatmap.py` | 正式F1图件，共享 `figstyle.py` |
+| `plot_within_site_errors.py` | 当前图4：四站最大对错分歧窗口、局部统计及作物对错图；`--prepare`后`--plot`，同名输出不覆盖 |
+| `plot_within_site_map_D.py` | 历史D站示例来源，图件原位保留，不再作为当前正式入口 |
 | `sec33_metrics.py` | 只读指标和五次完整统计函数 |
 | `explore_sec33_directional_confusion_closeout.py` | 从保留整数表计算收尾结果，已有结果本次不重跑 |
 | `plot_sec33_directional_confusion_closeout.py` | 保留探索图来源，不自动写入正文 |

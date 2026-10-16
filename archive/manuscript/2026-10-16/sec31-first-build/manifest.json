@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "reference_review": "Historical trial only. Active manuscript remains output/main.pdf.",
+  "files": [
+    {
+      "original_path": "output/main.pdf",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-first-build/output/main.pdf",
+      "sha256": "b0711df7b5339daebcbf9f8ceedc2e6a2863bb675d48cb862bc4c14d072db86a",
+      "reason": "First compiled 4x4 figure before removing its trailing float barrier to allow following text flow."
+    },
+    {
+      "original_path": "sections/04_results.tex",
+      "archive_path": "archive/manuscript/2026-10-16/sec31-first-build/sections/04_results.tex",
+      "sha256": "cc966839dc7b58e0063ebafb6ada401f0fdbba60624ef21acfdb393dffb14e26",
+      "reason": "First compiled 4x4 figure before removing its trailing float barrier to allow following text flow."
+    }
+  ]
+}

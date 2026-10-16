@@ -61,6 +61,7 @@
 | 生育阶段 | growth stage / phenological stage | — |
 | 图块 | training tile | 128×128像素训练及预测单元，不是本轮景观单元 |
 | 完整参考斑块 | reference connected patch | 整幅参考标签上8邻域同类连通区，键为目标站＋PID；不等同真实田块 |
+| 边界 / 内部 | boundary / interior | 作物像元中心距参考类别交界≤30 m / >30 m；交界由有效标签4邻域共享边确定，完整研究区先划分后裁切。正文不另设“近边”“远内部”等分组名 |
 
 ## 分类类别
 

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-16",
+  "colors": {
+    "corn": "#F2C14E",
+    "soybean": "#4C9F70",
+    "other": "#BDBDBD",
+    "correct": "#377EB8",
+    "error": "#D73027"
+  },
+  "panel_cm": [
+    3.8,
+    3.8
+  ],
+  "alpha": 1,
+  "interpolation": "nearest",
+  "boundary_lines": false,
+  "selected_windows_sha256": "a9c9d5417faf13a56d737af6d5d6fe541f7e3ab4179cfc6b78d8de1d61defa07",
+  "script_sha256": "afc863d77d8f2646afbbd1c897ac89f444e901bfc013d60098664f7970b3da37",
+  "output_sha256": {
+    "figures/results/fig_within_site_errors_A_reference.pdf": "3e6cc6c2b40f803a5fe3ed6253bb4856b5eced33bc5825659023d98d02cf9a62",
+    "figures/results/fig_within_site_errors_A_reference.png": "3cdfd3dfb1234abf6497dbac7b8bf2c4a0e6bc042753ccea4ac689231dadc6d4",
+    "figures/results/fig_within_site_errors_A_convgru.pdf": "3bd8a9e84f73503563cbce3abe255117df0c377c20b818c412282edf3b28091d",
+    "figures/results/fig_within_site_errors_A_convgru.png": "479d1313f973900927ae125055fe8e6373fb3ddd1261806c368bff2c0d6b2c60",
+    "figures/results/fig_within_site_errors_A_unet3d.pdf": "51652fe226a901a05599def0d93f8a80d0b07e9665c452aaea4e2519f0e28b84",
+    "figures/results/fig_within_site_errors_A_unet3d.png": "d9c6a186c7e3e6d2c070a853415ab9d066fa3e15e6e8d8d0d6a677c8755e2916",
+    "figures/results/fig_within_site_errors_A_utae.pdf": "221fe8011ae9bf851a6e67dd8ef38712deb257bd287a98487dea56df9e83bb65",
+    "figures/results/fig_within_site_errors_A_utae.png": "6404ea2f6c09f6ac6ad51fc3c932c2610b3bd902923320b85dee3bfdd7f02f67",
+    "figures/results/fig_within_site_errors_B_reference.pdf": "ef738660f6e99c34c9bc2f1ad3e05c2e37f73fb5ed2bbbded9b324891ea18397",
+    "figures/results/fig_within_site_errors_B_reference.png": "1a54715a13b5aa2f037b6db7d6ac07dc484630982ceea131fca341082398d8aa",
+    "figures/results/fig_within_site_errors_B_convgru.pdf": "f740aba5d2baa92e6dcc71c2edc17e69b263d9ed7a550ab0d51530d2088ac4f6",
+    "figures/results/fig_within_site_errors_B_convgru.png": "2b5407e78e7b81de60036ff35fd88c0c25beaeb474d111ca98d55248ea9263a4",
+    "figures/results/fig_within_site_errors_B_unet3d.pdf": "07f1de3ae19b87d1aa36afa38452ac0bfa76bee0e42b40d465111ba87d5fb5dc",
+    "figures/results/fig_within_site_errors_B_unet3d.png": "b143a023ca56d509793555690877566560f5db29a7f16bc16c5d5a18bd1d286d",
+    "figures/results/fig_within_site_errors_B_utae.pdf": "6d9adc43f962ed082081d69c8f70f7ed7a27441c4294fecd308cfe05542791a1",
+    "figures/results/fig_within_site_errors_B_utae.png": "b7f5f5ab7b60d81e6a1ef30c3d9a5790042a4864d0386fdf82736c519e713b2b",
+    "figures/results/fig_within_site_errors_C_reference.pdf": "b07a961a7b0ba9e5ab66ec0ae6bf9eec9a173939eb86d046dfbac89824c82fec",
+    "figures/results/fig_within_site_errors_C_reference.png": "26f54d9399290b05c02618a3765fa9cca333ab7868c03f9e7e9296ef4a8ae94e",
+    "figures/results/fig_within_site_errors_C_convgru.pdf": "ad02909e3ebb0293bf3a3a2ceed344d669c22747b632d900e9d3302ef561b672",
+    "figures/results/fig_within_site_errors_C_convgru.png": "5fa01d78dcc68987fa1a4dacc03073e1fb38eb28987e999de9d5768c5a86cf04",
+    "figures/results/fig_within_site_errors_C_unet3d.pdf": "431fa1fa548f7bd53739f90b2bbab5d00054a91cf1d27e0fdb2657d7d01617b9",
+    "figures/results/fig_within_site_errors_C_unet3d.png": "10d0b26ee9f176cfe856480518ff980f7598c6cf5428b3be9692c688e4e8c79f",
+    "figures/results/fig_within_site_errors_C_utae.pdf": "d0de96b56a22563659c75cda07497afc6c3b98a8b0891a66acd4372d9d23c899",
+    "figures/results/fig_within_site_errors_C_utae.png": "6f8aa98cd0302ee711ae37d64652f857e7024f83ff97834b5ec9a073ea3f2b51",
+    "figures/results/fig_within_site_errors_D_reference.pdf": "27bd90b1a9027bf724408887b5ac778148bcef04328f12aab85649038c8ebda9",
+    "figures/results/fig_within_site_errors_D_reference.png": "248b7c42142f74673d28b26637ad85c86c81eb3f746617c6b608ba6da97c1a0d",
+    "figures/results/fig_within_site_errors_D_convgru.pdf": "f139dc10bb765ab4470b2fc5c1620ca8b7b812362c7ba2387bfeed498744637a",
+    "figures/results/fig_within_site_errors_D_convgru.png": "1f1cf90e0dc0463b6b917f5a4c277b369a88435bef4827bfd0aaef5f1f2db32f",
+    "figures/results/fig_within_site_errors_D_unet3d.pdf": "70222d98f924d4696dc93f3b13c56f174b6a7db9d2bfd6c1220b3999c7286d49",
+    "figures/results/fig_within_site_errors_D_unet3d.png": "9d39054d1091d80781c3b62b1d4679c16f6db172bca933c0346cddb35a98b022",
+    "figures/results/fig_within_site_errors_D_utae.pdf": "adf5dcff02ecc2f6b115268a289a6e027b4d26b688d3f548fcbde47f2d1dfa6d",
+    "figures/results/fig_within_site_errors_D_utae.png": "f39422146d78a5a193c9804088583c5c092b1d58745337efaac9799886c087ae"
+  }
+}

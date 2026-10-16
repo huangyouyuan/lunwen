@@ -11,6 +11,7 @@
 | 3.1本站F1 | `summary/f1_raw_scale/within_site_crop_f1.csv` | 12个独立本站汇总基准 |
 | 3.1折间波动 | `summary/f1_raw_scale/within_site_crop_f1_fold_stats.csv` | 不替代本站汇总F1 |
 | 3.1本站错分 | `processed/sec33_directional_confusion_closeout/crop_metrics_per_prediction.csv`、`summary/sec33_directional_confusion_closeout/directional_summary.csv` | 筛本站，重复方向基准验证后去重 |
+| 3.1四站局部对错图与全站定位 | `summary/sec31_spatial_examples/` | 各站1像元步长穷举最大对错分歧256×256窗口；局部统计与复用全站48行分开，蓝正确、红错误、参考其它灰色。完整30 m划分已逐像元重验；局部不能代表全站或分解F1 |
 | 3.2跨站F1 | `summary/f1_raw_scale/cross_site_crop_f1_per_fold.csv`、`cross_site_crop_f1_summary.csv` | 五次分别算，再均值与样本标准差 |
 | 3.2差距 | `summary/f1_raw_scale/crop_f1_difference_36paths.csv` | ΔF1=本站−跨站，存储原尺度、展示百分点 |
 | 3.3方向与模型 | `summary/sec33_directional_confusion_closeout/directional_summary.csv`、`model_crop_metrics_summary.csv`、`model_crop_path_diagnostics.csv` | 六向计数、率及指标，保留逐次和路径例外 |
@@ -33,7 +34,7 @@
 | 景观格局表1 | `tables/sec13_landscape_context_rows.tex`；`scripts/generate_sec13_landscape_display.py` |
 | 面积—形状联合分布 | `figures/study_area/fig_sec13_area_shape_joint{,_a,_b}.pdf`及同名`.tex`拼版；旧v3保留 |
 | 本站F1 | `figures/results/fig_within_site_f1_{a,b}.pdf` |
-| D站本站示例 | `figures/results/fig_within_site_map_D_{a..h}.pdf` |
+| 四站局部作物对错图 | `figures/results/fig_within_site_errors.tex`及16幅`fig_within_site_errors_{A..D}_{reference,convgru,unet3d,utae}.pdf`；旧D图保留作历史 |
 | 12路径跨站F1 | `tables/table2_cross_site_f1_12paths.csv`及 `_rows.tex` |
 | ΔF1 | `figures/results/fig_degradation_heatmap_{a..f,cbar}.pdf` |
 

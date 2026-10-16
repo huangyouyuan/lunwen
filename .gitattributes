@@ -101,3 +101,11 @@
 /archive/manuscript/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /verification/layout/** -text
 /verification/artifact-locations-2026-10-15.json -text whitespace=cr-at-eol
+
+# Preserve the hashes of the verified Section 3.1 spatial-error artifacts.
+/results/summary/sec31_spatial_examples/** -text whitespace=cr-at-eol
+/scripts/plot_within_site_errors.py -text
+/scripts/test/check_sec31_spatial_examples.py -text
+/figures/results/fig_within_site_errors.tex -text
+/plan/chapter-blueprints/sec31-spatial-error-figure.md -text
+/verification/sec31-spatial-errors-2026-10-16.json -text

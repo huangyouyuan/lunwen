@@ -11,6 +11,7 @@
 | [2026-10-13](2026-10-13/) | F1百分数展示前备份与历史稿 |
 | [2026-10-14](2026-10-14/) | 跨站均值表、景观修订、试排与历史稿 |
 | [2026-10-15](2026-10-15/) | 正文分页、图3、重新编译前版本及目录调整前必要快照 |
+| [2026-10-16](2026-10-16/) | 表1 ENN修订前材料、[边界定义与H100更正编译前PDF](2026-10-16/boundary-h100-before/manifest.json)、[消除跨页孤字前的首次编译稿](2026-10-16/boundary-h100-first-build/manifest.json)、[3.1四站图修改前稿](2026-10-16/sec31-spatial-error-before/manifest.json)、[浮动调整前试排](2026-10-16/sec31-first-build/manifest.json)及[图4页顶浮动调整前试排](2026-10-16/sec31-flow-build/manifest.json) |
 
 [本次迁移清单](../../verification/artifact-locations-2026-10-15.json)逐文件记录原路径、新路径、原因及SHA-256。旧记录中`output/archive/`开头的路径对应本目录；其余本次移动按清单的`original_path`与`archive_path`查找。历史JSON、归档README和源码快照保留原文，其中相对链接与命令反映当时位置，不能直接当作活动入口。
 

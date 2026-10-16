@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-16",
+  "operation": "snapshot_before_rebuild",
+  "original_path": "output/main.pdf",
+  "archive_path": "archive/manuscript/2026-10-16/boundary-h100-first-build/main.pdf",
+  "sha256": "eadc5bb086a0c60f058773ceffe7bff791722e24307d8bf622d5471f575c1984",
+  "reason": "First build preserved before adjusting boundary paragraph line breaking to remove a single-character carryover to page 5.",
+  "active_entry": "output/main.pdf",
+  "reference_review": "Historical trial build only; canonical output path remains unchanged. First-build renders are verification/layout/boundary-h100-2026-10-16/page-4.png and page-5.png."
+}

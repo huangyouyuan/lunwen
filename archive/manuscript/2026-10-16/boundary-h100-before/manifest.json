@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-16",
+  "operation": "snapshot_before_rebuild",
+  "original_path": "output/main.pdf",
+  "archive_path": "archive/manuscript/2026-10-16/boundary-h100-before/main.pdf",
+  "reason": "Preserve the existing PDF before the requested build incorporating the boundary definition and author-supplied H100 40 GB hardware correction.",
+  "sha256": "127f1819a00ec288e0ff6a367a90c9d70922da7460f385a5f9142e4adb1fe79c",
+  "active_entry": "output/main.pdf",
+  "reference_review": "The active manuscript retains its canonical path; this archived copy is historical only. No matching PDF hash exists in archive/manuscript."
+}

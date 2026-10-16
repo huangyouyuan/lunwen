@@ -29,53 +29,21 @@
 \label{fig:within_site_f1}
 \end{minipage}\par\addvspace{3pt}
 
-三种模型之间的差异主要体现在ConvGRU与另两种模型之间。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而二者之间差值均小于1.00个百分点，互有高低：U-TAE在A、B两个站点略优，3D U-Net在D站点略优，C站点U-TAE的玉米和大豆F1分别高出\FCUtaeUnetCorn{}和\FCUtaeUnetSoy{}个百分点。ConvGRU与前两者的差距因站点而异：两种作物在C站点为\FModelGapCMin{}～\FModelGapCMax{}个百分点，在D站点为\FModelGapDMin{}～\FModelGapDMax{}个百分点。图\ref{fig:within_site_map_D}以差距较大的D站点为例对比了三种模型的站内交叉验证分类结果：在选中局部区域中，ConvGRU的玉米和大豆像元错误率为12.1\%，高于3D U-Net（5.8\%）和U-TAE（4.8\%）。
+三种模型之间的差异主要体现在ConvGRU与另两种模型之间。U-TAE和3D U-Net在各站点的玉米和大豆F1均高于ConvGRU，而二者之间差值均小于1.00个百分点，互有高低：U-TAE在A、B两个站点略优，3D U-Net在D站点略优，C站点U-TAE的玉米和大豆F1分别高出\FCUtaeUnetCorn{}和\FCUtaeUnetSoy{}个百分点。ConvGRU与前两者的差距因站点而异：两种作物在C站点为\FModelGapCMin{}～\FModelGapCMax{}个百分点，在D站点为\FModelGapDMin{}～\FModelGapDMax{}个百分点。
 
-% 图 3：上行全站 2560×2560 标红框，下行红框窗口放大；窗口 = D 站图块网格 (13,8) 起 2×2，像元行 1664–1920、列 1024–1280
-% 选窗标准：只看真实玉米/大豆像元——作物像元错误率 ConvGRU 12.1% / 3D U-Net 5.8% / U-TAE 4.8%；
-%   类别边界带错误率 32.0% / 15.3% / 13.4%；玉米↔大豆互混 6.8% / 2.6% / 2.2%。全站总错误率 10.6% / 6.3% / 6.7%
-% 三模型 reference.tif sha256 一致（38ad33ef…）；oof_prediction.tif 为五折拼接，每图块预测来自未训练过它的模型
+结合1.3节的面积—形状分布，B站两种作物的漏分来源也存在差别。面积小于50~ha的大豆斑块占该站大豆面积的39.20\%，却包含三种模型大豆漏分的65.53\%～66.96\%；玉米同一面积范围斑块的漏分贡献比例为44.52\%～46.57\%。这说明B站大豆的漏分更集中于较小斑块。相比以较规则斑块为主的A站，C站包含较多大型复杂斑块，但C站模型间的F1差距反而小于D站，斑块形态的站间差异不能直接用于判断模型差距大小。
 
-\begin{figure*}[tbp]
+从全站错误位置看，四站两种作物的边界面积占比为21.72\%～28.32\%，漏分贡献比例却达到81.78\%～96.05\%。三种模型的边界漏分率为17.21\%～34.20\%，内部仅为0.21\%～2.19\%。相对ConvGRU，另两模型在各站两种作物上的漏分均较少，其中边界漏分计数的减少占全站该作物漏分计数净减少量的51.58\%～85.74\%，表明模型间漏分差异主要发生在边界。图\ref{fig:within_site_errors}展示各站三模型对错分歧比例最高的局部窗口，既可见边界附近的错分，也可见部分内部区域的成片错分。局部排序不一定与全站相同：D站所选窗口中，ConvGRU、3D U-Net和U-TAE的两种作物合并漏分率分别为20.61\%、14.10\%和25.69\%。这些窗口用于展示差异案例，不能代表全站典型表现；上述漏分分析也未包含参考其它地类误分入作物的影响，不能直接分解F1差异。
+
+\begin{figure*}[!t]
 \centering
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_a.pdf}
-\caption{参考标签}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_b.pdf}
-\caption{ConvGRU分类结果}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_c.pdf}
-\caption{3D U-Net分类结果}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_d.pdf}
-\caption{U-TAE分类结果}
-\end{subfigure}\par\nointerlineskip\vspace{3pt}
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_e.pdf}
-\caption{参考标签}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_f.pdf}
-\caption{ConvGRU分类结果}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_g.pdf}
-\caption{3D U-Net分类结果}
-\end{subfigure}\hfill
-\begin{subfigure}{0.24\textwidth}\centering
-\includegraphics{results/fig_within_site_map_D_h.pdf}
-\caption{U-TAE分类结果}
-\end{subfigure}\par\nointerlineskip\vspace{3pt}
-\classlegend
-\caption{D站点三种模型站内交叉验证分类结果（上：全站，红框为局部窗口；下：局部窗口放大）}
-\label{fig:within_site_map_D}
+\input{figures/results/fig_within_site_errors.tex}
+\caption{四站局部作物参考像元的错分分布}
+\label{fig:within_site_errors}
+\par\noindent\begin{minipage}{\textwidth}\songti\zihao{-5}
+注：各站选取三模型作物像元对错分歧比例最高的局部窗口，用于展示分类差异。窗口均为256×256像元（7.68~km×7.68~km），参考标签全部有效，玉米和大豆各占至少10\%。至少一个模型正确、至少一个模型错误的作物像元计为分歧，比例以窗口全部参考作物像元为分母。红色包括作物间互混及作物判为其它地类，参考其它地类始终为灰色。所选窗口不代表全站典型表现，也不用于比较站点整体难度。
+\end{minipage}
 \end{figure*}
-
-\FloatBarrier
 
 \subsection{模型跨站分类性能与泛化退化}
 
